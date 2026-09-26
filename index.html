@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNP | Unique Nature Paradise Zanzibar</title>
+    
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Top Bar With Languages -->
+    <div class="top-bar">
+        <div class="lang-container">
+            <i class="fas fa-globe"></i>
+            <select class="lang-select" id="languageSelector">
+                <option value="en">English</option>
+                <option value="it">Italiano</option>
+                <option value="ru">Русский</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="#" class="logo-area">
+                <!-- Sehemu ya Logo (Mwenyewe utaweka picha yako baadaye) -->
+                <div class="logo-placeholder">
+                    <!-- <img src="picha_ya_logo_yako.png" alt="UNP Logo" class="logo-img"> -->
+                    [ LOGO ]
+                </div>
+                <div class="logo-text">
+                    <h2>UNP</h2>
+                    <span>Unique Nature Paradise</span>
+                </div>
+            </a>
+
+            <button class="menu-toggle" id="menuToggleBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#excursions" data-key="nav_excursions">Excursions</a></li>
+                <li><a href="#water-sports" data-key="nav_water_sports">Water Sports</a></li>
+                <li><a href="#safari" data-key="nav_safari">Safaris</a></li>
+                <li><a href="#boutique" data-key="nav_boutique">Boutique & Art</a></li>
+                <li><a href="#secret-garden" data-key="nav_secret_garden">Secret Garden</a></li>
+                <li><a href="#vote-section" data-key="nav_vote">Vote Experience</a></li>
+                <li><a href="#vip" data-key="nav_vip">VIP Experience</a></li>
+                <li><a href="#book-online" data-key="nav_book_online">Book Online</a></li>
+                <li><a href="#contact" data-key="nav_contact">Contact Us</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section (Imeondoa picha ya background, ina rangi safi tu) -->
+    <section class="hero">
+        <h1 data-key="hero_title">UNIQUE NATURE PARADISE (UNP)</h1>
+        <p data-key="hero_desc">Discover Zanzibar & Tanzania's most exquisite luxury tours, high-adrenaline water sports, handmade artwork, and private sanctuary experiences in full freedom.</p>
+        <a href="#book-online" class="btn-primary" data-key="btn_book_vip">Book VIP Experience</a>
+    </section>
+
+    <!-- Main Services Section -->
+    <section id="excursions">
+        <h2 class="section-title" data-key="section_title">Our Exclusive Experiences</h2>
+        
+        <div class="services-grid">
+            <!-- Card 1 -->
+            <div class="service-card">
+                <div class="card-img-placeholder">
+                    <!-- <img src="picha_yako_1.jpg" alt="Zanzibar Tours" class="service-img"> -->
+                    <i class="fas fa-image"></i> [ Weka Picha Yako Hapa ]
+                </div>
+                <div class="card-body">
+                    <div class="card-icon"><i class="fas fa-archway"></i></div>
+                    <h3 data-key="title_1">1. Zanzibar Excursions & Historic Tours</h3>
+                    <p data-key="desc_1">Visit giant Aldabra tortoises on Prison Island, sail on full-day Safari Blue with seafood buffets, explore Jozani Forest's rare monkeys, and walk Stone Town's historic streets.</p>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="service-card">
+                <div class="card-img-placeholder">
+                    <!-- <img src="picha_yako_2.jpg" alt="Jozani Forest" class="service-img"> -->
+                    <i class="fas fa-image"></i> [ Weka Picha Yako Hapa ]
+                </div>
+                <div class="card-body">
+                    <div class="card-icon"><i class="fas fa-tree"></i></div>
+                    <h3 data-key="title_2">2. Jozani Natural Forest Discovery</h3>
+                    <p data-key="desc_2">Explore the lush tropical rainforest of Zanzibar, home to the endangered Red Colobus monkeys and unique nature trails.</p>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="service-card">
+                <div class="card-img-placeholder">
+                    <!-- <img src="picha_yako_3.jpg" alt="Vehicle Rentals" class="service-img"> -->
+                    <i class="fas fa-image"></i> [ Weka Picha Yako Hapa ]
+                </div>
+                <div class="card-body">
+                    <div class="card-icon"><i class="fas fa-car"></i></div>
+                    <h3 data-key="title_3">3. Equipment & Vehicle Rentals</h3>
+                    <p data-key="desc_3">High-end car rentals, scooters, quad bikes, snorkeling gear, underwater cameras, and sports equipment delivered straight to your hotel.</p>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="service-card">
+                <div class="card-img-placeholder">
+                    <!-- <img src="picha_yako_4.jpg" alt="Luxury Transfers" class="service-img"> -->
+                    <i class="fas fa-image"></i> [ Weka Picha Yako Hapa ]
+                </div>
+                <div class="card-body">
+                    <div class="card-icon"><i class="fas fa-shuttle-van"></i></div>
+                    <h3 data-key="title_4">4. Luxury Transporter & Transfers</h3>
+                    <p data-key="desc_4">VIP chauffeur transfers in luxury Alphards, Land Cruisers, and vans with complimentary Wi-Fi and air conditioning.</p>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="service-card" id="boutique">
+                <div class="card-img-placeholder">
+                    <!-- <img src="picha_yako_5.jpg" alt="Banana Leaf Handmade Art" class="service-img"> -->
+                    <i class="fas fa-image"></i> [ Weka Picha Yako Hapa ]
+                </div>
+                <div class="card-body">
+                    <div class="card-icon"><i class="fas fa-gem"></i></div>
+                    <h3 data-key="title_5">5. UNP Fashion & Handmade Art Boutique</h3>
+                    <p data-key="desc_5">Handcrafted artwork created with care using real dried banana leaves cut into fine slices, depicting African wildlife (giraffes, lions, elephants) and village culture, alongside beachwear and souvenirs.</p>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="service-card" id="safari">
+                <div class="card-img-placeholder">
+                    <!-- <img src="picha_yako_6.jpg" alt="Tanzania Safaris" class="service-img"> -->
+                    <i class="fas fa-image"></i> [ Weka Picha Yako Hapa ]
+                </div>
+                <div class="card-body">
+                    <div class="card-icon"><i class="fas fa-paw"></i></div>
+                    <h3 data-key="title_6">6. Tanzania Wildlife Safaris</h3>
+                    <p data-key="desc_6">Fly-in safaris departing directly from Zanzibar to Tanzania's world-famous national parks including flights, luxury lodges, and 4x4 game drives.</p>
+                </div>
+            </div>
+
+            <!-- Card 7 -->
+            <div class="service-card">
+                <div class="card-img-placeholder">
+                    <!-- <img src="picha_yako_7.jpg" alt="City Tour" class="service-img"> -->
+                    <i class="fas fa-image"></i> [ Weka Picha Yako Hapa ]
+                </div>
+                <div class="card-body">
+                    <div class="card-icon"><i class="fas fa-city"></i></div>
+                    <h3 data-key="title_7">7. Authentic City Tour</h3>
+                    <p data-key="desc_7">Explore local culture, street food markets, historical architecture, and experience daily life with expert local guides.</p>
+                </div>
+            </div>
+
+            <!-- Card 8 -->
+            <div class="service-card">
+                <div class="card-img-placeholder">
+                    <!-- <img src="picha_yako_8.jpg" alt="Romantic Dinners" class="service-img"> -->
+                    <i class="fas fa-image"></i> [ Weka Picha Yako Hapa ]
+                </div>
+                <div class="card-body">
+                    <div class="card-icon"><i class="fas fa-wine-glass-alt"></i></div>
+                    <h3 data-key="title_8">8. Romantic Dinners & Honeymoon Packages</h3>
+                    <p data-key="desc_8">Candlelit beachfront dinners, sunset dhow dinner cruises, live music, fresh seafood menus, and exclusive romantic setups.</p>
+                </div>
+            </div>
+
+            <!-- Card 9 -->
+            <div class="service-card" id="water-sports">
+                <div class="card-img-placeholder">
+                    <!-- <img src="picha_yako_9.jpg" alt="Jet Ski & Water Sports" class="service-img"> -->
+                    <i class="fas fa-image"></i> [ Weka Picha Yako Hapa ]
+                </div>
+                <div class="card-body">
+                    <div class="card-icon"><i class="fas fa-water"></i></div>
+                    <h3 data-key="title_9">9. Jet Ski, Jet Car & Drone Kayak</h3>
+                    <p data-key="desc_9">High-speed luxury marine Jet Cars and Jet Skis, alongside transparent clear kayaks paired with aerial drone video recording.</p>
+                </div>
+            </div>
+
+            <!-- Card 10 -->
+            <div class="service-card" id="secret-garden">
+                <div class="card-img-placeholder">
+                    <!-- <img src="picha_yako_10.jpg" alt="Secret Garden Oasis" class="service-img"> -->
+                    <i class="fas fa-image"></i> [ Weka Picha Yako Hapa ]
+                </div>
+                <div class="card-body">
+                    <div class="card-icon"><i class="fas fa-user-shield"></i></div>
+                    <h3 data-key="title_10">10. Secret Garden (The Private Oasis)</h3>
+                    <p data-key="desc_10">An ultra-private secluded sanctuary designed for high-profile guests seeking 100% discretion, private butler service, and total freedom.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vote Section -->
+    <section class="vote-section" id="vote-section">
+        <div class="vote-container">
+            <h2 data-key="vote_title">Vote Your Favorite UNP Experience</h2>
+            <p data-key="vote_desc">Help us serve you better! Rate your favorite activity below:</p>
+            
+            <form id="voteForm">
+                <div class="form-group">
+                    <label data-key="vote_select_label">Choose Experience:</label>
+                    <select id="voteExperience" required>
+                        <option value="Zanzibar Tours">Zanzibar Excursions & Historic Tours</option>
+                        <option value="Water Sports & Jet Car">Water Sports & Jet Car</option>
+                        <option value="Handmade Banana Leaf Art">Handmade Banana Leaf Artwork</option>
+                        <option value="Tanzania Safaris">Tanzania Wildlife Safaris</option>
+                        <option value="Secret Garden">Secret Garden Sanctuary</option>
+                    </select>
+                </div>
+
+                <div class="star-rating">
+                    <i class="fas fa-star star" data-value="1"></i>
+                    <i class="fas fa-star star" data-value="2"></i>
+                    <i class="fas fa-star star" data-value="3"></i>
+                    <i class="fas fa-star star" data-value="4"></i>
+                    <i class="fas fa-star star" data-value="5"></i>
+                </div>
+                
+                <button type="submit" class="btn-primary" data-key="btn_vote">Submit Rating</button>
+            </form>
+            <div id="voteResult" class="vote-result"></div>
+        </div>
+    </section>
+
+    <!-- VIP Section -->
+    <section class="vip-section" id="vip">
+        <div class="vip-container">
+            <h2>UNP VIP LUXURY EXPERIENCE</h2>
+            <p>Enjoy maximum discretion, private flight bookings, personal butler service, and custom luxury tours designed for high-net-worth clients.</p>
+            <a href="#book-online" class="btn-primary">Reserve VIP Concierge</a>
+        </div>
+    </section>
+
+    <!-- Online Booking Form -->
+    <section class="booking-section" id="book-online">
+        <h2 class="form-header" data-key="form_title">Book Online Form</h2>
+        <form id="whatsappBookingForm">
+            <div class="form-group">
+                <label data-key="label_name">Full Name:</label>
+                <input type="text" id="custName" placeholder="Enter your full name" required>
+            </div>
+            <div class="form-group">
+                <label data-key="label_service">Select Experience / Package:</label>
+                <select id="custService">
+                    <option value="Zanzibar Historic Tour">Zanzibar Excursions & Historic Tours</option>
+                    <option value="Jozani Forest Discovery">Jozani Natural Forest</option>
+                    <option value="Vehicle & Gear Rental">Equipment & Vehicle Rentals</option>
+                    <option value="Luxury Transfers">Luxury Transfers & Chauffeur</option>
+                    <option value="Handmade Banana Leaf Artwork">Handmade Banana Leaf Artwork & Boutique</option>
+                    <option value="Tanzania Safari">Tanzania Wildlife Safaris</option>
+                    <option value="Authentic City Tour">Authentic City Tour</option>
+                    <option value="Romantic Dinner">Romantic Dinners & Honeymoon</option>
+                    <option value="Water Sports & Jet Car">Jet Ski, Jet Car & Kayak</option>
+                    <option value="Secret Garden VIP">Secret Garden (Private Oasis)</option>
+                    <option value="Full VIP Custom Package">Full VIP Custom Package</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label data-key="label_date">Preferred Date:</label>
+                <input type="date" id="custDate" required>
+            </div>
+            <div class="form-group">
+                <label data-key="label_notes">Special Requests or Notes:</label>
+                <textarea id="custNotes" rows="4" placeholder="Any specific requirements..."></textarea>
+            </div>
+            <button type="submit" class="btn-primary btn-full" data-key="btn_submit">Submit Booking via WhatsApp</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-content">
+            <div>
+                <h3>UNIQUE NATURE PARADISE (UNP)</h3>
+                <p data-key="footer_desc" class="footer-p">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p>
+            </div>
+            <div>
+                <h4 data-key="footer_contact">Direct Contact</h4>
+                <p class="contact-item"><i class="fab fa-whatsapp"></i> Phone: +255 655 728 982</p>
+                <p class="contact-item"><i class="fas fa-envelope"></i> Email: salimnasoro11@gmail.com</p>
+                <div class="social-links">
+                    <a href="https://instagram.com/unpsoulvoyoge" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/255655728982" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/255655728982?text=Hello!%20I%20want%20to%20book%20a%20VIP%20experience%20with%20UNP." class="floating-whatsapp" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="languages.js"></script>
+    <script src="vote.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

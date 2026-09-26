@@ -1,0 +1,428 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Top Bar */
+.top-bar {
+    background-color: #032b1a;
+    color: #fff;
+    padding: 10px 5%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.lang-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.lang-container i {
+    color: #d4af37;
+}
+
+.lang-select {
+    background: #064e3b;
+    color: #fff;
+    border: 1px solid #d4af37;
+    padding: 5px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Header & Logo Area */
+.header {
+    background-color: #064e3b;
+    padding: 15px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Sehemu ya Logo Placeholder */
+.logo-placeholder {
+    width: 60px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px dashed #d4af37;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d4af37;
+    font-size: 11px;
+    font-weight: bold;
+    text-align: center;
+    padding: 2px;
+    overflow: hidden;
+}
+
+.logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.logo-text h2 {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 1.1;
+}
+
+.logo-text span {
+    color: #d4af37;
+    font-size: 0.82rem;
+    display: block;
+    font-weight: 400;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 18px;
+}
+
+.nav-links a {
+    color: #fff;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #d4af37;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #d4af37;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* HERO SECTION - Rangi safi ya Kijani na Gold (Bila picha ya background) */
+.hero {
+    background: linear-gradient(135deg, #032b1a 0%, #064e3b 100%);
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+
+    /* UKITAKA KUWEKA PICHA YAKO YA COVER BAADAYE:
+       Badilisha background ya juu uweke hii:
+       background: linear-gradient(rgba(3, 43, 26, 0.85), rgba(3, 43, 26, 0.85)), url('cover_yako.jpg');
+       background-size: cover;
+       background-position: center;
+    */
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    color: #d4af37;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    font-size: 1.1rem;
+    color: #e2e8f0;
+}
+
+.btn-primary {
+    background-color: #d4af37;
+    color: #032b1a;
+    padding: 14px 32px;
+    border: none;
+    border-radius: 25px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary:hover {
+    background-color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+}
+
+.btn-full {
+    width: 100%;
+}
+
+/* Services Grid & Placeholders */
+.section-title {
+    text-align: center;
+    margin: 40px 0 20px 0;
+    color: #064e3b;
+    font-size: 2rem;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 20px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border-top: 4px solid #064e3b;
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Placeholders ya Picha za Ndani */
+.card-img-placeholder {
+    width: 100%;
+    height: 200px;
+    background-color: #e2e8f0;
+    border-bottom: 2px dashed #cbd5e1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 600;
+    overflow: hidden;
+}
+
+.service-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-icon {
+    font-size: 24px;
+    color: #d4af37;
+    margin-bottom: 10px;
+}
+
+.service-card h3 {
+    color: #064e3b;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+/* Vote Section */
+.vote-section {
+    background-color: #e6f0fa;
+    padding: 50px 5%;
+    margin: 40px 0;
+}
+
+.vote-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.vote-container h2 {
+    color: #064e3b;
+    margin-bottom: 10px;
+}
+
+.star-rating {
+    margin: 20px 0;
+    font-size: 28px;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.star-rating .star.active {
+    color: #d4af37;
+}
+
+.vote-result {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #064e3b;
+}
+
+/* VIP Section */
+.vip-section {
+    background-color: #032b1a;
+    color: #fff;
+    padding: 60px 5%;
+    margin: 50px 0;
+    text-align: center;
+}
+
+.vip-container {
+    max-width: 800px;
+    margin: 0 auto;
+    border: 2px solid #d4af37;
+    padding: 40px;
+    border-radius: 15px;
+}
+
+.vip-container h2 {
+    color: #d4af37;
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+/* Booking Form */
+.booking-section {
+    max-width: 700px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.form-header {
+    color: #064e3b;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+/* Floating WhatsApp */
+.floating-whatsapp {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25d366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+}
+
+/* Footer */
+.footer {
+    background-color: #032b1a;
+    color: #fff;
+    padding: 40px 5% 20px 5%;
+    margin-top: 50px;
+    border-top: 3px solid #d4af37;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-p {
+    max-width: 300px;
+    margin-top: 10px;
+}
+
+.contact-item {
+    margin-top: 5px;
+}
+
+.social-links {
+    margin-top: 15px;
+}
+
+.social-links a {
+    font-size: 22px;
+    margin-right: 15px;
+    color: #d4af37;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #064e3b;
+        padding: 15px 0;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .nav-container {
+        flex-wrap: wrap;
+    }
+}
