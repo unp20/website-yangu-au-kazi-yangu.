@@ -8,7 +8,6 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
 <style>
-    /* CSS ya ziada kwa ajili ya nyota (Vote) */
     .star-rating {
         display: flex;
         gap: 5px;
@@ -108,7 +107,7 @@
 
 <header class="header">
 <div class="nav-container">
-<a href="#" class="logo-area">
+<a href="index.html" class="logo-area">
 <div class="logo-holder">
 <img src="logo.png" alt="UNP Tours Logo" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=logo-fallback>UNP<br>LOGO</span>';">
 </div>
@@ -119,20 +118,15 @@
 </a>
 <button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
 <ul class="nav-links" id="navLinks">
-<li><a href="#excursions" id="navExcursions">Excursions</a></li>
-<li><a href="#water-sports" id="navWater">Water Sports</a></li>
-<li><a href="#safari" id="navSafari">Safaris</a></li>
-<li><a href="#boutique" id="navArt">Boutique</a></li>
-<li><a href="#secret-garden" id="navGarden">Secret Garden</a></li>
-<li><a href="#about-section" id="navAbout">About</a></li>
-<li><a href="#gallery-section" id="navGallery">Gallery</a></li>
-<li><a href="#vote-section" id="navVote">Vote</a></li>
-<li><a href="#vip-section" id="navVip">VIP</a></li>
-<li><a href="#booking-section" id="navBook">Book</a></li>
-<li><a href="#contact" id="navContact">Contact</a></li>
-<!-- VIUNGO VIPYA VYA AUTHENTICATION -->
-<li><a href="login.html" id="navLogin">Ingia</a></li>
-<li><a href="signup.html" id="navSignup">Jiunge</a></li>
+<li><a href="index.html">Nyumbani</a></li>
+<li><a href="about.html">Kuhusu Sisi</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="pricing.html">Bei</a></li>
+<li><a href="testimonials.html">Maoni</a></li>
+<li><a href="contact.html">Wasiliana</a></li>
+<li><a href="profile.html">Wasifu</a></li>
+<li><a href="login.html" id="navLogin" style="color: #c5a059; font-weight: bold;">Ingia</a></li>
+<li><a href="signup.html" id="navSignup" style="background: #c5a059; color: #1a3c34; padding: 8px 15px; border-radius: 5px;">Jiunge</a></li>
 </ul>
 </div>
 </header>
@@ -347,7 +341,7 @@
   const analytics = getAnalytics(app);
   const db = getFirestore(app);
 
-  // --- VOTE SYSTEM LOGIC ---
+  // VOTE SYSTEM LOGIC
   const stars = document.querySelectorAll('.star-rating .fa-star');
   const ratingInput = document.getElementById('selectedRating');
   const voteForm = document.getElementById('voteForm');
@@ -372,4 +366,14 @@
     if (rating === "0") {
         voteMessage.textContent = "Tafadhali chagua nyota kwanza!";
         voteMessage.className = "alert-message alert-error";
-        retu
+        return;
+    }
+
+    try {
+        await addDoc(collection(db, "votes"), {
+            experience: experience,
+            rating: parseInt(rating),
+            timestamp: new Date()
+        });
+        voteMessage.textContent = "Asante kwa kura yako!";
+        voteMessage.className = "alert-message alert
