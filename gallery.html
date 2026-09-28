@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery | UNP Tours</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<style>
+    .page-header {
+        text-align: center;
+        padding: 120px 20px 40px;
+        background: linear-gradient(135deg, #1a3c34, #2c5e4f);
+        color: white;
+    }
+    .page-header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+    .page-header p {
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 40px 20px;
+    }
+    .filter-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 30px;
+    }
+    .filter-btn {
+        padding: 10px 20px;
+        border: 2px solid #1a3c34;
+        background: white;
+        color: #1a3c34;
+        border-radius: 25px;
+        cursor: pointer;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: all 0.3s;
+    }
+    .filter-btn:hover, .filter-btn.active {
+        background: #1a3c34;
+        color: white;
+    }
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+    }
+    .gallery-card {
+        position: relative;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        cursor: pointer;
+        transition: transform 0.3s;
+        height: 250px;
+    }
+    .gallery-card:hover {
+        transform: scale(1.03);
+    }
+    .gallery-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+    .gallery-card .overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(transparent, rgba(0,0,0,0.8));
+        color: white;
+        padding: 20px;
+        transform: translateY(100%);
+        transition: transform 0.3s;
+    }
+    .gallery-card:hover .overlay {
+        transform: translateY(0);
+    }
+    .gallery-card .overlay h3 {
+        margin-bottom: 5px;
+        font-size: 1.1rem;
+    }
+    .gallery-card .overlay p {
+        font-size: 0.85rem;
+        opacity: 0.9;
+    }
+    .img-placeholder {
+        width: 100%;
+        height: 100%;
+        background: #eee;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #888;
+        font-size: 0.9rem;
+    }
+    /* Modal ya Kuangalia Picha */
+    .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.9);
+        z-index: 2000;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    .modal.active {
+        display: flex;
+    }
+    .modal img {
+        max-width: 100%;
+        max-height: 90%;
+        border-radius: 10px;
+    }
+    .modal-close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+        background: rgba(0,0,0,0.5);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+</head>
+<body>
+
+<header class="header" style="position: fixed; top: 0; width: 100%; z-index: 1000;">
+<div class="nav-container">
+<a href="index.html" class="logo-area">
+<div class="logo-text">
+<h2>UNP TOURS</h2>
+<span>Unique & Natural Paradise</span>
+</div>
+</a>
+</div>
+</header>
+
+<div class="page-header">
+    <h1>Gallery Yetu</h1>
+    <p>Picha za kuvutia kutoka safari zetu Zanzibar na Tanzania.</p>
+</div>
+
+<div class="container">
+
+    <!-- Vitufe vya Kuchuja -->
+    <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">Zote</button>
+        <button class="filter-btn" data-filter="zanzibar">Zanzibar</button>
+        <button class="filter-btn" data-filter="safari">Safari</button>
+        <button class="filter-btn" data-filter="beach">Pwani</button>
+        <button class="filter-btn" data-filter="culture">Utamaduni</button>
+    </div>
+
+    <!-- Grid ya Picha -->
+    <div class="gallery-grid" id="galleryGrid">
+        <p style="text-align: center; color: #888; grid-column: 1/-1;">Inapakia picha...</p>
+    </div>
+
+</div>
+
+<!-- Modal ya Kuangalia Picha -->
+<div class="modal" id="imageModal">
+    <div class="modal-close" id="modalClose">&times;</div>
+    <img src="" alt="Picha" id="modalImage">
+</div>
+
+<script>
+    // Orodha ya picha zako (unaweza kuongeza nyingine)
+    const images = [
+        { src: "zanzibar-tours.jpg", title: "Zanzibar Excursions", desc: "Safari ya kihistoria Zanzibar", category: "zanzibar" },
+        { src: "jozani-forest.jpg.jpg", title: "Jozani Forest", desc: "Misitu ya Jozani na nyani", category: "safari" },
+        { src: "tanzania-safari.jpg", title: "Tanzania Safari", desc: "Safari ya wanyama pori", category: "safari" },
+        { src: "romantic-dinner.jpg.jpg", title: "Romantic Dinner", desc: "Chakula cha jioni cha kimapenzi", category: "beach" },
+        { src: "secret-garden.jpg", title: "Secret Garden", desc: "Bustani ya siri", category: "culture" },
+        { src: "city-tour.jpg", title: "City Tour", desc: "Ziara ya jiji la Stone Town", category: "culture" },
+        { src: "handmade-art.jpg", title: "Handmade Art", desc: "Sanaa za mikono", category: "culture" },
+        { src: "luxury-transfers.jpg", title: "Luxury Transfers", desc: "Usafiri wa kifahari", category: "zanzibar" },
+        { src: "jet-ski-water.jpg", title: "Jet Ski", desc: "Michezo ya majini", category: "beach" },
+        { src: "vip-image.jpg", title: "VIP Experience", desc: "Uzoefu wa kifahari", category: "zanzibar" },
+        { src: "hero-cover.jpg", title: "Zanzibar Beach", desc: "Pwani nzuri ya Zanzibar", category: "beach" },
+        { src: "about-image.jpg", title: "UNP Tours", desc: "Kuhusu UNP Tours", category: "zanzibar" }
+    ];
+
+    const galleryGrid = document.getElementById('galleryGrid');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalClose = document.getElementById('modalClose');
+
+    function renderGallery(filter) {
+        galleryGrid.innerHTML = '';
+        const filtered = filter === 'all' ? images : images.filter(img => img.category === filter);
+
+        if (filtered.length === 0) {
+            galleryGrid.innerHTML = '<p style="text-align: center; color: #888; grid-column: 1/-1;">Hakuna picha kwenye kundi hili.</p>';
+            return;
+        }
+
+        filtered.forEach(img => {
+            const card = document.createElement('div');
+            card.className = 'gallery-card';
+            card.innerHTML = `
+                <img src="${img.src}" alt="${img.title}" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\\'img-placeholder\\'>${img.title}</div>';">
+                <div class="overlay">
+                    <h3>${img.title}</h3>
+                    <p>${img.desc}</p>
+                </div>
+            `;
+            card.addEventListener('click', () => {
+                modalImage.src = img.src;
+                modal.classList.add('active');
+            });
+            galleryGrid.appendChild(card);
+        });
+    }
+
+    // Kuchuja
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            renderGallery(btn.getAttribute('data-filter'));
+        });
+    });
+
+    // Funga modal
+    modalClose.addEventListener('click', () => {
+        modal.classList.remove('active');
+    });
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) modal.classList.remove('active');
+    });
+
+    // Onyesha picha zote mwanzoni
+    renderGallery('all');
+</script>
+
+</body>
+  </html>
