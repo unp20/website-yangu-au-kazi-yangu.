@@ -1,332 +1,286 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sw">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wasifu Wangu | UNP Tours</title>
+<title>Wasifu Wangu | UNP TOURS Zanzibar</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
 <style>
+    /* CSS ya ziada kwa ajili ya Profile Page */
     .profile-header {
+        background: linear-gradient(135deg, var(--dark-green) 0%, var(--royal-green) 100%);
+        padding: 50px 20px;
         text-align: center;
-        padding: 120px 20px 30px;
-        background: linear-gradient(135deg, #1a3c34, #2c5e4f);
-        color: white;
+        color: #fff;
+        border-bottom: 5px solid var(--royal-gold);
     }
     .profile-avatar {
         width: 100px;
         height: 100px;
+        background: var(--royal-gold);
+        color: var(--dark-green);
         border-radius: 50%;
-        background: #c5a059;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 0 auto 15px;
         font-size: 2.5rem;
-        color: #1a3c34;
         font-weight: 700;
-        border: 4px solid white;
+        margin: 0 auto 15px auto;
+        border: 4px solid #fff;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     }
-    .profile-header h1 {
-        font-size: 2rem;
+    .profile-header h2 {
+        font-size: 1.6rem;
         margin-bottom: 5px;
     }
     .profile-header p {
-        font-size: 1rem;
-        opacity: 0.9;
+        font-size: 0.9rem;
+        color: #ddd;
     }
-    .container {
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 30px 20px;
+    .profile-tabs {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+        flex-wrap: wrap;
     }
-    .profile-card {
-        background: white;
-        padding: 25px;
-        border-radius: 15px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        margin-bottom: 25px;
+    .profile-tabs button {
+        background: rgba(255,255,255,0.1);
+        color: #fff;
+        border: 1px solid var(--royal-gold);
+        padding: 8px 20px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        transition: 0.3s;
     }
-    .profile-card h2 {
-        color: #1a3c34;
-        margin-bottom: 15px;
-        border-bottom: 2px solid #c5a059;
-        padding-bottom: 8px;
+    .profile-tabs button.active, .profile-tabs button:hover {
+        background: var(--royal-gold);
+        color: var(--dark-green);
+        font-weight: 600;
     }
-    .info-row {
+    .tab-content {
+        display: none;
+    }
+    .tab-content.active {
+        display: block;
+    }
+    .booking-item {
         display: flex;
         justify-content: space-between;
-        padding: 10px 0;
+        align-items: center;
+        padding: 15px;
         border-bottom: 1px solid #eee;
+        flex-wrap: wrap;
+        gap: 10px;
     }
-    .info-row:last-child {
+    .booking-item:last-child {
         border-bottom: none;
     }
-    .info-row span:first-child {
-        font-weight: 600;
-        color: #555;
-    }
-    .info-row span:last-child {
-        color: #1a3c34;
-    }
-    .btn-logout {
-        display: block;
-        width: 100%;
-        padding: 14px;
-        background: #d9534f;
-        color: white;
-        border: none;
-        border-radius: 8px;
+    .booking-info h4 {
+        margin: 0 0 5px 0;
+        color: var(--dark-green);
         font-size: 1rem;
+    }
+    .booking-info span {
+        font-size: 0.85rem;
+        color: #777;
+        display: block;
+    }
+    .booking-status {
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.8rem;
         font-weight: 600;
-        cursor: pointer;
-        font-family: 'Poppins', sans-serif;
-        margin-top: 20px;
     }
-    .btn-logout:hover {
-        background: #c9302c;
+    .status-confirmed {
+        background: #d4edda;
+        color: #155724;
     }
-    .history-item {
-        background: #f9f9f9;
-        padding: 15px;
-        border-radius: 8px;
-        margin-bottom: 10px;
-        border-left: 4px solid #c5a059;
-    }
-    .history-item p {
-        margin: 3px 0;
-        font-size: 0.9rem;
-    }
-    .history-item .label {
-        font-weight: 600;
-        color: #555;
-    }
-    .empty-text {
-        text-align: center;
-        color: #888;
-        font-style: italic;
-        padding: 20px;
-    }
-    .auth-guard {
-        text-align: center;
-        padding: 150px 20px;
-    }
-    .auth-guard h2 {
-        color: #1a3c34;
-        margin-bottom: 15px;
-    }
-    .auth-guard a {
-        color: #c5a059;
-        font-weight: 600;
-        text-decoration: none;
+    .status-pending {
+        background: #fff3cd;
+        color: #856404;
     }
 </style>
 </head>
 <body>
 
-<header class="header" style="position: fixed; top: 0; width: 100%; z-index: 1000;">
+<!-- TOP BAR & HEADER -->
+<div class="top-bar">
+<div class="lang-container">
+<i class="fas fa-globe"></i>
+<select class="lang-select">
+<option value="sw">Kiswahili</option>
+<option value="en">English</option>
+</select>
+</div>
+</div>
+
+<header class="header">
 <div class="nav-container">
 <a href="index.html" class="logo-area">
+<div class="logo-holder">
+<img src="logo.png" alt="UNP Tours Logo" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=logo-fallback>UNP<br>LOGO</span>';">
+</div>
 <div class="logo-text">
 <h2>UNP TOURS</h2>
 <span>Unique & Natural Paradise</span>
 </div>
 </a>
+<button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
+<ul class="nav-links" id="navLinks">
+<li><a href="index.html">Nyumbani</a></li>
+<li><a href="about.html">Kuhusu Sisi</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="pricing.html">Bei</a></li>
+<li><a href="testimonials.html">Maoni</a></li>
+<li><a href="contact.html">Wasiliana</a></li>
+<li><a href="profile.html" style="color: var(--royal-gold);">Wasifu</a></li>
+<li><a href="login.html" style="color: var(--royal-gold); font-weight: bold;">Ingia</a></li>
+<li><a href="signup.html" style="background: var(--royal-gold); color: var(--dark-green); padding: 8px 15px; border-radius: 5px;">Jiunge</a></li>
+</ul>
 </div>
 </header>
 
-<!-- Sehemu ya Kuzuia (Kama hajaingia) -->
-<div id="authGuard" class="auth-guard" style="display: none;">
-    <h2><i class="fas fa-lock"></i> Unahitaji Kuingia</h2>
-    <p>Tafadhali <a href="login.html">ingia hapa</a> ili kuona wasifu wako.</p>
-</div>
+<!-- PROFILE HEADER -->
+<section class="profile-header">
+    <div class="profile-avatar" id="avatarInitials">AM</div>
+    <h2 id="profileName">Amina Mohamed</h2>
+    <p id="profileEmail"><i class="fas fa-envelope"></i> amina@example.com</p>
+    <p style="margin-top: 5px;"><i class="fas fa-phone"></i> +255 655 000 000</p>
+    <div class="profile-tabs">
+        <button class="active" onclick="showTab('bookings')"><i class="fas fa-calendar-check"></i> Safari Zangu</button>
+        <button onclick="showTab('settings')"><i class="fas fa-cog"></i> Mipangilio</button>
+        <button onclick="logout()" style="background: #dc3545; border-color: #dc3545;"><i class="fas fa-sign-out-alt"></i> Toka</button>
+    </div>
+</section>
 
-<!-- Sehemu ya Wasifu (Kama ameingia) -->
-<div id="profileContent" style="display: none;">
-
-    <div class="profile-header">
-        <div class="profile-avatar" id="avatarInitial">U</div>
-        <h1 id="userName">Jina la Mteja</h1>
-        <p id="userEmail">barua@pepe.com</p>
+<!-- TAB: BOOKINGS -->
+<section class="interactive-box tab-content active" id="tab-bookings">
+    <h2><i class="fas fa-suitcase-rolling"></i> Historia ya Safari Zangu</h2>
+    
+    <div class="booking-item">
+        <div class="booking-info">
+            <h4>Zanzibar City Tour & Safari Blue</h4>
+            <span><i class="fas fa-calendar"></i> 15 Oktoba 2026 | Watu 2</span>
+        </div>
+        <span class="booking-status status-confirmed">Imethibitishwa</span>
     </div>
 
-    <div class="container">
-
-        <!-- Taarifa Binafsi -->
-        <div class="profile-card">
-            <h2><i class="fas fa-user"></i> Taarifa Zangu</h2>
-            <div class="info-row">
-                <span>Jina Kamili:</span>
-                <span id="infoName">-</span>
-            </div>
-            <div class="info-row">
-                <span>Barua Pepe:</span>
-                <span id="infoEmail">-</span>
-            </div>
-            <div class="info-row">
-                <span>Aliyejiunga:</span>
-                <span id="infoJoined">-</span>
-            </div>
-            <div class="info-row">
-                <span>Aina ya Akaunti:</span>
-                <span>Mteja</span>
-            </div>
-            <button class="btn-logout" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Toka (Logout)</button>
+    <div class="booking-item">
+        <div class="booking-info">
+            <h4>VIP Luxury Experience (Secret Garden)</h4>
+            <span><i class="fas fa-calendar"></i> 20 Novemba 2026 | Watu 4</span>
         </div>
-
-        <!-- Historia ya Booking -->
-        <div class="profile-card">
-            <h2><i class="fas fa-calendar-check"></i> Historia ya Maombi Yangu</h2>
-            <div id="bookingHistory">
-                <p class="empty-text">Hakuna maombi bado.</p>
-            </div>
-        </div>
-
-        <!-- Kura Zangu -->
-        <div class="profile-card">
-            <h2><i class="fas fa-star"></i> Kura Zangu (Votes)</h2>
-            <div id="voteHistory">
-                <p class="empty-text">Hakuna kura bado.</p>
-            </div>
-        </div>
-
+        <span class="booking-status status-pending">Inasubiri</span>
     </div>
 
+    <div class="booking-item">
+        <div class="booking-info">
+            <h4>Jozani Forest & Red Monkeys</h4>
+            <span><i class="fas fa-calendar"></i> 05 Septemba 2025 | Watu 2</span>
+        </div>
+        <span class="booking-status status-confirmed">Imekamilika</span>
+    </div>
+
+    <div style="text-align: center; margin-top: 25px;">
+        <a href="booking.html" class="btn-primary"><i class="fas fa-plus"></i> Weka Nafasi Mpya</a>
+    </div>
+</section>
+
+<!-- TAB: SETTINGS -->
+<section class="interactive-box tab-content" id="tab-settings">
+    <h2><i class="fas fa-user-edit"></i> Badilisha Taarifa Zangu</h2>
+    <form id="settingsForm">
+        <div class="form-group">
+            <label>Jina Lako Kamili:</label>
+            <input type="text" id="editName" value="Amina Mohamed" required>
+        </div>
+        <div class="form-group">
+            <label>Barua Pepe:</label>
+            <input type="email" id="editEmail" value="amina@example.com" required>
+        </div>
+        <div class="form-group">
+            <label>Namba ya Simu:</label>
+            <input type="tel" id="editPhone" value="+255 655 000 000" required>
+        </div>
+        <div class="form-group">
+            <label>Neno la Siri Jipya (Acha wazi kama hutaki kubadilisha):</label>
+            <input type="password" id="editPassword" placeholder="Weka neno la siri jipya">
+        </div>
+        <button type="submit" class="btn-primary btn-full">Hifadhi Mabadiliko</button>
+    </form>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" id="contact">
+<div class="footer-content">
+<div>
+<h3>UNIQUE NATURE PARADISE (UNP)</h3>
+<p style="font-size: 0.9rem; max-width: 350px;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p>
 </div>
+<div>
+<h4>Direct Contact</h4>
+<p style="font-size: 0.9rem; margin-top: 8px;"><i class="fab fa-whatsapp" style="color: var(--royal-gold);"></i> Phone: +255 655 728 982</p>
+<p style="font-size: 0.9rem; margin-top: 5px;"><i class="fas fa-envelope" style="color: var(--royal-gold);"></i> Email: salimnasoro11@gmail.com</p>
+<div class="social-links">
+<a href="https://wa.me/255655728982" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<a href="mailto:salimnasoro11@gmail.com"><i class="fas fa-envelope"></i></a>
+<a href="https://www.tiktok.com/@unptours" target="_blank"><i class="fab fa-tiktok"></i></a>
+<a href="https://www.instagram.com/unpsoulvoyoge" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://www.facebook.com/profile.php?id=61595094232501" target="_blank"><i class="fab fa-facebook"></i></a>
+</div>
+</div>
+</div>
+</footer>
 
-<!-- Firebase SDK -->
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-analytics.js";
-  import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
-  import { getFirestore, collection, query, where, getDocs, orderBy } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+<a href="https://wa.me/255655728982?text=Hello!%20I%20want%20to%20book%20a%20VIP%20experience." class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
-  const firebaseConfig = {
-    apiKey: "AIzaSyD2YtPFL2L_ZwAKdSYpXtvLt8gJUm2IX6s",
-    authDomain: "unptours.firebaseapp.com",
-    projectId: "unptours",
-    storageBucket: "unptours.firebasestorage.app",
-    messagingSenderId: "233326851661",
-    appId: "1:233326851661:web:354156110a5cee29904e04",
-    measurementId: "G-5QJ1X38ZLC"
-  };
-
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-  const auth = getAuth(app);
-  const db = getFirestore(app);
-
-  const authGuard = document.getElementById('authGuard');
-  const profileContent = document.getElementById('profileContent');
-
-  onAuthStateChanged(auth, async (user) => {
-    if (user) {
-        // Mteja ameingia
-        authGuard.style.display = 'none';
-        profileContent.style.display = 'block';
-
-        // Weka taarifa za msingi
-        const displayName = user.displayName || "Mteja";
-        document.getElementById('userName').textContent = displayName;
-        document.getElementById('userEmail').textContent = user.email;
-        document.getElementById('avatarInitial').textContent = displayName.charAt(0).toUpperCase();
-        document.getElementById('infoName').textContent = displayName;
-        document.getElementById('infoEmail').textContent = user.email;
-        
-        // Tarehe ya kujiunga
-        if (user.metadata && user.metadata.creationTime) {
-            const date = new Date(user.metadata.creationTime);
-            document.getElementById('infoJoined').textContent = date.toLocaleDateString('sw-TZ', { year: 'numeric', month: 'long', day: 'numeric' });
-        }
-
-        // Pakia historia ya booking
-        loadBookingHistory(user.uid, user.email);
-        
-        // Pakia historia ya kura
-        loadVoteHistory(user.email);
-
-    } else {
-        // Mteja hajaingia
-        authGuard.style.display = 'block';
-        profileContent.style.display = 'none';
-    }
-  });
-
-  async function loadBookingHistory(uid, email) {
-    const historyBox = document.getElementById('bookingHistory');
-    try {
-        const q = query(collection(db, "bookings"), where("contact", "==", email), orderBy("timestamp", "desc"));
-        const querySnapshot = await getDocs(q);
-        
-        if (querySnapshot.empty) {
-            historyBox.innerHTML = '<p class="empty-text">Hakuna maombi bado.</p>';
-            return;
-        }
-
-        historyBox.innerHTML = '';
-        querySnapshot.forEach((doc) => {
-            const data = doc.data();
-            const div = document.createElement('div');
-            div.className = 'history-item';
-            div.innerHTML = `
-                <p><span class="label">Huduma:</span> ${data.service}</p>
-                <p><span class="label">Tarehe:</span> ${data.date}</p>
-                <p><span class="label">Wageni:</span> ${data.guests}</p>
-                <p><span class="label">Hali:</span> Inasubiri uthibitisho</p>
-            `;
-            historyBox.appendChild(div);
-        });
-    } catch (error) {
-        console.error("Error loading bookings: ", error);
-        historyBox.innerHTML = '<p class="empty-text">Kuna tatizo la kupakia historia.</p>';
-    }
+<script>
+  // MENU TOGGLE
+  const menuToggleBtn = document.getElementById('menuToggleBtn');
+  const navLinks = document.getElementById('navLinks');
+  
+  if(menuToggleBtn) {
+      menuToggleBtn.addEventListener('click', () => {
+          navLinks.classList.toggle('active');
+      });
   }
 
-  async function loadVoteHistory(email) {
-    const voteBox = document.getElementById('voteHistory');
-    try {
-        // Kura hazihifadhi barua pepe kwa sasa, kwa hivyo tunapakia kura zote
-        const q = query(collection(db, "votes"), orderBy("timestamp", "desc"));
-        const querySnapshot = await getDocs(q);
-        
-        if (querySnapshot.empty) {
-            voteBox.innerHTML = '<p class="empty-text">Hakuna kura bado.</p>';
-            return;
-        }
+  // TAB SWITCHING LOGIC
+  function showTab(tabName) {
+      // Ficha tabs zote
+      document.querySelectorAll('.tab-content').forEach(tab => {
+          tab.classList.remove('active');
+      });
+      // Ondoa active kwenye vitufe vyote
+      document.querySelectorAll('.profile-tabs button').forEach(btn => {
+          btn.classList.remove('active');
+      });
 
-        voteBox.innerHTML = '';
-        let count = 0;
-        querySnapshot.forEach((doc) => {
-            if (count >= 5) return; // Onyesha 5 tu
-            const data = doc.data();
-            const div = document.createElement('div');
-            div.className = 'history-item';
-            div.innerHTML = `
-                <p><span class="label">Huduma:</span> ${data.experience}</p>
-                <p><span class="label">Nyota:</span> ${"⭐".repeat(data.rating)}</p>
-            `;
-            voteBox.appendChild(div);
-            count++;
-        });
-    } catch (error) {
-        console.error("Error loading votes: ", error);
-        voteBox.innerHTML = '<p class="empty-text">Kuna tatizo la kupakia kura.</p>';
-    }
+      // Onyesha tab iliyochaguliwa
+      document.getElementById('tab-' + tabName).classList.add('active');
+      
+      // Weka active kwenye kitufe kilichobonyezwa
+      event.target.classList.add('active');
   }
 
-  // Kitufe cha kutoka
-  document.getElementById('logoutBtn').addEventListener('click', async () => {
-    try {
-        await signOut(auth);
-        window.location.href = "index.html";
-    } catch (error) {
-        console.error("Error signing out: ", error);
-        alert("Kuna tatizo la kutoka. Jaribu tena.");
-    }
+  // SETTINGS FORM LOGIC
+  const settingsForm = document.getElementById('settingsForm');
+  settingsForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert("Taarifa zako zimehifadhiwa kwa mafanikio (Demo)!");
   });
 
+  // LOGOUT LOGIC
+  function logout() {
+      if(confirm("Una uhakika unataka kutoka?")) {
+          window.location.href = "index.html";
+      }
+  }
 </script>
 
 </body>
-  </html>
+    </html>
