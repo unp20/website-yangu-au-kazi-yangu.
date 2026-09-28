@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maoni ya Wateja | UNP Tours</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<style>
+    .page-header {
+        text-align: center;
+        padding: 120px 20px 40px;
+        background: linear-gradient(135deg, #1a3c34, #2c5e4f);
+        color: white;
+    }
+    .page-header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+    .page-header p {
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 40px 20px;
+    }
+    .testimonial-form-box {
+        background: #f9f9f9;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        margin-bottom: 40px;
+    }
+    .testimonial-form-box h2 {
+        color: #1a3c34;
+        margin-bottom: 20px;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
+    .form-group input, .form-group textarea, .form-group select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-family: 'Poppins', sans-serif;
+        box-sizing: border-box;
+    }
+    .btn-submit {
+        background: #1a3c34;
+        color: white;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        font-family: 'Poppins', sans-serif;
+    }
+    .btn-submit:hover {
+        background: #c5a059;
+        color: #1a3c34;
+    }
+    .testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+    }
+    .testimonial-card {
+        background: white;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        border-left: 5px solid #c5a059;
+    }
+    .testimonial-card .quote {
+        font-style: italic;
+        color: #555;
+        margin-bottom: 15px;
+    }
+    .testimonial-card .author {
+        font-weight: 700;
+        color: #1a3c34;
+    }
+    .testimonial-card .stars {
+        color: #ffc107;
+        margin-bottom: 10px;
+    }
+    .alert-box {
+        padding: 12px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        text-align: center;
+        display: none;
+    }
+    .alert-success {
+        background-color: #d4edda;
+        color: #155724;
+        display: block;
+    }
+    .alert-error {
+        background-color: #f8d7da;
+        color: #721c24;
+        display: block;
+    }
+</style>
+</head>
+<body>
+
+<header class="header" style="position: fixed; top: 0; width: 100%; z-index: 1000;">
+<div class="nav-container">
+<a href="index.html" class="logo-area">
+<div class="logo-text">
+<h2>UNP TOURS</h2>
+<span>Unique & Natural Paradise</span>
+</div>
+</a>
+</div>
+</header>
+
+<div class="page-header">
+    <h1>Maoni ya Wateja Wetu</h1>
+    <p>Wateja wetu wanasema nini kuhusu Unptours. Karibu uongeze maoni yako!</p>
+</div>
+
+<div class="container">
+
+    <!-- Fomu ya kuweka maoni -->
+    <div class="testimonial-form-box">
+        <h2><i class="fas fa-pen"></i> Acha Maoni Yako</h2>
+        <div id="messageBox" class="alert-box"></div>
+        <form id="testimonialForm">
+            <div class="form-group">
+                <label for="name">Jina Lako</label>
+                <input type="text" id="name" placeholder="Andika jina lako" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Barua Pepe (Email)</label>
+                <input type="email" id="email" placeholder="mfano@barua.com" required>
+            </div>
+            <div class="form-group">
+                <label for="rating">Kiwango (Nyota)</label>
+                <select id="rating" required>
+                    <option value="5">⭐⭐⭐⭐⭐ (5 - Bora Sana)</option>
+                    <option value="4">⭐⭐⭐⭐ (4 - Nzuri)</option>
+                    <option value="3">⭐⭐⭐ (3 - Wastani)</option>
+                    <option value="2">⭐⭐ (2 - Chini)</option>
+                    <option value="1">⭐ (1 - Mbaya)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">Maoni Yako</label>
+                <textarea id="message" rows="4" placeholder="Andika maoni yako kuhusu huduma zetu..." required></textarea>
+            </div>
+            <button type="submit" class="btn-submit" id="submitBtn">Tuma Maoni</button>
+        </form>
+    </div>
+
+    <!-- Orodha ya maoni -->
+    <h2 style="color: #1a3c34; margin-bottom: 20px;"><i class="fas fa-comments"></i> Maoni Yote</h2>
+    <div id="testimonialsGrid" class="testimonials-grid">
+        <p>Inapakia maoni...</p>
+    </div>
+
+</div>
+
+<!-- Firebase SDK -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-analytics.js";
+  import { getFirestore, collection, addDoc, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyD2YtPFL2L_ZwAKdSYpXtvLt8gJUm2IX6s",
+    authDomain: "unptours.firebaseapp.com",
+    projectId: "unptours",
+    storageBucket: "unptours.firebasestorage.app",
+    messagingSenderId: "233326851661",
+    appId: "1:233326851661:web:354156110a5cee29904e04",
+    measurementId: "G-5QJ1X38ZLC"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const db = getFirestore(app);
+
+  const testimonialForm = document.getElementById('testimonialForm');
+  const messageBox = document.getElementById('messageBox');
+  const submitBtn = document.getElementById('submitBtn');
+  const testimonialsGrid = document.getElementById('testimonialsGrid');
+
+  // Kazi ya kupakia maoni
+  async function loadTestimonials() {
+    testimonialsGrid.innerHTML = "<p>Inapakia maoni...</p>";
+    try {
+        const q = query(collection(db, "testimonials"), orderBy("timestamp", "desc"));
+        const querySnapshot = await getDocs(q);
+        
+        if (querySnapshot.empty) {
+            testimonialsGrid.innerHTML = "<p>Hakuna maoni bado. Kuwa wa kwanza kuacha maoni!</p>";
+            return;
+        }
+
+        testimonialsGrid.innerHTML = "";
+        querySnapshot.forEach((doc) => {
+            const data = doc.data();
+            const stars = "⭐".repeat(data.rating || 5);
+            const card = document.createElement('div');
+            card.className = 'testimonial-card';
+            card.innerHTML = `
+                <div class="stars">${stars}</div>
+                <p class="quote">"${data.message}"</p>
+                <p class="author">- ${data.name}</p>
+            `;
+            testimonialsGrid.appendChild(card);
+        });
+    } catch (error) {
+        console.error("Error loading testimonials: ", error);
+        testimonialsGrid.innerHTML = "<p>Kuna tatizo la kupakia maoni. Tafadhali jaribu tena.</p>";
+    }
+  }
+
+  // Kazi ya kutuma maoni
+  testimonialForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const rating = document.getElementById('rating').value;
+    const message = document.getElementById('message').value;
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Inatuma...";
+
+    try {
+        await addDoc(collection(db, "testimonials"), {
+            name: name,
+            email: email,
+            rating: parseInt(rating),
+            message: message,
+            timestamp: new Date()
+        });
+        
+        messageBox.textContent = "Asante! Maoni yako yamepokelewa.";
+        messageBox.className = "alert-box alert-success";
+        testimonialForm.reset();
+        
+        // Pakia maoni mapya
+        setTimeout(loadTestimonials, 1500);
+    } catch (error) {
+        console.error("Error adding testimonial: ", error);
+        messageBox.textContent = "Kuna tatizo. Tafadhali jaribu tena.";
+        messageBox.className = "alert-box alert-error";
+    } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Tuma Maoni";
+    }
+  });
+
+  // Pakia maoni wakati ukurasa unafunguka
+  loadTestimonials();
+
+</script>
+
+</body>
+  </html>
