@@ -225,7 +225,26 @@
 
 <a href="https://wa.me/255655728982?text=Hello!%20I%20want%20to%20book%20a%20VIP%20experience." class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
-<script>
+<!-- FIREBASE SDK & SIGNUP LOGIC -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+  import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+  import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyD2YtPFL2L_ZwAKdSYpXtvLt8gJUm2IX6s",
+    authDomain: "unptours.firebaseapp.com",
+    projectId: "unptours",
+    storageBucket: "unptours.firebasestorage.app",
+    messagingSenderId: "233326851661",
+    appId: "1:233326851661:web:354156110a5cee29904e04",
+    measurementId: "G-5QJ1X38ZLC"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const db = getFirestore(app);
+
   // MENU TOGGLE
   const menuToggleBtn = document.getElementById('menuToggleBtn');
   const navLinks = document.getElementById('navLinks');
@@ -238,7 +257,7 @@
 
   // SIGNUP FORM LOGIC
   const signupForm = document.getElementById('signupForm');
-  signupForm.addEventListener('submit', (e) => {
+  signupForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const name = document.getElementById('signupName').value;
       const email = document.getElementById('signupEmail').value;
@@ -251,11 +270,31 @@
           return;
       }
 
-      // Hapa unaweza kuunganisha na Firebase Authentication baadaye
-      alert("Hongera " + name + "! Akaunti yako imetengenezwa kwa mafanikio (Demo).");
-      
-      // Elekeza mtumiaji kwenye ukurasa wa kuingia
-      window.location.href = "login.html";
+      try {
+          // Tengeneza mtumiaji kwenye Firebase Auth
+          const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+          const user = userCredential.user;
+
+          // Hifadhi taarifa za mtumiaji kwenye Firestore
+          await setDoc(doc(db, "users", user.uid), {
+              name: name,
+              email: email,
+              phone: phone,
+              createdAt: new Date()
+          });
+
+          alert("Hongera " + name + "! Akaunti yako imetengenezwa kwa mafanikio.");
+          window.location.href = "login.html";
+      } catch (error) {
+          console.error("Error: ", error);
+          if (error.code === 'auth/email-already-in-use') {
+              alert("Barua pepe hii imekwisha tumika. Tafadhali tumia nyingine au ingia.");
+          } else if (error.code === 'auth/weak-password') {
+              alert("Neno la siri ni dhaifu. Tumia herufi 6 au zaidi.");
+          } else {
+              alert("Kuna hitilafu imetokea: " + error.message);
+          }
+      }
   });
 </script>
 
