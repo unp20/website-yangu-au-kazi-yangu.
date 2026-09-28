@@ -1,298 +1,258 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sw">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bei Zetu | UNP Tours</title>
+<title>Bei Zetu | UNP TOURS Zanzibar</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
 <style>
-    .page-header {
-        text-align: center;
-        padding: 120px 20px 40px;
-        background: linear-gradient(135deg, #1a3c34, #2c5e4f);
-        color: white;
-    }
-    .page-header h1 {
-        font-size: 2.5rem;
-        margin-bottom: 10px;
-    }
-    .page-header p {
-        font-size: 1.1rem;
-        max-width: 600px;
-        margin: 0 auto;
-    }
-    .container {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 40px 20px;
-    }
+    /* CSS ya ziada kwa ajili ya Pricing Table */
     .pricing-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 25px;
-        margin-bottom: 50px;
+        max-width: 1200px;
+        margin: 30px auto;
+        padding: 0 20px;
     }
-    .pricing-card {
-        background: white;
+    .price-card {
+        background: #fff;
         border-radius: 15px;
-        overflow: hidden;
         box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-        transition: transform 0.3s, box-shadow 0.3s;
-        border-top: 5px solid #c5a059;
+        overflow: hidden;
+        border: 1px solid #eee;
+        transition: transform 0.3s ease;
         display: flex;
         flex-direction: column;
     }
-    .pricing-card:hover {
+    .price-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     }
-    .pricing-card .card-header {
+    .price-header {
+        background: var(--royal-green);
+        color: #fff;
         padding: 25px;
         text-align: center;
-        background: #f9f9f9;
-        border-bottom: 1px solid #eee;
     }
-    .pricing-card .card-header i {
+    .price-header.vip {
+        background: var(--dark-green);
+        border-bottom: 4px solid var(--royal-gold);
+    }
+    .price-header i {
         font-size: 2.5rem;
-        color: #c5a059;
+        color: var(--royal-gold);
         margin-bottom: 10px;
     }
-    .pricing-card .card-header h3 {
-        color: #1a3c34;
-        font-size: 1.2rem;
-        margin-bottom: 5px;
+    .price-header h3 {
+        font-size: 1.3rem;
+        margin: 0;
     }
-    .pricing-card .price {
-        font-size: 2rem;
-        font-weight: 700;
-        color: #1a3c34;
-        margin: 10px 0;
-    }
-    .pricing-card .price span {
-        font-size: 0.9rem;
-        font-weight: 400;
-        color: #888;
-    }
-    .pricing-card .card-body {
+    .price-body {
         padding: 25px;
-        flex: 1;
+        flex-grow: 1;
         display: flex;
         flex-direction: column;
     }
-    .pricing-card .card-body ul {
+    .price-tag {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--dark-green);
+        margin-bottom: 20px;
+    }
+    .price-tag span {
+        font-size: 0.9rem;
+        font-weight: 400;
+        color: #777;
+    }
+    .price-features {
         list-style: none;
         padding: 0;
-        margin: 0 0 20px 0;
-        flex: 1;
+        margin: 0 0 25px 0;
+        flex-grow: 1;
     }
-    .pricing-card .card-body ul li {
+    .price-features li {
         padding: 8px 0;
-        color: #555;
+        border-bottom: 1px dashed #eee;
         font-size: 0.9rem;
+        color: #555;
         display: flex;
         align-items: center;
         gap: 10px;
     }
-    .pricing-card .card-body ul li i {
-        color: #c5a059;
-        width: 20px;
+    .price-features li i {
+        color: var(--royal-gold);
+        font-size: 0.8rem;
     }
-    .btn-book {
-        display: block;
+    .price-card .btn-primary {
+        width: 100%;
         text-align: center;
+        border-radius: 8px;
         padding: 12px;
-        background: #1a3c34;
-        color: white;
-        text-decoration: none;
-        border-radius: 8px;
-        font-weight: 600;
-        transition: background 0.3s;
-        margin-top: auto;
-    }
-    .btn-book:hover {
-        background: #c5a059;
-        color: #1a3c34;
-    }
-    .featured {
-        border-top-color: #e74c3c;
-        transform: scale(1.03);
-    }
-    .featured .card-header {
-        background: #1a3c34;
-    }
-    .featured .card-header h3, .featured .card-header i {
-        color: #c5a059;
-    }
-    .badge-featured {
-        display: inline-block;
-        background: #e74c3c;
-        color: white;
-        padding: 3px 12px;
-        border-radius: 20px;
-        font-size: 0.7rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        margin-bottom: 10px;
-    }
-    .note-box {
-        background: #fff8e1;
-        border-left: 4px solid #c5a059;
-        padding: 20px;
-        border-radius: 8px;
-        margin-top: 30px;
-    }
-    .note-box p {
-        margin: 0;
-        color: #666;
-        font-size: 0.9rem;
     }
 </style>
 </head>
 <body>
 
-<header class="header" style="position: fixed; top: 0; width: 100%; z-index: 1000;">
+<!-- TOP BAR & HEADER -->
+<div class="top-bar">
+<div class="lang-container">
+<i class="fas fa-globe"></i>
+<select class="lang-select">
+<option value="sw">Kiswahili</option>
+<option value="en">English</option>
+</select>
+</div>
+</div>
+
+<header class="header">
 <div class="nav-container">
 <a href="index.html" class="logo-area">
+<div class="logo-holder">
+<img src="logo.png" alt="UNP Tours Logo" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=logo-fallback>UNP<br>LOGO</span>';">
+</div>
 <div class="logo-text">
 <h2>UNP TOURS</h2>
 <span>Unique & Natural Paradise</span>
 </div>
 </a>
+<button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
+<ul class="nav-links" id="navLinks">
+<li><a href="index.html">Nyumbani</a></li>
+<li><a href="about.html">Kuhusu Sisi</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="pricing.html" style="color: var(--royal-gold);">Bei</a></li>
+<li><a href="testimonials.html">Maoni</a></li>
+<li><a href="contact.html">Wasiliana</a></li>
+<li><a href="profile.html">Wasifu</a></li>
+<li><a href="login.html" style="color: var(--royal-gold); font-weight: bold;">Ingia</a></li>
+<li><a href="signup.html" style="background: var(--royal-gold); color: var(--dark-green); padding: 8px 15px; border-radius: 5px;">Jiunge</a></li>
+</ul>
 </div>
 </header>
 
-<div class="page-header">
-    <h1>Bei Zetu</h1>
-    <p>Chagua huduma inayokufaa. Bei zetu ni wazi na za ushindani.</p>
+<!-- HERO SECTION KWA PRICING -->
+<section class="hero" style="padding: 70px 20px;">
+<h1 style="font-size: 2rem;">Bei Zetu</h1>
+<p>Chagua kifurushi kinachokufaa. Tunatoa bei nafuu na za kifahari kwa kila mteja.</p>
+</section>
+
+<!-- PRICING GRID -->
+<section class="pricing-grid">
+
+    <!-- Kifurushi 1: Basic -->
+    <div class="price-card">
+        <div class="price-header">
+            <i class="fas fa-map-marked-alt"></i>
+            <h3>Basic Tour</h3>
+        </div>
+        <div class="price-body">
+            <div class="price-tag">$50 <span>/ mtu</span></div>
+            <ul class="price-features">
+                <li><i class="fas fa-check"></i> Zanzibar City Tour</li>
+                <li><i class="fas fa-check"></i> Safari Blue (Nusu siku)</li>
+                <li><i class="fas fa-check"></i> Guide wa Kiswahili/English</li>
+                <li><i class="fas fa-check"></i> Maji ya kunywa</li>
+                <li><i class="fas fa-check"></i> Usafiri wa kawaida</li>
+            </ul>
+            <a href="booking.html?package=Basic%20Tour" class="btn-primary">Weka Nafasi</a>
+        </div>
+    </div>
+
+    <!-- Kifurushi 2: Standard (Maarufu) -->
+    <div class="price-card" style="border: 2px solid var(--royal-gold);">
+        <div class="price-header" style="background: var(--royal-gold); color: var(--dark-green);">
+            <i class="fas fa-star" style="color: var(--dark-green);"></i>
+            <h3>Standard Tour</h3>
+            <p style="font-size: 0.8rem; margin-top: 5px; font-weight: 600;">MAARUFU ZAIDI</p>
+        </div>
+        <div class="price-body">
+            <div class="price-tag">$120 <span>/ mtu</span></div>
+            <ul class="price-features">
+                <li><i class="fas fa-check"></i> Jozani Forest & Red Monkeys</li>
+                <li><i class="fas fa-check"></i> Prison Island (Kobe)</li>
+                <li><i class="fas fa-check"></i> Stone Town Historical Tour</li>
+                <li><i class="fas fa-check"></i> Chakula cha mchana</li>
+                <li><i class="fas fa-check"></i> Usafiri wa A/C</li>
+                <li><i class="fas fa-check"></i> Picha za kumbukumbu</li>
+            </ul>
+            <a href="booking.html?package=Standard%20Tour" class="btn-primary">Weka Nafasi</a>
+        </div>
+    </div>
+
+    <!-- Kifurushi 3: VIP Luxury -->
+    <div class="price-card">
+        <div class="price-header vip">
+            <i class="fas fa-crown"></i>
+            <h3>VIP Luxury Experience</h3>
+        </div>
+        <div class="price-body">
+            <div class="price-tag">$500+ <span>/ mtu</span></div>
+            <ul class="price-features">
+                <li><i class="fas fa-check"></i> Safari za ndege za kibinafsi</li>
+                <li><i class="fas fa-check"></i> Secret Garden (Private Oasis)</li>
+                <li><i class="fas fa-check"></i> Butler wa kibinafsi 24/7</li>
+                <li><i class="fas fa-check"></i> Jet Ski, Jet Car & Drone Kayak</li>
+                <li><i class="fas fa-check"></i> Sunset Romantic Dinner</li>
+                <li><i class="fas fa-check"></i> 100% Discretion & Privacy</li>
+            </ul>
+            <a href="booking.html?package=VIP%20Luxury" class="btn-primary" style="background: var(--dark-green); color: var(--royal-gold);">Wasiliana Nasi</a>
+        </div>
+    </div>
+
+</section>
+
+<!-- SECTION YA ZIADA: Huduma za Mtu Binafsi -->
+<section class="interactive-box">
+    <h2><i class="fas fa-concierge-bell"></i> Huduma Nyingine za Ziada</h2>
+    <p>Kando na vifurushi hapo juu, tunatoa huduma zifuatazo kwa bei maalum:</p>
+    <ul class="price-features" style="margin-top: 15px;">
+        <li><i class="fas fa-check"></i> <strong>Kukodisha Gari:</strong> Kuanzia $40 kwa siku (bila mafuta)</li>
+        <li><i class="fas fa-check"></i> <strong>Kukodisha Pikipiki (Scooter):</strong> Kuanzia $20 kwa siku</li>
+        <li><i class="fas fa-check"></i> <strong>Vifaa vya Snorkeling:</strong> $10 kwa siku</li>
+        <li><i class="fas fa-check"></i> <strong>Picha za Drone:</strong> Kuanzia $50 kwa saa</li>
+        <li><i class="fas fa-check"></i> <strong>Usafiri wa Uwanja wa Ndege:</strong> Kuanzia $15</li>
+    </ul>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" id="contact">
+<div class="footer-content">
+<div>
+<h3>UNIQUE NATURE PARADISE (UNP)</h3>
+<p style="font-size: 0.9rem; max-width: 350px;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p>
 </div>
-
-<div class="container">
-
-    <div class="pricing-grid">
-
-        <!-- Kifurushi cha Kwanza -->
-        <div class="pricing-card">
-            <div class="card-header">
-                <i class="fas fa-archway"></i>
-                <h3>Zanzibar Excursions</h3>
-                <div class="price">$45 <span>/ mtu</span></div>
-            </div>
-            <div class="card-body">
-                <ul>
-                    <li><i class="fas fa-check"></i> Ziara ya Stone Town</li>
-                    <li><i class="fas fa-check"></i> Kisiwa cha Prison (Prison Island)</li>
-                    <li><i class="fas fa-check"></i> Safari Blue</li>
-                    <li><i class="fas fa-check"></i> Mwongozo wa kitaalamu</li>
-                    <li><i class="fas fa-check"></i> Chakula cha mchana</li>
-                </ul>
-                <a href="index.html#booking-section" class="btn-book">Book Sasa</a>
-            </div>
-        </div>
-
-        <!-- Kifurushi cha Pili (Featured) -->
-        <div class="pricing-card featured">
-            <div class="card-header">
-                <span class="badge-featured">Inayopendekezwa</span>
-                <i class="fas fa-paw"></i>
-                <h3>Tanzania Safari</h3>
-                <div class="price">$250 <span>/ mtu</span></div>
-            </div>
-            <div class="card-body">
-                <ul>
-                    <li><i class="fas fa-check"></i> Safari ya siku 2</li>
-                    <li><i class="fas fa-check"></i> Hifadhi za Taifa (Serengeti/Ngorongoro)</li>
-                    <li><i class="fas fa-check"></i> Malazi ya kifahari</li>
-                    <li><i class="fas fa-check"></i> Chakula kikamilifu</li>
-                    <li><i class="fas fa-check"></i> Usafiri wa ndege</li>
-                    <li><i class="fas fa-check"></i> Mwongozo binafsi</li>
-                </ul>
-                <a href="index.html#booking-section" class="btn-book">Book Safari</a>
-            </div>
-        </div>
-
-        <!-- Kifurushi cha Tatu -->
-        <div class="pricing-card">
-            <div class="card-header">
-                <i class="fas fa-crown"></i>
-                <h3>VIP Luxury Experience</h3>
-                <div class="price">$850 <span>/ mtu</span></div>
-            </div>
-            <div class="card-body">
-                <ul>
-                    <li><i class="fas fa-check"></i> Faragha ya 100%</li>
-                    <li><i class="fas fa-check"></i> Butler binafsi</li>
-                    <li><i class="fas fa-check"></i> Usafiri wa ndege wa kibinafsi</li>
-                    <li><i class="fas fa-check"></i> Chakula cha kifahari</li>
-                    <li><i class="fas fa-check"></i> Ziara ya kibinafsi</li>
-                    <li><i class="fas fa-check"></i> Secret Garden access</li>
-                </ul>
-                <a href="index.html#booking-section" class="btn-book">Reserve VIP</a>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- Vifurushi vingine -->
-    <h2 style="text-align: center; color: #1a3c34; margin-bottom: 25px;"><i class="fas fa-list" style="color: #c5a059;"></i> Huduma Nyingine</h2>
-    
-    <div class="pricing-grid">
-        <div class="pricing-card">
-            <div class="card-header">
-                <i class="fas fa-car"></i>
-                <h3>Vehicle Rental</h3>
-                <div class="price">$30 <span>/ siku</span></div>
-            </div>
-            <div class="card-body">
-                <ul>
-                    <li><i class="fas fa-check"></i> Gari lenye A/C</li>
-                    <li><i class="fas fa-check"></i> Dereva wa kitaalamu</li>
-                    <li><i class="fas fa-check"></i> Mafuta yamejumuishwa</li>
-                </ul>
-                <a href="index.html#booking-section" class="btn-book">Book Gari</a>
-            </div>
-        </div>
-
-        <div class="pricing-card">
-            <div class="card-header">
-                <i class="fas fa-water"></i>
-                <h3>Water Sports</h3>
-                <div class="price">$50 <span>/ mtu</span></div>
-            </div>
-            <div class="card-body">
-                <ul>
-                    <li><i class="fas fa-check"></i> Jet Ski</li>
-                    <li><i class="fas fa-check"></i> Jet Car</li>
-                    <li><i class="fas fa-check"></i> Drone Kayak</li>
-                </ul>
-                <a href="index.html#booking-section" class="btn-book">Book Sasa</a>
-            </div>
-        </div>
-
-        <div class="pricing-card">
-            <div class="card-header">
-                <i class="fas fa-utensils"></i>
-                <h3>Romantic Dinner</h3>
-                <div class="price">$120 <span>/ wanandoa</span></div>
-            </div>
-            <div class="card-body">
-                <ul>
-                    <li><i class="fas fa-check"></i> Chakula cha jioni cha pwani</li>
-                    <li><i class="fas fa-check"></i> Muziki wa moja kwa moja</li>
-                    <li><i class="fas fa-check"></i> Mapambo ya kimapenzi</li>
-                </ul>
-                <a href="index.html#booking-section" class="btn-book">Book Dinner</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Kumbuka -->
-    <div class="note-box">
-        <p><i class="fas fa-info-circle" style="color: #c5a059;"></i> <strong>Kumbuka:</strong> Bei hizi ni za kuanzia na zinaweza kubadilika kulingana na msimu, ukubwa wa kikundi, na mahitaji yako binafsi. Wasiliana nasi kwa bei maalum.</p>
-    </div>
-
+<div>
+<h4>Direct Contact</h4>
+<p style="font-size: 0.9rem; margin-top: 8px;"><i class="fab fa-whatsapp" style="color: var(--royal-gold);"></i> Phone: +255 655 728 982</p>
+<p style="font-size: 0.9rem; margin-top: 5px;"><i class="fas fa-envelope" style="color: var(--royal-gold);"></i> Email: salimnasoro11@gmail.com</p>
+<div class="social-links">
+<a href="https://wa.me/255655728982" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<a href="mailto:salimnasoro11@gmail.com"><i class="fas fa-envelope"></i></a>
+<a href="https://www.tiktok.com/@unptours" target="_blank"><i class="fab fa-tiktok"></i></a>
+<a href="https://www.instagram.com/unpsoulvoyoge" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://www.facebook.com/profile.php?id=61595094232501" target="_blank"><i class="fab fa-facebook"></i></a>
 </div>
+</div>
+</div>
+</footer>
+
+<a href="https://wa.me/255655728982?text=Hello!%20I%20want%20to%20book%20a%20VIP%20experience." class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+  // MENU TOGGLE
+  const menuToggleBtn = document.getElementById('menuToggleBtn');
+  const navLinks = document.getElementById('navLinks');
+  
+  if(menuToggleBtn) {
+      menuToggleBtn.addEventListener('click', () => {
+          navLinks.classList.toggle('active');
+      });
+  }
+</script>
 
 </body>
-  </html>
+    </html>
