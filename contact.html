@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wasiliana Nasi | UNP Tours</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<style>
+    .page-header {
+        text-align: center;
+        padding: 120px 20px 40px;
+        background: linear-gradient(135deg, #1a3c34, #2c5e4f);
+        color: white;
+    }
+    .page-header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+    .page-header p {
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 40px 20px;
+    }
+    .contact-wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+    }
+    .contact-info h2 {
+        color: #1a3c34;
+        margin-bottom: 15px;
+    }
+    .contact-info p {
+        color: #555;
+        line-height: 1.8;
+        margin-bottom: 25px;
+    }
+    .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 20px;
+        background: #f9f9f9;
+        padding: 15px;
+        border-radius: 10px;
+    }
+    .contact-item i {
+        font-size: 1.5rem;
+        color: #c5a059;
+        width: 40px;
+        text-align: center;
+    }
+    .contact-item div h4 {
+        color: #1a3c34;
+        margin-bottom: 3px;
+        font-size: 1rem;
+    }
+    .contact-item div a, .contact-item div p {
+        color: #666;
+        font-size: 0.9rem;
+        text-decoration: none;
+    }
+    .contact-item div a:hover {
+        color: #c5a059;
+    }
+    .contact-form-box {
+        background: #f9f9f9;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    .contact-form-box h2 {
+        color: #1a3c34;
+        margin-bottom: 20px;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        color: #333;
+    }
+    .form-group input, .form-group textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-family: 'Poppins', sans-serif;
+        box-sizing: border-box;
+    }
+    .form-group input:focus, .form-group textarea:focus {
+        outline: none;
+        border-color: #c5a059;
+    }
+    .btn-submit {
+        background: #1a3c34;
+        color: white;
+        padding: 14px 25px;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        font-family: 'Poppins', sans-serif;
+        width: 100%;
+        font-size: 1rem;
+    }
+    .btn-submit:hover {
+        background: #c5a059;
+        color: #1a3c34;
+    }
+    .alert-box {
+        padding: 12px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        text-align: center;
+        display: none;
+    }
+    .alert-success {
+        background-color: #d4edda;
+        color: #155724;
+        display: block;
+    }
+    .alert-error {
+        background-color: #f8d7da;
+        color: #721c24;
+        display: block;
+    }
+    .social-links-box {
+        margin-top: 25px;
+    }
+    .social-links-box h4 {
+        color: #1a3c34;
+        margin-bottom: 15px;
+    }
+    .social-links-box a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        background: #1a3c34;
+        color: white;
+        border-radius: 50%;
+        margin-right: 10px;
+        text-decoration: none;
+        font-size: 1.2rem;
+        transition: background 0.3s;
+    }
+    .social-links-box a:hover {
+        background: #c5a059;
+    }
+</style>
+</head>
+<body>
+
+<header class="header" style="position: fixed; top: 0; width: 100%; z-index: 1000;">
+<div class="nav-container">
+<a href="index.html" class="logo-area">
+<div class="logo-text">
+<h2>UNP TOURS</h2>
+<span>Unique & Natural Paradise</span>
+</div>
+</a>
+</div>
+</header>
+
+<div class="page-header">
+    <h1>Wasiliana Nasi</h1>
+    <p>Tuko tayari kukusaidia. Wasiliana nasi kwa njia yoyote ile.</p>
+</div>
+
+<div class="container">
+    <div class="contact-wrapper">
+
+        <!-- Sehemu ya Taarifa -->
+        <div class="contact-info">
+            <h2><i class="fas fa-address-book" style="color: #c5a059;"></i> Taarifa Zetu</h2>
+            <p>Karibu Unptours! Tuna furaha kukusikia. Wasiliana nasi kwa njia zifuatazo:</p>
+
+            <div class="contact-item">
+                <i class="fab fa-whatsapp"></i>
+                <div>
+                    <h4>WhatsApp</h4>
+                    <a href="https://wa.me/255655728982" target="_blank">+255 655 728 982</a>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <div>
+                    <h4>Simu</h4>
+                    <a href="tel:+255655728982">+255 655 728 982</a>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                    <h4>Barua Pepe</h4>
+                    <a href="mailto:salimnasoro11@gmail.com">salimnasoro11@gmail.com</a>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <h4>Mahali</h4>
+                    <p>Nungwi, Zanzibar, Tanzania</p>
+                </div>
+            </div>
+
+            <div class="social-links-box">
+                <h4>Mitandao ya Kijamii</h4>
+                <a href="https://www.facebook.com/profile.php?id=61595094232501" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/unpsoulvoyoge" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@unptours" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://wa.me/255655728982" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="mailto:salimnasoro11@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+
+        <!-- Sehemu ya Fomu -->
+        <div class="contact-form-box">
+            <h2><i class="fas fa-paper-plane" style="color: #c5a059;"></i> Tuma Ujumbe</h2>
+            <div id="messageBox" class="alert-box"></div>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Jina Lako</label>
+                    <input type="text" id="name" placeholder="Andika jina lako" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Barua Pepe</label>
+                    <input type="email" id="email" placeholder="mfano@barua.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Kichwa cha Ujumbe</label>
+                    <input type="text" id="subject" placeholder="Kuhusu nini?" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Ujumbe Wako</label>
+                    <textarea id="message" rows="5" placeholder="Andika ujumbe wako hapa..." required></textarea>
+                </div>
+                <button type="submit" class="btn-submit" id="submitBtn">Tuma Ujumbe</button>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<!-- Firebase SDK -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-analytics.js";
+  import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyD2YtPFL2L_ZwAKdSYpXtvLt8gJUm2IX6s",
+    authDomain: "unptours.firebaseapp.com",
+    projectId: "unptours",
+    storageBucket: "unptours.firebasestorage.app",
+    messagingSenderId: "233326851661",
+    appId: "1:233326851661:web:354156110a5cee29904e04",
+    measurementId: "G-5QJ1X38ZLC"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const db = getFirestore(app);
+
+  const contactForm = document.getElementById('contactForm');
+  const messageBox = document.getElementById('messageBox');
+  const submitBtn = document.getElementById('submitBtn');
+
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value;
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Inatuma...";
+
+    try {
+        await addDoc(collection(db, "messages"), {
+            name: name,
+            email: email,
+            subject: subject,
+            message: message,
+            timestamp: new Date()
+        });
+
+        messageBox.textContent = "Asante! Ujumbe wako umepokelewa. Tutakujibu hivi karibuni.";
+        messageBox.className = "alert-box alert-success";
+        contactForm.reset();
+    } catch (error) {
+        console.error("Error sending message: ", error);
+        messageBox.textContent = "Kuna tatizo. Tafadhali jaribu tena au wasiliana nasi kwa WhatsApp.";
+        messageBox.className = "alert-box alert-error";
+    } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Tuma Ujumbe";
+    }
+  });
+</script>
+
+</body>
+  </html>
