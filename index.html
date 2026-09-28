@@ -6,7 +6,6 @@
 <title>UNP TOURS | Unique & Natural Paradise Zanzibar</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<!-- Hapa tunaunganisha faili la style.css -->
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -273,4 +272,89 @@
         </div>
 
     </div>
-</section
+</section>
+<!-- MWISHO WA SEHEMU YA MUZIKI -->
+
+<section class="interactive-box" id="about-section">
+<h2 id="aboutHeading"><i class="fas fa-info-circle"></i> About UNP Tours</h2>
+<p id="aboutDesc">Unique & Natural Paradise (UNP) is a premier luxury tour operator based in Zanzibar, Tanzania.</p>
+<div class="about-image-holder">
+<img src="about-image.jpg" alt="About UNP Tours" class="about-image" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=img-fallback>about-image.jpg</div>';">
+</div>
+<div class="about-content">
+<p id="aboutText1">Founded with a passion for showcasing the very best of Zanzibar and Tanzania, UNP Tours offers a curated collection of exclusive experiences.</p>
+<p id="aboutText2">Our team of local experts is dedicated to providing personalized service, ensuring every journey is tailored to your desires.</p>
+</div>
+</section>
+
+<section class="interactive-box" id="gallery-section">
+<h2 id="galleryHeading"><i class="fas fa-images"></i> Our Gallery</h2>
+<p id="galleryDesc">Explore the beauty of Zanzibar & Tanzania through our lens.</p>
+<div class="gallery-grid">
+<div class="gallery-item"><img src="gallery1.jpg" alt="Gallery 1" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=img-fallback>gallery1.jpg</div>';"></div>
+<div class="gallery-item"><img src="gallery2.jpg" alt="Gallery 2" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=img-fallback>gallery2.jpg</div>';"></div>
+<div class="gallery-item"><img src="gallery3.jpg" alt="Gallery 3" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=img-fallback>gallery3.jpg</div>';"></div>
+<div class="gallery-item"><img src="gallery4.jpg" alt="Gallery 4" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=img-fallback>gallery4.jpg</div>';"></div>
+<div class="gallery-item"><img src="gallery5.jpg" alt="Gallery 5" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=img-fallback>gallery5.jpg</div>';"></div>
+<div class="gallery-item"><img src="gallery6.jpg" alt="Gallery 6" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=img-fallback>gallery6.jpg</div>';"></div>
+</div>
+</section>
+
+<section class="interactive-box" id="vote-section">
+<h2 id="voteHeading"><i class="fas fa-star"></i> Vote Your Favorite UNP Experience</h2>
+<p id="voteDesc">Help us serve you better! Rate your favorite activity below:</p>
+<form id="voteForm">
+<div class="form-group">
+<label id="lblSelectExp">Choose Experience:</label>
+<select id="voteExperience" required>
+<option value="1. Zanzibar Historic Tours">1. Zanzibar Historic Tours</option>
+<option value="2. Jozani Monkey Sanctuary">2. Jozani Monkey Sanctuary</option>
+<option value="3. Vehicle & Gear Rentals">3. Vehicle & Gear Rentals</option>
+<option value="4. Luxury VIP Transfers">4. Luxury VIP Transfers</option>
+<option value="5. Banana Leaf Artwork">5. Banana Leaf Artwork</option>
+<option value="6. Tanzania Safaris">6. Tanzania Safaris</option>
+<option value="7. Authentic City Tour">7. Authentic City Tour</option>
+<option value="8. Romantic Beach Dinner">8. Romantic Beach Dinner</option>
+<option value="9. Jet Ski & Jet Car">9. Jet Ski & Jet Car</option>
+<option value="10. Secret Garden Oasis">10. Secret Garden Oasis</option>
+</select>
+</div>
+<div class="form-group">
+<label id="lblRateStars">Rate Your Experience (1 to 5 Stars):</label>
+<div class="star-rating" id="starContainer">
+<i class="fas fa-star" data-value="1"></i>
+<i class="fas fa-star" data-value="2"></i>
+<i class="fas fa-star" data-value="3"></i>
+<i class="fas fa-star" data-value="4"></i>
+<i class="fas fa-star" data-value="5"></i>
+</div>
+<input type="hidden" id="selectedRating" value="0">
+</div>
+<button type="submit" class="btn-primary btn-full" id="btnVoteSubmit">Submit Rating</button>
+</form>
+<div id="voteMessage" class="alert-message"></div>
+</section>
+
+<section class="interactive-box" id="vip-section">
+<h2 id="vipHeading"><i class="fas fa-crown"></i> UNP VIP LUXURY EXPERIENCE</h2>
+<p id="vipDesc">Enjoy maximum discretion, private flight bookings, personal butler service, and custom luxury tours designed for high-net-worth clients.</p>
+<div class="vip-image-holder">
+<img src="vip-image.jpg" alt="VIP Luxury" class="vip-image" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=img-fallback>vip-image.jpg</div>';">
+</div>
+<div class="vip-features">
+<div class="vip-card-mini"><i class="fas fa-user-secret"></i><h4 id="vipF1">100% Discretion</h4><p id="vipF1Sub">Private check-ins & non-disclosure service.</p></div>
+<div class="vip-card-mini"><i class="fas fa-plane"></i><h4 id="vipF2">Private Flights</h4><p id="vipF2Sub">Chartered island transfers & safaris.</p></div>
+<div class="vip-card-mini"><i class="fas fa-concierge-bell"></i><h4 id="vipF3">Private Butler</h4><p id="vipF3Sub">24/7 dedicated personal concierge.</p></div>
+</div>
+<div style="text-align: center; margin-top: 20px;">
+<a href="#booking-section" class="btn-primary" id="btnVipReq"><i class="fas fa-gem"></i> Reserve VIP Concierge</a>
+</div>
+</section>
+
+<section class="interactive-box" id="booking-section">
+<h2 id="bookHeading"><i class="fas fa-calendar-check"></i> Book Online Form</h2>
+<p id="bookDesc">Book your tours, VIP concierge, or Secret Garden sanctuary instantly via WhatsApp:</p>
+<form id="bookingForm">
+<div class="form-group"><label id="lblGuestName">Full Name:</label><input type="text" id="guestName" placeholder="Enter your full name" required></div>
+<div class="form-group"><label id="lblGuestContact">Email Address / Phone Number:</label><input type="text" id="guestContact" placeholder="e.g. +255... or email@domain.com" required></div>
+<div class="form-group"><label i
