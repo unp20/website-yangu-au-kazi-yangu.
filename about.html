@@ -1,56 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sw">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kuhusu Sisi | UNP Tours</title>
+<title>Kuhusu Sisi | UNP TOURS Zanzibar</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
-<style>
-    .page-header {
-        text-align: center;
-        padding: 120px 20px 40px;
-        background: linear-gradient(135deg, #1a3c34, #2c5e4f);
-        color: white;
-    }
-    .page-header h1 { font-size: 2.5rem; margin-bottom: 10px; }
-    .page-header p { font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
-    .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
-    .about-section { display: flex; flex-wrap: wrap; gap: 30px; align-items: center; margin-bottom: 50px; }
-    .about-text { flex: 1; min-width: 300px; }
-    .about-text h2 { color: #1a3c34; margin-bottom: 15px; }
-    .about-text p { color: #555; line-height: 1.8; margin-bottom: 15px; }
-    .about-image { flex: 1; min-width: 300px; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-    .about-image img { width: 100%; height: auto; display: block; }
-    .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-top: 30px; }
-    .value-card { background: white; padding: 30px 25px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: center; border-top: 4px solid #c5a059; }
-    .value-card i { font-size: 2.5rem; color: #c5a059; margin-bottom: 15px; }
-    .value-card h3 { color: #1a3c34; margin-bottom: 10px; }
-    .value-card p { color: #666; font-size: 0.9rem; line-height: 1.6; }
-    .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 25px; margin-top: 30px; }
-    .team-card { text-align: center; background: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-    .team-avatar { width: 80px; height: 80px; border-radius: 50%; background: #1a3c34; color: #c5a059; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 2rem; font-weight: 700; }
-    .team-card h4 { color: #1a3c34; margin-bottom: 5px; }
-    .team-card p { color: #888; font-size: 0.85rem; }
-    .cta-box { text-align: center; background: linear-gradient(135deg, #1a3c34, #2c5e4f); color: white; padding: 50px 30px; border-radius: 15px; margin-top: 50px; }
-    .cta-box h2 { margin-bottom: 15px; }
-    .cta-box a { display: inline-block; margin-top: 20px; padding: 14px 30px; background: #c5a059; color: #1a3c34; text-decoration: none; border-radius: 8px; font-weight: 700; transition: background 0.3s; }
-    .cta-box a:hover { background: white; }
-</style>
 </head>
 <body>
 
+<!-- TOP BAR & HEADER (Zinabaki zile zile) -->
 <div class="top-bar">
 <div class="lang-container">
 <i class="fas fa-globe"></i>
-<select class="lang-select" id="languageSelector">
-<option value="en">English</option>
+<select class="lang-select">
 <option value="sw">Kiswahili</option>
-<option value="fr">Français</option>
-<option value="de">Deutsch</option>
-<option value="it">Italiano</option>
-<option value="es">Español</option>
+<option value="en">English</option>
 </select>
 </div>
 </div>
@@ -69,112 +35,71 @@
 <button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
 <ul class="nav-links" id="navLinks">
 <li><a href="index.html">Nyumbani</a></li>
-<li><a href="about.html">Kuhusu Sisi</a></li>
+<li><a href="about.html" style="color: var(--royal-gold);">Kuhusu Sisi</a></li>
 <li><a href="gallery.html">Gallery</a></li>
 <li><a href="pricing.html">Bei</a></li>
-<li><a href="blog.html">Blog</a></li>
-<li><a href="shop.html">Duka</a></li>
 <li><a href="testimonials.html">Maoni</a></li>
 <li><a href="contact.html">Wasiliana</a></li>
 <li><a href="profile.html">Wasifu</a></li>
-<li><a href="login.html" style="color: #c5a059; font-weight: bold;">Ingia</a></li>
-<li><a href="signup.html" style="background: #c5a059; color: #1a3c34; padding: 8px 15px; border-radius: 5px;">Jiunge</a></li>
+<li><a href="login.html" style="color: var(--royal-gold); font-weight: bold;">Ingia</a></li>
+<li><a href="signup.html" style="background: var(--royal-gold); color: var(--dark-green); padding: 8px 15px; border-radius: 5px;">Jiunge</a></li>
 </ul>
 </div>
 </header>
 
-<div class="page-header">
-    <h1>Kuhusu UNP Tours</h1>
-    <p>Unique & Natural Paradise - Kampuni ya utalii ya kwanza Zanzibar inayotoa huduma za kipekee.</p>
+<!-- HERO SECTION KWA ABOUT -->
+<section class="hero" style="padding: 70px 20px;">
+<h1 style="font-size: 2rem;">Kuhusu UNP TOURS</h1>
+<p>Kujua zaidi kuhusu sisi, dhamira yetu, na kwa nini sisi ni chaguo lako bora la utalii Zanzibar na Tanzania.</p>
+</section>
+
+<!-- MAUDHUI YA ABOUT -->
+<section class="interactive-box" style="margin-top: 30px;">
+<h2><i class="fas fa-info-circle"></i> Sisi Ni Nani?</h2>
+<div class="about-image-holder">
+<img src="about-image.jpg" alt="About UNP Tours" class="about-image" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=img-fallback>Weka Picha Hapa: about-image.jpg</div>';">
 </div>
+<p style="margin-top: 15px;">Unique & Natural Paradise (UNP) ni kampuni ya utalii ya kifahari iliyopo Zanzibar, Tanzania. Tulianzishwa kwa lengo la kuonyesha uzuri wa kipekee wa Zanzibar na Tanzania kwa wageni kutoka duniani kote.</p>
+<p style="margin-top: 10px;">Tunatoa huduma mbalimbali za kifahari ikiwa ni pamoja na safari za kihistoria, matembezi ya pwani, safari za wanyama pori, na huduma za kipekee za VIP kwa wateja wenye hadhi ya juu.</p>
+</section>
 
-<div class="container">
+<section class="interactive-box">
+<h2><i class="fas fa-bullseye"></i> Dhamira Yetu (Our Mission)</h2>
+<p>Kutoa uzoefu wa kipekee na wa kukumbukwa kwa kila mgeni anayetembelea Zanzibar na Tanzania, kwa kuhakikisha huduma bora, usalama, na furaha ya hali ya juu.</p>
+</section>
 
-    <div class="about-section">
-        <div class="about-text">
-            <h2><i class="fas fa-leaf" style="color: #c5a059;"></i> Historia Yetu</h2>
-            <p>UNP Tours (Unique & Natural Paradise) ilianzishwa kwa lengo moja: kuonyesha uzuri wa Zanzibar na Tanzania kwa njia ya kipekee na ya kifahari.</p>
-            <p>Tulianza kama kampuni ndogo ya safari za Zanzibar, lakini kwa miaka, tumejikita katika kutoa uzoefu wa kipekee kwa wateja wetu. Kila safari tunayoandaa ni ya kipekee, ikilenga mahitaji yako binafsi.</p>
-            <p>Leo, tunajivunia kuwa moja ya kampuni zinazoongoza Zanzibar kwa kutoa huduma bora za utalii, kuanzia safari za kihistoria hadi uzoefu wa kifahari wa VIP.</p>
-        </div>
-        <div class="about-image">
-            <img src="about-image.jpg" alt="Kuhusu UNP Tours" onerror="this.parentElement.innerHTML='<div style=\'padding: 80px; text-align: center; background: #eee; color: #888;\'>Picha ya Kuhusu Sisi</div>';">
-        </div>
-    </div>
+<section class="interactive-box">
+<h2><i class="fas fa-eye"></i> Maono Yetu (Our Vision)</h2>
+<p>Kuwa kampuni inayoongoza kwa utalii wa kifahari Zanzibar na Tanzania, inayojulikana kwa ubora, uaminifu, na uzoefu wa kipekee kwa wateja wetu.</p>
+</section>
 
-    <div class="about-section">
-        <div class="about-image">
-            <img src="hero-cover.jpg" alt="Dhamira Yetu" onerror="this.parentElement.innerHTML='<div style=\'padding: 80px; text-align: center; background: #eee; color: #888;\'>Picha ya Dhamira</div>';">
-        </div>
-        <div class="about-text">
-            <h2><i class="fas fa-bullseye" style="color: #c5a059;"></i> Dhamira Yetu</h2>
-            <p>Dhamira yetu ni kuwapa wateja uzoefu wa kipekee wa Zanzibar na Tanzania, kwa kuhakikisha kila safari inakuwa ya kukumbukwa.</p>
-            <p>Tunajitahidi kutoa huduma bora kwa kila mteja, kwa kuzingatia mahitaji yao, na kuhakikisha usalama wao wakati wote.</p>
-            <h2 style="margin-top: 25px;"><i class="fas fa-eye" style="color: #c5a059;"></i> Maono Yetu</h2>
-            <p>Kuwa kampuni inayoongoza kwa utalii wa kifahari Afrika Mashariki, inayotambulika kimataifa kwa ubora na uaminifu.</p>
-        </div>
-    </div>
-
-    <h2 style="text-align: center; color: #1a3c34; margin-bottom: 10px;"><i class="fas fa-heart" style="color: #c5a059;"></i> Maadili Yetu</h2>
-    <p style="text-align: center; color: #666; max-width: 700px; margin: 0 auto 20px;">Tunafanya kazi kwa kuzingatia maadili haya:</p>
-    
-    <div class="values-grid">
-        <div class="value-card">
-            <i class="fas fa-handshake"></i>
-            <h3>Uaminifu</h3>
-            <p>Tunatoa huduma kwa uwazi na uaminifu kamili kwa wateja wetu.</p>
-        </div>
-        <div class="value-card">
-            <i class="fas fa-star"></i>
-            <h3>Ubora</h3>
-            <p>Tunajitahidi kutoa huduma ya hali ya juu kila wakati, bila kujali ukubwa wa safari.</p>
-        </div>
-        <div class="value-card">
-            <i class="fas fa-users"></i>
-            <h3>Ushirikiano</h3>
-            <p>Tunashirikiana na wadau wa ndani ili kukuza uchumi wa Zanzibar na Tanzania.</p>
-        </div>
-        <div class="value-card">
-            <i class="fas fa-shield-alt"></i>
-            <h3>Usalama</h3>
-            <p>Usalama wa wateja wetu ni kipaumbele chetu cha kwanza katika kila safari.</p>
-        </div>
-    </div>
-
-    <h2 style="text-align: center; color: #1a3c34; margin-top: 50px; margin-bottom: 10px;"><i class="fas fa-user-tie" style="color: #c5a059;"></i> Timu Yetu</h2>
-    <p style="text-align: center; color: #666; max-width: 700px; margin: 0 auto 20px;">Watu wanaofanya kazi kwa bidii kukupa uzoefu bora:</p>
-
-    <div class="team-grid">
-        <div class="team-card">
-            <div class="team-avatar">S</div>
-            <h4>Salim Nasoro</h4>
-            <p>Mwanzilishi & Mkurugenzi</p>
-        </div>
-        <div class="team-card">
-            <div class="team-avatar">A</div>
-            <h4>Amina Hassan</h4>
-            <p>Meneja wa Safari</p>
-        </div>
-        <div class="team-card">
-            <div class="team-avatar">J</div>
-            <h4>Juma Ali</h4>
-            <p>Mwongozo wa Safari</p>
-        </div>
-        <div class="team-card">
-            <div class="team-avatar">F</div>
-            <h4>Fatma Said</h4>
-            <p>Msimamizi wa Wateja</p>
-        </div>
-    </div>
-
-    <div class="cta-box">
-        <h2>Uko Tayari Kuanza Safari Yako?</h2>
-        <p>Wasiliana nasi leo na tuanze kupanga uzoefu wako wa kipekee Zanzibar.</p>
-        <a href="index.html#booking-section">Book Safari Yako Sasa</a>
-    </div>
-
+<section class="interactive-box">
+<h2><i class="fas fa-star"></i> Kwa Nini Uchague UNP Tours?</h2>
+<div class="vip-features">
+<div class="vip-card-mini">
+<i class="fas fa-user-tie"></i>
+<h4>Wataalamu wa Kitaalamu</h4>
+<p>Timu yetu ina uzoefu wa miaka mingi katika sekta ya utalii.</p>
 </div>
+<div class="vip-card-mini">
+<i class="fas fa-shield-alt"></i>
+<h4>Usalama kwanza</h4>
+<p>Tunahakikisha usalama wa wateja wetu katika kila safari.</p>
+</div>
+<div class="vip-card-mini">
+<i class="fas fa-hand-holding-heart"></i>
+<h4>Huduma ya Kipekee</h4>
+<p>Tunajali mahitaji ya kila mteja kwa ukaribu na upendo.</p>
+</div>
+<div class="vip-card-mini">
+<i class="fas fa-globe-africa"></i>
+<h4>Uzoefu wa Kipekee</h4>
+<p>Tunatoa safari za kipekee zisizopatikana kwa wengine.</p>
+</div>
+</div>
+</section>
 
+<!-- FOOTER -->
 <footer class="footer" id="contact">
 <div class="footer-content">
 <div>
@@ -183,8 +108,8 @@
 </div>
 <div>
 <h4>Direct Contact</h4>
-<p style="font-size: 0.9rem; margin-top: 8px;"><i class="fab fa-whatsapp" style="color: #c5a059;"></i> Phone: +255 655 728 982</p>
-<p style="font-size: 0.9rem; margin-top: 5px;"><i class="fas fa-envelope" style="color: #c5a059;"></i> Email: salimnasoro11@gmail.com</p>
+<p style="font-size: 0.9rem; margin-top: 8px;"><i class="fab fa-whatsapp" style="color: var(--royal-gold);"></i> Phone: +255 655 728 982</p>
+<p style="font-size: 0.9rem; margin-top: 5px;"><i class="fas fa-envelope" style="color: var(--royal-gold);"></i> Email: salimnasoro11@gmail.com</p>
 <div class="social-links">
 <a href="https://wa.me/255655728982" target="_blank"><i class="fab fa-whatsapp"></i></a>
 <a href="mailto:salimnasoro11@gmail.com"><i class="fas fa-envelope"></i></a>
@@ -198,39 +123,17 @@
 
 <a href="https://wa.me/255655728982?text=Hello!%20I%20want%20to%20book%20a%20VIP%20experience." class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
-<!-- Firebase Remote Config -->
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
-  import { getRemoteConfig, fetchAndActivate, getValue } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-remote-config.js";
-
-  const firebaseConfig = {
-    apiKey: "AIzaSyD2YtPFL2L_ZwAKdSYpXtvLt8gJUm2IX6s",
-    authDomain: "unptours.firebaseapp.com",
-    projectId: "unptours",
-    storageBucket: "unptours.firebasestorage.app",
-    messagingSenderId: "233326851661",
-    appId: "1:233326851661:web:354156110a5cee29904e04",
-    measurementId: "G-5QJ1X38ZLC"
-  };
-
-  const app = initializeApp(firebaseConfig);
-  const remoteConfig = getRemoteConfig(app);
-  remoteConfig.settings.minimumFetchIntervalMillis = 3600000;
-
-  fetchAndActivate(remoteConfig)
-    .then(() => {
-      const welcomeMsg = getValue(remoteConfig, "welcome_message").asString();
-      const heroDesc = document.getElementById('heroDesc');
-      if (heroDesc && welcomeMsg) {
-        heroDesc.textContent = welcomeMsg;
-      }
-    })
-    .catch((err) => {
-      console.error("Remote Config error: ", err);
-    });
+<script>
+  // MENU TOGGLE
+  const menuToggleBtn = document.getElementById('menuToggleBtn');
+  const navLinks = document.getElementById('navLinks');
+  
+  if(menuToggleBtn) {
+      menuToggleBtn.addEventListener('click', () => {
+          navLinks.classList.toggle('active');
+      });
+  }
 </script>
 
-<script src="script.js"></script>
-
 </body>
-    </html>
+                                   </html>
