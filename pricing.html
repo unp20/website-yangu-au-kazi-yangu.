@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bei Zetu | UNP Tours</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<style>
+    .page-header {
+        text-align: center;
+        padding: 120px 20px 40px;
+        background: linear-gradient(135deg, #1a3c34, #2c5e4f);
+        color: white;
+    }
+    .page-header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+    .page-header p {
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 40px 20px;
+    }
+    .pricing-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+        margin-bottom: 50px;
+    }
+    .pricing-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        transition: transform 0.3s, box-shadow 0.3s;
+        border-top: 5px solid #c5a059;
+        display: flex;
+        flex-direction: column;
+    }
+    .pricing-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+    .pricing-card .card-header {
+        padding: 25px;
+        text-align: center;
+        background: #f9f9f9;
+        border-bottom: 1px solid #eee;
+    }
+    .pricing-card .card-header i {
+        font-size: 2.5rem;
+        color: #c5a059;
+        margin-bottom: 10px;
+    }
+    .pricing-card .card-header h3 {
+        color: #1a3c34;
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+    }
+    .pricing-card .price {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #1a3c34;
+        margin: 10px 0;
+    }
+    .pricing-card .price span {
+        font-size: 0.9rem;
+        font-weight: 400;
+        color: #888;
+    }
+    .pricing-card .card-body {
+        padding: 25px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    .pricing-card .card-body ul {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 20px 0;
+        flex: 1;
+    }
+    .pricing-card .card-body ul li {
+        padding: 8px 0;
+        color: #555;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .pricing-card .card-body ul li i {
+        color: #c5a059;
+        width: 20px;
+    }
+    .btn-book {
+        display: block;
+        text-align: center;
+        padding: 12px;
+        background: #1a3c34;
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: background 0.3s;
+        margin-top: auto;
+    }
+    .btn-book:hover {
+        background: #c5a059;
+        color: #1a3c34;
+    }
+    .featured {
+        border-top-color: #e74c3c;
+        transform: scale(1.03);
+    }
+    .featured .card-header {
+        background: #1a3c34;
+    }
+    .featured .card-header h3, .featured .card-header i {
+        color: #c5a059;
+    }
+    .badge-featured {
+        display: inline-block;
+        background: #e74c3c;
+        color: white;
+        padding: 3px 12px;
+        border-radius: 20px;
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+    .note-box {
+        background: #fff8e1;
+        border-left: 4px solid #c5a059;
+        padding: 20px;
+        border-radius: 8px;
+        margin-top: 30px;
+    }
+    .note-box p {
+        margin: 0;
+        color: #666;
+        font-size: 0.9rem;
+    }
+</style>
+</head>
+<body>
+
+<header class="header" style="position: fixed; top: 0; width: 100%; z-index: 1000;">
+<div class="nav-container">
+<a href="index.html" class="logo-area">
+<div class="logo-text">
+<h2>UNP TOURS</h2>
+<span>Unique & Natural Paradise</span>
+</div>
+</a>
+</div>
+</header>
+
+<div class="page-header">
+    <h1>Bei Zetu</h1>
+    <p>Chagua huduma inayokufaa. Bei zetu ni wazi na za ushindani.</p>
+</div>
+
+<div class="container">
+
+    <div class="pricing-grid">
+
+        <!-- Kifurushi cha Kwanza -->
+        <div class="pricing-card">
+            <div class="card-header">
+                <i class="fas fa-archway"></i>
+                <h3>Zanzibar Excursions</h3>
+                <div class="price">$45 <span>/ mtu</span></div>
+            </div>
+            <div class="card-body">
+                <ul>
+                    <li><i class="fas fa-check"></i> Ziara ya Stone Town</li>
+                    <li><i class="fas fa-check"></i> Kisiwa cha Prison (Prison Island)</li>
+                    <li><i class="fas fa-check"></i> Safari Blue</li>
+                    <li><i class="fas fa-check"></i> Mwongozo wa kitaalamu</li>
+                    <li><i class="fas fa-check"></i> Chakula cha mchana</li>
+                </ul>
+                <a href="index.html#booking-section" class="btn-book">Book Sasa</a>
+            </div>
+        </div>
+
+        <!-- Kifurushi cha Pili (Featured) -->
+        <div class="pricing-card featured">
+            <div class="card-header">
+                <span class="badge-featured">Inayopendekezwa</span>
+                <i class="fas fa-paw"></i>
+                <h3>Tanzania Safari</h3>
+                <div class="price">$250 <span>/ mtu</span></div>
+            </div>
+            <div class="card-body">
+                <ul>
+                    <li><i class="fas fa-check"></i> Safari ya siku 2</li>
+                    <li><i class="fas fa-check"></i> Hifadhi za Taifa (Serengeti/Ngorongoro)</li>
+                    <li><i class="fas fa-check"></i> Malazi ya kifahari</li>
+                    <li><i class="fas fa-check"></i> Chakula kikamilifu</li>
+                    <li><i class="fas fa-check"></i> Usafiri wa ndege</li>
+                    <li><i class="fas fa-check"></i> Mwongozo binafsi</li>
+                </ul>
+                <a href="index.html#booking-section" class="btn-book">Book Safari</a>
+            </div>
+        </div>
+
+        <!-- Kifurushi cha Tatu -->
+        <div class="pricing-card">
+            <div class="card-header">
+                <i class="fas fa-crown"></i>
+                <h3>VIP Luxury Experience</h3>
+                <div class="price">$850 <span>/ mtu</span></div>
+            </div>
+            <div class="card-body">
+                <ul>
+                    <li><i class="fas fa-check"></i> Faragha ya 100%</li>
+                    <li><i class="fas fa-check"></i> Butler binafsi</li>
+                    <li><i class="fas fa-check"></i> Usafiri wa ndege wa kibinafsi</li>
+                    <li><i class="fas fa-check"></i> Chakula cha kifahari</li>
+                    <li><i class="fas fa-check"></i> Ziara ya kibinafsi</li>
+                    <li><i class="fas fa-check"></i> Secret Garden access</li>
+                </ul>
+                <a href="index.html#booking-section" class="btn-book">Reserve VIP</a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Vifurushi vingine -->
+    <h2 style="text-align: center; color: #1a3c34; margin-bottom: 25px;"><i class="fas fa-list" style="color: #c5a059;"></i> Huduma Nyingine</h2>
+    
+    <div class="pricing-grid">
+        <div class="pricing-card">
+            <div class="card-header">
+                <i class="fas fa-car"></i>
+                <h3>Vehicle Rental</h3>
+                <div class="price">$30 <span>/ siku</span></div>
+            </div>
+            <div class="card-body">
+                <ul>
+                    <li><i class="fas fa-check"></i> Gari lenye A/C</li>
+                    <li><i class="fas fa-check"></i> Dereva wa kitaalamu</li>
+                    <li><i class="fas fa-check"></i> Mafuta yamejumuishwa</li>
+                </ul>
+                <a href="index.html#booking-section" class="btn-book">Book Gari</a>
+            </div>
+        </div>
+
+        <div class="pricing-card">
+            <div class="card-header">
+                <i class="fas fa-water"></i>
+                <h3>Water Sports</h3>
+                <div class="price">$50 <span>/ mtu</span></div>
+            </div>
+            <div class="card-body">
+                <ul>
+                    <li><i class="fas fa-check"></i> Jet Ski</li>
+                    <li><i class="fas fa-check"></i> Jet Car</li>
+                    <li><i class="fas fa-check"></i> Drone Kayak</li>
+                </ul>
+                <a href="index.html#booking-section" class="btn-book">Book Sasa</a>
+            </div>
+        </div>
+
+        <div class="pricing-card">
+            <div class="card-header">
+                <i class="fas fa-utensils"></i>
+                <h3>Romantic Dinner</h3>
+                <div class="price">$120 <span>/ wanandoa</span></div>
+            </div>
+            <div class="card-body">
+                <ul>
+                    <li><i class="fas fa-check"></i> Chakula cha jioni cha pwani</li>
+                    <li><i class="fas fa-check"></i> Muziki wa moja kwa moja</li>
+                    <li><i class="fas fa-check"></i> Mapambo ya kimapenzi</li>
+                </ul>
+                <a href="index.html#booking-section" class="btn-book">Book Dinner</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Kumbuka -->
+    <div class="note-box">
+        <p><i class="fas fa-info-circle" style="color: #c5a059;"></i> <strong>Kumbuka:</strong> Bei hizi ni za kuanzia na zinaweza kubadilika kulingana na msimu, ukubwa wa kikundi, na mahitaji yako binafsi. Wasiliana nasi kwa bei maalum.</p>
+    </div>
+
+</div>
+
+</body>
+  </html>
