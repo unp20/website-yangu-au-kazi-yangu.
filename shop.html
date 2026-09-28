@@ -8,29 +8,59 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
 <style>
-    .page-header { text-align: center; padding: 120px 20px 40px; background: linear-gradient(135deg, #1a3c34, #2c5e4f); color: white; }
+    .page-header {
+        text-align: center; padding: 120px 20px 40px;
+        background: linear-gradient(135deg, #1a3c34, #2c5e4f); color: white;
+    }
     .page-header h1 { font-size: 2.5rem; margin-bottom: 10px; }
     .page-header p { font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
     .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+
     .shop-tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 40px; flex-wrap: wrap; }
-    .shop-tab { padding: 12px 30px; border: 2px solid #1a3c34; background: white; color: #1a3c34; border-radius: 30px; cursor: pointer; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 0.95rem; transition: all 0.3s; }
+    .shop-tab {
+        padding: 12px 30px; border: 2px solid #1a3c34; background: white;
+        color: #1a3c34; border-radius: 30px; cursor: pointer;
+        font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 0.95rem;
+        transition: all 0.3s;
+    }
     .shop-tab:hover, .shop-tab.active { background: #1a3c34; color: white; }
     .shop-section { display: none; }
     .shop-section.active { display: block; }
+
     .section-title { text-align: center; color: #1a3c34; margin-bottom: 10px; font-size: 1.8rem; }
     .section-subtitle { text-align: center; color: #666; margin-bottom: 30px; }
+
     .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
-    .product-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.08); transition: transform 0.3s; display: flex; flex-direction: column; }
+    .product-card {
+        background: white; border-radius: 15px; overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        transition: transform 0.3s;
+        display: flex; flex-direction: column;
+    }
     .product-card:hover { transform: translateY(-5px); }
-    .product-img { width: 100%; height: 220px; object-fit: cover; display: block; background: #f0f0f0; }
-    .product-img-fallback { width: 100%; height: 220px; background: #eee; display: flex; align-items: center; justify-content: center; color: #888; font-size: 0.9rem; }
+    .product-img-wrapper { width: 100%; height: 220px; overflow: hidden; }
+    .product-img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s; }
+    .product-card:hover .product-img { transform: scale(1.05); }
+    .product-img-fallback {
+        width: 100%; height: 220px; background: #eee; display: flex;
+        align-items: center; justify-content: center; color: #888; font-size: 0.9rem;
+    }
     .product-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
     .product-body h3 { color: #1a3c34; font-size: 1.1rem; margin-bottom: 8px; }
     .product-body .desc { color: #666; font-size: 0.85rem; line-height: 1.5; margin-bottom: 15px; flex: 1; }
     .product-price { font-size: 1.3rem; font-weight: 700; color: #c5a059; margin-bottom: 12px; }
-    .btn-order { display: block; text-align: center; padding: 12px; background: #1a3c34; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 0.9rem; transition: background 0.3s; }
+    .btn-order {
+        display: block; text-align: center; padding: 12px; background: #1a3c34;
+        color: white; text-decoration: none; border-radius: 8px;
+        font-weight: 600; font-size: 0.9rem; transition: background 0.3s;
+    }
     .btn-order:hover { background: #c5a059; color: #1a3c34; }
-    .brand-note { text-align: center; background: #f9f9f9; padding: 20px; border-radius: 10px; margin-bottom: 30px; border-left: 4px solid #c5a059; }
+
+    .brand-note {
+        text-align: center; background: #f9f9f9; padding: 20px;
+        border-radius: 10px; margin-bottom: 30px;
+        border-left: 4px solid #c5a059;
+    }
     .brand-note p { margin: 0; color: #555; font-size: 0.9rem; }
     .brand-note strong { color: #1a3c34; }
 </style>
@@ -61,6 +91,7 @@
 <li><a href="about.html">Kuhusu Sisi</a></li>
 <li><a href="gallery.html">Gallery</a></li>
 <li><a href="pricing.html">Bei</a></li>
+<li><a href="entertainment.html">Entertainment</a></li>
 <li><a href="blog.html">Blog</a></li>
 <li><a href="shop.html">Duka</a></li>
 <li><a href="testimonials.html">Maoni</a></li>
@@ -124,22 +155,24 @@
 </footer>
 
 <script>
+    // Bidhaa za UNP FLAME (Nguo) - Picha za kiwango cha juu
     const flameProducts = [
-        { name: "T-Shirt ya UNP Flame", desc: "T-shirt nyeusi yenye alama ya UNP.", price: "$25", image: "flame-tshirt.jpg" },
-        { name: "Hoodie ya UNP Flame", desc: "Hoodie nzuri ya kifahari.", price: "$45", image: "flame-hoodie.jpg" },
-        { name: "Kofia ya UNP", desc: "Kofia nzuri yenye alama ya UNP.", price: "$15", image: "flame-cap.jpg" },
-        { name: "Jacket ya UNP Flame", desc: "Jacket ya kifahari kwa safari.", price: "$65", image: "flame-jacket.jpg" },
-        { name: "Suruali ya UNP", desc: "Suruali nzuri ya kubembea.", price: "$35", image: "flame-pants.jpg" },
-        { name: "Viatu vya UNP", desc: "Viatu vya kifahari vya Unptours.", price: "$55", image: "flame-shoes.jpg" }
+        { name: "T-Shirt ya UNP Flame", desc: "T-shirt nyeusi yenye alama ya UNP. Vitambaa vya pamba vya hali ya juu.", price: "$25", image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&q=80" },
+        { name: "Hoodie ya UNP Flame", desc: "Hoodie nzuri ya kifahari yenye joto na muundo wa kipekee.", price: "$45", image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=600&q=80" },
+        { name: "Kofia ya UNP", desc: "Kofia nzuri yenye alama ya UNP, inafaa kwa safari.", price: "$15", image: "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=600&q=80" },
+        { name: "Jacket ya UNP Flame", desc: "Jacket ya kifahari kwa safari za jioni na hewa ya baridi.", price: "$65", image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&q=80" },
+        { name: "Suruali ya UNP", desc: "Suruali nzuri ya kubembea, inafaa kwa safari na mjini.", price: "$35", image: "https://images.unsplash.com/photo-1542272604-787c3835535d?w=600&q=80" },
+        { name: "Viatu vya UNP", desc: "Viatu vya kifahari vya Unptours, vya kudumu na vizuri.", price: "$55", image: "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&q=80" }
     ];
 
+    // Bidhaa za UNP SOUVENIRS (Vitu vya Utalii) - Picha za kiwango cha juu
     const souvenirProducts = [
-        { name: "Sanaa ya Banana Leaf", desc: "Sanaa ya mikono iliyotengenezwa kwa majani ya ndizi.", price: "$30", image: "handmade-art.jpg" },
-        { name: "Kikapu cha Mkono", desc: "Kikapu kilichotengenezwa kwa mikono.", price: "$20", image: "souvenir-basket.jpg" },
-        { name: "Mapambo ya Zanzibar", desc: "Mapambo ya kipekee ya Zanzibar.", price: "$18", image: "souvenir-decor.jpg" },
-        { name: "Viungo vya Zanzibar", desc: "Viungo vya asili kutoka Zanzibar.", price: "$12", image: "souvenir-spices.jpg" },
-        { name: "Picha ya Zanzibar", desc: "Picha nzuri ya fukwe za Zanzibar.", price: "$25", image: "souvenir-photo.jpg" },
-        { name: "Kadi ya Zawadi", desc: "Kadi nzuri ya kumbukumbu.", price: "$8", image: "souvenir-card.jpg" }
+        { name: "Sanaa ya Banana Leaf", desc: "Sanaa ya mikono iliyotengenezwa kwa majani ya ndizi.", price: "$30", image: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=600&q=80" },
+        { name: "Kikapu cha Mkono", desc: "Kikapu kilichotengenezwa kwa mikono na mianzi.", price: "$20", image: "https://images.unsplash.com/photo-1595348020949-87cdfbb44174?w=600&q=80" },
+        { name: "Mapambo ya Zanzibar", desc: "Mapambo ya kipekee ya Zanzibar kwa nyumba yako.", price: "$18", image: "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?w=600&q=80" },
+        { name: "Viungo vya Zanzibar", desc: "Viungo vya asili kutoka Zanzibar (karafuu, mdalasini).", price: "$12", image: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&q=80" },
+        { name: "Picha ya Zanzibar", desc: "Picha nzuri ya fukwe za Zanzibar kwa ukumbusho.", price: "$25", image: "https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?w=600&q=80" },
+        { name: "Kadi ya Zawadi", desc: "Kadi nzuri ya kumbukumbu ya Zanzibar.", price: "$8", image: "https://images.unsplash.com/photo-1607344645866-009c320b63e0?w=600&q=80" }
     ];
 
     function renderProducts(products, containerId) {
@@ -149,7 +182,9 @@
             const card = document.createElement('div');
             card.className = 'product-card';
             card.innerHTML = `
-                <img src="${p.image}" alt="${p.name}" class="product-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\\'product-img-fallback\\'>${p.name}</div>';">
+                <div class="product-img-wrapper">
+                    <img src="${p.image}" alt="${p.name}" class="product-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\\'product-img-fallback\\'>${p.name}</div>';">
+                </div>
                 <div class="product-body">
                     <h3>${p.name}</h3>
                     <p class="desc">${p.desc}</p>
@@ -195,11 +230,9 @@
   const remoteConfig = getRemoteConfig(app);
   remoteConfig.settings.minimumFetchIntervalMillis = 3600000;
 
-  fetchAndActivate(remoteConfig).then(() => {
-    // Remote config can be used here
-  });
+  fetchAndActivate(remoteConfig).then(() => {});
 </script>
 
 <script src="script.js"></script>
 </body>
-                                                   </html>
+    </html>
