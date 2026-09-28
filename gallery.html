@@ -1,113 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sw">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gallery | UNP Tours</title>
+<title>Gallery | UNP TOURS Zanzibar</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
 <style>
-    .page-header {
-        text-align: center;
-        padding: 120px 20px 40px;
-        background: linear-gradient(135deg, #1a3c34, #2c5e4f);
-        color: white;
-    }
-    .page-header h1 {
-        font-size: 2.5rem;
-        margin-bottom: 10px;
-    }
-    .page-header p {
-        font-size: 1.1rem;
-        max-width: 600px;
-        margin: 0 auto;
-    }
-    .container {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 40px 20px;
-    }
-    .filter-buttons {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-        margin-bottom: 30px;
-    }
-    .filter-btn {
-        padding: 10px 20px;
-        border: 2px solid #1a3c34;
-        background: white;
-        color: #1a3c34;
-        border-radius: 25px;
-        cursor: pointer;
-        font-family: 'Poppins', sans-serif;
-        font-weight: 600;
-        font-size: 0.9rem;
-        transition: all 0.3s;
-    }
-    .filter-btn:hover, .filter-btn.active {
-        background: #1a3c34;
-        color: white;
-    }
-    .gallery-grid {
+    /* CSS ya ziada kwa ajili ya Gallery Grid */
+    .gallery-page-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+        max-width: 1200px;
+        margin: 30px auto;
+        padding: 0 20px;
     }
-    .gallery-card {
+    .gallery-page-item {
         position: relative;
-        border-radius: 15px;
+        width: 100%;
+        height: 250px;
+        border-radius: 12px;
         overflow: hidden;
         box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        background-color: #e2e8f0;
         cursor: pointer;
-        transition: transform 0.3s;
-        height: 250px;
+        transition: transform 0.3s ease;
     }
-    .gallery-card:hover {
-        transform: scale(1.03);
+    .gallery-page-item:hover {
+        transform: scale(1.02);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     }
-    .gallery-card img {
+    .gallery-page-item img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        display: block;
+        transition: transform 0.5s ease;
     }
-    .gallery-card .overlay {
+    .gallery-page-item:hover img {
+        transform: scale(1.1);
+    }
+    .gallery-overlay {
         position: absolute;
         bottom: 0;
         left: 0;
         right: 0;
-        background: linear-gradient(transparent, rgba(0,0,0,0.8));
-        color: white;
-        padding: 20px;
-        transform: translateY(100%);
-        transition: transform 0.3s;
+        background: linear-gradient(to top, rgba(3, 43, 26, 0.9), transparent);
+        color: #fff;
+        padding: 20px 15px 10px 15px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
     }
-    .gallery-card:hover .overlay {
-        transform: translateY(0);
+    .gallery-page-item:hover .gallery-overlay {
+        opacity: 1;
     }
-    .gallery-card .overlay h3 {
-        margin-bottom: 5px;
-        font-size: 1.1rem;
+    .gallery-overlay h4 {
+        margin: 0;
+        font-size: 1rem;
+        color: var(--royal-gold);
     }
-    .gallery-card .overlay p {
-        font-size: 0.85rem;
-        opacity: 0.9;
+    .gallery-overlay p {
+        margin: 5px 0 0 0;
+        font-size: 0.8rem;
     }
-    .img-placeholder {
-        width: 100%;
-        height: 100%;
-        background: #eee;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #888;
-        font-size: 0.9rem;
-    }
-    /* Modal ya Kuangalia Picha */
-    .modal {
+    /* Kwa ajili ya Lightbox (Picha ikubwa) */
+    .lightbox {
         display: none;
         position: fixed;
         top: 0;
@@ -116,148 +74,225 @@
         height: 100%;
         background: rgba(0,0,0,0.9);
         z-index: 2000;
-        align-items: center;
         justify-content: center;
+        align-items: center;
         padding: 20px;
-        box-sizing: border-box;
     }
-    .modal.active {
-        display: flex;
-    }
-    .modal img {
-        max-width: 100%;
-        max-height: 90%;
+    .lightbox img {
+        max-width: 90%;
+        max-height: 80%;
         border-radius: 10px;
+        box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
     }
-    .modal-close {
+    .lightbox .close-btn {
         position: absolute;
         top: 20px;
-        right: 20px;
-        color: white;
-        font-size: 2rem;
+        right: 30px;
+        color: #fff;
+        font-size: 40px;
         cursor: pointer;
-        background: rgba(0,0,0,0.5);
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        transition: color 0.3s;
+    }
+    .lightbox .close-btn:hover {
+        color: var(--royal-gold);
+    }
+    .lightbox .caption {
+        position: absolute;
+        bottom: 30px;
+        color: #fff;
+        font-size: 1.2rem;
+        text-align: center;
+        width: 100%;
+        color: var(--royal-gold);
     }
 </style>
 </head>
 <body>
 
-<header class="header" style="position: fixed; top: 0; width: 100%; z-index: 1000;">
+<!-- TOP BAR & HEADER -->
+<div class="top-bar">
+<div class="lang-container">
+<i class="fas fa-globe"></i>
+<select class="lang-select">
+<option value="sw">Kiswahili</option>
+<option value="en">English</option>
+</select>
+</div>
+</div>
+
+<header class="header">
 <div class="nav-container">
 <a href="index.html" class="logo-area">
+<div class="logo-holder">
+<img src="logo.png" alt="UNP Tours Logo" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=logo-fallback>UNP<br>LOGO</span>';">
+</div>
 <div class="logo-text">
 <h2>UNP TOURS</h2>
 <span>Unique & Natural Paradise</span>
 </div>
 </a>
+<button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
+<ul class="nav-links" id="navLinks">
+<li><a href="index.html">Nyumbani</a></li>
+<li><a href="about.html">Kuhusu Sisi</a></li>
+<li><a href="gallery.html" style="color: var(--royal-gold);">Gallery</a></li>
+<li><a href="pricing.html">Bei</a></li>
+<li><a href="testimonials.html">Maoni</a></li>
+<li><a href="contact.html">Wasiliana</a></li>
+<li><a href="profile.html">Wasifu</a></li>
+<li><a href="login.html" style="color: var(--royal-gold); font-weight: bold;">Ingia</a></li>
+<li><a href="signup.html" style="background: var(--royal-gold); color: var(--dark-green); padding: 8px 15px; border-radius: 5px;">Jiunge</a></li>
+</ul>
 </div>
 </header>
 
-<div class="page-header">
-    <h1>Gallery Yetu</h1>
-    <p>Picha za kuvutia kutoka safari zetu Zanzibar na Tanzania.</p>
-</div>
+<!-- HERO SECTION KWA GALLERY -->
+<section class="hero" style="padding: 70px 20px;">
+<h1 style="font-size: 2rem;">Gallery Yetu</h1>
+<p>Chungulia uzuri wa Zanzibar na Tanzania kupitia picha zetu za kuvutia.</p>
+</section>
 
-<div class="container">
+<!-- GALLERY GRID -->
+<section class="gallery-page-grid">
 
-    <!-- Vitufe vya Kuchuja -->
-    <div class="filter-buttons">
-        <button class="filter-btn active" data-filter="all">Zote</button>
-        <button class="filter-btn" data-filter="zanzibar">Zanzibar</button>
-        <button class="filter-btn" data-filter="safari">Safari</button>
-        <button class="filter-btn" data-filter="beach">Pwani</button>
-        <button class="filter-btn" data-filter="culture">Utamaduni</button>
+    <!-- Picha 1 -->
+    <div class="gallery-page-item" onclick="openLightbox('gallery1.jpg', 'Zanzibar Beach')">
+        <img src="gallery1.jpg" alt="Zanzibar Beach" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=img-fallback style=display:flex;align-items:center;justify-content:center;height:100%;>gallery1.jpg</div>';">
+        <div class="gallery-overlay">
+            <h4>Zanzibar Beach</h4>
+            <p>Ufukwe mzuri wa Zanzibar</p>
+        </div>
     </div>
 
-    <!-- Grid ya Picha -->
-    <div class="gallery-grid" id="galleryGrid">
-        <p style="text-align: center; color: #888; grid-column: 1/-1;">Inapakia picha...</p>
+    <!-- Picha 2 -->
+    <div class="gallery-page-item" onclick="openLightbox('gallery2.jpg', 'Stone Town')">
+        <img src="gallery2.jpg" alt="Stone Town" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=img-fallback style=display:flex;align-items:center;justify-content:center;height:100%;>gallery2.jpg</div>';">
+        <div class="gallery-overlay">
+            <h4>Stone Town</h4>
+            <p>Mji wa kihistoria wa Zanzibar</p>
+        </div>
     </div>
 
+    <!-- Picha 3 -->
+    <div class="gallery-page-item" onclick="openLightbox('gallery3.jpg', 'Safari Adventure')">
+        <img src="gallery3.jpg" alt="Safari" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=img-fallback style=display:flex;align-items:center;justify-content:center;height:100%;>gallery3.jpg</div>';">
+        <div class="gallery-overlay">
+            <h4>Safari Adventure</h4>
+            <p>Wanyama pori wa Tanzania</p>
+        </div>
+    </div>
+
+    <!-- Picha 4 -->
+    <div class="gallery-page-item" onclick="openLightbox('gallery4.jpg', 'Jozani Forest')">
+        <img src="gallery4.jpg" alt="Jozani Forest" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=img-fallback style=display:flex;align-items:center;justify-content:center;height:100%;>gallery4.jpg</div>';">
+        <div class="gallery-overlay">
+            <h4>Jozani Forest</h4>
+            <p>Msitu wa Jozani na Red Monkeys</p>
+        </div>
+    </div>
+
+    <!-- Picha 5 -->
+    <div class="gallery-page-item" onclick="openLightbox('gallery5.jpg', 'Sunset Dinner')">
+        <img src="gallery5.jpg" alt="Sunset Dinner" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=img-fallback style=display:flex;align-items:center;justify-content:center;height:100%;>gallery5.jpg</div>';">
+        <div class="gallery-overlay">
+            <h4>Sunset Dinner</h4>
+            <p>Chakula cha jioni cha kimapenzi</p>
+        </div>
+    </div>
+
+    <!-- Picha 6 -->
+    <div class="gallery-page-item" onclick="openLightbox('gallery6.jpg', 'Water Sports')">
+        <img src="gallery6.jpg" alt="Water Sports" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=img-fallback style=display:flex;align-items:center;justify-content:center;height:100%;>gallery6.jpg</div>';">
+        <div class="gallery-overlay">
+            <h4>Water Sports</h4>
+            <p>Jet Ski na shughuli za majini</p>
+        </div>
+    </div>
+
+    <!-- Picha 7 -->
+    <div class="gallery-page-item" onclick="openLightbox('zanzibar-tours.jpg', 'Zanzibar Excursions')">
+        <img src="zanzibar-tours.jpg" alt="Zanzibar Excursions" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=img-fallback style=display:flex;align-items:center;justify-content:center;height:100%;>zanzibar-tours.jpg</div>';">
+        <div class="gallery-overlay">
+            <h4>Zanzibar Excursions</h4>
+            <p>Safari za kihistoria</p>
+        </div>
+    </div>
+
+    <!-- Picha 8 -->
+    <div class="gallery-page-item" onclick="openLightbox('handmade-art.jpg', 'Handmade Artwork')">
+        <img src="handmade-art.jpg" alt="Handmade Artwork" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=img-fallback style=display:flex;align-items:center;justify-content:center;height:100%;>handmade-art.jpg</div>';">
+        <div class="gallery-overlay">
+            <h4>Handmade Artwork</h4>
+            <p>Sanaa za mikono za Kiafrika</p>
+        </div>
+    </div>
+
+</section>
+
+<!-- LIGHTBOX (Iliyo fiche) -->
+<div class="lightbox" id="lightbox">
+    <span class="close-btn" onclick="closeLightbox()">&times;</span>
+    <img id="lightbox-img" src="" alt="Picha">
+    <div class="caption" id="lightbox-caption"></div>
 </div>
 
-<!-- Modal ya Kuangalia Picha -->
-<div class="modal" id="imageModal">
-    <div class="modal-close" id="modalClose">&times;</div>
-    <img src="" alt="Picha" id="modalImage">
+<!-- FOOTER -->
+<footer class="footer" id="contact">
+<div class="footer-content">
+<div>
+<h3>UNIQUE NATURE PARADISE (UNP)</h3>
+<p style="font-size: 0.9rem; max-width: 350px;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p>
 </div>
+<div>
+<h4>Direct Contact</h4>
+<p style="font-size: 0.9rem; margin-top: 8px;"><i class="fab fa-whatsapp" style="color: var(--royal-gold);"></i> Phone: +255 655 728 982</p>
+<p style="font-size: 0.9rem; margin-top: 5px;"><i class="fas fa-envelope" style="color: var(--royal-gold);"></i> Email: salimnasoro11@gmail.com</p>
+<div class="social-links">
+<a href="https://wa.me/255655728982" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<a href="mailto:salimnasoro11@gmail.com"><i class="fas fa-envelope"></i></a>
+<a href="https://www.tiktok.com/@unptours" target="_blank"><i class="fab fa-tiktok"></i></a>
+<a href="https://www.instagram.com/unpsoulvoyoge" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://www.facebook.com/profile.php?id=61595094232501" target="_blank"><i class="fab fa-facebook"></i></a>
+</div>
+</div>
+</div>
+</footer>
+
+<a href="https://wa.me/255655728982?text=Hello!%20I%20want%20to%20book%20a%20VIP%20experience." class="floating-whatsapp" target="_blank"><i class="fas fa-whatsapp"></i></a>
 
 <script>
-    // Orodha ya picha zako (unaweza kuongeza nyingine)
-    const images = [
-        { src: "zanzibar-tours.jpg", title: "Zanzibar Excursions", desc: "Safari ya kihistoria Zanzibar", category: "zanzibar" },
-        { src: "jozani-forest.jpg.jpg", title: "Jozani Forest", desc: "Misitu ya Jozani na nyani", category: "safari" },
-        { src: "tanzania-safari.jpg", title: "Tanzania Safari", desc: "Safari ya wanyama pori", category: "safari" },
-        { src: "romantic-dinner.jpg.jpg", title: "Romantic Dinner", desc: "Chakula cha jioni cha kimapenzi", category: "beach" },
-        { src: "secret-garden.jpg", title: "Secret Garden", desc: "Bustani ya siri", category: "culture" },
-        { src: "city-tour.jpg", title: "City Tour", desc: "Ziara ya jiji la Stone Town", category: "culture" },
-        { src: "handmade-art.jpg", title: "Handmade Art", desc: "Sanaa za mikono", category: "culture" },
-        { src: "luxury-transfers.jpg", title: "Luxury Transfers", desc: "Usafiri wa kifahari", category: "zanzibar" },
-        { src: "jet-ski-water.jpg", title: "Jet Ski", desc: "Michezo ya majini", category: "beach" },
-        { src: "vip-image.jpg", title: "VIP Experience", desc: "Uzoefu wa kifahari", category: "zanzibar" },
-        { src: "hero-cover.jpg", title: "Zanzibar Beach", desc: "Pwani nzuri ya Zanzibar", category: "beach" },
-        { src: "about-image.jpg", title: "UNP Tours", desc: "Kuhusu UNP Tours", category: "zanzibar" }
-    ];
+  // MENU TOGGLE
+  const menuToggleBtn = document.getElementById('menuToggleBtn');
+  const navLinks = document.getElementById('navLinks');
+  
+  if(menuToggleBtn) {
+      menuToggleBtn.addEventListener('click', () => {
+          navLinks.classList.toggle('active');
+      });
+  }
 
-    const galleryGrid = document.getElementById('galleryGrid');
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const modal = document.getElementById('imageModal');
-    const modalImage = document.getElementById('modalImage');
-    const modalClose = document.getElementById('modalClose');
+  // LIGHTBOX LOGIC (Picha ikubwa)
+  function openLightbox(imageSrc, caption) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const lightboxCaption = document.getElementById('lightbox-caption');
+      
+      lightbox.style.display = 'flex';
+      lightboxImg.src = imageSrc;
+      lightboxCaption.textContent = caption;
+  }
 
-    function renderGallery(filter) {
-        galleryGrid.innerHTML = '';
-        const filtered = filter === 'all' ? images : images.filter(img => img.category === filter);
+  function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+  }
 
-        if (filtered.length === 0) {
-            galleryGrid.innerHTML = '<p style="text-align: center; color: #888; grid-column: 1/-1;">Hakuna picha kwenye kundi hili.</p>';
-            return;
-        }
-
-        filtered.forEach(img => {
-            const card = document.createElement('div');
-            card.className = 'gallery-card';
-            card.innerHTML = `
-                <img src="${img.src}" alt="${img.title}" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\\'img-placeholder\\'>${img.title}</div>';">
-                <div class="overlay">
-                    <h3>${img.title}</h3>
-                    <p>${img.desc}</p>
-                </div>
-            `;
-            card.addEventListener('click', () => {
-                modalImage.src = img.src;
-                modal.classList.add('active');
-            });
-            galleryGrid.appendChild(card);
-        });
-    }
-
-    // Kuchuja
-    filterButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            filterButtons.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            renderGallery(btn.getAttribute('data-filter'));
-        });
-    });
-
-    // Funga modal
-    modalClose.addEventListener('click', () => {
-        modal.classList.remove('active');
-    });
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) modal.classList.remove('active');
-    });
-
-    // Onyesha picha zote mwanzoni
-    renderGallery('all');
+  // Funga Lightbox kwa kubonyeza nje ya picha
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+      if (e.target === this) {
+          closeLightbox();
+      }
+  });
 </script>
 
 </body>
-  </html>
+            </html>
