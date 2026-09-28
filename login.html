@@ -225,7 +225,24 @@
 
 <a href="https://wa.me/255655728982?text=Hello!%20I%20want%20to%20book%20a%20VIP%20experience." class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
-<script>
+<!-- FIREBASE SDK & LOGIN LOGIC -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+  import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyD2YtPFL2L_ZwAKdSYpXtvLt8gJUm2IX6s",
+    authDomain: "unptours.firebaseapp.com",
+    projectId: "unptours",
+    storageBucket: "unptours.firebasestorage.app",
+    messagingSenderId: "233326851661",
+    appId: "1:233326851661:web:354156110a5cee29904e04",
+    measurementId: "G-5QJ1X38ZLC"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
   // MENU TOGGLE
   const menuToggleBtn = document.getElementById('menuToggleBtn');
   const navLinks = document.getElementById('navLinks');
@@ -238,18 +255,25 @@
 
   // LOGIN FORM LOGIC
   const loginForm = document.getElementById('loginForm');
-  loginForm.addEventListener('submit', (e) => {
+  loginForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const email = document.getElementById('loginEmail').value;
       const password = document.getElementById('loginPassword').value;
 
-      // Hapa unaweza kuunganisha na Firebase Authentication baadaye
-      alert("Umeingia kwa mafanikio (Demo)!\n\nKaribu tena UNP Tours.");
-      
-      // Elekeza mtumiaji kwenye ukurasa wa wasifu
-      window.location.href = "profile.html";
+      try {
+          await signInWithEmailAndPassword(auth, email, password);
+          alert("Umeingia kwa mafanikio! Karibu tena UNP Tours.");
+          window.location.href = "profile.html";
+      } catch (error) {
+          console.error("Error: ", error);
+          if (error.code === 'auth/user-not-found' || error.code === 'auth/wrong-password' || error.code === 'auth/invalid-credential') {
+              alert("Barua pepe au neno la siri si sahihi. Tafadhali jaribu tena.");
+          } else {
+              alert("Kuna hitilafu imetokea: " + error.message);
+          }
+      }
   });
 </script>
 
 </body>
-    </html>
+</html>
