@@ -79,6 +79,71 @@
         z-index: 1000;
         text-decoration: none;
     }
+
+    /* =========================================
+       CSS MPYA KWA AJILI YA SEHEMU YA MUZIKI 
+       ========================================= */
+    .music-section {
+        padding: 40px 20px;
+        background-color: #f9f9f9;
+        text-align: center;
+    }
+    .music-section h2 {
+        color: #1a3c34;
+        margin-bottom: 10px;
+    }
+    .music-section p {
+        color: #555;
+        margin-bottom: 30px;
+    }
+    .music-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        max-width: 1000px;
+        margin: 0 auto;
+        text-align: left;
+    }
+    .music-card {
+        background: white;
+        border-radius: 10px;
+        padding: 15px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: transform 0.3s ease;
+    }
+    .music-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+    .music-info h4 {
+        margin: 0 0 5px 0;
+        color: #1a3c34;
+        font-size: 1.1rem;
+    }
+    .music-info span {
+        font-size: 0.85rem;
+        color: #777;
+        display: block;
+        margin-bottom: 15px;
+    }
+    .btn-music {
+        display: inline-block;
+        background-color: #c5a059;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-align: center;
+        transition: background 0.3s;
+    }
+    .btn-music:hover {
+        background-color: #a8863d;
+    }
 </style>
 </head>
 <body>
@@ -194,6 +259,118 @@
 </div>
 </section>
 
+<!-- =========================================
+     SEHEMU MPYA YA MUZIKI (MUSIC SECTION)
+     ========================================= -->
+<section class="music-section" id="music">
+    <h2><i class="fas fa-music"></i> Muziki Wetu</h2>
+    <p>Sikiliza na pakua nyimbo zetu za Kiswahili na Bongo zilizochaguliwa maalum kwa ajili yako.</p>
+    
+    <div class="music-grid">
+        
+        <!-- Wimbo 1 -->
+        <div class="music-card">
+            <div class="music-info">
+                <h4>Natural</h4>
+                <span>Damian Soul Ft. Young Lunya</span>
+            </div>
+            <a href="Damian Soul Ft. Young Lunya - Natural .mp3" class="btn-music" download><i class="fas fa-download"></i> Pakua</a>
+        </div>
+
+        <!-- Wimbo 2 -->
+        <div class="music-card">
+            <div class="music-info">
+                <h4>Mapopo</h4>
+                <span>Damian Soul</span>
+            </div>
+            <a href="Damian Soul - Mapopo.mp3" class="btn-music" download><i class="fas fa-download"></i> Pakua</a>
+        </div>
+
+        <!-- Wimbo 3 -->
+        <div class="music-card">
+            <div class="music-info">
+                <h4>Love</h4>
+                <span>Damian Soul</span>
+            </div>
+            <a href="Damian Soul - love .mp3" class="btn-music" download><i class="fas fa-download"></i> Pakua</a>
+        </div>
+
+        <!-- Wimbo 4 -->
+        <div class="music-card">
+            <div class="music-info">
+                <h4>Never Give Up</h4>
+                <span>Msanii</span>
+            </div>
+            <a href="NEVER GIVE UP .mp3" class="btn-music" download><i class="fas fa-download"></i> Pakua</a>
+        </div>
+
+        <!-- Wimbo 5 -->
+        <div class="music-card">
+            <div class="music-info">
+                <h4>Sauti</h4>
+                <span>The Zawose Queens</span>
+            </div>
+            <a href="The Zawose Queens - Sauti .mp3" class="btn-music" download><i class="fas fa-download"></i> Pakua</a>
+        </div>
+
+        <!-- Wimbo 6 -->
+        <div class="music-card">
+            <div class="music-info">
+                <h4>Pole Pole</h4>
+                <span>Msanii</span>
+            </div>
+            <a href="Pole Pole.mp3" class="btn-music" download><i class="fas fa-download"></i> Pakua</a>
+        </div>
+
+        <!-- Wimbo 7 -->
+        <div class="music-card">
+            <div class="music-info">
+                <h4>Waite</h4>
+                <span>Mrisho Mpoto</span>
+            </div>
+            <a href="Mrisho- Waite.mp3" class="btn-music" download><i class="fas fa-download"></i> Pakua</a>
+        </div>
+
+        <!-- Wimbo 8 -->
+        <div class="music-card">
+            <div class="music-info">
+                <h4>Panga Pangani</h4>
+                <span>Vitali Maembe</span>
+            </div>
+            <a href="Vitali Panga.mp3" class="btn-music" download><i class="fas fa-download"></i> Pakua</a>
+        </div>
+
+        <!-- Wimbo 9 -->
+        <div class="music-card">
+            <div class="music-info">
+                <h4>Sumu</h4>
+                <span>Vitali Maembe</span>
+            </div>
+            <a href="Vitali Maembe - Sumu .mp3" class="btn-music" download><i class="fas fa-download"></i> Pakua</a>
+        </div>
+
+        <!-- Wimbo 10 -->
+        <div class="music-card">
+            <div class="music-info">
+                <h4>Vuma</h4>
+                <span>Vitali Maembe</span>
+            </div>
+            <a href="Vuma(MP3_320K).mp3" class="btn-music" download><i class="fas fa-download"></i> Pakua</a>
+        </div>
+
+        <!-- Wimbo 11 -->
+        <div class="music-card">
+            <div class="music-info">
+                <h4>Gonga</h4>
+                <span>Msanii</span>
+            </div>
+            <a href="Gonga(MP3_320K).mp3" class="btn-music" download><i class="fas fa-download"></i> Pakua</a>
+        </div>
+
+    </div>
+</section>
+<!-- MWISHO WA SEHEMU YA MUZIKI -->
+
 <section class="interactive-box" id="about-section">
 <h2 id="aboutHeading"><i class="fas fa-info-circle"></i> About UNP Tours</h2>
 <p id="aboutDesc">Unique & Natural Paradise (UNP) is a premier luxury tour operator based in Zanzibar, Tanzania.</p>
@@ -266,114 +443,4 @@
 <div class="vip-card-mini"><i class="fas fa-concierge-bell"></i><h4 id="vipF3">Private Butler</h4><p id="vipF3Sub">24/7 dedicated personal concierge.</p></div>
 </div>
 <div style="text-align: center; margin-top: 20px;">
-<a href="#booking-section" class="btn-primary" id="btnVipReq"><i class="fas fa-gem"></i> Reserve VIP Concierge</a>
-</div>
-</section>
-
-<section class="interactive-box" id="booking-section">
-<h2 id="bookHeading"><i class="fas fa-calendar-check"></i> Book Online Form</h2>
-<p id="bookDesc">Book your tours, VIP concierge, or Secret Garden sanctuary instantly via WhatsApp:</p>
-<form id="bookingForm">
-<div class="form-group"><label id="lblGuestName">Full Name:</label><input type="text" id="guestName" placeholder="Enter your full name" required></div>
-<div class="form-group"><label id="lblGuestContact">Email Address / Phone Number:</label><input type="text" id="guestContact" placeholder="e.g. +255... or email@domain.com" required></div>
-<div class="form-group"><label id="lblGuestService">Select Experience / Package:</label>
-<select id="guestService" required>
-<option value="1. Zanzibar Historic Tours">1. Zanzibar Historic Tours</option>
-<option value="2. Jozani Monkey Sanctuary">2. Jozani Monkey Sanctuary</option>
-<option value="3. Vehicle & Gear Rentals">3. Vehicle & Gear Rentals</option>
-<option value="4. Luxury VIP Transfers">4. Luxury VIP Transfers</option>
-<option value="5. Banana Leaf Artwork">5. Banana Leaf Artwork</option>
-<option value="6. Tanzania Safaris">6. Tanzania Safaris</option>
-<option value="7. Authentic City Tour">7. Authentic City Tour</option>
-<option value="8. Romantic Beach Dinner">8. Romantic Beach Dinner</option>
-<option value="9. Jet Ski & Jet Car">9. Jet Ski & Jet Car</option>
-<option value="10. Secret Garden Oasis">10. Secret Garden Oasis</option>
-<option value="VIP Luxury Full Package">VIP Luxury Full Package</option>
-</select>
-</div>
-<div class="form-group"><label id="lblGuestDate">Preferred Date:</label><input type="date" id="guestDate" required></div>
-<div class="form-group"><label id="lblGuestCount">Number of Guests:</label><input type="number" id="guestCount" min="1" value="2" required></div>
-<div class="form-group"><label id="lblGuestNotes">Special Requests or Notes:</label><textarea id="guestNotes" rows="3" placeholder="Any specific requirements..."></textarea></div>
-<button type="submit" class="btn-primary btn-full" id="btnBookSubmit"><i class="fab fa-whatsapp"></i> Submit Booking via WhatsApp</button>
-</form>
-</section>
-
-<footer class="footer" id="contact">
-<div class="footer-content">
-<div>
-<h3>UNIQUE NATURE PARADISE (UNP)</h3>
-<p id="footerAbout" style="font-size: 0.9rem; max-width: 350px;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p>
-</div>
-<div>
-<h4 id="footerContactHead">Direct Contact</h4>
-<p style="font-size: 0.9rem; margin-top: 8px;"><i class="fab fa-whatsapp" style="color: var(--royal-gold);"></i> Phone: +255 655 728 982</p>
-<p style="font-size: 0.9rem; margin-top: 5px;"><i class="fas fa-envelope" style="color: var(--royal-gold);"></i> Email: salimnasoro11@gmail.com</p>
-<div class="social-links">
-<a href="https://wa.me/255655728982" target="_blank"><i class="fab fa-whatsapp"></i></a>
-<a href="mailto:salimnasoro11@gmail.com"><i class="fas fa-envelope"></i></a>
-<a href="https://www.tiktok.com/@unptours" target="_blank"><i class="fab fa-tiktok"></i></a>
-<a href="https://www.instagram.com/unpsoulvoyoge" target="_blank"><i class="fab fa-instagram"></i></a>
-<a href="https://www.facebook.com/profile.php?id=61595094232501" target="_blank"><i class="fab fa-facebook"></i></a>
-</div>
-</div>
-</div>
-</footer>
-
-<a href="https://wa.me/255655728982?text=Hello!%20I%20want%20to%20book%20a%20VIP%20experience." class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
-
-<!-- Firebase SDK -->
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-analytics.js";
-  import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
-
-  const firebaseConfig = {
-    apiKey: "AIzaSyD2YtPFL2L_ZwAKdSYpXtvLt8gJUm2IX6s",
-    authDomain: "unptours.firebaseapp.com",
-    projectId: "unptours",
-    storageBucket: "unptours.firebasestorage.app",
-    messagingSenderId: "233326851661",
-    appId: "1:233326851661:web:354156110a5cee29904e04",
-    measurementId: "G-5QJ1X38ZLC"
-  };
-
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-  const db = getFirestore(app);
-
-  // VOTE SYSTEM LOGIC
-  const stars = document.querySelectorAll('.star-rating .fa-star');
-  const ratingInput = document.getElementById('selectedRating');
-  const voteForm = document.getElementById('voteForm');
-  const voteMessage = document.getElementById('voteMessage');
-
-  stars.forEach(star => {
-    star.addEventListener('click', () => {
-      const value = star.getAttribute('data-value');
-      ratingInput.value = value;
-      stars.forEach(s => s.classList.remove('active'));
-      for (let i = 0; i < value; i++) {
-        stars[i].classList.add('active');
-      }
-    });
-  });
-
-  voteForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const experience = document.getElementById('voteExperience').value;
-    const rating = ratingInput.value;
-
-    if (rating === "0") {
-        voteMessage.textContent = "Tafadhali chagua nyota kwanza!";
-        voteMessage.className = "alert-message alert-error";
-        return;
-    }
-
-    try {
-        await addDoc(collection(db, "votes"), {
-            experience: experience,
-            rating: parseInt(rating),
-            timestamp: new Date()
-        });
-        voteMessage.textContent = "Asante kwa kura yako!";
-        voteMessage.className = "alert-message alert
+<a href="#booking-section" class="btn-primary" id="btnVipReq"><i class="fas fa-g
