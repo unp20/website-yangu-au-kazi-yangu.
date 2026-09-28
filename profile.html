@@ -146,13 +146,13 @@
 
 <!-- PROFILE HEADER -->
 <section class="profile-header">
-    <div class="profile-avatar" id="avatarInitials">AM</div>
-    <h2 id="profileName">Amina Mohamed</h2>
-    <p id="profileEmail"><i class="fas fa-envelope"></i> amina@example.com</p>
-    <p style="margin-top: 5px;"><i class="fas fa-phone"></i> +255 655 000 000</p>
+    <div class="profile-avatar" id="avatarInitials">...</div>
+    <h2 id="profileName">Inapakia...</h2>
+    <p id="profileEmail"><i class="fas fa-envelope"></i> ...</p>
+    <p style="margin-top: 5px;" id="profilePhone"><i class="fas fa-phone"></i> ...</p>
     <div class="profile-tabs">
-        <button class="active" onclick="showTab('bookings')"><i class="fas fa-calendar-check"></i> Safari Zangu</button>
-        <button onclick="showTab('settings')"><i class="fas fa-cog"></i> Mipangilio</button>
+        <button class="active" onclick="showTab('bookings', event)"><i class="fas fa-calendar-check"></i> Safari Zangu</button>
+        <button onclick="showTab('settings', event)"><i class="fas fa-cog"></i> Mipangilio</button>
         <button onclick="logout()" style="background: #dc3545; border-color: #dc3545;"><i class="fas fa-sign-out-alt"></i> Toka</button>
     </div>
 </section>
@@ -196,19 +196,15 @@
     <form id="settingsForm">
         <div class="form-group">
             <label>Jina Lako Kamili:</label>
-            <input type="text" id="editName" value="Amina Mohamed" required>
+            <input type="text" id="editName" required>
         </div>
         <div class="form-group">
             <label>Barua Pepe:</label>
-            <input type="email" id="editEmail" value="amina@example.com" required>
+            <input type="email" id="editEmail" required>
         </div>
         <div class="form-group">
             <label>Namba ya Simu:</label>
-            <input type="tel" id="editPhone" value="+255 655 000 000" required>
-        </div>
-        <div class="form-group">
-            <label>Neno la Siri Jipya (Acha wazi kama hutaki kubadilisha):</label>
-            <input type="password" id="editPassword" placeholder="Weka neno la siri jipya">
+            <input type="tel" id="editPhone" required>
         </div>
         <button type="submit" class="btn-primary btn-full">Hifadhi Mabadiliko</button>
     </form>
@@ -238,49 +234,113 @@
 
 <a href="https://wa.me/255655728982?text=Hello!%20I%20want%20to%20book%20a%20VIP%20experience." class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
-<script>
+<!-- FIREBASE SDK & PROFILE LOGIC -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+  import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+  import { getFirestore, doc, getDoc, updateDoc } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyD2YtPFL2L_ZwAKdSYpXtvLt8gJUm2IX6s",
+    authDomain: "unptours.firebaseapp.com",
+    projectId: "unptours",
+    storageBucket: "unptours.firebasestorage.app",
+    messagingSenderId: "233326851661",
+    appId: "1:233326851661:web:354156110a5cee29904e04",
+    measurementId: "G-5QJ1X38ZLC"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const db = getFirestore(app);
+
   // MENU TOGGLE
   const menuToggleBtn = document.getElementById('menuToggleBtn');
   const navLinks = document.getElementById('navLinks');
-  
   if(menuToggleBtn) {
       menuToggleBtn.addEventListener('click', () => {
           navLinks.classList.toggle('active');
       });
   }
 
+  let currentUserId = null;
+
+  // ANGALIA KAMA MTUMIAJI AMEINGIA
+  onAuthStateChanged(auth, async (user) => {
+      if (user) {
+          currentUserId = user.uid;
+          // Chukua taarifa za mtumiaji kutoka Firestore
+          const docRef = doc(db, "users", user.uid);
+          const docSnap = await getDoc(docRef);
+
+          if (docSnap.exists()) {
+              const data = docSnap.data();
+              document.getElementById('profileName').textContent = data.name || "Mtumiaji";
+              document.getElementById('profileEmail').innerHTML = '<i class="fas fa-envelope"></i> ' + (data.email || user.email);
+              document.getElementById('profilePhone').innerHTML = '<i class="fas fa-phone"></i> ' + (data.phone || "Haipo");
+              
+              // Weka taarifa kwenye fomu ya settings
+              document.getElementById('editName').value = data.name || "";
+              document.getElementById('editEmail').value = data.email || user.email;
+              document.getElementById('editPhone').value = data.phone || "";
+              
+              // Weka initials kwenye avatar
+              const initials = (data.name || "U").split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2);
+              document.getElementById('avatarInitials').textContent = initials;
+          }
+      } else {
+          // Kama hajaingia, mpeleke kwenye login
+          window.location.href = "login.html";
+      }
+  });
+
   // TAB SWITCHING LOGIC
-  function showTab(tabName) {
-      // Ficha tabs zote
+  window.showTab = function(tabName, event) {
       document.querySelectorAll('.tab-content').forEach(tab => {
           tab.classList.remove('active');
       });
-      // Ondoa active kwenye vitufe vyote
       document.querySelectorAll('.profile-tabs button').forEach(btn => {
           btn.classList.remove('active');
       });
-
-      // Onyesha tab iliyochaguliwa
       document.getElementById('tab-' + tabName).classList.add('active');
-      
-      // Weka active kwenye kitufe kilichobonyezwa
-      event.target.classList.add('active');
-  }
+      if(event) event.target.classList.add('active');
+  };
 
-  // SETTINGS FORM LOGIC
+  // SETTINGS FORM LOGIC (Kuhifadhi Mabadiliko)
   const settingsForm = document.getElementById('settingsForm');
-  settingsForm.addEventListener('submit', (e) => {
+  settingsForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      alert("Taarifa zako zimehifadhiwa kwa mafanikio (Demo)!");
+      if (!currentUserId) return;
+
+      const newName = document.getElementById('editName').value;
+      const newPhone = document.getElementById('editPhone').value;
+
+      try {
+          const userRef = doc(db, "users", currentUserId);
+          await updateDoc(userRef, {
+              name: newName,
+              phone: newPhone
+          });
+          alert("Taarifa zako zimehifadhiwa kwa mafanikio!");
+          
+          // Sasisha jina na initials kwenye header
+          document.getElementById('profileName').textContent = newName;
+          const initials = newName.split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2);
+          document.getElementById('avatarInitials').textContent = initials;
+      } catch (error) {
+          console.error("Error: ", error);
+          alert("Kuna hitilafu imetokea wakati wa kuhifadhi: " + error.message);
+      }
   });
 
   // LOGOUT LOGIC
-  function logout() {
+  window.logout = async function() {
       if(confirm("Una uhakika unataka kutoka?")) {
+          await signOut(auth);
           window.location.href = "index.html";
       }
-  }
+  };
 </script>
 
 </body>
-    </html>
+        </html>
