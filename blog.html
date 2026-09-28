@@ -15,6 +15,7 @@
     .page-header h1 { font-size: 2.5rem; margin-bottom: 10px; }
     .page-header p { font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
     .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+
     .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
     .blog-card {
         background: white; border-radius: 15px; overflow: hidden;
@@ -23,9 +24,16 @@
         display: flex; flex-direction: column;
     }
     .blog-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
-    .blog-card img { width: 100%; height: 200px; object-fit: cover; display: block; }
+    .blog-card .img-wrapper {
+        width: 100%; height: 220px; overflow: hidden; position: relative;
+    }
+    .blog-card img {
+        width: 100%; height: 100%; object-fit: cover; display: block;
+        transition: transform 0.5s;
+    }
+    .blog-card:hover img { transform: scale(1.05); }
     .blog-card .img-fallback {
-        width: 100%; height: 200px; background: #eee; display: flex;
+        width: 100%; height: 220px; background: #eee; display: flex;
         align-items: center; justify-content: center; color: #888;
     }
     .blog-card .card-body { padding: 25px; flex: 1; display: flex; flex-direction: column; }
@@ -71,6 +79,7 @@
 <li><a href="about.html">Kuhusu Sisi</a></li>
 <li><a href="gallery.html">Gallery</a></li>
 <li><a href="pricing.html">Bei</a></li>
+<li><a href="entertainment.html">Entertainment</a></li>
 <li><a href="blog.html">Blog</a></li>
 <li><a href="shop.html">Duka</a></li>
 <li><a href="testimonials.html">Maoni</a></li>
@@ -116,12 +125,54 @@
 
 <script>
     const articles = [
-        { title: "Uzuri wa Zanzibar: Kisiwa cha Viungo", category: "Zanzibar", date: "Septemba 2026", author: "Salim Nasoro", image: "zanzibar-tours.jpg", excerpt: "Zanzibar ni kisiwa chenye historia tajiri, fukwe nzuri, na viungo vya kipekee. Soma makala hii kujua zaidi kuhusu uzuri wa kisiwa hiki." },
-        { title: "Safari ya Wanyama Pori: Serengeti na Ngorongoro", category: "Safari", date: "Septemba 2026", author: "Amina Hassan", image: "tanzania-safari.jpg", excerpt: "Kama unataka kuona wanyama pori kwa karibu, Serengeti na Ngorongoro ni sehemu bora. Soma makala hii kujua safari hizi." },
-        { title: "Utamaduni wa Wazanzibari: Mila na Desturi", category: "Utamaduni", date: "Agosti 2026", author: "Juma Ali", image: "city-tour.jpg", excerpt: "Wazanzibari wana utamaduni tajiri wa Kiarabu, Kiafrika, na Kihindi. Soma kuhusu mila na desturi zao za kipekee." },
-        { title: "Sanaa za Mikono: Banana Leaf Artwork", category: "Sanaa", date: "Agosti 2026", author: "Fatma Said", image: "handmade-art.jpg", excerpt: "Sanaa za mikono zinazotengenezwa kwa majani ya ndizi ni moja ya vivutio vya Zanzibar. Soma jinsi zinavyotengenezwa." },
-        { title: "Chakula cha Zanzibar: Ladha za Kipekee", category: "Chakula", date: "Julai 2026", author: "Salim Nasoro", image: "romantic-dinner.jpg.jpg", excerpt: "Chakula cha Zanzibar ni mchanganyiko wa ladha za Kiarabu, Kiafrika, na Kihindi. Soma kuhusu vyakula vya kipekee vya kisiwa hiki." },
-        { title: "Michezo ya Majini: Jet Ski na Drone Kayak", category: "Michezo", date: "Julai 2026", author: "Juma Ali", image: "jet-ski-water.jpg", excerpt: "Kama unapenda michezo ya majini, Zanzibar ni sehemu sahihi. Soma kuhusu Jet Ski, Jet Car, na Drone Kayak." }
+        { 
+            title: "Uzuri wa Zanzibar: Kisiwa cha Viungo", 
+            category: "Zanzibar", 
+            date: "Septemba 2026", 
+            author: "Salim Nasoro", 
+            image: "https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?w=800&q=80", 
+            excerpt: "Zanzibar ni kisiwa chenye historia tajiri, fukwe nzuri, na viungo vya kipekee. Soma makala hii kujua zaidi kuhusu uzuri wa kisiwa hiki." 
+        },
+        { 
+            title: "Safari ya Wanyama Pori: Serengeti na Ngorongoro", 
+            category: "Safari", 
+            date: "Septemba 2026", 
+            author: "Amina Hassan", 
+            image: "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800&q=80", 
+            excerpt: "Kama unataka kuona wanyama pori kwa karibu, Serengeti na Ngorongoro ni sehemu bora. Soma makala hii kujua safari hizi." 
+        },
+        { 
+            title: "Utamaduni wa Wazanzibari: Mila na Desturi", 
+            category: "Utamaduni", 
+            date: "Agosti 2026", 
+            author: "Juma Ali", 
+            image: "https://images.unsplash.com/photo-1533669955142-6a73332af4db?w=800&q=80", 
+            excerpt: "Wazanzibari wana utamaduni tajiri wa Kiarabu, Kiafrika, na Kihindi. Soma kuhusu mila na desturi zao za kipekee." 
+        },
+        { 
+            title: "Sanaa za Mikono: Banana Leaf Artwork", 
+            category: "Sanaa", 
+            date: "Agosti 2026", 
+            author: "Fatma Said", 
+            image: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=800&q=80", 
+            excerpt: "Sanaa za mikono zinazotengenezwa kwa majani ya ndizi ni moja ya vivutio vya Zanzibar. Soma jinsi zinavyotengenezwa." 
+        },
+        { 
+            title: "Chakula cha Zanzibar: Ladha za Kipekee", 
+            category: "Chakula", 
+            date: "Julai 2026", 
+            author: "Salim Nasoro", 
+            image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80", 
+            excerpt: "Chakula cha Zanzibar ni mchanganyiko wa ladha za Kiarabu, Kiafrika, na Kihindi. Soma kuhusu vyakula vya kipekee vya kisiwa hiki." 
+        },
+        { 
+            title: "Michezo ya Majini: Jet Ski na Drone Kayak", 
+            category: "Michezo", 
+            date: "Julai 2026", 
+            author: "Juma Ali", 
+            image: "https://images.unsplash.com/photo-1530053969600-caed2596d242?w=800&q=80", 
+            excerpt: "Kama unapenda michezo ya majini, Zanzibar ni sehemu sahihi. Soma kuhusu Jet Ski, Jet Car, na Drone Kayak." 
+        }
     ];
 
     const blogGrid = document.getElementById('blogGrid');
@@ -129,7 +180,9 @@
         const card = document.createElement('div');
         card.className = 'blog-card';
         card.innerHTML = `
-            <img src="${article.image}" alt="${article.title}" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\\'img-fallback\\'>${article.title}</div>';">
+            <div class="img-wrapper">
+                <img src="${article.image}" alt="${article.title}" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\\'img-fallback\\'>${article.title}</div>';">
+            </div>
             <div class="card-body">
                 <span class="category">${article.category}</span>
                 <h3>${article.title}</h3>
@@ -161,11 +214,9 @@
   const remoteConfig = getRemoteConfig(app);
   remoteConfig.settings.minimumFetchIntervalMillis = 3600000;
 
-  fetchAndActivate(remoteConfig).then(() => {
-    const welcomeMsg = getValue(remoteConfig, "welcome_message").asString();
-  });
+  fetchAndActivate(remoteConfig).then(() => {});
 </script>
 
 <script src="script.js"></script>
 </body>
-</html>
+        </html>
