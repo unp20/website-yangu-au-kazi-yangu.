@@ -7,6 +7,80 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
+<style>
+    /* CSS ya ziada kwa ajili ya nyota (Vote) */
+    .star-rating {
+        display: flex;
+        gap: 5px;
+        font-size: 2rem;
+        cursor: pointer;
+        color: #ccc;
+        justify-content: center;
+        margin: 10px 0;
+    }
+    .star-rating .fas.fa-star.active {
+        color: #ffc107;
+    }
+    .alert-message {
+        margin-top: 15px;
+        padding: 10px;
+        border-radius: 5px;
+        text-align: center;
+        display: none;
+    }
+    .alert-success {
+        background-color: #d4edda;
+        color: #155724;
+        display: block;
+    }
+    .alert-error {
+        background-color: #f8d7da;
+        color: #721c24;
+        display: block;
+    }
+    .service-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .vip-features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+    }
+    .vip-card-mini {
+        text-align: center;
+        padding: 20px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .vip-card-mini i {
+        font-size: 2rem;
+        color: #c5a059;
+        margin-bottom: 10px;
+    }
+    .floating-whatsapp {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #25d366;
+        color: white;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        z-index: 1000;
+        text-decoration: none;
+    }
+</style>
 </head>
 <body>
 
@@ -56,6 +130,9 @@
 <li><a href="#vip-section" id="navVip">VIP</a></li>
 <li><a href="#booking-section" id="navBook">Book</a></li>
 <li><a href="#contact" id="navContact">Contact</a></li>
+<!-- VIUNGO VIPYA VYA AUTHENTICATION -->
+<li><a href="login.html" id="navLogin">Ingia</a></li>
+<li><a href="signup.html" id="navSignup">Jiunge</a></li>
 </ul>
 </div>
 </header>
@@ -176,6 +253,7 @@
 <i class="fas fa-star" data-value="4"></i>
 <i class="fas fa-star" data-value="5"></i>
 </div>
+<input type="hidden" id="selectedRating" value="0">
 </div>
 <button type="submit" class="btn-primary btn-full" id="btnVoteSubmit">Submit Rating</button>
 </form>
@@ -239,6 +317,9 @@
 <div class="social-links">
 <a href="https://wa.me/255655728982" target="_blank"><i class="fab fa-whatsapp"></i></a>
 <a href="mailto:salimnasoro11@gmail.com"><i class="fas fa-envelope"></i></a>
+<a href="https://www.tiktok.com/@unptours" target="_blank"><i class="fab fa-tiktok"></i></a>
+<a href="https://www.instagram.com/unpsoulvoyoge" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://www.facebook.com/profile.php?id=61595094232501" target="_blank"><i class="fab fa-facebook"></i></a>
 </div>
 </div>
 </div>
@@ -246,25 +327,49 @@
 
 <a href="https://wa.me/255655728982?text=Hello!%20I%20want%20to%20book%20a%20VIP%20experience." class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
-<!-- Lugha zote 14 -->
-<script src="lang-en.js"></script>
-<script src="lang-fr.js"></script>
-<script src="lang-it.js"></script>
-<script src="lang-de.js"></script>
-<script src="lang-ru.js"></script>
-<script src="lang-sw.js"></script>
-<script src="lang-ar.js"></script>
-<script src="lang-zh.js"></script>
-<script src="lang-es.js"></script>
-<script src="lang-pt.js"></script>
-<script src="lang-hi.js"></script>
-<script src="lang-ja.js"></script>
-<script src="lang-ko.js"></script>
-<script src="lang-la.js"></script>
-<script src="script.js"></script>
+<!-- Firebase SDK -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-analytics.js";
+  import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
 
-</body>
-  </html>
+  const firebaseConfig = {
+    apiKey: "AIzaSyD2YtPFL2L_ZwAKdSYpXtvLt8gJUm2IX6s",
+    authDomain: "unptours.firebaseapp.com",
+    projectId: "unptours",
+    storageBucket: "unptours.firebasestorage.app",
+    messagingSenderId: "233326851661",
+    appId: "1:233326851661:web:354156110a5cee29904e04",
+    measurementId: "G-5QJ1X38ZLC"
+  };
 
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const db = getFirestore(app);
 
-      
+  // --- VOTE SYSTEM LOGIC ---
+  const stars = document.querySelectorAll('.star-rating .fa-star');
+  const ratingInput = document.getElementById('selectedRating');
+  const voteForm = document.getElementById('voteForm');
+  const voteMessage = document.getElementById('voteMessage');
+
+  stars.forEach(star => {
+    star.addEventListener('click', () => {
+      const value = star.getAttribute('data-value');
+      ratingInput.value = value;
+      stars.forEach(s => s.classList.remove('active'));
+      for (let i = 0; i < value; i++) {
+        stars[i].classList.add('active');
+      }
+    });
+  });
+
+  voteForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const experience = document.getElementById('voteExperience').value;
+    const rating = ratingInput.value;
+
+    if (rating === "0") {
+        voteMessage.textContent = "Tafadhali chagua nyota kwanza!";
+        voteMessage.className = "alert-message alert-error";
+        retu
