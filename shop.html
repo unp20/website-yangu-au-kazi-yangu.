@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Duka | UNP Tours</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<style>
+    .page-header {
+        text-align: center; padding: 120px 20px 40px;
+        background: linear-gradient(135deg, #1a3c34, #2c5e4f); color: white;
+    }
+    .page-header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+    .page-header p { font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+    .shop-tabs {
+        display: flex; justify-content: center; gap: 10px; margin-bottom: 40px; flex-wrap: wrap;
+    }
+    .shop-tab {
+        padding: 12px 30px; border: 2px solid #1a3c34; background: white;
+        color: #1a3c34; border-radius: 30px; cursor: pointer;
+        font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 0.95rem;
+        transition: all 0.3s;
+    }
+    .shop-tab:hover, .shop-tab.active { background: #1a3c34; color: white; }
+    .shop-section { display: none; }
+    .shop-section.active { display: block; }
+    .section-title { text-align: center; color: #1a3c34; margin-bottom: 10px; font-size: 1.8rem; }
+    .section-subtitle { text-align: center; color: #666; margin-bottom: 30px; }
+    .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
+    .product-card {
+        background: white; border-radius: 15px; overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08); transition: transform 0.3s;
+        display: flex; flex-direction: column;
+    }
+    .product-card:hover { transform: translateY(-5px); }
+    .product-img {
+        width: 100%; height: 220px; object-fit: cover; display: block;
+        background: #f0f0f0;
+    }
+    .product-img-fallback {
+        width: 100%; height: 220px; background: #eee;
+        display: flex; align-items: center; justify-content: center;
+        color: #888; font-size: 0.9rem;
+    }
+    .product-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+    .product-body h3 { color: #1a3c34; font-size: 1.1rem; margin-bottom: 8px; }
+    .product-body .desc { color: #666; font-size: 0.85rem; line-height: 1.5; margin-bottom: 15px; flex: 1; }
+    .product-price { font-size: 1.3rem; font-weight: 700; color: #c5a059; margin-bottom: 12px; }
+    .btn-order {
+        display: block; text-align: center; padding: 12px; background: #1a3c34;
+        color: white; text-decoration: none; border-radius: 8px;
+        font-weight: 600; font-size: 0.9rem; transition: background 0.3s;
+    }
+    .btn-order:hover { background: #c5a059; color: #1a3c34; }
+    .brand-note {
+        text-align: center; background: #f9f9f9; padding: 20px;
+        border-radius: 10px; margin-bottom: 30px;
+        border-left: 4px solid #c5a059;
+    }
+    .brand-note p { margin: 0; color: #555; font-size: 0.9rem; }
+    .brand-note strong { color: #1a3c34; }
+</style>
+</head>
+<body>
+
+<header class="header" style="position: fixed; top: 0; width: 100%; z-index: 1000;">
+<div class="nav-container">
+<a href="index.html" class="logo-area">
+<div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
+</a>
+</div>
+</header>
+
+<div class="page-header">
+    <h1>Duka Letu</h1>
+    <p>Nunua bidhaa zetu za kipekee: UNP Flame (nguo) na UNP Souvenirs (vitu vya kiutalii).</p>
+</div>
+
+<div class="container">
+
+    <!-- Vitufe vya Kuchagua Sehemu -->
+    <div class="shop-tabs">
+        <button class="shop-tab active" data-target="flame">UNP FLAME (Nguo)</button>
+        <button class="shop-tab" data-target="souvenirs">UNP SOUVENIRS (Vitu vya Utalii)</button>
+    </div>
+
+    <!-- Sehemu ya UNP FLAME -->
+    <div class="shop-section active" id="flame">
+        <div class="brand-note">
+            <p><strong>UNP FLAME</strong> — Nguo za kifahari zenye muundo wa kipekee wa Zanzibar. Kila kipande ni cha kipekee na cha hali ya juu.</p>
+        </div>
+        <h2 class="section-title"><i class="fas fa-tshirt" style="color: #c5a059;"></i> Nguo Zetu</h2>
+        <p class="section-subtitle">Nguo za kipekee zenye alama ya Unptours.</p>
+        <div class="products-grid" id="flameGrid"></div>
+    </div>
+
+    <!-- Sehemu ya UNP SOUVENIRS -->
+    <div class="shop-section" id="souvenirs">
+        <div class="brand-note">
+            <p><strong>UNP SOUVENIRS</strong> — Vitu vya kiutalii vilivyotengenezwa kwa mikono. Sanaa, mapambo, na zawadi za kipekee kutoka Zanzibar.</p>
+        </div>
+        <h2 class="section-title"><i class="fas fa-gift" style="color: #c5a059;"></i> Vitu vya Utalii</h2>
+        <p class="section-subtitle">Sanaa za mikono na zawadi za kipekee.</p>
+        <div class="products-grid" id="souvenirsGrid"></div>
+    </div>
+
+</div>
+
+<script>
+    // Bidhaa za UNP FLAME (Nguo)
+    const flameProducts = [
+        { name: "T-Shirt ya UNP Flame", desc: "T-shirt nyeusi yenye alama ya UNP. Vitambaa vya pamba.", price: "$25", image: "flame-tshirt.jpg" },
+        { name: "Hoodie ya UNP Flame", desc: "Hoodie nzuri ya kifahari yenye joto.", price: "$45", image: "flame-hoodie.jpg" },
+        { name: "Kofia ya UNP", desc: "Kofia nzuri yenye alama ya UNP.", price: "$15", image: "flame-cap.jpg" },
+        { name: "Jacket ya UNP Flame", desc: "Jacket ya kifahari kwa safari za jioni.", price: "$65", image: "flame-jacket.jpg" },
+        { name: "Suruali ya UNP", desc: "Suruali nzuri ya kubembea.", price: "$35", image: "flame-pants.jpg" },
+        { name: "Viatu vya UNP", desc: "Viatu vya kifahari vya Unptours.", price: "$55", image: "flame-shoes.jpg" }
+    ];
+
+    // Bidhaa za UNP SOUVENIRS (Vitu vya Utalii)
+    const souvenirProducts = [
+        { name: "Sanaa ya Banana Leaf", desc: "Sanaa ya mikono iliyotengenezwa kwa majani ya ndizi.", price: "$30", image: "handmade-art.jpg" },
+        { name: "Kikapu cha Mkono", desc: "Kikapu kilichotengenezwa kwa mikono na mianzi.", price: "$20", image: "souvenir-basket.jpg" },
+        { name: "Mapambo ya Zanzibar", desc: "Mapambo ya kipekee ya Zanzibar.", price: "$18", image: "souvenir-decor.jpg" },
+        { name: "Viungo vya Zanzibar", desc: "Viungo vya asili kutoka Zanzibar.", price: "$12", image: "souvenir-spices.jpg" },
+        { name: "Picha ya Zanzibar", desc: "Picha nzuri ya fukwe za Zanzibar.", price: "$25", image: "souvenir-photo.jpg" },
+        { name: "Kadi ya Zawadi", desc: "Kadi nzuri ya kumbukumbu ya Zanzibar.", price: "$8", image: "souvenir-card.jpg" }
+    ];
+
+    function renderProducts(products, containerId) {
+        const container = document.getElementById(containerId);
+        container.innerHTML = '';
+        products.forEach(p => {
+            const card = document.createElement('div');
+            card.className = 'product-card';
+            card.innerHTML = `
+                <img src="${p.image}" alt="${p.name}" class="product-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\\'product-img-fallback\\'>${p.name}</div>';">
+                <div class="product-body">
+                    <h3>${p.name}</h3>
+                    <p class="desc">${p.desc}</p>
+                    <p class="product-price">${p.price}</p>
+                    <a href="https://wa.me/255655728982?text=Habari!%20Nataka%20kununua%20${encodeURIComponent(p.name)}" target="_blank" class="btn-order"><i class="fab fa-whatsapp"></i> Agiza kwa WhatsApp</a>
+                </div>
+            `;
+            container.appendChild(card);
+        });
+    }
+
+    renderProducts(flameProducts, 'flameGrid');
+    renderProducts(souvenirProducts, 'souvenirsGrid');
+
+    // Kubadilisha sehemu
+    const tabs = document.querySelectorAll('.shop-tab');
+    const sections = document.querySelectorAll('.shop-section');
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            tabs.forEach(t => t.classList.remove('active'));
+            sections.forEach(s => s.classList.remove('active'));
+            tab.classList.add('active');
+            document.getElementById(tab.getAttribute('data-target')).classList.add('active');
+        });
+    });
+</script>
+
+</body>
+  </html>
