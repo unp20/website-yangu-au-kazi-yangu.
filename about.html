@@ -198,7 +198,39 @@
 
 <a href="https://wa.me/255655728982?text=Hello!%20I%20want%20to%20book%20a%20VIP%20experience." class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
+<!-- Firebase Remote Config -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+  import { getRemoteConfig, fetchAndActivate, getValue } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-remote-config.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyD2YtPFL2L_ZwAKdSYpXtvLt8gJUm2IX6s",
+    authDomain: "unptours.firebaseapp.com",
+    projectId: "unptours",
+    storageBucket: "unptours.firebasestorage.app",
+    messagingSenderId: "233326851661",
+    appId: "1:233326851661:web:354156110a5cee29904e04",
+    measurementId: "G-5QJ1X38ZLC"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const remoteConfig = getRemoteConfig(app);
+  remoteConfig.settings.minimumFetchIntervalMillis = 3600000;
+
+  fetchAndActivate(remoteConfig)
+    .then(() => {
+      const welcomeMsg = getValue(remoteConfig, "welcome_message").asString();
+      const heroDesc = document.getElementById('heroDesc');
+      if (heroDesc && welcomeMsg) {
+        heroDesc.textContent = welcomeMsg;
+      }
+    })
+    .catch((err) => {
+      console.error("Remote Config error: ", err);
+    });
+</script>
+
 <script src="script.js"></script>
 
 </body>
-                           </html>
+    </html>
