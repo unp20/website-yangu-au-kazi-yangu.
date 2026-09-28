@@ -8,69 +8,67 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
 <style>
-    .page-header {
-        text-align: center; padding: 120px 20px 40px;
-        background: linear-gradient(135deg, #1a3c34, #2c5e4f); color: white;
-    }
+    .page-header { text-align: center; padding: 120px 20px 40px; background: linear-gradient(135deg, #1a3c34, #2c5e4f); color: white; }
     .page-header h1 { font-size: 2.5rem; margin-bottom: 10px; }
     .page-header p { font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
     .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
-    .shop-tabs {
-        display: flex; justify-content: center; gap: 10px; margin-bottom: 40px; flex-wrap: wrap;
-    }
-    .shop-tab {
-        padding: 12px 30px; border: 2px solid #1a3c34; background: white;
-        color: #1a3c34; border-radius: 30px; cursor: pointer;
-        font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 0.95rem;
-        transition: all 0.3s;
-    }
+    .shop-tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 40px; flex-wrap: wrap; }
+    .shop-tab { padding: 12px 30px; border: 2px solid #1a3c34; background: white; color: #1a3c34; border-radius: 30px; cursor: pointer; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 0.95rem; transition: all 0.3s; }
     .shop-tab:hover, .shop-tab.active { background: #1a3c34; color: white; }
     .shop-section { display: none; }
     .shop-section.active { display: block; }
     .section-title { text-align: center; color: #1a3c34; margin-bottom: 10px; font-size: 1.8rem; }
     .section-subtitle { text-align: center; color: #666; margin-bottom: 30px; }
     .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
-    .product-card {
-        background: white; border-radius: 15px; overflow: hidden;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.08); transition: transform 0.3s;
-        display: flex; flex-direction: column;
-    }
+    .product-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.08); transition: transform 0.3s; display: flex; flex-direction: column; }
     .product-card:hover { transform: translateY(-5px); }
-    .product-img {
-        width: 100%; height: 220px; object-fit: cover; display: block;
-        background: #f0f0f0;
-    }
-    .product-img-fallback {
-        width: 100%; height: 220px; background: #eee;
-        display: flex; align-items: center; justify-content: center;
-        color: #888; font-size: 0.9rem;
-    }
+    .product-img { width: 100%; height: 220px; object-fit: cover; display: block; background: #f0f0f0; }
+    .product-img-fallback { width: 100%; height: 220px; background: #eee; display: flex; align-items: center; justify-content: center; color: #888; font-size: 0.9rem; }
     .product-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
     .product-body h3 { color: #1a3c34; font-size: 1.1rem; margin-bottom: 8px; }
     .product-body .desc { color: #666; font-size: 0.85rem; line-height: 1.5; margin-bottom: 15px; flex: 1; }
     .product-price { font-size: 1.3rem; font-weight: 700; color: #c5a059; margin-bottom: 12px; }
-    .btn-order {
-        display: block; text-align: center; padding: 12px; background: #1a3c34;
-        color: white; text-decoration: none; border-radius: 8px;
-        font-weight: 600; font-size: 0.9rem; transition: background 0.3s;
-    }
+    .btn-order { display: block; text-align: center; padding: 12px; background: #1a3c34; color: white; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 0.9rem; transition: background 0.3s; }
     .btn-order:hover { background: #c5a059; color: #1a3c34; }
-    .brand-note {
-        text-align: center; background: #f9f9f9; padding: 20px;
-        border-radius: 10px; margin-bottom: 30px;
-        border-left: 4px solid #c5a059;
-    }
+    .brand-note { text-align: center; background: #f9f9f9; padding: 20px; border-radius: 10px; margin-bottom: 30px; border-left: 4px solid #c5a059; }
     .brand-note p { margin: 0; color: #555; font-size: 0.9rem; }
     .brand-note strong { color: #1a3c34; }
 </style>
 </head>
 <body>
 
-<header class="header" style="position: fixed; top: 0; width: 100%; z-index: 1000;">
+<div class="top-bar">
+<div class="lang-container">
+<i class="fas fa-globe"></i>
+<select class="lang-select" id="languageSelector">
+<option value="en">English</option>
+<option value="sw">Kiswahili</option>
+</select>
+</div>
+</div>
+
+<header class="header">
 <div class="nav-container">
 <a href="index.html" class="logo-area">
+<div class="logo-holder">
+<img src="logo.png" alt="UNP Tours Logo" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=logo-fallback>UNP<br>LOGO</span>';">
+</div>
 <div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
 </a>
+<button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
+<ul class="nav-links" id="navLinks">
+<li><a href="index.html">Nyumbani</a></li>
+<li><a href="about.html">Kuhusu Sisi</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="pricing.html">Bei</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="shop.html">Duka</a></li>
+<li><a href="testimonials.html">Maoni</a></li>
+<li><a href="contact.html">Wasiliana</a></li>
+<li><a href="profile.html">Wasifu</a></li>
+<li><a href="login.html" style="color: #c5a059; font-weight: bold;">Ingia</a></li>
+<li><a href="signup.html" style="background: #c5a059; color: #1a3c34; padding: 8px 15px; border-radius: 5px;">Jiunge</a></li>
+</ul>
 </div>
 </header>
 
@@ -81,53 +79,67 @@
 
 <div class="container">
 
-    <!-- Vitufe vya Kuchagua Sehemu -->
     <div class="shop-tabs">
         <button class="shop-tab active" data-target="flame">UNP FLAME (Nguo)</button>
         <button class="shop-tab" data-target="souvenirs">UNP SOUVENIRS (Vitu vya Utalii)</button>
     </div>
 
-    <!-- Sehemu ya UNP FLAME -->
     <div class="shop-section active" id="flame">
         <div class="brand-note">
-            <p><strong>UNP FLAME</strong> — Nguo za kifahari zenye muundo wa kipekee wa Zanzibar. Kila kipande ni cha kipekee na cha hali ya juu.</p>
+            <p><strong>UNP FLAME</strong> — Nguo za kifahari zenye muundo wa kipekee wa Zanzibar.</p>
         </div>
         <h2 class="section-title"><i class="fas fa-tshirt" style="color: #c5a059;"></i> Nguo Zetu</h2>
-        <p class="section-subtitle">Nguo za kipekee zenye alama ya Unptours.</p>
         <div class="products-grid" id="flameGrid"></div>
     </div>
 
-    <!-- Sehemu ya UNP SOUVENIRS -->
     <div class="shop-section" id="souvenirs">
         <div class="brand-note">
-            <p><strong>UNP SOUVENIRS</strong> — Vitu vya kiutalii vilivyotengenezwa kwa mikono. Sanaa, mapambo, na zawadi za kipekee kutoka Zanzibar.</p>
+            <p><strong>UNP SOUVENIRS</strong> — Vitu vya kiutalii vilivyotengenezwa kwa mikono.</p>
         </div>
         <h2 class="section-title"><i class="fas fa-gift" style="color: #c5a059;"></i> Vitu vya Utalii</h2>
-        <p class="section-subtitle">Sanaa za mikono na zawadi za kipekee.</p>
         <div class="products-grid" id="souvenirsGrid"></div>
     </div>
 
 </div>
 
+<footer class="footer">
+<div class="footer-content">
+<div>
+<h3>UNIQUE NATURE PARADISE (UNP)</h3>
+<p style="font-size: 0.9rem; max-width: 350px;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p>
+</div>
+<div>
+<h4>Direct Contact</h4>
+<p style="font-size: 0.9rem; margin-top: 8px;"><i class="fab fa-whatsapp" style="color: #c5a059;"></i> +255 655 728 982</p>
+<p style="font-size: 0.9rem; margin-top: 5px;"><i class="fas fa-envelope" style="color: #c5a059;"></i> salimnasoro11@gmail.com</p>
+<div class="social-links">
+<a href="https://wa.me/255655728982" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<a href="mailto:salimnasoro11@gmail.com"><i class="fas fa-envelope"></i></a>
+<a href="https://www.tiktok.com/@unptours" target="_blank"><i class="fab fa-tiktok"></i></a>
+<a href="https://www.instagram.com/unpsoulvoyoge" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://www.facebook.com/profile.php?id=61595094232501" target="_blank"><i class="fab fa-facebook"></i></a>
+</div>
+</div>
+</div>
+</footer>
+
 <script>
-    // Bidhaa za UNP FLAME (Nguo)
     const flameProducts = [
-        { name: "T-Shirt ya UNP Flame", desc: "T-shirt nyeusi yenye alama ya UNP. Vitambaa vya pamba.", price: "$25", image: "flame-tshirt.jpg" },
-        { name: "Hoodie ya UNP Flame", desc: "Hoodie nzuri ya kifahari yenye joto.", price: "$45", image: "flame-hoodie.jpg" },
+        { name: "T-Shirt ya UNP Flame", desc: "T-shirt nyeusi yenye alama ya UNP.", price: "$25", image: "flame-tshirt.jpg" },
+        { name: "Hoodie ya UNP Flame", desc: "Hoodie nzuri ya kifahari.", price: "$45", image: "flame-hoodie.jpg" },
         { name: "Kofia ya UNP", desc: "Kofia nzuri yenye alama ya UNP.", price: "$15", image: "flame-cap.jpg" },
-        { name: "Jacket ya UNP Flame", desc: "Jacket ya kifahari kwa safari za jioni.", price: "$65", image: "flame-jacket.jpg" },
+        { name: "Jacket ya UNP Flame", desc: "Jacket ya kifahari kwa safari.", price: "$65", image: "flame-jacket.jpg" },
         { name: "Suruali ya UNP", desc: "Suruali nzuri ya kubembea.", price: "$35", image: "flame-pants.jpg" },
         { name: "Viatu vya UNP", desc: "Viatu vya kifahari vya Unptours.", price: "$55", image: "flame-shoes.jpg" }
     ];
 
-    // Bidhaa za UNP SOUVENIRS (Vitu vya Utalii)
     const souvenirProducts = [
         { name: "Sanaa ya Banana Leaf", desc: "Sanaa ya mikono iliyotengenezwa kwa majani ya ndizi.", price: "$30", image: "handmade-art.jpg" },
-        { name: "Kikapu cha Mkono", desc: "Kikapu kilichotengenezwa kwa mikono na mianzi.", price: "$20", image: "souvenir-basket.jpg" },
+        { name: "Kikapu cha Mkono", desc: "Kikapu kilichotengenezwa kwa mikono.", price: "$20", image: "souvenir-basket.jpg" },
         { name: "Mapambo ya Zanzibar", desc: "Mapambo ya kipekee ya Zanzibar.", price: "$18", image: "souvenir-decor.jpg" },
         { name: "Viungo vya Zanzibar", desc: "Viungo vya asili kutoka Zanzibar.", price: "$12", image: "souvenir-spices.jpg" },
         { name: "Picha ya Zanzibar", desc: "Picha nzuri ya fukwe za Zanzibar.", price: "$25", image: "souvenir-photo.jpg" },
-        { name: "Kadi ya Zawadi", desc: "Kadi nzuri ya kumbukumbu ya Zanzibar.", price: "$8", image: "souvenir-card.jpg" }
+        { name: "Kadi ya Zawadi", desc: "Kadi nzuri ya kumbukumbu.", price: "$8", image: "souvenir-card.jpg" }
     ];
 
     function renderProducts(products, containerId) {
@@ -152,7 +164,6 @@
     renderProducts(flameProducts, 'flameGrid');
     renderProducts(souvenirProducts, 'souvenirsGrid');
 
-    // Kubadilisha sehemu
     const tabs = document.querySelectorAll('.shop-tab');
     const sections = document.querySelectorAll('.shop-section');
     tabs.forEach(tab => {
@@ -165,5 +176,30 @@
     });
 </script>
 
+<!-- Firebase Remote Config -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+  import { getRemoteConfig, fetchAndActivate, getValue } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-remote-config.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyD2YtPFL2L_ZwAKdSYpXtvLt8gJUm2IX6s",
+    authDomain: "unptours.firebaseapp.com",
+    projectId: "unptours",
+    storageBucket: "unptours.firebasestorage.app",
+    messagingSenderId: "233326851661",
+    appId: "1:233326851661:web:354156110a5cee29904e04",
+    measurementId: "G-5QJ1X38ZLC"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const remoteConfig = getRemoteConfig(app);
+  remoteConfig.settings.minimumFetchIntervalMillis = 3600000;
+
+  fetchAndActivate(remoteConfig).then(() => {
+    // Remote config can be used here
+  });
+</script>
+
+<script src="script.js"></script>
 </body>
-  </html>
+                                                   </html>
