@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Panel | UNP TOURS Zanzibar</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<style>
+    /* CSS ya ziada kwa ajili ya Admin Panel */
+    .admin-header {
+        background: linear-gradient(135deg, #0a0a0a 0%, var(--dark-green) 100%);
+        color: #fff;
+        padding: 30px 20px;
+        text-align: center;
+        border-bottom: 4px solid var(--royal-gold);
+    }
+    .admin-header h1 {
+        color: var(--royal-gold);
+        font-size: 1.8rem;
+        margin-bottom: 5px;
+    }
+    .admin-header p {
+        color: #ddd;
+        font-size: 0.9rem;
+    }
+    .admin-tabs {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+        flex-wrap: wrap;
+    }
+    .admin-tabs button {
+        background: rgba(255,255,255,0.1);
+        color: #fff;
+        border: 1px solid var(--royal-gold);
+        padding: 8px 20px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        transition: 0.3s;
+    }
+    .admin-tabs button.active, .admin-tabs button:hover {
+        background: var(--royal-gold);
+        color: var(--dark-green);
+        font-weight: 600;
+    }
+    .tab-content {
+        display: none;
+    }
+    .tab-content.active {
+        display: block;
+    }
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+    .stat-card {
+        background: #fff;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        border-left: 5px solid var(--royal-gold);
+        text-align: center;
+    }
+    .stat-card i {
+        font-size: 2rem;
+        color: var(--royal-green);
+        margin-bottom: 10px;
+    }
+    .stat-card h3 {
+        font-size: 2rem;
+        color: var(--dark-green);
+        margin-bottom: 5px;
+    }
+    .stat-card p {
+        font-size: 0.85rem;
+        color: #777;
+    }
+    .data-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        background: #fff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    .data-table th {
+        background: var(--royal-green);
+        color: #fff;
+        padding: 12px;
+        text-align: left;
+        font-size: 0.85rem;
+    }
+    .data-table td {
+        padding: 12px;
+        border-bottom: 1px solid #eee;
+        font-size: 0.85rem;
+        color: #555;
+    }
+    .data-table tr:hover {
+        background: #f9f9f9;
+    }
+    .status-badge {
+        padding: 4px 10px;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 600;
+    }
+    .status-confirmed {
+        background: #d4edda;
+        color: #155724;
+    }
+    .status-pending {
+        background: #fff3cd;
+        color: #856404;
+    }
+    .admin-note {
+        background: #fff3cd;
+        border-left: 5px solid #ffc107;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        font-size: 0.9rem;
+        color: #856404;
+    }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR & HEADER -->
+<div class="top-bar">
+<div class="lang-container">
+<i class="fas fa-globe"></i>
+<select class="lang-select">
+<option value="sw">Kiswahili</option>
+<option value="en">English</option>
+</select>
+</div>
+</div>
+
+<header class="header">
+<div class="nav-container">
+<a href="index.html" class="logo-area">
+<div class="logo-holder">
+<img src="logo.png" alt="UNP Tours Logo" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=logo-fallback>UNP<br>LOGO</span>';">
+</div>
+<div class="logo-text">
+<h2>UNP TOURS</h2>
+<span>Unique & Natural Paradise</span>
+</div>
+</a>
+<button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
+<ul class="nav-links" id="navLinks">
+<li><a href="index.html">Nyumbani</a></li>
+<li><a href="about.html">Kuhusu Sisi</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="pricing.html">Bei</a></li>
+<li><a href="membership.html">Uanachama</a></li>
+<li><a href="awards.html">Tuzo</a></li>
+<li><a href="contact.html">Wasiliana</a></li>
+<li><a href="admin.html" style="color: var(--royal-gold); font-weight: bold;">Admin</a></li>
+</ul>
+</div>
+</header>
+
+<!-- ADMIN HEADER -->
+<section class="admin-header">
+    <h1><i class="fas fa-shield-alt"></i> UNP TOURS Admin Panel</h1>
+    <p>Karibu Msimamizi. Hapa unaweza kusimamia wateja, bookings, na maudhui ya website.</p>
+    <div class="admin-tabs">
+        <button class="active" onclick="showTab('dashboard', event)"><i class="fas fa-chart-line"></i> Dashboard</button>
+        <button onclick="showTab('bookings', event)"><i class="fas fa-calendar-check"></i> Bookings</button>
+        <button onclick="showTab('customers', event)"><i class="fas fa-users"></i> Wateja</button>
+        <button onclick="showTab('messages', event)"><i class="fas fa-envelope"></i> Ujumbe</button>
+        <button onclick="logoutAdmin()" style="background: #dc3545; border-color: #dc3545;"><i class="fas fa-sign-out-alt"></i> Toka</button>
+    </div>
+</section>
+
+<div class="interactive-box" style="max-width: 1200px;">
+
+    <!-- TAB: DASHBOARD -->
+    <div class="tab-content active" id="tab-dashboard">
+        <h2><i class="fas fa-chart-line"></i> Muhtasari wa Biashara</h2>
+        <p style="color: #777; margin-bottom: 20px;">Hapa ni muhtasari wa haraka wa biashara yako.</p>
+
+        <div class="stat-grid">
+            <div class="stat-card">
+                <i class="fas fa-calendar-check"></i>
+                <h3>24</h3>
+                <p>Bookings Zote</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-users"></i>
+                <h3>156</h3>
+                <p>Wateja Waliojisajili</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-dollar-sign"></i>
+                <h3>$12,450</h3>
+                <p>Mapato ya Mwezi</p>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-star"></i>
+                <h3>4.9</h3>
+                <p>Wastani wa Maoni</p>
+            </div>
+        </div>
+
+        <div class="admin-note">
+            <i class="fas fa-info-circle"></i> <strong>Kumbuka:</strong> Hizi ni data za mfano (demo). Baadaye tunaweza kuunganisha na Firebase ili kuonyesha data halisi.
+        </div>
+    </div>
+
+    <!-- TAB: BOOKINGS -->
+    <div class="tab-content" id="tab-bookings">
+        <h2><i class="fas fa-calendar-check"></i> Bookings Zote</h2>
+        <p style="color: #777; margin-bottom: 20px;">Hapa ni orodha ya bookings zote zilizofanywa na wateja.</p>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Jina la Mteja</th>
+                    <th>Kifurushi</th>
+                    <th>Tarehe</th>
+                    <th>Watu</th>
+                    <th>Hali</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Amina Mohamed</td>
+                    <td>Standard Tour</td>
+                    <td>15 Oktoba 2026</td>
+                    <td>2</td>
+                    <td><span class="status-badge status-confirmed">Imethibitishwa</span></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>James Davidson</td>
+                    <td>VIP Luxury Experience</td>
+                    <td>20 Novemba 2026</td>
+                    <td>4</td>
+                    <td><span class="status-badge status-pending">Inasubiri</span></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Sofia Keller</td>
+                    <td>Jozani Forest</td>
+                    <td>05 Septemba 2025</td>
+                    <td>2</td>
+                    <td><span class="status-badge status-confirmed">Imekamilika</span></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Rashid Bakari</td>
+                    <td>Basic Tour</td>
+                    <td>10 Oktoba 2026</td>
+                    <td>3</td>
+                    <td><span class="status-badge status-pending">Inasubiri</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- TAB: CUSTOMERS -->
+    <div class="tab-content" id="tab-customers">
+        <h2><i class="fas fa-users"></i> Wateja Wetu</h2>
+        <p style="color: #777; margin-bottom: 20px;">Hapa ni orodha ya wateja wote waliojisajili kwenye website yako.</p>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Jina</th>
+                    <th>Barua Pepe</th>
+                    <th>Simu</th>
+                    <th>Ngazi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Amina Mohamed</td>
+                    <td>amina@example.com</td>
+                    <td>+255 655 000 000</td>
+                    <td>Gold</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>James Davidson</td>
+                    <td>james@example.com</td>
+                    <td>+44 700 000 0000</td>
+                    <td>Platinum VIP</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Sofia Keller</td>
+                    <td>sofia@example.com</td>
+                    <td>+49 150 000 0000</td>
+                    <td>Silver</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Rashid Bakari</td>
+                    <td>rashid@example.com</td>
+                    <td>+255 712 000 000</td>
+                    <td>Gold</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- TAB: MESSAGES -->
+    <div class="tab-content" id="tab-messages">
+        <h2><i class="fas fa-envelope"></i> Ujumbe Kutoka kwa Wateja</h2>
+        <p style="color: #777; margin-bottom: 20px;">Hapa ni ujumbe uliotumwa na wateja kupitia fomu ya kuwasiliana.</p>
+
+        <div class="interactive-box" style="margin: 0 0 15px 0; padding: 15px; border-left: 4px solid var(--royal-gold);">
+            <p><strong>Amina Mohamed</strong> <span style="color: #777; font-size: 0.8rem;">(amina@example.com)</span></p>
+            <p style="font-size: 0.9rem; color: #555; margin-top: 5px;">"Naomba kujua kama mnafanya safari za kikundi cha watu 10. Tafadhali njoo na bei."</p>
+            <p style="font-size: 0.75rem; color: #aaa; margin-top: 5px;">Ilipokelewa: 28 Septemba 2026</p>
+        </div>
+
+        <div class="interactive-box" style="margin: 0 0 15px 0; padding: 15px; border-left: 4px solid var(--royal-gold);">
+            <p><strong>James Davidson</strong> <span style="color: #777; font-size: 0.8rem;">(james@example.com)</span></p>
+            <p style="font-size: 0.9rem; color: #555; margin-top: 5px;">"I want to book a VIP package for my honeymoon in December. Please send me more details."</p>
+            <p style="font-size: 0.75rem; color: #aaa; margin-top: 5px;">Ilipokelewa: 27 Septemba 2026</p>
+        </div>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+<div class="footer-content">
+<div>
+<h3>UNIQUE NATURE PARADISE (UNP)</h3>
+<p style="font-size: 0.9rem; max-width: 350px;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p>
+</div>
+<div>
+<h4>Direct Contact</h4>
+<p style="font-size: 0.9rem; margin-top: 8px;"><i class="fab fa-whatsapp" style="color: var(--royal-gold);"></i> Phone: +255 655 728 982</p>
+<p style="font-size: 0.9rem; margin-top: 5px;"><i class="fas fa-envelope" style="color: var(--royal-gold);"></i> Email: salimnasoro11@gmail.com</p>
+<div class="social-links">
+<a href="https://wa.me/255655728982" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<a href="mailto:salimnasoro11@gmail.com"><i class="fas fa-envelope"></i></a>
+<a href="https://www.tiktok.com/@unptours" target="_blank"><i class="fab fa-tiktok"></i></a>
+<a href="https://www.instagram.com/unpsoulvoyoge" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://www.facebook.com/profile.php?id=61595094232501" target="_blank"><i class="fab fa-facebook"></i></a>
+</div>
+</div>
+</div>
+</footer>
+
+<script>
+  // MENU TOGGLE
+  const menuToggleBtn = document.getElementById('menuToggleBtn');
+  const navLinks = document.getElementById('navLinks');
+  if(menuToggleBtn) {
+      menuToggleBtn.addEventListener('click', () => {
+          navLinks.classList.toggle('active');
+      });
+  }
+
+  // TAB SWITCHING LOGIC
+  window.showTab = function(tabName, event) {
+      document.querySelectorAll('.tab-content').forEach(tab => {
+          tab.classList.remove('active');
+      });
+      document.querySelectorAll('.admin-tabs button').forEach(btn => {
+          btn.classList.remove('active');
+      });
+      document.getElementById('tab-' + tabName).classList.add('active');
+      if(event) event.target.classList.add('active');
+  };
+
+  // LOGOUT ADMIN
+  window.logoutAdmin = function() {
+      if(confirm("Una uhakika unataka kutoka kwenye Admin Panel?")) {
+          window.location.href = "index.html";
+      }
+  };
+</script>
+
+</body>
+  </html>
