@@ -1,3 +1,135 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weka Nafasi | UNP TOURS Zanzibar</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<style>
+    .booking-wrapper { max-width: 800px; margin: 30px auto; padding: 0 20px; }
+    .booking-summary { background: linear-gradient(135deg, var(--dark-green) 0%, var(--royal-green) 100%); color: #fff; padding: 25px; border-radius: 12px; margin-bottom: 25px; border-left: 5px solid var(--royal-gold); }
+    .booking-summary h3 { color: var(--royal-gold); margin-bottom: 10px; font-size: 1.3rem; }
+    .booking-summary p { font-size: 0.9rem; color: #ddd; line-height: 1.6; }
+    .booking-summary .highlight { color: var(--royal-gold); font-weight: 600; }
+    .package-option { display: flex; align-items: center; gap: 15px; padding: 15px; border: 2px solid #eee; border-radius: 10px; margin-bottom: 10px; cursor: pointer; transition: 0.3s; }
+    .package-option:hover { border-color: var(--royal-gold); background: #fffdf7; }
+    .package-option input[type="radio"] { width: 20px; height: 20px; accent-color: var(--royal-green); }
+    .package-details h4 { margin: 0 0 3px 0; color: var(--dark-green); font-size: 1rem; }
+    .package-details p { margin: 0; font-size: 0.85rem; color: #777; }
+    .package-price { margin-left: auto; font-weight: 700; color: var(--royal-green); font-size: 1.1rem; }
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+<div class="lang-container">
+<i class="fas fa-globe"></i>
+<select class="lang-select"><option value="sw">Kiswahili</option><option value="en">English</option></select>
+</div>
+</div>
+
+<header class="header">
+<div class="nav-container">
+<a href="index.html" class="logo-area">
+<div class="logo-holder"><img src="logo.png" alt="UNP Tours Logo" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=logo-fallback>UNP<br>LOGO</span>';"></div>
+<div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
+</a>
+<button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
+<ul class="nav-links" id="navLinks">
+<li><a href="index.html">Nyumbani</a></li>
+<li><a href="about.html">Kuhusu Sisi</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="pricing.html">Bei</a></li>
+<li><a href="membership.html">Uanachama</a></li>
+<li><a href="awards.html">Tuzo</a></li>
+<li><a href="contact.html">Wasiliana</a></li>
+<li><a href="faq.html">Maswali</a></li>
+<li><a href="login.html" style="color: var(--royal-gold); font-weight: bold;">Ingia</a></li>
+<li><a href="signup.html" style="background: var(--royal-gold); color: var(--dark-green); padding: 8px 15px; border-radius: 5px;">Jiunge</a></li>
+</ul>
+</div>
+</header>
+
+<section class="hero" style="padding: 70px 20px;">
+<h1 style="font-size: 2rem;">Weka Nafasi Yako</h1>
+<p>Chagua kifurushi chako, tarehe, na tuwasilishe ombi lako mara moja kwa WhatsApp.</p>
+</section>
+
+<div class="booking-wrapper">
+    <div class="booking-summary">
+        <h3><i class="fas fa-info-circle"></i> Jinsi Inavyofanya Kazi</h3>
+        <p>Jaza fomu hapa chini. Ukiisubmit, <span class="highlight">WhatsApp yako itafunguka</span> na ujumbe wako umekamilika. Tuma ujumbe huo ili tuweze kuthibitisha nafasi yako.</p>
+    </div>
+
+    <section class="interactive-box" id="booking-section">
+        <h2><i class="fas fa-calendar-check"></i> Fomu ya Kuweka Nafasi</h2>
+        <form id="bookingForm">
+            <h3 style="color: var(--royal-green); margin-bottom: 15px;"><i class="fas fa-box"></i> Hatua 1: Chagua Kifurushi</h3>
+            
+            <label class="package-option">
+                <input type="radio" name="package" value="Basic Tour" required>
+                <div class="package-details"><h4>Basic Tour</h4><p>City Tour, Safari Blue (Nusu siku)</p></div>
+                <span class="package-price">$50</span>
+            </label>
+            <label class="package-option">
+                <input type="radio" name="package" value="Standard Tour" checked>
+                <div class="package-details"><h4>Standard Tour <span style="color: var(--royal-gold); font-size: 0.8rem;">(Maarufu)</span></h4><p>Jozani Forest, Prison Island, Stone Town</p></div>
+                <span class="package-price">$120</span>
+            </label>
+            <label class="package-option">
+                <input type="radio" name="package" value="VIP Luxury Experience">
+                <div class="package-details"><h4>VIP Luxury Experience</h4><p>Secret Garden, Jet Ski, Private Butler</p></div>
+                <span class="package-price">$500+</span>
+            </label>
+            <label class="package-option">
+                <input type="radio" name="package" value="Custom Package">
+                <div class="package-details"><h4>Custom Package (Nyingine)</h4><p>Nitajaza maelezo kwenye sehemu ya chini</p></div>
+                <span class="package-price">Bei Maalum</span>
+            </label>
+
+            <h3 style="color: var(--royal-green); margin: 25px 0 15px 0;"><i class="fas fa-user"></i> Hatua 2: Taarifa Zako</h3>
+            <div class="form-group"><label>Jina Lako Kamili:</label><input type="text" id="guestName" placeholder="Weka jina lako kamili" required></div>
+            <div class="form-group"><label>Barua Pepe au Namba ya Simu:</label><input type="text" id="guestContact" placeholder="email@domain.com au +255..." required></div>
+            <div class="form-group"><label>Nchi Unayotoka:</label><input type="text" id="guestCountry" placeholder="Mfano: Tanzania, Kenya, USA" required></div>
+
+            <h3 style="color: var(--royal-green); margin: 25px 0 15px 0;"><i class="fas fa-calendar-alt"></i> Hatua 3: Tarehe na Idadi</h3>
+            <div class="form-group"><label>Tarehe Unayotaka:</label><input type="date" id="guestDate" required></div>
+            <div class="form-group"><label>Idadi ya Watu:</label><input type="number" id="guestCount" min="1" value="2" required></div>
+            <div class="form-group"><label>Mahali Unapoishi Zanzibar (Hoteli):</label><input type="text" id="guestHotel" placeholder="Mfano: Nungwi Beach Hotel"></div>
+            <div class="form-group"><label>Mahitaji Maalum au Maelezo:</label><textarea id="guestNotes" rows="4" placeholder="Andika mahitaji yako maalum hapa..."></textarea></div>
+
+            <button type="submit" class="btn-primary btn-full" style="margin-top: 15px;"><i class="fab fa-whatsapp"></i> Tuma Ombi kwa WhatsApp</button>
+        </form>
+    </section>
+
+    <section class="interactive-box" style="text-align: center;">
+        <h3><i class="fas fa-headset"></i> Unahitaji Msaada?</h3>
+        <p>Kama una swali lolote kuhusu booking yako, wasiliana nasi moja kwa moja:</p>
+        <p style="margin-top: 10px;">
+            <a href="tel:+255655728982" class="btn-primary" style="margin: 5px;"><i class="fas fa-phone"></i> Piga Simu</a>
+            <a href="https://wa.me/255655728982" class="btn-primary" style="margin: 5px; background: #25d366; color: white;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </p>
+    </section>
+</div>
+
+<footer class="footer">
+<div class="footer-content">
+<div><h3>UNIQUE NATURE PARADISE (UNP)</h3><p style="font-size: 0.9rem; max-width: 350px;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p></div>
+<div><h4>Direct Contact</h4><p style="font-size: 0.9rem; margin-top: 8px;"><i class="fab fa-whatsapp" style="color: var(--royal-gold);"></i> Phone: +255 655 728 982</p><p style="font-size: 0.9rem; margin-top: 5px;"><i class="fas fa-envelope" style="color: var(--royal-gold);"></i> Email: salimnasoro11@gmail.com</p>
+<div class="social-links">
+<a href="https://wa.me/255655728982" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<a href="mailto:salimnasoro11@gmail.com"><i class="fas fa-envelope"></i></a>
+<a href="https://www.tiktok.com/@unptours" target="_blank"><i class="fab fa-tiktok"></i></a>
+<a href="https://www.instagram.com/unpsoulvoyoge" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://www.facebook.com/profile.php?id=61595094232501" target="_blank"><i class="fab fa-facebook"></i></a>
+</div></div>
+</div>
+</footer>
+
+<a href="https://wa.me/255655728982" class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
   import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
@@ -15,20 +147,13 @@
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
 
-  // MENU TOGGLE
   const menuToggleBtn = document.getElementById('menuToggleBtn');
   const navLinks = document.getElementById('navLinks');
-  if(menuToggleBtn) {
-      menuToggleBtn.addEventListener('click', () => {
-          navLinks.classList.toggle('active');
-      });
-  }
+  if(menuToggleBtn) { menuToggleBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); }); }
 
-  // BOOKING FORM LOGIC
   const bookingForm = document.getElementById('bookingForm');
   bookingForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      
       const packageType = document.querySelector('input[name="package"]:checked').value;
       const name = document.getElementById('guestName').value;
       const contact = document.getElementById('guestContact').value;
@@ -39,35 +164,24 @@
       const notes = document.getElementById('guestNotes').value;
 
       try {
-          // Hifadhi booking kwenye Firestore
           await addDoc(collection(db, "bookings"), {
-              package: packageType,
-              name: name,
-              contact: contact,
-              country: country,
-              date: date,
-              guests: count,
-              hotel: hotel,
-              notes: notes,
-              status: "Inasubiri",
-              createdAt: new Date()
+              package: packageType, name: name, contact: contact, country: country,
+              date: date, guests: count, hotel: hotel, notes: notes,
+              status: "Inasubiri", createdAt: new Date()
           });
 
-          // Tengeneza ujumbe wa WhatsApp
           const message = `*UNP TOURS BOOKING REQUEST*%0A%0A*Package:* ${packageType}%0A*Name:* ${name}%0A*Contact:* ${contact}%0A*Country:* ${country}%0A*Date:* ${date}%0A*Guests:* ${count}%0A*Hotel:* ${hotel}%0A*Notes:* ${notes}`;
-          
-          const whatsappUrl = `https://wa.me/255655728982?text=${message}`;
-          window.open(whatsappUrl, '_blank');
-          
+          window.open(`https://wa.me/255655728982?text=${message}`, '_blank');
           alert("Booking yako imetumwa kwa mafanikio! Tutakujibu hivi karibuni.");
       } catch (error) {
-          console.error("Error: ", error);
           alert("Kuna hitilafu imetokea: " + error.message);
       }
   });
 
-  // WEKA TAREHE YA LEO KAMA DEFAULT
   const dateInput = document.getElementById('guestDate');
   const today = new Date().toISOString().split('T')[0];
   dateInput.setAttribute('min', today);
 </script>
+
+</body>
+  </html>
