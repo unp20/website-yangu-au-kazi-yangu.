@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uanachama | UNP TOURS Zanzibar</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<style>
+    /* CSS ya ziada kwa ajili ya Membership Page */
+    .tier-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+        max-width: 1200px;
+        margin: 30px auto;
+        padding: 0 20px;
+    }
+    .tier-card {
+        background: #fff;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        transition: transform 0.3s, box-shadow 0.3s;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #eee;
+    }
+    .tier-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    }
+    .tier-header {
+        padding: 25px;
+        text-align: center;
+        color: #fff;
+    }
+    .tier-header.silver {
+        background: linear-gradient(135deg, #a8a8a8 0%, #d3d3d3 100%);
+        color: #333;
+    }
+    .tier-header.gold {
+        background: linear-gradient(135deg, #d4af37 0%, #f5d76e 100%);
+        color: #333;
+    }
+    .tier-header.platinum {
+        background: linear-gradient(135deg, #0a0a0a 0%, #2d2d2d 100%);
+        border-bottom: 4px solid var(--royal-gold);
+    }
+    .tier-header i {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        display: block;
+    }
+    .tier-header h3 {
+        font-size: 1.4rem;
+        margin-bottom: 5px;
+    }
+    .tier-header p {
+        font-size: 0.85rem;
+        opacity: 0.9;
+    }
+    .tier-body {
+        padding: 25px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    .tier-price {
+        text-align: center;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--dark-green);
+        margin-bottom: 20px;
+    }
+    .tier-price span {
+        font-size: 0.9rem;
+        font-weight: 400;
+        color: #777;
+    }
+    .tier-features {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 25px 0;
+        flex-grow: 1;
+    }
+    .tier-features li {
+        padding: 8px 0;
+        border-bottom: 1px dashed #eee;
+        font-size: 0.9rem;
+        color: #555;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .tier-features li i.fa-check {
+        color: var(--royal-gold);
+    }
+    .tier-features li i.fa-times {
+        color: #ccc;
+    }
+    .tier-card .btn-primary {
+        width: 100%;
+        text-align: center;
+        border-radius: 8px;
+        padding: 12px;
+    }
+    .vip-lounge-preview {
+        background: linear-gradient(135deg, #0a0a0a 0%, var(--dark-green) 100%);
+        color: #fff;
+        padding: 40px 20px;
+        border-radius: 15px;
+        margin-top: 40px;
+        border: 2px solid var(--royal-gold);
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+    .vip-lounge-preview h2 {
+        color: var(--royal-gold);
+        margin-bottom: 15px;
+    }
+    .vip-lounge-preview p {
+        color: #ddd;
+        max-width: 600px;
+        margin: 0 auto 20px auto;
+    }
+    .locked-content {
+        filter: blur(8px);
+        user-select: none;
+        pointer-events: none;
+    }
+    .lock-icon {
+        font-size: 3rem;
+        color: var(--royal-gold);
+        margin-bottom: 15px;
+    }
+    .access-gate {
+        background: #fff;
+        padding: 30px;
+        border-radius: 12px;
+        max-width: 500px;
+        margin: 20px auto 0 auto;
+        text-align: center;
+        border: 2px dashed var(--royal-gold);
+    }
+    .access-gate h3 {
+        color: var(--dark-green);
+        margin-bottom: 10px;
+    }
+    .access-gate p {
+        font-size: 0.9rem;
+        color: #777;
+        margin-bottom: 15px;
+    }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR & HEADER -->
+<div class="top-bar">
+<div class="lang-container">
+<i class="fas fa-globe"></i>
+<select class="lang-select">
+<option value="sw">Kiswahili</option>
+<option value="en">English</option>
+</select>
+</div>
+</div>
+
+<header class="header">
+<div class="nav-container">
+<a href="index.html" class="logo-area">
+<div class="logo-holder">
+<img src="logo.png" alt="UNP Tours Logo" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=logo-fallback>UNP<br>LOGO</span>';">
+</div>
+<div class="logo-text">
+<h2>UNP TOURS</h2>
+<span>Unique & Natural Paradise</span>
+</div>
+</a>
+<button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
+<ul class="nav-links" id="navLinks">
+<li><a href="index.html">Nyumbani</a></li>
+<li><a href="about.html">Kuhusu Sisi</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="pricing.html">Bei</a></li>
+<li><a href="membership.html" style="color: var(--royal-gold);">Uanachama</a></li>
+<li><a href="awards.html">Tuzo</a></li>
+<li><a href="contact.html">Wasiliana</a></li>
+<li><a href="faq.html">Maswali</a></li>
+<li><a href="login.html" style="color: var(--royal-gold); font-weight: bold;">Ingia</a></li>
+<li><a href="signup.html" style="background: var(--royal-gold); color: var(--dark-green); padding: 8px 15px; border-radius: 5px;">Jiunge</a></li>
+</ul>
+</div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero" style="padding: 70px 20px;">
+<h1 style="font-size: 2rem;">Ngazi za Uanachama</h1>
+<p>Chagua ngazi yako ya uanachama na upate huduma za kifahari zaidi.</p>
+</section>
+
+<!-- MEMBERSHIP TIERS -->
+<section class="tier-grid">
+
+    <!-- Tier 1: Silver Member -->
+    <div class="tier-card">
+        <div class="tier-header silver">
+            <i class="fas fa-medal"></i>
+            <h3>Silver Member</h3>
+            <p>Kwa Wateja Wapya</p>
+        </div>
+        <div class="tier-body">
+            <div class="tier-price">BURE <span>/ kujiunga</span></div>
+            <ul class="tier-features">
+                <li><i class="fas fa-check"></i> Kuona huduma zote</li>
+                <li><i class="fas fa-check"></i> Kuweka nafasi (booking)</li>
+                <li><i class="fas fa-check"></i> Kupokea taarifa za ofa</li>
+                <li><i class="fas fa-times"></i> Punguzo la bei</li>
+                <li><i class="fas fa-times"></i> Eneo la Siri (VIP Lounge)</li>
+            </ul>
+            <a href="signup.html" class="btn-primary">Jiunge Sasa</a>
+        </div>
+    </div>
+
+    <!-- Tier 2: Gold Member (Maarufu) -->
+    <div class="tier-card" style="border: 2px solid var(--royal-gold);">
+        <div class="tier-header gold">
+            <i class="fas fa-crown"></i>
+            <h3>Gold Member</h3>
+            <p>Maarufu Zaidi</p>
+        </div>
+        <div class="tier-body">
+            <div class="tier-price">$50 <span>/ mwaka</span></div>
+            <ul class="tier-features">
+                <li><i class="fas fa-check"></i> Kuona huduma zote</li>
+                <li><i class="fas fa-check"></i> Kuweka nafasi (booking)</li>
+                <li><i class="fas fa-check"></i> Punguzo la 10% kwa safari</li>
+                <li><i class="fas fa-check"></i> Kukodisha gari kwa punguzo</li>
+                <li><i class="fas fa-times"></i> Eneo la Siri (VIP Lounge)</li>
+            </ul>
+            <a href="signup.html" class="btn-primary">Jiunge Sasa</a>
+        </div>
+    </div>
+
+    <!-- Tier 3: Platinum VIP -->
+    <div class="tier-card">
+        <div class="tier-header platinum">
+            <i class="fas fa-gem"></i>
+            <h3>Platinum VIP</h3>
+            <p>Kwa Wateja wa Kifahari</p>
+        </div>
+        <div class="tier-body">
+            <div class="tier-price">$500 <span>/ mwaka</span></div>
+            <ul class="tier-features">
+                <li><i class="fas fa-check"></i> Kila kitu kwenye Gold</li>
+                <li><i class="fas fa-check"></i> Punguzo la 25% kwa safari</li>
+                <li><i class="fas fa-check"></i> Butler wa Kibinafsi 24/7</li>
+                <li><i class="fas fa-check"></i> Eneo la Siri (VIP Lounge)</li>
+                <li><i class="fas fa-check"></i> Private Jet & Yacht booking</li>
+                <li><i class="fas fa-check"></i> Kukaribishwa kwenye Gala Night</li>
+            </ul>
+            <a href="contact.html" class="btn-primary" style="background: var(--dark-green); color: var(--royal-gold);">Wasiliana Nasi</a>
+        </div>
+    </div>
+
+</section>
+
+<!-- VIP LOUNGE PREVIEW (Access Gate) -->
+<section class="vip-lounge-preview" id="vip-lounge">
+    <i class="fas fa-lock lock-icon"></i>
+    <h2>Eneo la Siri la VIP (VIP Lounge)</h2>
+    <p>Hili ni eneo la kipekee kwa wanachama wetu wa Platinum VIP pekee. Hapa utapata maudhui ya siri, bei maalum, na huduma za kifahari ambazo hazipatikani kwa wateja wa kawaida.</p>
+    
+    <div class="locked-content">
+        <p>🔒 Maudhui ya Siri: Private Jet, Yacht, Secret Garden Video...</p>
+        <p>🔒 Bei Maalum: Punguzo la 50% kwa safari za kifahari...</p>
+    </div>
+
+    <div class="access-gate">
+        <h3><i class="fas fa-key"></i> Ingia kwenye Eneo la Siri</h3>
+        <p>Weka neno la siri la VIP ili kufungua maudhui haya.</p>
+        <div class="form-group">
+            <input type="password" id="vipPasscode" placeholder="Weka neno la siri la VIP" style="text-align: center;">
+        </div>
+        <button onclick="unlockVIP()" class="btn-primary btn-full"><i class="fas fa-unlock"></i> Fungua Eneo la Siri</button>
+        <p id="vipMessage" style="margin-top: 15px; font-weight: 600;"></p>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+<div class="footer-content">
+<div>
+<h3>UNIQUE NATURE PARADISE (UNP)</h3>
+<p style="font-size: 0.9rem; max-width: 350px;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p>
+</div>
+<div>
+<h4>Direct Contact</h4>
+<p style="font-size: 0.9rem; margin-top: 8px;"><i class="fab fa-whatsapp" style="color: var(--royal-gold);"></i> Phone: +255 655 728 982</p>
+<p style="font-size: 0.9rem; margin-top: 5px;"><i class="fas fa-envelope" style="color: var(--royal-gold);"></i> Email: salimnasoro11@gmail.com</p>
+<div class="social-links">
+<a href="https://wa.me/255655728982" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<a href="mailto:salimnasoro11@gmail.com"><i class="fas fa-envelope"></i></a>
+<a href="https://www.tiktok.com/@unptours" target="_blank"><i class="fab fa-tiktok"></i></a>
+<a href="https://www.instagram.com/unpsoulvoyoge" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://www.facebook.com/profile.php?id=61595094232501" target="_blank"><i class="fab fa-facebook"></i></a>
+</div>
+</div>
+</div>
+</footer>
+
+<a href="https://wa.me/255655728982" class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+  // MENU TOGGLE
+  const menuToggleBtn = document.getElementById('menuToggleBtn');
+  const navLinks = document.getElementById('navLinks');
+  if(menuToggleBtn) {
+      menuToggleBtn.addEventListener('click', () => {
+          navLinks.classList.toggle('active');
+      });
+  }
+
+  // VIP ACCESS GATE LOGIC
+  const VIP_PASSCODE = "UNPVIP2026"; // Unaweza kubadilisha neno hili la siri
+
+  window.unlockVIP = function() {
+      const input = document.getElementById('vipPasscode').value;
+      const message = document.getElementById('vipMessage');
+      const lockedContent = document.querySelector('.locked-content');
+
+      if (input === VIP_PASSCODE) {
+          message.textContent = "Hongera! Umefungua Eneo la Siri la VIP. Karibu!";
+          message.style.color = "#d4af37";
+          lockedContent.classList.remove('locked-content');
+          lockedContent.style.filter = "none";
+          lockedContent.style.pointerEvents = "auto";
+          lockedContent.style.userSelect = "auto";
+      } else {
+          message.textContent = "Neno la siri si sahihi. Tafadhali jaribu tena.";
+          message.style.color = "#ff6b6b";
+      }
+  };
+</script>
+
+</body>
+  </html>
