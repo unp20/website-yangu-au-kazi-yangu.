@@ -21,10 +21,12 @@ a {
 }
 
 :root {
-    --royal-green: #064e3b;
-    --dark-green: #032b1a;
-    --royal-gold: #d4af37;
-    --light-bg: #f8f9fa;
+    /* === RANGI MPYA ZA KIFAHARI ZA UNP === */
+    --royal-green: #0077b6;      /* Bluu ya Bahari ya Zanzibar */
+    --dark-green: #003049;       /* Bluu Nyeusi ya Kifahari */
+    --royal-gold: #d4af37;       /* Dhahabu ya Kifahari */
+    --light-bg: #f8f9fa;         /* Nyeupe Nyepesi */
+    --deep-black: #0a0a0a;       /* Nyeusi ya Utulivu (VIP) */
 }
 
 /* ==========================================
@@ -649,4 +651,4 @@ a {
     .music-grid {
         grid-template-columns: 1fr;
     }
-   }
+}
