@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UNP Chatbot | UNP TOURS Zanzibar</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<style>
+    /* CSS ya Chatbot */
+    .chatbot-toggle {
+        position: fixed;
+        bottom: 100px;
+        right: 25px;
+        background-color: var(--royal-green);
+        color: var(--royal-gold);
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        z-index: 1100;
+        cursor: pointer;
+        transition: transform 0.3s;
+        border: 2px solid var(--royal-gold);
+    }
+    .chatbot-toggle:hover {
+        transform: scale(1.1);
+    }
+    .chatbot-container {
+        position: fixed;
+        bottom: 170px;
+        right: 25px;
+        width: 350px;
+        max-width: 90vw;
+        height: 500px;
+        background: #fff;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        z-index: 1100;
+        display: none;
+        flex-direction: column;
+        overflow: hidden;
+        border: 2px solid var(--royal-gold);
+    }
+    .chatbot-container.active {
+        display: flex;
+    }
+    .chatbot-header {
+        background: var(--royal-green);
+        color: #fff;
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border-bottom: 2px solid var(--royal-gold);
+    }
+    .chatbot-header .avatar {
+        width: 40px;
+        height: 40px;
+        background: var(--royal-gold);
+        color: var(--dark-green);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 1.2rem;
+    }
+    .chatbot-header h4 {
+        margin: 0;
+        font-size: 1rem;
+        color: #fff;
+    }
+    .chatbot-header span {
+        font-size: 0.75rem;
+        color: #ddd;
+        display: block;
+    }
+    .chatbot-header .close-btn {
+        margin-left: auto;
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+    .chatbot-messages {
+        flex-grow: 1;
+        padding: 15px;
+        overflow-y: auto;
+        background: #f9f9f9;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .message {
+        max-width: 80%;
+        padding: 10px 15px;
+        border-radius: 15px;
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+    .message.bot {
+        background: #e9ecef;
+        color: #333;
+        align-self: flex-start;
+        border-bottom-left-radius: 5px;
+    }
+    .message.user {
+        background: var(--royal-green);
+        color: #fff;
+        align-self: flex-end;
+        border-bottom-right-radius: 5px;
+    }
+    .chatbot-input {
+        display: flex;
+        padding: 10px;
+        border-top: 1px solid #eee;
+        background: #fff;
+    }
+    .chatbot-input input {
+        flex-grow: 1;
+        padding: 10px 15px;
+        border: 1px solid #ddd;
+        border-radius: 20px;
+        outline: none;
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.85rem;
+    }
+    .chatbot-input button {
+        background: var(--royal-gold);
+        color: var(--dark-green);
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-left: 8px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background 0.3s;
+    }
+    .chatbot-input button:hover {
+        background: var(--dark-green);
+        color: var(--royal-gold);
+    }
+    .quick-replies {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        padding: 0 10px 10px 10px;
+        background: #fff;
+    }
+    .quick-replies button {
+        background: #f0f0f0;
+        border: 1px solid #ddd;
+        border-radius: 15px;
+        padding: 5px 12px;
+        font-size: 0.75rem;
+        cursor: pointer;
+        transition: 0.3s;
+        color: #333;
+    }
+    .quick-replies button:hover {
+        background: var(--royal-gold);
+        color: var(--dark-green);
+        border-color: var(--royal-gold);
+    }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR & HEADER (Iliyopo) -->
+<div class="top-bar">
+<div class="lang-container">
+<i class="fas fa-globe"></i>
+<select class="lang-select"><option value="sw">Kiswahili</option><option value="en">English</option></select>
+</div>
+</div>
+
+<header class="header">
+<div class="nav-container">
+<a href="index.html" class="logo-area">
+<div class="logo-holder"><img src="logo.png" alt="UNP Tours Logo" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=logo-fallback>UNP<br>LOGO</span>';"></div>
+<div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
+</a>
+<button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
+<ul class="nav-links" id="navLinks">
+<li><a href="index.html">Nyumbani</a></li>
+<li><a href="about.html">Kuhusu Sisi</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="pricing.html">Bei</a></li>
+<li><a href="membership.html">Uanachama</a></li>
+<li><a href="awards.html">Tuzo</a></li>
+<li><a href="contact.html">Wasiliana</a></li>
+<li><a href="faq.html">Maswali</a></li>
+</ul>
+</div>
+</header>
+
+<!-- HERO SECTION (Iliyopo) -->
+<section class="hero">
+<h1>UNP TOURS ZANZIBAR</h1>
+<p>Discover Zanzibar & Tanzania's most exquisite luxury tours, water sports, handmade artwork, and private sanctuary experiences in full freedom.</p>
+<a href="#booking-section" class="btn-primary">Book VIP Experience</a>
+</section>
+
+<!-- HAPA UNAWEZA KUWEKA MAUDHUI MENGINE YA index.html YAKO -->
+
+<!-- CHATBOT TOGGLE BUTTON -->
+<div class="chatbot-toggle" onclick="toggleChatbot()">
+    <i class="fas fa-robot"></i>
+</div>
+
+<!-- CHATBOT CONTAINER -->
+<div class="chatbot-container" id="chatbotContainer">
+    <div class="chatbot-header">
+        <div class="avatar">U</div>
+        <div>
+            <h4>UNP Assistant</h4>
+            <span><i class="fas fa-circle" style="color: #25d366; font-size: 0.6rem;"></i> Yupo Mtandaoni</span>
+        </div>
+        <button class="close-btn" onclick="toggleChatbot()"><i class="fas fa-times"></i></button>
+    </div>
+
+    <div class="chatbot-messages" id="chatMessages">
+        <div class="message bot">Karibu UNP TOURS! Mimi ni msaidizi wako wa kidijitali. Ninaweza kukusaidia vipi leo?</div>
+    </div>
+
+    <div class="quick-replies">
+        <button onclick="sendQuickReply('Nataka kuweka booking')">Weka Booking</button>
+        <button onclick="sendQuickReply('Bei za safari ni ngapi?')">Bei</button>
+        <button onclick="sendQuickReply('Ninaweza kuwasiliana na nani?')">Wasiliana</button>
+    </div>
+
+    <div class="chatbot-input">
+        <input type="text" id="chatInput" placeholder="Andika ujumbe wako..." onkeypress="handleKeyPress(event)">
+        <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+    </div>
+</div>
+
+<!-- FOOTER (Iliyopo) -->
+<footer class="footer">
+<div class="footer-content">
+<div><h3>UNIQUE NATURE PARADISE (UNP)</h3><p style="font-size: 0.9rem; max-width: 350px;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p></div>
+<div><h4>Direct Contact</h4><p style="font-size: 0.9rem; margin-top: 8px;"><i class="fab fa-whatsapp" style="color: var(--royal-gold);"></i> Phone: +255 655 728 982</p><p style="font-size: 0.9rem; margin-top: 5px;"><i class="fas fa-envelope" style="color: var(--royal-gold);"></i> Email: salimnasoro11@gmail.com</p></div>
+</div>
+</footer>
+
+<a href="https://wa.me/255655728982" class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+  // MENU TOGGLE
+  const menuToggleBtn = document.getElementById('menuToggleBtn');
+  const navLinks = document.getElementById('navLinks');
+  if(menuToggleBtn) { menuToggleBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); }); }
+
+  // ==== CHATBOT LOGIC ====
+  function toggleChatbot() {
+      const container = document.getElementById('chatbotContainer');
+      container.classList.toggle('active');
+  }
+
+  function handleKeyPress(event) {
+      if (event.key === 'Enter') {
+          sendMessage();
+      }
+  }
+
+  function sendQuickReply(text) {
+      document.getElementById('chatInput').value = text;
+      sendMessage();
+  }
+
+  function sendMessage() {
+      const input = document.getElementById('chatInput');
+      const messageText = input.value.trim();
+      if (messageText === '') return;
+
+      const messagesContainer = document.getElementById('chatMessages');
+
+      // Ongeza ujumbe wa mtumiaji
+      const userMessage = document.createElement('div');
+      userMessage.className = 'message user';
+      userMessage.textContent = messageText;
+      messagesContainer.appendChild(userMessage);
+
+      // Safisha input
+      input.value = '';
+
+      // Subiri sekunde 1 kisha jibu la bot
+      setTimeout(() => {
+          const botMessage = document.createElement('div');
+          botMessage.className = 'message bot';
+          botMessage.textContent = getBotReply(messageText);
+          messagesContainer.appendChild(botMessage);
+          messagesContainer.scrollTop = messagesContainer.scrollHeight;
+      }, 800);
+
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+  }
+
+  // ==== AKILI YA BOT (MAJIBU YA MASWALI) ====
+  function getBotReply(message) {
+      const msg = message.toLowerCase();
+
+      // Maswali kuhusu Booking
+      if (msg.includes('booking') || msg.includes('weka nafasi') || msg.includes('book')) {
+          return "Unaweza kuweka booking kwa urahisi kwa kubonyeza kitufe cha 'Weka Nafasi' kwenye ukurasa wa Nyumbani, au tembelea ukurasa wa Booking. Pia unaweza kutuma ombi lako moja kwa moja kwa WhatsApp yetu: +255 655 728 982.";
+      }
+
+      // Maswali kuhusu Bei
+      if (msg.includes('bei') || msg.includes('price') || msg.includes('gharama') || msg.includes('cost')) {
+          return "Bei zetu ni: Basic Tour ($50), Standard Tour ($120), na VIP Luxury Experience ($500+). Kwa bei maalum za kikundi au safari maalum, wasiliana nasi kwa WhatsApp: +255 655 728 982.";
+      }
+
+      // Maswali kuhusu Huduma
+      if (msg.includes('huduma') || msg.includes('service') || msg.includes('safari') || msg.includes('tour')) {
+          return "Tunatoa huduma za kifahari ikiwa ni pamoja na: Zanzibar Historic Tours, Jozani Forest, VIP Transfers, Water Sports (Jet Ski), Tanzania Safaris, na Secret Garden (Private Oasis). Tembelea ukurasa wa 'Bei' kwa maelezo zaidi.";
+      }
+
+      // Maswali kuhusu Muda
+      if (msg.includes('muda') || msg.includes('time') || msg.includes('saa') || msg.includes('lini')) {
+          return "Tunafanya kazi saa 24, siku 7 kwa wiki. Unaweza kuwasiliana nasi wakati wowote kupitia WhatsApp: +255 655 728 982 au barua pepe: salimnasoro11@gmail.com.";
+      }
+
+      // Maswali kuhusu Malipo
+      if (msg.includes('malipo') || msg.includes('payment') || msg.includes('lipa') || msg.includes('pay')) {
+          return "Tunakubali malipo kwa M-Pesa, Tigo Pesa, Airtel Money, Benki (CRDB/NMB), na Kadi za Kimataifa (Visa/Mastercard). Kwa maelezo zaidi ya malipo, wasiliana nasi kwa WhatsApp: +255 655 728 982.";
+      }
+
+      // Maswali kuhusu Wasiliana
+      if (msg.includes('wasiliana') || msg.includes('contact') || msg.includes('simu') || msg.includes('email')) {
+          return "Unaweza kuwasiliana nasi kwa: WhatsApp/Simu: +255 655 728 982, Barua Pepe: salimnasoro11@gmail.com, au tembelea ukurasa wetu wa 'Wasiliana'. Tuko tayari kukusaidia!";
+      }
+
+      // Maswali kuhusu Zanzibar
+      if (msg.includes('zanzibar') || msg.includes('visiwa') || msg.includes('pwani')) {
+          return "Zanzibar ni kisiwa cha kuvutia chenye fukwe nzuri, historia tajiri, na utamaduni wa kipekee. Tunatoa safari za kukuzunguka Zanzibar na Tanzania. Je, ungependa kujua kuhusu safari gani hasa?";
+      }
+
+      // Maswali kuhusu Kikundi
+      if (msg.includes('kikundi') || msg.includes('group') || msg.includes('watu wengi')) {
+          return "Ndio! Tunatoa punguzo maalum kwa vikundi vya watu 5 au zaidi. Wasiliana nasi kwa WhatsApp: +255 655 728 982 kwa bei maalum ya kikundi chako.";
+      }
+
+      // Maswali kuhusu VIP
+      if (msg.includes('vip') || msg.includes('kifahari') || msg.includes('luxury')) {
+          return "Kifurushi chetu cha VIP Luxury kinajumuisha: Private Jet booking, Secret Garden, Butler wa Kibinafsi, Jet Ski, na mengine mengi. Bei inaanzia $500+. Wasiliana nasi kwa maelezo zaidi!";
+      }
+
+      // Jibu la jumla
+      return "Asante kwa swali lako! Kwa maelezo zaidi, tafadhali wasiliana nasi kwa WhatsApp: +255 655 728 982 au barua pepe: salimnasoro11@gmail.com. Tuko tayari kukusaidia!";
+  }
+</script>
+
+</body>
+  </html>
