@@ -89,4 +89,145 @@
     <div class="tab-content" id="tab-bookings">
         <h2><i class="fas fa-calendar-check"></i> Bookings Zote</h2>
         <table class="data-table">
-            <thead><tr><th>#</th><th
+            <thead><tr><th>#</th><th>Jina</th><th>Kifurushi</th><th>Tarehe</th><th>Watu</th><th>Hali</th></tr></thead>
+            <tbody id="bookingsBody"><tr><td colspan="6" style="text-align:center;">Inapakia...</td></tr></tbody>
+        </table>
+    </div>
+
+    <div class="tab-content" id="tab-customers">
+        <h2><i class="fas fa-users"></i> Wateja Wetu</h2>
+        <table class="data-table">
+            <thead><tr><th>#</th><th>Jina</th><th>Barua Pepe</th><th>Simu</th><th>Ngazi</th></tr></thead>
+            <tbody id="customersBody"><tr><td colspan="5" style="text-align:center;">Inapakia...</td></tr></tbody>
+        </table>
+    </div>
+
+    <div class="tab-content" id="tab-messages">
+        <h2><i class="fas fa-envelope"></i> Ujumbe Kutoka kwa Wateja</h2>
+        <div id="messagesContainer"><p style="text-align:center;">Inapakia...</p></div>
+    </div>
+
+</div>
+
+<footer class="footer">
+<div class="footer-content">
+<div><h3>UNIQUE NATURE PARADISE (UNP)</h3><p style="font-size: 0.9rem; max-width: 350px;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p></div>
+<div><h4>Direct Contact</h4><p style="font-size: 0.9rem; margin-top: 8px;"><i class="fab fa-whatsapp" style="color: var(--royal-gold);"></i> Phone: +255 655 728 982</p><p style="font-size: 0.9rem; margin-top: 5px;"><i class="fas fa-envelope" style="color: var(--royal-gold);"></i> Email: salimnasoro11@gmail.com</p>
+<div class="social-links">
+<a href="https://wa.me/255655728982" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<a href="mailto:salimnasoro11@gmail.com"><i class="fas fa-envelope"></i></a>
+<a href="https://www.tiktok.com/@unptours" target="_blank"><i class="fab fa-tiktok"></i></a>
+<a href="https://www.instagram.com/unpsoulvoyoge" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://www.facebook.com/profile.php?id=61595094232501" target="_blank"><i class="fab fa-facebook"></i></a>
+</div></div>
+</div>
+</footer>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+  import { getFirestore, collection, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyD2YtPFL2L_ZwAKdSYpXtvLt8gJUm2IX6s",
+    authDomain: "unptours.firebaseapp.com",
+    projectId: "unptours",
+    storageBucket: "unptours.firebasestorage.app",
+    messagingSenderId: "233326851661",
+    appId: "1:233326851661:web:354156110a5cee29904e04",
+    measurementId: "G-5QJ1X38ZLC"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  const menuToggleBtn = document.getElementById('menuToggleBtn');
+  const navLinks = document.getElementById('navLinks');
+  if(menuToggleBtn) { menuToggleBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); }); }
+
+  window.showTab = function(tabName, event) {
+      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+      document.querySelectorAll('.admin-tabs button').forEach(btn => btn.classList.remove('active'));
+      document.getElementById('tab-' + tabName).classList.add('active');
+      if(event) event.target.classList.add('active');
+  };
+
+  window.logoutAdmin = function() {
+      if(confirm("Una uhakika unataka kutoka kwenye Admin Panel?")) {
+          window.location.href = "index.html";
+      }
+  };
+
+  async function loadBookings() {
+      const tbody = document.getElementById('bookingsBody');
+      try {
+          const q = query(collection(db, "bookings"), orderBy("createdAt", "desc"));
+          const snap = await getDocs(q);
+          document.getElementById('statBookings').textContent = snap.size;
+
+          if (snap.empty) {
+              tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;">Hakuna bookings bado.</td></tr>';
+              return;
+          }
+          tbody.innerHTML = '';
+          let count = 1;
+          snap.forEach((doc) => {
+              const d = doc.data();
+              const cls = d.status === 'Imethibitishwa' ? 'status-confirmed' : 'status-pending';
+              tbody.innerHTML += `<tr><td>${count++}</td><td>${d.name||'-'}</td><td>${d.package||'-'}</td><td>${d.date||'-'}</td><td>${d.guests||'-'}</td><td><span class="status-badge ${cls}">${d.status||'Inasubiri'}</span></td></tr>`;
+          });
+      } catch (err) {
+          tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;color:red;">Kosa: ' + err.message + '</td></tr>';
+      }
+  }
+
+  async function loadCustomers() {
+      const tbody = document.getElementById('customersBody');
+      try {
+          const snap = await getDocs(collection(db, "users"));
+          document.getElementById('statCustomers').textContent = snap.size;
+
+          if (snap.empty) {
+              tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;">Hakuna wateja bado.</td></tr>';
+              return;
+          }
+          tbody.innerHTML = '';
+          let count = 1;
+          snap.forEach((doc) => {
+              const d = doc.data();
+              tbody.innerHTML += `<tr><td>${count++}</td><td>${d.name||'-'}</td><td>${d.email||'-'}</td><td>${d.phone||'-'}</td><td>${d.tier||'Silver'}</td></tr>`;
+          });
+      } catch (err) {
+          tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;color:red;">Kosa: ' + err.message + '</td></tr>';
+      }
+  }
+
+  async function loadMessages() {
+      const container = document.getElementById('messagesContainer');
+      try {
+          const q = query(collection(db, "messages"), orderBy("createdAt", "desc"));
+          const snap = await getDocs(q);
+          document.getElementById('statMessages').textContent = snap.size;
+
+          if (snap.empty) {
+              container.innerHTML = '<p style="text-align:center;">Hakuna ujumbe bado.</p>';
+              return;
+          }
+          container.innerHTML = '';
+          snap.forEach((doc) => {
+              const d = doc.data();
+              container.innerHTML += `<div class="interactive-box" style="margin:0 0 15px 0;padding:15px;border-left:4px solid var(--royal-gold);"><p><strong>${d.name||'Mteja'}</strong> <span style="color:#777;font-size:0.8rem;">(${d.email||'-'})</span></p><p style="font-size:0.9rem;color:#555;margin-top:5px;">"${d.message||''}"</p></div>`;
+          });
+      } catch (err) {
+          container.innerHTML = '<p style="text-align:center;color:red;">Kosa: ' + err.message + '</p>';
+      }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+      loadBookings();
+      loadCustomers();
+      loadMessages();
+  });
+</script>
+
+</body>
+    </html>
