@@ -7,10 +7,39 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
+
+<!-- ==========================================
+     SEO META TAGS
+     ========================================== -->
+<meta name="description" content="Washirika wa UNP TOURS - Hoteli, mashirika ya ndege, na makampuni ya utalii tunayoshirikiana nao kwa huduma bora za kifahari Zanzibar.">
+<meta name="keywords" content="UNP tours partners, Zanzibar hotels, Zanzibar airlines, tourism partners Zanzibar, washirika wa utalii">
+<meta name="author" content="UNP TOURS Zanzibar">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Washirika Wetu | UNP TOURS Zanzibar">
+<meta property="og:description" content="Tunashirikiana na makampuni bora duniani.">
+<meta property="og:image" content="https://unp.tours/images/logo.png">
+<meta property="og:url" content="https://unp.tours/partners.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="UNP TOURS">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Washirika Wetu | UNP TOURS Zanzibar">
+<meta name="twitter:description" content="Tunashirikiana na makampuni bora duniani.">
+<meta name="twitter:image" content="https://unp.tours/images/logo.png">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://unp.tours/partners.html">
+
+<!-- Geo Tags -->
+<meta name="geo.region" content="TZ-07">
+<meta name="geo.placename" content="Zanzibar">
+<meta name="geo.position" content="-6.165917;39.202641">
+<meta name="ICBM" content="-6.165917, 39.202641">
+
 <style>
-    /* ==========================================
-       1. PARTNERS PAGE
-       ========================================== */
     .partner-category { margin-bottom: 40px; }
     .partner-category h3 {
         color: var(--royal-green);
@@ -56,9 +85,7 @@
     .become-partner-box h2 { color: var(--royal-gold); margin-bottom: 15px; }
     .become-partner-box p { color: #ddd; margin-bottom: 20px; max-width: 600px; margin-left: auto; margin-right: auto; }
 
-    /* ==========================================
-       2. MOBILE MENU ILIOBORESHWA
-       ========================================== */
+    /* Mobile Menu Iliyoboreshwa */
     @media (max-width: 768px) {
         .menu-toggle { display: block; font-size: 26px; }
         .nav-links {
@@ -83,33 +110,6 @@
         from { opacity: 0; transform: translateY(-10px); }
         to { opacity: 1; transform: translateY(0); }
     }
-
-    /* ==========================================
-       3. STAR RATING & REVIEWS
-       ========================================== */
-    .star-rating { display: flex; gap: 8px; font-size: 2rem; cursor: pointer; margin: 10px 0; }
-    .star-rating .fa-star { color: #ccc; transition: color 0.2s, transform 0.2s; }
-    .star-rating .fa-star:hover { transform: scale(1.2); }
-    .star-rating .fa-star.active { color: var(--royal-gold); }
-
-    .review-card {
-        background: #fff; border-radius: 12px; padding: 20px;
-        margin-bottom: 15px; box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-        border-left: 4px solid var(--royal-gold);
-    }
-    .review-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 10px; }
-    .review-name { font-weight: 700; color: var(--dark-green); font-size: 1rem; }
-    .review-date { font-size: 0.8rem; color: #999; }
-    .review-stars { color: var(--royal-gold); font-size: 0.9rem; margin-bottom: 10px; }
-    .review-service {
-        display: inline-block; background: var(--royal-green); color: #fff;
-        padding: 3px 10px; border-radius: 15px; font-size: 0.75rem; margin-bottom: 10px;
-    }
-    .review-message { font-size: 0.9rem; color: #555; line-height: 1.6; font-style: italic; }
-
-    .alert-message { display: none; margin-top: 15px; padding: 12px; border-radius: 8px; font-weight: 600; text-align: center; }
-    .alert-success { background-color: #d4edda; color: #155724; display: block; }
-    .alert-error { background-color: #f8d7da; color: #721c24; display: block; }
 </style>
 </head>
 <body>
@@ -125,7 +125,7 @@
 <header class="header">
 <div class="nav-container">
 <a href="index.html" class="logo-area">
-<div class="logo-holder"><img src="logo.png" alt="UNP Tours Logo" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=logo-fallback>UNP<br>LOGO</span>';"></div>
+<div class="logo-holder"><img src="images/logo.png" alt="UNP Tours Logo" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=logo-fallback>UNP<br>LOGO</span>';"></div>
 <div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
 </a>
 <button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
@@ -134,7 +134,8 @@
 <li><a href="about.html"><i class="fas fa-info-circle"></i> Kuhusu Sisi</a></li>
 <li><a href="services.html"><i class="fas fa-briefcase"></i> Huduma</a></li>
 <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
-<li><a href="pricing.html"><i class="fas fa-tag"></i> Bei</a></li>
+<li><a href="pricing.html"><i class="fas fa-layer-group"></i> Madaraja</a></li>
+<li><a href="events.html"><i class="fas fa-calendar-alt"></i> Matukio</a></li>
 <li><a href="partners.html" style="color: var(--royal-gold);"><i class="fas fa-handshake"></i> Washirika</a></li>
 <li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
 <li><a href="contact.html"><i class="fas fa-envelope"></i> Wasiliana</a></li>
@@ -193,58 +194,6 @@
 
 </section>
 
-<!-- STAR RATING & REVIEWS SECTION -->
-<section class="interactive-box" id="review-section" style="max-width: 800px;">
-    <h2><i class="fas fa-star"></i> Acha Maoni Yako</h2>
-    <p style="margin-bottom: 20px;">Tuambie uzoefu wako na UNP TOURS. Maoni yako yanatusaidia kuboresha huduma zetu.</p>
-    
-    <form id="reviewForm">
-        <div class="form-group">
-            <label>Jina Lako:</label>
-            <input type="text" id="reviewName" placeholder="Weka jina lako" required>
-        </div>
-        <div class="form-group">
-            <label>Chagua Huduma Uliyopata:</label>
-            <select id="reviewService" required>
-                <option value="">Chagua...</option>
-                <option value="Zanzibar Historic Tours">Zanzibar Historic Tours</option>
-                <option value="Jozani Forest">Jozani Forest</option>
-                <option value="Safari Blue">Safari Blue</option>
-                <option value="VIP Luxury Experience">VIP Luxury Experience</option>
-                <option value="Tanzania Safari">Tanzania Safari</option>
-                <option value="Vehicle Rentals">Vehicle Rentals</option>
-                <option value="Romantic Dinner">Romantic Dinner</option>
-                <option value="Nyingine">Nyingine</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label>Kiwango cha Kuridhika (1-5 Nyota):</label>
-            <div class="star-rating" id="reviewStars">
-                <i class="fas fa-star" data-value="1"></i>
-                <i class="fas fa-star" data-value="2"></i>
-                <i class="fas fa-star" data-value="3"></i>
-                <i class="fas fa-star" data-value="4"></i>
-                <i class="fas fa-star" data-value="5"></i>
-            </div>
-            <input type="hidden" id="selectedReviewRating" value="0">
-        </div>
-        <div class="form-group">
-            <label>Maoni Yako:</label>
-            <textarea id="reviewMessage" rows="4" placeholder="Andika maoni yako hapa..." required></textarea>
-        </div>
-        <button type="submit" class="btn-primary btn-full"><i class="fas fa-paper-plane"></i> Tuma Maoni</button>
-    </form>
-    <div id="reviewMessageBox" class="alert-message"></div>
-</section>
-
-<!-- DISPLAY REVIEWS -->
-<section class="interactive-box" style="max-width: 900px;">
-    <h2><i class="fas fa-comments"></i> Maoni ya Wateja Wetu</h2>
-    <div id="reviewsContainer">
-        <p style="text-align: center;">Inapakia maoni...</p>
-    </div>
-</section>
-
 <!-- BECOME A PARTNER -->
 <section class="interactive-box" style="max-width: 800px;">
     <div class="become-partner-box">
@@ -271,117 +220,10 @@
 
 <a href="https://wa.me/255655728982" class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
-<!-- FIREBASE & JAVASCRIPT -->
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
-  import { getFirestore, collection, addDoc, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
-
-  const firebaseConfig = {
-    apiKey: "AIzaSyD2YtPFL2L_ZwAKdSYpXtvLt8gJUm2IX6s",
-    authDomain: "unptours.firebaseapp.com",
-    projectId: "unptours",
-    storageBucket: "unptours.firebasestorage.app",
-    messagingSenderId: "233326851661",
-    appId: "1:233326851661:web:354156110a5cee29904e04",
-    measurementId: "G-5QJ1X38ZLC"
-  };
-
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
-
-  // MENU TOGGLE
+<script>
   const menuToggleBtn = document.getElementById('menuToggleBtn');
   const navLinks = document.getElementById('navLinks');
   if(menuToggleBtn) { menuToggleBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); }); }
-
-  // STAR RATING LOGIC
-  const stars = document.querySelectorAll('#reviewStars .fa-star');
-  const ratingInput = document.getElementById('selectedReviewRating');
-
-  stars.forEach(star => {
-      star.addEventListener('click', () => {
-          const value = star.getAttribute('data-value');
-          ratingInput.value = value;
-          stars.forEach(s => s.classList.remove('active'));
-          for (let i = 0; i < value; i++) {
-              stars[i].classList.add('active');
-          }
-      });
-  });
-
-  // REVIEW FORM SUBMIT
-  const reviewForm = document.getElementById('reviewForm');
-  const reviewMessageBox = document.getElementById('reviewMessageBox');
-
-  reviewForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const name = document.getElementById('reviewName').value;
-      const service = document.getElementById('reviewService').value;
-      const rating = ratingInput.value;
-      const message = document.getElementById('reviewMessage').value;
-
-      if (rating === "0") {
-          reviewMessageBox.textContent = "Tafadhali chagua nyota kwanza!";
-          reviewMessageBox.className = "alert-message alert-error";
-          return;
-      }
-
-      try {
-          await addDoc(collection(db, "reviews"), {
-              name: name, service: service, rating: parseInt(rating),
-              message: message, approved: false, createdAt: new Date()
-          });
-          reviewMessageBox.textContent = "Asante! Maoni yako yametumwa.";
-          reviewMessageBox.className = "alert-message alert-success";
-          reviewForm.reset();
-          stars.forEach(s => s.classList.remove('active'));
-          ratingInput.value = "0";
-      } catch (error) {
-          reviewMessageBox.textContent = "Kuna hitilafu imetokea: " + error.message;
-          reviewMessageBox.className = "alert-message alert-error";
-      }
-  });
-
-  // LOAD REVIEWS
-  async function loadReviews() {
-      const container = document.getElementById('reviewsContainer');
-      try {
-          const q = query(collection(db, "reviews"), orderBy("createdAt", "desc"));
-          const snap = await getDocs(q);
-
-          if (snap.empty) {
-              container.innerHTML = '<p style="text-align: center; color: #777;">Hakuna maoni bado. Kuwa wa kwanza kuacha maoni!</p>';
-              return;
-          }
-
-          container.innerHTML = '';
-          snap.forEach((doc) => {
-              const d = doc.data();
-              if (d.approved === true || d.approved === undefined) {
-                  const starsHtml = '<i class="fas fa-star"></i>'.repeat(d.rating) + '<i class="far fa-star"></i>'.repeat(5 - d.rating);
-                  container.innerHTML += `
-                      <div class="review-card">
-                          <div class="review-header">
-                              <span class="review-name"><i class="fas fa-user-circle"></i> ${d.name}</span>
-                              <span class="review-date"><i class="fas fa-calendar"></i> ${new Date(d.createdAt.seconds * 1000).toLocaleDateString('sw-TZ')}</span>
-                          </div>
-                          <span class="review-service">${d.service}</span>
-                          <div class="review-stars">${starsHtml}</div>
-                          <p class="review-message">"${d.message}"</p>
-                      </div>
-                  `;
-              }
-          });
-
-          if (container.innerHTML === '') {
-              container.innerHTML = '<p style="text-align: center; color: #777;">Hakuna maoni yaliyoidhinishwa bado.</p>';
-          }
-      } catch (error) {
-          container.innerHTML = '<p style="text-align: center; color: red;">Kosa: ' + error.message + '</p>';
-      }
-  }
-
-  document.addEventListener('DOMContentLoaded', loadReviews);
 </script>
 
 </body>
