@@ -7,6 +7,38 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
+
+<!-- ==========================================
+     SEO META TAGS
+     ========================================== -->
+<meta name="description" content="Ramani ya Website - UNP TOURS. Kurasa zote za website yetu kwa mpangilio rahisi.">
+<meta name="keywords" content="UNP tours sitemap, website map, ramani ya website">
+<meta name="author" content="UNP TOURS Zanzibar">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Ramani ya Website | UNP TOURS Zanzibar">
+<meta property="og:description" content="Kurasa zote za website yetu kwa mpangilio rahisi.">
+<meta property="og:image" content="https://unp.tours/images/logo.png">
+<meta property="og:url" content="https://unp.tours/sitemap.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="UNP TOURS">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Ramani ya Website | UNP TOURS Zanzibar">
+<meta name="twitter:description" content="Kurasa zote za website yetu kwa mpangilio rahisi.">
+<meta name="twitter:image" content="https://unp.tours/images/logo.png">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://unp.tours/sitemap.html">
+
+<!-- Geo Tags -->
+<meta name="geo.region" content="TZ-07">
+<meta name="geo.placename" content="Zanzibar">
+<meta name="geo.position" content="-6.165917;39.202641">
+<meta name="ICBM" content="-6.165917, 39.202641">
+
 <style>
     .sitemap-grid {
         display: grid;
@@ -61,6 +93,32 @@
         color: var(--royal-gold);
         font-size: 0.7rem;
     }
+
+    /* Mobile Menu Iliyoboreshwa */
+    @media (max-width: 768px) {
+        .menu-toggle { display: block; font-size: 26px; }
+        .nav-links {
+            display: none; flex-direction: column; width: 100%;
+            background: linear-gradient(135deg, var(--dark-green), var(--royal-green));
+            padding: 20px 15px; gap: 5px;
+            border-radius: 0 0 15px 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            animation: slideDown 0.3s ease;
+        }
+        .nav-links.active { display: flex; }
+        .nav-links li { width: 100%; }
+        .nav-links a {
+            display: flex; align-items: center; gap: 12px;
+            padding: 12px 15px; border-radius: 8px;
+            font-size: 1rem; transition: all 0.3s;
+        }
+        .nav-links a:hover { background: rgba(212, 175, 55, 0.15); padding-left: 20px; }
+        .nav-links a i { color: var(--royal-gold); font-size: 1.1rem; width: 20px; text-align: center; }
+    }
+    @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
 </style>
 </head>
 <body>
@@ -76,7 +134,7 @@
 <header class="header">
 <div class="nav-container">
 <a href="index.html" class="logo-area">
-<div class="logo-holder"><img src="logo.png" alt="UNP Tours Logo" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=logo-fallback>UNP<br>LOGO</span>';"></div>
+<div class="logo-holder"><img src="images/logo.png" alt="UNP Tours Logo" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=logo-fallback>UNP<br>LOGO</span>';"></div>
 <div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
 </a>
 <button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
@@ -85,7 +143,9 @@
 <li><a href="about.html"><i class="fas fa-info-circle"></i> Kuhusu Sisi</a></li>
 <li><a href="services.html"><i class="fas fa-briefcase"></i> Huduma</a></li>
 <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
-<li><a href="pricing.html"><i class="fas fa-tag"></i> Bei</a></li>
+<li><a href="pricing.html"><i class="fas fa-layer-group"></i> Madaraja</a></li>
+<li><a href="events.html"><i class="fas fa-calendar-alt"></i> Matukio</a></li>
+<li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
 <li><a href="contact.html"><i class="fas fa-envelope"></i> Wasiliana</a></li>
 </ul>
 </div>
@@ -108,7 +168,7 @@
             <li><a href="about.html"><i class="fas fa-chevron-right"></i> Kuhusu Sisi</a></li>
             <li><a href="services.html"><i class="fas fa-chevron-right"></i> Huduma Zetu</a></li>
             <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
-            <li><a href="pricing.html"><i class="fas fa-chevron-right"></i> Bei</a></li>
+            <li><a href="pricing.html"><i class="fas fa-chevron-right"></i> Madaraja</a></li>
             <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Wasiliana Nasi</a></li>
         </ul>
     </div>
@@ -118,7 +178,7 @@
         <h3><i class="fas fa-crown"></i> Uanachama & Huduma</h3>
         <ul>
             <li><a href="membership.html"><i class="fas fa-chevron-right"></i> Ngazi za Uanachama</a></li>
-            <li><a href="booking.html"><i class="fas fa-chevron-right"></i> Weka Nafasi</a></li>
+            <li><a href="booking.html"><i class="fas fa-chevron-right"></i> Omba Bei</a></li>
             <li><a href="promotions.html"><i class="fas fa-chevron-right"></i> Matangazo & Ofa</a></li>
             <li><a href="awards.html"><i class="fas fa-chevron-right"></i> Tuzo za UNP</a></li>
             <li><a href="events.html"><i class="fas fa-chevron-right"></i> Matukio Maalum</a></li>
@@ -171,9 +231,9 @@
 </section>
 
 <!-- CALL TO ACTION -->
-<section class="interactive-box" style="max-width: 700px; text-align: center;">
-    <h2><i class="fas fa-search"></i> Hukupata Unachokitafuta?</h2>
-    <p style="margin-bottom: 20px;">Wasiliana nasi na tutakusaidia kupata taarifa unayohitaji.</p>
+<section class="interactive-box" style="max-width: 700px; text-align: center; background: linear-gradient(135deg, var(--dark-green), var(--royal-green)); color: #fff;">
+    <h2 style="color: var(--royal-gold);">Hukupata Unachokitafuta?</h2>
+    <p style="color: #ddd; margin-bottom: 20px;">Wasiliana nasi na tutakusaidia kupata taarifa unayohitaji.</p>
     <a href="contact.html" class="btn-primary"><i class="fas fa-envelope"></i> Wasiliana Nasi</a>
 </section>
 
@@ -201,4 +261,4 @@
 </script>
 
 </body>
-  </html>
+    </html>
