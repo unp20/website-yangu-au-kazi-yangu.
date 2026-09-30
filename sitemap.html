@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ramani ya Website | UNP TOURS Zanzibar</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<style>
+    .sitemap-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+        max-width: 1200px;
+        margin: 30px auto;
+        padding: 0 20px;
+    }
+    .sitemap-category {
+        background: #fff;
+        border-radius: 12px;
+        padding: 25px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        border-top: 4px solid var(--royal-gold);
+    }
+    .sitemap-category h3 {
+        color: var(--dark-green);
+        margin-bottom: 15px;
+        font-size: 1.1rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .sitemap-category h3 i {
+        color: var(--royal-gold);
+    }
+    .sitemap-category ul {
+        list-style: none;
+        padding: 0;
+    }
+    .sitemap-category ul li {
+        padding: 8px 0;
+        border-bottom: 1px dashed #eee;
+    }
+    .sitemap-category ul li:last-child {
+        border-bottom: none;
+    }
+    .sitemap-category ul li a {
+        color: #555;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: color 0.3s, padding-left 0.3s;
+    }
+    .sitemap-category ul li a:hover {
+        color: var(--royal-green);
+        padding-left: 5px;
+    }
+    .sitemap-category ul li a i {
+        color: var(--royal-gold);
+        font-size: 0.7rem;
+    }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR & HEADER -->
+<div class="top-bar">
+<div class="lang-container">
+<i class="fas fa-globe"></i>
+<select class="lang-select"><option value="sw">Kiswahili</option><option value="en">English</option></select>
+</div>
+</div>
+
+<header class="header">
+<div class="nav-container">
+<a href="index.html" class="logo-area">
+<div class="logo-holder"><img src="logo.png" alt="UNP Tours Logo" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=logo-fallback>UNP<br>LOGO</span>';"></div>
+<div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
+</a>
+<button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
+<ul class="nav-links" id="navLinks">
+<li><a href="index.html"><i class="fas fa-home"></i> Nyumbani</a></li>
+<li><a href="about.html"><i class="fas fa-info-circle"></i> Kuhusu Sisi</a></li>
+<li><a href="services.html"><i class="fas fa-briefcase"></i> Huduma</a></li>
+<li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+<li><a href="pricing.html"><i class="fas fa-tag"></i> Bei</a></li>
+<li><a href="contact.html"><i class="fas fa-envelope"></i> Wasiliana</a></li>
+</ul>
+</div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero" style="padding: 70px 20px;">
+<h1 style="font-size: 2rem;">Ramani ya Website</h1>
+<p>Kurasa zote za UNP TOURS kwa mpangilio rahisi.</p>
+</section>
+
+<!-- SITEMAP GRID -->
+<section class="sitemap-grid">
+
+    <!-- Category 1: Kurasa Kuu -->
+    <div class="sitemap-category">
+        <h3><i class="fas fa-home"></i> Kurasa Kuu</h3>
+        <ul>
+            <li><a href="index.html"><i class="fas fa-chevron-right"></i> Nyumbani</a></li>
+            <li><a href="about.html"><i class="fas fa-chevron-right"></i> Kuhusu Sisi</a></li>
+            <li><a href="services.html"><i class="fas fa-chevron-right"></i> Huduma Zetu</a></li>
+            <li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+            <li><a href="pricing.html"><i class="fas fa-chevron-right"></i> Bei</a></li>
+            <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Wasiliana Nasi</a></li>
+        </ul>
+    </div>
+
+    <!-- Category 2: Uanachama & Huduma -->
+    <div class="sitemap-category">
+        <h3><i class="fas fa-crown"></i> Uanachama & Huduma</h3>
+        <ul>
+            <li><a href="membership.html"><i class="fas fa-chevron-right"></i> Ngazi za Uanachama</a></li>
+            <li><a href="booking.html"><i class="fas fa-chevron-right"></i> Weka Nafasi</a></li>
+            <li><a href="promotions.html"><i class="fas fa-chevron-right"></i> Matangazo & Ofa</a></li>
+            <li><a href="awards.html"><i class="fas fa-chevron-right"></i> Tuzo za UNP</a></li>
+            <li><a href="events.html"><i class="fas fa-chevron-right"></i> Matukio Maalum</a></li>
+            <li><a href="partners.html"><i class="fas fa-chevron-right"></i> Washirika Wetu</a></li>
+        </ul>
+    </div>
+
+    <!-- Category 3: Habari & Maoni -->
+    <div class="sitemap-category">
+        <h3><i class="fas fa-newspaper"></i> Habari & Maoni</h3>
+        <ul>
+            <li><a href="blog.html"><i class="fas fa-chevron-right"></i> Blog & Habari</a></li>
+            <li><a href="testimonials.html"><i class="fas fa-chevron-right"></i> Maoni ya Wateja</a></li>
+            <li><a href="press.html"><i class="fas fa-chevron-right"></i> Habari kwa Vyombo</a></li>
+            <li><a href="faq.html"><i class="fas fa-chevron-right"></i> Maswali (FAQ)</a></li>
+        </ul>
+    </div>
+
+    <!-- Category 4: Akaunti -->
+    <div class="sitemap-category">
+        <h3><i class="fas fa-user-circle"></i> Akaunti Yako</h3>
+        <ul>
+            <li><a href="signup.html"><i class="fas fa-chevron-right"></i> Jiunge Nasi</a></li>
+            <li><a href="login.html"><i class="fas fa-chevron-right"></i> Ingia</a></li>
+            <li><a href="profile.html"><i class="fas fa-chevron-right"></i> Wasifu Wangu</a></li>
+            <li><a href="join.html"><i class="fas fa-chevron-right"></i> Kuwa Mshirika</a></li>
+            <li><a href="careers.html"><i class="fas fa-chevron-right"></i> Nafasi za Kazi</a></li>
+        </ul>
+    </div>
+
+    <!-- Category 5: Sera & Masharti -->
+    <div class="sitemap-category">
+        <h3><i class="fas fa-file-contract"></i> Sera & Masharti</h3>
+        <ul>
+            <li><a href="privacy.html"><i class="fas fa-chevron-right"></i> Sera za Faragha</a></li>
+            <li><a href="terms.html"><i class="fas fa-chevron-right"></i> Masharti na Sheria</a></li>
+            <li><a href="sitemap.html"><i class="fas fa-chevron-right"></i> Ramani ya Website</a></li>
+            <li><a href="404.html"><i class="fas fa-chevron-right"></i> Ukurasa wa Kosa (404)</a></li>
+        </ul>
+    </div>
+
+    <!-- Category 6: Admin -->
+    <div class="sitemap-category">
+        <h3><i class="fas fa-shield-alt"></i> Admin</h3>
+        <ul>
+            <li><a href="admin.html"><i class="fas fa-chevron-right"></i> Admin Panel</a></li>
+        </ul>
+    </div>
+
+</section>
+
+<!-- CALL TO ACTION -->
+<section class="interactive-box" style="max-width: 700px; text-align: center;">
+    <h2><i class="fas fa-search"></i> Hukupata Unachokitafuta?</h2>
+    <p style="margin-bottom: 20px;">Wasiliana nasi na tutakusaidia kupata taarifa unayohitaji.</p>
+    <a href="contact.html" class="btn-primary"><i class="fas fa-envelope"></i> Wasiliana Nasi</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+<div class="footer-content">
+<div><h3>UNIQUE NATURE PARADISE (UNP)</h3><p style="font-size: 0.9rem; max-width: 350px;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p></div>
+<div><h4>Direct Contact</h4><p style="font-size: 0.9rem; margin-top: 8px;"><i class="fab fa-whatsapp" style="color: var(--royal-gold);"></i> Phone: +255 655 728 982</p><p style="font-size: 0.9rem; margin-top: 5px;"><i class="fas fa-envelope" style="color: var(--royal-gold);"></i> Email: salimnasoro11@gmail.com</p>
+<div class="social-links">
+<a href="https://wa.me/255655728982" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<a href="mailto:salimnasoro11@gmail.com"><i class="fas fa-envelope"></i></a>
+<a href="https://www.tiktok.com/@unptours" target="_blank"><i class="fab fa-tiktok"></i></a>
+<a href="https://www.instagram.com/unpsoulvoyoge" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://www.facebook.com/profile.php?id=61595094232501" target="_blank"><i class="fab fa-facebook"></i></a>
+</div></div>
+</div>
+</footer>
+
+<a href="https://wa.me/255655728982" class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+  const menuToggleBtn = document.getElementById('menuToggleBtn');
+  const navLinks = document.getElementById('navLinks');
+  if(menuToggleBtn) { menuToggleBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); }); }
+</script>
+
+</body>
+  </html>
