@@ -1,0 +1,26 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://unp.tours/sitemap.xml
+
+# Kwa Google
+User-agent: Googlebot
+Allow: /
+
+# Kwa Bing
+User-agent: Bingbot
+Allow: /
+
+# Kwa Yandex (Russia)
+User-agent: Yandex
+Allow: /
+
+# Kwa Baidu (China)
+User-agent: Baiduspider
+Allow: /
+
+# Kuzuia kurasa za Admin
+Disallow: /admin.html
+Disallow: /login.html
+Disallow: /signup.html
+Disallow: /profile.html
