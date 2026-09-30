@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matukio Maalum | UNP TOURS Zanzibar</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<style>
+    /* CSS ya ziada kwa ajili ya Events Page */
+    .event-card {
+        background: #fff;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        margin-bottom: 30px;
+        border-left: 5px solid var(--royal-gold);
+        transition: transform 0.3s, box-shadow 0.3s;
+        display: flex;
+        flex-direction: column;
+    }
+    .event-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    }
+    .event-header {
+        background: linear-gradient(135deg, var(--dark-green) 0%, var(--royal-green) 100%);
+        color: #fff;
+        padding: 25px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    .event-date-badge {
+        background: var(--royal-gold);
+        color: var(--dark-green);
+        border-radius: 10px;
+        padding: 10px 15px;
+        text-align: center;
+        font-weight: 700;
+        min-width: 80px;
+    }
+    .event-date-badge .day {
+        font-size: 1.8rem;
+        line-height: 1;
+        display: block;
+    }
+    .event-date-badge .month {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        display: block;
+    }
+    .event-title h3 {
+        margin: 0;
+        font-size: 1.4rem;
+        color: var(--royal-gold);
+    }
+    .event-title span {
+        font-size: 0.85rem;
+        color: #ddd;
+        display: block;
+        margin-top: 5px;
+    }
+    .event-body {
+        padding: 25px;
+    }
+    .event-body p {
+        color: #555;
+        line-height: 1.7;
+        margin-bottom: 15px;
+    }
+    .event-details {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+        font-size: 0.9rem;
+        color: #777;
+    }
+    .event-details span i {
+        color: var(--royal-gold);
+        margin-right: 5px;
+    }
+    .event-actions {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+    .event-actions .btn-primary {
+        flex: 1;
+        min-width: 150px;
+        text-align: center;
+    }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR & HEADER -->
+<div class="top-bar">
+<div class="lang-container">
+<i class="fas fa-globe"></i>
+<select class="lang-select"><option value="sw">Kiswahili</option><option value="en">English</option></select>
+</div>
+</div>
+
+<header class="header">
+<div class="nav-container">
+<a href="index.html" class="logo-area">
+<div class="logo-holder"><img src="logo.png" alt="UNP Tours Logo" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=logo-fallback>UNP<br>LOGO</span>';"></div>
+<div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
+</a>
+<button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
+<ul class="nav-links" id="navLinks">
+<li><a href="index.html"><i class="fas fa-home"></i> Nyumbani</a></li>
+<li><a href="about.html"><i class="fas fa-info-circle"></i> Kuhusu Sisi</a></li>
+<li><a href="services.html"><i class="fas fa-briefcase"></i> Huduma</a></li>
+<li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+<li><a href="events.html" style="color: var(--royal-gold);"><i class="fas fa-calendar-alt"></i> Matukio</a></li>
+<li><a href="awards.html"><i class="fas fa-trophy"></i> Tuzo</a></li>
+<li><a href="partners.html"><i class="fas fa-handshake"></i> Washirika</a></li>
+<li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
+<li><a href="contact.html"><i class="fas fa-envelope"></i> Wasiliana</a></li>
+</ul>
+</div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero" style="padding: 70px 20px;">
+<h1 style="font-size: 2rem;">Matukio Maalum</h1>
+<p>Jiunge nasi kwenye matukio ya kifahari na uzoefu wa kipekee wa Zanzibar.</p>
+</section>
+
+<!-- EVENTS CONTENT -->
+<section class="interactive-box" style="max-width: 1000px;">
+
+    <!-- Event 1: UNP Luxury Gala Night -->
+    <div class="event-card">
+        <div class="event-header">
+            <div class="event-date-badge">
+                <span class="day">15</span>
+                <span class="month">Desemba</span>
+            </div>
+            <div class="event-title">
+                <h3>UNP Luxury Gala Night</h3>
+                <span><i class="fas fa-trophy"></i> Usiku wa Tuzo za UNP Excellence Awards</span>
+            </div>
+        </div>
+        <div class="event-body">
+            <p>Usiku wa kifahari wa kutoa tuzo, muziki wa live, chakula cha kifahari, na furaha. Tunakutana kila mwaka tarehe 15 Desemba kwenye hoteli ya kifahari ya Zanzibar.</p>
+            <div class="event-details">
+                <span><i class="fas fa-map-marker-alt"></i> Nungwi Beach Resort</span>
+                <span><i class="fas fa-clock"></i> 7:00 usiku - 1:00 asubuhi</span>
+                <span><i class="fas fa-ticket-alt"></i> Tiketi: $50</span>
+            </div>
+            <div class="event-actions">
+                <a href="booking.html" class="btn-primary"><i class="fas fa-calendar-check"></i> Weka Nafasi</a>
+                <a href="awards.html" class="btn-primary" style="background: var(--dark-green); color: var(--royal-gold);"><i class="fas fa-info-circle"></i> Maelezo Zaidi</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Event 2: Full Moon Party -->
+    <div class="event-card">
+        <div class="event-header">
+            <div class="event-date-badge">
+                <span class="day">30</span>
+                <span class="month">Oktoba</span>
+            </div>
+            <div class="event-title">
+                <h3>Full Moon Party - Kendwa Rocks</h3>
+                <span><i class="fas fa-moon"></i> Sherehe maarufu ya mwezi kamili</span>
+            </div>
+        </div>
+        <div class="event-body">
+            <p>Kila mwezi, Kendwa Rocks inaandaa sherehe kubwa ya Full Moon Party. Muziki wa live, DJs, dansi, na furaha usiku kucha pwani ya Kendwa.</p>
+            <div class="event-details">
+                <span><i class="fas fa-map-marker-alt"></i> Kendwa Rocks Hotel</span>
+                <span><i class="fas fa-clock"></i> 8:00 usiku - 4:00 asubuhi</span>
+                <span><i class="fas fa-ticket-alt"></i> Kuingia: BURE</span>
+            </div>
+            <div class="event-actions">
+                <a href="booking.html" class="btn-primary"><i class="fas fa-calendar-check"></i> Weka Nafasi</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Event 3: Zanzibar Food Festival -->
+    <div class="event-card">
+        <div class="event-header">
+            <div class="event-date-badge">
+                <span class="day">20</span>
+                <span class="month">Julai</span>
+            </div>
+            <div class="event-title">
+                <h3>Zanzibar Food Festival</h3>
+                <span><i class="fas fa-utensils"></i> Tamasha la vyakula vya Zanzibar</span>
+            </div>
+        </div>
+        <div class="event-body">
+            <p>Tamasha la vyakula vya Zanzibar linalowaonyesha vyakula vya kipekee kama Pilau, Biryani, Urojo, Zanzibar Pizza, na mengine mengi. Pamoja na muziki wa live na dansi.</p>
+            <div class="event-details">
+                <span><i class="fas fa-map-marker-alt"></i> Forodhani Gardens, Stone Town</span>
+                <span><i class="fas fa-clock"></i> 5:00 usiku - 11:00 usiku</span>
+                <span><i class="fas fa-ticket-alt"></i> Kuingia: BURE</span>
+            </div>
+            <div class="event-actions">
+                <a href="booking.html" class="btn-primary"><i class="fas fa-calendar-check"></i> Weka Nafasi</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Event 4: Sauti za Busara Music Festival -->
+    <div class="event-card">
+        <div class="event-header">
+            <div class="event-date-badge">
+                <span class="day">10</span>
+                <span class="month">Februari</span>
+            </div>
+            <div class="event-title">
+                <h3>Sauti za Busara Music Festival</h3>
+                <span><i class="fas fa-music"></i> Tamasha la muziki wa Kiswahili</span>
+            </div>
+        </div>
+        <div class="event-body">
+            <p>Tamasha la muziki wa Kiswahili linalowaleta wasanii kutoka Afrika Mashariki na duniani kote. Muziki wa live, dansi, na utamaduni wa Kiswahili.</p>
+            <div class="event-details">
+                <span><i class="fas fa-map-marker-alt"></i> Old Fort, Stone Town</span>
+                <span><i class="fas fa-clock"></i> 7:00 usiku - 1:00 asubuhi</span>
+                <span><i class="fas fa-ticket-alt"></i> Tiketi: $30</span>
+            </div>
+            <div class="event-actions">
+                <a href="booking.html" class="btn-primary"><i class="fas fa-calendar-check"></i> Weka Nafasi</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Event 5: Zanzibar International Film Festival -->
+    <div class="event-card">
+        <div class="event-header">
+            <div class="event-date-badge">
+                <span class="day">07</span>
+                <span class="month">Julai</span>
+            </div>
+            <div class="event-title">
+                <h3>Zanzibar International Film Festival (ZIFF)</h3>
+                <span><i class="fas fa-film"></i> Tamasha la filamu za Kiafrika</span>
+            </div>
+        </div>
+        <div class="event-body">
+            <p>Tamasha la filamu za Kiafrika linalowaonyesha filamu bora kutoka Afrika na duniani. Pamoja na waongozaji, waigizaji, na wabunifu wa filamu.</p>
+            <div class="event-details">
+                <span><i class="fas fa-map-marker-alt"></i> Stone Town, Zanzibar</span>
+                <span><i class="fas fa-clock"></i> Siku 7 (tarehe 7-14 Julai)</span>
+                <span><i class="fas fa-ticket-alt"></i> Tiketi: $20 kwa siku</span>
+            </div>
+            <div class="event-actions">
+                <a href="booking.html" class="btn-primary"><i class="fas fa-calendar-check"></i> Weka Nafasi</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Event 6: Group Safari Adventure -->
+    <div class="event-card">
+        <div class="event-header">
+            <div class="event-date-badge">
+                <span class="day">01</span>
+                <span class="month">Agosti</span>
+            </div>
+            <div class="event-title">
+                <h3>Group Safari Adventure</h3>
+                <span><i class="fas fa-users"></i> Safari ya kikundi cha watu 10+</span>
+            </div>
+        </div>
+        <div class="event-body">
+            <p>Jiunge na kikundi cha watalii wengine kwa safari ya siku 5 kutoka Zanzibar hadi Serengeti na Ngorongoro. Bei maalum kwa kikundi cha watu 10 au zaidi.</p>
+            <div class="event-details">
+                <span><i class="fas fa-map-marker-alt"></i> Serengeti & Ngorongoro</span>
+                <span><i class="fas fa-clock"></i> Siku 5</span>
+                <span><i class="fas fa-ticket-alt"></i> Bei: $1,200 kwa mtu</span>
+            </div>
+            <div class="event-actions">
+                <a href="booking.html" class="btn-primary"><i class="fas fa-calendar-check"></i> Weka Nafasi</a>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<!-- CUSTOM EVENT REQUEST -->
+<section class="interactive-box" style="max-width: 700px; text-align: center;">
+    <h2><i class="fas fa-calendar-plus"></i> Unataka Tukupangie Tukio Maalum?</h2>
+    <p style="margin-bottom: 20px;">Kama una tukio maalum (harusi, birthday, honeymoon, n.k.), tunakupangia tukio la kipekee.</p>
+    <a href="contact.html" class="btn-primary"><i class="fas fa-paper-plane"></i> Wasiliana Nasi</a>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+<div class="footer-content">
+<div><h3>UNIQUE NATURE PARADISE (UNP)</h3><p style="font-size: 0.9rem; max-width: 350px;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p></div>
+<div><h4>Direct Contact</h4><p style="font-size: 0.9rem; margin-top: 8px;"><i class="fab fa-whatsapp" style="color: var(--royal-gold);"></i> Phone: +255 655 728 982</p><p style="font-size: 0.9rem; margin-top: 5px;"><i class="fas fa-envelope" style="color: var(--royal-gold);"></i> Email: salimnasoro11@gmail.com</p>
+<div class="social-links">
+<a href="https://wa.me/255655728982" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<a href="mailto:salimnasoro11@gmail.com"><i class="fas fa-envelope"></i></a>
+<a href="https://www.tiktok.com/@unptours" target="_blank"><i class="fab fa-tiktok"></i></a>
+<a href="https://www.instagram.com/unpsoulvoyoge" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://www.facebook.com/profile.php?id=61595094232501" target="_blank"><i class="fab fa-facebook"></i></a>
+</div></div>
+</div>
+</footer>
+
+<a href="https://wa.me/255655728982" class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+  const menuToggleBtn = document.getElementById('menuToggleBtn');
+  const navLinks = document.getElementById('navLinks');
+  if(menuToggleBtn) { menuToggleBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); }); }
+</script>
+
+</body>
+                  </html>
