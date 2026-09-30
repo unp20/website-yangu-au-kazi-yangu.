@@ -7,6 +7,38 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
+
+<!-- ==========================================
+     SEO META TAGS
+     ========================================== -->
+<meta name="description" content="Masharti na Sheria - UNP TOURS. Soma masharti yetu ya huduma, kughairi, malipo, na usalama.">
+<meta name="keywords" content="UNP tours terms, Zanzibar tour terms, masharti ya huduma, sheria za utalii">
+<meta name="author" content="UNP TOURS Zanzibar">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Masharti na Sheria | UNP TOURS Zanzibar">
+<meta property="og:description" content="Soma masharti na sheria za huduma zetu.">
+<meta property="og:image" content="https://unp.tours/images/logo.png">
+<meta property="og:url" content="https://unp.tours/terms.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="UNP TOURS">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Masharti na Sheria | UNP TOURS Zanzibar">
+<meta name="twitter:description" content="Soma masharti na sheria za huduma zetu.">
+<meta name="twitter:image" content="https://unp.tours/images/logo.png">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://unp.tours/terms.html">
+
+<!-- Geo Tags -->
+<meta name="geo.region" content="TZ-07">
+<meta name="geo.placename" content="Zanzibar">
+<meta name="geo.position" content="-6.165917;39.202641">
+<meta name="ICBM" content="-6.165917, 39.202641">
+
 <style>
     .terms-content h3 {
         color: var(--royal-green);
@@ -39,6 +71,32 @@
         font-style: italic;
         margin-bottom: 20px;
     }
+
+    /* Mobile Menu Iliyoboreshwa */
+    @media (max-width: 768px) {
+        .menu-toggle { display: block; font-size: 26px; }
+        .nav-links {
+            display: none; flex-direction: column; width: 100%;
+            background: linear-gradient(135deg, var(--dark-green), var(--royal-green));
+            padding: 20px 15px; gap: 5px;
+            border-radius: 0 0 15px 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            animation: slideDown 0.3s ease;
+        }
+        .nav-links.active { display: flex; }
+        .nav-links li { width: 100%; }
+        .nav-links a {
+            display: flex; align-items: center; gap: 12px;
+            padding: 12px 15px; border-radius: 8px;
+            font-size: 1rem; transition: all 0.3s;
+        }
+        .nav-links a:hover { background: rgba(212, 175, 55, 0.15); padding-left: 20px; }
+        .nav-links a i { color: var(--royal-gold); font-size: 1.1rem; width: 20px; text-align: center; }
+    }
+    @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
 </style>
 </head>
 <body>
@@ -54,20 +112,19 @@
 <header class="header">
 <div class="nav-container">
 <a href="index.html" class="logo-area">
-<div class="logo-holder"><img src="logo.png" alt="UNP Tours Logo" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=logo-fallback>UNP<br>LOGO</span>';"></div>
+<div class="logo-holder"><img src="images/logo.png" alt="UNP Tours Logo" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=logo-fallback>UNP<br>LOGO</span>';"></div>
 <div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
 </a>
 <button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
 <ul class="nav-links" id="navLinks">
-<li><a href="index.html">Nyumbani</a></li>
-<li><a href="about.html">Kuhusu Sisi</a></li>
-<li><a href="services.html">Huduma</a></li>
-<li><a href="gallery.html">Gallery</a></li>
-<li><a href="pricing.html">Bei</a></li>
-<li><a href="promotions.html">Matangazo</a></li>
-<li><a href="membership.html">Uanachama</a></li>
-<li><a href="join.html">Jiunge Nasi</a></li>
-<li><a href="contact.html">Wasiliana</a></li>
+<li><a href="index.html"><i class="fas fa-home"></i> Nyumbani</a></li>
+<li><a href="about.html"><i class="fas fa-info-circle"></i> Kuhusu Sisi</a></li>
+<li><a href="services.html"><i class="fas fa-briefcase"></i> Huduma</a></li>
+<li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+<li><a href="pricing.html"><i class="fas fa-layer-group"></i> Madaraja</a></li>
+<li><a href="events.html"><i class="fas fa-calendar-alt"></i> Matukio</a></li>
+<li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
+<li><a href="contact.html"><i class="fas fa-envelope"></i> Wasiliana</a></li>
 </ul>
 </div>
 </header>
@@ -83,16 +140,16 @@
     <p class="terms-last-updated"><i class="fas fa-calendar-alt"></i> Ilisasishwa mara ya mwisho: 30 Septemba 2026</p>
 
     <h3>1. Utangulizi</h3>
-    <p>Karibu UNP TOURS (Unique & Natural Paradise). Kwa kutumia website yetu na huduma zetu, unakubali masharti na sheria zilizoelezwa hapa chini. Tafadhali soma kwa makini kabla ya kuweka nafasi yoyote.</p>
+    <p>Karibu UNP TOURS (Unique & Natural Paradise). Kwa kutumia website yetu na huduma zetu, unakubali masharti na sheria zilizoelezwa hapa chini. Tafadhali soma kwa makini kabla ya kuomba bei au kuweka nafasi yoyote.</p>
 
-    <h3>2. Kuweka Nafasi (Booking)</h3>
-    <p>Wateja wanaweza kuweka nafasi kwa njia zifuatazo:</p>
+    <h3>2. Kuomba Bei (Booking)</h3>
+    <p>Wateja wanaweza kuomba bei kwa njia zifuatazo:</p>
     <ul>
-        <li>Kupitia fomu ya booking kwenye website yetu.</li>
+        <li>Kupitia fomu ya kuomba bei kwenye website yetu.</li>
         <li>Kupitia WhatsApp: +255 655 728 982.</li>
         <li>Kupitia barua pepe: salimnasoro11@gmail.com.</li>
     </ul>
-    <p>Booking inakuwa rasmi baada ya kupokea uthibitisho kutoka kwetu na malipo ya awali (deposit) kama itahitajika.</p>
+    <p>Ombi lako linakuwa rasmi baada ya kupokea uthibitisho kutoka kwetu na malipo ya awali (deposit) kama itahitajika.</p>
 
     <h3>3. Malipo (Payment)</h3>
     <p>Tunakubali njia zifuatazo za malipo:</p>
@@ -120,7 +177,7 @@
     <h3>6. Wajibu wa Mteja</h3>
     <p>Mteja anakubali:</p>
     <ul>
-        <li>Kutoa taarifa sahihi wakati wa kuweka nafasi.</li>
+        <li>Kutoa taarifa sahihi wakati wa kuomba bei.</li>
         <li>Kuheshimu utamaduni na sheria za Zanzibar na Tanzania.</li>
         <li>Kutunza mazingira na wanyama pori.</li>
         <li>Kufuata maelekezo ya guide wakati wa safari.</li>
@@ -183,4 +240,4 @@
 </script>
 
 </body>
-  </html>
+        </html>
