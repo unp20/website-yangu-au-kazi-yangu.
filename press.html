@@ -7,8 +7,39 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
+
+<!-- ==========================================
+     SEO META TAGS
+     ========================================== -->
+<meta name="description" content="Habari kwa Vyombo vya Habari - UNP TOURS. Taarifa, picha, na mawasiliano kwa waandishi wa habari na blogu.">
+<meta name="keywords" content="UNP tours press, Zanzibar tourism press, habari za utalii, press release Zanzibar">
+<meta name="author" content="UNP TOURS Zanzibar">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Habari kwa Vyombo | UNP TOURS Zanzibar">
+<meta property="og:description" content="Taarifa kwa waandishi wa habari na blogu.">
+<meta property="og:image" content="https://unp.tours/images/logo.png">
+<meta property="og:url" content="https://unp.tours/press.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="UNP TOURS">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Habari kwa Vyombo | UNP TOURS Zanzibar">
+<meta name="twitter:description" content="Taarifa kwa waandishi wa habari na blogu.">
+<meta name="twitter:image" content="https://unp.tours/images/logo.png">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://unp.tours/press.html">
+
+<!-- Geo Tags -->
+<meta name="geo.region" content="TZ-07">
+<meta name="geo.placename" content="Zanzibar">
+<meta name="geo.position" content="-6.165917;39.202641">
+<meta name="ICBM" content="-6.165917, 39.202641">
+
 <style>
-    /* CSS ya ziada kwa Press Page */
     .press-kit-box {
         background: linear-gradient(135deg, var(--dark-green) 0%, var(--royal-green) 100%);
         color: #fff;
@@ -18,14 +49,8 @@
         margin-bottom: 30px;
         border: 2px solid var(--royal-gold);
     }
-    .press-kit-box h2 {
-        color: var(--royal-gold);
-        margin-bottom: 15px;
-    }
-    .press-kit-box p {
-        color: #ddd;
-        margin-bottom: 20px;
-    }
+    .press-kit-box h2 { color: var(--royal-gold); margin-bottom: 15px; }
+    .press-kit-box p { color: #ddd; margin-bottom: 20px; }
     .press-kit-buttons {
         display: flex;
         gap: 15px;
@@ -42,9 +67,7 @@
         font-size: 0.9rem;
         transition: background 0.3s;
     }
-    .press-kit-buttons a:hover {
-        background: #fff;
-    }
+    .press-kit-buttons a:hover { background: #fff; }
     .news-item {
         background: #fff;
         border-radius: 12px;
@@ -54,24 +77,10 @@
         border-left: 4px solid var(--royal-gold);
         transition: transform 0.3s;
     }
-    .news-item:hover {
-        transform: translateY(-3px);
-    }
-    .news-item .news-date {
-        font-size: 0.8rem;
-        color: #999;
-        margin-bottom: 5px;
-    }
-    .news-item h3 {
-        color: var(--dark-green);
-        margin-bottom: 10px;
-        font-size: 1.1rem;
-    }
-    .news-item p {
-        color: #555;
-        font-size: 0.9rem;
-        line-height: 1.6;
-    }
+    .news-item:hover { transform: translateY(-3px); }
+    .news-item .news-date { font-size: 0.8rem; color: #999; margin-bottom: 5px; }
+    .news-item h3 { color: var(--dark-green); margin-bottom: 10px; font-size: 1.1rem; }
+    .news-item p { color: #555; font-size: 0.9rem; line-height: 1.6; }
     .press-contact {
         background: #f9f9f9;
         padding: 25px;
@@ -79,19 +88,34 @@
         margin-top: 20px;
         text-align: center;
     }
-    .press-contact h3 {
-        color: var(--royal-green);
-        margin-bottom: 15px;
+    .press-contact h3 { color: var(--royal-green); margin-bottom: 15px; }
+    .press-contact p { color: #555; margin-bottom: 10px; font-size: 0.95rem; }
+    .press-contact a { color: var(--royal-green); font-weight: 600; text-decoration: underline; }
+
+    /* Mobile Menu Iliyoboreshwa */
+    @media (max-width: 768px) {
+        .menu-toggle { display: block; font-size: 26px; }
+        .nav-links {
+            display: none; flex-direction: column; width: 100%;
+            background: linear-gradient(135deg, var(--dark-green), var(--royal-green));
+            padding: 20px 15px; gap: 5px;
+            border-radius: 0 0 15px 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            animation: slideDown 0.3s ease;
+        }
+        .nav-links.active { display: flex; }
+        .nav-links li { width: 100%; }
+        .nav-links a {
+            display: flex; align-items: center; gap: 12px;
+            padding: 12px 15px; border-radius: 8px;
+            font-size: 1rem; transition: all 0.3s;
+        }
+        .nav-links a:hover { background: rgba(212, 175, 55, 0.15); padding-left: 20px; }
+        .nav-links a i { color: var(--royal-gold); font-size: 1.1rem; width: 20px; text-align: center; }
     }
-    .press-contact p {
-        color: #555;
-        margin-bottom: 10px;
-        font-size: 0.95rem;
-    }
-    .press-contact a {
-        color: var(--royal-green);
-        font-weight: 600;
-        text-decoration: underline;
+    @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
     }
 </style>
 </head>
@@ -108,7 +132,7 @@
 <header class="header">
 <div class="nav-container">
 <a href="index.html" class="logo-area">
-<div class="logo-holder"><img src="logo.png" alt="UNP Tours Logo" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=logo-fallback>UNP<br>LOGO</span>';"></div>
+<div class="logo-holder"><img src="images/logo.png" alt="UNP Tours Logo" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=logo-fallback>UNP<br>LOGO</span>';"></div>
 <div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
 </a>
 <button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
@@ -116,9 +140,11 @@
 <li><a href="index.html"><i class="fas fa-home"></i> Nyumbani</a></li>
 <li><a href="about.html"><i class="fas fa-info-circle"></i> Kuhusu Sisi</a></li>
 <li><a href="services.html"><i class="fas fa-briefcase"></i> Huduma</a></li>
+<li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+<li><a href="pricing.html"><i class="fas fa-layer-group"></i> Madaraja</a></li>
 <li><a href="events.html"><i class="fas fa-calendar-alt"></i> Matukio</a></li>
 <li><a href="press.html" style="color: var(--royal-gold);"><i class="fas fa-newspaper"></i> Habari</a></li>
-<li><a href="partners.html"><i class="fas fa-handshake"></i> Washirika</a></li>
+<li><a href="blog.html"><i class="fas fa-blog"></i> Blog</a></li>
 <li><a href="contact.html"><i class="fas fa-envelope"></i> Wasiliana</a></li>
 </ul>
 </div>
@@ -159,7 +185,7 @@
 <!-- PRESS RELEASES -->
 <section class="interactive-box" style="max-width: 900px;">
     <h2><i class="fas fa-newspaper"></i> Habari za Hivi Karibuni (Press Releases)</h2>
-    
+
     <div class="news-item">
         <p class="news-date"><i class="fas fa-calendar"></i> 30 Septemba 2026</p>
         <h3>UNP TOURS Yazindua Mfumo Mpya wa Kuweka Nafasi Mtandaoni</h3>
@@ -216,4 +242,4 @@
 </script>
 
 </body>
-  </html>
+</html>
