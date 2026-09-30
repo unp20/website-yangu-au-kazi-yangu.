@@ -7,8 +7,39 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
+
+<!-- ==========================================
+     SEO META TAGS
+     ========================================== -->
+<meta name="description" content="Matukio Maalum ya UNP TOURS - Gala Night, Full Moon Party, Food Festival, Sauti za Busara, ZIFF, na Group Safari. Jiunge nasi kwenye matukio ya kifahari ya Zanzibar.">
+<meta name="keywords" content="Zanzibar events, Zanzibar festival, Gala Night Zanzibar, Full Moon Party, Sauti za Busara, ZIFF, matukio Zanzibar">
+<meta name="author" content="UNP TOURS Zanzibar">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Matukio Maalum | UNP TOURS Zanzibar">
+<meta property="og:description" content="Jiunge nasi kwenye matukio ya kifahari ya Zanzibar.">
+<meta property="og:image" content="https://unp.tours/images/logo.png">
+<meta property="og:url" content="https://unp.tours/events.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="UNP TOURS">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Matukio Maalum | UNP TOURS Zanzibar">
+<meta name="twitter:description" content="Jiunge nasi kwenye matukio ya kifahari ya Zanzibar.">
+<meta name="twitter:image" content="https://unp.tours/images/logo.png">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://unp.tours/events.html">
+
+<!-- Geo Tags -->
+<meta name="geo.region" content="TZ-07">
+<meta name="geo.placename" content="Zanzibar">
+<meta name="geo.position" content="-6.165917;39.202641">
+<meta name="ICBM" content="-6.165917, 39.202641">
+
 <style>
-    /* CSS ya ziada kwa ajili ya Events Page */
     .event-card {
         background: #fff;
         border-radius: 15px;
@@ -93,6 +124,32 @@
         min-width: 150px;
         text-align: center;
     }
+
+    /* Mobile Menu Iliyoboreshwa */
+    @media (max-width: 768px) {
+        .menu-toggle { display: block; font-size: 26px; }
+        .nav-links {
+            display: none; flex-direction: column; width: 100%;
+            background: linear-gradient(135deg, var(--dark-green), var(--royal-green));
+            padding: 20px 15px; gap: 5px;
+            border-radius: 0 0 15px 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            animation: slideDown 0.3s ease;
+        }
+        .nav-links.active { display: flex; }
+        .nav-links li { width: 100%; }
+        .nav-links a {
+            display: flex; align-items: center; gap: 12px;
+            padding: 12px 15px; border-radius: 8px;
+            font-size: 1rem; transition: all 0.3s;
+        }
+        .nav-links a:hover { background: rgba(212, 175, 55, 0.15); padding-left: 20px; }
+        .nav-links a i { color: var(--royal-gold); font-size: 1.1rem; width: 20px; text-align: center; }
+    }
+    @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
 </style>
 </head>
 <body>
@@ -108,7 +165,7 @@
 <header class="header">
 <div class="nav-container">
 <a href="index.html" class="logo-area">
-<div class="logo-holder"><img src="logo.png" alt="UNP Tours Logo" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=logo-fallback>UNP<br>LOGO</span>';"></div>
+<div class="logo-holder"><img src="images/logo.png" alt="UNP Tours Logo" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=logo-fallback>UNP<br>LOGO</span>';"></div>
 <div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
 </a>
 <button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
@@ -117,8 +174,8 @@
 <li><a href="about.html"><i class="fas fa-info-circle"></i> Kuhusu Sisi</a></li>
 <li><a href="services.html"><i class="fas fa-briefcase"></i> Huduma</a></li>
 <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+<li><a href="pricing.html"><i class="fas fa-layer-group"></i> Madaraja</a></li>
 <li><a href="events.html" style="color: var(--royal-gold);"><i class="fas fa-calendar-alt"></i> Matukio</a></li>
-<li><a href="awards.html"><i class="fas fa-trophy"></i> Tuzo</a></li>
 <li><a href="partners.html"><i class="fas fa-handshake"></i> Washirika</a></li>
 <li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
 <li><a href="contact.html"><i class="fas fa-envelope"></i> Wasiliana</a></li>
@@ -155,7 +212,7 @@
                 <span><i class="fas fa-ticket-alt"></i> Tiketi: $50</span>
             </div>
             <div class="event-actions">
-                <a href="booking.html" class="btn-primary"><i class="fas fa-calendar-check"></i> Weka Nafasi</a>
+                <a href="booking.html?tier=VIP" class="btn-primary"><i class="fas fa-calendar-check"></i> Omba Bei</a>
                 <a href="awards.html" class="btn-primary" style="background: var(--dark-green); color: var(--royal-gold);"><i class="fas fa-info-circle"></i> Maelezo Zaidi</a>
             </div>
         </div>
@@ -181,7 +238,7 @@
                 <span><i class="fas fa-ticket-alt"></i> Kuingia: BURE</span>
             </div>
             <div class="event-actions">
-                <a href="booking.html" class="btn-primary"><i class="fas fa-calendar-check"></i> Weka Nafasi</a>
+                <a href="booking.html?tier=Couple" class="btn-primary"><i class="fas fa-calendar-check"></i> Omba Bei</a>
             </div>
         </div>
     </div>
@@ -206,7 +263,7 @@
                 <span><i class="fas fa-ticket-alt"></i> Kuingia: BURE</span>
             </div>
             <div class="event-actions">
-                <a href="booking.html" class="btn-primary"><i class="fas fa-calendar-check"></i> Weka Nafasi</a>
+                <a href="booking.html?tier=Family-Small" class="btn-primary"><i class="fas fa-calendar-check"></i> Omba Bei</a>
             </div>
         </div>
     </div>
@@ -231,7 +288,7 @@
                 <span><i class="fas fa-ticket-alt"></i> Tiketi: $30</span>
             </div>
             <div class="event-actions">
-                <a href="booking.html" class="btn-primary"><i class="fas fa-calendar-check"></i> Weka Nafasi</a>
+                <a href="booking.html?tier=Solo" class="btn-primary"><i class="fas fa-calendar-check"></i> Omba Bei</a>
             </div>
         </div>
     </div>
@@ -256,7 +313,7 @@
                 <span><i class="fas fa-ticket-alt"></i> Tiketi: $20 kwa siku</span>
             </div>
             <div class="event-actions">
-                <a href="booking.html" class="btn-primary"><i class="fas fa-calendar-check"></i> Weka Nafasi</a>
+                <a href="booking.html?tier=Executive" class="btn-primary"><i class="fas fa-calendar-check"></i> Omba Bei</a>
             </div>
         </div>
     </div>
@@ -281,7 +338,7 @@
                 <span><i class="fas fa-ticket-alt"></i> Bei: $1,200 kwa mtu</span>
             </div>
             <div class="event-actions">
-                <a href="booking.html" class="btn-primary"><i class="fas fa-calendar-check"></i> Weka Nafasi</a>
+                <a href="booking.html?tier=Family-Large" class="btn-primary"><i class="fas fa-calendar-check"></i> Omba Bei</a>
             </div>
         </div>
     </div>
@@ -319,4 +376,4 @@
 </script>
 
 </body>
-                  </html>
+    </html>
