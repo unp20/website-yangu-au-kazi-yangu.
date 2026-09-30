@@ -7,6 +7,38 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
+
+<!-- ==========================================
+     SEO META TAGS
+     ========================================== -->
+<meta name="description" content="Wasiliana na UNP TOURS - Simu: +255 655 728 982, Email: salimnasoro11@gmail.com. Tuko tayari kukusaidia.">
+<meta name="keywords" content="wasiliana UNP tours, contact UNP tours, Zanzibar tour contact">
+<meta name="author" content="UNP TOURS Zanzibar">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Wasiliana Nasi | UNP TOURS Zanzibar">
+<meta property="og:description" content="Wasiliana nasi kwa simu, WhatsApp, au barua pepe.">
+<meta property="og:image" content="https://unp.tours/images/logo.png">
+<meta property="og:url" content="https://unp.tours/contact.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="UNP TOURS">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Wasiliana Nasi | UNP TOURS Zanzibar">
+<meta name="twitter:description" content="Wasiliana nasi kwa simu, WhatsApp, au barua pepe.">
+<meta name="twitter:image" content="https://unp.tours/images/logo.png">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://unp.tours/contact.html">
+
+<!-- Geo Tags -->
+<meta name="geo.region" content="TZ-07">
+<meta name="geo.placename" content="Zanzibar">
+<meta name="geo.position" content="-6.165917;39.202641">
+<meta name="ICBM" content="-6.165917, 39.202641">
+
 <style>
     .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1100px; margin: 30px auto; padding: 0 20px; }
     .contact-info-card { background: #fff; border-radius: 12px; padding: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); border-top: 4px solid var(--royal-gold); text-align: center; transition: transform 0.3s ease; }
@@ -17,10 +49,37 @@
     .contact-info-card a:hover { color: var(--royal-gold); }
     .map-container { width: 100%; height: 400px; border-radius: 12px; overflow: hidden; margin-top: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
     .map-container iframe { width: 100%; height: 100%; border: 0; }
+
+    /* Mobile Menu Iliyoboreshwa */
+    @media (max-width: 768px) {
+        .menu-toggle { display: block; font-size: 26px; }
+        .nav-links {
+            display: none; flex-direction: column; width: 100%;
+            background: linear-gradient(135deg, var(--dark-green), var(--royal-green));
+            padding: 20px 15px; gap: 5px;
+            border-radius: 0 0 15px 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            animation: slideDown 0.3s ease;
+        }
+        .nav-links.active { display: flex; }
+        .nav-links li { width: 100%; }
+        .nav-links a {
+            display: flex; align-items: center; gap: 12px;
+            padding: 12px 15px; border-radius: 8px;
+            font-size: 1rem; transition: all 0.3s;
+        }
+        .nav-links a:hover { background: rgba(212, 175, 55, 0.15); padding-left: 20px; }
+        .nav-links a i { color: var(--royal-gold); font-size: 1.1rem; width: 20px; text-align: center; }
+    }
+    @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
 </style>
 </head>
 <body>
 
+<!-- TOP BAR & HEADER -->
 <div class="top-bar">
 <div class="lang-container">
 <i class="fas fa-globe"></i>
@@ -31,51 +90,57 @@
 <header class="header">
 <div class="nav-container">
 <a href="index.html" class="logo-area">
-<div class="logo-holder"><img src="logo.png" alt="UNP Tours Logo" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=logo-fallback>UNP<br>LOGO</span>';"></div>
+<div class="logo-holder"><img src="images/logo.png" alt="UNP Tours Logo" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=logo-fallback>UNP<br>LOGO</span>';"></div>
 <div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
 </a>
 <button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
 <ul class="nav-links" id="navLinks">
-<li><a href="index.html">Nyumbani</a></li>
-<li><a href="about.html">Kuhusu Sisi</a></li>
-<li><a href="gallery.html">Gallery</a></li>
-<li><a href="pricing.html">Bei</a></li>
-<li><a href="membership.html">Uanachama</a></li>
-<li><a href="awards.html">Tuzo</a></li>
-<li><a href="contact.html" style="color: var(--royal-gold);">Wasiliana</a></li>
-<li><a href="faq.html">Maswali</a></li>
-<li><a href="login.html" style="color: var(--royal-gold); font-weight: bold;">Ingia</a></li>
-<li><a href="signup.html" style="background: var(--royal-gold); color: var(--dark-green); padding: 8px 15px; border-radius: 5px;">Jiunge</a></li>
+<li><a href="index.html"><i class="fas fa-home"></i> Nyumbani</a></li>
+<li><a href="about.html"><i class="fas fa-info-circle"></i> Kuhusu Sisi</a></li>
+<li><a href="services.html"><i class="fas fa-briefcase"></i> Huduma</a></li>
+<li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+<li><a href="pricing.html"><i class="fas fa-layer-group"></i> Madaraja</a></li>
+<li><a href="events.html"><i class="fas fa-calendar-alt"></i> Matukio</a></li>
+<li><a href="partners.html"><i class="fas fa-handshake"></i> Washirika</a></li>
+<li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
+<li><a href="contact.html" style="color: var(--royal-gold);"><i class="fas fa-envelope"></i> Wasiliana</a></li>
 </ul>
 </div>
 </header>
 
+<!-- HERO SECTION -->
 <section class="hero" style="padding: 70px 20px;">
 <h1 style="font-size: 2rem;">Wasiliana Nasi</h1>
 <p>Tuko tayari kukusaidia. Wasiliana nasi kwa njia yoyote ile hapa chini.</p>
 </section>
 
+<!-- CONTACT INFO CARDS -->
 <section class="contact-grid">
+
     <div class="contact-info-card">
         <i class="fas fa-phone-alt"></i>
         <h4>Simu / WhatsApp</h4>
         <p><a href="tel:+255655728982">+255 655 728 982</a></p>
         <p style="font-size: 0.8rem; margin-top: 5px;">Inapatikana 24/7</p>
     </div>
+
     <div class="contact-info-card">
         <i class="fas fa-envelope"></i>
         <h4>Barua Pepe</h4>
         <p><a href="mailto:salimnasoro11@gmail.com">salimnasoro11@gmail.com</a></p>
         <p style="font-size: 0.8rem; margin-top: 5px;">Tutajibu ndani ya saa 24</p>
     </div>
+
     <div class="contact-info-card">
         <i class="fas fa-map-marker-alt"></i>
         <h4>Mahali Tulipo</h4>
         <p>Zanzibar, Tanzania</p>
         <p style="font-size: 0.8rem; margin-top: 5px;">Stone Town & Nungwi</p>
     </div>
+
 </section>
 
+<!-- FOMU YA KUWASILIANA -->
 <section class="interactive-box" id="contact-form-section">
     <h2><i class="fas fa-paper-plane"></i> Tutumie Ujumbe</h2>
     <p style="margin-bottom: 20px;">Jaza fomu hii na tutakujibu haraka iwezekanavyo.</p>
@@ -87,6 +152,7 @@
     </form>
 </section>
 
+<!-- RAMANI YA ZANZIBAR -->
 <section class="interactive-box" style="padding: 20px;">
     <h2><i class="fas fa-map"></i> Ramani ya Zanzibar</h2>
     <div class="map-container">
@@ -94,6 +160,7 @@
     </div>
 </section>
 
+<!-- FOOTER -->
 <footer class="footer">
 <div class="footer-content">
 <div><h3>UNIQUE NATURE PARADISE (UNP)</h3><p style="font-size: 0.9rem; max-width: 350px;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p></div>
@@ -131,6 +198,7 @@
   const navLinks = document.getElementById('navLinks');
   if(menuToggleBtn) { menuToggleBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); }); }
 
+  // CONTACT FORM LOGIC
   const contactForm = document.getElementById('contactForm');
   contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -145,6 +213,7 @@
           const whatsappMessage = `Hello UNP Tours!%0A%0A*Name:* ${name}%0A*Contact:* ${email}%0A*Message:* ${message}`;
           window.open(`https://wa.me/255655728982?text=${whatsappMessage}`, '_blank');
           alert("Ujumbe wako umetumwa kwa mafanikio!");
+          contactForm.reset();
       } catch (error) {
           alert("Kuna hitilafu imetokea: " + error.message);
       }
@@ -152,4 +221,4 @@
 </script>
 
 </body>
-    </html>
+                                                           </html>
