@@ -5,7 +5,7 @@
      ========================================== -->
 
 <!-- ==========================================
-     SEHEMU YA 1: HEAD SECTION (Analytics & Verification)
+     SEHEMU YA 1: HEAD SECTION
      Weka hizi kwenye <head> ya kila ukurasa
      ========================================== -->
 
@@ -34,9 +34,15 @@
 <!-- GOOGLE SEARCH CONSOLE VERIFICATION -->
 <meta name="google-site-verification" content="USfpMungNhAZSkEqLJL4b9AfkP224BIGvn6N_8nIThM" />
 
+<!-- BING WEBMASTER VERIFICATION -->
+<meta name="msvalidate.01" content="F45DA5D31B65604116EE3B77682567A7" />
+
+<!-- YANDEX WEBMASTER VERIFICATION -->
+<meta name="yandex-verification" content="d563c0867b5c735c" />
+
 
 <!-- ==========================================
-     SEHEMU YA 2: BODY SECTION (Chat & Platform)
+     SEHEMU YA 2: BODY SECTION
      Weka hizi kabla ya kufunga </body>
      ========================================== -->
 
@@ -56,9 +62,20 @@ s0.parentNode.insertBefore(s1,s0);
 <!-- ELFSIGHT PLATFORM (Inahitajika kwa widgets zote za Elfsight) -->
 <script src="https://elfsightcdn.com/platform.js" async></script>
 
+<!-- ONESIGNAL PUSH NOTIFICATIONS -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "e772eb04-4c02-457d-bc15-ad77d7a29d4d",
+    });
+  });
+</script>
+
 
 <!-- ==========================================
-     SEHEMU YA 3: FOOTER SECTION (Social & Cookies)
+     SEHEMU YA 3: FOOTER SECTION
      Weka hizi kwenye footer au mwisho wa body
      ========================================== -->
 
@@ -97,8 +114,49 @@ s0.parentNode.insertBefore(s1,s0);
 
 
 <!-- ==========================================
-     SEHEMU YA 4: ELFSIGHT WIDGETS (35 Widgets)
-     Weka hizi kwenye sehemu mbalimbali za kurasa zako
+     SEHEMU YA 4: VITU VYA BURE BILA KUJISAJILI
+     ========================================== -->
+
+<!-- 1. QR CODE API -->
+<div style="text-align: center; padding: 20px; background: #fff; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+    <h3 style="color: var(--dark-green); margin-bottom: 15px;">Piga QR Code Hii</h3>
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://unp.tours" alt="QR Code ya UNP TOURS" style="border: 2px solid var(--royal-gold); border-radius: 8px; padding: 10px;">
+    <p style="font-size: 0.85rem; color: #777; margin-top: 10px;">Piga kwa simu yako kufungua website yetu</p>
+</div>
+
+<!-- 2. TIME ZONE API -->
+<div id="timezone-widget" style="padding: 15px; background: #f9f9f9; border-radius: 8px; text-align: center;">
+    <h4 style="color: var(--dark-green); margin-bottom: 10px;">Saa za Zanzibar</h4>
+    <p id="zanzibar-time" style="font-size: 1.5rem; color: var(--royal-green); font-weight: 700;"></p>
+    <p style="font-size: 0.85rem; color: #777;">EAT (East Africa Time) - UTC+3</p>
+</div>
+<script>
+    function updateZanzibarTime() {
+        const now = new Date();
+        const options = { timeZone: 'Africa/Dar_es_Salaam', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+        document.getElementById('zanzibar-time').textContent = now.toLocaleTimeString('sw-TZ', options);
+    }
+    setInterval(updateZanzibarTime, 1000);
+    updateZanzibarTime();
+</script>
+
+<!-- 3. GOOGLE MAPS EMBED -->
+<div style="width: 100%; height: 400px; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126760.7905861127!2d39.15822935!3d-6.165917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185cd0e1a7d3e7b7%3A0x6e1f7e3f3e3e3e3e!2sZanzibar!5e0!3m2!1sen!2stz!4v1600000000000!5m2!1sen!2stz" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</div>
+
+<!-- 4. GOOGLE TRANSLATE -->
+<div id="google_translate_element"></div>
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'sw', includedLanguages: 'en,fr,it,de,ru,zh-CN,ar,es,pt', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+<!-- ==========================================
+     SEHEMU YA 5: ELFSIGHT WIDGETS (28 Widgets)
      ========================================== -->
 
 <!-- 1. INSTAGRAM FEED -->
@@ -187,13 +245,5 @@ s0.parentNode.insertBefore(s1,s0);
 
 
 <!-- ==========================================
-     SEHEMU YA 5: MWISHO WA FAILI
+     MWISHO WA FAILI
      ========================================== -->
-
-<!-- KUMBUKA:
-     - Weka SEO tags kwenye <head>
-     - Weka Tawk.to, Google Analytics, Yandex Metrica kwenye <head> au <body>
-     - Weka Google Search Console meta tag kwenye <head>
-     - Weka Social Sharing Buttons, Facebook Plugin, WhatsApp Button, Cookies Banner kwenye footer
-     - Weka Elfsight widgets kwenye sehemu mbalimbali za kurasa zako
--->
