@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sw">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blog | UNP Tours</title>
+<title>Blog & Habari | UNP TOURS Zanzibar</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
 <style>
     .page-header {
-        text-align: center; padding: 120px 20px 40px;
-        background: linear-gradient(135deg, #1a3c34, #2c5e4f); color: white;
+        text-align: center; padding: 100px 20px 40px;
+        background: linear-gradient(135deg, var(--dark-green), var(--royal-green)); color: white;
     }
-    .page-header h1 { font-size: 2.5rem; margin-bottom: 10px; }
-    .page-header p { font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+    .page-header h1 { font-size: 2.5rem; margin-bottom: 10px; color: var(--royal-gold); }
+    .page-header p { font-size: 1.1rem; max-width: 600px; margin: 0 auto; color: #ddd; }
+
     .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
 
     .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
@@ -22,6 +23,7 @@
         box-shadow: 0 5px 20px rgba(0,0,0,0.08);
         transition: transform 0.3s, box-shadow 0.3s;
         display: flex; flex-direction: column;
+        border-left: 5px solid var(--royal-gold);
     }
     .blog-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
     .blog-card .img-wrapper {
@@ -35,170 +37,100 @@
     .blog-card .img-fallback {
         width: 100%; height: 220px; background: #eee; display: flex;
         align-items: center; justify-content: center; color: #888;
+        font-size: 0.9rem; padding: 10px; text-align: center;
     }
     .blog-card .card-body { padding: 25px; flex: 1; display: flex; flex-direction: column; }
     .blog-card .category {
-        display: inline-block; background: #c5a059; color: #1a3c34;
+        display: inline-block; background: var(--royal-gold); color: var(--dark-green);
         padding: 4px 12px; border-radius: 20px; font-size: 0.75rem;
         font-weight: 700; text-transform: uppercase; margin-bottom: 12px; width: fit-content;
     }
-    .blog-card h3 { color: #1a3c34; font-size: 1.3rem; margin-bottom: 10px; }
+    .blog-card h3 { color: var(--dark-green); font-size: 1.3rem; margin-bottom: 10px; }
     .blog-card .meta { color: #888; font-size: 0.8rem; margin-bottom: 12px; }
     .blog-card p { color: #555; font-size: 0.9rem; line-height: 1.6; margin-bottom: 20px; flex: 1; }
     .blog-card .btn-read {
-        display: inline-block; padding: 10px 20px; background: #1a3c34;
+        display: inline-block; padding: 10px 20px; background: var(--royal-green);
         color: white; text-decoration: none; border-radius: 8px;
         font-weight: 600; font-size: 0.9rem; transition: background 0.3s; text-align: center;
     }
-    .blog-card .btn-read:hover { background: #c5a059; color: #1a3c34; }
+    .blog-card .btn-read:hover { background: var(--royal-gold); color: var(--dark-green); }
 </style>
 </head>
 <body>
 
+<!-- TOP BAR & HEADER -->
 <div class="top-bar">
 <div class="lang-container">
 <i class="fas fa-globe"></i>
-<select class="lang-select" id="languageSelector">
-<option value="en">English</option>
-<option value="sw">Kiswahili</option>
-</select>
+<select class="lang-select"><option value="sw">Kiswahili</option><option value="en">English</option></select>
 </div>
 </div>
 
 <header class="header">
 <div class="nav-container">
 <a href="index.html" class="logo-area">
-<div class="logo-holder">
-<img src="logo.png" alt="UNP Tours Logo" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=logo-fallback>UNP<br>LOGO</span>';">
-</div>
+<div class="logo-holder"><img src="logo.png" alt="UNP Tours Logo" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=logo-fallback>UNP<br>LOGO</span>';"></div>
 <div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
 </a>
 <button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
 <ul class="nav-links" id="navLinks">
 <li><a href="index.html">Nyumbani</a></li>
 <li><a href="about.html">Kuhusu Sisi</a></li>
+<li><a href="services.html">Huduma</a></li>
 <li><a href="gallery.html">Gallery</a></li>
 <li><a href="pricing.html">Bei</a></li>
-<li><a href="entertainment.html">Entertainment</a></li>
-<li><a href="blog.html">Blog</a></li>
-<li><a href="shop.html">Duka</a></li>
-<li><a href="testimonials.html">Maoni</a></li>
+<li><a href="blog.html" style="color: var(--royal-gold);">Blog</a></li>
+<li><a href="careers.html">Kazi</a></li>
 <li><a href="contact.html">Wasiliana</a></li>
-<li><a href="profile.html">Wasifu</a></li>
-<li><a href="login.html" style="color: #c5a059; font-weight: bold;">Ingia</a></li>
-<li><a href="signup.html" style="background: #c5a059; color: #1a3c34; padding: 8px 15px; border-radius: 5px;">Jiunge</a></li>
 </ul>
 </div>
 </header>
 
+<!-- PAGE HEADER -->
 <div class="page-header">
     <h1>Blogu Yetu</h1>
     <p>Makala kuhusu Zanzibar, Tanzania, safari, na utamaduni wetu.</p>
 </div>
 
+<!-- BLOG GRID -->
 <div class="container">
     <div class="blog-grid" id="blogGrid">
         <p>Inapakia makala...</p>
     </div>
 </div>
 
+<!-- NEWSLETTER SECTION -->
+<section class="interactive-box" style="max-width: 700px; text-align: center;">
+    <h2><i class="fas fa-envelope-open-text"></i> Jiunge na Newsletter Yetu</h2>
+    <p style="margin-bottom: 20px;">Pata habari, ofa, na makala mpya moja kwa moja kwenye barua pepe yako.</p>
+    <form id="newsletterForm" style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
+        <input type="email" id="newsletterEmail" placeholder="Weka barua pepe yako" required style="flex: 1; min-width: 200px; padding: 12px; border: 1px solid #ddd; border-radius: 6px;">
+        <button type="submit" class="btn-primary"><i class="fas fa-paper-plane"></i> Jiunge</button>
+    </form>
+    <p id="newsletterMsg" style="margin-top: 15px; font-weight: 600; display: none;"></p>
+</section>
+
+<!-- FOOTER -->
 <footer class="footer">
 <div class="footer-content">
-<div>
-<h3>UNIQUE NATURE PARADISE (UNP)</h3>
-<p style="font-size: 0.9rem; max-width: 350px;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p>
-</div>
-<div>
-<h4>Direct Contact</h4>
-<p style="font-size: 0.9rem; margin-top: 8px;"><i class="fab fa-whatsapp" style="color: #c5a059;"></i> +255 655 728 982</p>
-<p style="font-size: 0.9rem; margin-top: 5px;"><i class="fas fa-envelope" style="color: #c5a059;"></i> salimnasoro11@gmail.com</p>
+<div><h3>UNIQUE NATURE PARADISE (UNP)</h3><p style="font-size: 0.9rem; max-width: 350px;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p></div>
+<div><h4>Direct Contact</h4><p style="font-size: 0.9rem; margin-top: 8px;"><i class="fab fa-whatsapp" style="color: var(--royal-gold);"></i> Phone: +255 655 728 982</p><p style="font-size: 0.9rem; margin-top: 5px;"><i class="fas fa-envelope" style="color: var(--royal-gold);"></i> Email: salimnasoro11@gmail.com</p>
 <div class="social-links">
 <a href="https://wa.me/255655728982" target="_blank"><i class="fab fa-whatsapp"></i></a>
 <a href="mailto:salimnasoro11@gmail.com"><i class="fas fa-envelope"></i></a>
 <a href="https://www.tiktok.com/@unptours" target="_blank"><i class="fab fa-tiktok"></i></a>
 <a href="https://www.instagram.com/unpsoulvoyoge" target="_blank"><i class="fab fa-instagram"></i></a>
 <a href="https://www.facebook.com/profile.php?id=61595094232501" target="_blank"><i class="fab fa-facebook"></i></a>
-</div>
-</div>
+</div></div>
 </div>
 </footer>
 
-<script>
-    const articles = [
-        { 
-            title: "Uzuri wa Zanzibar: Kisiwa cha Viungo", 
-            category: "Zanzibar", 
-            date: "Septemba 2026", 
-            author: "Salim Nasoro", 
-            image: "https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?w=800&q=80", 
-            excerpt: "Zanzibar ni kisiwa chenye historia tajiri, fukwe nzuri, na viungo vya kipekee. Soma makala hii kujua zaidi kuhusu uzuri wa kisiwa hiki." 
-        },
-        { 
-            title: "Safari ya Wanyama Pori: Serengeti na Ngorongoro", 
-            category: "Safari", 
-            date: "Septemba 2026", 
-            author: "Amina Hassan", 
-            image: "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800&q=80", 
-            excerpt: "Kama unataka kuona wanyama pori kwa karibu, Serengeti na Ngorongoro ni sehemu bora. Soma makala hii kujua safari hizi." 
-        },
-        { 
-            title: "Utamaduni wa Wazanzibari: Mila na Desturi", 
-            category: "Utamaduni", 
-            date: "Agosti 2026", 
-            author: "Juma Ali", 
-            image: "https://images.unsplash.com/photo-1533669955142-6a73332af4db?w=800&q=80", 
-            excerpt: "Wazanzibari wana utamaduni tajiri wa Kiarabu, Kiafrika, na Kihindi. Soma kuhusu mila na desturi zao za kipekee." 
-        },
-        { 
-            title: "Sanaa za Mikono: Banana Leaf Artwork", 
-            category: "Sanaa", 
-            date: "Agosti 2026", 
-            author: "Fatma Said", 
-            image: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=800&q=80", 
-            excerpt: "Sanaa za mikono zinazotengenezwa kwa majani ya ndizi ni moja ya vivutio vya Zanzibar. Soma jinsi zinavyotengenezwa." 
-        },
-        { 
-            title: "Chakula cha Zanzibar: Ladha za Kipekee", 
-            category: "Chakula", 
-            date: "Julai 2026", 
-            author: "Salim Nasoro", 
-            image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80", 
-            excerpt: "Chakula cha Zanzibar ni mchanganyiko wa ladha za Kiarabu, Kiafrika, na Kihindi. Soma kuhusu vyakula vya kipekee vya kisiwa hiki." 
-        },
-        { 
-            title: "Michezo ya Majini: Jet Ski na Drone Kayak", 
-            category: "Michezo", 
-            date: "Julai 2026", 
-            author: "Juma Ali", 
-            image: "https://images.unsplash.com/photo-1530053969600-caed2596d242?w=800&q=80", 
-            excerpt: "Kama unapenda michezo ya majini, Zanzibar ni sehemu sahihi. Soma kuhusu Jet Ski, Jet Car, na Drone Kayak." 
-        }
-    ];
+<a href="https://wa.me/255655728982" class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
-    const blogGrid = document.getElementById('blogGrid');
-    articles.forEach(article => {
-        const card = document.createElement('div');
-        card.className = 'blog-card';
-        card.innerHTML = `
-            <div class="img-wrapper">
-                <img src="${article.image}" alt="${article.title}" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\\'img-fallback\\'>${article.title}</div>';">
-            </div>
-            <div class="card-body">
-                <span class="category">${article.category}</span>
-                <h3>${article.title}</h3>
-                <p class="meta"><i class="fas fa-user"></i> ${article.author} • <i class="fas fa-calendar"></i> ${article.date}</p>
-                <p>${article.excerpt}</p>
-                <a href="#" class="btn-read" onclick="alert('Makala kamili inakuja hivi karibuni!'); return false;">Soma Zaidi <i class="fas fa-arrow-right"></i></a>
-            </div>
-        `;
-        blogGrid.appendChild(card);
-    });
-</script>
-
-<!-- Firebase Remote Config -->
+<!-- FIREBASE & BLOG LOGIC -->
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
-  import { getRemoteConfig, fetchAndActivate, getValue } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-remote-config.js";
+  import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
 
   const firebaseConfig = {
     apiKey: "AIzaSyD2YtPFL2L_ZwAKdSYpXtvLt8gJUm2IX6s",
@@ -211,12 +143,69 @@
   };
 
   const app = initializeApp(firebaseConfig);
-  const remoteConfig = getRemoteConfig(app);
-  remoteConfig.settings.minimumFetchIntervalMillis = 3600000;
+  const db = getFirestore(app);
 
-  fetchAndActivate(remoteConfig).then(() => {});
+  // MENU TOGGLE
+  const menuToggleBtn = document.getElementById('menuToggleBtn');
+  const navLinks = document.getElementById('navLinks');
+  if(menuToggleBtn) { menuToggleBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); }); }
+
+  // BLOG ARTICLES (Makala 6 za zamani)
+  const articles = [
+      { title: "Uzuri wa Zanzibar: Kisiwa cha Viungo", category: "Zanzibar", date: "Septemba 2026", author: "Salim Nasoro", image: "https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?w=800&q=80", excerpt: "Zanzibar ni kisiwa chenye historia tajiri, fukwe nzuri, na viungo vya kipekee. Soma makala hii kujua zaidi kuhusu uzuri wa kisiwa hiki." },
+      { title: "Safari ya Wanyama Pori: Serengeti na Ngorongoro", category: "Safari", date: "Septemba 2026", author: "Amina Hassan", image: "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800&q=80", excerpt: "Kama unataka kuona wanyama pori kwa karibu, Serengeti na Ngorongoro ni sehemu bora. Soma makala hii kujua safari hizi." },
+      { title: "Utamaduni wa Wazanzibari: Mila na Desturi", category: "Utamaduni", date: "Agosti 2026", author: "Juma Ali", image: "https://images.unsplash.com/photo-1533669955142-6a73332af4db?w=800&q=80", excerpt: "Wazanzibari wana utamaduni tajiri wa Kiarabu, Kiafrika, na Kihindi. Soma kuhusu mila na desturi zao za kipekee." },
+      { title: "Sanaa za Mikono: Banana Leaf Artwork", category: "Sanaa", date: "Agosti 2026", author: "Fatma Said", image: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=800&q=80", excerpt: "Sanaa za mikono zinazotengenezwa kwa majani ya ndizi ni moja ya vivutio vya Zanzibar. Soma jinsi zinavyotengenezwa." },
+      { title: "Chakula cha Zanzibar: Ladha za Kipekee", category: "Chakula", date: "Julai 2026", author: "Salim Nasoro", image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80", excerpt: "Chakula cha Zanzibar ni mchanganyiko wa ladha za Kiarabu, Kiafrika, na Kihindi. Soma kuhusu vyakula vya kipekee vya kisiwa hiki." },
+      { title: "Michezo ya Majini: Jet Ski na Drone Kayak", category: "Michezo", date: "Julai 2026", author: "Juma Ali", image: "https://images.unsplash.com/photo-1530053969600-caed2596d242?w=800&q=80", excerpt: "Kama unapenda michezo ya majini, Zanzibar ni sehemu sahihi. Soma kuhusu Jet Ski, Jet Car, na Drone Kayak." }
+  ];
+
+  const blogGrid = document.getElementById('blogGrid');
+  blogGrid.innerHTML = '';
+  articles.forEach(article => {
+      const card = document.createElement('div');
+      card.className = 'blog-card';
+      card.innerHTML = `
+          <div class="img-wrapper">
+              <img src="${article.image}" alt="${article.title}" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\\'img-fallback\\'>${article.title}</div>';">
+          </div>
+          <div class="card-body">
+              <span class="category">${article.category}</span>
+              <h3>${article.title}</h3>
+              <p class="meta"><i class="fas fa-user"></i> ${article.author} • <i class="fas fa-calendar"></i> ${article.date}</p>
+              <p>${article.excerpt}</p>
+              <a href="#" class="btn-read" onclick="alert('Makala kamili inakuja hivi karibuni!'); return false;">Soma Zaidi <i class="fas fa-arrow-right"></i></a>
+          </div>
+      `;
+      blogGrid.appendChild(card);
+  });
+
+  // NEWSLETTER FORM (Firebase)
+  const newsletterForm = document.getElementById('newsletterForm');
+  const newsletterMsg = document.getElementById('newsletterMsg');
+  
+  if (newsletterForm) {
+      newsletterForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const email = document.getElementById('newsletterEmail').value;
+
+          try {
+              await addDoc(collection(db, "newsletter"), {
+                  email: email,
+                  subscribedAt: new Date()
+              });
+              newsletterMsg.textContent = "Asante! Umejiunga na newsletter yetu.";
+              newsletterMsg.style.color = "#155724";
+              newsletterMsg.style.display = "block";
+              newsletterForm.reset();
+          } catch (error) {
+              newsletterMsg.textContent = "Kuna hitilafu imetokea: " + error.message;
+              newsletterMsg.style.color = "#721c24";
+              newsletterMsg.style.display = "block";
+          }
+      });
+  }
 </script>
 
-<script src="script.js"></script>
 </body>
-        </html>
+    </html>
