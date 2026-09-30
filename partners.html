@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Washirika Wetu | UNP TOURS Zanzibar</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<style>
+    .partner-category {
+        margin-bottom: 40px;
+    }
+    .partner-category h3 {
+        color: var(--royal-green);
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+        border-left: 4px solid var(--royal-gold);
+        padding-left: 12px;
+    }
+    .partner-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+    }
+    .partner-card {
+        background: #fff;
+        border-radius: 12px;
+        padding: 25px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        border: 1px solid #eee;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .partner-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        border-color: var(--royal-gold);
+    }
+    .partner-logo {
+        width: 80px;
+        height: 80px;
+        background: var(--royal-green);
+        color: var(--royal-gold);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        margin: 0 auto 15px auto;
+        font-weight: 700;
+    }
+    .partner-card h4 {
+        color: var(--dark-green);
+        margin-bottom: 8px;
+        font-size: 1rem;
+    }
+    .partner-card p {
+        font-size: 0.85rem;
+        color: #777;
+        line-height: 1.5;
+    }
+    .become-partner-box {
+        background: linear-gradient(135deg, var(--dark-green) 0%, var(--royal-green) 100%);
+        color: #fff;
+        padding: 40px 30px;
+        border-radius: 15px;
+        text-align: center;
+        margin-top: 30px;
+        border: 2px solid var(--royal-gold);
+    }
+    .become-partner-box h2 {
+        color: var(--royal-gold);
+        margin-bottom: 15px;
+    }
+    .become-partner-box p {
+        color: #ddd;
+        margin-bottom: 20px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR & HEADER -->
+<div class="top-bar">
+<div class="lang-container">
+<i class="fas fa-globe"></i>
+<select class="lang-select"><option value="sw">Kiswahili</option><option value="en">English</option></select>
+</div>
+</div>
+
+<header class="header">
+<div class="nav-container">
+<a href="index.html" class="logo-area">
+<div class="logo-holder"><img src="logo.png" alt="UNP Tours Logo" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=logo-fallback>UNP<br>LOGO</span>';"></div>
+<div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
+</a>
+<button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
+<ul class="nav-links" id="navLinks">
+<li><a href="index.html">Nyumbani</a></li>
+<li><a href="about.html">Kuhusu Sisi</a></li>
+<li><a href="services.html">Huduma</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="pricing.html">Bei</a></li>
+<li><a href="partners.html" style="color: var(--royal-gold);">Washirika</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="contact.html">Wasiliana</a></li>
+</ul>
+</div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero" style="padding: 70px 20px;">
+<h1 style="font-size: 2rem;">Washirika Wetu</h1>
+<p>Tunashirikiana na makampuni bora duniani ili kukupa huduma za kifahari zaidi.</p>
+</section>
+
+<!-- PARTNERS CONTENT -->
+<section class="interactive-box" style="max-width: 1100px;">
+
+    <!-- Category 1: Hotels -->
+    <div class="partner-category">
+        <h3><i class="fas fa-hotel"></i> Hoteli za Kifahari</h3>
+        <div class="partner-grid">
+            <div class="partner-card">
+                <div class="partner-logo"><i class="fas fa-hotel"></i></div>
+                <h4>Nungwi Beach Resort</h4>
+                <p>Hoteli ya kifahari pwani ya Nungwi.</p>
+            </div>
+            <div class="partner-card">
+                <div class="partner-logo"><i class="fas fa-umbrella-beach"></i></div>
+                <h4>Kendwa Rocks Hotel</h4>
+                <p>Hoteli maarufu kwa sherehe za full moon.</p>
+            </div>
+            <div class="partner-card">
+                <div class="partner-logo"><i class="fas fa-spa"></i></div>
+                <h4>Paje Beach Hotel</h4>
+                <p>Hoteli ya kifahari kwa wapenda kitesurfing.</p>
+            </div>
+            <div class="partner-card">
+                <div class="partner-logo"><i class="fas fa-building"></i></div>
+                <h4>Stone Town Heritage Hotel</h4>
+                <p>Hoteli ya kihistoria katikati ya Stone Town.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category 2: Airlines -->
+    <div class="partner-category">
+        <h3><i class="fas fa-plane"></i> Mashirika ya Ndege</h3>
+        <div class="partner-grid">
+            <div class="partner-card">
+                <div class="partner-logo"><i class="fas fa-plane-departure"></i></div>
+                <h4>Air Tanzania</h4>
+                <p>Shirika la ndege la taifa la Tanzania.</p>
+            </div>
+            <div class="partner-card">
+                <div class="partner-logo"><i class="fas fa-plane-arrival"></i></div>
+                <h4>Precision Air</h4>
+                <p>Shirika la ndege linalofanya kazi Tanzania.</p>
+            </div>
+            <div class="partner-card">
+                <div class="partner-logo"><i class="fas fa-globe-africa"></i></div>
+                <h4>Coastal Aviation</h4>
+                <p>Shirika la ndege kwa safari za mbuga.</p>
+            </div>
+            <div class="partner-card">
+                <div class="partner-logo"><i class="fas fa-fighter-jet"></i></div>
+                <h4>Private Jet Charter</h4>
+                <p>Huduma za ndege za kibinafsi kwa VIP.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category 3: Tour Companies -->
+    <div class="partner-category">
+        <h3><i class="fas fa-globe"></i> Makampuni ya Utalii</h3>
+        <div class="partner-grid">
+            <div class="partner-card">
+                <div class="partner-logo"><i class="fas fa-ship"></i></div>
+                <h4>Safari Blue Zanzibar</h4>
+                <p>Huduma za meli na snorkeling.</p>
+            </div>
+            <div class="partner-card">
+                <div class="partner-logo"><i class="fas fa-water"></i></div>
+                <h4>Diving Center Zanzibar</h4>
+                <p>Huduma za kuzamia na snorkeling.</p>
+            </div>
+            <div class="partner-card">
+                <div class="partner-logo"><i class="fas fa-motorcycle"></i></div>
+                <h4>Quad Bike Adventures</h4>
+                <p>Huduma za quad bike na safari.</p>
+            </div>
+            <div class="partner-card">
+                <div class="partner-logo"><i class="fas fa-car-side"></i></div>
+                <h4>Zanzibar Car Rentals</h4>
+                <p>Huduma za kukodisha magari.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category 4: Restaurants -->
+    <div class="partner-category">
+        <h3><i class="fas fa-utensils"></i> Mikahawa ya Kifahari</h3>
+        <div class="partner-grid">
+            <div class="partner-card">
+                <div class="partner-logo"><i class="fas fa-fish"></i></div>
+                <h4>The Rock Restaurant</h4>
+                <p>Mkahawa maarufu uliojengwa juu ya mwamba.</p>
+            </div>
+            <div class="partner-card">
+                <div class="partner-logo"><i class="fas fa-concierge-bell"></i></div>
+                <h4>Lukmaan Restaurant</h4>
+                <p>Mkahawa wa kihistoria wa Stone Town.</p>
+            </div>
+            <div class="partner-card">
+                <div class="partner-logo"><i class="fas fa-pizza-slice"></i></div>
+                <h4>Zanzibar Pizza</h4>
+                <p>Chakula maarufu cha usiku wa Forodhani.</p>
+            </div>
+            <div class="partner-card">
+                <div class="partner-logo"><i class="fas fa-coffee"></i></div>
+                <h4>Zanzibar Coffee House</h4>
+                <p>Kahawa na vitafunio vya kifahari.</p>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<!-- BECOME A PARTNER -->
+<section class="interactive-box" style="max-width: 800px;">
+    <div class="become-partner-box">
+        <h2><i class="fas fa-handshake"></i> Kuwa Mshirika Wetu</h2>
+        <p>Kama una kampuni ya utalii, hoteli, au biashara nyingine, unaweza kuwa mshirika wa UNP TOURS. Wasiliana nasi kwa maelezo zaidi.</p>
+        <a href="contact.html" class="btn-primary"><i class="fas fa-paper-plane"></i> Wasiliana Nasi</a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+<div class="footer-content">
+<div><h3>UNIQUE NATURE PARADISE (UNP)</h3><p style="font-size: 0.9rem; max-width: 350px;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p></div>
+<div><h4>Direct Contact</h4><p style="font-size: 0.9rem; margin-top: 8px;"><i class="fab fa-whatsapp" style="color: var(--royal-gold);"></i> Phone: +255 655 728 982</p><p style="font-size: 0.9rem; margin-top: 5px;"><i class="fas fa-envelope" style="color: var(--royal-gold);"></i> Email: salimnasoro11@gmail.com</p>
+<div class="social-links">
+<a href="https://wa.me/255655728982" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<a href="mailto:salimnasoro11@gmail.com"><i class="fas fa-envelope"></i></a>
+<a href="https://www.tiktok.com/@unptours" target="_blank"><i class="fab fa-tiktok"></i></a>
+<a href="https://www.instagram.com/unpsoulvoyoge" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://www.facebook.com/profile.php?id=61595094232501" target="_blank"><i class="fab fa-facebook"></i></a>
+</div></div>
+</div>
+</footer>
+
+<a href="https://wa.me/255655728982" class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+  const menuToggleBtn = document.getElementById('menuToggleBtn');
+  const navLinks = document.getElementById('navLinks');
+  if(menuToggleBtn) { menuToggleBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); }); }
+</script>
+
+</body>
+                           </html>
