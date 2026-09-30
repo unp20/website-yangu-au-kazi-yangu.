@@ -3,80 +3,109 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Maoni ya Wateja | UNP TOURS Zanzibar</title>
+<title>Maswali (FAQ) | UNP TOURS Zanzibar</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
+
+<!-- ==========================================
+     SEO META TAGS
+     ========================================== -->
+<meta name="description" content="Maswali Yanayoulizwa Mara kwa Mara - UNP TOURS. Majibu ya maswali yako yote kuhusu safari, malipo, usalama, na huduma zetu.">
+<meta name="keywords" content="UNP tours FAQ, Zanzibar tours questions, Zanzibar tour help, maswali ya utalii">
+<meta name="author" content="UNP TOURS Zanzibar">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Maswali (FAQ) | UNP TOURS Zanzibar">
+<meta property="og:description" content="Majibu ya maswali yanayoulizwa mara kwa mara.">
+<meta property="og:image" content="https://unp.tours/images/logo.png">
+<meta property="og:url" content="https://unp.tours/faq.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="UNP TOURS">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Maswali (FAQ) | UNP TOURS Zanzibar">
+<meta name="twitter:description" content="Majibu ya maswali yanayoulizwa mara kwa mara.">
+<meta name="twitter:image" content="https://unp.tours/images/logo.png">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://unp.tours/faq.html">
+
+<!-- Geo Tags -->
+<meta name="geo.region" content="TZ-07">
+<meta name="geo.placename" content="Zanzibar">
+<meta name="geo.position" content="-6.165917;39.202641">
+<meta name="ICBM" content="-6.165917, 39.202641">
+
 <style>
-    /* CSS ya ziada kwa ajili ya Testimonials */
-    .testimonials-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 25px;
-        max-width: 1200px;
-        margin: 30px auto;
-        padding: 0 20px;
-    }
-    .testimonial-card {
+    .faq-item {
         background: #fff;
-        border-radius: 12px;
-        padding: 25px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-        border-left: 5px solid var(--royal-gold);
-        position: relative;
-        transition: transform 0.3s ease;
-    }
-    .testimonial-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0,0,0,0.12);
-    }
-    .testimonial-card .quote-icon {
-        font-size: 2rem;
-        color: var(--royal-gold);
-        opacity: 0.3;
-        position: absolute;
-        top: 15px;
-        right: 20px;
-    }
-    .testimonial-card .stars {
-        color: #ffc107;
+        border-radius: 10px;
         margin-bottom: 15px;
-        font-size: 0.9rem;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        overflow: hidden;
+        border-left: 4px solid var(--royal-green);
     }
-    .testimonial-card p {
-        font-size: 0.95rem;
-        color: #555;
-        font-style: italic;
-        line-height: 1.6;
-        margin-bottom: 20px;
-    }
-    .client-info {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        border-top: 1px solid #eee;
-        padding-top: 15px;
-    }
-    .client-avatar {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background-color: var(--royal-green);
-        color: var(--royal-gold);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 700;
-        font-size: 1.2rem;
-    }
-    .client-details h4 {
-        margin: 0;
+    .faq-question {
+        padding: 18px 20px;
+        font-weight: 600;
         color: var(--dark-green);
-        font-size: 1rem;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background 0.3s;
     }
-    .client-details span {
-        font-size: 0.8rem;
-        color: #777;
+    .faq-question:hover {
+        background: #f9f9f9;
+    }
+    .faq-question i {
+        color: var(--royal-gold);
+        transition: transform 0.3s;
+    }
+    .faq-answer {
+        padding: 0 20px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+        color: #555;
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    .faq-item.active .faq-answer {
+        padding: 0 20px 20px 20px;
+        max-height: 500px;
+    }
+    .faq-item.active .faq-question i {
+        transform: rotate(180deg);
+    }
+
+    /* Mobile Menu Iliyoboreshwa */
+    @media (max-width: 768px) {
+        .menu-toggle { display: block; font-size: 26px; }
+        .nav-links {
+            display: none; flex-direction: column; width: 100%;
+            background: linear-gradient(135deg, var(--dark-green), var(--royal-green));
+            padding: 20px 15px; gap: 5px;
+            border-radius: 0 0 15px 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            animation: slideDown 0.3s ease;
+        }
+        .nav-links.active { display: flex; }
+        .nav-links li { width: 100%; }
+        .nav-links a {
+            display: flex; align-items: center; gap: 12px;
+            padding: 12px 15px; border-radius: 8px;
+            font-size: 1rem; transition: all 0.3s;
+        }
+        .nav-links a:hover { background: rgba(212, 175, 55, 0.15); padding-left: 20px; }
+        .nav-links a i { color: var(--royal-gold); font-size: 1.1rem; width: 20px; text-align: center; }
+    }
+    @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
     }
 </style>
 </head>
@@ -86,188 +115,157 @@
 <div class="top-bar">
 <div class="lang-container">
 <i class="fas fa-globe"></i>
-<select class="lang-select">
-<option value="sw">Kiswahili</option>
-<option value="en">English</option>
-</select>
+<select class="lang-select"><option value="sw">Kiswahili</option><option value="en">English</option></select>
 </div>
 </div>
 
 <header class="header">
 <div class="nav-container">
 <a href="index.html" class="logo-area">
-<div class="logo-holder">
-<img src="logo.png" alt="UNP Tours Logo" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=logo-fallback>UNP<br>LOGO</span>';">
-</div>
-<div class="logo-text">
-<h2>UNP TOURS</h2>
-<span>Unique & Natural Paradise</span>
-</div>
+<div class="logo-holder"><img src="images/logo.png" alt="UNP Tours Logo" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=logo-fallback>UNP<br>LOGO</span>';"></div>
+<div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
 </a>
 <button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
 <ul class="nav-links" id="navLinks">
-<li><a href="index.html">Nyumbani</a></li>
-<li><a href="about.html">Kuhusu Sisi</a></li>
-<li><a href="gallery.html">Gallery</a></li>
-<li><a href="pricing.html">Bei</a></li>
-<li><a href="testimonials.html" style="color: var(--royal-gold);">Maoni</a></li>
-<li><a href="contact.html">Wasiliana</a></li>
-<li><a href="profile.html">Wasifu</a></li>
-<li><a href="login.html" style="color: var(--royal-gold); font-weight: bold;">Ingia</a></li>
-<li><a href="signup.html" style="background: var(--royal-gold); color: var(--dark-green); padding: 8px 15px; border-radius: 5px;">Jiunge</a></li>
+<li><a href="index.html"><i class="fas fa-home"></i> Nyumbani</a></li>
+<li><a href="about.html"><i class="fas fa-info-circle"></i> Kuhusu Sisi</a></li>
+<li><a href="services.html"><i class="fas fa-briefcase"></i> Huduma</a></li>
+<li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+<li><a href="pricing.html"><i class="fas fa-layer-group"></i> Madaraja</a></li>
+<li><a href="events.html"><i class="fas fa-calendar-alt"></i> Matukio</a></li>
+<li><a href="partners.html"><i class="fas fa-handshake"></i> Washirika</a></li>
+<li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
+<li><a href="contact.html"><i class="fas fa-envelope"></i> Wasiliana</a></li>
 </ul>
 </div>
 </header>
 
-<!-- HERO SECTION KWA TESTIMONIALS -->
+<!-- HERO SECTION -->
 <section class="hero" style="padding: 70px 20px;">
-<h1 style="font-size: 2rem;">Maoni ya Wateja Wetu</h1>
-<p>Wageni wetu wanasema nini kuhusu uzoefu wao na UNP Tours.</p>
+<h1 style="font-size: 2rem;">Maswali Yanayoulizwa Mara kwa Mara</h1>
+<p>Majibu ya maswali yanayoulizwa sana na wateja wetu.</p>
 </section>
 
-<!-- TESTIMONIALS GRID -->
-<section class="testimonials-grid">
+<!-- FAQ SECTION -->
+<section class="interactive-box" style="max-width: 800px;">
 
-    <!-- Maoni 1 -->
-    <div class="testimonial-card">
-        <i class="fas fa-quote-right quote-icon"></i>
-        <div class="stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+            <span>1. Ninawezaje kuomba bei ya safari?</span>
+            <i class="fas fa-chevron-down"></i>
         </div>
-        <p>"Uzoefu wa kipekee kabisa! Tulifanya safari ya Safari Blue na Jozani Forest. Timu ya UNP ilikuwa ya kitaalamu na ya ukaribu sana. Tutarudi tena bila shaka!"</p>
-        <div class="client-info">
-            <div class="client-avatar">AM</div>
-            <div class="client-details">
-                <h4>Amina Mohamed</h4>
-                <span>Nairobi, Kenya</span>
-            </div>
+        <div class="faq-answer">
+            Unaweza kuomba bei kwa urahisi kwa kutembelea ukurasa wetu wa <a href="booking.html" style="color: var(--royal-green); font-weight: 600;">Omba Bei</a>, kuchagua daraja lako, kujaza fomu, na kisha kutuma ombi lako moja kwa moja kwa WhatsApp. Tutakujibu ndani ya saa 24 na bei maalum kulingana na mahitaji yako.
         </div>
     </div>
 
-    <!-- Maoni 2 -->
-    <div class="testimonial-card">
-        <i class="fas fa-quote-right quote-icon"></i>
-        <div class="stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+            <span>2. Je, mnakubali malipo kwa njia gani?</span>
+            <i class="fas fa-chevron-down"></i>
         </div>
-        <p>"The VIP experience was absolutely worth every penny! Private butler, secret garden, and jet ski. UNP Tours made our honeymoon unforgettable. Highly recommended!"</p>
-        <div class="client-info">
-            <div class="client-avatar">JD</div>
-            <div class="client-details">
-                <h4>James Davidson</h4>
-                <span>London, UK</span>
-            </div>
+        <div class="faq-answer">
+            Tunakubali malipo kwa njia mbalimbali ikiwa ni pamoja na: <strong>M-Pesa, Tigo Pesa, Airtel Money, Benki (CRDB/NMB)</strong> na <strong>Kadi za Kimataifa (Visa/Mastercard)</strong> kwa wateja wa kimataifa. Malipo yote yanapaswa kukamilika kabla ya safari kuanza.
         </div>
     </div>
 
-    <!-- Maoni 3 -->
-    <div class="testimonial-card">
-        <i class="fas fa-quote-right quote-icon"></i>
-        <div class="stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+            <span>3. Je, mnatoa huduma za usafiri kutoka uwanja wa ndege?</span>
+            <i class="fas fa-chevron-down"></i>
         </div>
-        <p>"Nilitaka sana kununua sanaa za mikono ya Kiafrika, na UNP walinipa sanaa nzuri sana ya majani ya ndizi. Huduma yao ni ya hali ya juu na ya uaminifu."</p>
-        <div class="client-info">
-            <div class="client-avatar">SK</div>
-            <div class="client-details">
-                <h4>Sofia Keller</h4>
-                <span>Berlin, Germany</span>
-            </div>
+        <div class="faq-answer">
+            Ndio! Tunatoa huduma za usafiri wa kifahari kutoka Uwanja wa Ndege wa Zanzibar (Abeid Amani Karume International Airport) hadi hotelini kwako. Gharama inategemea na umbali. Unaweza kuomba bei kwenye ukurasa wetu wa <a href="booking.html" style="color: var(--royal-green); font-weight: 600;">Omba Bei</a>.
         </div>
     </div>
 
-    <!-- Maoni 4 -->
-    <div class="testimonial-card">
-        <i class="fas fa-quote-right quote-icon"></i>
-        <div class="stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+            <span>4. Je, safari zenu zinaongozwa kwa lugha gani?</span>
+            <i class="fas fa-chevron-down"></i>
         </div>
-        <p>"Safari ya ndege kutoka Zanzibar hadi Serengeti ilikuwa ndoto iliyotimia. UNP walipanga kila kitu vizuri, kutoka hoteli hadi chakula. Asante sana!"</p>
-        <div class="client-info">
-            <div class="client-avatar">RB</div>
-            <div class="client-details">
-                <h4>Rashid Bakari</h4>
-                <span>Dar es Salaam, Tanzania</span>
-            </div>
+        <div class="faq-answer">
+            Guides wetu wanaongea <strong>Kiswahili, Kiingereza, Kifaransa, Kitaliano</strong> na <strong>Kijerumani</strong>. Unaweza kuomba guide wa lugha unayopendelea wakati wa kuomba bei.
         </div>
     </div>
 
-    <!-- Maoni 5 -->
-    <div class="testimonial-card">
-        <i class="fas fa-quote-right quote-icon"></i>
-        <div class="stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+            <span>5. Je, kuna punguzo kwa vikundi (groups)?</span>
+            <i class="fas fa-chevron-down"></i>
         </div>
-        <p>"The sunset romantic dinner on the beach was magical. The seafood was fresh and delicious. UNP Tours truly knows how to create memories. 5 stars!"</p>
-        <div class="client-info">
-            <div class="client-avatar">LC</div>
-            <div class="client-details">
-                <h4>Laura Chen</h4>
-                <span>Toronto, Canada</span>
-            </div>
+        <div class="faq-answer">
+            Ndio! Tunatoa punguzo maalum kwa vikundi vya watu 5 au zaidi. Wasiliana nasi moja kwa moja kwa bei maalum ya kikundi chako kupitia <a href="contact.html" style="color: var(--royal-green); font-weight: 600;">ukurasa wa Wasiliana</a> au WhatsApp: +255 655 728 982.
         </div>
     </div>
 
-    <!-- Maoni 6 -->
-    <div class="testimonial-card">
-        <i class="fas fa-quote-right quote-icon"></i>
-        <div class="stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+            <span>6. Je, naweza kubadilisha tarehe ya safari yangu?</span>
+            <i class="fas fa-chevron-down"></i>
         </div>
-        <p>"Huduma ya kukodisha gari ilikuwa rahisi na ya haraka. Gari lilikuwa safi na jipya. Nawapendekeza UNP Tours kwa mtu yeyote anayetaka kutembelea Zanzibar."</p>
-        <div class="client-info">
-            <div class="client-avatar">MN</div>
-            <div class="client-details">
-                <h4>Mariam Nassor</h4>
-                <span>Zanzibar, Tanzania</span>
-            </div>
+        <div class="faq-answer">
+            Ndio, unaweza kubadilisha tarehe bila malipo ya ziada kama utatujulisha <strong>siku 3 kabla</strong> ya safari yako. Kama utachelewa, kuna ada ndogo ya kubadilisha. Tafadhali wasiliana nasi mapema.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+            <span>7. Je, mnahakikisha usalama wa wateja?</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+            Usalama wako ni kipaumbele chetu cha kwanza. Tunafanya kazi na guides walioidhinishwa, magari yenye bima, na tunafuata viwango vyote vya usalama wa utalii Tanzania. Tunashauri wateja wote kupata bima ya safari (travel insurance).
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+            <span>8. Je, mnaweza kupanga safari maalum (custom)?</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+            Ndio! Tunapenda kupanga safari maalum kulingana na mahitaji yako. Wasiliana nasi na tuambie unachotaka, na tutakupangia kifurushi maalum. Tunatoa huduma za harusi, honeymoon, birthday, na matukio mengine maalum.
         </div>
     </div>
 
 </section>
 
-<!-- CALL TO ACTION -->
-<section class="interactive-box" style="text-align: center;">
-    <h2>Je, Uko Tayari Kuwa Mteja Wetu Anayefuata?</h2>
-    <p style="margin-bottom: 20px;">Jiunge na mamia ya wateja wenye furaha waliokwisha kupata uzoefu wa kipekee na UNP Tours.</p>
-    <a href="booking.html" class="btn-primary"><i class="fas fa-calendar-check"></i> Weka Nafasi Yako Sasa</a>
+<!-- CONTACT CTA -->
+<section class="interactive-box" style="text-align: center; background: linear-gradient(135deg, var(--dark-green), var(--royal-green)); color: #fff;">
+    <h3 style="color: var(--royal-gold);">Hauna jibu la swali lako?</h3>
+    <p style="color: #ddd; margin: 10px 0 20px 0;">Wasiliana nasi moja kwa moja na tutakujibu haraka.</p>
+    <a href="contact.html" class="btn-primary"><i class="fas fa-envelope"></i> Wasiliana Nasi</a>
 </section>
 
 <!-- FOOTER -->
-<footer class="footer" id="contact">
+<footer class="footer">
 <div class="footer-content">
-<div>
-<h3>UNIQUE NATURE PARADISE (UNP)</h3>
-<p style="font-size: 0.9rem; max-width: 350px;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p>
-</div>
-<div>
-<h4>Direct Contact</h4>
-<p style="font-size: 0.9rem; margin-top: 8px;"><i class="fab fa-whatsapp" style="color: var(--royal-gold);"></i> Phone: +255 655 728 982</p>
-<p style="font-size: 0.9rem; margin-top: 5px;"><i class="fas fa-envelope" style="color: var(--royal-gold);"></i> Email: salimnasoro11@gmail.com</p>
+<div><h3>UNIQUE NATURE PARADISE (UNP)</h3><p style="font-size: 0.9rem; max-width: 350px;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p></div>
+<div><h4>Direct Contact</h4><p style="font-size: 0.9rem; margin-top: 8px;"><i class="fab fa-whatsapp" style="color: var(--royal-gold);"></i> Phone: +255 655 728 982</p><p style="font-size: 0.9rem; margin-top: 5px;"><i class="fas fa-envelope" style="color: var(--royal-gold);"></i> Email: salimnasoro11@gmail.com</p>
 <div class="social-links">
 <a href="https://wa.me/255655728982" target="_blank"><i class="fab fa-whatsapp"></i></a>
 <a href="mailto:salimnasoro11@gmail.com"><i class="fas fa-envelope"></i></a>
 <a href="https://www.tiktok.com/@unptours" target="_blank"><i class="fab fa-tiktok"></i></a>
 <a href="https://www.instagram.com/unpsoulvoyoge" target="_blank"><i class="fab fa-instagram"></i></a>
 <a href="https://www.facebook.com/profile.php?id=61595094232501" target="_blank"><i class="fab fa-facebook"></i></a>
-</div>
-</div>
+</div></div>
 </div>
 </footer>
 
-<a href="https://wa.me/255655728982?text=Hello!%20I%20want%20to%20book%20a%20VIP%20experience." class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<a href="https://wa.me/255655728982" class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
 <script>
-  // MENU TOGGLE
   const menuToggleBtn = document.getElementById('menuToggleBtn');
   const navLinks = document.getElementById('navLinks');
-  
-  if(menuToggleBtn) {
-      menuToggleBtn.addEventListener('click', () => {
-          navLinks.classList.toggle('active');
-      });
+  if(menuToggleBtn) { menuToggleBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); }); }
+
+  // FAQ TOGGLE LOGIC
+  function toggleFaq(element) {
+      const item = element.parentElement;
+      item.classList.toggle('active');
   }
 </script>
 
 </body>
-                                                                                                 </html>
+    </html>
