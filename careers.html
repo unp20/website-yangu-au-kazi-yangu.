@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nafasi za Kazi | UNP TOURS Zanzibar</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<style>
+    .job-card {
+        background: #fff;
+        border-radius: 12px;
+        padding: 25px;
+        margin-bottom: 20px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        border-left: 5px solid var(--royal-gold);
+        transition: transform 0.3s;
+    }
+    .job-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    .job-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+    .job-title {
+        font-size: 1.2rem;
+        color: var(--dark-green);
+        font-weight: 700;
+    }
+    .job-badge {
+        background: var(--royal-green);
+        color: #fff;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 600;
+    }
+    .job-details {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-bottom: 15px;
+        font-size: 0.85rem;
+        color: #777;
+    }
+    .job-details span i {
+        color: var(--royal-gold);
+        margin-right: 5px;
+    }
+    .job-description {
+        font-size: 0.9rem;
+        color: #555;
+        line-height: 1.7;
+        margin-bottom: 15px;
+    }
+    .job-requirements {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 15px;
+    }
+    .job-requirements li {
+        font-size: 0.85rem;
+        color: #555;
+        padding: 5px 0;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .job-requirements li i {
+        color: var(--royal-gold);
+    }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR & HEADER -->
+<div class="top-bar">
+<div class="lang-container">
+<i class="fas fa-globe"></i>
+<select class="lang-select"><option value="sw">Kiswahili</option><option value="en">English</option></select>
+</div>
+</div>
+
+<header class="header">
+<div class="nav-container">
+<a href="index.html" class="logo-area">
+<div class="logo-holder"><img src="logo.png" alt="UNP Tours Logo" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=logo-fallback>UNP<br>LOGO</span>';"></div>
+<div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
+</a>
+<button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
+<ul class="nav-links" id="navLinks">
+<li><a href="index.html">Nyumbani</a></li>
+<li><a href="about.html">Kuhusu Sisi</a></li>
+<li><a href="services.html">Huduma</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="pricing.html">Bei</a></li>
+<li><a href="careers.html" style="color: var(--royal-gold);">Kazi</a></li>
+<li><a href="contact.html">Wasiliana</a></li>
+</ul>
+</div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero" style="padding: 70px 20px;">
+<h1 style="font-size: 2rem;">Nafasi za Kazi</h1>
+<p>Jiunge na timu yetu ya kifahari na uwe sehemu ya mafanikio ya UNP TOURS.</p>
+</section>
+
+<!-- JOB LISTINGS -->
+<section class="interactive-box" style="max-width: 900px;">
+
+    <!-- Job 1: Tour Guide -->
+    <div class="job-card">
+        <div class="job-header">
+            <div class="job-title"><i class="fas fa-user-tie" style="color: var(--royal-gold);"></i> Tour Guide</div>
+            <span class="job-badge">Full-Time</span>
+        </div>
+        <div class="job-details">
+            <span><i class="fas fa-map-marker-alt"></i> Zanzibar, Tanzania</span>
+            <span><i class="fas fa-clock"></i> Saa 40/wiki</span>
+            <span><i class="fas fa-money-bill"></i> $300 - $500/mwezi</span>
+        </div>
+        <p class="job-description">Tunatafuta Tour Guide mwenye uzoefu wa kuongoza watalii katika maeneo mbalimbali ya Zanzibar.</p>
+        <ul class="job-requirements">
+            <li><i class="fas fa-check-circle"></i> Elimu: Sekondari au zaidi</li>
+            <li><i class="fas fa-check-circle"></i> Lugha: Kiswahili & Kiingereza (Kifaransa ni bonus)</li>
+            <li><i class="fas fa-check-circle"></i> Uzoefu: Miaka 2+</li>
+            <li><i class="fas fa-check-circle"></i> Uwezo wa kufanya kazi na wageni</li>
+        </ul>
+        <a href="mailto:salimnasoro11@gmail.com?subject=Maombi ya Kazi - Tour Guide" class="btn-primary"><i class="fas fa-paper-plane"></i> Tuma Maombi</a>
+    </div>
+
+    <!-- Job 2: Driver -->
+    <div class="job-card">
+        <div class="job-header">
+            <div class="job-title"><i class="fas fa-car" style="color: var(--royal-gold);"></i> Driver (Dereva)</div>
+            <span class="job-badge">Full-Time</span>
+        </div>
+        <div class="job-details">
+            <span><i class="fas fa-map-marker-alt"></i> Zanzibar, Tanzania</span>
+            <span><i class="fas fa-clock"></i> Saa 40/wiki</span>
+            <span><i class="fas fa-money-bill"></i> $200 - $400/mwezi</span>
+        </div>
+        <p class="job-description">Tunatafuta dereva mwenye leseni halali na uzoefu wa kuendesha magari ya kifahari.</p>
+        <ul class="job-requirements">
+            <li><i class="fas fa-check-circle"></i> Leseni ya udereva halali</li>
+            <li><i class="fas fa-check-circle"></i> Uzoefu: Miaka 3+</li>
+            <li><i class="fas fa-check-circle"></i> Uwezo wa kuendesha Alphard, Land Cruiser</li>
+            <li><i class="fas fa-check-circle"></i> Lugha: Kiswahili & Kiingereza</li>
+        </ul>
+        <a href="mailto:salimnasoro11@gmail.com?subject=Maombi ya Kazi - Driver" class="btn-primary"><i class="fas fa-paper-plane"></i> Tuma Maombi</a>
+    </div>
+
+    <!-- Job 3: Chef -->
+    <div class="job-card">
+        <div class="job-header">
+            <div class="job-title"><i class="fas fa-utensils" style="color: var(--royal-gold);"></i> Chef (Mpishi)</div>
+            <span class="job-badge">Part-Time</span>
+        </div>
+        <div class="job-details">
+            <span><i class="fas fa-map-marker-alt"></i> Zanzibar, Tanzania</span>
+            <span><i class="fas fa-clock"></i> Saa 20/wiki</span>
+            <span><i class="fas fa-money-bill"></i> $250 - $450/mwezi</span>
+        </div>
+        <p class="job-description">Tunatafuta mpishi mwenye uzoefu wa vyakula vya kifahari vya Zanzibar na kimataifa.</p>
+        <ul class="job-requirements">
+            <li><i class="fas fa-check-circle"></i> Uzoefu: Miaka 3+</li>
+            <li><i class="fas fa-check-circle"></i> Ujuzi wa vyakula vya Zanzibar na kimataifa</li>
+            <li><i class="fas fa-check-circle"></i> Uwezo wa kufanya kazi kwa haraka</li>
+            <li><i class="fas fa-check-circle"></i> Cheti cha afya</li>
+        </ul>
+        <a href="mailto:salimnasoro11@gmail.com?subject=Maombi ya Kazi - Chef" class="btn-primary"><i class="fas fa-paper-plane"></i> Tuma Maombi</a>
+    </div>
+
+    <!-- Job 4: IT Developer -->
+    <div class="job-card">
+        <div class="job-header">
+            <div class="job-title"><i class="fas fa-laptop-code" style="color: var(--royal-gold);"></i> IT Developer</div>
+            <span class="job-badge">Remote</span>
+        </div>
+        <div class="job-details">
+            <span><i class="fas fa-map-marker-alt"></i> Remote / Zanzibar</span>
+            <span><i class="fas fa-clock"></i> Flexible</span>
+            <span><i class="fas fa-money-bill"></i> $500 - $1000/mwezi</span>
+        </div>
+        <p class="job-description">Tunatafuta mtengenezaji wa website na apps mwenye ujuzi wa HTML, CSS, JavaScript, na Firebase.</p>
+        <ul class="job-requirements">
+            <li><i class="fas fa-check-circle"></i> Ujuzi wa HTML, CSS, JavaScript</li>
+            <li><i class="fas fa-check-circle"></i> Ujuzi wa Firebase</li>
+            <li><i class="fas fa-check-circle"></i> Uzoefu: Miaka 2+</li>
+            <li><i class="fas fa-check-circle"></i> Uwezo wa kufanya kazi kwa kujitegemea</li>
+        </ul>
+        <a href="mailto:salimnasoro11@gmail.com?subject=Maombi ya Kazi - IT Developer" class="btn-primary"><i class="fas fa-paper-plane"></i> Tuma Maombi</a>
+    </div>
+
+    <!-- Job 5: Marketing Specialist -->
+    <div class="job-card">
+        <div class="job-header">
+            <div class="job-title"><i class="fas fa-chart-line" style="color: var(--royal-gold);"></i> Marketing Specialist</div>
+            <span class="job-badge">Full-Time</span>
+        </div>
+        <div class="job-details">
+            <span><i class="fas fa-map-marker-alt"></i> Zanzibar, Tanzania</span>
+            <span><i class="fas fa-clock"></i> Saa 40/wiki</span>
+            <span><i class="fas fa-money-bill"></i> $400 - $700/mwezi</span>
+        </div>
+        <p class="job-description">Tunatafuta mtaalamu wa masoko mwenye ujuzi wa mitandao ya kijamii na SEO.</p>
+        <ul class="job-requirements">
+            <li><i class="fas fa-check-circle"></i> Uzoefu wa mitandao ya kijamii</li>
+            <li><i class="fas fa-check-circle"></i> Ujuzi wa SEO</li>
+            <li><i class="fas fa-check-circle"></i> Uwezo wa kutengeneza content</li>
+            <li><i class="fas fa-check-circle"></i> Lugha: Kiswahili & Kiingereza</li>
+        </ul>
+        <a href="mailto:salimnasoro11@gmail.com?subject=Maombi ya Kazi - Marketing" class="btn-primary"><i class="fas fa-paper-plane"></i> Tuma Maombi</a>
+    </div>
+
+    <!-- Job 6: Videographer / Photographer -->
+    <div class="job-card">
+        <div class="job-header">
+            <div class="job-title"><i class="fas fa-camera" style="color: var(--royal-gold);"></i> Videographer / Photographer</div>
+            <span class="job-badge">Part-Time</span>
+        </div>
+        <div class="job-details">
+            <span><i class="fas fa-map-marker-alt"></i> Zanzibar, Tanzania</span>
+            <span><i class="fas fa-clock"></i> Flexible</span>
+            <span><i class="fas fa-money-bill"></i> $300 - $600/mwezi</span>
+        </div>
+        <p class="job-description">Tunatafuta mpiga picha na video mwenye ujuzi wa kurekodi safari na matukio ya kifahari.</p>
+        <ul class="job-requirements">
+            <li><i class="fas fa-check-circle"></i> Ujuzi wa camera na drone</li>
+            <li><i class="fas fa-check-circle"></i> Ujuzi wa video editing</li>
+            <li><i class="fas fa-check-circle"></i> Portfolio ya kazi</li>
+            <li><i class="fas fa-check-circle"></i> Uwezo wa kusafiri</li>
+        </ul>
+        <a href="mailto:salimnasoro11@gmail.com?subject=Maombi ya Kazi - Videographer" class="btn-primary"><i class="fas fa-paper-plane"></i> Tuma Maombi</a>
+    </div>
+
+</section>
+
+<!-- APPLICATION FORM -->
+<section class="interactive-box" id="application" style="max-width: 800px;">
+    <h2><i class="fas fa-file-signature"></i> Tuma Maombi Yako</h2>
+    <p style="margin-bottom: 20px;">Jaza fomu hii na tutawasiliana nawe ndani ya siku 7.</p>
+    
+    <form id="careerForm">
+        <div class="form-group"><label>Jina Lako Kamili:</label><input type="text" id="careerName" placeholder="Weka jina lako" required></div>
+        <div class="form-group"><label>Barua Pepe:</label><input type="email" id="careerEmail" placeholder="email@domain.com" required></div>
+        <div class="form-group"><label>Namba ya Simu:</label><input type="tel" id="careerPhone" placeholder="+255..." required></div>
+        <div class="form-group"><label>Nafasi Unayoomba:</label>
+            <select id="careerPosition" required>
+                <option value="">Chagua...</option>
+                <option value="Tour Guide">Tour Guide</option>
+                <option value="Driver">Driver</option>
+                <option value="Chef">Chef</option>
+                <option value="IT Developer">IT Developer</option>
+                <option value="Marketing Specialist">Marketing Specialist</option>
+                <option value="Videographer">Videographer</option>
+            </select>
+        </div>
+        <div class="form-group"><label>Uzoefu wa Kazi (miaka):</label><input type="number" id="careerExperience" placeholder="Mfano: 3" required></div>
+        <div class="form-group"><label>Kwa Nini Unafaa kwa Nafasi Hii?</label>
+            <textarea id="careerReason" rows="4" placeholder="Eleza kwa nini unafaa..." required></textarea>
+        </div>
+        <button type="submit" class="btn-primary btn-full"><i class="fab fa-whatsapp"></i> Tuma Maombi kwa WhatsApp</button>
+    </form>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+<div class="footer-content">
+<div><h3>UNIQUE NATURE PARADISE (UNP)</h3><p style="font-size: 0.9rem; max-width: 350px;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p></div>
+<div><h4>Direct Contact</h4><p style="font-size: 0.9rem; margin-top: 8px;"><i class="fab fa-whatsapp" style="color: var(--royal-gold);"></i> Phone: +255 655 728 982</p><p style="font-size: 0.9rem; margin-top: 5px;"><i class="fas fa-envelope" style="color: var(--royal-gold);"></i> Email: salimnasoro11@gmail.com</p>
+<div class="social-links">
+<a href="https://wa.me/255655728982" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<a href="mailto:salimnasoro11@gmail.com"><i class="fas fa-envelope"></i></a>
+<a href="https://www.tiktok.com/@unptours" target="_blank"><i class="fab fa-tiktok"></i></a>
+<a href="https://www.instagram.com/unpsoulvoyoge" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://www.facebook.com/profile.php?id=61595094232501" target="_blank"><i class="fab fa-facebook"></i></a>
+</div></div>
+</div>
+</footer>
+
+<a href="https://wa.me/255655728982" class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+  import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyD2YtPFL2L_ZwAKdSYpXtvLt8gJUm2IX6s",
+    authDomain: "unptours.firebaseapp.com",
+    projectId: "unptours",
+    storageBucket: "unptours.firebasestorage.app",
+    messagingSenderId: "233326851661",
+    appId: "1:233326851661:web:354156110a5cee29904e04",
+    measurementId: "G-5QJ1X38ZLC"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  const menuToggleBtn = document.getElementById('menuToggleBtn');
+  const navLinks = document.getElementById('navLinks');
+  if(menuToggleBtn) { menuToggleBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); }); }
+
+  const careerForm = document.getElementById('careerForm');
+  careerForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const data = {
+          name: document.getElementById('careerName').value,
+          email: document.getElementById('careerEmail').value,
+          phone: document.getElementById('careerPhone').value,
+          position: document.getElementById('careerPosition').value,
+          experience: document.getElementById('careerExperience').value,
+          reason: document.getElementById('careerReason').value,
+          status: "Inasubiri",
+          createdAt: new Date()
+      };
+
+      try {
+          await addDoc(collection(db, "careers"), data);
+
+          const message = `*UNP TOURS - MAOMBI YA KAZI*%0A%0A*Jina:* ${data.name}%0A*Email:* ${data.email}%0A*Simu:* ${data.phone}%0A*Nafasi:* ${data.position}%0A*Uzoefu:* ${data.experience} miaka%0A*Sababu:* ${data.reason}`;
+          
+          window.open(`https://wa.me/255655728982?text=${message}`, '_blank');
+          alert("Maombi yako yametumwa kwa mafanikio! Tutawasiliana nawe ndani ya siku 7.");
+          careerForm.reset();
+      } catch (error) {
+          alert("Kuna hitilafu imetokea: " + error.message);
+      }
+  });
+</script>
+
+</body>
+  </html>
