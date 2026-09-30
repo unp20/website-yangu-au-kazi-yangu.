@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jiunge Nasi | UNP TOURS Zanzibar</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+
+<!-- ==========================================
+     SEO META TAGS
+     ========================================== -->
+<meta name="description" content="Jiunge na UNP TOURS - Tunakaribisha vipaji, wabunifu, na washirika kutoka sekta mbalimbali duniani kote. Tuma maombi yako leo.">
+<meta name="keywords" content="kujiunga UNP tours, kazi Zanzibar, partnership Zanzibar, vipaji Zanzibar, washirika wa utalii">
+<meta name="author" content="UNP TOURS Zanzibar">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Jiunge Nasi | UNP TOURS Zanzibar">
+<meta property="og:description" content="Tuma maombi yako ya kujiunga na timu yetu ya kifahari.">
+<meta property="og:image" content="https://unp.tours/images/logo.png">
+<meta property="og:url" content="https://unp.tours/join.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="UNP TOURS">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Jiunge Nasi | UNP TOURS Zanzibar">
+<meta name="twitter:description" content="Tuma maombi yako ya kujiunga na timu yetu ya kifahari.">
+<meta name="twitter:image" content="https://unp.tours/images/logo.png">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://unp.tours/join.html">
+
+<!-- Geo Tags -->
+<meta name="geo.region" content="TZ-07">
+<meta name="geo.placename" content="Zanzibar">
+<meta name="geo.position" content="-6.165917;39.202641">
+<meta name="ICBM" content="-6.165917, 39.202641">
+
+<style>
+    .join-header {
+        background: linear-gradient(135deg, #0a0a0a 0%, var(--dark-green) 100%);
+        color: #fff;
+        padding: 70px 20px;
+        text-align: center;
+        border-bottom: 5px solid var(--royal-gold);
+    }
+    .join-header h1 {
+        color: var(--royal-gold);
+        font-size: 2.2rem;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+    .join-header p {
+        font-size: 1rem;
+        color: #ddd;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    .sector-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        margin: 25px 0;
+    }
+    .sector-card {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        border-left: 4px solid var(--royal-gold);
+        text-align: center;
+        transition: transform 0.3s;
+    }
+    .sector-card:hover {
+        transform: translateY(-5px);
+    }
+    .sector-card i {
+        font-size: 2rem;
+        color: var(--royal-green);
+        margin-bottom: 10px;
+    }
+    .sector-card h4 {
+        color: var(--dark-green);
+        margin-bottom: 5px;
+        font-size: 1rem;
+    }
+    .sector-card p {
+        font-size: 0.8rem;
+        color: #777;
+    }
+
+    /* Mobile Menu Iliyoboreshwa */
+    @media (max-width: 768px) {
+        .menu-toggle { display: block; font-size: 26px; }
+        .nav-links {
+            display: none; flex-direction: column; width: 100%;
+            background: linear-gradient(135deg, var(--dark-green), var(--royal-green));
+            padding: 20px 15px; gap: 5px;
+            border-radius: 0 0 15px 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            animation: slideDown 0.3s ease;
+        }
+        .nav-links.active { display: flex; }
+        .nav-links li { width: 100%; }
+        .nav-links a {
+            display: flex; align-items: center; gap: 12px;
+            padding: 12px 15px; border-radius: 8px;
+            font-size: 1rem; transition: all 0.3s;
+        }
+        .nav-links a:hover { background: rgba(212, 175, 55, 0.15); padding-left: 20px; }
+        .nav-links a i { color: var(--royal-gold); font-size: 1.1rem; width: 20px; text-align: center; }
+        .join-header h1 { font-size: 1.6rem; }
+    }
+    @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR & HEADER -->
+<div class="top-bar">
+<div class="lang-container">
+<i class="fas fa-globe"></i>
+<select class="lang-select"><option value="sw">Kiswahili</option><option value="en">English</option></select>
+</div>
+</div>
+
+<header class="header">
+<div class="nav-container">
+<a href="index.html" class="logo-area">
+<div class="logo-holder"><img src="images/logo.png" alt="UNP Tours Logo" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=logo-fallback>UNP<br>LOGO</span>';"></div>
+<div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
+</a>
+<button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
+<ul class="nav-links" id="navLinks">
+<li><a href="index.html"><i class="fas fa-home"></i> Nyumbani</a></li>
+<li><a href="about.html"><i class="fas fa-info-circle"></i> Kuhusu Sisi</a></li>
+<li><a href="services.html"><i class="fas fa-briefcase"></i> Huduma</a></li>
+<li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+<li><a href="pricing.html"><i class="fas fa-layer-group"></i> Madaraja</a></li>
+<li><a href="events.html"><i class="fas fa-calendar-alt"></i> Matukio</a></li>
+<li><a href="join.html" style="color: var(--royal-gold);"><i class="fas fa-handshake"></i> Jiunge Nasi</a></li>
+<li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
+<li><a href="contact.html"><i class="fas fa-envelope"></i> Wasiliana</a></li>
+</ul>
+</div>
+</header>
+
+<!-- JOIN HEADER -->
+<section class="join-header">
+    <h1><i class="fas fa-handshake"></i> Jiunge Nasi</h1>
+    <p>Tunakaribisha vipaji, wabunifu, na washirika kutoka sekta mbalimbali duniani kote. Tuma maombi yako leo!</p>
+</section>
+
+<!-- SECTOR INFO -->
+<section class="interactive-box" style="max-width: 1100px;">
+    <h2><i class="fas fa-briefcase"></i> Sekta Tunazohitaji</h2>
+    <p style="margin-bottom: 20px;">Tunahitaji watu kutoka sekta hizi:</p>
+    
+    <div class="sector-grid">
+        <div class="sector-card">
+            <i class="fas fa-graduation-cap"></i>
+            <h4>Kisomi</h4>
+            <p>Utafiti, Sayansi, Elimu</p>
+        </div>
+        <div class="sector-card">
+            <i class="fas fa-chart-line"></i>
+            <h4>Biashara</h4>
+            <p>Uuzaji, Masoko, Fedha</p>
+        </div>
+        <div class="sector-card">
+            <i class="fas fa-laptop-code"></i>
+            <h4>Teknolojia</h4>
+            <p>IT, AI, Programming</p>
+        </div>
+        <div class="sector-card">
+            <i class="fas fa-palette"></i>
+            <h4>Sanaa</h4>
+            <p>Muziki, Filamu, Uchoraji</p>
+        </div>
+        <div class="sector-card">
+            <i class="fas fa-plane"></i>
+            <h4>Utalii</h4>
+            <p>Guide, Hotel, Safari</p>
+        </div>
+        <div class="sector-card">
+            <i class="fas fa-heartbeat"></i>
+            <h4>Afya</h4>
+            <p>Daktari, Muuguzi, Lishe</p>
+        </div>
+    </div>
+</section>
+
+<!-- APPLICATION FORM -->
+<section class="interactive-box" id="application" style="max-width: 800px;">
+    <h2><i class="fas fa-file-signature"></i> Fomu ya Maombi</h2>
+    <p style="margin-bottom: 20px;">Jaza fomu hii kwa makini. Tutawasiliana nawe ndani ya siku 7.</p>
+    
+    <form id="joinForm">
+        <h3 style="color: var(--royal-green); margin-bottom: 15px;"><i class="fas fa-user"></i> Taarifa Binafsi</h3>
+        <div class="form-group"><label>Jina Lako Kamili:</label><input type="text" id="joinName" placeholder="Weka jina lako" required></div>
+        <div class="form-group"><label>Barua Pepe:</label><input type="email" id="joinEmail" placeholder="email@domain.com" required></div>
+        <div class="form-group"><label>Namba ya Simu:</label><input type="tel" id="joinPhone" placeholder="+255..." required></div>
+        <div class="form-group"><label>Nchi Unayotoka:</label><input type="text" id="joinCountry" placeholder="Mfano: Tanzania, USA" required></div>
+        <div class="form-group"><label>Umri:</label><input type="number" id="joinAge" placeholder="Mfano: 25" required></div>
+
+        <h3 style="color: var(--royal-green); margin: 25px 0 15px 0;"><i class="fas fa-graduation-cap"></i> Elimu na Uzoefu</h3>
+        <div class="form-group"><label>Kiwango cha Elimu:</label>
+            <select id="joinEducation" required>
+                <option value="">Chagua...</option>
+                <option value="Shule ya Msingi">Shule ya Msingi</option>
+                <option value="Sekondari">Sekondari</option>
+                <option value="Diploma">Diploma</option>
+                <option value="Shahada">Shahada</option>
+                <option value="Masters">Masters</option>
+                <option value="PhD">PhD</option>
+            </select>
+        </div>
+        <div class="form-group"><label>Fani/Utaalamu Wako:</label><input type="text" id="joinField" placeholder="Mfano: IT, Utalii, Biashara" required></div>
+        <div class="form-group"><label>Uzoefu wa Kazi (miaka):</label><input type="number" id="joinExperience" placeholder="Mfano: 3" required></div>
+
+        <h3 style="color: var(--royal-green); margin: 25px 0 15px 0;"><i class="fas fa-briefcase"></i> Sekta Unayotaka Kujiunga</h3>
+        <div class="form-group"><label>Chagua Sekta:</label>
+            <select id="joinSector" required>
+                <option value="">Chagua...</option>
+                <option value="Kisomi (Utafiti, Sayansi, Elimu)">Kisomi (Utafiti, Sayansi, Elimu)</option>
+                <option value="Biashara (Uuzaji, Masoko, Fedha)">Biashara (Uuzaji, Masoko, Fedha)</option>
+                <option value="Teknolojia (IT, AI, Programming)">Teknolojia (IT, AI, Programming)</option>
+                <option value="Sanaa (Muziki, Filamu, Uchoraji)">Sanaa (Muziki, Filamu, Uchoraji)</option>
+                <option value="Utalii (Guide, Hotel, Safari)">Utalii (Guide, Hotel, Safari)</option>
+                <option value="Afya (Daktari, Muuguzi, Lishe)">Afya (Daktari, Muuguzi, Lishe)</option>
+                <option value="Nyingine">Nyingine</option>
+            </select>
+        </div>
+
+        <h3 style="color: var(--royal-green); margin: 25px 0 15px 0;"><i class="fas fa-lightbulb"></i> Wazo Lako na Mchango Wako</h3>
+        <div class="form-group"><label>Ni wazo gani muhimu unalotaka kuongeza kwenye UNP TOURS?</label>
+            <textarea id="joinIdea" rows="4" placeholder="Eleza wazo lako kwa kina..." required></textarea>
+        </div>
+        <div class="form-group"><label>Ni kitu gani utatufanyia kama mshirika?</label>
+            <textarea id="joinContribution" rows="4" placeholder="Eleza kile utakachotufanyia..." required></textarea>
+        </div>
+        <div class="form-group"><label>Kwa nini unataka kujiunga na UNP TOURS?</label>
+            <textarea id="joinReason" rows="4" placeholder="Eleza sababu zako..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary btn-full" style="margin-top: 15px;"><i class="fab fa-whatsapp"></i> Tuma Maombi kwa WhatsApp</button>
+    </form>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+<div class="footer-content">
+<div><h3>UNIQUE NATURE PARADISE (UNP)</h3><p style="font-size: 0.9rem; max-width: 350px;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p></div>
+<div><h4>Direct Contact</h4><p style="font-size: 0.9rem; margin-top: 8px;"><i class="fab fa-whatsapp" style="color: var(--royal-gold);"></i> Phone: +255 655 728 982</p><p style="font-size: 0.9rem; margin-top: 5px;"><i class="fas fa-envelope" style="color: var(--royal-gold);"></i> Email: salimnasoro11@gmail.com</p>
+<div class="social-links">
+<a href="https://wa.me/255655728982" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<a href="mailto:salimnasoro11@gmail.com"><i class="fas fa-envelope"></i></a>
+<a href="https://www.tiktok.com/@unptours" target="_blank"><i class="fab fa-tiktok"></i></a>
+<a href="https://www.instagram.com/unpsoulvoyoge" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://www.facebook.com/profile.php?id=61595094232501" target="_blank"><i class="fab fa-facebook"></i></a>
+</div></div>
+</div>
+</footer>
+
+<a href="https://wa.me/255655728982" class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+  import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyD2YtPFL2L_ZwAKdSYpXtvLt8gJUm2IX6s",
+    authDomain: "unptours.firebaseapp.com",
+    projectId: "unptours",
+    storageBucket: "unptours.firebasestorage.app",
+    messagingSenderId: "233326851661",
+    appId: "1:233326851661:web:354156110a5cee29904e04",
+    measurementId: "G-5QJ1X38ZLC"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  const menuToggleBtn = document.getElementById('menuToggleBtn');
+  const navLinks = document.getElementById('navLinks');
+  if(menuToggleBtn) { menuToggleBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); }); }
+
+  const joinForm = document.getElementById('joinForm');
+  joinForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const data = {
+          name: document.getElementById('joinName').value,
+          email: document.getElementById('joinEmail').value,
+          phone: document.getElementById('joinPhone').value,
+          country: document.getElementById('joinCountry').value,
+          age: document.getElementById('joinAge').value,
+          education: document.getElementById('joinEducation').value,
+          field: document.getElementById('joinField').value,
+          experience: document.getElementById('joinExperience').value,
+          sector: document.getElementById('joinSector').value,
+          idea: document.getElementById('joinIdea').value,
+          contribution: document.getElementById('joinContribution').value,
+          reason: document.getElementById('joinReason').value,
+          status: "Inasubiri",
+          createdAt: new Date()
+      };
+
+      try {
+          await addDoc(collection(db, "applications"), data);
+
+          const message = `*UNP TOURS - MAOMBI YA KUJIUNGA*%0A%0A*Jina:* ${data.name}%0A*Email:* ${data.email}%0A*Simu:* ${data.phone}%0A*Nchi:* ${data.country}%0A*Umri:* ${data.age}%0A*Elimu:* ${data.education}%0A*Fani:* ${data.field}%0A*Uzoefu:* ${data.experience} miaka%0A*Sekta:* ${data.sector}%0A*Wazo:* ${data.idea}%0A*Mchango:* ${data.contribution}%0A*Sababu:* ${data.reason}`;
+          
+          window.open(`https://wa.me/255655728982?text=${message}`, '_blank');
+          alert("Maombi yako yametumwa kwa mafanikio! Tutawasiliana nawe ndani ya siku 7.");
+          joinForm.reset();
+      } catch (error) {
+          alert("Kuna hitilafu imetokea: " + error.message);
+      }
+  });
+</script>
+
+</body>
+  </html>
