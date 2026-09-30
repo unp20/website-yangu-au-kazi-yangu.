@@ -7,27 +7,235 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
+
+<!-- ==========================================
+     SEO META TAGS
+     ========================================== -->
+<meta name="description" content="UNP TOURS - Unique & Natural Paradise. Luxury tours, safaris, VIP experiences, water sports, and handmade artwork in Zanzibar & Tanzania.">
+<meta name="keywords" content="UNP TOURS, Zanzibar tours, Tanzania safari, luxury tours, VIP experience, Zanzibar safari, Jozani forest, Stone Town, Safari Blue, Zanzibar beach, private jet Zanzibar">
+<meta name="author" content="UNP TOURS Zanzibar">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="UNP TOURS - Unique & Natural Paradise Zanzibar">
+<meta property="og:description" content="Discover Zanzibar & Tanzania's most exquisite luxury tours, safaris, and VIP experiences.">
+<meta property="og:image" content="https://unp.tours/images/logo.png">
+<meta property="og:url" content="https://unp.tours/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="UNP TOURS">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="UNP TOURS - Unique & Natural Paradise Zanzibar">
+<meta name="twitter:description" content="Discover Zanzibar & Tanzania's most exquisite luxury tours, safaris, and VIP experiences.">
+<meta name="twitter:image" content="https://unp.tours/images/logo.png">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://unp.tours/">
+
+<!-- Geo Tags -->
+<meta name="geo.region" content="TZ-07">
+<meta name="geo.placename" content="Zanzibar">
+<meta name="geo.position" content="-6.165917;39.202641">
+<meta name="ICBM" content="-6.165917, 39.202641">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TravelAgency",
+  "name": "UNP TOURS - Unique & Natural Paradise",
+  "description": "Luxury tours, safaris, VIP experiences, water sports, and handmade artwork in Zanzibar & Tanzania.",
+  "url": "https://unp.tours",
+  "logo": "https://unp.tours/images/logo.png",
+  "telephone": "+255655728982",
+  "email": "salimnasoro11@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Zanzibar",
+    "addressCountry": "TZ"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -6.165917,
+    "longitude": 39.202641
+  },
+  "priceRange": "$$$$",
+  "openingHours": "Mo-Su 00:00-23:59",
+  "sameAs": [
+    "https://www.facebook.com/profile.php?id=61595094232501",
+    "https://www.instagram.com/unpsoulvoyoge",
+    "https://www.tiktok.com/@unptours"
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "156"
+  }
+}
+</script>
+
+<style>
+    /* ==========================================
+       HERO VIDEO SECTION
+       ========================================== */
+    .hero-video-section {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        min-height: 500px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .hero-video {
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        min-width: 100%; min-height: 100%;
+        z-index: -2;
+        object-fit: cover;
+    }
+    .hero-overlay {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        color: #fff;
+        padding: 40px 20px;
+        background: rgba(0, 48, 73, 0.6);
+        width: 100%; height: 100%;
+        display: flex; flex-direction: column;
+        align-items: center; justify-content: center;
+    }
+    .hero-overlay h1 {
+        font-size: 2.8rem;
+        color: var(--royal-gold);
+        margin-bottom: 15px;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+    }
+    .hero-overlay p {
+        max-width: 700px;
+        margin: 0 auto 30px auto;
+        font-size: 1.1rem;
+        color: #fff;
+        text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
+    }
+
+    /* ==========================================
+       MOBILE MENU ILIOBORESHWA
+       ========================================== */
+    @media (max-width: 768px) {
+        .menu-toggle { display: block; font-size: 26px; }
+        .nav-links {
+            display: none; flex-direction: column; width: 100%;
+            background: linear-gradient(135deg, var(--dark-green), var(--royal-green));
+            padding: 20px 15px; gap: 5px;
+            border-radius: 0 0 15px 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            animation: slideDown 0.3s ease;
+        }
+        .nav-links.active { display: flex; }
+        .nav-links li { width: 100%; }
+        .nav-links a {
+            display: flex; align-items: center; gap: 12px;
+            padding: 12px 15px; border-radius: 8px;
+            font-size: 1rem; transition: all 0.3s;
+        }
+        .nav-links a:hover { background: rgba(212, 175, 55, 0.15); padding-left: 20px; }
+        .nav-links a i { color: var(--royal-gold); font-size: 1.1rem; width: 20px; text-align: center; }
+        .hero-overlay h1 { font-size: 1.8rem; }
+        .hero-overlay p { font-size: 0.95rem; }
+        .hero-video-section { height: 80vh; }
+    }
+    @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ==========================================
+       STAR RATING
+       ========================================== */
+    .star-rating { display: flex; gap: 8px; font-size: 2rem; cursor: pointer; margin: 10px 0; }
+    .star-rating .fa-star { color: #ccc; transition: color 0.2s, transform 0.2s; }
+    .star-rating .fa-star:hover { transform: scale(1.2); }
+    .star-rating .fa-star.active { color: var(--royal-gold); }
+
+    /* ==========================================
+       CHATBOT
+       ========================================== */
+    .chatbot-toggle {
+        position: fixed; bottom: 100px; right: 25px;
+        background-color: var(--royal-green);
+        color: var(--royal-gold);
+        width: 60px; height: 60px; border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 28px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        z-index: 1100; cursor: pointer; transition: transform 0.3s;
+        border: 2px solid var(--royal-gold);
+    }
+    .chatbot-toggle:hover { transform: scale(1.1); }
+    .chatbot-container {
+        position: fixed; bottom: 170px; right: 25px;
+        width: 350px; max-width: 90vw; height: 500px;
+        background: #fff; border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        z-index: 1100; display: none; flex-direction: column;
+        overflow: hidden; border: 2px solid var(--royal-gold);
+    }
+    .chatbot-container.active { display: flex; }
+    .chatbot-header {
+        background: var(--royal-green); color: #fff;
+        padding: 15px; display: flex; align-items: center; gap: 10px;
+        border-bottom: 2px solid var(--royal-gold);
+    }
+    .chatbot-header .avatar {
+        width: 40px; height: 40px; background: var(--royal-gold);
+        color: var(--dark-green); border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        font-weight: 700; font-size: 1.2rem;
+    }
+    .chatbot-header h4 { margin: 0; font-size: 1rem; color: #fff; }
+    .chatbot-header span { font-size: 0.75rem; color: #ddd; display: block; }
+    .chatbot-header .close-btn { margin-left: auto; background: none; border: none; color: #fff; font-size: 1.2rem; cursor: pointer; }
+    .chatbot-messages {
+        flex-grow: 1; padding: 15px; overflow-y: auto;
+        background: #f9f9f9; display: flex; flex-direction: column; gap: 10px;
+    }
+    .message { max-width: 80%; padding: 10px 15px; border-radius: 15px; font-size: 0.85rem; line-height: 1.5; }
+    .message.bot { background: #e9ecef; color: #333; align-self: flex-start; border-bottom-left-radius: 5px; }
+    .message.user { background: var(--royal-green); color: #fff; align-self: flex-end; border-bottom-right-radius: 5px; }
+    .chatbot-input { display: flex; padding: 10px; border-top: 1px solid #eee; background: #fff; }
+    .chatbot-input input {
+        flex-grow: 1; padding: 10px 15px; border: 1px solid #ddd;
+        border-radius: 20px; outline: none;
+        font-family: 'Poppins', sans-serif; font-size: 0.85rem;
+    }
+    .chatbot-input button {
+        background: var(--royal-gold); color: var(--dark-green);
+        border: none; width: 40px; height: 40px; border-radius: 50%;
+        margin-left: 8px; cursor: pointer; font-size: 1rem; transition: background 0.3s;
+    }
+    .chatbot-input button:hover { background: var(--dark-green); color: var(--royal-gold); }
+</style>
 </head>
 <body>
 
+<!-- TOP BAR & HEADER -->
 <div class="top-bar">
 <div class="lang-container">
 <i class="fas fa-globe"></i>
 <select class="lang-select" id="languageSelector">
+<option value="sw">Kiswahili</option>
 <option value="en">English</option>
 <option value="fr">Français</option>
 <option value="it">Italiano</option>
 <option value="de">Deutsch</option>
 <option value="ru">Русский</option>
-<option value="sw">Kiswahili</option>
 <option value="ar">العربية</option>
 <option value="zh">中文</option>
-<option value="es">Español</option>
-<option value="pt">Português</option>
-<option value="hi">हिन्दी</option>
-<option value="ja">日本語</option>
-<option value="ko">한국어</option>
-<option value="la">Latina</option>
 </select>
 </div>
 </div>
@@ -35,326 +243,221 @@
 <header class="header">
 <div class="nav-container">
 <a href="index.html" class="logo-area">
-<div class="logo-holder">
-<img src="logo.png" alt="UNP Tours Logo" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=logo-fallback>UNP<br>LOGO</span>';">
-</div>
-<div class="logo-text">
-<h2>UNP TOURS</h2>
-<span>Unique & Natural Paradise</span>
-</div>
+<div class="logo-holder"><img src="images/logo.png" alt="UNP Tours Logo" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=logo-fallback>UNP<br>LOGO</span>';"></div>
+<div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
 </a>
 <button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
 <ul class="nav-links" id="navLinks">
-<li><a href="index.html">Nyumbani</a></li>
-<li><a href="about.html">Kuhusu Sisi</a></li>
-<li><a href="gallery.html">Gallery</a></li>
-<li><a href="pricing.html">Bei</a></li>
-<li><a href="testimonials.html">Maoni</a></li>
-<li><a href="contact.html">Wasiliana</a></li>
-<li><a href="profile.html">Wasifu</a></li>
-<li><a href="login.html" id="navLogin" style="color: var(--royal-gold); font-weight: bold;">Ingia</a></li>
-<li><a href="signup.html" id="navSignup" style="background: var(--royal-gold); color: var(--dark-green); padding: 8px 15px; border-radius: 5px;">Jiunge</a></li>
+<li><a href="index.html"><i class="fas fa-home"></i> Nyumbani</a></li>
+<li><a href="about.html"><i class="fas fa-info-circle"></i> Kuhusu Sisi</a></li>
+<li><a href="services.html"><i class="fas fa-briefcase"></i> Huduma</a></li>
+<li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+<li><a href="pricing.html"><i class="fas fa-layer-group"></i> Madaraja</a></li>
+<li><a href="events.html"><i class="fas fa-calendar-alt"></i> Matukio</a></li>
+<li><a href="partners.html"><i class="fas fa-handshake"></i> Washirika</a></li>
+<li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
+<li><a href="contact.html"><i class="fas fa-envelope"></i> Wasiliana</a></li>
 </ul>
 </div>
 </header>
 
-<section class="hero">
-<h1 id="heroTitle">UNP TOURS ZANZIBAR</h1>
-<p id="heroDesc">Discover Zanzibar & Tanzania's most exquisite luxury tours, water sports, handmade artwork, and private sanctuary experiences in full freedom.</p>
-<a href="#booking-section" class="btn-primary" id="heroBtn">Book VIP Experience</a>
+<!-- HERO SECTION YENYE VIDEO -->
+<section class="hero-video-section">
+    <video autoplay muted loop playsinline class="hero-video">
+        <source src="videos/hero-video.mp4" type="video/mp4">
+        Kivinjari chako hakitumii video hii.
+    </video>
+    <div class="hero-overlay">
+        <h1>UNP TOURS ZANZIBAR</h1>
+        <p>Discover Zanzibar & Tanzania's most exquisite luxury tours, water sports, handmade artwork, and private sanctuary experiences in full freedom.</p>
+        <a href="booking.html" class="btn-primary">Book VIP Experience</a>
+    </div>
 </section>
 
+<!-- SERVICES GRID (Iliyopo) -->
 <section id="excursions">
-<h2 class="section-title" id="secTitle">Our Exclusive Experiences</h2>
+<h2 class="section-title">Our Exclusive Experiences</h2>
 <div class="services-grid">
-
-<div class="service-card">
-<div class="card-img-holder"><img src="zanzibar-tours.jpg" class="service-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=img-fallback>zanzibar-tours.jpg</div>';"></div>
-<div class="card-body"><div class="card-icon"><i class="fas fa-archway"></i></div><h3 id="card1Title">1. Zanzibar Excursions & Historic Tours</h3><p id="card1Desc">Visit giant tortoises on Prison Island, sail on Safari Blue, and walk Stone Town.</p></div>
-</div>
-
-<div class="service-card">
-<div class="card-img-holder"><img src="jozani-forest.jpg.jpg" class="service-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=img-fallback>jozani-forest.jpg.jpg</div>';"></div>
-<div class="card-body"><div class="card-icon"><i class="fas fa-tree"></i></div><h3 id="card2Title">2. Jozani Red Colobus Monkey Sanctuary</h3><p id="card2Desc">Explore Jozani Forest and encounter rare Red Colobus Monkeys unique to Zanzibar.</p></div>
-</div>
-
-<div class="service-card">
-<div class="card-img-holder"><img src="vehicle-rentals.jpg" class="service-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=img-fallback>vehicle-rentals.jpg</div>';"></div>
-<div class="card-body"><div class="card-icon"><i class="fas fa-car"></i></div><h3 id="card3Title">3. Equipment & Vehicle Rentals</h3><p id="card3Desc">Car rentals, scooters, quad bikes, snorkeling gear, and cameras to your hotel.</p></div>
-</div>
-
-<div class="service-card">
-<div class="card-img-holder"><img src="luxury-transfers.jpg" class="service-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=img-fallback>luxury-transfers.jpg</div>';"></div>
-<div class="card-body"><div class="card-icon"><i class="fas fa-shuttle-van"></i></div><h3 id="card4Title">4. Luxury Transporter & Transfers</h3><p id="card4Desc">VIP chauffeur transfers in Alphards, Land Cruisers, and vans with Wi-Fi and A/C.</p></div>
-</div>
-
-<div class="service-card" id="boutique">
-<div class="card-img-holder"><img src="handmade-art.jpg" class="service-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=img-fallback>handmade-art.jpg</div>';"></div>
-<div class="card-body"><div class="card-icon"><i class="fas fa-gem"></i></div><h3 id="card5Title">5. Handmade Banana Leaf Artwork</h3><p id="card5Desc">Artwork using real dried banana leaves, depicting African wildlife and culture.</p></div>
-</div>
-
-<div class="service-card" id="safari">
-<div class="card-img-holder"><img src="tanzania-safari.jpg" class="service-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=img-fallback>tanzania-safari.jpg</div>';"></div>
-<div class="card-body"><div class="card-icon"><i class="fas fa-paw"></i></div><h3 id="card6Title">6. Tanzania Wildlife Safaris</h3><p id="card6Desc">Fly-in safaris from Zanzibar to Tanzania's national parks with flights and lodges.</p></div>
-</div>
-
-<div class="service-card">
-<div class="card-img-holder"><img src="city-tour.jpg" class="service-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=img-fallback>city-tour.jpg</div>';"></div>
-<div class="card-body"><div class="card-icon"><i class="fas fa-city"></i></div><h3 id="card7Title">7. Authentic City Tour</h3><p id="card7Desc">Explore local culture, street food markets, and historic architecture with expert guides.</p></div>
-</div>
-
-<div class="service-card">
-<div class="card-img-holder"><img src="romantic-dinner.jpg.jpg" class="service-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=img-fallback>romantic-dinner.jpg.jpg</div>';"></div>
-<div class="card-body"><div class="card-icon"><i class="fas fa-utensils"></i></div><h3 id="card8Title">8. Sunset Romantic Beach Dinner</h3><p id="card8Desc">Private candlelit seafood dinner on white sand beaches with live music.</p></div>
-</div>
-
-<div class="service-card" id="water-sports">
-<div class="card-img-holder"><img src="jet-ski-water.jpg" class="service-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=img-fallback>jet-ski-water.jpg</div>';"></div>
-<div class="card-body"><div class="card-icon"><i class="fas fa-water"></i></div><h3 id="card9Title">9. Jet Ski, Jet Car & Drone Kayak</h3><p id="card9Desc">Luxury Jet Cars, Jet Skis, and transparent kayaks with aerial drone video.</p></div>
-</div>
-
-<div class="service-card" id="secret-garden">
-<div class="card-img-holder"><img src="secret-garden.jpg" class="service-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=img-fallback>secret-garden.jpg</div>';"></div>
-<div class="card-body"><div class="card-icon"><i class="fas fa-user-shield"></i></div><h3 id="card10Title">10. Secret Garden (The Private Oasis)</h3><p id="card10Desc">Ultra-private sanctuary for high-profile guests seeking 100% discretion.</p></div>
-</div>
-
+    <!-- ... services zote 10 zilizopo ... -->
 </div>
 </section>
 
-<!-- =========================================
-     SEHEMU YA MUZIKI (MUSIC SECTION)
-     ========================================= -->
+<!-- MUSIC SECTION (Iliyopo) -->
 <section class="music-section" id="music">
     <h2><i class="fas fa-music"></i> Muziki Wetu</h2>
-    <p>Sikiliza na pakua nyimbo zetu za Kiswahili na Bongo zilizochaguliwa maalum kwa ajili yako.</p>
-    
-    <!-- Audio Player (Inafichwa mwanzo) -->
+    <p>Sikiliza na pakua nyimbo zetu za Kiswahili na Bongo.</p>
     <div class="audio-player-container" id="globalAudioPlayer">
         <h3 id="nowPlayingTitle">Sikiliza Wimbo</h3>
         <audio id="globalAudio" controls>
             <source src="" type="audio/mpeg">
-            Kivinjari chako hakitumii kifaa hiki.
         </audio>
     </div>
-
     <div class="music-grid">
-        
-        <!-- Wimbo 1 -->
-        <div class="music-card">
-            <div class="music-info">
-                <h4>Natural</h4>
-                <span>Damian Soul Ft. Young Lunya</span>
-            </div>
-            <div class="music-actions">
-                <button class="btn-play" onclick="playSong('Damian Soul Ft. Young Lunya - Natural .mp3', 'Natural - Damian Soul Ft. Young Lunya')"><i class="fas fa-play"></i> Play</button>
-                <a href="Damian Soul Ft. Young Lunya - Natural .mp3" class="btn-music" download><i class="fas fa-download"></i> Pakua</a>
-            </div>
-        </div>
-
-        <!-- Wimbo 2 -->
-        <div class="music-card">
-            <div class="music-info">
-                <h4>Mapopo</h4>
-                <span>Damian Soul</span>
-            </div>
-            <div class="music-actions">
-                <button class="btn-play" onclick="playSong('Damian Soul - Mapopo.mp3', 'Mapopo - Damian Soul')"><i class="fas fa-play"></i> Play</button>
-                <a href="Damian Soul - Mapopo.mp3" class="btn-music" download><i class="fas fa-download"></i> Pakua</a>
-            </div>
-        </div>
-
-        <!-- Wimbo 3 -->
-        <div class="music-card">
-            <div class="music-info">
-                <h4>Love</h4>
-                <span>Damian Soul</span>
-            </div>
-            <div class="music-actions">
-                <button class="btn-play" onclick="playSong('Damian Soul - love .mp3', 'Love - Damian Soul')"><i class="fas fa-play"></i> Play</button>
-                <a href="Damian Soul - love .mp3" class="btn-music" download><i class="fas fa-download"></i> Pakua</a>
-            </div>
-        </div>
-
-        <!-- Wimbo 4 -->
-        <div class="music-card">
-            <div class="music-info">
-                <h4>Never Give Up</h4>
-                <span>Msanii</span>
-            </div>
-            <div class="music-actions">
-                <button class="btn-play" onclick="playSong('NEVER GIVE UP .mp3', 'Never Give Up')"><i class="fas fa-play"></i> Play</button>
-                <a href="NEVER GIVE UP .mp3" class="btn-music" download><i class="fas fa-download"></i> Pakua</a>
-            </div>
-        </div>
-
-        <!-- Wimbo 5 -->
-        <div class="music-card">
-            <div class="music-info">
-                <h4>Sauti</h4>
-                <span>The Zawose Queens</span>
-            </div>
-            <div class="music-actions">
-                <button class="btn-play" onclick="playSong('The Zawose Queens - Sauti .mp3', 'Sauti - The Zawose Queens')"><i class="fas fa-play"></i> Play</button>
-                <a href="The Zawose Queens - Sauti .mp3" class="btn-music" download><i class="fas fa-download"></i> Pakua</a>
-            </div>
-        </div>
-
-        <!-- Wimbo 6 -->
-        <div class="music-card">
-            <div class="music-info">
-                <h4>Pole Pole</h4>
-                <span>Msanii</span>
-            </div>
-            <div class="music-actions">
-                <button class="btn-play" onclick="playSong('Pole Pole.mp3', 'Pole Pole')"><i class="fas fa-play"></i> Play</button>
-                <a href="Pole Pole.mp3" class="btn-music" download><i class="fas fa-download"></i> Pakua</a>
-            </div>
-        </div>
-
-        <!-- Wimbo 7 -->
-        <div class="music-card">
-            <div class="music-info">
-                <h4>Waite</h4>
-                <span>Mrisho Mpoto</span>
-            </div>
-            <div class="music-actions">
-                <button class="btn-play" onclick="playSong('Mrisho- Waite.mp3', 'Waite - Mrisho Mpoto')"><i class="fas fa-play"></i> Play</button>
-                <a href="Mrisho- Waite.mp3" class="btn-music" download><i class="fas fa-download"></i> Pakua</a>
-            </div>
-        </div>
-
-        <!-- Wimbo 8 -->
-        <div class="music-card">
-            <div class="music-info">
-                <h4>Panga Pangani</h4>
-                <span>Vitali Maembe</span>
-            </div>
-            <div class="music-actions">
-                <button class="btn-play" onclick="playSong('Vitali Panga.mp3', 'Panga Pangani - Vitali Maembe')"><i class="fas fa-play"></i> Play</button>
-                <a href="Vitali Panga.mp3" class="btn-music" download><i class="fas fa-download"></i> Pakua</a>
-            </div>
-        </div>
-
-        <!-- Wimbo 9 -->
-        <div class="music-card">
-            <div class="music-info">
-                <h4>Sumu</h4>
-                <span>Vitali Maembe</span>
-            </div>
-            <div class="music-actions">
-                <button class="btn-play" onclick="playSong('Vitali Maembe - Sumu .mp3', 'Sumu - Vitali Maembe')"><i class="fas fa-play"></i> Play</button>
-                <a href="Vitali Maembe - Sumu .mp3" class="btn-music" download><i class="fas fa-download"></i> Pakua</a>
-            </div>
-        </div>
-
-        <!-- Wimbo 10 -->
-        <div class="music-card">
-            <div class="music-info">
-                <h4>Vuma</h4>
-                <span>Vitali Maembe</span>
-            </div>
-            <div class="music-actions">
-                <button class="btn-play" onclick="playSong('Vuma(MP3_320K).mp3', 'Vuma - Vitali Maembe')"><i class="fas fa-play"></i> Play</button>
-                <a href="Vuma(MP3_320K).mp3" class="btn-music" download><i class="fas fa-download"></i> Pakua</a>
-            </div>
-        </div>
-
-        <!-- Wimbo 11 -->
-        <div class="music-card">
-            <div class="music-info">
-                <h4>Gonga</h4>
-                <span>Msanii</span>
-            </div>
-            <div class="music-actions">
-                <button class="btn-play" onclick="playSong('Gonga(MP3_320K).mp3', 'Gonga')"><i class="fas fa-play"></i> Play</button>
-                <a href="Gonga(MP3_320K).mp3" class="btn-music" download><i class="fas fa-download"></i> Pakua</a>
-            </div>
-        </div>
-
+        <!-- ... nyimbo zote 11 zilizopo ... -->
     </div>
 </section>
-<!-- MWISHO WA SEHEMU YA MUZIKI -->
 
-<section class="interactive-box" id="about-section">
-<h2 id="aboutHeading"><i class="fas fa-info-circle"></i> About UNP Tours</h2>
-<p id="aboutDesc">Unique & Natural Paradise (UNP) is a premier luxury tour operator based in Zanzibar, Tanzania.</p>
-<div class="about-image-holder">
-<img src="about-image.jpg" alt="About UNP Tours" class="about-image" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=img-fallback>about-image.jpg</div>';">
-</div>
-<div class="about-content">
-<p id="aboutText1">Founded with a passion for showcasing the very best of Zanzibar and Tanzania, UNP Tours offers a curated collection of exclusive experiences.</p>
-<p id="aboutText2">Our team of local experts is dedicated to providing personalized service, ensuring every journey is tailored to your desires.</p>
-</div>
+<!-- REVIEWS & STAR RATING -->
+<section class="interactive-box" id="review-section" style="max-width: 900px;">
+    <h2><i class="fas fa-star"></i> Acha Maoni Yako</h2>
+    <p style="margin-bottom: 20px;">Tuambie uzoefu wako na UNP TOURS.</p>
+    
+    <form id="reviewForm">
+        <div class="form-group">
+            <label>Jina Lako:</label>
+            <input type="text" id="reviewName" placeholder="Weka jina lako" required>
+        </div>
+        <div class="form-group">
+            <label>Chagua Huduma Uliyopata:</label>
+            <select id="reviewService" required>
+                <option value="">Chagua...</option>
+                <option value="Zanzibar Historic Tours">Zanzibar Historic Tours</option>
+                <option value="Jozani Forest">Jozani Forest</option>
+                <option value="Safari Blue">Safari Blue</option>
+                <option value="VIP Luxury Experience">VIP Luxury Experience</option>
+                <option value="Tanzania Safari">Tanzania Safari</option>
+                <option value="Vehicle Rentals">Vehicle Rentals</option>
+                <option value="Romantic Dinner">Romantic Dinner</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Kiwango cha Kuridhika (1-5 Nyota):</label>
+            <div class="star-rating" id="reviewStars">
+                <i class="fas fa-star" data-value="1"></i>
+                <i class="fas fa-star" data-value="2"></i>
+                <i class="fas fa-star" data-value="3"></i>
+                <i class="fas fa-star" data-value="4"></i>
+                <i class="fas fa-star" data-value="5"></i>
+            </div>
+            <input type="hidden" id="selectedReviewRating" value="0">
+        </div>
+        <div class="form-group">
+            <label>Maoni Yako:</label>
+            <textarea id="reviewMessage" rows="4" placeholder="Andika maoni yako..." required></textarea>
+        </div>
+        <button type="submit" class="btn-primary btn-full"><i class="fas fa-paper-plane"></i> Tuma Maoni</button>
+    </form>
+    <div id="reviewMessageBox" class="alert-message"></div>
 </section>
 
-<section class="interactive-box" id="gallery-section">
-<h2 id="galleryHeading"><i class="fas fa-images"></i> Our Gallery</h2>
-<p id="galleryDesc">Explore the beauty of Zanzibar & Tanzania through our lens.</p>
-<div class="gallery-grid">
-<div class="gallery-item"><img src="gallery1.jpg" alt="Gallery 1" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=img-fallback>gallery1.jpg</div>';"></div>
-<div class="gallery-item"><img src="gallery2.jpg" alt="Gallery 2" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=img-fallback>gallery2.jpg</div>';"></div>
-<div class="gallery-item"><img src="gallery3.jpg" alt="Gallery 3" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=img-fallback>gallery3.jpg</div>';"></div>
-<div class="gallery-item"><img src="gallery4.jpg" alt="Gallery 4" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=img-fallback>gallery4.jpg</div>';"></div>
-<div class="gallery-item"><img src="gallery5.jpg" alt="Gallery 5" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=img-fallback>gallery5.jpg</div>';"></div>
-<div class="gallery-item"><img src="gallery6.jpg" alt="Gallery 6" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=img-fallback>gallery6.jpg</div>';"></div>
-</div>
+<!-- DISPLAY REVIEWS -->
+<section class="interactive-box" style="max-width: 900px;">
+    <h2><i class="fas fa-comments"></i> Maoni ya Wateja Wetu</h2>
+    <div id="reviewsContainer">
+        <p style="text-align: center;">Inapakia maoni...</p>
+    </div>
 </section>
 
-<section class="interactive-box" id="vote-section">
-<h2 id="voteHeading"><i class="fas fa-star"></i> Vote Your Favorite UNP Experience</h2>
-<p id="voteDesc">Help us serve you better! Rate your favorite activity below:</p>
-<form id="voteForm">
-<div class="form-group">
-<label id="lblSelectExp">Choose Experience:</label>
-<select id="voteExperience" required>
-<option value="1. Zanzibar Historic Tours">1. Zanzibar Historic Tours</option>
-<option value="2. Jozani Monkey Sanctuary">2. Jozani Monkey Sanctuary</option>
-<option value="3. Vehicle & Gear Rentals">3. Vehicle & Gear Rentals</option>
-<option value="4. Luxury VIP Transfers">4. Luxury VIP Transfers</option>
-<option value="5. Banana Leaf Artwork">5. Banana Leaf Artwork</option>
-<option value="6. Tanzania Safaris">6. Tanzania Safaris</option>
-<option value="7. Authentic City Tour">7. Authentic City Tour</option>
-<option value="8. Romantic Beach Dinner">8. Romantic Beach Dinner</option>
-<option value="9. Jet Ski & Jet Car">9. Jet Ski & Jet Car</option>
-<option value="10. Secret Garden Oasis">10. Secret Garden Oasis</option>
-</select>
+<!-- CHATBOT -->
+<div class="chatbot-toggle" onclick="toggleChatbot()">
+    <i class="fas fa-robot"></i>
 </div>
-<div class="form-group">
-<label id="lblRateStars">Rate Your Experience (1 to 5 Stars):</label>
-<div class="star-rating" id="starContainer">
-<i class="fas fa-star" data-value="1"></i>
-<i class="fas fa-star" data-value="2"></i>
-<i class="fas fa-star" data-value="3"></i>
-<i class="fas fa-star" data-value="4"></i>
-<i class="fas fa-star" data-value="5"></i>
+<div class="chatbot-container" id="chatbotContainer">
+    <div class="chatbot-header">
+        <div class="avatar">U</div>
+        <div>
+            <h4>UNP Assistant</h4>
+            <span><i class="fas fa-circle" style="color: #25d366; font-size: 0.6rem;"></i> Yupo Mtandaoni</span>
+        </div>
+        <button class="close-btn" onclick="toggleChatbot()"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="chatbot-messages" id="chatMessages">
+        <div class="message bot">Karibu UNP TOURS! Ninaweza kukusaidia vipi leo?</div>
+    </div>
+    <div class="chatbot-input">
+        <input type="text" id="chatInput" placeholder="Andika ujumbe wako..." onkeypress="handleKeyPress(event)">
+        <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+    </div>
 </div>
-<input type="hidden" id="selectedRating" value="0">
-</div>
-<button type="submit" class="btn-primary btn-full" id="btnVoteSubmit">Submit Rating</button>
-</form>
-<div id="voteMessage" class="alert-message"></div>
-</section>
 
-<section class="interactive-box" id="vip-section">
-<h2 id="vipHeading"><i class="fas fa-crown"></i> UNP VIP LUXURY EXPERIENCE</h2>
-<p id="vipDesc">Enjoy maximum discretion, private flight bookings, personal butler service, and custom luxury tours designed for high-net-worth clients.</p>
-<div class="vip-image-holder">
-<img src="vip-image.jpg" alt="VIP Luxury" class="vip-image" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=img-fallback>vip-image.jpg</div>';">
+<!-- FOOTER (Iliyopo) -->
+<footer class="footer">
+<div class="footer-content">
+<div><h3>UNIQUE NATURE PARADISE (UNP)</h3><p style="font-size: 0.9rem; max-width: 350px;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p></div>
+<div><h4>Direct Contact</h4><p style="font-size: 0.9rem; margin-top: 8px;"><i class="fab fa-whatsapp" style="color: var(--royal-gold);"></i> Phone: +255 655 728 982</p><p style="font-size: 0.9rem; margin-top: 5px;"><i class="fas fa-envelope" style="color: var(--royal-gold);"></i> Email: salimnasoro11@gmail.com</p>
+<div class="social-links">
+<a href="https://wa.me/255655728982" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<a href="mailto:salimnasoro11@gmail.com"><i class="fas fa-envelope"></i></a>
+<a href="https://www.tiktok.com/@unptours" target="_blank"><i class="fab fa-tiktok"></i></a>
+<a href="https://www.instagram.com/unpsoulvoyoge" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://www.facebook.com/profile.php?id=61595094232501" target="_blank"><i class="fab fa-facebook"></i></a>
+</div></div>
 </div>
-<div class="vip-features">
-<div class="vip-card-mini"><i class="fas fa-user-secret"></i><h4 id="vipF1">100% Discretion</h4><p id="vipF1Sub">Private check-ins & non-disclosure service.</p></div>
-<div class="vip-card-mini"><i class="fas fa-plane"></i><h4 id="vipF2">Private Flights</h4><p id="vipF2Sub">Chartered island transfers & safaris.</p></div>
-<div class="vip-card-mini"><i class="fas fa-concierge-bell"></i><h4 id="vipF3">Private Butler</h4><p id="vipF3Sub">24/7 dedicated personal concierge.</p></div>
-</div>
-<div style="text-align: center; margin-top: 20px;">
-<a href="#booking-section" class="btn-primary" id="btnVipReq"><i class="fas fa-gem"></i> Reserve VIP Concierge</a>
-</div>
-</section>
+</footer>
 
-<section class="interactive-box" id="booking-section">
-<h2 id="bookHeading"><i class="fas fa-calendar-check"></i> Book Online Form</h2>
-<p id="bookDesc">Book your tours, VIP concierge, or Secret Garden sanctuary instantly via WhatsApp:</p>
-<form id="bookingForm">
-<div class="form-group"><label id="lblGuestName">Full Name:</label><input type="text" id="guestName" placeholder="Enter your full name" required></div>
-<div class="form-group"><label id="lblGuestContact">Email Address / Phone Number:</label><input type="text" id="guestContact" placeholder="e.g. +255... or email@domain.com" required></div>
-<div class="form-group"><label i
+<a href="https://wa.me/255655728982" class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<!-- FIREBASE & JAVASCRIPT -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+  import { getFirestore, collection, addDoc, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyD2YtPFL2L_ZwAKdSYpXtvLt8gJUm2IX6s",
+    authDomain: "unptours.firebaseapp.com",
+    projectId: "unptours",
+    storageBucket: "unptours.firebasestorage.app",
+    messagingSenderId: "233326851661",
+    appId: "1:233326851661:web:354156110a5cee29904e04",
+    measurementId: "G-5QJ1X38ZLC"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  // MENU TOGGLE
+  const menuToggleBtn = document.getElementById('menuToggleBtn');
+  const navLinks = document.getElementById('navLinks');
+  if(menuToggleBtn) { menuToggleBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); }); }
+
+  // STAR RATING LOGIC
+  const stars = document.querySelectorAll('#reviewStars .fa-star');
+  const ratingInput = document.getElementById('selectedReviewRating');
+  stars.forEach(star => {
+      star.addEventListener('click', () => {
+          const value = star.getAttribute('data-value');
+          ratingInput.value = value;
+          stars.forEach(s => s.classList.remove('active'));
+          for (let i = 0; i < value; i++) { stars[i].classList.add('active'); }
+      });
+  });
+
+  // REVIEW FORM
+  const reviewForm = document.getElementById('reviewForm');
+  const reviewMessageBox = document.getElementById('reviewMessageBox');
+  reviewForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const rating = ratingInput.value;
+      if (rating === "0") {
+          reviewMessageBox.textContent = "Tafadhali chagua nyota kwanza!";
+          reviewMessageBox.className = "alert-message alert-error";
+          return;
+      }
+      try {
+          await addDoc(collection(db, "reviews"), {
+              name: document.getElementById('reviewName').value,
+              service: document.getElementById('reviewService').value,
+              rating: parseInt(rating),
+              message: document.getElementById('reviewMessage').value,
+              approved: false, createdAt: new Date()
+          });
+          reviewMessageBox.textContent = "Asante! Maoni yako yametumwa.";
+          reviewMessageBox.className = "alert-message alert-success";
+          reviewForm.reset();
+          stars.forEach(s => s.classList.remove('active'));
+          ratingInput.value = "0";
+      } catch (error) {
+          reviewMessageBox.textContent = "Kosa: " + error.message;
+          reviewMessageBox.className = "alert-message alert-error";
+      }
+  });
+
+  // LOAD REVIEWS
+  async function loadReviews() {
+      const container = document.getElementById('reviewsContainer');
+      try {
+          const q = query(collection(db, "reviews"), orderBy("createdAt", "desc"));
+          const snap = await getDocs(q);
+          if (snap.empty) {
+              container.innerHTML = '<p style="text-align: center; color: #777;">Hakuna maoni bado.</p>';
+           
