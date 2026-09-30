@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Habari kwa Vyombo | UNP TOURS Zanzibar</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<style>
+    /* CSS ya ziada kwa Press Page */
+    .press-kit-box {
+        background: linear-gradient(135deg, var(--dark-green) 0%, var(--royal-green) 100%);
+        color: #fff;
+        padding: 30px;
+        border-radius: 15px;
+        text-align: center;
+        margin-bottom: 30px;
+        border: 2px solid var(--royal-gold);
+    }
+    .press-kit-box h2 {
+        color: var(--royal-gold);
+        margin-bottom: 15px;
+    }
+    .press-kit-box p {
+        color: #ddd;
+        margin-bottom: 20px;
+    }
+    .press-kit-buttons {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .press-kit-buttons a {
+        background: var(--royal-gold);
+        color: var(--dark-green);
+        padding: 12px 25px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 0.9rem;
+        transition: background 0.3s;
+    }
+    .press-kit-buttons a:hover {
+        background: #fff;
+    }
+    .news-item {
+        background: #fff;
+        border-radius: 12px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        border-left: 4px solid var(--royal-gold);
+        transition: transform 0.3s;
+    }
+    .news-item:hover {
+        transform: translateY(-3px);
+    }
+    .news-item .news-date {
+        font-size: 0.8rem;
+        color: #999;
+        margin-bottom: 5px;
+    }
+    .news-item h3 {
+        color: var(--dark-green);
+        margin-bottom: 10px;
+        font-size: 1.1rem;
+    }
+    .news-item p {
+        color: #555;
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+    .press-contact {
+        background: #f9f9f9;
+        padding: 25px;
+        border-radius: 12px;
+        margin-top: 20px;
+        text-align: center;
+    }
+    .press-contact h3 {
+        color: var(--royal-green);
+        margin-bottom: 15px;
+    }
+    .press-contact p {
+        color: #555;
+        margin-bottom: 10px;
+        font-size: 0.95rem;
+    }
+    .press-contact a {
+        color: var(--royal-green);
+        font-weight: 600;
+        text-decoration: underline;
+    }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR & HEADER -->
+<div class="top-bar">
+<div class="lang-container">
+<i class="fas fa-globe"></i>
+<select class="lang-select"><option value="sw">Kiswahili</option><option value="en">English</option></select>
+</div>
+</div>
+
+<header class="header">
+<div class="nav-container">
+<a href="index.html" class="logo-area">
+<div class="logo-holder"><img src="logo.png" alt="UNP Tours Logo" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=logo-fallback>UNP<br>LOGO</span>';"></div>
+<div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
+</a>
+<button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
+<ul class="nav-links" id="navLinks">
+<li><a href="index.html"><i class="fas fa-home"></i> Nyumbani</a></li>
+<li><a href="about.html"><i class="fas fa-info-circle"></i> Kuhusu Sisi</a></li>
+<li><a href="services.html"><i class="fas fa-briefcase"></i> Huduma</a></li>
+<li><a href="events.html"><i class="fas fa-calendar-alt"></i> Matukio</a></li>
+<li><a href="press.html" style="color: var(--royal-gold);"><i class="fas fa-newspaper"></i> Habari</a></li>
+<li><a href="partners.html"><i class="fas fa-handshake"></i> Washirika</a></li>
+<li><a href="contact.html"><i class="fas fa-envelope"></i> Wasiliana</a></li>
+</ul>
+</div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero" style="padding: 70px 20px;">
+<h1 style="font-size: 2rem;">Habari kwa Vyombo vya Habari</h1>
+<p>Taarifa, picha, na mawasiliano kwa waandishi wa habari na blogu.</p>
+</section>
+
+<!-- PRESS KIT -->
+<section class="interactive-box" style="max-width: 900px;">
+    <div class="press-kit-box">
+        <h2><i class="fas fa-briefcase"></i> UNP TOURS Press Kit</h2>
+        <p>Pakua taarifa zote muhimu kuhusu UNP TOURS ikiwa ni pamoja na historia, picha, logo, na mawasiliano.</p>
+        <div class="press-kit-buttons">
+            <a href="#"><i class="fas fa-download"></i> Pakua Press Kit (PDF)</a>
+            <a href="#"><i class="fas fa-image"></i> Pakua Picha (ZIP)</a>
+            <a href="#"><i class="fas fa-file-alt"></i> Pakua Logo (ZIP)</a>
+        </div>
+    </div>
+</section>
+
+<!-- COMPANY FACTS -->
+<section class="interactive-box" style="max-width: 900px;">
+    <h2><i class="fas fa-info-circle"></i> Taarifa Muhimu Kuhusu UNP TOURS</h2>
+    <ul style="list-style: none; padding: 0; margin-top: 20px;">
+        <li style="padding: 10px 0; border-bottom: 1px dashed #eee;"><strong>Jina Kamili:</strong> Unique & Natural Paradise (UNP TOURS)</li>
+        <li style="padding: 10px 0; border-bottom: 1px dashed #eee;"><strong>Ilianzishwa:</strong> 2024</li>
+        <li style="padding: 10px 0; border-bottom: 1px dashed #eee;"><strong>Makao Makuu:</strong> Zanzibar, Tanzania</li>
+        <li style="padding: 10px 0; border-bottom: 1px dashed #eee;"><strong>Huduma:</strong> Luxury Tours, Safaris, VIP Experiences, Handmade Artwork</li>
+        <li style="padding: 10px 0; border-bottom: 1px dashed #eee;"><strong>Wateja:</strong> Watalii kutoka duniani kote</li>
+        <li style="padding: 10px 0;"><strong>Lugha:</strong> Kiswahili, Kiingereza, Kifaransa, Kitaliano, Kijerumani</li>
+    </ul>
+</section>
+
+<!-- PRESS RELEASES -->
+<section class="interactive-box" style="max-width: 900px;">
+    <h2><i class="fas fa-newspaper"></i> Habari za Hivi Karibuni (Press Releases)</h2>
+    
+    <div class="news-item">
+        <p class="news-date"><i class="fas fa-calendar"></i> 30 Septemba 2026</p>
+        <h3>UNP TOURS Yazindua Mfumo Mpya wa Kuweka Nafasi Mtandaoni</h3>
+        <p>UNP TOURS imezindua mfumo mpya wa kuweka nafasi mtandaoni unaowaruhusu wateja kuweka nafasi za safari zao moja kwa moja kupitia website. Mfumo huu unatumia teknolojia ya kisasa ya Firebase na unatoa uthibitisho wa haraka.</p>
+    </div>
+
+    <div class="news-item">
+        <p class="news-date"><i class="fas fa-calendar"></i> 15 Septemba 2026</p>
+        <h3>UNP TOURS Yatangaza Ushirikiano na Hoteli za Kifahari za Zanzibar</h3>
+        <p>UNP TOURS imetangaza ushirikiano na hoteli za kifahari za Zanzibar ikiwa ni pamoja na Nungwi Beach Resort, Kendwa Rocks, na Paje Beach Hotel. Ushirikiano huu utaongeza huduma za kifahari kwa wateja.</p>
+    </div>
+
+    <div class="news-item">
+        <p class="news-date"><i class="fas fa-calendar"></i> 01 Septemba 2026</p>
+        <h3>UNP TOURS Yafanya Safari ya Kwanza ya Kikundi cha Watalii 20</h3>
+        <p>UNP TOURS imefanikiwa kufanya safari ya kwanza ya kikundi cha watalii 20 kutoka Ulaya na Marekani. Safari ilijumuisha Jozani Forest, Safari Blue, na Stone Town Historic Tour.</p>
+    </div>
+
+</section>
+
+<!-- PRESS CONTACT -->
+<section class="interactive-box" style="max-width: 900px;">
+    <div class="press-contact">
+        <h3><i class="fas fa-envelope"></i> Mawasiliano ya Vyombo vya Habari</h3>
+        <p>Kwa mahojiano, taarifa zaidi, au picha za ubora wa juu, wasiliana nasi:</p>
+        <p><strong>Jina:</strong> Salim Nasoro (Founder & CEO)</p>
+        <p><i class="fab fa-whatsapp" style="color: var(--royal-gold);"></i> Simu/WhatsApp: <a href="tel:+255655728982">+255 655 728 982</a></p>
+        <p><i class="fas fa-envelope" style="color: var(--royal-gold);"></i> Barua Pepe: <a href="mailto:salimnasoro11@gmail.com">salimnasoro11@gmail.com</a></p>
+        <p><i class="fas fa-map-marker-alt" style="color: var(--royal-gold);"></i> Zanzibar, Tanzania</p>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+<div class="footer-content">
+<div><h3>UNIQUE NATURE PARADISE (UNP)</h3><p style="font-size: 0.9rem; max-width: 350px;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p></div>
+<div><h4>Direct Contact</h4><p style="font-size: 0.9rem; margin-top: 8px;"><i class="fab fa-whatsapp" style="color: var(--royal-gold);"></i> Phone: +255 655 728 982</p><p style="font-size: 0.9rem; margin-top: 5px;"><i class="fas fa-envelope" style="color: var(--royal-gold);"></i> Email: salimnasoro11@gmail.com</p>
+<div class="social-links">
+<a href="https://wa.me/255655728982" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<a href="mailto:salimnasoro11@gmail.com"><i class="fas fa-envelope"></i></a>
+<a href="https://www.tiktok.com/@unptours" target="_blank"><i class="fab fa-tiktok"></i></a>
+<a href="https://www.instagram.com/unpsoulvoyoge" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://www.facebook.com/profile.php?id=61595094232501" target="_blank"><i class="fab fa-facebook"></i></a>
+</div></div>
+</div>
+</footer>
+
+<a href="https://wa.me/255655728982" class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+  const menuToggleBtn = document.getElementById('menuToggleBtn');
+  const navLinks = document.getElementById('navLinks');
+  if(menuToggleBtn) { menuToggleBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); }); }
+</script>
+
+</body>
+  </html>
