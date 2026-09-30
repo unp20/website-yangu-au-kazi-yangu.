@@ -8,9 +8,10 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
 <style>
-    .partner-category {
-        margin-bottom: 40px;
-    }
+    /* ==========================================
+       1. PARTNERS PAGE
+       ========================================== */
+    .partner-category { margin-bottom: 40px; }
     .partner-category h3 {
         color: var(--royal-green);
         font-size: 1.3rem;
@@ -38,48 +39,77 @@
         border-color: var(--royal-gold);
     }
     .partner-logo {
-        width: 80px;
-        height: 80px;
+        width: 80px; height: 80px;
         background: var(--royal-green);
         color: var(--royal-gold);
         border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 2rem;
-        margin: 0 auto 15px auto;
-        font-weight: 700;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 2rem; margin: 0 auto 15px auto; font-weight: 700;
     }
-    .partner-card h4 {
-        color: var(--dark-green);
-        margin-bottom: 8px;
-        font-size: 1rem;
-    }
-    .partner-card p {
-        font-size: 0.85rem;
-        color: #777;
-        line-height: 1.5;
-    }
+    .partner-card h4 { color: var(--dark-green); margin-bottom: 8px; font-size: 1rem; }
+    .partner-card p { font-size: 0.85rem; color: #777; line-height: 1.5; }
     .become-partner-box {
         background: linear-gradient(135deg, var(--dark-green) 0%, var(--royal-green) 100%);
-        color: #fff;
-        padding: 40px 30px;
-        border-radius: 15px;
-        text-align: center;
-        margin-top: 30px;
-        border: 2px solid var(--royal-gold);
+        color: #fff; padding: 40px 30px; border-radius: 15px;
+        text-align: center; margin-top: 30px; border: 2px solid var(--royal-gold);
     }
-    .become-partner-box h2 {
-        color: var(--royal-gold);
-        margin-bottom: 15px;
+    .become-partner-box h2 { color: var(--royal-gold); margin-bottom: 15px; }
+    .become-partner-box p { color: #ddd; margin-bottom: 20px; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+    /* ==========================================
+       2. MOBILE MENU ILIOBORESHWA
+       ========================================== */
+    @media (max-width: 768px) {
+        .menu-toggle { display: block; font-size: 26px; }
+        .nav-links {
+            display: none; flex-direction: column; width: 100%;
+            background: linear-gradient(135deg, var(--dark-green), var(--royal-green));
+            padding: 20px 15px; gap: 5px;
+            border-radius: 0 0 15px 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            animation: slideDown 0.3s ease;
+        }
+        .nav-links.active { display: flex; }
+        .nav-links li { width: 100%; }
+        .nav-links a {
+            display: flex; align-items: center; gap: 12px;
+            padding: 12px 15px; border-radius: 8px;
+            font-size: 1rem; transition: all 0.3s;
+        }
+        .nav-links a:hover { background: rgba(212, 175, 55, 0.15); padding-left: 20px; }
+        .nav-links a i { color: var(--royal-gold); font-size: 1.1rem; width: 20px; text-align: center; }
     }
-    .become-partner-box p {
-        color: #ddd;
-        margin-bottom: 20px;
-        max-width: 600px;
-        margin-left: auto;
-        margin-right: auto;
+    @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
     }
+
+    /* ==========================================
+       3. STAR RATING & REVIEWS
+       ========================================== */
+    .star-rating { display: flex; gap: 8px; font-size: 2rem; cursor: pointer; margin: 10px 0; }
+    .star-rating .fa-star { color: #ccc; transition: color 0.2s, transform 0.2s; }
+    .star-rating .fa-star:hover { transform: scale(1.2); }
+    .star-rating .fa-star.active { color: var(--royal-gold); }
+
+    .review-card {
+        background: #fff; border-radius: 12px; padding: 20px;
+        margin-bottom: 15px; box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        border-left: 4px solid var(--royal-gold);
+    }
+    .review-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 10px; }
+    .review-name { font-weight: 700; color: var(--dark-green); font-size: 1rem; }
+    .review-date { font-size: 0.8rem; color: #999; }
+    .review-stars { color: var(--royal-gold); font-size: 0.9rem; margin-bottom: 10px; }
+    .review-service {
+        display: inline-block; background: var(--royal-green); color: #fff;
+        padding: 3px 10px; border-radius: 15px; font-size: 0.75rem; margin-bottom: 10px;
+    }
+    .review-message { font-size: 0.9rem; color: #555; line-height: 1.6; font-style: italic; }
+
+    .alert-message { display: none; margin-top: 15px; padding: 12px; border-radius: 8px; font-weight: 600; text-align: center; }
+    .alert-success { background-color: #d4edda; color: #155724; display: block; }
+    .alert-error { background-color: #f8d7da; color: #721c24; display: block; }
 </style>
 </head>
 <body>
@@ -100,14 +130,14 @@
 </a>
 <button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
 <ul class="nav-links" id="navLinks">
-<li><a href="index.html">Nyumbani</a></li>
-<li><a href="about.html">Kuhusu Sisi</a></li>
-<li><a href="services.html">Huduma</a></li>
-<li><a href="gallery.html">Gallery</a></li>
-<li><a href="pricing.html">Bei</a></li>
-<li><a href="partners.html" style="color: var(--royal-gold);">Washirika</a></li>
-<li><a href="blog.html">Blog</a></li>
-<li><a href="contact.html">Wasiliana</a></li>
+<li><a href="index.html"><i class="fas fa-home"></i> Nyumbani</a></li>
+<li><a href="about.html"><i class="fas fa-info-circle"></i> Kuhusu Sisi</a></li>
+<li><a href="services.html"><i class="fas fa-briefcase"></i> Huduma</a></li>
+<li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+<li><a href="pricing.html"><i class="fas fa-tag"></i> Bei</a></li>
+<li><a href="partners.html" style="color: var(--royal-gold);"><i class="fas fa-handshake"></i> Washirika</a></li>
+<li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
+<li><a href="contact.html"><i class="fas fa-envelope"></i> Wasiliana</a></li>
 </ul>
 </div>
 </header>
@@ -121,114 +151,98 @@
 <!-- PARTNERS CONTENT -->
 <section class="interactive-box" style="max-width: 1100px;">
 
-    <!-- Category 1: Hotels -->
     <div class="partner-category">
         <h3><i class="fas fa-hotel"></i> Hoteli za Kifahari</h3>
         <div class="partner-grid">
-            <div class="partner-card">
-                <div class="partner-logo"><i class="fas fa-hotel"></i></div>
-                <h4>Nungwi Beach Resort</h4>
-                <p>Hoteli ya kifahari pwani ya Nungwi.</p>
-            </div>
-            <div class="partner-card">
-                <div class="partner-logo"><i class="fas fa-umbrella-beach"></i></div>
-                <h4>Kendwa Rocks Hotel</h4>
-                <p>Hoteli maarufu kwa sherehe za full moon.</p>
-            </div>
-            <div class="partner-card">
-                <div class="partner-logo"><i class="fas fa-spa"></i></div>
-                <h4>Paje Beach Hotel</h4>
-                <p>Hoteli ya kifahari kwa wapenda kitesurfing.</p>
-            </div>
-            <div class="partner-card">
-                <div class="partner-logo"><i class="fas fa-building"></i></div>
-                <h4>Stone Town Heritage Hotel</h4>
-                <p>Hoteli ya kihistoria katikati ya Stone Town.</p>
-            </div>
+            <div class="partner-card"><div class="partner-logo"><i class="fas fa-hotel"></i></div><h4>Nungwi Beach Resort</h4><p>Hoteli ya kifahari pwani ya Nungwi.</p></div>
+            <div class="partner-card"><div class="partner-logo"><i class="fas fa-umbrella-beach"></i></div><h4>Kendwa Rocks Hotel</h4><p>Hoteli maarufu kwa sherehe za full moon.</p></div>
+            <div class="partner-card"><div class="partner-logo"><i class="fas fa-spa"></i></div><h4>Paje Beach Hotel</h4><p>Hoteli ya kifahari kwa wapenda kitesurfing.</p></div>
+            <div class="partner-card"><div class="partner-logo"><i class="fas fa-building"></i></div><h4>Stone Town Heritage Hotel</h4><p>Hoteli ya kihistoria katikati ya Stone Town.</p></div>
         </div>
     </div>
 
-    <!-- Category 2: Airlines -->
     <div class="partner-category">
         <h3><i class="fas fa-plane"></i> Mashirika ya Ndege</h3>
         <div class="partner-grid">
-            <div class="partner-card">
-                <div class="partner-logo"><i class="fas fa-plane-departure"></i></div>
-                <h4>Air Tanzania</h4>
-                <p>Shirika la ndege la taifa la Tanzania.</p>
-            </div>
-            <div class="partner-card">
-                <div class="partner-logo"><i class="fas fa-plane-arrival"></i></div>
-                <h4>Precision Air</h4>
-                <p>Shirika la ndege linalofanya kazi Tanzania.</p>
-            </div>
-            <div class="partner-card">
-                <div class="partner-logo"><i class="fas fa-globe-africa"></i></div>
-                <h4>Coastal Aviation</h4>
-                <p>Shirika la ndege kwa safari za mbuga.</p>
-            </div>
-            <div class="partner-card">
-                <div class="partner-logo"><i class="fas fa-fighter-jet"></i></div>
-                <h4>Private Jet Charter</h4>
-                <p>Huduma za ndege za kibinafsi kwa VIP.</p>
-            </div>
+            <div class="partner-card"><div class="partner-logo"><i class="fas fa-plane-departure"></i></div><h4>Air Tanzania</h4><p>Shirika la ndege la taifa la Tanzania.</p></div>
+            <div class="partner-card"><div class="partner-logo"><i class="fas fa-plane-arrival"></i></div><h4>Precision Air</h4><p>Shirika la ndege linalofanya kazi Tanzania.</p></div>
+            <div class="partner-card"><div class="partner-logo"><i class="fas fa-globe-africa"></i></div><h4>Coastal Aviation</h4><p>Shirika la ndege kwa safari za mbuga.</p></div>
+            <div class="partner-card"><div class="partner-logo"><i class="fas fa-fighter-jet"></i></div><h4>Private Jet Charter</h4><p>Huduma za ndege za kibinafsi kwa VIP.</p></div>
         </div>
     </div>
 
-    <!-- Category 3: Tour Companies -->
     <div class="partner-category">
         <h3><i class="fas fa-globe"></i> Makampuni ya Utalii</h3>
         <div class="partner-grid">
-            <div class="partner-card">
-                <div class="partner-logo"><i class="fas fa-ship"></i></div>
-                <h4>Safari Blue Zanzibar</h4>
-                <p>Huduma za meli na snorkeling.</p>
-            </div>
-            <div class="partner-card">
-                <div class="partner-logo"><i class="fas fa-water"></i></div>
-                <h4>Diving Center Zanzibar</h4>
-                <p>Huduma za kuzamia na snorkeling.</p>
-            </div>
-            <div class="partner-card">
-                <div class="partner-logo"><i class="fas fa-motorcycle"></i></div>
-                <h4>Quad Bike Adventures</h4>
-                <p>Huduma za quad bike na safari.</p>
-            </div>
-            <div class="partner-card">
-                <div class="partner-logo"><i class="fas fa-car-side"></i></div>
-                <h4>Zanzibar Car Rentals</h4>
-                <p>Huduma za kukodisha magari.</p>
-            </div>
+            <div class="partner-card"><div class="partner-logo"><i class="fas fa-ship"></i></div><h4>Safari Blue Zanzibar</h4><p>Huduma za meli na snorkeling.</p></div>
+            <div class="partner-card"><div class="partner-logo"><i class="fas fa-water"></i></div><h4>Diving Center Zanzibar</h4><p>Huduma za kuzamia na snorkeling.</p></div>
+            <div class="partner-card"><div class="partner-logo"><i class="fas fa-motorcycle"></i></div><h4>Quad Bike Adventures</h4><p>Huduma za quad bike na safari.</p></div>
+            <div class="partner-card"><div class="partner-logo"><i class="fas fa-car-side"></i></div><h4>Zanzibar Car Rentals</h4><p>Huduma za kukodisha magari.</p></div>
         </div>
     </div>
 
-    <!-- Category 4: Restaurants -->
     <div class="partner-category">
         <h3><i class="fas fa-utensils"></i> Mikahawa ya Kifahari</h3>
         <div class="partner-grid">
-            <div class="partner-card">
-                <div class="partner-logo"><i class="fas fa-fish"></i></div>
-                <h4>The Rock Restaurant</h4>
-                <p>Mkahawa maarufu uliojengwa juu ya mwamba.</p>
-            </div>
-            <div class="partner-card">
-                <div class="partner-logo"><i class="fas fa-concierge-bell"></i></div>
-                <h4>Lukmaan Restaurant</h4>
-                <p>Mkahawa wa kihistoria wa Stone Town.</p>
-            </div>
-            <div class="partner-card">
-                <div class="partner-logo"><i class="fas fa-pizza-slice"></i></div>
-                <h4>Zanzibar Pizza</h4>
-                <p>Chakula maarufu cha usiku wa Forodhani.</p>
-            </div>
-            <div class="partner-card">
-                <div class="partner-logo"><i class="fas fa-coffee"></i></div>
-                <h4>Zanzibar Coffee House</h4>
-                <p>Kahawa na vitafunio vya kifahari.</p>
-            </div>
+            <div class="partner-card"><div class="partner-logo"><i class="fas fa-fish"></i></div><h4>The Rock Restaurant</h4><p>Mkahawa maarufu uliojengwa juu ya mwamba.</p></div>
+            <div class="partner-card"><div class="partner-logo"><i class="fas fa-concierge-bell"></i></div><h4>Lukmaan Restaurant</h4><p>Mkahawa wa kihistoria wa Stone Town.</p></div>
+            <div class="partner-card"><div class="partner-logo"><i class="fas fa-pizza-slice"></i></div><h4>Zanzibar Pizza</h4><p>Chakula maarufu cha usiku wa Forodhani.</p></div>
+            <div class="partner-card"><div class="partner-logo"><i class="fas fa-coffee"></i></div><h4>Zanzibar Coffee House</h4><p>Kahawa na vitafunio vya kifahari.</p></div>
         </div>
     </div>
 
+</section>
+
+<!-- STAR RATING & REVIEWS SECTION -->
+<section class="interactive-box" id="review-section" style="max-width: 800px;">
+    <h2><i class="fas fa-star"></i> Acha Maoni Yako</h2>
+    <p style="margin-bottom: 20px;">Tuambie uzoefu wako na UNP TOURS. Maoni yako yanatusaidia kuboresha huduma zetu.</p>
+    
+    <form id="reviewForm">
+        <div class="form-group">
+            <label>Jina Lako:</label>
+            <input type="text" id="reviewName" placeholder="Weka jina lako" required>
+        </div>
+        <div class="form-group">
+            <label>Chagua Huduma Uliyopata:</label>
+            <select id="reviewService" required>
+                <option value="">Chagua...</option>
+                <option value="Zanzibar Historic Tours">Zanzibar Historic Tours</option>
+                <option value="Jozani Forest">Jozani Forest</option>
+                <option value="Safari Blue">Safari Blue</option>
+                <option value="VIP Luxury Experience">VIP Luxury Experience</option>
+                <option value="Tanzania Safari">Tanzania Safari</option>
+                <option value="Vehicle Rentals">Vehicle Rentals</option>
+                <option value="Romantic Dinner">Romantic Dinner</option>
+                <option value="Nyingine">Nyingine</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Kiwango cha Kuridhika (1-5 Nyota):</label>
+            <div class="star-rating" id="reviewStars">
+                <i class="fas fa-star" data-value="1"></i>
+                <i class="fas fa-star" data-value="2"></i>
+                <i class="fas fa-star" data-value="3"></i>
+                <i class="fas fa-star" data-value="4"></i>
+                <i class="fas fa-star" data-value="5"></i>
+            </div>
+            <input type="hidden" id="selectedReviewRating" value="0">
+        </div>
+        <div class="form-group">
+            <label>Maoni Yako:</label>
+            <textarea id="reviewMessage" rows="4" placeholder="Andika maoni yako hapa..." required></textarea>
+        </div>
+        <button type="submit" class="btn-primary btn-full"><i class="fas fa-paper-plane"></i> Tuma Maoni</button>
+    </form>
+    <div id="reviewMessageBox" class="alert-message"></div>
+</section>
+
+<!-- DISPLAY REVIEWS -->
+<section class="interactive-box" style="max-width: 900px;">
+    <h2><i class="fas fa-comments"></i> Maoni ya Wateja Wetu</h2>
+    <div id="reviewsContainer">
+        <p style="text-align: center;">Inapakia maoni...</p>
+    </div>
 </section>
 
 <!-- BECOME A PARTNER -->
@@ -257,11 +271,118 @@
 
 <a href="https://wa.me/255655728982" class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
-<script>
+<!-- FIREBASE & JAVASCRIPT -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+  import { getFirestore, collection, addDoc, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyD2YtPFL2L_ZwAKdSYpXtvLt8gJUm2IX6s",
+    authDomain: "unptours.firebaseapp.com",
+    projectId: "unptours",
+    storageBucket: "unptours.firebasestorage.app",
+    messagingSenderId: "233326851661",
+    appId: "1:233326851661:web:354156110a5cee29904e04",
+    measurementId: "G-5QJ1X38ZLC"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  // MENU TOGGLE
   const menuToggleBtn = document.getElementById('menuToggleBtn');
   const navLinks = document.getElementById('navLinks');
   if(menuToggleBtn) { menuToggleBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); }); }
+
+  // STAR RATING LOGIC
+  const stars = document.querySelectorAll('#reviewStars .fa-star');
+  const ratingInput = document.getElementById('selectedReviewRating');
+
+  stars.forEach(star => {
+      star.addEventListener('click', () => {
+          const value = star.getAttribute('data-value');
+          ratingInput.value = value;
+          stars.forEach(s => s.classList.remove('active'));
+          for (let i = 0; i < value; i++) {
+              stars[i].classList.add('active');
+          }
+      });
+  });
+
+  // REVIEW FORM SUBMIT
+  const reviewForm = document.getElementById('reviewForm');
+  const reviewMessageBox = document.getElementById('reviewMessageBox');
+
+  reviewForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const name = document.getElementById('reviewName').value;
+      const service = document.getElementById('reviewService').value;
+      const rating = ratingInput.value;
+      const message = document.getElementById('reviewMessage').value;
+
+      if (rating === "0") {
+          reviewMessageBox.textContent = "Tafadhali chagua nyota kwanza!";
+          reviewMessageBox.className = "alert-message alert-error";
+          return;
+      }
+
+      try {
+          await addDoc(collection(db, "reviews"), {
+              name: name, service: service, rating: parseInt(rating),
+              message: message, approved: false, createdAt: new Date()
+          });
+          reviewMessageBox.textContent = "Asante! Maoni yako yametumwa.";
+          reviewMessageBox.className = "alert-message alert-success";
+          reviewForm.reset();
+          stars.forEach(s => s.classList.remove('active'));
+          ratingInput.value = "0";
+      } catch (error) {
+          reviewMessageBox.textContent = "Kuna hitilafu imetokea: " + error.message;
+          reviewMessageBox.className = "alert-message alert-error";
+      }
+  });
+
+  // LOAD REVIEWS
+  async function loadReviews() {
+      const container = document.getElementById('reviewsContainer');
+      try {
+          const q = query(collection(db, "reviews"), orderBy("createdAt", "desc"));
+          const snap = await getDocs(q);
+
+          if (snap.empty) {
+              container.innerHTML = '<p style="text-align: center; color: #777;">Hakuna maoni bado. Kuwa wa kwanza kuacha maoni!</p>';
+              return;
+          }
+
+          container.innerHTML = '';
+          snap.forEach((doc) => {
+              const d = doc.data();
+              if (d.approved === true || d.approved === undefined) {
+                  const starsHtml = '<i class="fas fa-star"></i>'.repeat(d.rating) + '<i class="far fa-star"></i>'.repeat(5 - d.rating);
+                  container.innerHTML += `
+                      <div class="review-card">
+                          <div class="review-header">
+                              <span class="review-name"><i class="fas fa-user-circle"></i> ${d.name}</span>
+                              <span class="review-date"><i class="fas fa-calendar"></i> ${new Date(d.createdAt.seconds * 1000).toLocaleDateString('sw-TZ')}</span>
+                          </div>
+                          <span class="review-service">${d.service}</span>
+                          <div class="review-stars">${starsHtml}</div>
+                          <p class="review-message">"${d.message}"</p>
+                      </div>
+                  `;
+              }
+          });
+
+          if (container.innerHTML === '') {
+              container.innerHTML = '<p style="text-align: center; color: #777;">Hakuna maoni yaliyoidhinishwa bado.</p>';
+          }
+      } catch (error) {
+          container.innerHTML = '<p style="text-align: center; color: red;">Kosa: ' + error.message + '</p>';
+      }
+  }
+
+  document.addEventListener('DOMContentLoaded', loadReviews);
 </script>
 
 </body>
-                           </html>
+    </html>
