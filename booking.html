@@ -7,6 +7,38 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
+
+<!-- ==========================================
+     SEO META TAGS
+     ========================================== -->
+<meta name="description" content="Omba bei yako ya safari na UNP TOURS. Chagua daraja lako na tutumie mahitaji yako.">
+<meta name="keywords" content="Zanzibar booking, safari booking, UNP tours booking, omba bei">
+<meta name="author" content="UNP TOURS Zanzibar">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Omba Bei | UNP TOURS Zanzibar">
+<meta property="og:description" content="Chagua daraja lako na omba bei maalum ya safari yako.">
+<meta property="og:image" content="https://unp.tours/images/logo.png">
+<meta property="og:url" content="https://unp.tours/booking.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="UNP TOURS">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Omba Bei | UNP TOURS Zanzibar">
+<meta name="twitter:description" content="Chagua daraja lako na omba bei maalum ya safari yako.">
+<meta name="twitter:image" content="https://unp.tours/images/logo.png">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://unp.tours/booking.html">
+
+<!-- Geo Tags -->
+<meta name="geo.region" content="TZ-07">
+<meta name="geo.placename" content="Zanzibar">
+<meta name="geo.position" content="-6.165917;39.202641">
+<meta name="ICBM" content="-6.165917, 39.202641">
+
 <style>
     .booking-wrapper { max-width: 800px; margin: 30px auto; padding: 0 20px; }
     .booking-summary { background: linear-gradient(135deg, var(--dark-green) 0%, var(--royal-green) 100%); color: #fff; padding: 25px; border-radius: 12px; margin-bottom: 25px; border-left: 5px solid var(--royal-gold); }
@@ -18,7 +50,33 @@
     .tier-option input[type="radio"] { width: 20px; height: 20px; accent-color: var(--royal-green); }
     .tier-details h4 { margin: 0 0 3px 0; color: var(--dark-green); font-size: 1rem; }
     .tier-details p { margin: 0; font-size: 0.85rem; color: #777; }
-    .tier-badge { margin-left: auto; font-weight: 700; color: var(--royal-green); font-size: 0.85rem; background: var(--royal-gold); padding: 5px 12px; border-radius: 15px; color: var(--dark-green); }
+    .tier-badge { margin-left: auto; font-weight: 700; font-size: 0.85rem; background: var(--royal-gold); padding: 5px 12px; border-radius: 15px; color: var(--dark-green); }
+
+    /* Mobile Menu Iliyoboreshwa */
+    @media (max-width: 768px) {
+        .menu-toggle { display: block; font-size: 26px; }
+        .nav-links {
+            display: none; flex-direction: column; width: 100%;
+            background: linear-gradient(135deg, var(--dark-green), var(--royal-green));
+            padding: 20px 15px; gap: 5px;
+            border-radius: 0 0 15px 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            animation: slideDown 0.3s ease;
+        }
+        .nav-links.active { display: flex; }
+        .nav-links li { width: 100%; }
+        .nav-links a {
+            display: flex; align-items: center; gap: 12px;
+            padding: 12px 15px; border-radius: 8px;
+            font-size: 1rem; transition: all 0.3s;
+        }
+        .nav-links a:hover { background: rgba(212, 175, 55, 0.15); padding-left: 20px; }
+        .nav-links a i { color: var(--royal-gold); font-size: 1.1rem; width: 20px; text-align: center; }
+    }
+    @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
 </style>
 </head>
 <body>
@@ -34,7 +92,7 @@
 <header class="header">
 <div class="nav-container">
 <a href="index.html" class="logo-area">
-<div class="logo-holder"><img src="logo.png" alt="UNP Tours Logo" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=logo-fallback>UNP<br>LOGO</span>';"></div>
+<div class="logo-holder"><img src="images/logo.png" alt="UNP Tours Logo" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=logo-fallback>UNP<br>LOGO</span>';"></div>
 <div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
 </a>
 <button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
@@ -45,6 +103,8 @@
 <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
 <li><a href="pricing.html"><i class="fas fa-layer-group"></i> Madaraja</a></li>
 <li><a href="events.html"><i class="fas fa-calendar-alt"></i> Matukio</a></li>
+<li><a href="partners.html"><i class="fas fa-handshake"></i> Washirika</a></li>
+<li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
 <li><a href="contact.html"><i class="fas fa-envelope"></i> Wasiliana</a></li>
 </ul>
 </div>
@@ -66,7 +126,7 @@
         <h2><i class="fas fa-calendar-check"></i> Fomu ya Kuomba Bei</h2>
         <form id="bookingForm">
             <h3 style="color: var(--royal-green); margin-bottom: 15px;"><i class="fas fa-layer-group"></i> Hatua 1: Chagua Daraja Lako</h3>
-            
+
             <label class="tier-option">
                 <input type="radio" name="tier" value="Solo Traveler">
                 <div class="tier-details">
@@ -220,7 +280,7 @@
   const navLinks = document.getElementById('navLinks');
   if(menuToggleBtn) { menuToggleBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); }); }
 
-  // CHAGUA TIER KUTOKA URL (kama pricing.html ilituma ?tier=Solo)
+  // CHAGUA TIER KUTOKA URL
   const urlParams = new URLSearchParams(window.location.search);
   const selectedTier = urlParams.get('tier');
   if (selectedTier) {
@@ -275,4 +335,4 @@
 </script>
 
 </body>
-    </html>
+</html>
