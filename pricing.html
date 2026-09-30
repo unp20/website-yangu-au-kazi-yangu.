@@ -7,63 +7,58 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
+
+<!-- ==========================================
+     SEO META TAGS
+     ========================================== -->
+<meta name="description" content="Madaraja ya UNP TOURS - Chagua daraja lako la uzoefu. Solo, Couple, Family, Executive, Royal, Government, King, President, Divine.">
+<meta name="keywords" content="Zanzibar tour prices, luxury tiers, VIP packages, Zanzibar safari prices, madaraja ya uzoefu">
+<meta name="author" content="UNP TOURS Zanzibar">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Madaraja ya Uzoefu | UNP TOURS Zanzibar">
+<meta property="og:description" content="Chagua daraja lako la uzoefu - kutoka Solo hadi Divine. Tutakutumia bei maalum.">
+<meta property="og:image" content="https://unp.tours/images/logo.png">
+<meta property="og:url" content="https://unp.tours/pricing.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="UNP TOURS">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Madaraja ya Uzoefu | UNP TOURS Zanzibar">
+<meta name="twitter:description" content="Chagua daraja lako la uzoefu - kutoka Solo hadi Divine.">
+<meta name="twitter:image" content="https://unp.tours/images/logo.png">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://unp.tours/pricing.html">
+
+<!-- Geo Tags -->
+<meta name="geo.region" content="TZ-07">
+<meta name="geo.placename" content="Zanzibar">
+<meta name="geo.position" content="-6.165917;39.202641">
+<meta name="ICBM" content="-6.165917, 39.202641">
+
 <style>
     /* ==========================================
        LOYALTY INTRO SECTION
        ========================================== */
     .loyalty-intro-box {
         background: linear-gradient(135deg, var(--dark-green) 0%, var(--royal-green) 100%);
-        color: #fff;
-        padding: 40px 30px;
-        border-radius: 15px;
-        text-align: center;
-        margin: 30px auto;
-        max-width: 900px;
+        color: #fff; padding: 40px 30px; border-radius: 15px;
+        text-align: center; margin: 30px auto; max-width: 900px;
         border: 2px solid var(--royal-gold);
     }
-    .loyalty-intro-box h2 {
-        color: var(--royal-gold);
-        font-size: 1.8rem;
-        margin-bottom: 15px;
-    }
-    .loyalty-intro-box p {
-        color: #ddd;
-        font-size: 1rem;
-        line-height: 1.7;
-        max-width: 700px;
-        margin: 0 auto;
-    }
+    .loyalty-intro-box h2 { color: var(--royal-gold); font-size: 1.8rem; margin-bottom: 15px; }
+    .loyalty-intro-box p { color: #ddd; font-size: 1rem; line-height: 1.7; max-width: 700px; margin: 0 auto; }
 
     /* ==========================================
        TIER GRID
        ========================================== */
-    .tier-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 25px;
-        max-width: 1200px;
-        margin: 30px auto;
-        padding: 0 20px;
-    }
-    .tier-card {
-        background: #fff;
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-        border-top: 5px solid var(--royal-gold);
-        transition: transform 0.3s, box-shadow 0.3s;
-        display: flex;
-        flex-direction: column;
-    }
-    .tier-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-    }
-    .tier-header {
-        padding: 25px;
-        text-align: center;
-        color: #fff;
-    }
+    .tier-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; max-width: 1200px; margin: 30px auto; padding: 0 20px; }
+    .tier-card { background: #fff; border-radius: 15px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.08); border-top: 5px solid var(--royal-gold); transition: transform 0.3s, box-shadow 0.3s; display: flex; flex-direction: column; }
+    .tier-card:hover { transform: translateY(-8px); box-shadow: 0 15px 35px rgba(0,0,0,0.15); }
+    .tier-header { padding: 25px; text-align: center; color: #fff; }
     .tier-header.solo { background: linear-gradient(135deg, #4a5568, #718096); }
     .tier-header.couple { background: linear-gradient(135deg, #d53f8c, #ed64a6); }
     .tier-header.family-small { background: linear-gradient(135deg, #2d6a4f, #40916c); }
@@ -74,70 +69,45 @@
     .tier-header.king { background: linear-gradient(135deg, #1a202c, #2d3748); border-bottom: 4px solid #ffd700; }
     .tier-header.president { background: linear-gradient(135deg, #702459, #97266d); }
     .tier-header.divine { background: linear-gradient(135deg, #ffffff, #f0f0f0); color: #0a0a0a; border-bottom: 4px solid #ffd700; }
-    .tier-header i {
-        font-size: 2.5rem;
-        margin-bottom: 10px;
-        display: block;
-        color: var(--royal-gold);
-    }
+    .tier-header i { font-size: 2.5rem; margin-bottom: 10px; display: block; color: var(--royal-gold); }
     .tier-header.divine i { color: #b8860b; }
-    .tier-header h3 {
-        font-size: 1.4rem;
-        margin-bottom: 5px;
-    }
-    .tier-header span {
-        font-size: 0.85rem;
-        display: block;
-    }
+    .tier-header h3 { font-size: 1.4rem; margin-bottom: 5px; }
+    .tier-header span { font-size: 0.85rem; display: block; }
     .tier-header.divine h3 { color: #0a0a0a; }
     .tier-header.divine span { color: #4a5568; }
-    .tier-body {
-        padding: 25px;
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-    }
-    .tier-loyalty {
-        background: #fffdf7;
-        border-left: 4px solid var(--royal-gold);
-        padding: 12px 15px;
-        border-radius: 8px;
-        margin-bottom: 15px;
-        font-style: italic;
-        color: var(--dark-green);
-        font-size: 0.9rem;
-    }
-    .tier-body p {
-        color: #555;
-        font-size: 0.9rem;
-        line-height: 1.7;
-        margin-bottom: 20px;
-    }
-    .tier-features {
-        list-style: none;
-        padding: 0;
-        margin: 0 0 20px 0;
-        flex-grow: 1;
-    }
-    .tier-features li {
-        padding: 8px 0;
-        border-bottom: 1px dashed #eee;
-        font-size: 0.9rem;
-        color: #555;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
+    .tier-body { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
+    .tier-loyalty { background: #fffdf7; border-left: 4px solid var(--royal-gold); padding: 12px 15px; border-radius: 8px; margin-bottom: 15px; font-style: italic; color: var(--dark-green); font-size: 0.9rem; }
+    .tier-body p { color: #555; font-size: 0.9rem; line-height: 1.7; margin-bottom: 20px; }
+    .tier-features { list-style: none; padding: 0; margin: 0 0 20px 0; flex-grow: 1; }
+    .tier-features li { padding: 8px 0; border-bottom: 1px dashed #eee; font-size: 0.9rem; color: #555; display: flex; align-items: center; gap: 10px; }
     .tier-features li:last-child { border-bottom: none; }
     .tier-features li i { color: var(--royal-gold); font-size: 0.85rem; }
-    .tier-note {
-        background: #fff3cd;
-        border-left: 4px solid #ffc107;
-        padding: 12px;
-        border-radius: 8px;
-        font-size: 0.85rem;
-        color: #856404;
-        margin-bottom: 20px;
+    .tier-note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 12px; border-radius: 8px; font-size: 0.85rem; color: #856404; margin-bottom: 20px; }
+
+    /* Mobile Menu Iliyoboreshwa */
+    @media (max-width: 768px) {
+        .menu-toggle { display: block; font-size: 26px; }
+        .nav-links {
+            display: none; flex-direction: column; width: 100%;
+            background: linear-gradient(135deg, var(--dark-green), var(--royal-green));
+            padding: 20px 15px; gap: 5px;
+            border-radius: 0 0 15px 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            animation: slideDown 0.3s ease;
+        }
+        .nav-links.active { display: flex; }
+        .nav-links li { width: 100%; }
+        .nav-links a {
+            display: flex; align-items: center; gap: 12px;
+            padding: 12px 15px; border-radius: 8px;
+            font-size: 1rem; transition: all 0.3s;
+        }
+        .nav-links a:hover { background: rgba(212, 175, 55, 0.15); padding-left: 20px; }
+        .nav-links a i { color: var(--royal-gold); font-size: 1.1rem; width: 20px; text-align: center; }
+    }
+    @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
     }
 </style>
 </head>
@@ -154,7 +124,7 @@
 <header class="header">
 <div class="nav-container">
 <a href="index.html" class="logo-area">
-<div class="logo-holder"><img src="logo.png" alt="UNP Tours Logo" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=logo-fallback>UNP<br>LOGO</span>';"></div>
+<div class="logo-holder"><img src="images/logo.png" alt="UNP Tours Logo" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=logo-fallback>UNP<br>LOGO</span>';"></div>
 <div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
 </a>
 <button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
@@ -165,6 +135,8 @@
 <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
 <li><a href="pricing.html" style="color: var(--royal-gold);"><i class="fas fa-layer-group"></i> Madaraja</a></li>
 <li><a href="events.html"><i class="fas fa-calendar-alt"></i> Matukio</a></li>
+<li><a href="partners.html"><i class="fas fa-handshake"></i> Washirika</a></li>
+<li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
 <li><a href="contact.html"><i class="fas fa-envelope"></i> Wasiliana</a></li>
 </ul>
 </div>
@@ -318,7 +290,6 @@
             <ul class="tier-features">
                 <li><i class="fas fa-check"></i> VIP Security & Escort</li>
                 <li><i class="fas fa-check"></i> Government Protocol</li>
-                <li><i class="fas fa-check"></i> Private Diplomatic Lounge</li>
                 <li><i class="fas fa-check"></i> 100% Discretion</li>
             </ul>
             <div class="tier-note"><i class="fas fa-info-circle"></i> Bei itatolewa kulingana na mahitaji yako.</div>
@@ -340,8 +311,6 @@
                 <li><i class="fas fa-check"></i> Royal Palace Accommodation</li>
                 <li><i class="fas fa-check"></i> Private Jet & Yacht</li>
                 <li><i class="fas fa-check"></i> Royal Butler 24/7</li>
-                <li><i class="fas fa-check"></i> Royal Ceremony & Welcome</li>
-                <li><i class="fas fa-check"></i> 100% Discretion</li>
             </ul>
             <div class="tier-note"><i class="fas fa-info-circle"></i> Bei itatolewa kulingana na mahitaji yako.</div>
             <a href="booking.html?tier=King" class="btn-primary btn-full"><i class="fas fa-paper-plane"></i> Omba Bei</a>
@@ -362,8 +331,6 @@
                 <li><i class="fas fa-check"></i> Presidential Suite</li>
                 <li><i class="fas fa-check"></i> National Security Escort</li>
                 <li><i class="fas fa-check"></i> State Protocol & Ceremony</li>
-                <li><i class="fas fa-check"></i> Private Jet & Helicopter</li>
-                <li><i class="fas fa-check"></i> 100% Discretion</li>
             </ul>
             <div class="tier-note"><i class="fas fa-info-circle"></i> Bei itatolewa kulingana na mahitaji yako.</div>
             <a href="booking.html?tier=President" class="btn-primary btn-full"><i class="fas fa-paper-plane"></i> Omba Bei</a>
@@ -383,8 +350,6 @@
             <ul class="tier-features">
                 <li><i class="fas fa-check"></i> Eternal Welcome Ceremony</li>
                 <li><i class="fas fa-check"></i> Divine Sanctuary (Private Island)</li>
-                <li><i class="fas fa-check"></i> Infinite Butler Service</li>
-                <li><i class="fas fa-check"></i> Sacred Ceremony & Blessing</li>
                 <li><i class="fas fa-check"></i> Absolute Discretion</li>
             </ul>
             <div class="tier-note"><i class="fas fa-info-circle"></i> Bei itatolewa kulingana na mahitaji yako.</div>
@@ -399,35 +364,4 @@
     <h2><i class="fas fa-info-circle"></i> Jinsi Inavyofanya Kazi</h2>
     <div class="vip-features" style="margin-top: 20px;">
         <div class="vip-card-mini">
-            <i class="fas fa-layer-group"></i>
-            <h4>1. Chagua Daraja</h4>
-            <p>Chagua daraja linalokufaa kulingana na aina yako.</p>
-        </div>
-        <div class="vip-card-mini">
-            <i class="fas fa-paper-plane"></i>
-            <h4>2. Tuma Maombi</h4>
-            <p>Tuma maombi yako na tuambie mahitaji yako.</p>
-        </div>
-        <div class="vip-card-mini">
-            <i class="fas fa-file-invoice-dollar"></i>
-            <h4>3. Tunakutumia Bei</h4>
-            <p>Tutakupatia bei maalum kulingana na mahitaji yako.</p>
-        </div>
-        <div class="vip-card-mini">
-            <i class="fas fa-check-circle"></i>
-            <h4>4. Kukubaliana</h4>
-            <p>Tunakubaliana na kuanza kupanga safari yako.</p>
-        </div>
-    </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="footer">
-<div class="footer-content">
-<div><h3>UNIQUE NATURE PARADISE (UNP)</h3><p style="font-size: 0.9rem; max-width: 350px;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p></div>
-<div><h4>Direct Contact</h4><p style="font-size: 0.9rem; margin-top: 8px;"><i class="fab fa-whatsapp" style="color: var(--royal-gold);"></i> Phone: +255 655 728 982</p><p style="font-size: 0.9rem; margin-top: 5px;"><i class="fas fa-envelope" style="color: var(--royal-gold);"></i> Email: salimnasoro11@gmail.com</p>
-<div class="social-links">
-<a href="https://wa.me/255655728982" target="_blank"><i class="fab fa-whatsapp"></i></a>
-<a href="mailto:salimnasoro11@gmail.com"><i class="fas fa-envelope"></i></a>
-<a href="https://www.tiktok.com/@unptours" target="_blank"><i class="fab fa-tiktok"></i></a>
-<a href="https://www.instagram
+            <i class="fas fa
