@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ukurasa Haupatikani | UNP TOURS Zanzibar</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<style>
+    .error-section {
+        min-height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 40px 20px;
+        background: linear-gradient(135deg, var(--dark-green) 0%, var(--royal-green) 100%);
+        color: #fff;
+    }
+    .error-content {
+        max-width: 600px;
+    }
+    .error-code {
+        font-size: 8rem;
+        font-weight: 700;
+        color: var(--royal-gold);
+        line-height: 1;
+        margin-bottom: 20px;
+        text-shadow: 4px 4px 15px rgba(0,0,0,0.5);
+    }
+    .error-content h1 {
+        font-size: 2rem;
+        color: #fff;
+        margin-bottom: 15px;
+    }
+    .error-content p {
+        font-size: 1rem;
+        color: #ddd;
+        margin-bottom: 30px;
+        line-height: 1.7;
+    }
+    .error-buttons {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .error-buttons .btn-primary {
+        min-width: 180px;
+        text-align: center;
+    }
+    .error-buttons .btn-outline {
+        background: transparent;
+        color: var(--royal-gold);
+        border: 2px solid var(--royal-gold);
+        padding: 14px 32px;
+        border-radius: 25px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-size: 0.95rem;
+        display: inline-block;
+        transition: 0.3s;
+    }
+    .error-buttons .btn-outline:hover {
+        background: var(--royal-gold);
+        color: var(--dark-green);
+    }
+    .error-links {
+        margin-top: 40px;
+        padding-top: 30px;
+        border-top: 1px solid rgba(255,255,255,0.2);
+    }
+    .error-links h3 {
+        color: var(--royal-gold);
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+    .error-links ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    .error-links ul li a {
+        color: #ddd;
+        font-size: 0.9rem;
+        transition: color 0.3s;
+    }
+    .error-links ul li a:hover {
+        color: var(--royal-gold);
+    }
+    .error-links ul li a i {
+        margin-right: 5px;
+        color: var(--royal-gold);
+    }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR & HEADER -->
+<div class="top-bar">
+<div class="lang-container">
+<i class="fas fa-globe"></i>
+<select class="lang-select"><option value="sw">Kiswahili</option><option value="en">English</option></select>
+</div>
+</div>
+
+<header class="header">
+<div class="nav-container">
+<a href="index.html" class="logo-area">
+<div class="logo-holder"><img src="logo.png" alt="UNP Tours Logo" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=logo-fallback>UNP<br>LOGO</span>';"></div>
+<div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
+</a>
+<button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
+<ul class="nav-links" id="navLinks">
+<li><a href="index.html">Nyumbani</a></li>
+<li><a href="about.html">Kuhusu Sisi</a></li>
+<li><a href="services.html">Huduma</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="pricing.html">Bei</a></li>
+<li><a href="promotions.html">Matangazo</a></li>
+<li><a href="membership.html">Uanachama</a></li>
+<li><a href="join.html">Jiunge Nasi</a></li>
+<li><a href="contact.html">Wasiliana</a></li>
+</ul>
+</div>
+</header>
+
+<!-- ERROR SECTION -->
+<section class="error-section">
+    <div class="error-content">
+        <div class="error-code">404</div>
+        <h1><i class="fas fa-map-signs"></i> Ukurasa Haupatikani</h1>
+        <p>Samahani! Ukurasa ulioujaribu kufungua haupatikani. Huenda umebadilishwa, umeondolewa, au haupo kabisa.</p>
+        <p>Tafadhali jaribu kurasa zetu kuu hapa chini.</p>
+        
+        <div class="error-buttons">
+            <a href="index.html" class="btn-primary"><i class="fas fa-home"></i> Rudi Nyumbani</a>
+            <a href="contact.html" class="btn-outline"><i class="fas fa-envelope"></i> Wasiliana Nasi</a>
+        </div>
+
+        <div class="error-links">
+            <h3>Kurasa Muhimu:</h3>
+            <ul>
+                <li><a href="services.html"><i class="fas fa-briefcase"></i> Huduma</a></li>
+                <li><a href="pricing.html"><i class="fas fa-tag"></i> Bei</a></li>
+                <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+                <li><a href="booking.html"><i class="fas fa-calendar-check"></i> Weka Nafasi</a></li>
+                <li><a href="faq.html"><i class="fas fa-question-circle"></i> Maswali</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+<div class="footer-content">
+<div><h3>UNIQUE NATURE PARADISE (UNP)</h3><p style="font-size: 0.9rem; max-width: 350px;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p></div>
+<div><h4>Direct Contact</h4><p style="font-size: 0.9rem; margin-top: 8px;"><i class="fab fa-whatsapp" style="color: var(--royal-gold);"></i> Phone: +255 655 728 982</p><p style="font-size: 0.9rem; margin-top: 5px;"><i class="fas fa-envelope" style="color: var(--royal-gold);"></i> Email: salimnasoro11@gmail.com</p>
+<div class="social-links">
+<a href="https://wa.me/255655728982" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<a href="mailto:salimnasoro11@gmail.com"><i class="fas fa-envelope"></i></a>
+<a href="https://www.tiktok.com/@unptours" target="_blank"><i class="fab fa-tiktok"></i></a>
+<a href="https://www.instagram.com/unpsoulvoyoge" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://www.facebook.com/profile.php?id=61595094232501" target="_blank"><i class="fab fa-facebook"></i></a>
+</div></div>
+</div>
+</footer>
+
+<a href="https://wa.me/255655728982" class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+  const menuToggleBtn = document.getElementById('menuToggleBtn');
+  const navLinks = document.getElementById('navLinks');
+  if(menuToggleBtn) { menuToggleBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); }); }
+</script>
+
+</body>
+                          </html>
