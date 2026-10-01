@@ -1,25 +1,54 @@
+# ==========================================
+# UNP TOURS - ROBOTS.TXT
+# ==========================================
+
+# Ruhusu search engines wote
 User-agent: *
 Allow: /
 
+# Sitemap
 Sitemap: https://unp.tours/sitemap.xml
+
+# ==========================================
+# KURASA ZA KUFICHA KUTOKA SEARCH ENGINES
+# ==========================================
+Disallow: /admin.html
+Disallow: /login.html
+Disallow: /signup.html
+Disallow: /profile.html
+Disallow: /404.html
+
+# ==========================================
+# SEARCH ENGINES MAALUM
+# ==========================================
 
 # Kwa Google
 User-agent: Googlebot
 Allow: /
+Disallow: /admin.html
+Disallow: /login.html
+Disallow: /signup.html
+Disallow: /profile.html
 
 # Kwa Bing
 User-agent: Bingbot
 Allow: /
+Disallow: /admin.html
+Disallow: /login.html
+Disallow: /signup.html
+Disallow: /profile.html
 
 # Kwa Yandex (Russia)
 User-agent: Yandex
 Allow: /
+Disallow: /admin.html
+Disallow: /login.html
+Disallow: /signup.html
+Disallow: /profile.html
 
 # Kwa Baidu (China)
 User-agent: Baiduspider
 Allow: /
-
-# Kuzuia kurasa za Admin
 Disallow: /admin.html
 Disallow: /login.html
 Disallow: /signup.html
