@@ -8,12 +8,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
 
-<!-- ==========================================
-     SEO META TAGS
-     ========================================== -->
+<!-- SEO META TAGS -->
 <meta name="description" content="Kuhusu UNP TOURS - Kampuni ya utalii ya kifahari iliyopo Zanzibar, Tanzania. Tunatoa huduma bora za safari, VIP, na utamaduni.">
-<meta name="keywords" content="kuhusu UNP TOURS, kampuni ya utalii Zanzibar, luxury tours Tanzania, UNP tours about">
-<meta name="author" content="UNP TOURS Zanzibar">
+<meta name="keywords" content="kuhusu UNP TOURS, kampuni ya utalii Zanzibar, luxury tours Tanzania">
 <meta name="robots" content="index, follow">
 
 <!-- Open Graph -->
@@ -22,186 +19,194 @@
 <meta property="og:image" content="https://unp.tours/images/logo.png">
 <meta property="og:url" content="https://unp.tours/about.html">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="UNP TOURS">
 
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Kuhusu Sisi | UNP TOURS Zanzibar">
-<meta name="twitter:description" content="Jifunze kuhusu UNP TOURS - kampuni ya utalii ya kifahari iliyopo Zanzibar.">
-<meta name="twitter:image" content="https://unp.tours/images/logo.png">
-
-<!-- Canonical -->
-<link rel="canonical" href="https://unp.tours/about.html">
-
-<!-- Geo Tags -->
-<meta name="geo.region" content="TZ-07">
-<meta name="geo.placename" content="Zanzibar">
-<meta name="geo.position" content="-6.165917;39.202641">
-<meta name="ICBM" content="-6.165917, 39.202641">
+<!-- ELFSIGHT PLATFORM -->
+<script src="https://elfsightcdn.com/platform.js" async></script>
 
 <style>
-    /* ==========================================
-       MOBILE MENU ILIOBORESHWA
-       ========================================== */
-    @media (max-width: 768px) {
-        .menu-toggle { display: block; font-size: 26px; }
-        .nav-links {
-            display: none; flex-direction: column; width: 100%;
-            background: linear-gradient(135deg, var(--dark-green), var(--royal-green));
-            padding: 20px 15px; gap: 5px;
-            border-radius: 0 0 15px 15px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            animation: slideDown 0.3s ease;
-        }
-        .nav-links.active { display: flex; }
-        .nav-links li { width: 100%; }
-        .nav-links a {
-            display: flex; align-items: center; gap: 12px;
-            padding: 12px 15px; border-radius: 8px;
-            font-size: 1rem; transition: all 0.3s;
-        }
-        .nav-links a:hover { background: rgba(212, 175, 55, 0.15); padding-left: 20px; }
-        .nav-links a i { color: var(--royal-gold); font-size: 1.1rem; width: 20px; text-align: center; }
+    :root {
+        --royal-green: #064e3b;
+        --dark-green: #032b1a;
+        --royal-gold: #d4af37;
+        --light-bg: #f8f9fa;
     }
-    @keyframes slideDown {
-        from { opacity: 0; transform: translateY(-10px); }
-        to { opacity: 1; transform: translateY(0); }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body { background-color: var(--light-bg); color: #333; line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+
+    /* HEADER */
+    .top-bar { background: var(--dark-green); padding: 8px 20px; display: flex; justify-content: flex-end; align-items: center; gap: 15px; }
+    .header { background: var(--royal-green); padding: 15px 20px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .logo-area { display: flex; align-items: center; gap: 15px; }
+    .logo-holder { width: 60px; height: 60px; border: 2px dashed var(--royal-gold); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+    .logo-fallback { color: var(--royal-gold); font-weight: 700; font-size: 0.7rem; text-align: center; line-height: 1.1; }
+    .logo-text h2 { color: #fff; font-size: 1.3rem; font-weight: 700; }
+    .logo-text span { color: var(--royal-gold); font-size: 0.8rem; }
+    .nav-links { display: flex; gap: 20px; list-style: none; }
+    .nav-links a { color: #fff; font-size: 0.85rem; transition: color 0.3s; display: flex; align-items: center; gap: 5px; }
+    .nav-links a:hover { color: var(--royal-gold); }
+    .menu-toggle { display: none; background: none; border: none; color: var(--royal-gold); font-size: 26px; cursor: pointer; }
+
+    /* HERO */
+    .hero { background: linear-gradient(135deg, var(--dark-green), var(--royal-green)); color: #fff; text-align: center; padding: 70px 20px; }
+    .hero h1 { font-size: 2rem; color: var(--royal-gold); margin-bottom: 10px; }
+    .hero p { font-size: 1rem; color: #ddd; max-width: 700px; margin: 0 auto; }
+
+    /* SECTIONS */
+    .section-title { text-align: center; font-size: 2rem; color: var(--royal-green); margin: 40px 0 20px; }
+    .interactive-box { background: #fff; padding: 30px; border-radius: 15px; margin: 20px auto; box-shadow: 0 4px 15px rgba(0,0,0,0.1); max-width: 900px; }
+    .interactive-box h2 { color: var(--royal-green); margin-bottom: 15px; }
+    .interactive-box p { margin-bottom: 15px; line-height: 1.8; }
+    .widget-container { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
+    .widget-title { text-align: center; font-size: 1.8rem; color: var(--royal-green); margin-bottom: 20px; }
+
+    /* FOOTER */
+    .footer { background: var(--dark-green); color: #fff; padding: 40px 20px; margin-top: 40px; }
+    .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+    .footer h3, .footer h4 { color: var(--royal-gold); margin-bottom: 15px; }
+    .social-links { display: flex; gap: 15px; margin-top: 15px; }
+    .social-links a { color: var(--royal-gold); font-size: 1.2rem; transition: transform 0.3s; }
+
+    /* FLOATING WHATSAPP */
+    .floating-whatsapp { position: fixed; bottom: 25px; right: 25px; background: #25d366; color: #fff; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 1100; }
+
+    @media (max-width: 768px) {
+        .menu-toggle { display: block; }
+        .nav-links { display: none; flex-direction: column; width: 100%; background: var(--dark-green); padding: 20px; position: absolute; top: 80px; left: 0; z-index: 999; }
+        .nav-links.active { display: flex; }
     }
 </style>
 </head>
 <body>
 
-<!-- TOP BAR & HEADER -->
-<div class="top-bar">
-<div class="lang-container">
-<i class="fas fa-globe"></i>
-<select class="lang-select">
-<option value="sw">Kiswahili</option>
-<option value="en">English</option>
-</select>
-</div>
-</div>
+<!-- TOP BAR -->
+<div class="top-bar"></div>
 
+<!-- HEADER -->
 <header class="header">
-<div class="nav-container">
-<a href="index.html" class="logo-area">
-<div class="logo-holder">
-<img src="images/logo.png" alt="UNP Tours Logo" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=logo-fallback>UNP<br>LOGO</span>';">
-</div>
-<div class="logo-text">
-<h2>UNP TOURS</h2>
-<span>Unique & Natural Paradise</span>
-</div>
-</a>
-<button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
-<ul class="nav-links" id="navLinks">
-<li><a href="index.html"><i class="fas fa-home"></i> Nyumbani</a></li>
-<li><a href="about.html" style="color: var(--royal-gold);"><i class="fas fa-info-circle"></i> Kuhusu Sisi</a></li>
-<li><a href="services.html"><i class="fas fa-briefcase"></i> Huduma</a></li>
-<li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
-<li><a href="pricing.html"><i class="fas fa-layer-group"></i> Madaraja</a></li>
-<li><a href="events.html"><i class="fas fa-calendar-alt"></i> Matukio</a></li>
-<li><a href="partners.html"><i class="fas fa-handshake"></i> Washirika</a></li>
-<li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
-<li><a href="contact.html"><i class="fas fa-envelope"></i> Wasiliana</a></li>
-</ul>
-</div>
+    <div class="nav-container">
+        <a href="index.html" class="logo-area">
+            <div class="logo-holder"><span class="logo-fallback">UNP<br>LOGO</span></div>
+            <div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
+        </a>
+        <button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html"><i class="fas fa-home"></i> Nyumbani</a></li>
+            <li><a href="about.html" style="color: var(--royal-gold);"><i class="fas fa-info-circle"></i> Kuhusu Sisi</a></li>
+            <li><a href="services.html"><i class="fas fa-briefcase"></i> Huduma</a></li>
+            <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+            <li><a href="pricing.html"><i class="fas fa-layer-group"></i> Madaraja</a></li>
+            <li><a href="events.html"><i class="fas fa-calendar-alt"></i> Matukio</a></li>
+            <li><a href="partners.html"><i class="fas fa-handshake"></i> Washirika</a></li>
+            <li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Wasiliana</a></li>
+        </ul>
+    </div>
 </header>
 
-<!-- HERO SECTION KWA ABOUT -->
-<section class="hero" style="padding: 70px 20px;">
-<h1 style="font-size: 2rem;">Kuhusu UNP TOURS</h1>
-<p>Kujua zaidi kuhusu sisi, dhamira yetu, na kwa nini sisi ni chaguo lako bora la utalii Zanzibar na Tanzania.</p>
+<!-- HERO -->
+<section class="hero">
+    <h1>Kuhusu UNP TOURS</h1>
+    <p>Kujua zaidi kuhusu sisi, dhamira yetu, na kwa nini sisi ni chaguo lako bora la utalii Zanzibar na Tanzania.</p>
 </section>
 
-<!-- MAUDHUI YA ABOUT -->
-<section class="interactive-box" style="margin-top: 30px;">
-<h2><i class="fas fa-info-circle"></i> Sisi Ni Nani?</h2>
-<div class="about-image-holder">
-<img src="images/about-image.jpg" alt="About UNP Tours" class="about-image" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=img-fallback>Weka Picha Hapa: about-image.jpg</div>';">
-</div>
-<p style="margin-top: 15px;">Unique & Natural Paradise (UNP) ni kampuni ya utalii ya kifahari iliyopo Zanzibar, Tanzania. Tulianzishwa kwa lengo la kuonyesha uzuri wa kipekee wa Zanzibar na Tanzania kwa wageni kutoka duniani kote.</p>
-<p style="margin-top: 10px;">Tunatoa huduma mbalimbali za kifahari ikiwa ni pamoja na safari za kihistoria, matembezi ya pwani, safari za wanyama pori, na huduma za kipekee za VIP kwa wateja wenye hadhi ya juu.</p>
-</section>
-
+<!-- SISI NI NANI -->
 <section class="interactive-box">
-<h2><i class="fas fa-bullseye"></i> Dhamira Yetu (Our Mission)</h2>
-<p>Kutoa uzoefu wa kipekee na wa kukumbukwa kwa kila mgeni anayetembelea Zanzibar na Tanzania, kwa kuhakikisha huduma bora, usalama, na furaha ya hali ya juu.</p>
+    <h2><i class="fas fa-info-circle"></i> Sisi Ni Nani?</h2>
+    <p>Unique & Natural Paradise (UNP) ni kampuni ya utalii ya kifahari iliyopo Zanzibar, Tanzania. Tulianzishwa kwa lengo la kuonyesha uzuri wa kipekee wa Zanzibar na Tanzania kwa wageni kutoka duniani kote.</p>
+    <p>Tunatoa huduma mbalimbali za kifahari ikiwa ni pamoja na safari za kihistoria, matembezi ya pwani, safari za wanyama pori, na huduma za kipekee za VIP kwa wateja wenye hadhi ya juu.</p>
 </section>
 
+<!-- DHAMIRA YETU -->
 <section class="interactive-box">
-<h2><i class="fas fa-eye"></i> Maono Yetu (Our Vision)</h2>
-<p>Kuwa kampuni inayoongoza kwa utalii wa kifahari Zanzibar na Tanzania, inayojulikana kwa ubora, uaminifu, na uzoefu wa kipekee kwa wateja wetu.</p>
+    <h2><i class="fas fa-bullseye"></i> Dhamira Yetu (Our Mission)</h2>
+    <p>Kutoa uzoefu wa kipekee na wa kukumbukwa kwa kila mgeni anayetembelea Zanzibar na Tanzania, kwa kuhakikisha huduma bora, usalama, na furaha ya hali ya juu.</p>
 </section>
 
+<!-- MAONO YETU -->
 <section class="interactive-box">
-<h2><i class="fas fa-star"></i> Kwa Nini Uchague UNP Tours?</h2>
-<div class="vip-features">
-<div class="vip-card-mini">
-<i class="fas fa-user-tie"></i>
-<h4>Wataalamu wa Kitaalamu</h4>
-<p>Timu yetu ina uzoefu wa miaka mingi katika sekta ya utalii.</p>
-</div>
-<div class="vip-card-mini">
-<i class="fas fa-shield-alt"></i>
-<h4>Usalama kwanza</h4>
-<p>Tunahakikisha usalama wa wateja wetu katika kila safari.</p>
-</div>
-<div class="vip-card-mini">
-<i class="fas fa-hand-holding-heart"></i>
-<h4>Huduma ya Kipekee</h4>
-<p>Tunajali mahitaji ya kila mteja kwa ukaribu na upendo.</p>
-</div>
-<div class="vip-card-mini">
-<i class="fas fa-globe-africa"></i>
-<h4>Uzoefu wa Kipekee</h4>
-<p>Tunatoa safari za kipekee zisizopatikana kwa wengine.</p>
-</div>
-</div>
+    <h2><i class="fas fa-eye"></i> Maono Yetu (Our Vision)</h2>
+    <p>Kuwa kampuni inayoongoza kwa utalii wa kifahari Zanzibar na Tanzania, inayojulikana kwa ubora, uaminifu, na uzoefu wa kipekee kwa wateja wetu.</p>
 </section>
 
-<!-- CALL TO ACTION -->
-<section class="interactive-box" style="text-align: center; background: linear-gradient(135deg, var(--dark-green), var(--royal-green)); color: #fff;">
-<h2 style="color: var(--royal-gold);">Uko Tayari Kuanza Safari Yako?</h2>
-<p style="color: #ddd; margin-bottom: 20px;">Wasiliana nasi leo na tuanze kupanga safari yako ya kifahari.</p>
-<a href="booking.html" class="btn-primary"><i class="fas fa-calendar-check"></i> Omba Bei Sasa</a>
+<!-- KWA NINI UCHAGUE UNP -->
+<section class="interactive-box">
+    <h2><i class="fas fa-star"></i> Kwa Nini Uchague UNP Tours?</h2>
+    <p><strong>Wataalamu wa Kitaalamu:</strong> Timu yetu ina uzoefu wa miaka mingi katika sekta ya utalii.</p>
+    <p><strong>Usalama kwanza:</strong> Tunahakikisha usalama wa wateja wetu katika kila safari.</p>
+    <p><strong>Huduma ya Kipekee:</strong> Tunajali mahitaji ya kila mteja kwa ukaribu na upendo.</p>
+    <p><strong>Uzoefu wa Kipekee:</strong> Tunatoa safari za kipekee zisizopatikana kwa wengine.</p>
+</section>
+
+<!-- ==================== WIDGETS ZA ELFSIGHT ==================== -->
+
+<!-- 1. TEAM SHOWCASE -->
+<section class="widget-container">
+    <h2 class="widget-title"><i class="fas fa-users" style="color: var(--royal-gold);"></i> Timu Yetu</h2>
+    <div class="elfsight-app-88266a4d-1755-4797-be6e-fc746eb19e5c" data-elfsight-app-lazy></div>
+</section>
+
+<!-- 2. NUMBER COUNTER -->
+<section class="widget-container">
+    <h2 class="widget-title"><i class="fas fa-chart-line" style="color: var(--royal-gold);"></i> UNP TOURS kwa Nambari</h2>
+    <div class="elfsight-app-2674303a-e396-4f5e-b021-17071e631185" data-elfsight-app-lazy></div>
+</section>
+
+<!-- 3. LOGO SHOWCASE -->
+<section class="widget-container">
+    <h2 class="widget-title"><i class="fas fa-handshake" style="color: var(--royal-gold);"></i> Washirika Wetu</h2>
+    <div class="elfsight-app-15c9807c-d31b-4959-8438-b6647863a3a4" data-elfsight-app-lazy></div>
+</section>
+
+<!-- 4. TESTIMONIALS SLIDER -->
+<section class="widget-container">
+    <h2 class="widget-title"><i class="fas fa-comments" style="color: var(--royal-gold);"></i> Maoni ya Wateja Wetu</h2>
+    <div class="elfsight-app-6298edec-15f4-450a-a200-c7aa910cc211" data-elfsight-app-lazy></div>
 </section>
 
 <!-- FOOTER -->
-<footer class="footer" id="contact">
-<div class="footer-content">
-<div>
-<h3>UNIQUE NATURE PARADISE (UNP)</h3>
-<p style="font-size: 0.9rem; max-width: 350px;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p>
-</div>
-<div>
-<h4>Direct Contact</h4>
-<p style="font-size: 0.9rem; margin-top: 8px;"><i class="fab fa-whatsapp" style="color: var(--royal-gold);"></i> Phone: +255 655 728 982</p>
-<p style="font-size: 0.9rem; margin-top: 5px;"><i class="fas fa-envelope" style="color: var(--royal-gold);"></i> Email: salimnasoro11@gmail.com</p>
-<div class="social-links">
-<a href="https://wa.me/255655728982" target="_blank"><i class="fab fa-whatsapp"></i></a>
-<a href="mailto:salimnasoro11@gmail.com"><i class="fas fa-envelope"></i></a>
-<a href="https://www.tiktok.com/@unptours" target="_blank"><i class="fab fa-tiktok"></i></a>
-<a href="https://www.instagram.com/unpsoulvoyoge" target="_blank"><i class="fab fa-instagram"></i></a>
-<a href="https://www.facebook.com/profile.php?id=61595094232501" target="_blank"><i class="fab fa-facebook"></i></a>
-</div>
-</div>
-</div>
+<footer class="footer">
+    <div class="footer-content">
+        <div>
+            <h3>UNIQUE NATURE PARADISE (UNP)</h3>
+            <p style="font-size: 0.9rem;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p>
+        </div>
+        <div>
+            <h4>Direct Contact</h4>
+            <p style="font-size: 0.9rem;"><i class="fab fa-whatsapp" style="color: var(--royal-gold);"></i> +255 655 728 982</p>
+            <p style="font-size: 0.9rem;"><i class="fas fa-envelope" style="color: var(--royal-gold);"></i> salimnasoro11@gmail.com</p>
+            <div class="social-links">
+                <a href="https://wa.me/255655728982" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.tiktok.com/@unptours" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.instagram.com/unpsoulvoyoge" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61595094232501" target="_blank"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+    </div>
 </footer>
 
-<a href="https://wa.me/255655728982?text=Hello!%20I%20want%20to%20book%20a%20VIP%20experience." class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<a href="https://wa.me/255655728982" class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<!-- TAWK.TO LIVE CHAT -->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6ab95c20dade22344616d64e/1k3i0vorc';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
 
 <script>
   // MENU TOGGLE
   const menuToggleBtn = document.getElementById('menuToggleBtn');
   const navLinks = document.getElementById('navLinks');
-  
-  if(menuToggleBtn) {
-      menuToggleBtn.addEventListener('click', () => {
-          navLinks.classList.toggle('active');
-      });
-  }
+  if(menuToggleBtn) { menuToggleBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); }); }
 </script>
 
 </body>
-  </html>
+                                                                            </html>
