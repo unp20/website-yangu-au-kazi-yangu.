@@ -1,108 +1,154 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- ==================== KURASA KUU ==================== -->
   <url>
     <loc>https://unp.tours/</loc>
+    <lastmod>2026-10-02</lastmod>
     <priority>1.0</priority>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://unp.tours/about.html</loc>
+    <lastmod>2026-10-02</lastmod>
     <priority>0.8</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://unp.tours/services.html</loc>
+    <lastmod>2026-10-02</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://unp.tours/gallery.html</loc>
+    <lastmod>2026-10-02</lastmod>
     <priority>0.8</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://unp.tours/pricing.html</loc>
+    <lastmod>2026-10-02</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://unp.tours/booking.html</loc>
+    <lastmod>2026-10-02</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://unp.tours/contact.html</loc>
+    <lastmod>2026-10-02</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://unp.tours/blog.html</loc>
+    <lastmod>2026-10-02</lastmod>
     <priority>0.8</priority>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>https://unp.tours/events.html</loc>
+    <lastmod>2026-10-02</lastmod>
     <priority>0.8</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://unp.tours/partners.html</loc>
+    <lastmod>2026-10-02</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://unp.tours/membership.html</loc>
+    <lastmod>2026-10-02</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://unp.tours/awards.html</loc>
+    <lastmod>2026-10-02</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://unp.tours/join.html</loc>
+    <lastmod>2026-10-02</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://unp.tours/promotions.html</loc>
+    <lastmod>2026-10-02</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://unp.tours/careers.html</loc>
+    <lastmod>2026-10-02</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://unp.tours/press.html</loc>
+    <lastmod>2026-10-02</lastmod>
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://unp.tours/faq.html</loc>
+    <lastmod>2026-10-02</lastmod>
     <priority>0.8</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://unp.tours/testimonials.html</loc>
+    <lastmod>2026-10-02</lastmod>
     <priority>0.8</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
+    <loc>https://unp.tours/chatbot.html</loc>
+    <lastmod>2026-10-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <!-- ==================== KURASA ZA MTUMIAJI ==================== -->
+  <url>
+    <loc>https://unp.tours/signup.html</loc>
+    <lastmod>2026-10-02</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://unp.tours/login.html</loc>
+    <lastmod>2026-10-02</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <!-- ==================== KURASA ZA SHERIA ==================== -->
+  <url>
     <loc>https://unp.tours/terms.html</loc>
+    <lastmod>2026-10-02</lastmod>
     <priority>0.5</priority>
     <changefreq>yearly</changefreq>
   </url>
   <url>
     <loc>https://unp.tours/privacy.html</loc>
+    <lastmod>2026-10-02</lastmod>
     <priority>0.5</priority>
     <changefreq>yearly</changefreq>
   </url>
   <url>
     <loc>https://unp.tours/sitemap.html</loc>
+    <lastmod>2026-10-02</lastmod>
     <priority>0.5</priority>
     <changefreq>monthly</changefreq>
   </url>
+
 </urlset>
