@@ -115,13 +115,69 @@
     .interactive-box h2 { color: var(--royal-green); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
     .interactive-box h2 i { color: var(--royal-gold); }
 
+    /* SERVICES GRID */
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+        padding: 0 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .service-card {
+        background: #fff;
+        border-radius: 15px;
+        padding: 25px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        border-top: 4px solid var(--royal-green);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+    .service-card .card-icon {
+        font-size: 2.5rem;
+        color: var(--royal-gold);
+        margin-bottom: 15px;
+    }
+    .service-card h3 {
+        color: var(--royal-green);
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+    }
+    .service-card p {
+        color: #555;
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
     /* FORM */
     .form-group { margin-bottom: 15px; }
     .form-group label { display: block; font-weight: 600; color: var(--dark-green); margin-bottom: 5px; }
     .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; font-family: 'Poppins', sans-serif; }
-    .star-rating { display: flex; gap: 8px; font-size: 2rem; cursor: pointer; margin: 10px 0; }
-    .star-rating .fa-star { color: #ccc; transition: color 0.2s, transform 0.2s; }
-    .star-rating .fa-star:hover, .star-rating .fa-star.active { color: var(--royal-gold); transform: scale(1.1); }
+
+    /* STAR RATING - ILIYOREKEBISHWA */
+    .star-rating {
+        display: flex !important;
+        gap: 10px !important;
+        font-size: 2.2rem !important;
+        cursor: pointer;
+        margin: 10px 0;
+        visibility: visible !important;
+        width: 100%;
+    }
+    .star-rating .fa-star {
+        color: #ccc !important;
+        display: inline-block !important;
+        visibility: visible !important;
+        transition: color 0.2s, transform 0.2s;
+    }
+    .star-rating .fa-star.active {
+        color: #d4af37 !important;
+        transform: scale(1.1);
+    }
+
     .btn-full { width: 100%; text-align: center; background: var(--royal-gold); color: var(--dark-green); padding: 15px; border: none; border-radius: 10px; font-weight: 700; font-size: 1.1rem; cursor: pointer; transition: all 0.3s; }
     .btn-full:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4); }
     .alert-message { margin-top: 15px; padding: 10px; border-radius: 8px; display: none; }
@@ -227,35 +283,35 @@
 <!-- SERVICES GRID -->
 <section id="excursions">
 <h2 class="section-title">Our Exclusive Experiences</h2>
-<div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 0 20px; max-width: 1200px; margin: 0 auto;">
-    <div class="service-card" style="background: #fff; border-radius: 12px; padding: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); border-top: 4px solid var(--royal-green);">
-        <div class="card-icon" style="font-size: 24px; color: var(--royal-gold); margin-bottom: 10px;"><i class="fas fa-archway"></i></div>
-        <h3 style="color: var(--royal-green); margin-bottom: 10px;">Zanzibar Excursions</h3>
+<div class="services-grid">
+    <div class="service-card">
+        <div class="card-icon"><i class="fas fa-archway"></i></div>
+        <h3>Zanzibar Excursions</h3>
         <p>Visit giant tortoises, Safari Blue, and Stone Town.</p>
     </div>
-    <div class="service-card" style="background: #fff; border-radius: 12px; padding: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); border-top: 4px solid var(--royal-green);">
-        <div class="card-icon" style="font-size: 24px; color: var(--royal-gold); margin-bottom: 10px;"><i class="fas fa-tree"></i></div>
-        <h3 style="color: var(--royal-green); margin-bottom: 10px;">Jozani Forest</h3>
+    <div class="service-card">
+        <div class="card-icon"><i class="fas fa-tree"></i></div>
+        <h3>Jozani Forest</h3>
         <p>Explore rare Red Colobus Monkeys.</p>
     </div>
-    <div class="service-card" style="background: #fff; border-radius: 12px; padding: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); border-top: 4px solid var(--royal-green);">
-        <div class="card-icon" style="font-size: 24px; color: var(--royal-gold); margin-bottom: 10px;"><i class="fas fa-car"></i></div>
-        <h3 style="color: var(--royal-green); margin-bottom: 10px;">Vehicle Rentals</h3>
+    <div class="service-card">
+        <div class="card-icon"><i class="fas fa-car"></i></div>
+        <h3>Vehicle Rentals</h3>
         <p>Car rentals, scooters, and quad bikes.</p>
     </div>
-    <div class="service-card" style="background: #fff; border-radius: 12px; padding: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); border-top: 4px solid var(--royal-green);">
-        <div class="card-icon" style="font-size: 24px; color: var(--royal-gold); margin-bottom: 10px;"><i class="fas fa-shuttle-van"></i></div>
-        <h3 style="color: var(--royal-green); margin-bottom: 10px;">Luxury Transfers</h3>
+    <div class="service-card">
+        <div class="card-icon"><i class="fas fa-shuttle-van"></i></div>
+        <h3>Luxury Transfers</h3>
         <p>VIP chauffeur transfers with Wi-Fi and A/C.</p>
     </div>
-    <div class="service-card" style="background: #fff; border-radius: 12px; padding: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); border-top: 4px solid var(--royal-green);">
-        <div class="card-icon" style="font-size: 24px; color: var(--royal-gold); margin-bottom: 10px;"><i class="fas fa-paw"></i></div>
-        <h3 style="color: var(--royal-green); margin-bottom: 10px;">Tanzania Safaris</h3>
+    <div class="service-card">
+        <div class="card-icon"><i class="fas fa-paw"></i></div>
+        <h3>Tanzania Safaris</h3>
         <p>Fly-in safaris to Serengeti & Ngorongoro.</p>
     </div>
-    <div class="service-card" style="background: #fff; border-radius: 12px; padding: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); border-top: 4px solid var(--royal-green);">
-        <div class="card-icon" style="font-size: 24px; color: var(--royal-gold); margin-bottom: 10px;"><i class="fas fa-water"></i></div>
-        <h3 style="color: var(--royal-green); margin-bottom: 10px;">Water Sports</h3>
+    <div class="service-card">
+        <div class="card-icon"><i class="fas fa-water"></i></div>
+        <h3>Water Sports</h3>
         <p>Jet Ski, Jet Car, and Drone Kayak.</p>
     </div>
 </div>
@@ -314,4 +370,15 @@
             <label>Kiwango cha Kuridhika (1-5 Nyota):</label>
             <div class="star-rating" id="reviewStars">
                 <i class="fas fa-star" data-value="1"></i>
-                <i clas
+                <i class="fas fa-star" data-value="2"></i>
+                <i class="fas fa-star" data-value="3"></i>
+                <i class="fas fa-star" data-value="4"></i>
+                <i class="fas fa-star" data-value="5"></i>
+            </div>
+            <input type="hidden" id="selectedReviewRating" value="0">
+        </div>
+        <div class="form-group">
+            <label>Maoni Yako:</label>
+            <textarea id="reviewMessage" rows="4" placeholder="Andika maoni yako..." required></textarea>
+        </div>
+        <button type="s
