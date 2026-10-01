@@ -38,6 +38,39 @@
 }
 </script>
 
+<!-- GOOGLE ANALYTICS -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5QJ1X38ZLC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5QJ1X38ZLC');
+</script>
+
+<!-- YANDEX METRICA -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113203659', 'ym');
+    ym(113203659, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/113203659" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+<!-- GOOGLE SEARCH CONSOLE -->
+<meta name="google-site-verification" content="USfpMungNhAZSkEqLJL4b9AfkP224BIGvn6N_8nIThM" />
+
+<!-- BING WEBMASTER -->
+<meta name="msvalidate.01" content="F45DA5D31B65604116EE3B77682567A7" />
+
+<!-- YANDEX WEBMASTER -->
+<meta name="yandex-verification" content="d563c0867b5c735c" />
+
+<!-- ELFSIGHT PLATFORM -->
+<script src="https://elfsightcdn.com/platform.js" async></script>
+
 <style>
     :root {
         --royal-green: #064e3b;
@@ -66,7 +99,7 @@
     /* HERO */
     .hero-video-section { position: relative; width: 100%; height: 100vh; min-height: 500px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
     .hero-video { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); min-width: 100%; min-height: 100%; z-index: -2; object-fit: cover; }
-    .hero-overlay { position: relative; z-index: 1; text-align: center; color: #fff; padding: 40px 20px; background: rgba(0, 48, 73, 0.6); width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    .hero-overlay { position: relative; z-index: 1; text-align: center; color: #fff; padding: 40px 20px; background: rgba(3, 43, 26, 0.6); width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; }
     .hero-overlay h1 { font-size: 2.8rem; color: var(--royal-gold); margin-bottom: 15px; font-weight: 700; text-transform: uppercase; text-shadow: 2px 2px 10px rgba(0,0,0,0.7); }
     .hero-overlay p { max-width: 700px; margin: 0 auto 30px auto; font-size: 1.1rem; color: #fff; text-shadow: 1px 1px 5px rgba(0,0,0,0.7); }
     .btn-primary { background: var(--royal-gold); color: var(--dark-green); padding: 12px 30px; border-radius: 30px; font-weight: 700; transition: all 0.3s; display: inline-block; }
@@ -108,19 +141,23 @@
     .chatbot-container { position: fixed; bottom: 170px; right: 25px; width: 350px; max-width: 90vw; height: 500px; background: #fff; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); z-index: 1100; display: none; flex-direction: column; overflow: hidden; border: 2px solid var(--royal-gold); }
     .chatbot-container.active { display: flex; }
     .chatbot-header { background: var(--royal-green); color: #fff; padding: 15px; display: flex; align-items: center; gap: 10px; }
+    .chatbot-header .avatar { width: 40px; height: 40px; background: var(--royal-gold); color: var(--dark-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem; }
+    .chatbot-header h4 { margin: 0; font-size: 1rem; color: #fff; }
+    .chatbot-header span { font-size: 0.75rem; color: #ddd; display: block; }
     .chatbot-messages { flex-grow: 1; padding: 15px; overflow-y: auto; background: #f9f9f9; display: flex; flex-direction: column; gap: 10px; }
     .message { max-width: 80%; padding: 10px 15px; border-radius: 15px; font-size: 0.85rem; }
     .message.bot { background: #e9ecef; align-self: flex-start; }
     .message.user { background: var(--royal-green); color: #fff; align-self: flex-end; }
     .chatbot-input { display: flex; padding: 10px; border-top: 1px solid #eee; }
-    .chatbot-input input { flex-grow: 1; padding: 10px; border: 1px solid #ddd; border-radius: 20px; outline: none; }
+    .chatbot-input input { flex-grow: 1; padding: 10px; border: 1px solid #ddd; border-radius: 20px; outline: none; font-family: 'Poppins', sans-serif; }
+    .chatbot-input button { background: var(--royal-gold); color: var(--dark-green); border: none; width: 40px; height: 40px; border-radius: 50%; margin-left: 8px; cursor: pointer; font-size: 1rem; }
 
     /* GTRANSLATE */
     .gtranslate_wrapper { position: relative; }
 
     @media (max-width: 768px) {
         .menu-toggle { display: block; }
-        .nav-links { display: none; flex-direction: column; width: 100%; background: var(--dark-green); padding: 20px; position: absolute; top: 80px; left: 0; }
+        .nav-links { display: none; flex-direction: column; width: 100%; background: var(--dark-green); padding: 20px; position: absolute; top: 80px; left: 0; z-index: 999; }
         .nav-links.active { display: flex; }
         .hero-overlay h1 { font-size: 1.8rem; }
     }
@@ -146,6 +183,10 @@
             <li><a href="about.html"><i class="fas fa-info-circle"></i> Kuhusu Sisi</a></li>
             <li><a href="services.html"><i class="fas fa-briefcase"></i> Huduma</a></li>
             <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+            <li><a href="pricing.html"><i class="fas fa-layer-group"></i> Madaraja</a></li>
+            <li><a href="events.html"><i class="fas fa-calendar-alt"></i> Matukio</a></li>
+            <li><a href="partners.html"><i class="fas fa-handshake"></i> Washirika</a></li>
+            <li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
             <li><a href="contact.html"><i class="fas fa-envelope"></i> Wasiliana</a></li>
         </ul>
     </div>
@@ -163,41 +204,90 @@
     </div>
 </section>
 
-<!-- ==================== WIDGETS ZA ELFSIGHT ==================== -->
-
-<!-- 1. GOOGLE REVIEWS WIDGET -->
+<!-- WEATHER WIDGET -->
 <section class="widget-container">
-    <h2 class="widget-title"><i class="fas fa-star" style="color: var(--royal-gold);"></i> What Our Clients Say</h2>
-    <!-- Weka ID yako ya Elfsight hapa chini kwenye script src -->
-    <script src="https://elfsightcdn.com/platform.js" async></script>
-    <div class="elfsight-app-YOUR_GOOGLE_REVIEWS_WIDGET_ID"></div>
+    <h2 class="widget-title"><i class="fas fa-cloud-sun" style="color: var(--royal-gold);"></i> Hali ya Hewa Zanzibar</h2>
+    <div class="elfsight-app-d5e18c1b-ea7f-4314-a806-2b3be1be0c6d" data-elfsight-app-lazy></div>
 </section>
 
-<!-- 2. COUNTDOWN TIMER WIDGET -->
+<!-- COUNTDOWN TIMER -->
 <section class="widget-container">
-    <h2 class="widget-title"><i class="fas fa-clock" style="color: var(--royal-gold);"></i> Special Offer Ends Soon!</h2>
-    <!-- Weka ID yako ya Elfsight hapa chini kwenye script src -->
-    <script src="https://elfsightcdn.com/platform.js" async></script>
-    <div class="elfsight-app-YOUR_COUNTDOWN_WIDGET_ID"></div>
+    <h2 class="widget-title"><i class="fas fa-clock" style="color: var(--royal-gold);"></i> Ofa Inaisha Hivi Karibuni</h2>
+    <div class="elfsight-app-e270d082-7e77-418a-bde2-cb731b20abc8" data-elfsight-app-lazy></div>
 </section>
 
-<!-- 3. CURRENCY CONVERTER WIDGET -->
-<section class="widget-container">
-    <h2 class="widget-title"><i class="fas fa-exchange-alt" style="color: var(--royal-gold);"></i> Convert Your Currency</h2>
-    <!-- Weka ID yako ya Elfsight hapa chini kwenye script src -->
-    <script src="https://elfsightcdn.com/platform.js" async></script>
-    <div class="elfsight-app-YOUR_CURRENCY_WIDGET_ID"></div>
+<!-- SERVICES GRID -->
+<section id="excursions">
+<h2 class="section-title">Our Exclusive Experiences</h2>
+<div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 0 20px; max-width: 1200px; margin: 0 auto;">
+    <div class="service-card" style="background: #fff; border-radius: 12px; padding: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); border-top: 4px solid var(--royal-green);">
+        <div class="card-icon" style="font-size: 24px; color: var(--royal-gold); margin-bottom: 10px;"><i class="fas fa-archway"></i></div>
+        <h3 style="color: var(--royal-green); margin-bottom: 10px;">Zanzibar Excursions</h3>
+        <p>Visit giant tortoises, Safari Blue, and Stone Town.</p>
+    </div>
+    <div class="service-card" style="background: #fff; border-radius: 12px; padding: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); border-top: 4px solid var(--royal-green);">
+        <div class="card-icon" style="font-size: 24px; color: var(--royal-gold); margin-bottom: 10px;"><i class="fas fa-tree"></i></div>
+        <h3 style="color: var(--royal-green); margin-bottom: 10px;">Jozani Forest</h3>
+        <p>Explore rare Red Colobus Monkeys.</p>
+    </div>
+    <div class="service-card" style="background: #fff; border-radius: 12px; padding: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); border-top: 4px solid var(--royal-green);">
+        <div class="card-icon" style="font-size: 24px; color: var(--royal-gold); margin-bottom: 10px;"><i class="fas fa-car"></i></div>
+        <h3 style="color: var(--royal-green); margin-bottom: 10px;">Vehicle Rentals</h3>
+        <p>Car rentals, scooters, and quad bikes.</p>
+    </div>
+    <div class="service-card" style="background: #fff; border-radius: 12px; padding: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); border-top: 4px solid var(--royal-green);">
+        <div class="card-icon" style="font-size: 24px; color: var(--royal-gold); margin-bottom: 10px;"><i class="fas fa-shuttle-van"></i></div>
+        <h3 style="color: var(--royal-green); margin-bottom: 10px;">Luxury Transfers</h3>
+        <p>VIP chauffeur transfers with Wi-Fi and A/C.</p>
+    </div>
+    <div class="service-card" style="background: #fff; border-radius: 12px; padding: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); border-top: 4px solid var(--royal-green);">
+        <div class="card-icon" style="font-size: 24px; color: var(--royal-gold); margin-bottom: 10px;"><i class="fas fa-paw"></i></div>
+        <h3 style="color: var(--royal-green); margin-bottom: 10px;">Tanzania Safaris</h3>
+        <p>Fly-in safaris to Serengeti & Ngorongoro.</p>
+    </div>
+    <div class="service-card" style="background: #fff; border-radius: 12px; padding: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); border-top: 4px solid var(--royal-green);">
+        <div class="card-icon" style="font-size: 24px; color: var(--royal-gold); margin-bottom: 10px;"><i class="fas fa-water"></i></div>
+        <h3 style="color: var(--royal-green); margin-bottom: 10px;">Water Sports</h3>
+        <p>Jet Ski, Jet Car, and Drone Kayak.</p>
+    </div>
+</div>
 </section>
 
-<!-- 4. FAQ WIDGET -->
+<!-- NUMBER COUNTER -->
 <section class="widget-container">
-    <h2 class="widget-title"><i class="fas fa-question-circle" style="color: var(--royal-gold);"></i> Frequently Asked Questions</h2>
-    <!-- Weka ID yako ya Elfsight hapa chini kwenye script src -->
-    <script src="https://elfsightcdn.com/platform.js" async></script>
-    <div class="elfsight-app-YOUR_FAQ_WIDGET_ID"></div>
+    <h2 class="widget-title"><i class="fas fa-chart-line" style="color: var(--royal-gold);"></i> UNP TOURS kwa Nambari</h2>
+    <div class="elfsight-app-2674303a-e396-4f5e-b021-17071e631185" data-elfsight-app-lazy></div>
 </section>
 
-<!-- ==================== MWISHO WA WIDGETS ==================== -->
+<!-- PRICING TABLE -->
+<section class="widget-container">
+    <h2 class="widget-title"><i class="fas fa-layer-group" style="color: var(--royal-gold);"></i> Madaraja Yetu</h2>
+    <div class="elfsight-app-d4f9fe3e-824a-41a6-95e3-523908e5ca40" data-elfsight-app-lazy></div>
+</section>
+
+<!-- TESTIMONIALS SLIDER -->
+<section class="widget-container">
+    <h2 class="widget-title"><i class="fas fa-comments" style="color: var(--royal-gold);"></i> Maoni ya Wateja Wetu</h2>
+    <div class="elfsight-app-6298edec-15f4-450a-a200-c7aa910cc211" data-elfsight-app-lazy></div>
+</section>
+
+<!-- INSTAGRAM FEED -->
+<section class="widget-container">
+    <h2 class="widget-title"><i class="fab fa-instagram" style="color: var(--royal-gold);"></i> Instagram Yetu</h2>
+    <div class="elfsight-app-d5d47051-0b28-4cb2-a3c2-cd63dcef607b" data-elfsight-app-lazy></div>
+</section>
+
+<!-- LOGO SHOWCASE -->
+<section class="widget-container">
+    <h2 class="widget-title"><i class="fas fa-handshake" style="color: var(--royal-gold);"></i> Washirika Wetu</h2>
+    <div class="elfsight-app-15c9807c-d31b-4959-8438-b6647863a3a4" data-elfsight-app-lazy></div>
+</section>
+
+<!-- SPINNING WHEEL -->
+<section class="widget-container">
+    <h2 class="widget-title"><i class="fas fa-gift" style="color: var(--royal-gold);"></i> Piga Gurudumu la Bahati!</h2>
+    <div class="elfsight-app-cc1a71d2-195c-44dc-8895-f3e292290416" data-elfsight-app-lazy></div>
+</section>
 
 <!-- REVIEWS FORM -->
 <section class="interactive-box" id="review-section" style="max-width: 900px;">
@@ -233,139 +323,4 @@
             <label>Maoni Yako:</label>
             <textarea id="reviewMessage" rows="4" placeholder="Andika maoni yako..." required></textarea>
         </div>
-        <button type="submit" class="btn-primary btn-full"><i class="fas fa-paper-plane"></i> Tuma Maoni</button>
-    </form>
-    <div id="reviewMessageBox" class="alert-message"></div>
-</section>
-
-<!-- DISPLAY REVIEWS -->
-<section class="interactive-box" style="max-width: 900px;">
-    <h2><i class="fas fa-comments"></i> Maoni ya Wateja Wetu</h2>
-    <div id="reviewsContainer">
-        <p style="text-align: center;">Inapakia maoni...</p>
-    </div>
-</section>
-
-<!-- CHATBOT -->
-<div class="chatbot-toggle" onclick="toggleChatbot()"><i class="fas fa-robot"></i></div>
-<div class="chatbot-container" id="chatbotContainer">
-    <div class="chatbot-header">
-        <div class="avatar">U</div>
-        <div><h4>UNP Assistant</h4><span>Yupo Mtandaoni</span></div>
-        <button onclick="toggleChatbot()" style="margin-left:auto;background:none;border:none;color:#fff;font-size:1.2rem;cursor:pointer;"><i class="fas fa-times"></i></button>
-    </div>
-    <div class="chatbot-messages" id="chatMessages">
-        <div class="message bot">Karibu UNP TOURS! Ninaweza kukusaidia vipi leo?</div>
-    </div>
-    <div class="chatbot-input">
-        <input type="text" id="chatInput" placeholder="Andika ujumbe wako..." onkeypress="handleKeyPress(event)">
-        <button onclick="sendMessage()" style="background:var(--royal-gold);border:none;width:40px;height:40px;border-radius:50%;margin-left:8px;cursor:pointer;"><i class="fas fa-paper-plane"></i></button>
-    </div>
-</div>
-
-<!-- FOOTER -->
-<footer class="footer">
-    <div class="footer-content">
-        <div>
-            <h3>UNIQUE NATURE PARADISE (UNP)</h3>
-            <p style="font-size: 0.9rem;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p>
-        </div>
-        <div>
-            <h4>Direct Contact</h4>
-            <p style="font-size: 0.9rem;"><i class="fab fa-whatsapp" style="color: var(--royal-gold);"></i> +255 655 728 982</p>
-            <p style="font-size: 0.9rem;"><i class="fas fa-envelope" style="color: var(--royal-gold);"></i> salimnasoro11@gmail.com</p>
-            <div class="social-links">
-                <a href="https://wa.me/255655728982" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://www.tiktok.com/@unptours" target="_blank"><i class="fab fa-tiktok"></i></a>
-                <a href="https://www.instagram.com/unpsoulvoyoge" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.facebook.com/profile.php?id=61595094232501" target="_blank"><i class="fab fa-facebook"></i></a>
-            </div>
-        </div>
-    </div>
-</footer>
-
-<a href="https://wa.me/255655728982" class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
-
-<!-- ==================== GTRANSLATE SCRIPT ==================== -->
-<script>
-window.gtranslateSettings = {
-  "default_language": "sw",
-  "languages": ["sw", "en", "fr", "it", "de", "ru", "ar", "zh-CN"],
-  "wrapper_selector": ".gtranslate_wrapper"
-};
-</script>
-<script src="https://cdn.gtranslate.net/widgets/latest/dropdown.js" defer></script>
-
-<!-- ==================== FIREBASE & JAVASCRIPT ==================== -->
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
-  import { getFirestore, collection, addDoc, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
-
-  const firebaseConfig = {
-    apiKey: "AIzaSyD2YtPFL2L_ZwAKdSYpXtvLt8gJUm2IX6s",
-    authDomain: "unptours.firebaseapp.com",
-    projectId: "unptours",
-    storageBucket: "unptours.firebasestorage.app",
-    messagingSenderId: "233326851661",
-    appId: "1:233326851661:web:354156110a5cee29904e04",
-    measurementId: "G-5QJ1X38ZLC"
-  };
-
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
-
-  // MENU TOGGLE
-  const menuToggleBtn = document.getElementById('menuToggleBtn');
-  const navLinks = document.getElementById('navLinks');
-  if(menuToggleBtn) { menuToggleBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); }); }
-
-  // STAR RATING
-  const stars = document.querySelectorAll('#reviewStars .fa-star');
-  const ratingInput = document.getElementById('selectedReviewRating');
-  stars.forEach(star => {
-      star.addEventListener('click', () => {
-          const value = star.getAttribute('data-value');
-          ratingInput.value = value;
-          stars.forEach(s => s.classList.remove('active'));
-          for (let i = 0; i < value; i++) { stars[i].classList.add('active'); }
-      });
-  });
-
-  // REVIEW FORM
-  const reviewForm = document.getElementById('reviewForm');
-  const reviewMessageBox = document.getElementById('reviewMessageBox');
-  reviewForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const rating = ratingInput.value;
-      if (rating === "0") {
-          reviewMessageBox.textContent = "Tafadhali chagua nyota kwanza!";
-          reviewMessageBox.className = "alert-message alert-error";
-          return;
-      }
-      try {
-          await addDoc(collection(db, "reviews"), {
-              name: document.getElementById('reviewName').value,
-              service: document.getElementById('reviewService').value,
-              rating: parseInt(rating),
-              message: document.getElementById('reviewMessage').value,
-              approved: false, createdAt: new Date()
-          });
-          reviewMessageBox.textContent = "Asante! Maoni yako yametumwa.";
-          reviewMessageBox.className = "alert-message alert-success";
-          reviewForm.reset();
-          stars.forEach(s => s.classList.remove('active'));
-          ratingInput.value = "0";
-      } catch (error) {
-          reviewMessageBox.textContent = "Kosa: " + error.message;
-          reviewMessageBox.className = "alert-message alert-error";
-      }
-  });
-
-  // LOAD REVIEWS
-  async function loadReviews() {
-      const container = document.getElementById('reviewsContainer');
-      try {
-          const q = query(collection(db, "reviews"), orderBy("createdAt", "desc"));
-          const snap = await getDocs(q);
-          if (snap.empty) {
-              con
+       
