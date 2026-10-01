@@ -1,654 +1,413 @@
-/* ==========================================
-   1. MSINGI (GLOBAL)
-   ========================================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
-body {
-    background-color: #f8f9fa;
-    color: #333;
-    line-height: 1.6;
-    transition: all 0.3s ease;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-:root {
-    /* === RANGI MPYA ZA KIFAHARI ZA UNP === */
-    --royal-green: #0077b6;      /* Bluu ya Bahari ya Zanzibar */
-    --dark-green: #003049;       /* Bluu Nyeusi ya Kifahari */
-    --royal-gold: #d4af37;       /* Dhahabu ya Kifahari */
-    --light-bg: #f8f9fa;         /* Nyeupe Nyepesi */
-    --deep-black: #0a0a0a;       /* Nyeusi ya Utulivu (VIP) */
-}
-
-/* ==========================================
-   2. TOP BAR & LUGHA
-   ========================================== */
-.top-bar {
-    background-color: var(--dark-green);
-    color: #fff;
-    padding: 10px 5%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.lang-container {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.lang-container i {
-    color: var(--royal-gold);
-}
-
-.lang-select {
-    background: var(--royal-green);
-    color: #fff;
-    border: 1px solid var(--royal-gold);
-    padding: 5px 12px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-}
-
-/* ==========================================
-   3. HEADER & LOGO
-   ========================================== */
-.header {
-    background-color: var(--royal-green);
-    padding: 15px 5%;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-}
-
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.logo-area {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
-}
-
-.logo-holder {
-    width: 60px;
-    height: 50px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 2px dashed var(--royal-gold);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.logo-img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.logo-fallback {
-    color: var(--royal-gold);
-    font-size: 10px;
-    font-weight: bold;
-    text-align: center;
-    line-height: 1.1;
-}
-
-.logo-text h2 {
-    color: #fff;
-    font-weight: 700;
-    font-size: 1.4rem;
-    line-height: 1.1;
-}
-
-.logo-text span {
-    color: var(--royal-gold);
-    font-size: 0.82rem;
-    display: block;
-    font-weight: 400;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 18px;
-    flex-wrap: wrap;
-}
-
-.nav-links a {
-    color: #fff;
-    font-weight: 500;
-    font-size: 0.95rem;
-    transition: color 0.3s;
-}
-
-.nav-links a:hover {
-    color: var(--royal-gold);
-}
-
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    color: var(--royal-gold);
-    font-size: 24px;
-    cursor: pointer;
-}
-
-/* ==========================================
-   4. HERO SECTION
-   ========================================== */
-.hero {
-    background: linear-gradient(135deg, var(--dark-green) 0%, var(--royal-green) 100%);
-    color: #fff;
-    text-align: center;
-    padding: 100px 20px;
-    position: relative;
-}
-
-.hero h1 {
-    font-size: 2.5rem;
-    color: var(--royal-gold);
-    margin-bottom: 15px;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-.hero p {
-    max-width: 700px;
-    margin: 0 auto 30px auto;
-    font-size: 1.1rem;
-    color: #e2e8f0;
-}
-
-.btn-primary {
-    background-color: var(--royal-gold);
-    color: var(--dark-green);
-    padding: 14px 32px;
-    border: none;
-    border-radius: 25px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: 0.3s;
-    display: inline-block;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-size: 0.95rem;
-}
-
-.btn-primary:hover {
-    background-color: #fff;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
-}
-
-.btn-full {
-    width: 100%;
-}
-
-/* ==========================================
-   5. SERVICES GRID
-   ========================================== */
-.section-title {
-    text-align: center;
-    margin: 40px 0 20px 0;
-    color: var(--royal-green);
-    font-size: 2rem;
-}
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    padding: 20px 5%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.service-card {
-    background: #fff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-    border-top: 4px solid var(--royal-green);
-    transition: transform 0.3s;
-}
-
-.service-card:hover {
-    transform: translateY(-5px);
-}
-
-.card-img-holder {
-    width: 100%;
-    height: 200px;
-    background-color: #e2e8f0;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.service-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.img-fallback {
-    color: #64748b;
-    font-size: 14px;
-    font-weight: 600;
-    text-align: center;
-    padding: 10px;
-}
-
-.card-body {
-    padding: 20px;
-}
-
-.card-icon {
-    font-size: 24px;
-    color: var(--royal-gold);
-    margin-bottom: 10px;
-}
-
-.service-card h3 {
-    color: var(--royal-green);
-    margin-bottom: 10px;
-    font-size: 1.1rem;
-}
-
-/* ==========================================
-   6. INTERACTIVE BOX
-   ========================================== */
-.interactive-box {
-    max-width: 900px;
-    margin: 40px auto;
-    background: #fff;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-}
-
-.interactive-box h2 {
-    color: var(--royal-green);
-    margin-bottom: 15px;
-    font-size: 1.6rem;
-}
-
-/* Gallery */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 10px;
-    margin-top: 15px;
-}
-
-.gallery-item {
-    width: 100%;
-    height: 150px;
-    overflow: hidden;
-    border-radius: 8px;
-    background-color: #e2e8f0;
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* About & VIP Picha */
-.about-image-holder, .vip-image-holder {
-    width: 100%;
-    height: 250px;
-    margin: 15px 0;
-    border-radius: 10px;
-    overflow: hidden;
-    background-color: #e2e8f0;
-}
-
-.about-image, .vip-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* ==========================================
-   7. VOTE SECTION (NYOTA)
-   ========================================== */
-.star-rating {
-    margin: 20px 0;
-    font-size: 32px;
-    color: #ccc;
-    cursor: pointer;
-    display: flex;
-    gap: 8px;
-}
-
-.star-rating .fa-star {
-    transition: color 0.2s;
-}
-
-.star-rating .fa-star.active {
-    color: var(--royal-gold);
-}
-
-.alert-message {
-    display: none;
-    margin-top: 15px;
-    padding: 12px;
-    border-radius: 8px;
-    font-weight: 600;
-    text-align: center;
-}
-
-.alert-success {
-    background-color: #d4edda;
-    color: #155724;
-    display: block;
-}
-.alert-error {
-    background-color: #f8d7da;
-    color: #721c24;
-    display: block;
-}
-
-/* ==========================================
-   8. VIP SECTION
-   ========================================== */
-.vip-features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.vip-card-mini {
-    background: #f0fdf4;
-    border: 1px solid var(--royal-gold);
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
-}
-
-.vip-card-mini i {
-    font-size: 28px;
-    color: var(--royal-gold);
-    margin-bottom: 10px;
-}
-
-.vip-card-mini h4 {
-    color: var(--royal-green);
-    margin-bottom: 5px;
-    font-size: 1rem;
-}
-
-.vip-card-mini p {
-    font-size: 0.85rem;
-    color: #555;
-}
-
-/* ==========================================
-   9. BOOKING FORM
-   ========================================== */
-.form-group {
-    margin-bottom: 15px;
-    text-align: left;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: 600;
-    color: var(--royal-green);
-}
-
-.form-group input, .form-group select, .form-group textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.95rem;
-}
-
-.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-    outline: none;
-    border-color: var(--royal-gold);
-    box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
-}
-
-/* ==========================================
-   10. FLOATING WHATSAPP & FOOTER
-   ========================================== */
-.floating-whatsapp {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    background-color: #25d366;
-    color: white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 30px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    z-index: 1000;
-}
-
-.footer {
-    background-color: var(--dark-green);
-    color: #fff;
-    padding: 40px 5% 20px 5%;
-    margin-top: 50px;
-    border-top: 3px solid var(--royal-gold);
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.footer h3, .footer h4 {
-    color: var(--royal-gold);
-    margin-bottom: 10px;
-}
-
-.social-links {
-    margin-top: 15px;
-}
-
-.social-links a {
-    font-size: 22px;
-    margin-right: 15px;
-    color: var(--royal-gold);
-    transition: color 0.3s;
-}
-
-.social-links a:hover {
-    color: #fff;
-}
-
-/* ==========================================
-   11. SEHEMU YA MUZIKI (MUSIC SECTION)
-   ========================================== */
-.music-section {
-    padding: 40px 20px;
-    background-color: #f9f9f9;
-    text-align: center;
-}
-.music-section h2 {
-    color: var(--royal-green);
-    margin-bottom: 10px;
-    font-size: 2rem;
-}
-.music-section p {
-    color: #555;
-    margin-bottom: 30px;
-}
-.music-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    max-width: 1000px;
-    margin: 0 auto;
-    text-align: left;
-}
-.music-card {
-    background: white;
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: transform 0.3s ease;
-    border-left: 4px solid var(--royal-green);
-}
-.music-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-}
-.music-info h4 {
-    margin: 0 0 5px 0;
-    color: var(--dark-green);
-    font-size: 1.1rem;
-}
-.music-info span {
-    font-size: 0.85rem;
-    color: #777;
-    display: block;
-    margin-bottom: 15px;
-}
-.music-actions {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
-.btn-music {
-    display: inline-block;
-    background-color: var(--royal-gold);
-    color: var(--dark-green);
-    padding: 8px 16px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 600;
-    text-align: center;
-    transition: background 0.3s;
-    border: none;
-    cursor: pointer;
-}
-.btn-music:hover {
-    background-color: #fff;
-    box-shadow: 0 0 0 1px var(--royal-gold);
-}
-.btn-play {
-    background-color: var(--royal-green);
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 5px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-.btn-play:hover {
-    background-color: var(--dark-green);
-}
-/* Audio Player Container */
-.audio-player-container {
-    margin: 0 auto 30px auto;
-    padding: 20px;
-    background: var(--dark-green);
-    border-radius: 10px;
-    max-width: 800px;
-    color: white;
-    display: none; /* Inafichwa hadi mtumiaji abonyeze Play */
-    border: 2px solid var(--royal-gold);
-}
-.audio-player-container h3 {
-    margin-top: 0;
-    font-size: 1.2rem;
-    color: var(--royal-gold);
-    text-align: center;
-}
-.audio-player-container audio {
-    width: 100%;
-    margin-top: 10px;
-    outline: none;
-}
-
-/* ==========================================
-   12. MOBILE RESPONSIVENESS
-   ========================================== */
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Masharti na Sheria | UNP TOURS Zanzibar</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+
+<!-- SEO META TAGS -->
+<meta name="description" content="Masharti na Sheria - UNP TOURS. Soma masharti yetu ya huduma, kughairi, malipo, na usalama.">
+<meta name="keywords" content="UNP tours terms, Zanzibar tour terms, masharti ya huduma, sheria za utalii">
+<meta name="author" content="UNP TOURS Zanzibar">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Masharti na Sheria | UNP TOURS Zanzibar">
+<meta property="og:description" content="Soma masharti na sheria za huduma zetu.">
+<meta property="og:image" content="https://unp.tours/images/logo.png">
+<meta property="og:url" content="https://unp.tours/terms.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="UNP TOURS">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Masharti na Sheria | UNP TOURS Zanzibar">
+<meta name="twitter:description" content="Soma masharti na sheria za huduma zetu.">
+<meta name="twitter:image" content="https://unp.tours/images/logo.png">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://unp.tours/terms.html">
+
+<!-- Geo Tags -->
+<meta name="geo.region" content="TZ-07">
+<meta name="geo.placename" content="Zanzibar">
+<meta name="geo.position" content="-6.165917;39.202641">
+<meta name="ICBM" content="-6.165917, 39.202641">
+
+<!-- ELFSIGHT PLATFORM -->
+<script src="https://elfsightcdn.com/platform.js" async></script>
+
+<style>
+    :root {
+        --ocean-blue: #0c4a6e;
+        --deep-navy: #082f49;
+        --gold: #d4af37;
+        --gold-light: #f0c75e;
+        --light-bg: #f8f9fa;
+        --white: #ffffff;
+        --text-dark: #1e293b;
     }
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: var(--royal-green);
-        padding: 15px 0;
-        gap: 10px;
-    }
-    .nav-links.active {
-        display: flex;
-    }
-    .nav-container {
-        flex-wrap: wrap;
-    }
-    .hero h1 {
-        font-size: 1.8rem;
-    }
-    .hero p {
-        font-size: 1rem;
-    }
-    .section-title {
-        font-size: 1.5rem;
-    }
-    .interactive-box {
-        margin: 20px 10px;
-        padding: 20px;
-    }
-    .footer-content {
-        flex-direction: column;
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body { background-color: var(--light-bg); color: #333; line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+
+    /* HEADER */
+    .top-bar { background: var(--deep-navy); padding: 8px 20px; display: flex; justify-content: flex-end; align-items: center; gap: 15px; }
+    .header { background: var(--ocean-blue); padding: 15px 20px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .logo-area { display: flex; align-items: center; gap: 15px; }
+    .logo-holder { width: 60px; height: 60px; border: 2px dashed var(--gold); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+    .logo-fallback { color: var(--gold); font-weight: 700; font-size: 0.7rem; text-align: center; line-height: 1.1; }
+    .logo-text h2 { color: #fff; font-size: 1.3rem; font-weight: 700; }
+    .logo-text span { color: var(--gold); font-size: 0.8rem; }
+    .nav-links { display: flex; gap: 20px; list-style: none; }
+    .nav-links a { color: #fff; font-size: 0.85rem; transition: color 0.3s; display: flex; align-items: center; gap: 5px; }
+    .nav-links a:hover { color: var(--gold); }
+    .menu-toggle { display: none; background: none; border: none; color: var(--gold); font-size: 26px; cursor: pointer; }
+
+    /* HERO */
+    .hero {
+        background: linear-gradient(135deg, var(--deep-navy) 0%, var(--ocean-blue) 100%);
+        padding: 70px 20px;
         text-align: center;
+        color: #fff;
+        border-bottom: 5px solid var(--gold);
     }
-    .social-links {
-        justify-content: center;
-        display: flex;
+    .hero h1 { font-size: 2.2rem; color: var(--gold); margin-bottom: 10px; }
+    .hero p { max-width: 600px; margin: 0 auto; color: #ddd; font-size: 1rem; }
+
+    /* INTERACTIVE BOX */
+    .interactive-box { background: #fff; padding: 30px; border-radius: 15px; margin: 20px auto; box-shadow: 0 4px 15px rgba(0,0,0,0.1); max-width: 900px; }
+
+    /* TERMS CONTENT */
+    .terms-content h3 {
+        color: var(--ocean-blue);
+        margin-top: 25px;
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+        border-left: 4px solid var(--gold);
+        padding-left: 10px;
     }
-    .music-grid {
-        grid-template-columns: 1fr;
+    .terms-content p {
+        color: #555;
+        line-height: 1.8;
+        margin-bottom: 10px;
+        font-size: 0.95rem;
     }
-}
+    .terms-content ul {
+        padding-left: 20px;
+        margin-bottom: 15px;
+    }
+    .terms-content ul li {
+        color: #555;
+        line-height: 1.8;
+        font-size: 0.95rem;
+        margin-bottom: 5px;
+    }
+    .terms-content a { color: var(--ocean-blue); font-weight: 600; }
+    .terms-content a:hover { color: var(--gold); }
+    .terms-last-updated {
+        text-align: center;
+        color: #777;
+        font-size: 0.85rem;
+        font-style: italic;
+        margin-bottom: 20px;
+    }
+
+    /* FOOTER */
+    .footer { background: var(--deep-navy); color: #fff; padding: 40px 20px; margin-top: 40px; }
+    .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+    .footer h3, .footer h4 { color: var(--gold); margin-bottom: 15px; }
+    .social-links { display: flex; gap: 15px; margin-top: 15px; }
+    .social-links a { color: var(--gold); font-size: 1.2rem; transition: transform 0.3s; }
+    .social-links a:hover { transform: scale(1.2); }
+
+    /* FLOATING WHATSAPP */
+    .floating-whatsapp {
+        position: fixed; bottom: 25px; right: 25px;
+        background: #25d366; color: #fff;
+        width: 60px; height: 60px; border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        z-index: 1100; transition: transform 0.3s;
+    }
+    .floating-whatsapp:hover { transform: scale(1.1); }
+
+    /* CHATBOT */
+    .chatbot-toggle {
+        position: fixed; bottom: 100px; right: 25px;
+        background-color: var(--ocean-blue); color: var(--gold);
+        width: 60px; height: 60px; border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 28px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        z-index: 1100; cursor: pointer; border: 2px solid var(--gold);
+    }
+    .chatbot-container {
+        position: fixed; bottom: 170px; right: 25px;
+        width: 350px; max-width: 90vw; height: 500px;
+        background: #fff; border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        z-index: 1100; display: none; flex-direction: column;
+        overflow: hidden; border: 2px solid var(--gold);
+    }
+    .chatbot-container.active { display: flex; }
+    .chatbot-header { background: var(--ocean-blue); color: #fff; padding: 15px; display: flex; align-items: center; gap: 10px; }
+    .chatbot-header .avatar { width: 40px; height: 40px; background: var(--gold); color: var(--deep-navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem; }
+    .chatbot-header h4 { margin: 0; font-size: 1rem; color: #fff; }
+    .chatbot-header span { font-size: 0.75rem; color: #ddd; display: block; }
+    .chatbot-messages { flex-grow: 1; padding: 15px; overflow-y: auto; background: #f9f9f9; display: flex; flex-direction: column; gap: 10px; }
+    .message { max-width: 80%; padding: 10px 15px; border-radius: 15px; font-size: 0.85rem; }
+    .message.bot { background: #e9ecef; align-self: flex-start; }
+    .message.user { background: var(--ocean-blue); color: #fff; align-self: flex-end; }
+    .chatbot-input { display: flex; padding: 10px; border-top: 1px solid #eee; }
+    .chatbot-input input { flex-grow: 1; padding: 10px; border: 1px solid #ddd; border-radius: 20px; outline: none; font-family: 'Poppins', sans-serif; }
+    .chatbot-input button { background: var(--gold); color: var(--deep-navy); border: none; width: 40px; height: 40px; border-radius: 50%; margin-left: 8px; cursor: pointer; font-size: 1rem; }
+
+    /* GTRANSLATE */
+    .gtranslate_wrapper { position: relative; }
+
+    @media (max-width: 768px) {
+        .menu-toggle { display: block; }
+        .nav-links { display: none; flex-direction: column; width: 100%; background: var(--deep-navy); padding: 20px; position: absolute; top: 80px; left: 0; z-index: 999; }
+        .nav-links.active { display: flex; }
+        .hero h1 { font-size: 1.6rem; }
+    }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR WITH GTRANSLATE -->
+<div class="top-bar">
+    <div class="gtranslate_wrapper"></div>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="nav-container">
+        <a href="index.html" class="logo-area">
+            <div class="logo-holder"><span class="logo-fallback">UNP<br>LOGO</span></div>
+            <div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
+        </a>
+        <button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html"><i class="fas fa-home"></i> Nyumbani</a></li>
+            <li><a href="about.html"><i class="fas fa-info-circle"></i> Kuhusu Sisi</a></li>
+            <li><a href="services.html"><i class="fas fa-briefcase"></i> Huduma</a></li>
+            <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+            <li><a href="pricing.html"><i class="fas fa-layer-group"></i> Madaraja</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Wasiliana</a></li>
+        </ul>
+    </div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <h1>Masharti na Sheria</h1>
+    <p>Taarifa muhimu kuhusu masharti ya kutumia huduma zetu.</p>
+</section>
+
+<!-- TERMS CONTENT -->
+<section class="interactive-box terms-content">
+    <p class="terms-last-updated"><i class="fas fa-calendar-alt"></i> Ilisasishwa mara ya mwisho: 30 Septemba 2026</p>
+
+    <h3>1. Utangulizi</h3>
+    <p>Karibu UNP TOURS (Unique & Natural Paradise). Kwa kutumia website yetu na huduma zetu, unakubali masharti na sheria zilizoelezwa hapa chini. Tafadhali soma kwa makini kabla ya kuomba bei au kuweka nafasi yoyote.</p>
+
+    <h3>2. Kuomba Bei (Booking)</h3>
+    <p>Wateja wanaweza kuomba bei kwa njia zifuatazo:</p>
+    <ul>
+        <li>Kupitia fomu ya kuomba bei kwenye website yetu.</li>
+        <li>Kupitia WhatsApp: +255 655 728 982.</li>
+        <li>Kupitia barua pepe: salimnasoro11@gmail.com.</li>
+    </ul>
+    <p>Ombi lako linakuwa rasmi baada ya kupokea uthibitisho kutoka kwetu na malipo ya awali (deposit) kama itahitajika.</p>
+
+    <h3>3. Malipo (Payment)</h3>
+    <p>Tunakubali njia zifuatazo za malipo:</p>
+    <ul>
+        <li><strong>M-Pesa, Tigo Pesa, Airtel Money</strong> — kwa wateja wa Tanzania.</li>
+        <li><strong>Benki (CRDB, NMB)</strong> — kwa wateja wa Tanzania.</li>
+        <li><strong>Visa, Mastercard</strong> — kwa wateja wa kimataifa.</li>
+        <li><strong>PayPal, Stripe</strong> — kwa wateja wa kimataifa.</li>
+    </ul>
+    <p>Malipo yote yanapaswa kukamilika kabla ya safari kuanza, isipokuwa kama tumekubaliana vinginevyo.</p>
+
+    <h3>4. Kughairi (Cancellation) na Kurudisha Fedha (Refund)</h3>
+    <p>Wateja wanaweza kughairi booking kwa masharti yafuatayo:</p>
+    <ul>
+        <li><strong>Siku 7+ kabla ya safari:</strong> Kurudisha fedha 100%.</li>
+        <li><strong>Siku 3-6 kabla ya safari:</strong> Kurudisha fedha 50%.</li>
+        <li><strong>Siku 1-2 kabla ya safari:</strong> Kurudisha fedha 25%.</li>
+        <li><strong>Siku ya safari au baada:</strong> Hakuna kurudisha fedha.</li>
+    </ul>
+    <p>Kwa hali ya dharura (kama ugonjwa au janga), tutazingatia kurudisha fedha kwa upendeleo.</p>
+
+    <h3>5. Kubadilisha Tarehe (Rescheduling)</h3>
+    <p>Wateja wanaweza kubadilisha tarehe ya safari bila malipo ya ziada kama watatujulisha <strong>siku 3 kabla</strong> ya safari. Kama watachelewa, kuna ada ndogo ya kubadilisha.</p>
+
+    <h3>6. Wajibu wa Mteja</h3>
+    <p>Mteja anakubali:</p>
+    <ul>
+        <li>Kutoa taarifa sahihi wakati wa kuomba bei.</li>
+        <li>Kuheshimu utamaduni na sheria za Zanzibar na Tanzania.</li>
+        <li>Kutunza mazingira na wanyama pori.</li>
+        <li>Kufuata maelekezo ya guide wakati wa safari.</li>
+    </ul>
+
+    <h3>7. Wajibu wa UNP TOURS</h3>
+    <p>UNP TOURS inakubali:</p>
+    <ul>
+        <li>Kutoa huduma za ubora wa hali ya juu.</li>
+        <li>Kuhakikisha usalama wa wateja wakati wa safari.</li>
+        <li>Kutoa taarifa sahihi kuhusu huduma zetu.</li>
+        <li>Kushughulikia malalamiko kwa haraka na kwa haki.</li>
+    </ul>
+
+    <h3>8. Bima (Insurance)</h3>
+    <p>Tunashauri wateja wote kupata bima ya safari (travel insurance) kabla ya kuja Zanzibar. UNP TOURS haitoi bima ya safari, lakini tunaweza kukusaidia kuipata.</p>
+
+    <h3>9. Haki Miliki (Intellectual Property)</h3>
+    <p>Maudhui yote kwenye website hii (picha, video, maandishi, logo) ni mali ya UNP TOURS. Hairuhusiwi kunakili au kutumia bila idhini yetu.</p>
+
+    <h3>10. Faragha (Privacy)</h3>
+    <p>Taarifa zako binafsi zinahifadhiwa kwa usalama. Kwa maelezo zaidi, tafadhali soma <a href="privacy.html">Sera zetu za Faragha</a>.</p>
+
+    <h3>11. Mabadiliko ya Masharti</h3>
+    <p>UNP TOURS ina haki ya kubadilisha masharti haya wakati wowote. Mabadiliko yatatangazwa kwenye website yetu.</p>
+
+    <h3>12. Sheria Zinazotumika</h3>
+    <p>Masharti haya yanatawaliwa na sheria za Jamhuri ya Muungano wa Tanzania. Migogoro yoyote itatatuliwa kwa njia ya upatanisho au mahakama za Tanzania.</p>
+
+    <h3>13. Wasiliana Nasi</h3>
+    <p>Kwa swali lolote kuhusu masharti haya, wasiliana nasi:</p>
+    <ul>
+        <li><i class="fas fa-phone" style="color: var(--gold);"></i> Simu: +255 655 728 982</li>
+        <li><i class="fas fa-envelope" style="color: var(--gold);"></i> Email: salimnasoro11@gmail.com</li>
+        <li><i class="fas fa-map-marker-alt" style="color: var(--gold);"></i> Zanzibar, Tanzania</li>
+    </ul>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-content">
+        <div>
+            <h3>UNIQUE NATURE PARADISE (UNP)</h3>
+            <p style="font-size: 0.9rem; max-width: 350px;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p>
+        </div>
+        <div>
+            <h4>Direct Contact</h4>
+            <p style="font-size: 0.9rem; margin-top: 8px;"><i class="fab fa-whatsapp" style="color: var(--gold);"></i> Phone: +255 655 728 982</p>
+            <p style="font-size: 0.9rem; margin-top: 5px;"><i class="fas fa-envelope" style="color: var(--gold);"></i> Email: salimnasoro11@gmail.com</p>
+            <div class="social-links">
+                <a href="https://wa.me/255655728982" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="mailto:salimnasoro11@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.tiktok.com/@unptours" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.instagram.com/unpsoulvoyoge" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61595094232501" target="_blank"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/255655728982" class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<!-- CHATBOT -->
+<div class="chatbot-toggle" onclick="toggleChatbot()"><i class="fas fa-robot"></i></div>
+<div class="chatbot-container" id="chatbotContainer">
+    <div class="chatbot-header">
+        <div class="avatar">U</div>
+        <div><h4>UNP Assistant</h4><span>Yupo Mtandaoni</span></div>
+        <button onclick="toggleChatbot()" style="margin-left:auto;background:none;border:none;color:#fff;font-size:1.2rem;cursor:pointer;"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="chatbot-messages" id="chatMessages">
+        <div class="message bot">Karibu UNP TOURS! Ninaweza kukusaidia vipi leo?</div>
+    </div>
+    <div class="chatbot-input">
+        <input type="text" id="chatInput" placeholder="Andika ujumbe wako..." onkeypress="handleKeyPress(event)">
+        <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+    </div>
+</div>
+
+<!-- COOKIES BANNER -->
+<div id="cookieBanner" style="position: fixed; bottom: 0; left: 0; right: 0; background: #082f49; color: #fff; padding: 15px; text-align: center; z-index: 9999; display: none;">
+    <p style="margin: 0 0 10px 0; font-size: 0.9rem;">Tunatumia cookies kuboresha uzoefu wako. Kwa kuendelea kutumia website yetu, unakubali <a href="privacy.html" style="color: var(--gold); text-decoration: underline;">Sera zetu za Faragha</a>.</p>
+    <button onclick="acceptCookies()" style="background: var(--gold); color: var(--deep-navy); border: none; padding: 8px 20px; border-radius: 5px; font-weight: 700; cursor: pointer;">Nakubali</button>
+</div>
+
+<!-- TAWK.TO LIVE CHAT -->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6ab95c20dade22344616d64e/1k3i0vorc';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+
+<!-- ONESIGNAL PUSH -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "e772eb04-4c02-457d-bc15-ad77d7a29d4d",
+    });
+  });
+</script>
+
+<!-- GTRANSLATE SCRIPT -->
+<script>
+window.gtranslateSettings = {
+  "default_language": "sw",
+  "languages": ["sw", "en", "fr", "it", "de", "ru", "ar", "zh-CN"],
+  "wrapper_selector": ".gtranslate_wrapper"
+};
+</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/dropdown.js" defer></script>
+
+<!-- CHATBOT & COOKIES LOGIC -->
+<script>
+  // MENU TOGGLE
+  const menuToggleBtn = document.getElementById('menuToggleBtn');
+  const navLinks = document.getElementById('navLinks');
+  if(menuToggleBtn) { menuToggleBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); }); }
+
+  // COOKIES BANNER
+  if (!localStorage.getItem('cookiesAccepted')) {
+      document.getElementById('cookieBanner').style.display = 'block';
+  }
+  window.acceptCookies = function() {
+      localStorage.setItem('cookiesAccepted', 'true');
+      document.getElementById('cookieBanner').style.display = 'none';
+  };
+
+  // CHATBOT
+  window.toggleChatbot = function() {
+      document.getElementById('chatbotContainer').classList.toggle('active');
+  };
+  window.handleKeyPress = function(e) {
+      if (e.key === 'Enter') sendMessage();
+  };
+  window.sendMessage = function() {
+      const input = document.getElementById('chatInput');
+      const msg = input.value.trim();
+      if (!msg) return;
+      const chatMessages = document.getElementById('chatMessages');
+      chatMessages.innerHTML += `<div class="message user">${msg}</div>`;
+      input.value = '';
+      setTimeout(() => {
+          chatMessages.innerHTML += `<div class="message bot">Asante kwa ujumbe wako! Tutakujibu hivi punde. Kwa haraka, wasiliana nasi kwa WhatsApp: +255 655 728 982</div>`;
+          chatMessages.scrollTop = chatMessages.scrollHeight;
+      }, 1000);
+  };
+</script>
+
+</body>
+</html>
