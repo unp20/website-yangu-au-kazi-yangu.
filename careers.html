@@ -8,9 +8,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
 
-<!-- ==========================================
-     SEO META TAGS
-     ========================================== -->
+<!-- SEO META TAGS -->
 <meta name="description" content="Nafasi za Kazi - UNP TOURS. Jiunge na timu yetu ya kifahari ya utalii Zanzibar. Tunatafuta guides, drivers, chefs, IT, na marketing.">
 <meta name="keywords" content="kazi Zanzibar, tourism jobs Zanzibar, UNP tours careers, nafasi za kazi Zanzibar">
 <meta name="author" content="UNP TOURS Zanzibar">
@@ -39,14 +37,61 @@
 <meta name="geo.position" content="-6.165917;39.202641">
 <meta name="ICBM" content="-6.165917, 39.202641">
 
+<!-- ELFSIGHT PLATFORM -->
+<script src="https://elfsightcdn.com/platform.js" async></script>
+
 <style>
+    :root {
+        --ocean-blue: #0c4a6e;
+        --deep-navy: #082f49;
+        --gold: #d4af37;
+        --gold-light: #f0c75e;
+        --light-bg: #f8f9fa;
+        --white: #ffffff;
+        --text-dark: #1e293b;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body { background-color: var(--light-bg); color: #333; line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+
+    /* HEADER */
+    .top-bar { background: var(--deep-navy); padding: 8px 20px; display: flex; justify-content: flex-end; align-items: center; gap: 15px; }
+    .header { background: var(--ocean-blue); padding: 15px 20px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .logo-area { display: flex; align-items: center; gap: 15px; }
+    .logo-holder { width: 60px; height: 60px; border: 2px dashed var(--gold); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+    .logo-fallback { color: var(--gold); font-weight: 700; font-size: 0.7rem; text-align: center; line-height: 1.1; }
+    .logo-text h2 { color: #fff; font-size: 1.3rem; font-weight: 700; }
+    .logo-text span { color: var(--gold); font-size: 0.8rem; }
+    .nav-links { display: flex; gap: 20px; list-style: none; }
+    .nav-links a { color: #fff; font-size: 0.85rem; transition: color 0.3s; display: flex; align-items: center; gap: 5px; }
+    .nav-links a:hover { color: var(--gold); }
+    .menu-toggle { display: none; background: none; border: none; color: var(--gold); font-size: 26px; cursor: pointer; }
+
+    /* HERO */
+    .hero {
+        background: linear-gradient(135deg, var(--deep-navy) 0%, var(--ocean-blue) 100%);
+        padding: 70px 20px;
+        text-align: center;
+        color: #fff;
+        border-bottom: 5px solid var(--gold);
+    }
+    .hero h1 { font-size: 2.2rem; color: var(--gold); margin-bottom: 10px; }
+    .hero p { max-width: 600px; margin: 0 auto; color: #ddd; font-size: 1rem; }
+
+    /* INTERACTIVE BOX */
+    .interactive-box { background: #fff; padding: 30px; border-radius: 15px; margin: 20px auto; box-shadow: 0 4px 15px rgba(0,0,0,0.1); max-width: 900px; }
+    .interactive-box h2 { color: var(--ocean-blue); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+    .interactive-box h2 i { color: var(--gold); }
+
+    /* JOB CARD */
     .job-card {
         background: #fff;
         border-radius: 12px;
         padding: 25px;
         margin-bottom: 20px;
         box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        border-left: 5px solid var(--royal-gold);
+        border-left: 5px solid var(--gold);
         transition: transform 0.3s;
     }
     .job-card:hover {
@@ -63,11 +108,11 @@
     }
     .job-title {
         font-size: 1.2rem;
-        color: var(--dark-green);
+        color: var(--deep-navy);
         font-weight: 700;
     }
     .job-badge {
-        background: var(--royal-green);
+        background: var(--ocean-blue);
         color: #fff;
         padding: 5px 15px;
         border-radius: 20px;
@@ -83,7 +128,7 @@
         color: #777;
     }
     .job-details span i {
-        color: var(--royal-gold);
+        color: var(--gold);
         margin-right: 5px;
     }
     .job-description {
@@ -106,80 +151,131 @@
         gap: 8px;
     }
     .job-requirements li i {
-        color: var(--royal-gold);
+        color: var(--gold);
     }
 
-    /* Mobile Menu Iliyoboreshwa */
-    @media (max-width: 768px) {
-        .menu-toggle { display: block; font-size: 26px; }
-        .nav-links {
-            display: none; flex-direction: column; width: 100%;
-            background: linear-gradient(135deg, var(--dark-green), var(--royal-green));
-            padding: 20px 15px; gap: 5px;
-            border-radius: 0 0 15px 15px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            animation: slideDown 0.3s ease;
-        }
-        .nav-links.active { display: flex; }
-        .nav-links li { width: 100%; }
-        .nav-links a {
-            display: flex; align-items: center; gap: 12px;
-            padding: 12px 15px; border-radius: 8px;
-            font-size: 1rem; transition: all 0.3s;
-        }
-        .nav-links a:hover { background: rgba(212, 175, 55, 0.15); padding-left: 20px; }
-        .nav-links a i { color: var(--royal-gold); font-size: 1.1rem; width: 20px; text-align: center; }
+    /* FORM */
+    .form-group { margin-bottom: 15px; }
+    .form-group label { display: block; font-weight: 600; color: var(--deep-navy); margin-bottom: 5px; }
+    .form-group input, .form-group select, .form-group textarea {
+        width: 100%; padding: 12px 15px;
+        border: 2px solid #ddd; border-radius: 8px;
+        font-family: 'Poppins', sans-serif; font-size: 1rem;
+        transition: border-color 0.3s;
     }
-    @keyframes slideDown {
-        from { opacity: 0; transform: translateY(-10px); }
-        to { opacity: 1; transform: translateY(0); }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+        outline: none; border-color: var(--gold);
+    }
+    .btn-primary {
+        background: var(--gold); color: var(--deep-navy);
+        padding: 12px 30px; border: none; border-radius: 8px;
+        font-weight: 700; transition: all 0.3s;
+        display: inline-block; cursor: pointer; font-size: 1rem;
+    }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .btn-full { width: 100%; text-align: center; }
+
+    /* FOOTER */
+    .footer { background: var(--deep-navy); color: #fff; padding: 40px 20px; margin-top: 40px; }
+    .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+    .footer h3, .footer h4 { color: var(--gold); margin-bottom: 15px; }
+    .social-links { display: flex; gap: 15px; margin-top: 15px; }
+    .social-links a { color: var(--gold); font-size: 1.2rem; transition: transform 0.3s; }
+    .social-links a:hover { transform: scale(1.2); }
+
+    /* FLOATING WHATSAPP */
+    .floating-whatsapp {
+        position: fixed; bottom: 25px; right: 25px;
+        background: #25d366; color: #fff;
+        width: 60px; height: 60px; border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        z-index: 1100; transition: transform 0.3s;
+    }
+    .floating-whatsapp:hover { transform: scale(1.1); }
+
+    /* CHATBOT */
+    .chatbot-toggle {
+        position: fixed; bottom: 100px; right: 25px;
+        background-color: var(--ocean-blue); color: var(--gold);
+        width: 60px; height: 60px; border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 28px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        z-index: 1100; cursor: pointer; border: 2px solid var(--gold);
+    }
+    .chatbot-container {
+        position: fixed; bottom: 170px; right: 25px;
+        width: 350px; max-width: 90vw; height: 500px;
+        background: #fff; border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        z-index: 1100; display: none; flex-direction: column;
+        overflow: hidden; border: 2px solid var(--gold);
+    }
+    .chatbot-container.active { display: flex; }
+    .chatbot-header { background: var(--ocean-blue); color: #fff; padding: 15px; display: flex; align-items: center; gap: 10px; }
+    .chatbot-header .avatar { width: 40px; height: 40px; background: var(--gold); color: var(--deep-navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem; }
+    .chatbot-header h4 { margin: 0; font-size: 1rem; color: #fff; }
+    .chatbot-header span { font-size: 0.75rem; color: #ddd; display: block; }
+    .chatbot-messages { flex-grow: 1; padding: 15px; overflow-y: auto; background: #f9f9f9; display: flex; flex-direction: column; gap: 10px; }
+    .message { max-width: 80%; padding: 10px 15px; border-radius: 15px; font-size: 0.85rem; }
+    .message.bot { background: #e9ecef; align-self: flex-start; }
+    .message.user { background: var(--ocean-blue); color: #fff; align-self: flex-end; }
+    .chatbot-input { display: flex; padding: 10px; border-top: 1px solid #eee; }
+    .chatbot-input input { flex-grow: 1; padding: 10px; border: 1px solid #ddd; border-radius: 20px; outline: none; font-family: 'Poppins', sans-serif; }
+    .chatbot-input button { background: var(--gold); color: var(--deep-navy); border: none; width: 40px; height: 40px; border-radius: 50%; margin-left: 8px; cursor: pointer; font-size: 1rem; }
+
+    /* GTRANSLATE */
+    .gtranslate_wrapper { position: relative; }
+
+    @media (max-width: 768px) {
+        .menu-toggle { display: block; }
+        .nav-links { display: none; flex-direction: column; width: 100%; background: var(--deep-navy); padding: 20px; position: absolute; top: 80px; left: 0; z-index: 999; }
+        .nav-links.active { display: flex; }
+        .hero h1 { font-size: 1.6rem; }
     }
 </style>
 </head>
 <body>
 
-<!-- TOP BAR & HEADER -->
+<!-- TOP BAR WITH GTRANSLATE -->
 <div class="top-bar">
-<div class="lang-container">
-<i class="fas fa-globe"></i>
-<select class="lang-select"><option value="sw">Kiswahili</option><option value="en">English</option></select>
-</div>
+    <div class="gtranslate_wrapper"></div>
 </div>
 
+<!-- HEADER -->
 <header class="header">
-<div class="nav-container">
-<a href="index.html" class="logo-area">
-<div class="logo-holder"><img src="images/logo.png" alt="UNP Tours Logo" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=logo-fallback>UNP<br>LOGO</span>';"></div>
-<div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
-</a>
-<button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
-<ul class="nav-links" id="navLinks">
-<li><a href="index.html"><i class="fas fa-home"></i> Nyumbani</a></li>
-<li><a href="about.html"><i class="fas fa-info-circle"></i> Kuhusu Sisi</a></li>
-<li><a href="services.html"><i class="fas fa-briefcase"></i> Huduma</a></li>
-<li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
-<li><a href="pricing.html"><i class="fas fa-layer-group"></i> Madaraja</a></li>
-<li><a href="events.html"><i class="fas fa-calendar-alt"></i> Matukio</a></li>
-<li><a href="careers.html" style="color: var(--royal-gold);"><i class="fas fa-user-tie"></i> Kazi</a></li>
-<li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
-<li><a href="contact.html"><i class="fas fa-envelope"></i> Wasiliana</a></li>
-</ul>
-</div>
+    <div class="nav-container">
+        <a href="index.html" class="logo-area">
+            <div class="logo-holder"><span class="logo-fallback">UNP<br>LOGO</span></div>
+            <div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
+        </a>
+        <button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html"><i class="fas fa-home"></i> Nyumbani</a></li>
+            <li><a href="about.html"><i class="fas fa-info-circle"></i> Kuhusu Sisi</a></li>
+            <li><a href="services.html"><i class="fas fa-briefcase"></i> Huduma</a></li>
+            <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+            <li><a href="pricing.html"><i class="fas fa-layer-group"></i> Madaraja</a></li>
+            <li><a href="careers.html" style="color: var(--gold);"><i class="fas fa-user-tie"></i> Kazi</a></li>
+            <li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Wasiliana</a></li>
+        </ul>
+    </div>
 </header>
 
 <!-- HERO SECTION -->
-<section class="hero" style="padding: 70px 20px;">
-<h1 style="font-size: 2rem;">Nafasi za Kazi</h1>
-<p>Jiunge na timu yetu ya kifahari na uwe sehemu ya mafanikio ya UNP TOURS.</p>
+<section class="hero">
+    <h1>Nafasi za Kazi</h1>
+    <p>Jiunge na timu yetu ya kifahari na uwe sehemu ya mafanikio ya UNP TOURS.</p>
 </section>
 
 <!-- JOB LISTINGS -->
-<section class="interactive-box" style="max-width: 900px;">
+<section class="interactive-box">
 
     <!-- Job 1: Tour Guide -->
     <div class="job-card">
         <div class="job-header">
-            <div class="job-title"><i class="fas fa-user-tie" style="color: var(--royal-gold);"></i> Tour Guide</div>
+            <div class="job-title"><i class="fas fa-user-tie" style="color: var(--gold);"></i> Tour Guide</div>
             <span class="job-badge">Full-Time</span>
         </div>
         <div class="job-details">
@@ -199,7 +295,7 @@
     <!-- Job 2: Driver -->
     <div class="job-card">
         <div class="job-header">
-            <div class="job-title"><i class="fas fa-car" style="color: var(--royal-gold);"></i> Driver (Dereva)</div>
+            <div class="job-title"><i class="fas fa-car" style="color: var(--gold);"></i> Driver (Dereva)</div>
             <span class="job-badge">Full-Time</span>
         </div>
         <div class="job-details">
@@ -219,7 +315,7 @@
     <!-- Job 3: Chef -->
     <div class="job-card">
         <div class="job-header">
-            <div class="job-title"><i class="fas fa-utensils" style="color: var(--royal-gold);"></i> Chef (Mpishi)</div>
+            <div class="job-title"><i class="fas fa-utensils" style="color: var(--gold);"></i> Chef (Mpishi)</div>
             <span class="job-badge">Part-Time</span>
         </div>
         <div class="job-details">
@@ -239,7 +335,7 @@
     <!-- Job 4: IT Developer -->
     <div class="job-card">
         <div class="job-header">
-            <div class="job-title"><i class="fas fa-laptop-code" style="color: var(--royal-gold);"></i> IT Developer</div>
+            <div class="job-title"><i class="fas fa-laptop-code" style="color: var(--gold);"></i> IT Developer</div>
             <span class="job-badge">Remote</span>
         </div>
         <div class="job-details">
@@ -259,7 +355,7 @@
     <!-- Job 5: Marketing Specialist -->
     <div class="job-card">
         <div class="job-header">
-            <div class="job-title"><i class="fas fa-chart-line" style="color: var(--royal-gold);"></i> Marketing Specialist</div>
+            <div class="job-title"><i class="fas fa-chart-line" style="color: var(--gold);"></i> Marketing Specialist</div>
             <span class="job-badge">Full-Time</span>
         </div>
         <div class="job-details">
@@ -279,7 +375,7 @@
     <!-- Job 6: Videographer / Photographer -->
     <div class="job-card">
         <div class="job-header">
-            <div class="job-title"><i class="fas fa-camera" style="color: var(--royal-gold);"></i> Videographer / Photographer</div>
+            <div class="job-title"><i class="fas fa-camera" style="color: var(--gold);"></i> Videographer / Photographer</div>
             <span class="job-badge">Part-Time</span>
         </div>
         <div class="job-details">
@@ -299,7 +395,7 @@
 </section>
 
 <!-- APPLICATION FORM -->
-<section class="interactive-box" id="application" style="max-width: 800px;">
+<section class="interactive-box" id="application">
     <h2><i class="fas fa-file-signature"></i> Tuma Maombi Yako</h2>
     <p style="margin-bottom: 20px;">Jaza fomu hii na tutawasiliana nawe ndani ya siku 7.</p>
     
@@ -310,87 +406,4 @@
         <div class="form-group"><label>Nafasi Unayoomba:</label>
             <select id="careerPosition" required>
                 <option value="">Chagua...</option>
-                <option value="Tour Guide">Tour Guide</option>
-                <option value="Driver">Driver</option>
-                <option value="Chef">Chef</option>
-                <option value="IT Developer">IT Developer</option>
-                <option value="Marketing Specialist">Marketing Specialist</option>
-                <option value="Videographer">Videographer</option>
-            </select>
-        </div>
-        <div class="form-group"><label>Uzoefu wa Kazi (miaka):</label><input type="number" id="careerExperience" placeholder="Mfano: 3" required></div>
-        <div class="form-group"><label>Kwa Nini Unafaa kwa Nafasi Hii?</label>
-            <textarea id="careerReason" rows="4" placeholder="Eleza kwa nini unafaa..." required></textarea>
-        </div>
-        <button type="submit" class="btn-primary btn-full"><i class="fab fa-whatsapp"></i> Tuma Maombi kwa WhatsApp</button>
-    </form>
-</section>
-
-<!-- FOOTER -->
-<footer class="footer">
-<div class="footer-content">
-<div><h3>UNIQUE NATURE PARADISE (UNP)</h3><p style="font-size: 0.9rem; max-width: 350px;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p></div>
-<div><h4>Direct Contact</h4><p style="font-size: 0.9rem; margin-top: 8px;"><i class="fab fa-whatsapp" style="color: var(--royal-gold);"></i> Phone: +255 655 728 982</p><p style="font-size: 0.9rem; margin-top: 5px;"><i class="fas fa-envelope" style="color: var(--royal-gold);"></i> Email: salimnasoro11@gmail.com</p>
-<div class="social-links">
-<a href="https://wa.me/255655728982" target="_blank"><i class="fab fa-whatsapp"></i></a>
-<a href="mailto:salimnasoro11@gmail.com"><i class="fas fa-envelope"></i></a>
-<a href="https://www.tiktok.com/@unptours" target="_blank"><i class="fab fa-tiktok"></i></a>
-<a href="https://www.instagram.com/unpsoulvoyoge" target="_blank"><i class="fab fa-instagram"></i></a>
-<a href="https://www.facebook.com/profile.php?id=61595094232501" target="_blank"><i class="fab fa-facebook"></i></a>
-</div></div>
-</div>
-</footer>
-
-<a href="https://wa.me/255655728982" class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
-
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
-  import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
-
-  const firebaseConfig = {
-    apiKey: "AIzaSyD2YtPFL2L_ZwAKdSYpXtvLt8gJUm2IX6s",
-    authDomain: "unptours.firebaseapp.com",
-    projectId: "unptours",
-    storageBucket: "unptours.firebasestorage.app",
-    messagingSenderId: "233326851661",
-    appId: "1:233326851661:web:354156110a5cee29904e04",
-    measurementId: "G-5QJ1X38ZLC"
-  };
-
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
-
-  const menuToggleBtn = document.getElementById('menuToggleBtn');
-  const navLinks = document.getElementById('navLinks');
-  if(menuToggleBtn) { menuToggleBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); }); }
-
-  const careerForm = document.getElementById('careerForm');
-  careerForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      
-      const data = {
-          name: document.getElementById('careerName').value,
-          email: document.getElementById('careerEmail').value,
-          phone: document.getElementById('careerPhone').value,
-          position: document.getElementById('careerPosition').value,
-          experience: document.getElementById('careerExperience').value,
-          reason: document.getElementById('careerReason').value,
-          status: "Inasubiri",
-          createdAt: new Date()
-      };
-
-      try {
-          await addDoc(collection(db, "careers"), data);
-
-          const message = `*UNP TOURS - MAOMBI YA KAZI*%0A%0A*Jina:* ${data.name}%0A*Email:* ${data.email}%0A*Simu:* ${data.phone}%0A*Nafasi:* ${data.position}%0A*Uzoefu:* ${data.experience} miaka%0A*Sababu:* ${data.reason}`;
-          window.open(`https://wa.me/255655728982?text=${message}`, '_blank');
-          alert("Maombi yako yametumwa kwa mafanikio! Tutawasiliana nawe ndani ya siku 7.");
-          careerForm.reset();
-      } catch (error) {
-          alert("Kuna hitilafu imetokea: " + error.message);
-      }
-  });
-</script>
-
-</body>
-    </html>
+                <option value="Tour Guide">Tour Guide</option
