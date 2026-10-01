@@ -76,7 +76,10 @@
         --royal-green: #064e3b;
         --dark-green: #032b1a;
         --royal-gold: #d4af37;
+        --gold-light: #f0c75e;
         --light-bg: #f8f9fa;
+        --white: #ffffff;
+        --text-dark: #1e293b;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
     body { background-color: var(--light-bg); color: #333; line-height: 1.6; }
@@ -106,16 +109,21 @@
     .btn-primary:hover { background: #fff; color: var(--royal-green); transform: scale(1.05); }
 
     /* SECTIONS */
-    .section-title { text-align: center; font-size: 2rem; color: var(--royal-green); margin: 40px 0 20px; }
+    .section-title { text-align: center; font-size: 2rem; color: var(--royal-green); margin: 40px 0 20px; position: relative; padding-bottom: 15px; }
+    .section-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background: var(--royal-gold); border-radius: 2px; }
     .interactive-box { background: #fff; padding: 30px; border-radius: 15px; margin: 20px auto; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-    .interactive-box h2 { color: var(--royal-green); margin-bottom: 15px; }
+    .interactive-box h2 { color: var(--royal-green); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+    .interactive-box h2 i { color: var(--royal-gold); }
+
+    /* FORM */
     .form-group { margin-bottom: 15px; }
     .form-group label { display: block; font-weight: 600; color: var(--dark-green); margin-bottom: 5px; }
     .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; font-family: 'Poppins', sans-serif; }
     .star-rating { display: flex; gap: 8px; font-size: 2rem; cursor: pointer; margin: 10px 0; }
     .star-rating .fa-star { color: #ccc; transition: color 0.2s, transform 0.2s; }
-    .star-rating .fa-star.active { color: var(--royal-gold); }
-    .btn-full { width: 100%; text-align: center; }
+    .star-rating .fa-star:hover, .star-rating .fa-star.active { color: var(--royal-gold); transform: scale(1.1); }
+    .btn-full { width: 100%; text-align: center; background: var(--royal-gold); color: var(--dark-green); padding: 15px; border: none; border-radius: 10px; font-weight: 700; font-size: 1.1rem; cursor: pointer; transition: all 0.3s; }
+    .btn-full:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4); }
     .alert-message { margin-top: 15px; padding: 10px; border-radius: 8px; display: none; }
     .alert-success { background: #d4edda; color: #155724; display: block; }
     .alert-error { background: #f8d7da; color: #721c24; display: block; }
@@ -283,12 +291,6 @@
     <div class="elfsight-app-15c9807c-d31b-4959-8438-b6647863a3a4" data-elfsight-app-lazy></div>
 </section>
 
-<!-- SPINNING WHEEL -->
-<section class="widget-container">
-    <h2 class="widget-title"><i class="fas fa-gift" style="color: var(--royal-gold);"></i> Piga Gurudumu la Bahati!</h2>
-    <div class="elfsight-app-cc1a71d2-195c-44dc-8895-f3e292290416" data-elfsight-app-lazy></div>
-</section>
-
 <!-- REVIEWS FORM -->
 <section class="interactive-box" id="review-section" style="max-width: 900px;">
     <h2><i class="fas fa-star"></i> Acha Maoni Yako</h2>
@@ -312,15 +314,4 @@
             <label>Kiwango cha Kuridhika (1-5 Nyota):</label>
             <div class="star-rating" id="reviewStars">
                 <i class="fas fa-star" data-value="1"></i>
-                <i class="fas fa-star" data-value="2"></i>
-                <i class="fas fa-star" data-value="3"></i>
-                <i class="fas fa-star" data-value="4"></i>
-                <i class="fas fa-star" data-value="5"></i>
-            </div>
-            <input type="hidden" id="selectedReviewRating" value="0">
-        </div>
-        <div class="form-group">
-            <label>Maoni Yako:</label>
-            <textarea id="reviewMessage" rows="4" placeholder="Andika maoni yako..." required></textarea>
-        </div>
-       
+                <i clas
