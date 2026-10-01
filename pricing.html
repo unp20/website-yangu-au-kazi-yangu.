@@ -3,365 +3,222 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Madaraja ya Uzoefu | UNP TOURS Zanzibar</title>
+<title>Madaraja ya Bei | UNP TOURS Zanzibar</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
 
-<!-- ==========================================
-     SEO META TAGS
-     ========================================== -->
-<meta name="description" content="Madaraja ya UNP TOURS - Chagua daraja lako la uzoefu. Solo, Couple, Family, Executive, Royal, Government, King, President, Divine.">
-<meta name="keywords" content="Zanzibar tour prices, luxury tiers, VIP packages, Zanzibar safari prices, madaraja ya uzoefu">
-<meta name="author" content="UNP TOURS Zanzibar">
+<!-- SEO META TAGS -->
+<meta name="description" content="Madaraja ya UNP TOURS - Chagua daraja lako la uzoefu. Solo, Couple, Family, Executive, Royal, Divine.">
+<meta name="keywords" content="Zanzibar tour prices, luxury tiers, VIP packages, Zanzibar safari prices">
 <meta name="robots" content="index, follow">
 
 <!-- Open Graph -->
-<meta property="og:title" content="Madaraja ya Uzoefu | UNP TOURS Zanzibar">
-<meta property="og:description" content="Chagua daraja lako la uzoefu - kutoka Solo hadi Divine. Tutakutumia bei maalum.">
+<meta property="og:title" content="Madaraja ya Bei | UNP TOURS Zanzibar">
+<meta property="og:description" content="Chagua daraja lako la uzoefu - kutoka Solo hadi Divine.">
 <meta property="og:image" content="https://unp.tours/images/logo.png">
 <meta property="og:url" content="https://unp.tours/pricing.html">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="UNP TOURS">
 
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Madaraja ya Uzoefu | UNP TOURS Zanzibar">
-<meta name="twitter:description" content="Chagua daraja lako la uzoefu - kutoka Solo hadi Divine.">
-<meta name="twitter:image" content="https://unp.tours/images/logo.png">
-
-<!-- Canonical -->
-<link rel="canonical" href="https://unp.tours/pricing.html">
-
-<!-- Geo Tags -->
-<meta name="geo.region" content="TZ-07">
-<meta name="geo.placename" content="Zanzibar">
-<meta name="geo.position" content="-6.165917;39.202641">
-<meta name="ICBM" content="-6.165917, 39.202641">
+<!-- ELFSIGHT PLATFORM -->
+<script src="https://elfsightcdn.com/platform.js" async></script>
 
 <style>
-    /* ==========================================
-       LOYALTY INTRO SECTION
-       ========================================== */
-    .loyalty-intro-box {
-        background: linear-gradient(135deg, var(--dark-green) 0%, var(--royal-green) 100%);
-        color: #fff; padding: 40px 30px; border-radius: 15px;
-        text-align: center; margin: 30px auto; max-width: 900px;
-        border: 2px solid var(--royal-gold);
+    :root {
+        --royal-green: #064e3b;
+        --dark-green: #032b1a;
+        --royal-gold: #d4af37;
+        --light-bg: #f8f9fa;
     }
-    .loyalty-intro-box h2 { color: var(--royal-gold); font-size: 1.8rem; margin-bottom: 15px; }
-    .loyalty-intro-box p { color: #ddd; font-size: 1rem; line-height: 1.7; max-width: 700px; margin: 0 auto; }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body { background-color: var(--light-bg); color: #333; line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
 
-    /* ==========================================
-       TIER GRID
-       ========================================== */
-    .tier-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; max-width: 1200px; margin: 30px auto; padding: 0 20px; }
-    .tier-card { background: #fff; border-radius: 15px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.08); border-top: 5px solid var(--royal-gold); transition: transform 0.3s, box-shadow 0.3s; display: flex; flex-direction: column; }
-    .tier-card:hover { transform: translateY(-8px); box-shadow: 0 15px 35px rgba(0,0,0,0.15); }
-    .tier-header { padding: 25px; text-align: center; color: #fff; }
-    .tier-header.solo { background: linear-gradient(135deg, #4a5568, #718096); }
-    .tier-header.couple { background: linear-gradient(135deg, #d53f8c, #ed64a6); }
-    .tier-header.family-small { background: linear-gradient(135deg, #2d6a4f, #40916c); }
-    .tier-header.family-large { background: linear-gradient(135deg, #1b4332, #2d6a4f); }
-    .tier-header.executive { background: linear-gradient(135deg, #1a365d, #2c5282); }
-    .tier-header.royal { background: linear-gradient(135deg, #0a0a0a, #2d2d2d); border-bottom: 4px solid var(--royal-gold); }
-    .tier-header.government { background: linear-gradient(135deg, #744210, #975a16); }
-    .tier-header.king { background: linear-gradient(135deg, #1a202c, #2d3748); border-bottom: 4px solid #ffd700; }
-    .tier-header.president { background: linear-gradient(135deg, #702459, #97266d); }
-    .tier-header.divine { background: linear-gradient(135deg, #ffffff, #f0f0f0); color: #0a0a0a; border-bottom: 4px solid #ffd700; }
-    .tier-header i { font-size: 2.5rem; margin-bottom: 10px; display: block; color: var(--royal-gold); }
-    .tier-header.divine i { color: #b8860b; }
-    .tier-header h3 { font-size: 1.4rem; margin-bottom: 5px; }
-    .tier-header span { font-size: 0.85rem; display: block; }
-    .tier-header.divine h3 { color: #0a0a0a; }
-    .tier-header.divine span { color: #4a5568; }
-    .tier-body { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
-    .tier-loyalty { background: #fffdf7; border-left: 4px solid var(--royal-gold); padding: 12px 15px; border-radius: 8px; margin-bottom: 15px; font-style: italic; color: var(--dark-green); font-size: 0.9rem; }
-    .tier-body p { color: #555; font-size: 0.9rem; line-height: 1.7; margin-bottom: 20px; }
-    .tier-features { list-style: none; padding: 0; margin: 0 0 20px 0; flex-grow: 1; }
-    .tier-features li { padding: 8px 0; border-bottom: 1px dashed #eee; font-size: 0.9rem; color: #555; display: flex; align-items: center; gap: 10px; }
-    .tier-features li:last-child { border-bottom: none; }
-    .tier-features li i { color: var(--royal-gold); font-size: 0.85rem; }
-    .tier-note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 12px; border-radius: 8px; font-size: 0.85rem; color: #856404; margin-bottom: 20px; }
+    /* HEADER */
+    .top-bar { background: var(--dark-green); padding: 8px 20px; display: flex; justify-content: flex-end; align-items: center; gap: 15px; }
+    .header { background: var(--royal-green); padding: 15px 20px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .logo-area { display: flex; align-items: center; gap: 15px; }
+    .logo-holder { width: 60px; height: 60px; border: 2px dashed var(--royal-gold); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+    .logo-fallback { color: var(--royal-gold); font-weight: 700; font-size: 0.7rem; text-align: center; line-height: 1.1; }
+    .logo-text h2 { color: #fff; font-size: 1.3rem; font-weight: 700; }
+    .logo-text span { color: var(--royal-gold); font-size: 0.8rem; }
+    .nav-links { display: flex; gap: 20px; list-style: none; }
+    .nav-links a { color: #fff; font-size: 0.85rem; transition: color 0.3s; display: flex; align-items: center; gap: 5px; }
+    .nav-links a:hover { color: var(--royal-gold); }
+    .menu-toggle { display: none; background: none; border: none; color: var(--royal-gold); font-size: 26px; cursor: pointer; }
 
-    /* Mobile Menu Iliyoboreshwa */
+    /* HERO */
+    .hero { background: linear-gradient(135deg, var(--dark-green), var(--royal-green)); color: #fff; text-align: center; padding: 70px 20px; }
+    .hero h1 { font-size: 2rem; color: var(--royal-gold); margin-bottom: 10px; }
+    .hero p { font-size: 1rem; color: #ddd; max-width: 700px; margin: 0 auto; }
+
+    /* WIDGET CONTAINERS */
+    .widget-container { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
+    .widget-title { text-align: center; font-size: 1.8rem; color: var(--royal-green); margin-bottom: 20px; }
+
+    /* FOOTER */
+    .footer { background: var(--dark-green); color: #fff; padding: 40px 20px; margin-top: 40px; }
+    .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+    .footer h3, .footer h4 { color: var(--royal-gold); margin-bottom: 15px; }
+    .social-links { display: flex; gap: 15px; margin-top: 15px; }
+    .social-links a { color: var(--royal-gold); font-size: 1.2rem; transition: transform 0.3s; }
+
+    /* FLOATING WHATSAPP */
+    .floating-whatsapp { position: fixed; bottom: 25px; right: 25px; background: #25d366; color: #fff; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 1100; }
+
     @media (max-width: 768px) {
-        .menu-toggle { display: block; font-size: 26px; }
-        .nav-links {
-            display: none; flex-direction: column; width: 100%;
-            background: linear-gradient(135deg, var(--dark-green), var(--royal-green));
-            padding: 20px 15px; gap: 5px;
-            border-radius: 0 0 15px 15px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            animation: slideDown 0.3s ease;
-        }
+        .menu-toggle { display: block; }
+        .nav-links { display: none; flex-direction: column; width: 100%; background: var(--dark-green); padding: 20px; position: absolute; top: 80px; left: 0; z-index: 999; }
         .nav-links.active { display: flex; }
-        .nav-links li { width: 100%; }
-        .nav-links a {
-            display: flex; align-items: center; gap: 12px;
-            padding: 12px 15px; border-radius: 8px;
-            font-size: 1rem; transition: all 0.3s;
-        }
-        .nav-links a:hover { background: rgba(212, 175, 55, 0.15); padding-left: 20px; }
-        .nav-links a i { color: var(--royal-gold); font-size: 1.1rem; width: 20px; text-align: center; }
-    }
-    @keyframes slideDown {
-        from { opacity: 0; transform: translateY(-10px); }
-        to { opacity: 1; transform: translateY(0); }
     }
 </style>
 </head>
 <body>
 
-<!-- TOP BAR & HEADER -->
-<div class="top-bar">
-<div class="lang-container">
-<i class="fas fa-globe"></i>
-<select class="lang-select"><option value="sw">Kiswahili</option><option value="en">English</option></select>
-</div>
-</div>
+<!-- TOP BAR -->
+<div class="top-bar"></div>
 
+<!-- HEADER -->
 <header class="header">
-<div class="nav-container">
-<a href="index.html" class="logo-area">
-<div class="logo-holder"><img src="images/logo.png" alt="UNP Tours Logo" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=logo-fallback>UNP<br>LOGO</span>';"></div>
-<div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
-</a>
-<button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
-<ul class="nav-links" id="navLinks">
-<li><a href="index.html"><i class="fas fa-home"></i> Nyumbani</a></li>
-<li><a href="about.html"><i class="fas fa-info-circle"></i> Kuhusu Sisi</a></li>
-<li><a href="services.html"><i class="fas fa-briefcase"></i> Huduma</a></li>
-<li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
-<li><a href="pricing.html" style="color: var(--royal-gold);"><i class="fas fa-layer-group"></i> Madaraja</a></li>
-<li><a href="events.html"><i class="fas fa-calendar-alt"></i> Matukio</a></li>
-<li><a href="partners.html"><i class="fas fa-handshake"></i> Washirika</a></li>
-<li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
-<li><a href="contact.html"><i class="fas fa-envelope"></i> Wasiliana</a></li>
-</ul>
-</div>
+    <div class="nav-container">
+        <a href="index.html" class="logo-area">
+            <div class="logo-holder"><span class="logo-fallback">UNP<br>LOGO</span></div>
+            <div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
+        </a>
+        <button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html"><i class="fas fa-home"></i> Nyumbani</a></li>
+            <li><a href="about.html"><i class="fas fa-info-circle"></i> Kuhusu Sisi</a></li>
+            <li><a href="services.html"><i class="fas fa-briefcase"></i> Huduma</a></li>
+            <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+            <li><a href="pricing.html" style="color: var(--royal-gold);"><i class="fas fa-layer-group"></i> Madaraja</a></li>
+            <li><a href="events.html"><i class="fas fa-calendar-alt"></i> Matukio</a></li>
+            <li><a href="partners.html"><i class="fas fa-handshake"></i> Washirika</a></li>
+            <li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Wasiliana</a></li>
+        </ul>
+    </div>
 </header>
 
-<!-- HERO SECTION -->
-<section class="hero" style="padding: 70px 20px;">
-<h1 style="font-size: 2rem;">Chagua Daraja Lako la Uzoefu</h1>
-<p>Kila mteja ni wa kipekee. Chagua daraja linalokufaa, na tutakupangia uzoefu maalum kulingana na mahitaji yako.</p>
+<!-- HERO -->
+<section class="hero">
+    <h1>Madaraja ya Bei</h1>
+    <p>Chagua daraja lako la uzoefu. Kila daraja linakupa huduma za kipekee kulingana na mahitaji yako.</p>
 </section>
 
-<!-- LOYALTY INTRODUCTION -->
-<div class="loyalty-intro-box">
-    <h2><i class="fas fa-heart"></i> Karibu kwenye Familia ya UNP TOURS</h2>
-    <p>Wewe si mteja tu — wewe ni <strong>familia yetu</strong>. Tunakuahidi uzoefu wa kipekee, upendo, na huduma za kifahari. Chagua daraja lako, na tutakupangia safari ya maisha yako.</p>
-</div>
+<!-- ==================== WIDGETS ZA ELFSIGHT ==================== -->
 
-<!-- TIER GRID -->
-<section class="tier-grid">
-
-    <!-- 1. Solo Traveler -->
-    <div class="tier-card">
-        <div class="tier-header solo">
-            <i class="fas fa-user"></i>
-            <h3>Solo Traveler</h3>
-            <span>Kwa Mtu Mmoja</span>
-        </div>
-        <div class="tier-body">
-            <div class="tier-loyalty"><i class="fas fa-quote-left"></i> "Karibu kwenye familia yetu. Wewe ni sehemu ya UNP TOURS."</div>
-            <p>Uzoefu wa kipekee kwa mtu mmoja anayetaka kuchunguza Zanzibar kwa uhuru wake.</p>
-            <ul class="tier-features">
-                <li><i class="fas fa-check"></i> City Tour ya Kibinafsi</li>
-                <li><i class="fas fa-check"></i> Safari Blue (Nusu siku)</li>
-                <li><i class="fas fa-check"></i> Guide wa Kibinafsi</li>
-            </ul>
-            <div class="tier-note"><i class="fas fa-info-circle"></i> Bei itatolewa kulingana na mahitaji yako.</div>
-            <a href="booking.html?tier=Solo" class="btn-primary btn-full"><i class="fas fa-paper-plane"></i> Omba Bei</a>
-        </div>
-    </div>
-
-    <!-- 2. Couple / Honeymoon -->
-    <div class="tier-card">
-        <div class="tier-header couple">
-            <i class="fas fa-heart"></i>
-            <h3>Couple / Honeymoon</h3>
-            <span>Kwa Wanandoa na Wapenzi</span>
-        </div>
-        <div class="tier-body">
-            <div class="tier-loyalty"><i class="fas fa-quote-left"></i> "Upendo wenu ni wa kipekee. Karibu kwenye familia ya UNP."</div>
-            <p>Uzoefu wa kimapenzi kwa wanandoa wanaotaka kukumbuka safari yao maisha yote.</p>
-            <ul class="tier-features">
-                <li><i class="fas fa-check"></i> Romantic Beach Dinner</li>
-                <li><i class="fas fa-check"></i> Sunset Cruise</li>
-                <li><i class="fas fa-check"></i> Couple Spa & Massage</li>
-            </ul>
-            <div class="tier-note"><i class="fas fa-info-circle"></i> Bei itatolewa kulingana na mahitaji yako.</div>
-            <a href="booking.html?tier=Couple" class="btn-primary btn-full"><i class="fas fa-paper-plane"></i> Omba Bei</a>
-        </div>
-    </div>
-
-    <!-- 3. Family Small -->
-    <div class="tier-card">
-        <div class="tier-header family-small">
-            <i class="fas fa-users"></i>
-            <h3>Family (Small)</h3>
-            <span>Familia Ndogo (Watu 3-5)</span>
-        </div>
-        <div class="tier-body">
-            <div class="tier-loyalty"><i class="fas fa-quote-left"></i> "Familia yako ni yetu. Karibu kwenye familia ya UNP."</div>
-            <p>Uzoefu wa familia kwa familia ndogo wanaotaka kufurahia pamoja.</p>
-            <ul class="tier-features">
-                <li><i class="fas fa-check"></i> Jozani Forest</li>
-                <li><i class="fas fa-check"></i> Safari Blue (Siku nzima)</li>
-                <li><i class="fas fa-check"></i> Family Dinner</li>
-            </ul>
-            <div class="tier-note"><i class="fas fa-info-circle"></i> Bei itatolewa kulingana na mahitaji yako.</div>
-            <a href="booking.html?tier=Family-Small" class="btn-primary btn-full"><i class="fas fa-paper-plane"></i> Omba Bei</a>
-        </div>
-    </div>
-
-    <!-- 4. Family Large -->
-    <div class="tier-card">
-        <div class="tier-header family-large">
-            <i class="fas fa-users-cog"></i>
-            <h3>Family (Large)</h3>
-            <span>Familia Kubwa (Watu 6+)</span>
-        </div>
-        <div class="tier-body">
-            <div class="tier-loyalty"><i class="fas fa-quote-left"></i> "Familia kubwa, furaha kubwa. Karibu kwenye familia ya UNP."</div>
-            <p>Uzoefu wa familia kubwa kwa familia zinazotaka kufurahia pamoja kwa siku nyingi.</p>
-            <ul class="tier-features">
-                <li><i class="fas fa-check"></i> Safari ya Siku 3+</li>
-                <li><i class="fas fa-check"></i> Villa ya Kifahari</li>
-                <li><i class="fas fa-check"></i> Private Chef</li>
-            </ul>
-            <div class="tier-note"><i class="fas fa-info-circle"></i> Bei itatolewa kulingana na mahitaji yako.</div>
-            <a href="booking.html?tier=Family-Large" class="btn-primary btn-full"><i class="fas fa-paper-plane"></i> Omba Bei</a>
-        </div>
-    </div>
-
-    <!-- 5. Executive / Business -->
-    <div class="tier-card">
-        <div class="tier-header executive">
-            <i class="fas fa-user-tie"></i>
-            <h3>Executive / Business</h3>
-            <span>Kwa Wafanyabiashara na Viongozi</span>
-        </div>
-        <div class="tier-body">
-            <div class="tier-loyalty"><i class="fas fa-quote-left"></i> "Muda wako ni wa thamani. Karibu kwenye familia ya UNP."</div>
-            <p>Uzoefu wa kifahari kwa wafanyabiashara na viongozi wanaotaka faragha na huduma za haraka.</p>
-            <ul class="tier-features">
-                <li><i class="fas fa-check"></i> VIP Airport Transfers</li>
-                <li><i class="fas fa-check"></i> Business Lounge</li>
-                <li><i class="fas fa-check"></i> 24/7 Concierge</li>
-            </ul>
-            <div class="tier-note"><i class="fas fa-info-circle"></i> Bei itatolewa kulingana na mahitaji yako.</div>
-            <a href="booking.html?tier=Executive" class="btn-primary btn-full"><i class="fas fa-paper-plane"></i> Omba Bei</a>
-        </div>
-    </div>
-
-    <!-- 6. Royal / Celebrity -->
-    <div class="tier-card">
-        <div class="tier-header royal">
-            <i class="fas fa-crown"></i>
-            <h3>Royal / Celebrity</h3>
-            <span>Kwa Matajiri na Celebrities</span>
-        </div>
-        <div class="tier-body">
-            <div class="tier-loyalty"><i class="fas fa-quote-left"></i> "Wewe ni wa kipekee. Karibu kwenye familia ya kifalme ya UNP."</div>
-            <p>Uzoefu wa kifahari wa hali ya juu kwa wateja wa kipekee wanaotaka faragha kamili na huduma za kifalme.</p>
-            <ul class="tier-features">
-                <li><i class="fas fa-check"></i> Private Jet Charter</li>
-                <li><i class="fas fa-check"></i> Yacht ya Kibinafsi</li>
-                <li><i class="fas fa-check"></i> Butler 24/7</li>
-            </ul>
-            <div class="tier-note"><i class="fas fa-info-circle"></i> Bei itatolewa kulingana na mahitaji yako.</div>
-            <a href="booking.html?tier=Royal" class="btn-primary btn-full"><i class="fas fa-paper-plane"></i> Omba Bei</a>
-        </div>
-    </div>
-
-    <!-- 7. Government / Diplomatic -->
-    <div class="tier-card">
-        <div class="tier-header government">
-            <i class="fas fa-landmark"></i>
-            <h3>Government / Diplomatic</h3>
-            <span>Kwa Viongozi wa Serikali na Mabalozi</span>
-        </div>
-        <div class="tier-body">
-            <div class="tier-loyalty"><i class="fas fa-quote-left"></i> "Tunakuheshimu kwa heshima ya kitaifa. Karibu kwenye familia ya UNP."</div>
-            <p>Uzoefu wa kifahari na wa heshima kwa viongozi wa serikali, mabalozi, na wageni wa kitaifa.</p>
-            <ul class="tier-features">
-                <li><i class="fas fa-check"></i> VIP Security & Escort</li>
-                <li><i class="fas fa-check"></i> Government Protocol</li>
-                <li><i class="fas fa-check"></i> 100% Discretion</li>
-            </ul>
-            <div class="tier-note"><i class="fas fa-info-circle"></i> Bei itatolewa kulingana na mahitaji yako.</div>
-            <a href="booking.html?tier=Government" class="btn-primary btn-full"><i class="fas fa-paper-plane"></i> Omba Bei</a>
-        </div>
-    </div>
-
-    <!-- 8. King / Queen -->
-    <div class="tier-card">
-        <div class="tier-header king">
-            <i class="fas fa-crown"></i>
-            <h3>King / Queen</h3>
-            <span>Kwa Wafalme na Malkia</span>
-        </div>
-        <div class="tier-body">
-            <div class="tier-loyalty"><i class="fas fa-quote-left"></i> "Utukufu wa kifalme unakufaa. Karibu kwenye familia ya kifalme ya UNP."</div>
-            <p>Uzoefu wa kifalme wa hali ya juu kwa wafalme, malkia, na wateja wa damu ya kifalme.</p>
-            <ul class="tier-features">
-                <li><i class="fas fa-check"></i> Royal Palace Accommodation</li>
-                <li><i class="fas fa-check"></i> Private Jet & Yacht</li>
-                <li><i class="fas fa-check"></i> Royal Butler 24/7</li>
-            </ul>
-            <div class="tier-note"><i class="fas fa-info-circle"></i> Bei itatolewa kulingana na mahitaji yako.</div>
-            <a href="booking.html?tier=King" class="btn-primary btn-full"><i class="fas fa-paper-plane"></i> Omba Bei</a>
-        </div>
-    </div>
-
-    <!-- 9. President / Head of State -->
-    <div class="tier-card">
-        <div class="tier-header president">
-            <i class="fas fa-flag"></i>
-            <h3>President / Head of State</h3>
-            <span>Kwa Marais na Wakuu wa Nchi</span>
-        </div>
-        <div class="tier-body">
-            <div class="tier-loyalty"><i class="fas fa-quote-left"></i> "Tunakupokea kwa heshima ya kitaifa. Karibu kwenye familia ya UNP."</div>
-            <p>Uzoefu wa kifahari na wa heshima ya kitaifa kwa marais, wakuu wa nchi, na wageni wa heshima wa kitaifa.</p>
-            <ul class="tier-features">
-                <li><i class="fas fa-check"></i> Presidential Suite</li>
-                <li><i class="fas fa-check"></i> National Security Escort</li>
-                <li><i class="fas fa-check"></i> State Protocol & Ceremony</li>
-            </ul>
-            <div class="tier-note"><i class="fas fa-info-circle"></i> Bei itatolewa kulingana na mahitaji yako.</div>
-            <a href="booking.html?tier=President" class="btn-primary btn-full"><i class="fas fa-paper-plane"></i> Omba Bei</a>
-        </div>
-    </div>
-
-    <!-- 10. Divine / God Tier -->
-    <div class="tier-card">
-        <div class="tier-header divine">
-            <i class="fas fa-sun"></i>
-            <h3>Divine / God Tier</h3>
-            <span>Kwa Mungu na Miungu</span>
-        </div>
-        <div class="tier-body">
-            <div class="tier-loyalty"><i class="fas fa-quote-left"></i> "Wewe ni wa milele. Karibu nyumbani."</div>
-            <p>Uzoefu wa milele na wa kiroho kwa Mungu, miungu, na wageni wa hali ya juu kabisa. Tunakupokea kwa heshima ya milele.</p>
-            <ul class="tier-features">
-                <li><i class="fas fa-check"></i> Eternal Welcome Ceremony</li>
-                <li><i class="fas fa-check"></i> Divine Sanctuary (Private Island)</li>
-                <li><i class="fas fa-check"></i> Absolute Discretion</li>
-            </ul>
-            <div class="tier-note"><i class="fas fa-info-circle"></i> Bei itatolewa kulingana na mahitaji yako.</div>
-            <a href="booking.html?tier=Divine" class="btn-primary btn-full"><i class="fas fa-paper-plane"></i> Omba Bei</a>
-        </div>
-    </div>
-
+<!-- 1. PRICING TABLE -->
+<section class="widget-container">
+    <h2 class="widget-title"><i class="fas fa-layer-group" style="color: var(--royal-gold);"></i> Madaraja Yetu</h2>
+    <div class="elfsight-app-d4f9fe3e-824a-41a6-95e3-523908e5ca40" data-elfsight-app-lazy></div>
 </section>
 
-<!-- HOW IT WORKS -->
-<section class="interactive-box" style="max-width: 800px;">
-    <h2><i class="fas fa-info-circle"></i> Jinsi Inavyofanya Kazi</h2>
-    <div class="vip-features" style="margin-top: 20px;">
-        <div class="vip-card-mini">
-            <i class="fas fa
+<!-- 2. CALCULATOR -->
+<section class="widget-container">
+    <h2 class="widget-title"><i class="fas fa-calculator" style="color: var(--royal-gold);"></i> Kikokotoo cha Bei</h2>
+    <div class="elfsight-app-2b97f297-e39c-43eb-a26d-1d6d6bd6c1db" data-elfsight-app-lazy></div>
+</section>
+
+<!-- 3. CURRENCY CONVERTER -->
+<section class="widget-container">
+    <h2 class="widget-title"><i class="fas fa-exchange-alt" style="color: var(--royal-gold);"></i> Kubadilisha Fedha</h2>
+    <div id="currency-converter-container" style="text-align: center; padding: 20px; background: #fff; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
+        <label style="display: block; font-weight: 600; margin-bottom: 10px; color: var(--dark-green);">Badilisha USD kwenda TZS:</label>
+        <input type="number" id="usd-input" placeholder="Weka kiasi cha USD" style="padding: 10px; width: 200px; border: 1px solid #ddd; border-radius: 5px; margin-bottom: 10px;">
+        <button onclick="convertCurrency()" style="background: var(--royal-gold); color: var(--dark-green); border: none; padding: 10px 20px; border-radius: 5px; font-weight: 700; cursor: pointer;">Badilisha</button>
+        <p id="converted-amount" style="font-size: 1.3rem; font-weight: 700; color: var(--royal-green); margin-top: 15px;"></p>
+    </div>
+</section>
+
+<!-- 4. COUNTDOWN TIMER -->
+<section class="widget-container">
+    <h2 class="widget-title"><i class="fas fa-clock" style="color: var(--royal-gold);"></i> Ofa Inaisha Hivi Karibuni</h2>
+    <div class="elfsight-app-e270d082-7e77-418a-bde2-cb731b20abc8" data-elfsight-app-lazy></div>
+</section>
+
+<!-- 5. SPINNING WHEEL -->
+<section class="widget-container">
+    <h2 class="widget-title"><i class="fas fa-gift" style="color: var(--royal-gold);"></i> Piga Gurudumu la Bahati!</h2>
+    <div class="elfsight-app-cc1a71d2-195c-44dc-8895-f3e292290416" data-elfsight-app-lazy></div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer-content">
+        <div>
+            <h3>UNIQUE NATURE PARADISE (UNP)</h3>
+            <p style="font-size: 0.9rem;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p>
+        </div>
+        <div>
+            <h4>Direct Contact</h4>
+            <p style="font-size: 0.9rem;"><i class="fab fa-whatsapp" style="color: var(--royal-gold);"></i> +255 655 728 982</p>
+            <p style="font-size: 0.9rem;"><i class="fas fa-envelope" style="color: var(--royal-gold);"></i> salimnasoro11@gmail.com</p>
+            <div class="social-links">
+                <a href="https://wa.me/255655728982" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.tiktok.com/@unptours" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.instagram.com/unpsoulvoyoge" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61595094232501" target="_blank"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- SOCIAL SHARING BUTTONS -->
+    <div style="text-align: center; margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.2);">
+        <p style="color: var(--royal-gold); font-size: 0.9rem; margin-bottom: 10px;">Shiriki UNP TOURS:</p>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://unp.tours" target="_blank" style="display: inline-block; margin: 0 5px; color: var(--royal-gold); font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
+        <a href="https://twitter.com/intent/tweet?url=https://unp.tours" target="_blank" style="display: inline-block; margin: 0 5px; color: var(--royal-gold); font-size: 1.5rem;"><i class="fab fa-twitter"></i></a>
+        <a href="https://wa.me/?text=Check%20out%20UNP%20TOURS!%20https://unp.tours" target="_blank" style="display: inline-block; margin: 0 5px; color: var(--royal-gold); font-size: 1.5rem;"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://unp.tours" target="_blank" style="display: inline-block; margin: 0 5px; color: var(--royal-gold); font-size: 1.5rem;"><i class="fab fa-linkedin"></i></a>
+        <a href="https://t.me/share/url?url=https://unp.tours" target="_blank" style="display: inline-block; margin: 0 5px; color: var(--royal-gold); font-size: 1.5rem;"><i class="fab fa-telegram"></i></a>
+    </div>
+</footer>
+
+<a href="https://wa.me/255655728982" class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<!-- TAWK.TO LIVE CHAT -->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6ab95c20dade22344616d64e/1k3i0vorc';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+
+<script>
+  // MENU TOGGLE
+  const menuToggleBtn = document.getElementById('menuToggleBtn');
+  const navLinks = document.getElementById('navLinks');
+  if(menuToggleBtn) { menuToggleBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); }); }
+
+  // CURRENCY CONVERTER LOGIC
+  async function convertCurrency() {
+      const usdInput = document.getElementById('usd-input').value;
+      const resultElement = document.getElementById('converted-amount');
+
+      if (!usdInput || usdInput <= 0) {
+          resultElement.textContent = "Tafadhali weka kiasi sahihi cha USD.";
+          resultElement.style.color = "#dc3545";
+          return;
+      }
+
+      try {
+          const response = await fetch('https://v6.exchangerate-api.com/v6/7063710b57f6c67820dc9048/latest/USD');
+          const data = await response.json();
+          const tzsRate = data.conversion_rates.TZS;
+          const converted = (usdInput * tzsRate).toFixed(0);
+          resultElement.textContent = `${usdInput} USD = ${converted} TZS`;
+          resultElement.style.color = "var(--royal-green)";
+      } catch (error) {
+          resultElement.textContent = "Kuna hitilafu. Tafadhali jaribu tena.";
+          resultElement.style.color = "#dc3545";
+      }
+  }
+</script>
+
+</body>
+                                                                                  </html>
