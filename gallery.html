@@ -8,12 +8,9 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
 
-<!-- ==========================================
-     SEO META TAGS
-     ========================================== -->
+<!-- SEO META TAGS -->
 <meta name="description" content="Gallery ya UNP TOURS - Picha za Zanzibar, Tanzania, safari, na uzoefu wa kifahari.">
-<meta name="keywords" content="Zanzibar gallery, Zanzibar photos, Tanzania safari photos, Stone Town images, Jozani forest">
-<meta name="author" content="UNP TOURS Zanzibar">
+<meta name="keywords" content="Zanzibar gallery, Zanzibar photos, Tanzania safari photos">
 <meta name="robots" content="index, follow">
 
 <!-- Open Graph -->
@@ -22,290 +19,177 @@
 <meta property="og:image" content="https://unp.tours/images/logo.png">
 <meta property="og:url" content="https://unp.tours/gallery.html">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="UNP TOURS">
 
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Gallery | UNP TOURS Zanzibar">
-<meta name="twitter:description" content="Chungulia uzuri wa Zanzibar na Tanzania kupitia picha zetu.">
-<meta name="twitter:image" content="https://unp.tours/images/logo.png">
-
-<!-- Canonical -->
-<link rel="canonical" href="https://unp.tours/gallery.html">
-
-<!-- Geo Tags -->
-<meta name="geo.region" content="TZ-07">
-<meta name="geo.placename" content="Zanzibar">
-<meta name="geo.position" content="-6.165917;39.202641">
-<meta name="ICBM" content="-6.165917, 39.202641">
+<!-- ELFSIGHT PLATFORM -->
+<script src="https://elfsightcdn.com/platform.js" async></script>
 
 <style>
-    /* ==========================================
-       GALLERY PAGE GRID
-       ========================================== */
-    .gallery-page-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 15px;
-        max-width: 1200px;
-        margin: 30px auto;
-        padding: 0 20px;
+    :root {
+        --royal-green: #064e3b;
+        --dark-green: #032b1a;
+        --royal-gold: #d4af37;
+        --light-bg: #f8f9fa;
     }
-    .gallery-page-item {
-        position: relative;
-        width: 100%;
-        height: 250px;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        background-color: #e2e8f0;
-        cursor: pointer;
-        transition: transform 0.3s ease;
-    }
-    .gallery-page-item:hover {
-        transform: scale(1.02);
-        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    }
-    .gallery-page-item img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.5s ease;
-    }
-    .gallery-page-item:hover img {
-        transform: scale(1.1);
-    }
-    .gallery-overlay {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: linear-gradient(to top, rgba(3, 43, 26, 0.9), transparent);
-        color: #fff;
-        padding: 20px 15px 10px 15px;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
-    .gallery-page-item:hover .gallery-overlay {
-        opacity: 1;
-    }
-    .gallery-overlay h4 {
-        margin: 0;
-        font-size: 1rem;
-        color: var(--royal-gold);
-    }
-    .gallery-overlay p {
-        margin: 5px 0 0 0;
-        font-size: 0.8rem;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body { background-color: var(--light-bg); color: #333; line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
 
-    /* Lightbox */
-    .lightbox {
-        display: none;
-        position: fixed;
-        top: 0; left: 0;
-        width: 100%; height: 100%;
-        background: rgba(0,0,0,0.9);
-        z-index: 2000;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
-    }
-    .lightbox img {
-        max-width: 90%;
-        max-height: 80%;
-        border-radius: 10px;
-        box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
-    }
-    .lightbox .close-btn {
-        position: absolute;
-        top: 20px;
-        right: 30px;
-        color: #fff;
-        font-size: 40px;
-        cursor: pointer;
-        transition: color 0.3s;
-    }
-    .lightbox .close-btn:hover {
-        color: var(--royal-gold);
-    }
-    .lightbox .caption {
-        position: absolute;
-        bottom: 30px;
-        color: #fff;
-        font-size: 1.2rem;
-        text-align: center;
-        width: 100%;
-        color: var(--royal-gold);
-    }
+    /* HEADER */
+    .top-bar { background: var(--dark-green); padding: 8px 20px; display: flex; justify-content: flex-end; align-items: center; gap: 15px; }
+    .header { background: var(--royal-green); padding: 15px 20px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .logo-area { display: flex; align-items: center; gap: 15px; }
+    .logo-holder { width: 60px; height: 60px; border: 2px dashed var(--royal-gold); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+    .logo-fallback { color: var(--royal-gold); font-weight: 700; font-size: 0.7rem; text-align: center; line-height: 1.1; }
+    .logo-text h2 { color: #fff; font-size: 1.3rem; font-weight: 700; }
+    .logo-text span { color: var(--royal-gold); font-size: 0.8rem; }
+    .nav-links { display: flex; gap: 20px; list-style: none; }
+    .nav-links a { color: #fff; font-size: 0.85rem; transition: color 0.3s; display: flex; align-items: center; gap: 5px; }
+    .nav-links a:hover { color: var(--royal-gold); }
+    .menu-toggle { display: none; background: none; border: none; color: var(--royal-gold); font-size: 26px; cursor: pointer; }
 
-    /* Mobile Menu Iliyoboreshwa */
+    /* HERO */
+    .hero { background: linear-gradient(135deg, var(--dark-green), var(--royal-green)); color: #fff; text-align: center; padding: 70px 20px; }
+    .hero h1 { font-size: 2rem; color: var(--royal-gold); margin-bottom: 10px; }
+    .hero p { font-size: 1rem; color: #ddd; max-width: 700px; margin: 0 auto; }
+
+    /* WIDGET CONTAINERS */
+    .widget-container { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
+    .widget-title { text-align: center; font-size: 1.8rem; color: var(--royal-green); margin-bottom: 20px; }
+
+    /* FOOTER */
+    .footer { background: var(--dark-green); color: #fff; padding: 40px 20px; margin-top: 40px; }
+    .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+    .footer h3, .footer h4 { color: var(--royal-gold); margin-bottom: 15px; }
+    .social-links { display: flex; gap: 15px; margin-top: 15px; }
+    .social-links a { color: var(--royal-gold); font-size: 1.2rem; transition: transform 0.3s; }
+
+    /* FLOATING WHATSAPP */
+    .floating-whatsapp { position: fixed; bottom: 25px; right: 25px; background: #25d366; color: #fff; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 1100; }
+
     @media (max-width: 768px) {
-        .menu-toggle { display: block; font-size: 26px; }
-        .nav-links {
-            display: none; flex-direction: column; width: 100%;
-            background: linear-gradient(135deg, var(--dark-green), var(--royal-green));
-            padding: 20px 15px; gap: 5px;
-            border-radius: 0 0 15px 15px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            animation: slideDown 0.3s ease;
-        }
+        .menu-toggle { display: block; }
+        .nav-links { display: none; flex-direction: column; width: 100%; background: var(--dark-green); padding: 20px; position: absolute; top: 80px; left: 0; z-index: 999; }
         .nav-links.active { display: flex; }
-        .nav-links li { width: 100%; }
-        .nav-links a {
-            display: flex; align-items: center; gap: 12px;
-            padding: 12px 15px; border-radius: 8px;
-            font-size: 1rem; transition: all 0.3s;
-        }
-        .nav-links a:hover { background: rgba(212, 175, 55, 0.15); padding-left: 20px; }
-        .nav-links a i { color: var(--royal-gold); font-size: 1.1rem; width: 20px; text-align: center; }
-    }
-    @keyframes slideDown {
-        from { opacity: 0; transform: translateY(-10px); }
-        to { opacity: 1; transform: translateY(0); }
     }
 </style>
 </head>
 <body>
 
-<!-- TOP BAR & HEADER -->
-<div class="top-bar">
-<div class="lang-container">
-<i class="fas fa-globe"></i>
-<select class="lang-select"><option value="sw">Kiswahili</option><option value="en">English</option></select>
-</div>
-</div>
+<!-- TOP BAR -->
+<div class="top-bar"></div>
 
+<!-- HEADER -->
 <header class="header">
-<div class="nav-container">
-<a href="index.html" class="logo-area">
-<div class="logo-holder"><img src="images/logo.png" alt="UNP Tours Logo" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=logo-fallback>UNP<br>LOGO</span>';"></div>
-<div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
-</a>
-<button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
-<ul class="nav-links" id="navLinks">
-<li><a href="index.html"><i class="fas fa-home"></i> Nyumbani</a></li>
-<li><a href="about.html"><i class="fas fa-info-circle"></i> Kuhusu Sisi</a></li>
-<li><a href="services.html"><i class="fas fa-briefcase"></i> Huduma</a></li>
-<li><a href="gallery.html" style="color: var(--royal-gold);"><i class="fas fa-images"></i> Gallery</a></li>
-<li><a href="pricing.html"><i class="fas fa-layer-group"></i> Madaraja</a></li>
-<li><a href="events.html"><i class="fas fa-calendar-alt"></i> Matukio</a></li>
-<li><a href="partners.html"><i class="fas fa-handshake"></i> Washirika</a></li>
-<li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
-<li><a href="contact.html"><i class="fas fa-envelope"></i> Wasiliana</a></li>
-</ul>
-</div>
+    <div class="nav-container">
+        <a href="index.html" class="logo-area">
+            <div class="logo-holder"><span class="logo-fallback">UNP<br>LOGO</span></div>
+            <div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
+        </a>
+        <button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html"><i class="fas fa-home"></i> Nyumbani</a></li>
+            <li><a href="about.html"><i class="fas fa-info-circle"></i> Kuhusu Sisi</a></li>
+            <li><a href="services.html"><i class="fas fa-briefcase"></i> Huduma</a></li>
+            <li><a href="gallery.html" style="color: var(--royal-gold);"><i class="fas fa-images"></i> Gallery</a></li>
+            <li><a href="pricing.html"><i class="fas fa-layer-group"></i> Madaraja</a></li>
+            <li><a href="events.html"><i class="fas fa-calendar-alt"></i> Matukio</a></li>
+            <li><a href="partners.html"><i class="fas fa-handshake"></i> Washirika</a></li>
+            <li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Wasiliana</a></li>
+        </ul>
+    </div>
 </header>
 
-<!-- HERO SECTION -->
-<section class="hero" style="padding: 70px 20px;">
-<h1 style="font-size: 2rem;">Gallery Yetu</h1>
-<p>Chungulia uzuri wa Zanzibar na Tanzania kupitia picha zetu za kuvutia.</p>
+<!-- HERO -->
+<section class="hero">
+    <h1>Gallery Yetu</h1>
+    <p>Chungulia uzuri wa Zanzibar na Tanzania kupitia picha na video zetu.</p>
 </section>
 
-<!-- GALLERY GRID -->
-<section class="gallery-page-grid">
+<!-- ==================== WIDGETS ZA ELFSIGHT ==================== -->
 
-    <div class="gallery-page-item" onclick="openLightbox('images/gallery1.jpg', 'Zanzibar Beach')">
-        <img src="images/gallery1.jpg" alt="Zanzibar Beach" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=img-fallback style=display:flex;align-items:center;justify-content:center;height:100%;>gallery1.jpg</div>';">
-        <div class="gallery-overlay">
-            <h4>Zanzibar Beach</h4>
-            <p>Ufukwe mzuri wa Zanzibar</p>
-        </div>
-    </div>
-
-    <div class="gallery-page-item" onclick="openLightbox('images/gallery2.jpg', 'Stone Town')">
-        <img src="images/gallery2.jpg" alt="Stone Town" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=img-fallback style=display:flex;align-items:center;justify-content:center;height:100%;>gallery2.jpg</div>';">
-        <div class="gallery-overlay">
-            <h4>Stone Town</h4>
-            <p>Mji wa kihistoria wa Zanzibar</p>
-        </div>
-    </div>
-
-    <div class="gallery-page-item" onclick="openLightbox('images/gallery3.jpg', 'Safari Adventure')">
-        <img src="images/gallery3.jpg" alt="Safari" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=img-fallback style=display:flex;align-items:center;justify-content:center;height:100%;>gallery3.jpg</div>';">
-        <div class="gallery-overlay">
-            <h4>Safari Adventure</h4>
-            <p>Wanyama pori wa Tanzania</p>
-        </div>
-    </div>
-
-    <div class="gallery-page-item" onclick="openLightbox('images/gallery4.jpg', 'Jozani Forest')">
-        <img src="images/gallery4.jpg" alt="Jozani Forest" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=img-fallback style=display:flex;align-items:center;justify-content:center;height:100%;>gallery4.jpg</div>';">
-        <div class="gallery-overlay">
-            <h4>Jozani Forest</h4>
-            <p>Msitu wa Jozani na Red Monkeys</p>
-        </div>
-    </div>
-
-    <div class="gallery-page-item" onclick="openLightbox('images/gallery5.jpg', 'Sunset Dinner')">
-        <img src="images/gallery5.jpg" alt="Sunset Dinner" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=img-fallback style=display:flex;align-items:center;justify-content:center;height:100%;>gallery5.jpg</div>';">
-        <div class="gallery-overlay">
-            <h4>Sunset Dinner</h4>
-            <p>Chakula cha jioni cha kimapenzi</p>
-        </div>
-    </div>
-
-    <div class="gallery-page-item" onclick="openLightbox('images/gallery6.jpg', 'Water Sports')">
-        <img src="images/gallery6.jpg" alt="Water Sports" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=img-fallback style=display:flex;align-items:center;justify-content:center;height:100%;>gallery6.jpg</div>';">
-        <div class="gallery-overlay">
-            <h4>Water Sports</h4>
-            <p>Jet Ski na shughuli za majini</p>
-        </div>
-    </div>
-
+<!-- 1. PHOTO GALLERY -->
+<section class="widget-container">
+    <h2 class="widget-title"><i class="fas fa-camera" style="color: var(--royal-gold);"></i> Picha Zetu</h2>
+    <div class="elfsight-app-5efa6470-fec0-4598-8f33-bdcb4f78ec90" data-elfsight-app-lazy></div>
 </section>
 
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox">
-    <span class="close-btn" onclick="closeLightbox()">&times;</span>
-    <img id="lightbox-img" src="" alt="Picha">
-    <div class="caption" id="lightbox-caption"></div>
-</div>
+<!-- 2. VIDEO GALLERY -->
+<section class="widget-container">
+    <h2 class="widget-title"><i class="fas fa-video" style="color: var(--royal-gold);"></i> Video Zetu</h2>
+    <div class="elfsight-app-e817e7ee-16af-4160-b44e-c44aaa5fcf2a" data-elfsight-app-lazy></div>
+</section>
 
-<!-- CALL TO ACTION -->
-<section class="interactive-box" style="text-align: center; background: linear-gradient(135deg, var(--dark-green), var(--royal-green)); color: #fff;">
-<h2 style="color: var(--royal-gold);">Uko Tayari Kuona Zanzibar Kwa Macho Yako?</h2>
-<p style="color: #ddd; margin-bottom: 20px;">Weka nafasi yako leo na uje kuona uzuri huu kwa macho yako mwenyewe.</p>
-<a href="booking.html" class="btn-primary"><i class="fas fa-calendar-check"></i> Omba Bei Sasa</a>
+<!-- 3. INSTAGRAM FEED -->
+<section class="widget-container">
+    <h2 class="widget-title"><i class="fab fa-instagram" style="color: var(--royal-gold);"></i> Instagram Yetu</h2>
+    <div class="elfsight-app-d5d47051-0b28-4cb2-a3c2-cd63dcef607b" data-elfsight-app-lazy></div>
+</section>
+
+<!-- 4. BEFORE & AFTER SLIDER -->
+<section class="widget-container">
+    <h2 class="widget-title"><i class="fas fa-exchange-alt" style="color: var(--royal-gold);"></i> Kabla na Baada</h2>
+    <div class="elfsight-app-28d05637-48af-4c59-9533-79e30463718f" data-elfsight-app-lazy></div>
+</section>
+
+<!-- 5. SLIDER -->
+<section class="widget-container">
+    <h2 class="widget-title"><i class="fas fa-images" style="color: var(--royal-gold);"></i> Picha Zinazoteleza</h2>
+    <div class="elfsight-app-d1d01709-8342-4383-b8f3-4e7355dc8677" data-elfsight-app-lazy></div>
 </section>
 
 <!-- FOOTER -->
 <footer class="footer">
-<div class="footer-content">
-<div><h3>UNIQUE NATURE PARADISE (UNP)</h3><p style="font-size: 0.9rem; max-width: 350px;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p></div>
-<div><h4>Direct Contact</h4><p style="font-size: 0.9rem; margin-top: 8px;"><i class="fab fa-whatsapp" style="color: var(--royal-gold);"></i> Phone: +255 655 728 982</p><p style="font-size: 0.9rem; margin-top: 5px;"><i class="fas fa-envelope" style="color: var(--royal-gold);"></i> Email: salimnasoro11@gmail.com</p>
-<div class="social-links">
-<a href="https://wa.me/255655728982" target="_blank"><i class="fab fa-whatsapp"></i></a>
-<a href="mailto:salimnasoro11@gmail.com"><i class="fas fa-envelope"></i></a>
-<a href="https://www.tiktok.com/@unptours" target="_blank"><i class="fab fa-tiktok"></i></a>
-<a href="https://www.instagram.com/unpsoulvoyoge" target="_blank"><i class="fab fa-instagram"></i></a>
-<a href="https://www.facebook.com/profile.php?id=61595094232501" target="_blank"><i class="fab fa-facebook"></i></a>
-</div></div>
-</div>
+    <div class="footer-content">
+        <div>
+            <h3>UNIQUE NATURE PARADISE (UNP)</h3>
+            <p style="font-size: 0.9rem;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p>
+        </div>
+        <div>
+            <h4>Direct Contact</h4>
+            <p style="font-size: 0.9rem;"><i class="fab fa-whatsapp" style="color: var(--royal-gold);"></i> +255 655 728 982</p>
+            <p style="font-size: 0.9rem;"><i class="fas fa-envelope" style="color: var(--royal-gold);"></i> salimnasoro11@gmail.com</p>
+            <div class="social-links">
+                <a href="https://wa.me/255655728982" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.tiktok.com/@unptours" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.instagram.com/unpsoulvoyoge" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61595094232501" target="_blank"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- SOCIAL SHARING BUTTONS -->
+    <div style="text-align: center; margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.2);">
+        <p style="color: var(--royal-gold); font-size: 0.9rem; margin-bottom: 10px;">Shiriki UNP TOURS:</p>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://unp.tours" target="_blank" style="display: inline-block; margin: 0 5px; color: var(--royal-gold); font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
+        <a href="https://twitter.com/intent/tweet?url=https://unp.tours" target="_blank" style="display: inline-block; margin: 0 5px; color: var(--royal-gold); font-size: 1.5rem;"><i class="fab fa-twitter"></i></a>
+        <a href="https://wa.me/?text=Check%20out%20UNP%20TOURS!%20https://unp.tours" target="_blank" style="display: inline-block; margin: 0 5px; color: var(--royal-gold); font-size: 1.5rem;"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://unp.tours" target="_blank" style="display: inline-block; margin: 0 5px; color: var(--royal-gold); font-size: 1.5rem;"><i class="fab fa-linkedin"></i></a>
+        <a href="https://t.me/share/url?url=https://unp.tours" target="_blank" style="display: inline-block; margin: 0 5px; color: var(--royal-gold); font-size: 1.5rem;"><i class="fab fa-telegram"></i></a>
+    </div>
 </footer>
 
 <a href="https://wa.me/255655728982" class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
+<!-- TAWK.TO LIVE CHAT -->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6ab95c20dade22344616d64e/1k3i0vorc';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+
 <script>
+  // MENU TOGGLE
   const menuToggleBtn = document.getElementById('menuToggleBtn');
   const navLinks = document.getElementById('navLinks');
   if(menuToggleBtn) { menuToggleBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); }); }
-
-  // LIGHTBOX LOGIC
-  function openLightbox(imageSrc, caption) {
-      const lightbox = document.getElementById('lightbox');
-      document.getElementById('lightbox-img').src = imageSrc;
-      document.getElementById('lightbox-caption').textContent = caption;
-      lightbox.style.display = 'flex';
-  }
-  function closeLightbox() {
-      document.getElementById('lightbox').style.display = 'none';
-  }
-  document.getElementById('lightbox').addEventListener('click', function(e) {
-      if (e.target === this) { closeLightbox(); }
-  });
 </script>
 
 </body>
-    </html>
+                     </html>
