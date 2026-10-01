@@ -1,43 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sw">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Duka | UNP Tours</title>
+<title>Duka | UNP TOURS Zanzibar</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
+
+<!-- SEO META TAGS -->
+<meta name="description" content="Duka la UNP TOURS - Nunua UNP Flame (nguo) na UNP Souvenirs (vitu vya kiutalii) vya kipekee.">
+<meta name="keywords" content="UNP shop, Zanzibar shop, UNP Flame, UNP Souvenirs, Zanzibar souvenirs">
+<meta name="author" content="UNP TOURS Zanzibar">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Duka | UNP TOURS Zanzibar">
+<meta property="og:description" content="Nunua bidhaa zetu za kipekee: UNP Flame na UNP Souvenirs.">
+<meta property="og:image" content="https://unp.tours/images/logo.png">
+<meta property="og:url" content="https://unp.tours/shop.html">
+<meta property="og:type" content="website">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://unp.tours/shop.html">
+
+<!-- ELFSIGHT PLATFORM -->
+<script src="https://elfsightcdn.com/platform.js" async></script>
+
 <style>
-    .page-header {
-        text-align: center; padding: 120px 20px 40px;
-        background: linear-gradient(135deg, #1a3c34, #2c5e4f); color: white;
+    :root {
+        --royal-green: #0077b6;
+        --dark-green: #003049;
+        --royal-gold: #d4af37;
+        --gold-light: #f0c75e;
+        --light-bg: #f8f9fa;
+        --white: #ffffff;
+        --text-dark: #1e293b;
     }
-    .page-header h1 { font-size: 2.5rem; margin-bottom: 10px; }
-    .page-header p { font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+
+    /* PAGE HEADER */
+    .page-header {
+        text-align: center; padding: 100px 20px 40px;
+        background: linear-gradient(135deg, var(--dark-green), var(--royal-green));
+        color: white;
+        border-bottom: 5px solid var(--royal-gold);
+    }
+    .page-header h1 { font-size: 2.5rem; margin-bottom: 10px; color: var(--royal-gold); }
+    .page-header p { font-size: 1.1rem; max-width: 600px; margin: 0 auto; color: #ddd; }
+
     .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
 
+    /* SHOP TABS */
     .shop-tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 40px; flex-wrap: wrap; }
     .shop-tab {
-        padding: 12px 30px; border: 2px solid #1a3c34; background: white;
-        color: #1a3c34; border-radius: 30px; cursor: pointer;
+        padding: 12px 30px; border: 2px solid var(--royal-green); background: white;
+        color: var(--royal-green); border-radius: 30px; cursor: pointer;
         font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 0.95rem;
         transition: all 0.3s;
     }
-    .shop-tab:hover, .shop-tab.active { background: #1a3c34; color: white; }
+    .shop-tab:hover, .shop-tab.active { background: var(--royal-green); color: white; }
     .shop-section { display: none; }
     .shop-section.active { display: block; }
 
-    .section-title { text-align: center; color: #1a3c34; margin-bottom: 10px; font-size: 1.8rem; }
+    /* SECTION TITLE */
+    .section-title { text-align: center; color: var(--royal-green); margin-bottom: 10px; font-size: 1.8rem; }
     .section-subtitle { text-align: center; color: #666; margin-bottom: 30px; }
 
-    .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
+    /* PRODUCTS GRID */
+    .products-grid {
+        display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+    }
     .product-card {
         background: white; border-radius: 15px; overflow: hidden;
         box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-        transition: transform 0.3s;
+        transition: transform 0.3s, box-shadow 0.3s;
         display: flex; flex-direction: column;
+        border-top: 4px solid var(--royal-gold);
     }
-    .product-card:hover { transform: translateY(-5px); }
+    .product-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
     .product-img-wrapper { width: 100%; height: 220px; overflow: hidden; }
     .product-img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s; }
     .product-card:hover .product-img { transform: scale(1.05); }
@@ -46,63 +87,123 @@
         align-items: center; justify-content: center; color: #888; font-size: 0.9rem;
     }
     .product-body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
-    .product-body h3 { color: #1a3c34; font-size: 1.1rem; margin-bottom: 8px; }
+    .product-body h3 { color: var(--dark-green); font-size: 1.1rem; margin-bottom: 8px; }
     .product-body .desc { color: #666; font-size: 0.85rem; line-height: 1.5; margin-bottom: 15px; flex: 1; }
-    .product-price { font-size: 1.3rem; font-weight: 700; color: #c5a059; margin-bottom: 12px; }
+    .product-price { font-size: 1.3rem; font-weight: 700; color: var(--royal-gold); margin-bottom: 12px; }
     .btn-order {
-        display: block; text-align: center; padding: 12px; background: #1a3c34;
+        display: block; text-align: center; padding: 12px; background: var(--royal-green);
         color: white; text-decoration: none; border-radius: 8px;
         font-weight: 600; font-size: 0.9rem; transition: background 0.3s;
     }
-    .btn-order:hover { background: #c5a059; color: #1a3c34; }
+    .btn-order:hover { background: var(--royal-gold); color: var(--dark-green); }
 
+    /* BRAND NOTE */
     .brand-note {
         text-align: center; background: #f9f9f9; padding: 20px;
         border-radius: 10px; margin-bottom: 30px;
-        border-left: 4px solid #c5a059;
+        border-left: 4px solid var(--royal-gold);
     }
     .brand-note p { margin: 0; color: #555; font-size: 0.9rem; }
-    .brand-note strong { color: #1a3c34; }
+    .brand-note strong { color: var(--dark-green); }
+
+    /* FOOTER */
+    .footer {
+        background-color: var(--dark-green);
+        color: #fff; padding: 40px 5% 20px 5%;
+        margin-top: 50px;
+        border-top: 3px solid var(--royal-gold);
+    }
+    .footer-content {
+        display: flex; justify-content: space-between;
+        flex-wrap: wrap; gap: 30px;
+        max-width: 1200px; margin: 0 auto;
+    }
+    .footer h3, .footer h4 { color: var(--royal-gold); margin-bottom: 10px; }
+    .social-links { margin-top: 15px; display: flex; gap: 15px; }
+    .social-links a { font-size: 22px; color: var(--royal-gold); transition: color 0.3s, transform 0.3s; }
+    .social-links a:hover { color: #fff; transform: scale(1.2); }
+
+    /* FLOATING WHATSAPP */
+    .floating-whatsapp {
+        position: fixed; bottom: 25px; right: 25px;
+        background-color: #25d366; color: white;
+        width: 60px; height: 60px; border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        z-index: 1000; transition: transform 0.3s;
+    }
+    .floating-whatsapp:hover { transform: scale(1.1); }
+
+    /* CHATBOT */
+    .chatbot-toggle {
+        position: fixed; bottom: 100px; right: 25px;
+        background-color: var(--royal-green); color: var(--royal-gold);
+        width: 60px; height: 60px; border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 28px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        z-index: 1100; cursor: pointer; border: 2px solid var(--royal-gold);
+        transition: transform 0.3s;
+    }
+    .chatbot-toggle:hover { transform: scale(1.1); }
+    .chatbot-container {
+        position: fixed; bottom: 170px; right: 25px;
+        width: 350px; max-width: 90vw; height: 500px;
+        background: #fff; border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        z-index: 1100; display: none; flex-direction: column;
+        overflow: hidden; border: 2px solid var(--royal-gold);
+    }
+    .chatbot-container.active { display: flex; }
+    .chatbot-header { background: var(--royal-green); color: #fff; padding: 15px; display: flex; align-items: center; gap: 10px; border-bottom: 2px solid var(--royal-gold); }
+    .chatbot-header .avatar { width: 40px; height: 40px; background: var(--royal-gold); color: var(--dark-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem; }
+    .chatbot-header h4 { margin: 0; font-size: 1rem; color: #fff; }
+    .chatbot-header span { font-size: 0.75rem; color: #ddd; display: block; }
+    .chatbot-messages { flex-grow: 1; padding: 15px; overflow-y: auto; background: #f9f9f9; display: flex; flex-direction: column; gap: 10px; }
+    .message { max-width: 80%; padding: 10px 15px; border-radius: 15px; font-size: 0.85rem; }
+    .message.bot { background: #e9ecef; align-self: flex-start; }
+    .message.user { background: var(--royal-green); color: #fff; align-self: flex-end; }
+    .chatbot-input { display: flex; padding: 10px; border-top: 1px solid #eee; }
+    .chatbot-input input { flex-grow: 1; padding: 10px; border: 1px solid #ddd; border-radius: 20px; outline: none; font-family: 'Poppins', sans-serif; }
+    .chatbot-input button { background: var(--royal-gold); color: var(--dark-green); border: none; width: 40px; height: 40px; border-radius: 50%; margin-left: 8px; cursor: pointer; font-size: 1rem; }
+
+    /* GTRANSLATE */
+    .gtranslate_wrapper { position: relative; }
+
+    @media (max-width: 768px) {
+        .menu-toggle { display: block; }
+        .nav-links { display: none; flex-direction: column; width: 100%; background-color: var(--royal-green); padding: 15px 0; gap: 10px; }
+        .nav-links.active { display: flex; }
+        .page-header h1 { font-size: 1.8rem; }
+    }
 </style>
 </head>
 <body>
 
+<!-- TOP BAR WITH GTRANSLATE -->
 <div class="top-bar">
-<div class="lang-container">
-<i class="fas fa-globe"></i>
-<select class="lang-select" id="languageSelector">
-<option value="en">English</option>
-<option value="sw">Kiswahili</option>
-</select>
-</div>
+    <div class="gtranslate_wrapper"></div>
 </div>
 
+<!-- HEADER -->
 <header class="header">
-<div class="nav-container">
-<a href="index.html" class="logo-area">
-<div class="logo-holder">
-<img src="logo.png" alt="UNP Tours Logo" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=logo-fallback>UNP<br>LOGO</span>';">
-</div>
-<div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
-</a>
-<button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
-<ul class="nav-links" id="navLinks">
-<li><a href="index.html">Nyumbani</a></li>
-<li><a href="about.html">Kuhusu Sisi</a></li>
-<li><a href="gallery.html">Gallery</a></li>
-<li><a href="pricing.html">Bei</a></li>
-<li><a href="entertainment.html">Entertainment</a></li>
-<li><a href="blog.html">Blog</a></li>
-<li><a href="shop.html">Duka</a></li>
-<li><a href="testimonials.html">Maoni</a></li>
-<li><a href="contact.html">Wasiliana</a></li>
-<li><a href="profile.html">Wasifu</a></li>
-<li><a href="login.html" style="color: #c5a059; font-weight: bold;">Ingia</a></li>
-<li><a href="signup.html" style="background: #c5a059; color: #1a3c34; padding: 8px 15px; border-radius: 5px;">Jiunge</a></li>
-</ul>
-</div>
+    <div class="nav-container">
+        <a href="index.html" class="logo-area">
+            <div class="logo-holder"><span class="logo-fallback">UNP<br>LOGO</span></div>
+            <div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
+        </a>
+        <button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html"><i class="fas fa-home"></i> Nyumbani</a></li>
+            <li><a href="about.html"><i class="fas fa-info-circle"></i> Kuhusu Sisi</a></li>
+            <li><a href="services.html"><i class="fas fa-briefcase"></i> Huduma</a></li>
+            <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+            <li><a href="shop.html" style="color: var(--royal-gold);"><i class="fas fa-shopping-bag"></i> Duka</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Wasiliana</a></li>
+        </ul>
+    </div>
 </header>
 
+<!-- PAGE HEADER -->
 <div class="page-header">
     <h1>Duka Letu</h1>
     <p>Nunua bidhaa zetu za kipekee: UNP Flame (nguo) na UNP Souvenirs (vitu vya kiutalii).</p>
@@ -110,52 +211,117 @@
 
 <div class="container">
 
+    <!-- SHOP TABS -->
     <div class="shop-tabs">
-        <button class="shop-tab active" data-target="flame">UNP FLAME (Nguo)</button>
-        <button class="shop-tab" data-target="souvenirs">UNP SOUVENIRS (Vitu vya Utalii)</button>
+        <button class="shop-tab active" data-target="flame"><i class="fas fa-tshirt"></i> UNP FLAME (Nguo)</button>
+        <button class="shop-tab" data-target="souvenirs"><i class="fas fa-gift"></i> UNP SOUVENIRS (Vitu vya Utalii)</button>
     </div>
 
+    <!-- FLAME SECTION -->
     <div class="shop-section active" id="flame">
         <div class="brand-note">
             <p><strong>UNP FLAME</strong> — Nguo za kifahari zenye muundo wa kipekee wa Zanzibar.</p>
         </div>
-        <h2 class="section-title"><i class="fas fa-tshirt" style="color: #c5a059;"></i> Nguo Zetu</h2>
+        <h2 class="section-title">Nguo Zetu</h2>
         <div class="products-grid" id="flameGrid"></div>
     </div>
 
+    <!-- SOUVENIRS SECTION -->
     <div class="shop-section" id="souvenirs">
         <div class="brand-note">
             <p><strong>UNP SOUVENIRS</strong> — Vitu vya kiutalii vilivyotengenezwa kwa mikono.</p>
         </div>
-        <h2 class="section-title"><i class="fas fa-gift" style="color: #c5a059;"></i> Vitu vya Utalii</h2>
+        <h2 class="section-title">Vitu vya Utalii</h2>
         <div class="products-grid" id="souvenirsGrid"></div>
     </div>
 
 </div>
 
+<!-- FOOTER -->
 <footer class="footer">
-<div class="footer-content">
-<div>
-<h3>UNIQUE NATURE PARADISE (UNP)</h3>
-<p style="font-size: 0.9rem; max-width: 350px;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p>
-</div>
-<div>
-<h4>Direct Contact</h4>
-<p style="font-size: 0.9rem; margin-top: 8px;"><i class="fab fa-whatsapp" style="color: #c5a059;"></i> +255 655 728 982</p>
-<p style="font-size: 0.9rem; margin-top: 5px;"><i class="fas fa-envelope" style="color: #c5a059;"></i> salimnasoro11@gmail.com</p>
-<div class="social-links">
-<a href="https://wa.me/255655728982" target="_blank"><i class="fab fa-whatsapp"></i></a>
-<a href="mailto:salimnasoro11@gmail.com"><i class="fas fa-envelope"></i></a>
-<a href="https://www.tiktok.com/@unptours" target="_blank"><i class="fab fa-tiktok"></i></a>
-<a href="https://www.instagram.com/unpsoulvoyoge" target="_blank"><i class="fab fa-instagram"></i></a>
-<a href="https://www.facebook.com/profile.php?id=61595094232501" target="_blank"><i class="fab fa-facebook"></i></a>
-</div>
-</div>
-</div>
+    <div class="footer-content">
+        <div>
+            <h3>UNIQUE NATURE PARADISE (UNP)</h3>
+            <p style="font-size: 0.9rem; max-width: 350px;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p>
+        </div>
+        <div>
+            <h4>Direct Contact</h4>
+            <p style="font-size: 0.9rem; margin-top: 8px;"><i class="fab fa-whatsapp" style="color: var(--royal-gold);"></i> +255 655 728 982</p>
+            <p style="font-size: 0.9rem; margin-top: 5px;"><i class="fas fa-envelope" style="color: var(--royal-gold);"></i> salimnasoro11@gmail.com</p>
+            <div class="social-links">
+                <a href="https://wa.me/255655728982" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="mailto:salimnasoro11@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.tiktok.com/@unptours" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.instagram.com/unpsoulvoyoge" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=61595094232501" target="_blank"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+    </div>
 </footer>
 
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/255655728982" class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<!-- CHATBOT -->
+<div class="chatbot-toggle" onclick="toggleChatbot()"><i class="fas fa-robot"></i></div>
+<div class="chatbot-container" id="chatbotContainer">
+    <div class="chatbot-header">
+        <div class="avatar">U</div>
+        <div><h4>UNP Assistant</h4><span>Yupo Mtandaoni</span></div>
+        <button onclick="toggleChatbot()" style="margin-left:auto;background:none;border:none;color:#fff;font-size:1.2rem;cursor:pointer;"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="chatbot-messages" id="chatMessages">
+        <div class="message bot">Karibu UNP TOURS! Ninaweza kukusaidia vipi leo?</div>
+    </div>
+    <div class="chatbot-input">
+        <input type="text" id="chatInput" placeholder="Andika ujumbe wako..." onkeypress="handleKeyPress(event)">
+        <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+    </div>
+</div>
+
+<!-- COOKIES BANNER -->
+<div id="cookieBanner" style="position: fixed; bottom: 0; left: 0; right: 0; background: var(--dark-green); color: #fff; padding: 15px; text-align: center; z-index: 9999; display: none;">
+    <p style="margin: 0 0 10px 0; font-size: 0.9rem;">Tunatumia cookies kuboresha uzoefu wako. Kwa kuendelea kutumia website yetu, unakubali <a href="privacy.html" style="color: var(--royal-gold); text-decoration: underline;">Sera zetu za Faragha</a>.</p>
+    <button onclick="acceptCookies()" style="background: var(--royal-gold); color: var(--dark-green); border: none; padding: 8px 20px; border-radius: 5px; font-weight: 700; cursor: pointer;">Nakubali</button>
+</div>
+
+<!-- TAWK.TO LIVE CHAT -->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6ab95c20dade22344616d64e/1k3i0vorc';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+
+<!-- ONESIGNAL PUSH -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
 <script>
-    // Bidhaa za UNP FLAME (Nguo) - Picha za kiwango cha juu
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "e772eb04-4c02-457d-bc15-ad77d7a29d4d",
+    });
+  });
+</script>
+
+<!-- GTRANSLATE SCRIPT -->
+<script>
+window.gtranslateSettings = {
+  "default_language": "sw",
+  "languages": ["sw", "en", "fr", "it", "de", "ru", "ar", "zh-CN"],
+  "wrapper_selector": ".gtranslate_wrapper"
+};
+</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/dropdown.js" defer></script>
+
+<!-- SHOP LOGIC -->
+<script>
+    // Bidhaa za UNP FLAME (Nguo)
     const flameProducts = [
         { name: "T-Shirt ya UNP Flame", desc: "T-shirt nyeusi yenye alama ya UNP. Vitambaa vya pamba vya hali ya juu.", price: "$25", image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&q=80" },
         { name: "Hoodie ya UNP Flame", desc: "Hoodie nzuri ya kifahari yenye joto na muundo wa kipekee.", price: "$45", image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=600&q=80" },
@@ -165,7 +331,7 @@
         { name: "Viatu vya UNP", desc: "Viatu vya kifahari vya Unptours, vya kudumu na vizuri.", price: "$55", image: "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&q=80" }
     ];
 
-    // Bidhaa za UNP SOUVENIRS (Vitu vya Utalii) - Picha za kiwango cha juu
+    // Bidhaa za UNP SOUVENIRS (Vitu vya Utalii)
     const souvenirProducts = [
         { name: "Sanaa ya Banana Leaf", desc: "Sanaa ya mikono iliyotengenezwa kwa majani ya ndizi.", price: "$30", image: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=600&q=80" },
         { name: "Kikapu cha Mkono", desc: "Kikapu kilichotengenezwa kwa mikono na mianzi.", price: "$20", image: "https://images.unsplash.com/photo-1595348020949-87cdfbb44174?w=600&q=80" },
@@ -209,30 +375,16 @@
             document.getElementById(tab.getAttribute('data-target')).classList.add('active');
         });
     });
-</script>
 
-<!-- Firebase Remote Config -->
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
-  import { getRemoteConfig, fetchAndActivate, getValue } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-remote-config.js";
+    // MENU TOGGLE
+    const menuToggleBtn = document.getElementById('menuToggleBtn');
+    const navLinks = document.getElementById('navLinks');
+    if(menuToggleBtn) { menuToggleBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); }); }
 
-  const firebaseConfig = {
-    apiKey: "AIzaSyD2YtPFL2L_ZwAKdSYpXtvLt8gJUm2IX6s",
-    authDomain: "unptours.firebaseapp.com",
-    projectId: "unptours",
-    storageBucket: "unptours.firebasestorage.app",
-    messagingSenderId: "233326851661",
-    appId: "1:233326851661:web:354156110a5cee29904e04",
-    measurementId: "G-5QJ1X38ZLC"
-  };
-
-  const app = initializeApp(firebaseConfig);
-  const remoteConfig = getRemoteConfig(app);
-  remoteConfig.settings.minimumFetchIntervalMillis = 3600000;
-
-  fetchAndActivate(remoteConfig).then(() => {});
-</script>
-
-<script src="script.js"></script>
-</body>
-    </html>
+    // COOKIES BANNER
+    if (!localStorage.getItem('cookiesAccepted')) {
+        document.getElementById('cookieBanner').style.display = 'block';
+    }
+    window.acceptCookies = function() {
+        localStorage.setItem('cookiesAccepted', 'true');
+        document.getElementById('cookieBanner'
