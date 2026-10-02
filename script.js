@@ -176,7 +176,7 @@ backToTop.style.cssText = `
     bottom: 170px;
     right: 25px;
     background-color: var(--royal-gold, #d4af37);
-    color: var(--dark-green, #032b1a);
+    color: var(--deep-navy, #082f49);
     width: 50px;
     height: 50px;
     border-radius: 50%;
