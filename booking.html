@@ -72,6 +72,7 @@
 
         <form id="bookingForm">
 
+            <!-- HATUA 1: CHAGUA DARAJA -->
             <h3 class="form-section-title"><i class="fas fa-layer-group"></i> Hatua 1: Chagua Daraja Lako</h3>
 
             <label class="tier-option">
@@ -164,6 +165,7 @@
                 <span class="tier-badge">Divine</span>
             </label>
 
+            <!-- HATUA 2: TAARIFA ZAKO -->
             <h3 class="form-section-title"><i class="fas fa-user"></i> Hatua 2: Taarifa Zako</h3>
 
             <div class="form-group">
@@ -186,6 +188,7 @@
                 <input type="text" id="guestCountry" placeholder="Mfano: Tanzania, USA" required>
             </div>
 
+            <!-- HATUA 3: TAREHE NA IDADI -->
             <h3 class="form-section-title"><i class="fas fa-calendar-alt"></i> Hatua 3: Tarehe na Idadi</h3>
 
             <div class="form-group">
@@ -222,6 +225,7 @@
                 <textarea id="guestNotes" rows="4" placeholder="Andika mahitaji yako maalum..."></textarea>
             </div>
 
+            <!-- SUBMIT BUTTON -->
             <button type="submit" class="btn-primary btn-full" style="margin-top: 15px;">
                 <i class="fab fa-whatsapp"></i> Tuma Ombi kwa WhatsApp
             </button>
@@ -229,6 +233,7 @@
         </form>
     </section>
 
+    <!-- HELP SECTION -->
     <section class="form-container" style="text-align: center; margin-top: 25px;">
         <h3 style="color: var(--royal-blue); margin-bottom: 10px;"><i class="fas fa-headset"></i> Unahitaji Msaada?</h3>
         <p style="color: #555; margin-bottom: 15px;">Kama una swali lolote, wasiliana nasi moja kwa moja:</p>
@@ -285,10 +290,6 @@
     <p style="margin: 0 0 10px 0; font-size: 0.9rem;">Tunatumia cookies kuboresha uzoefu wako. Kwa kuendelea kutumia website yetu, unakubali <a href="privacy.html" style="color: var(--royal-gold); text-decoration: underline;">Sera zetu za Faragha</a>.</p>
     <button onclick="acceptCookies()" style="background: var(--royal-gold); color: var(--deep-navy); border: none; padding: 8px 20px; border-radius: 5px; font-weight: 700; cursor: pointer;">Nakubali</button>
 </div>
-
-<!-- ========================================== -->
-<!-- SCRIPTS                                      -->
-<!-- ========================================== -->
 
 <!-- TAWK.TO LIVE CHAT -->
 <script type="text/javascript">
@@ -382,6 +383,7 @@ window.gtranslateSettings = {
       });
   }
 
+  // SET MIN DATE
   const dateInput = document.getElementById('guestDate');
   if (dateInput) {
       const today = new Date().toISOString().split('T')[0];
@@ -393,4 +395,4 @@ window.gtranslateSettings = {
 <script src="script.js"></script>
 
 </body>
-  </html>
+    </html>
