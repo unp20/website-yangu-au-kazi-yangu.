@@ -20,7 +20,7 @@ a { text-decoration: none; color: inherit; }
 /* ==========================================
    HEADER
    ========================================== */
-.top-bar { background: var(--deep-navy); padding: 8px 20px; display: flex; justify-content: flex-end; align-items: center; gap: 15px; }
+.top-bar { background: var(--deep-navy); padding: 8px 20px; display: flex; justify-content: flex-end; align-items: center; gap: 15px; min-height: 45px; }
 .header { background: var(--royal-blue); padding: 15px 20px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
 .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; position: relative; }
 .logo-area { display: flex; align-items: center; gap: 15px; }
@@ -34,26 +34,89 @@ a { text-decoration: none; color: inherit; }
 .menu-toggle { display: none; background: none; border: none; color: var(--royal-gold); font-size: 26px; cursor: pointer; }
 
 /* ==========================================
-   HERO
+   HERO (KWA AJILI YA INDEX.HTML YAKO MPYA)
    ========================================== */
-.hero {
-    background: linear-gradient(135deg, var(--deep-navy) 0%, var(--royal-blue) 100%);
-    padding: 70px 20px;
-    text-align: center;
-    color: #fff;
+.hero-video-section {
+    position: relative;
+    width: 100%;
+    height: 85vh; /* Inachukua asilimia 85 ya urefu wa skrini */
+    overflow: hidden;
     border-bottom: 5px solid var(--royal-gold);
+    background-color: var(--deep-navy); /* Rangi ya akiba kama video haipatikani */
 }
-.hero h1 { font-size: 2.2rem; color: var(--royal-gold); margin-bottom: 10px; }
-.hero p { max-width: 600px; margin: 0 auto; color: #ddd; font-size: 1rem; }
+
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(8, 47, 73, 0.65); /* Bluu nyeusi kwa uwazi ili maandishi yasomeke */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    z-index: 2;
+}
+
+.hero-overlay h1 {
+    font-size: 2.8rem;
+    color: var(--royal-gold);
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+.hero-overlay p {
+    max-width: 700px;
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
 
 /* ==========================================
-   SECTIONS
+   SECTIONS & INTERACTIVE BOX
    ========================================== */
 .section-title { text-align: center; font-size: 2rem; color: var(--royal-blue); margin: 40px 0 20px; position: relative; padding-bottom: 15px; }
 .section-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background: var(--royal-gold); border-radius: 2px; }
 .interactive-box { background: #fff; padding: 30px; border-radius: 15px; margin: 20px auto; box-shadow: 0 4px 15px rgba(0,0,0,0.1); max-width: 900px; }
 .interactive-box h2 { color: var(--royal-blue); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
 .interactive-box h2 i { color: var(--royal-gold); }
+
+/* ==========================================
+   WIDGET (ELFSIGHT PARTNERS)
+   ========================================== */
+.widget-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+.widget-title {
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--royal-blue);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
 
 /* ==========================================
    BUTTONS
@@ -74,7 +137,8 @@ a { text-decoration: none; color: inherit; }
     text-align: center;
 }
 .btn-primary:hover { background-color: #fff; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4); }
-.btn-full { width: 100%; }
+.btn-full { width: 100%; background-color: var(--royal-gold); color: var(--deep-navy); border: none; padding: 14px; border-radius: 25px; font-weight: 700; cursor: pointer; font-size: 1rem; transition: 0.3s; }
+.btn-full:hover { background-color: var(--deep-navy); color: var(--royal-gold); }
 
 /* ==========================================
    FORMS
@@ -151,9 +215,27 @@ a { text-decoration: none; color: inherit; }
    GTRANSLATE
    ========================================== */
 .gtranslate_wrapper { position: relative; }
+.gtranslate_wrapper select { padding: 5px 10px; border-radius: 5px; border: 1px solid var(--royal-gold); background: var(--white); color: var(--deep-navy); font-weight: 600; outline: none; cursor: pointer; }
 
 /* ==========================================
-   TERMS CONTENT (Kwa terms.html, privacy.html)
+   COOKIE BANNER
+   ========================================== */
+#cookieBanner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--deep-navy);
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    z-index: 9999;
+    display: none; /* Itaonyeshwa na JavaScript */
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+}
+
+/* ==========================================
+   TERMS CONTENT
    ========================================== */
 .terms-content h3 { color: var(--royal-blue); margin-top: 25px; margin-bottom: 10px; font-size: 1.2rem; border-left: 4px solid var(--royal-gold); padding-left: 10px; }
 .terms-content p { color: #555; line-height: 1.8; margin-bottom: 10px; font-size: 0.95rem; }
@@ -164,6 +246,14 @@ a { text-decoration: none; color: inherit; }
 .terms-last-updated { text-align: center; color: #777; font-size: 0.85rem; font-style: italic; margin-bottom: 20px; }
 
 /* ==========================================
+   SCROLLBAR (KWA CHATBOT NA UKURASA)
+   ========================================== */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: var(--royal-blue); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--royal-gold); }
+
+/* ==========================================
    MOBILE RESPONSIVE
    ========================================== */
 @media (max-width: 768px) {
@@ -172,8 +262,14 @@ a { text-decoration: none; color: inherit; }
     .nav-links.active { display: flex; }
     .nav-links li { width: 100%; }
     .nav-links a { padding: 10px 0; width: 100%; }
-    .hero h1 { font-size: 1.8rem; }
+    
+    /* Hero Mobile */
+    .hero-video-section { height: 60vh; }
+    .hero-overlay h1 { font-size: 1.8rem; }
+    .hero-overlay p { font-size: 0.95rem; }
+    
     .services-grid { grid-template-columns: 1fr; }
-    .footer-content { flex-direction: column; text-align: center; }
+    .footer-content { grid-template-columns: 1fr; text-align: center; }
     .social-links { justify-content: center; }
-                                                                                                                                  }
+    .widget-title { font-size: 1.5rem; }
+               }
