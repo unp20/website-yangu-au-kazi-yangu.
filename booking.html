@@ -47,11 +47,13 @@
 <script src="https://elfsightcdn.com/platform.js" async></script>
 
 <!-- ========================================== -->
-<!-- CSS YA TIER OPTIONS - IMEWEKWA HAPA ILI KUTULIA -->
+<!-- CSS YA KUREKEBISHA - INAFUTA STYLE.CSS KWA TIER -->
 <!-- ========================================== -->
 <style>
-    /* TIER OPTIONS - LAZIMISHA MPANGILIO SAHIHI */
-    .tier-option {
+    /* ========================================
+       TIER OPTIONS - LAZIMISHA MPANGILIO SAHIHI
+       ======================================== */
+    label.tier-option {
         display: flex !important;
         flex-direction: row !important;
         align-items: center !important;
@@ -63,38 +65,44 @@
         cursor: pointer !important;
         background: #fff !important;
         width: 100% !important;
+        max-width: 100% !important;
         box-sizing: border-box !important;
         transition: all 0.3s ease !important;
+        position: relative !important;
+        float: none !important;
     }
     
-    .tier-option:hover {
+    label.tier-option:hover {
         border-color: #d4af37 !important;
         background: #fffdf7 !important;
         box-shadow: 0 6px 20px rgba(212, 175, 55, 0.15) !important;
     }
     
-    .tier-option input[type="radio"] {
+    label.tier-option input[type="radio"] {
         width: 22px !important;
         height: 22px !important;
         min-width: 22px !important;
         max-width: 22px !important;
-        flex-shrink: 0 !important;
+        flex: 0 0 22px !important;
         margin: 0 !important;
         padding: 0 !important;
         display: inline-block !important;
         accent-color: #0c4a6e !important;
         cursor: pointer !important;
         order: 1 !important;
+        position: static !important;
     }
     
-    .tier-details {
-        flex: 1 !important;
+    label.tier-option .tier-details {
+        flex: 1 1 auto !important;
         min-width: 0 !important;
         display: block !important;
         order: 2 !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
     
-    .tier-details h4 {
+    label.tier-option .tier-details h4 {
         margin: 0 0 4px 0 !important;
         color: #082f49 !important;
         font-size: 1rem !important;
@@ -103,7 +111,7 @@
         display: block !important;
     }
     
-    .tier-details p {
+    label.tier-option .tier-details p {
         margin: 0 !important;
         font-size: 0.85rem !important;
         color: #6b7280 !important;
@@ -111,7 +119,7 @@
         display: block !important;
     }
     
-    .tier-badge {
+    label.tier-option .tier-badge {
         margin-left: auto !important;
         font-weight: 700 !important;
         font-size: 0.75rem !important;
@@ -120,54 +128,67 @@
         padding: 6px 14px !important;
         border-radius: 20px !important;
         white-space: nowrap !important;
-        flex-shrink: 0 !important;
+        flex: 0 0 auto !important;
         display: inline-block !important;
         min-width: 70px !important;
         text-align: center !important;
         order: 3 !important;
-        border: none !important;
         text-transform: uppercase !important;
+        position: static !important;
     }
     
-    .tier-option:has(input[type="radio"]:checked) {
+    label.tier-option:has(input[type="radio"]:checked) {
         border-color: #0c4a6e !important;
         background: #f0f7ff !important;
         box-shadow: 0 4px 15px rgba(12, 74, 110, 0.15) !important;
     }
     
-    .tier-option:has(input[type="radio"]:checked) .tier-badge {
+    label.tier-option:has(input[type="radio"]:checked) .tier-badge {
         background: #0c4a6e !important;
         color: #fff !important;
     }
     
-    /* MOBILE */
+    /* ========================================
+       BOOKING WRAPPER - NAFAKA CHINI
+       ======================================== */
+    .booking-wrapper {
+        padding-bottom: 160px !important;
+    }
+    
+    /* ========================================
+       MOBILE RESPONSIVE
+       ======================================== */
     @media (max-width: 768px) {
-        .tier-option {
-            padding: 14px 12px !important;
+        label.tier-option {
+            padding: 12px 10px !important;
             gap: 10px !important;
             flex-wrap: nowrap !important;
-            align-items: center !important;
         }
         
-        .tier-option input[type="radio"] {
-            width: 20px !important;
-            height: 20px !important;
-            min-width: 20px !important;
-            max-width: 20px !important;
+        label.tier-option input[type="radio"] {
+            width: 18px !important;
+            height: 18px !important;
+            min-width: 18px !important;
+            max-width: 18px !important;
+            flex: 0 0 18px !important;
         }
         
-        .tier-details h4 {
-            font-size: 0.9rem !important;
+        label.tier-option .tier-details h4 {
+            font-size: 0.88rem !important;
         }
         
-        .tier-details p {
-            font-size: 0.75rem !important;
+        label.tier-option .tier-details p {
+            font-size: 0.72rem !important;
         }
         
-        .tier-badge {
-            font-size: 0.65rem !important;
-            padding: 4px 8px !important;
-            min-width: 55px !important;
+        label.tier-option .tier-badge {
+            font-size: 0.6rem !important;
+            padding: 3px 8px !important;
+            min-width: 50px !important;
+        }
+        
+        .booking-wrapper {
+            padding-bottom: 150px !important;
         }
     }
 </style>
@@ -481,4 +502,63 @@ window.gtranslateSettings = {
     authDomain: "unptours.firebaseapp.com",
     projectId: "unptours",
     storageBucket: "unptours.firebasestorage.app",
-    messagingSenderI
+    messagingSenderId: "233326851661",
+    appId: "1:233326851661:web:354156110a5cee29904e04",
+    measurementId: "G-5QJ1X38ZLC"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  const bookingForm = document.getElementById('bookingForm');
+  if (bookingForm) {
+      bookingForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+
+          const selectedTierEl = document.querySelector('input[name="tier"]:checked');
+          if (!selectedTierEl) {
+              alert("Tafadhali chagua daraja lako kwanza!");
+              return;
+          }
+
+          const tier = selectedTierEl.value;
+          const name = document.getElementById('guestName').value;
+          const email = document.getElementById('guestEmail').value;
+          const contact = document.getElementById('guestContact').value;
+          const country = document.getElementById('guestCountry').value;
+          const date = document.getElementById('guestDate').value;
+          const count = document.getElementById('guestCount').value;
+          const service = document.getElementById('guestService').value;
+          const notes = document.getElementById('guestNotes').value;
+
+          try {
+              await addDoc(collection(db, "bookings"), {
+                  tier: tier, name: name, email: email, contact: contact,
+                  country: country, date: date, guests: count,
+                  service: service, notes: notes,
+                  status: "Inasubiri", createdAt: new Date()
+              });
+
+              const message = `*UNP TOURS - OMBI JIPYA*%0A%0A*Daraja:* ${tier}%0A*Jina:* ${name}%0A*Email:* ${email}%0A*Simu:* ${contact}%0A*Nchi:* ${country}%0A*Tarehe:* ${date}%0A*Watu:* ${count}%0A*Huduma:* ${service}%0A*Mahitaji:* ${notes || 'Hakuna'}`;
+
+              window.open(`https://wa.me/255655728982?text=${message}`, '_blank');
+              alert("Ombi lako limetumwa kwa mafanikio! Tutakutumia bei maalum hivi karibuni.");
+              bookingForm.reset();
+          } catch (error) {
+              alert("Kuna hitilafu imetokea: " + error.message);
+          }
+      });
+  }
+
+  const dateInput = document.getElementById('guestDate');
+  if (dateInput) {
+      const today = new Date().toISOString().split('T')[0];
+      dateInput.setAttribute('min', today);
+  }
+</script>
+
+<!-- SCRIPT.JS -->
+<script src="script.js"></script>
+
+</body>
+</html>
