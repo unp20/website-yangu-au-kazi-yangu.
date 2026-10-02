@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="sw">
 <head>
 <meta charset="UTF-8">
@@ -45,6 +45,132 @@
 
 <!-- ELFSIGHT PLATFORM -->
 <script src="https://elfsightcdn.com/platform.js" async></script>
+
+<!-- ========================================== -->
+<!-- CSS YA TIER OPTIONS - IMEWEKWA HAPA ILI KUTULIA -->
+<!-- ========================================== -->
+<style>
+    /* TIER OPTIONS - LAZIMISHA MPANGILIO SAHIHI */
+    .tier-option {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 15px !important;
+        padding: 16px 18px !important;
+        border: 2px solid #e5e7eb !important;
+        border-radius: 12px !important;
+        margin-bottom: 12px !important;
+        cursor: pointer !important;
+        background: #fff !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    .tier-option:hover {
+        border-color: #d4af37 !important;
+        background: #fffdf7 !important;
+        box-shadow: 0 6px 20px rgba(212, 175, 55, 0.15) !important;
+    }
+    
+    .tier-option input[type="radio"] {
+        width: 22px !important;
+        height: 22px !important;
+        min-width: 22px !important;
+        max-width: 22px !important;
+        flex-shrink: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: inline-block !important;
+        accent-color: #0c4a6e !important;
+        cursor: pointer !important;
+        order: 1 !important;
+    }
+    
+    .tier-details {
+        flex: 1 !important;
+        min-width: 0 !important;
+        display: block !important;
+        order: 2 !important;
+    }
+    
+    .tier-details h4 {
+        margin: 0 0 4px 0 !important;
+        color: #082f49 !important;
+        font-size: 1rem !important;
+        font-weight: 700 !important;
+        line-height: 1.3 !important;
+        display: block !important;
+    }
+    
+    .tier-details p {
+        margin: 0 !important;
+        font-size: 0.85rem !important;
+        color: #6b7280 !important;
+        line-height: 1.4 !important;
+        display: block !important;
+    }
+    
+    .tier-badge {
+        margin-left: auto !important;
+        font-weight: 700 !important;
+        font-size: 0.75rem !important;
+        background: #d4af37 !important;
+        color: #082f49 !important;
+        padding: 6px 14px !important;
+        border-radius: 20px !important;
+        white-space: nowrap !important;
+        flex-shrink: 0 !important;
+        display: inline-block !important;
+        min-width: 70px !important;
+        text-align: center !important;
+        order: 3 !important;
+        border: none !important;
+        text-transform: uppercase !important;
+    }
+    
+    .tier-option:has(input[type="radio"]:checked) {
+        border-color: #0c4a6e !important;
+        background: #f0f7ff !important;
+        box-shadow: 0 4px 15px rgba(12, 74, 110, 0.15) !important;
+    }
+    
+    .tier-option:has(input[type="radio"]:checked) .tier-badge {
+        background: #0c4a6e !important;
+        color: #fff !important;
+    }
+    
+    /* MOBILE */
+    @media (max-width: 768px) {
+        .tier-option {
+            padding: 14px 12px !important;
+            gap: 10px !important;
+            flex-wrap: nowrap !important;
+            align-items: center !important;
+        }
+        
+        .tier-option input[type="radio"] {
+            width: 20px !important;
+            height: 20px !important;
+            min-width: 20px !important;
+            max-width: 20px !important;
+        }
+        
+        .tier-details h4 {
+            font-size: 0.9rem !important;
+        }
+        
+        .tier-details p {
+            font-size: 0.75rem !important;
+        }
+        
+        .tier-badge {
+            font-size: 0.65rem !important;
+            padding: 4px 8px !important;
+            min-width: 55px !important;
+        }
+    }
+</style>
 </head>
 <body>
 
@@ -67,7 +193,7 @@
             <li><a href="services.html"><i class="fas fa-briefcase"></i> Huduma</a></li>
             <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
             <li><a href="pricing.html"><i class="fas fa-layer-group"></i> Madaraja</a></li>
-            <li><a href="booking.html" style="color: var(--royal-gold);"><i class="fas fa-calendar-check"></i> Weka Nafasi</a></li>
+            <li><a href="booking.html" style="color: #d4af37;"><i class="fas fa-calendar-check"></i> Weka Nafasi</a></li>
             <li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
             <li><a href="contact.html"><i class="fas fa-envelope"></i> Wasiliana</a></li>
         </ul>
@@ -251,7 +377,7 @@
     </section>
 
     <section class="form-container" style="text-align: center; margin-top: 25px;">
-        <h3 style="color: var(--royal-blue); margin-bottom: 10px;"><i class="fas fa-headset"></i> Unahitaji Msaada?</h3>
+        <h3 style="color: #0c4a6e; margin-bottom: 10px;"><i class="fas fa-headset"></i> Unahitaji Msaada?</h3>
         <p style="color: #555; margin-bottom: 15px;">Kama una swali lolote, wasiliana nasi moja kwa moja:</p>
         <a href="tel:+255655728982" class="btn-primary" style="margin: 5px;"><i class="fas fa-phone"></i> Piga Simu</a>
         <a href="https://wa.me/255655728982" class="btn-primary" style="margin: 5px; background: #25d366; color: white;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
@@ -268,8 +394,8 @@
         </div>
         <div>
             <h4>Direct Contact</h4>
-            <p style="font-size: 0.9rem; margin-top: 8px;"><i class="fab fa-whatsapp" style="color: var(--royal-gold);"></i> Phone: +255 655 728 982</p>
-            <p style="font-size: 0.9rem; margin-top: 5px;"><i class="fas fa-envelope" style="color: var(--royal-gold);"></i> Email: salimnasoro11@gmail.com</p>
+            <p style="font-size: 0.9rem; margin-top: 8px;"><i class="fab fa-whatsapp" style="color: #d4af37;"></i> Phone: +255 655 728 982</p>
+            <p style="font-size: 0.9rem; margin-top: 5px;"><i class="fas fa-envelope" style="color: #d4af37;"></i> Email: salimnasoro11@gmail.com</p>
             <div class="social-links">
                 <a href="https://wa.me/255655728982" target="_blank"><i class="fab fa-whatsapp"></i></a>
                 <a href="mailto:salimnasoro11@gmail.com"><i class="fas fa-envelope"></i></a>
@@ -303,8 +429,8 @@
 
 <!-- COOKIES BANNER -->
 <div id="cookieBanner">
-    <p style="margin: 0 0 10px 0; font-size: 0.9rem;">Tunatumia cookies kuboresha uzoefu wako. Kwa kuendelea kutumia website yetu, unakubali <a href="privacy.html" style="color: var(--royal-gold); text-decoration: underline;">Sera zetu za Faragha</a>.</p>
-    <button onclick="acceptCookies()" style="background: var(--royal-gold); color: var(--deep-navy); border: none; padding: 8px 20px; border-radius: 5px; font-weight: 700; cursor: pointer;">Nakubali</button>
+    <p style="margin: 0 0 10px 0; font-size: 0.9rem;">Tunatumia cookies kuboresha uzoefu wako. Kwa kuendelea kutumia website yetu, unakubali <a href="privacy.html" style="color: #d4af37; text-decoration: underline;">Sera zetu za Faragha</a>.</p>
+    <button onclick="acceptCookies()" style="background: #d4af37; color: #082f49; border: none; padding: 8px 20px; border-radius: 5px; font-weight: 700; cursor: pointer;">Nakubali</button>
 </div>
 
 <!-- ========================================== -->
@@ -355,63 +481,4 @@ window.gtranslateSettings = {
     authDomain: "unptours.firebaseapp.com",
     projectId: "unptours",
     storageBucket: "unptours.firebasestorage.app",
-    messagingSenderId: "233326851661",
-    appId: "1:233326851661:web:354156110a5cee29904e04",
-    measurementId: "G-5QJ1X38ZLC"
-  };
-
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
-
-  const bookingForm = document.getElementById('bookingForm');
-  if (bookingForm) {
-      bookingForm.addEventListener('submit', async (e) => {
-          e.preventDefault();
-
-          const selectedTierEl = document.querySelector('input[name="tier"]:checked');
-          if (!selectedTierEl) {
-              alert("Tafadhali chagua daraja lako kwanza!");
-              return;
-          }
-
-          const tier = selectedTierEl.value;
-          const name = document.getElementById('guestName').value;
-          const email = document.getElementById('guestEmail').value;
-          const contact = document.getElementById('guestContact').value;
-          const country = document.getElementById('guestCountry').value;
-          const date = document.getElementById('guestDate').value;
-          const count = document.getElementById('guestCount').value;
-          const service = document.getElementById('guestService').value;
-          const notes = document.getElementById('guestNotes').value;
-
-          try {
-              await addDoc(collection(db, "bookings"), {
-                  tier: tier, name: name, email: email, contact: contact,
-                  country: country, date: date, guests: count,
-                  service: service, notes: notes,
-                  status: "Inasubiri", createdAt: new Date()
-              });
-
-              const message = `*UNP TOURS - OMBI JIPYA*%0A%0A*Daraja:* ${tier}%0A*Jina:* ${name}%0A*Email:* ${email}%0A*Simu:* ${contact}%0A*Nchi:* ${country}%0A*Tarehe:* ${date}%0A*Watu:* ${count}%0A*Huduma:* ${service}%0A*Mahitaji:* ${notes || 'Hakuna'}`;
-
-              window.open(`https://wa.me/255655728982?text=${message}`, '_blank');
-              alert("Ombi lako limetumwa kwa mafanikio! Tutakutumia bei maalum hivi karibuni.");
-              bookingForm.reset();
-          } catch (error) {
-              alert("Kuna hitilafu imetokea: " + error.message);
-          }
-      });
-  }
-
-  const dateInput = document.getElementById('guestDate');
-  if (dateInput) {
-      const today = new Date().toISOString().split('T')[0];
-      dateInput.setAttribute('min', today);
-  }
-</script>
-
-<!-- SCRIPT.JS -->
-<script src="script.js"></script>
-
-</body>
-   </html>
+    messagingSenderI
