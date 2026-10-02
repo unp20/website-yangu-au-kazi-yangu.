@@ -24,141 +24,6 @@
 
 <!-- ELFSIGHT PLATFORM -->
 <script src="https://elfsightcdn.com/platform.js" async></script>
-
-<style>
-    /* HERO */
-    .hero {
-        background: linear-gradient(135deg, var(--dark-green) 0%, var(--royal-green) 100%);
-        padding: 70px 20px;
-        text-align: center;
-        color: #fff;
-        border-bottom: 5px solid var(--royal-gold);
-    }
-    .hero h1 { font-size: 2.2rem; color: var(--royal-gold); margin-bottom: 10px; }
-    .hero p { max-width: 600px; margin: 0 auto; color: #ddd; font-size: 1rem; }
-
-    /* BOOKING FORM */
-    .booking-wrapper { max-width: 900px; margin: 30px auto; padding: 0 20px; }
-
-    .booking-info {
-        background: linear-gradient(135deg, var(--dark-green), var(--royal-green));
-        color: #fff;
-        padding: 25px;
-        border-radius: 12px;
-        margin-bottom: 25px;
-        border-left: 5px solid var(--royal-gold);
-    }
-    .booking-info h3 { color: var(--royal-gold); margin-bottom: 10px; }
-    .booking-info p { font-size: 0.95rem; color: #ddd; line-height: 1.7; }
-    .booking-info .highlight { color: var(--royal-gold); font-weight: 600; }
-
-    .form-container {
-        background: #fff;
-        padding: 30px;
-        border-radius: 15px;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-        border-top: 4px solid var(--royal-gold);
-    }
-    .form-container h2 {
-        color: var(--royal-green);
-        margin-bottom: 20px;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-    .form-container h2 i { color: var(--royal-gold); }
-
-    .form-section-title {
-        color: var(--royal-green);
-        font-size: 1.1rem;
-        margin: 25px 0 15px 0;
-        padding-bottom: 8px;
-        border-bottom: 2px solid var(--royal-gold);
-        display: flex;
-        align-items: center;
-        gap: 8px;
-    }
-    .form-section-title i { color: var(--royal-gold); }
-
-    /* Tier Options */
-    .tier-option {
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        padding: 15px;
-        border: 2px solid #eee;
-        border-radius: 10px;
-        margin-bottom: 10px;
-        cursor: pointer;
-        transition: all 0.3s;
-        background: #fff;
-    }
-    .tier-option:hover { border-color: var(--royal-gold); background: #fffdf7; }
-    .tier-option input[type="radio"] { width: 20px; height: 20px; accent-color: var(--royal-green); }
-    .tier-details h4 { margin: 0 0 3px 0; color: var(--dark-green); font-size: 1rem; }
-    .tier-details p { margin: 0; font-size: 0.85rem; color: #777; }
-    .tier-badge {
-        margin-left: auto;
-        font-weight: 700;
-        font-size: 0.85rem;
-        background: var(--royal-gold);
-        padding: 5px 12px;
-        border-radius: 15px;
-        color: var(--dark-green);
-    }
-
-    /* FOOTER */
-    .footer {
-        background-color: var(--dark-green);
-        color: #fff;
-        padding: 40px 5% 20px 5%;
-        margin-top: 50px;
-        border-top: 3px solid var(--royal-gold);
-    }
-    .footer-content {
-        display: flex; justify-content: space-between;
-        flex-wrap: wrap; gap: 30px;
-        max-width: 1200px; margin: 0 auto;
-    }
-    .footer h3, .footer h4 { color: var(--royal-gold); margin-bottom: 10px; }
-    .social-links { margin-top: 15px; display: flex; gap: 15px; }
-    .social-links a { font-size: 22px; color: var(--royal-gold); transition: color 0.3s, transform 0.3s; }
-    .social-links a:hover { color: #fff; transform: scale(1.2); }
-
-    /* FLOATING WHATSAPP */
-    .floating-whatsapp {
-        position: fixed; bottom: 25px; right: 25px;
-        background-color: #25d366; color: white;
-        width: 60px; height: 60px; border-radius: 50%;
-        display: flex; align-items: center; justify-content: center;
-        font-size: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        z-index: 1000; transition: transform 0.3s;
-    }
-    .floating-whatsapp:hover { transform: scale(1.1); }
-
-    /* CHATBOT */
-    .chatbot-toggle { position: fixed; bottom: 100px; right: 25px; background-color: var(--royal-green); color: var(--royal-gold); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 1100; cursor: pointer; border: 2px solid var(--royal-gold); }
-    .chatbot-container { position: fixed; bottom: 170px; right: 25px; width: 350px; max-width: 90vw; height: 500px; background: #fff; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); z-index: 1100; display: none; flex-direction: column; overflow: hidden; border: 2px solid var(--royal-gold); }
-    .chatbot-container.active { display: flex; }
-    .chatbot-header { background: var(--royal-green); color: #fff; padding: 15px; display: flex; align-items: center; gap: 10px; }
-    .chatbot-header .avatar { width: 40px; height: 40px; background: var(--royal-gold); color: var(--dark-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem; }
-    .chatbot-header h4 { margin: 0; font-size: 1rem; color: #fff; }
-    .chatbot-header span { font-size: 0.75rem; color: #ddd; display: block; }
-    .chatbot-messages { flex-grow: 1; padding: 15px; overflow-y: auto; background: #f9f9f9; display: flex; flex-direction: column; gap: 10px; }
-    .message { max-width: 80%; padding: 10px 15px; border-radius: 15px; font-size: 0.85rem; }
-    .message.bot { background: #e9ecef; align-self: flex-start; }
-    .message.user { background: var(--royal-green); color: #fff; align-self: flex-end; }
-    .chatbot-input { display: flex; padding: 10px; border-top: 1px solid #eee; }
-    .chatbot-input input { flex-grow: 1; padding: 10px; border: 1px solid #ddd; border-radius: 20px; outline: none; font-family: 'Poppins', sans-serif; }
-    .chatbot-input button { background: var(--royal-gold); color: var(--dark-green); border: none; width: 40px; height: 40px; border-radius: 50%; margin-left: 8px; cursor: pointer; font-size: 1rem; }
-
-    /* GTRANSLATE */
-    .gtranslate_wrapper { position: relative; }
-
-    @media (max-width: 768px) {
-        .hero h1 { font-size: 1.6rem; }
-    }
-</style>
 </head>
 <body>
 
@@ -207,7 +72,6 @@
 
         <form id="bookingForm">
 
-            <!-- HATUA 1: CHAGUA DARAJA -->
             <h3 class="form-section-title"><i class="fas fa-layer-group"></i> Hatua 1: Chagua Daraja Lako</h3>
 
             <label class="tier-option">
@@ -300,7 +164,6 @@
                 <span class="tier-badge">Divine</span>
             </label>
 
-            <!-- HATUA 2: TAARIFA ZAKO -->
             <h3 class="form-section-title"><i class="fas fa-user"></i> Hatua 2: Taarifa Zako</h3>
 
             <div class="form-group">
@@ -323,7 +186,6 @@
                 <input type="text" id="guestCountry" placeholder="Mfano: Tanzania, USA" required>
             </div>
 
-            <!-- HATUA 3: TAREHE NA IDADI -->
             <h3 class="form-section-title"><i class="fas fa-calendar-alt"></i> Hatua 3: Tarehe na Idadi</h3>
 
             <div class="form-group">
@@ -360,7 +222,6 @@
                 <textarea id="guestNotes" rows="4" placeholder="Andika mahitaji yako maalum..."></textarea>
             </div>
 
-            <!-- SUBMIT BUTTON -->
             <button type="submit" class="btn-primary btn-full" style="margin-top: 15px;">
                 <i class="fab fa-whatsapp"></i> Tuma Ombi kwa WhatsApp
             </button>
@@ -368,9 +229,8 @@
         </form>
     </section>
 
-    <!-- HELP SECTION -->
     <section class="form-container" style="text-align: center; margin-top: 25px;">
-        <h3 style="color: var(--royal-green); margin-bottom: 10px;"><i class="fas fa-headset"></i> Unahitaji Msaada?</h3>
+        <h3 style="color: var(--royal-blue); margin-bottom: 10px;"><i class="fas fa-headset"></i> Unahitaji Msaada?</h3>
         <p style="color: #555; margin-bottom: 15px;">Kama una swali lolote, wasiliana nasi moja kwa moja:</p>
         <a href="tel:+255655728982" class="btn-primary" style="margin: 5px;"><i class="fas fa-phone"></i> Piga Simu</a>
         <a href="https://wa.me/255655728982" class="btn-primary" style="margin: 5px; background: #25d366; color: white;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
@@ -421,10 +281,116 @@
 </div>
 
 <!-- COOKIES BANNER -->
-<div id="cookieBanner" style="position: fixed; bottom: 0; left: 0; right: 0; background: var(--dark-green); color: #fff; padding: 15px; text-align: center; z-index: 9999; display: none;">
+<div id="cookieBanner" style="position: fixed; bottom: 0; left: 0; right: 0; background: var(--deep-navy); color: #fff; padding: 15px; text-align: center; z-index: 9999; display: none;">
     <p style="margin: 0 0 10px 0; font-size: 0.9rem;">Tunatumia cookies kuboresha uzoefu wako. Kwa kuendelea kutumia website yetu, unakubali <a href="privacy.html" style="color: var(--royal-gold); text-decoration: underline;">Sera zetu za Faragha</a>.</p>
-    <button onclick="acceptCookies()" style="background: var(--royal-gold); color: var(--dark-green); border: none; padding: 8px 20px; border-radius: 5px; font-weight: 700; cursor: pointer;">Nakubali</button>
+    <button onclick="acceptCookies()" style="background: var(--royal-gold); color: var(--deep-navy); border: none; padding: 8px 20px; border-radius: 5px; font-weight: 700; cursor: pointer;">Nakubali</button>
 </div>
 
 <!-- ========================================== -->
-<!-- SCRIPTS                       
+<!-- SCRIPTS                                      -->
+<!-- ========================================== -->
+
+<!-- TAWK.TO LIVE CHAT -->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6ab95c20dade22344616d64e/1k3i0vorc';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+
+<!-- ONESIGNAL PUSH -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "e772eb04-4c02-457d-bc15-ad77d7a29d4d",
+    });
+  });
+</script>
+
+<!-- GTRANSLATE SCRIPT -->
+<script>
+window.gtranslateSettings = {
+  "default_language": "sw",
+  "languages": ["sw", "en", "fr", "it", "de", "ru", "ar", "zh-CN"],
+  "wrapper_selector": ".gtranslate_wrapper"
+};
+</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/dropdown.js" defer></script>
+
+<!-- FIREBASE & BOOKING LOGIC -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+  import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyD2YtPFL2L_ZwAKdSYpXtvLt8gJUm2IX6s",
+    authDomain: "unptours.firebaseapp.com",
+    projectId: "unptours",
+    storageBucket: "unptours.firebasestorage.app",
+    messagingSenderId: "233326851661",
+    appId: "1:233326851661:web:354156110a5cee29904e04",
+    measurementId: "G-5QJ1X38ZLC"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  const bookingForm = document.getElementById('bookingForm');
+  if (bookingForm) {
+      bookingForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+
+          const selectedTierEl = document.querySelector('input[name="tier"]:checked');
+          if (!selectedTierEl) {
+              alert("Tafadhali chagua daraja lako kwanza!");
+              return;
+          }
+
+          const tier = selectedTierEl.value;
+          const name = document.getElementById('guestName').value;
+          const email = document.getElementById('guestEmail').value;
+          const contact = document.getElementById('guestContact').value;
+          const country = document.getElementById('guestCountry').value;
+          const date = document.getElementById('guestDate').value;
+          const count = document.getElementById('guestCount').value;
+          const service = document.getElementById('guestService').value;
+          const notes = document.getElementById('guestNotes').value;
+
+          try {
+              await addDoc(collection(db, "bookings"), {
+                  tier: tier, name: name, email: email, contact: contact,
+                  country: country, date: date, guests: count,
+                  service: service, notes: notes,
+                  status: "Inasubiri", createdAt: new Date()
+              });
+
+              const message = `*UNP TOURS - OMBI JIPYA*%0A%0A*Daraja:* ${tier}%0A*Jina:* ${name}%0A*Email:* ${email}%0A*Simu:* ${contact}%0A*Nchi:* ${country}%0A*Tarehe:* ${date}%0A*Watu:* ${count}%0A*Huduma:* ${service}%0A*Mahitaji:* ${notes || 'Hakuna'}`;
+
+              window.open(`https://wa.me/255655728982?text=${message}`, '_blank');
+              alert("Ombi lako limetumwa kwa mafanikio! Tutakutumia bei maalum hivi karibuni.");
+              bookingForm.reset();
+          } catch (error) {
+              alert("Kuna hitilafu imetokea: " + error.message);
+          }
+      });
+  }
+
+  const dateInput = document.getElementById('guestDate');
+  if (dateInput) {
+      const today = new Date().toISOString().split('T')[0];
+      dateInput.setAttribute('min', today);
+  }
+</script>
+
+<!-- SCRIPT.JS -->
+<script src="script.js"></script>
+
+</body>
+                                                                                 </html>
