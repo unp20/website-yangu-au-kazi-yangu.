@@ -1,284 +1,179 @@
-<!DOCTYPE html>
-<html lang="sw">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Masharti na Sheria | UNP TOURS Zanzibar</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="style.css">
+/* ==========================================
+   UNP TOURS - STYLE.CSS (BLUU & DHAHABU)
+   ========================================== */
 
-<!-- SEO META TAGS -->
-<meta name="description" content="Masharti na Sheria - UNP TOURS. Soma masharti yetu ya huduma, kughairi, malipo, na usalama.">
-<meta name="keywords" content="UNP tours terms, Zanzibar tour terms, masharti ya huduma, sheria za utalii">
-<meta name="author" content="UNP TOURS Zanzibar">
-<meta name="robots" content="index, follow">
+:root {
+    /* RANGI - BLUU & DHAHABU */
+    --royal-blue: #0c4a6e;       /* Bluu ya Bahari (Header, Footer) */
+    --deep-navy: #082f49;        /* Bluu Nyeusi (Top Bar, Chatbot) */
+    --royal-gold: #d4af37;       /* Dhahabu ya Kifahari */
+    --gold-light: #f0c75e;       /* Dhahabu Nyepesi (Hover) */
+    --light-bg: #f8f9fa;         /* Nyeupe Nyepesi (Background) */
+    --white: #ffffff;
+    --text-dark: #1e293b;
+}
 
-<!-- Open Graph -->
-<meta property="og:title" content="Masharti na Sheria | UNP TOURS Zanzibar">
-<meta property="og:description" content="Soma masharti na sheria za huduma zetu.">
-<meta property="og:image" content="https://unp.tours/images/logo.png">
-<meta property="og:url" content="https://unp.tours/terms.html">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="UNP TOURS">
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+body { background-color: var(--light-bg); color: #333; line-height: 1.6; }
+a { text-decoration: none; color: inherit; }
 
-<!-- Canonical -->
-<link rel="canonical" href="https://unp.tours/terms.html">
+/* ==========================================
+   HEADER
+   ========================================== */
+.top-bar { background: var(--deep-navy); padding: 8px 20px; display: flex; justify-content: flex-end; align-items: center; gap: 15px; }
+.header { background: var(--royal-blue); padding: 15px 20px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+.nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; position: relative; }
+.logo-area { display: flex; align-items: center; gap: 15px; }
+.logo-holder { width: 60px; height: 60px; border: 2px dashed var(--royal-gold); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+.logo-fallback { color: var(--royal-gold); font-weight: 700; font-size: 0.7rem; text-align: center; line-height: 1.1; }
+.logo-text h2 { color: #fff; font-size: 1.3rem; font-weight: 700; }
+.logo-text span { color: var(--royal-gold); font-size: 0.8rem; }
+.nav-links { display: flex; gap: 20px; list-style: none; }
+.nav-links a { color: #fff; font-size: 0.85rem; transition: color 0.3s; display: flex; align-items: center; gap: 5px; }
+.nav-links a:hover { color: var(--royal-gold); }
+.menu-toggle { display: none; background: none; border: none; color: var(--royal-gold); font-size: 26px; cursor: pointer; }
 
-<!-- Geo Tags -->
-<meta name="geo.region" content="TZ-07">
-<meta name="geo.placename" content="Zanzibar">
-<meta name="geo.position" content="-6.165917;39.202641">
-<meta name="ICBM" content="-6.165917, 39.202641">
+/* ==========================================
+   HERO
+   ========================================== */
+.hero {
+    background: linear-gradient(135deg, var(--deep-navy) 0%, var(--royal-blue) 100%);
+    padding: 70px 20px;
+    text-align: center;
+    color: #fff;
+    border-bottom: 5px solid var(--royal-gold);
+}
+.hero h1 { font-size: 2.2rem; color: var(--royal-gold); margin-bottom: 10px; }
+.hero p { max-width: 600px; margin: 0 auto; color: #ddd; font-size: 1rem; }
 
-<!-- ELFSIGHT PLATFORM -->
-<script src="https://elfsightcdn.com/platform.js" async></script>
+/* ==========================================
+   SECTIONS
+   ========================================== */
+.section-title { text-align: center; font-size: 2rem; color: var(--royal-blue); margin: 40px 0 20px; position: relative; padding-bottom: 15px; }
+.section-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background: var(--royal-gold); border-radius: 2px; }
+.interactive-box { background: #fff; padding: 30px; border-radius: 15px; margin: 20px auto; box-shadow: 0 4px 15px rgba(0,0,0,0.1); max-width: 900px; }
+.interactive-box h2 { color: var(--royal-blue); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+.interactive-box h2 i { color: var(--royal-gold); }
 
-<style>
-    /* HERO */
-    .hero {
-        background: linear-gradient(135deg, var(--dark-green) 0%, var(--royal-green) 100%);
-        padding: 70px 20px;
-        text-align: center;
-        color: #fff;
-        border-bottom: 5px solid var(--royal-gold);
-    }
-    .hero h1 { font-size: 2.2rem; color: var(--royal-gold); margin-bottom: 10px; }
-    .hero p { max-width: 600px; margin: 0 auto; color: #ddd; font-size: 1rem; }
+/* ==========================================
+   BUTTONS
+   ========================================== */
+.btn-primary {
+    background-color: var(--royal-gold);
+    color: var(--deep-navy);
+    padding: 14px 32px;
+    border: none;
+    border-radius: 25px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.95rem;
+    text-align: center;
+}
+.btn-primary:hover { background-color: #fff; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4); }
+.btn-full { width: 100%; }
 
-    /* TERMS CONTENT */
-    .terms-content h3 {
-        color: var(--royal-green);
-        margin-top: 25px;
-        margin-bottom: 10px;
-        font-size: 1.2rem;
-        border-left: 4px solid var(--royal-gold);
-        padding-left: 10px;
-    }
-    .terms-content p {
-        color: #555;
-        line-height: 1.8;
-        margin-bottom: 10px;
-        font-size: 0.95rem;
-    }
-    .terms-content ul {
-        padding-left: 20px;
-        margin-bottom: 15px;
-    }
-    .terms-content ul li {
-        color: #555;
-        line-height: 1.8;
-        font-size: 0.95rem;
-        margin-bottom: 5px;
-    }
-    .terms-content a { color: var(--royal-green); font-weight: 600; }
-    .terms-content a:hover { color: var(--royal-gold); }
-    .terms-last-updated {
-        text-align: center;
-        color: #777;
-        font-size: 0.85rem;
-        font-style: italic;
-        margin-bottom: 20px;
-    }
-</style>
-</head>
-<body>
+/* ==========================================
+   FORMS
+   ========================================== */
+.form-group { margin-bottom: 15px; }
+.form-group label { display: block; font-weight: 600; color: var(--deep-navy); margin-bottom: 5px; }
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%; padding: 12px;
+    border: 2px solid #ddd; border-radius: 8px;
+    font-family: 'Poppins', sans-serif; font-size: 1rem;
+    transition: border-color 0.3s;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    outline: none; border-color: var(--royal-gold);
+}
 
-<!-- TOP BAR WITH GTRANSLATE -->
-<div class="top-bar">
-    <div class="gtranslate_wrapper"></div>
-</div>
+/* ==========================================
+   STAR RATING
+   ========================================== */
+.star-rating { display: flex !important; gap: 10px !important; font-size: 2.2rem !important; cursor: pointer; margin: 10px 0; visibility: visible !important; width: 100%; }
+.star-rating .fa-star { color: #ccc !important; display: inline-block !important; visibility: visible !important; transition: color 0.2s, transform 0.2s; }
+.star-rating .fa-star:hover { transform: scale(1.15); }
+.star-rating .fa-star.active { color: var(--royal-gold) !important; transform: scale(1.1); }
 
-<!-- HEADER -->
-<header class="header">
-    <div class="nav-container">
-        <a href="index.html" class="logo-area">
-            <div class="logo-holder"><span class="logo-fallback">UNP<br>LOGO</span></div>
-            <div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
-        </a>
-        <button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="index.html"><i class="fas fa-home"></i> Nyumbani</a></li>
-            <li><a href="about.html"><i class="fas fa-info-circle"></i> Kuhusu Sisi</a></li>
-            <li><a href="services.html"><i class="fas fa-briefcase"></i> Huduma</a></li>
-            <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
-            <li><a href="pricing.html"><i class="fas fa-layer-group"></i> Madaraja</a></li>
-            <li><a href="contact.html"><i class="fas fa-envelope"></i> Wasiliana</a></li>
-        </ul>
-    </div>
-</header>
+.alert-message { display: none; margin-top: 15px; padding: 12px; border-radius: 8px; font-weight: 600; text-align: center; }
+.alert-success { background-color: #d4edda; color: #155724; display: block; }
+.alert-error { background-color: #f8d7da; color: #721c24; display: block; }
 
-<!-- HERO SECTION -->
-<section class="hero">
-    <h1>Masharti na Sheria</h1>
-    <p>Taarifa muhimu kuhusu masharti ya kutumia huduma zetu.</p>
-</section>
+/* ==========================================
+   SERVICES GRID
+   ========================================== */
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; padding: 20px 5%; max-width: 1200px; margin: 0 auto; }
+.service-card { background: #fff; border-radius: 12px; padding: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); border-top: 4px solid var(--royal-blue); transition: transform 0.3s; }
+.service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+.service-card .card-icon { font-size: 2.5rem; color: var(--royal-gold); margin-bottom: 15px; }
+.service-card h3 { color: var(--royal-blue); margin-bottom: 10px; font-size: 1.2rem; }
+.service-card p { color: #555; font-size: 0.95rem; line-height: 1.6; }
 
-<!-- TERMS CONTENT -->
-<section class="interactive-box terms-content">
-    <p class="terms-last-updated"><i class="fas fa-calendar-alt"></i> Ilisasishwa mara ya mwisho: 30 Septemba 2026</p>
+/* ==========================================
+   FOOTER
+   ========================================== */
+.footer { background: var(--deep-navy); color: #fff; padding: 40px 20px; margin-top: 40px; border-top: 3px solid var(--royal-gold); }
+.footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+.footer h3, .footer h4 { color: var(--royal-gold); margin-bottom: 15px; }
+.social-links { display: flex; gap: 15px; margin-top: 15px; }
+.social-links a { color: var(--royal-gold); font-size: 1.2rem; transition: transform 0.3s; }
+.social-links a:hover { transform: scale(1.2); }
 
-    <h3>1. Utangulizi</h3>
-    <p>Karibu UNP TOURS (Unique & Natural Paradise). Kwa kutumia website yetu na huduma zetu, unakubali masharti na sheria zilizoelezwa hapa chini. Tafadhali soma kwa makini kabla ya kuomba bei au kuweka nafasi yoyote.</p>
+/* ==========================================
+   FLOATING WHATSAPP
+   ========================================== */
+.floating-whatsapp { position: fixed; bottom: 25px; right: 25px; background: #25d366; color: #fff; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 1100; transition: transform 0.3s; }
+.floating-whatsapp:hover { transform: scale(1.1); }
 
-    <h3>2. Kuomba Bei (Booking)</h3>
-    <p>Wateja wanaweza kuomba bei kwa njia zifuatazo:</p>
-    <ul>
-        <li>Kupitia fomu ya kuomba bei kwenye website yetu.</li>
-        <li>Kupitia WhatsApp: +255 655 728 982.</li>
-        <li>Kupitia barua pepe: salimnasoro11@gmail.com.</li>
-    </ul>
-    <p>Ombi lako linakuwa rasmi baada ya kupokea uthibitisho kutoka kwetu na malipo ya awali (deposit) kama itahitajika.</p>
+/* ==========================================
+   CHATBOT
+   ========================================== */
+.chatbot-toggle { position: fixed; bottom: 100px; right: 25px; background-color: var(--royal-blue); color: var(--royal-gold); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 1100; cursor: pointer; border: 2px solid var(--royal-gold); }
+.chatbot-container { position: fixed; bottom: 170px; right: 25px; width: 350px; max-width: 90vw; height: 500px; background: #fff; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); z-index: 1100; display: none; flex-direction: column; overflow: hidden; border: 2px solid var(--royal-gold); }
+.chatbot-container.active { display: flex; }
+.chatbot-header { background: var(--royal-blue); color: #fff; padding: 15px; display: flex; align-items: center; gap: 10px; }
+.chatbot-header .avatar { width: 40px; height: 40px; background: var(--royal-gold); color: var(--deep-navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem; }
+.chatbot-header h4 { margin: 0; font-size: 1rem; color: #fff; }
+.chatbot-header span { font-size: 0.75rem; color: #ddd; display: block; }
+.chatbot-messages { flex-grow: 1; padding: 15px; overflow-y: auto; background: #f9f9f9; display: flex; flex-direction: column; gap: 10px; }
+.message { max-width: 80%; padding: 10px 15px; border-radius: 15px; font-size: 0.85rem; }
+.message.bot { background: #e9ecef; align-self: flex-start; }
+.message.user { background: var(--royal-blue); color: #fff; align-self: flex-end; }
+.chatbot-input { display: flex; padding: 10px; border-top: 1px solid #eee; }
+.chatbot-input input { flex-grow: 1; padding: 10px; border: 1px solid #ddd; border-radius: 20px; outline: none; font-family: 'Poppins', sans-serif; }
+.chatbot-input button { background: var(--royal-gold); color: var(--deep-navy); border: none; width: 40px; height: 40px; border-radius: 50%; margin-left: 8px; cursor: pointer; font-size: 1rem; }
 
-    <h3>3. Malipo (Payment)</h3>
-    <p>Tunakubali njia zifuatazo za malipo:</p>
-    <ul>
-        <li><strong>M-Pesa, Tigo Pesa, Airtel Money</strong> — kwa wateja wa Tanzania.</li>
-        <li><strong>Benki (CRDB, NMB)</strong> — kwa wateja wa Tanzania.</li>
-        <li><strong>Visa, Mastercard</strong> — kwa wateja wa kimataifa.</li>
-        <li><strong>PayPal, Stripe</strong> — kwa wateja wa kimataifa.</li>
-    </ul>
-    <p>Malipo yote yanapaswa kukamilika kabla ya safari kuanza, isipokuwa kama tumekubaliana vinginevyo.</p>
+/* ==========================================
+   GTRANSLATE
+   ========================================== */
+.gtranslate_wrapper { position: relative; }
 
-    <h3>4. Kughairi (Cancellation) na Kurudisha Fedha (Refund)</h3>
-    <p>Wateja wanaweza kughairi booking kwa masharti yafuatayo:</p>
-    <ul>
-        <li><strong>Siku 7+ kabla ya safari:</strong> Kurudisha fedha 100%.</li>
-        <li><strong>Siku 3-6 kabla ya safari:</strong> Kurudisha fedha 50%.</li>
-        <li><strong>Siku 1-2 kabla ya safari:</strong> Kurudisha fedha 25%.</li>
-        <li><strong>Siku ya safari au baada:</strong> Hakuna kurudisha fedha.</li>
-    </ul>
-    <p>Kwa hali ya dharura (kama ugonjwa au janga), tutazingatia kurudisha fedha kwa upendeleo.</p>
+/* ==========================================
+   TERMS CONTENT (Kwa terms.html, privacy.html)
+   ========================================== */
+.terms-content h3 { color: var(--royal-blue); margin-top: 25px; margin-bottom: 10px; font-size: 1.2rem; border-left: 4px solid var(--royal-gold); padding-left: 10px; }
+.terms-content p { color: #555; line-height: 1.8; margin-bottom: 10px; font-size: 0.95rem; }
+.terms-content ul { padding-left: 20px; margin-bottom: 15px; }
+.terms-content ul li { color: #555; line-height: 1.8; font-size: 0.95rem; margin-bottom: 5px; }
+.terms-content a { color: var(--royal-blue); font-weight: 600; }
+.terms-content a:hover { color: var(--royal-gold); }
+.terms-last-updated { text-align: center; color: #777; font-size: 0.85rem; font-style: italic; margin-bottom: 20px; }
 
-    <h3>5. Kubadilisha Tarehe (Rescheduling)</h3>
-    <p>Wateja wanaweza kubadilisha tarehe ya safari bila malipo ya ziada kama watatujulisha <strong>siku 3 kabla</strong> ya safari. Kama watachelewa, kuna ada ndogo ya kubadilisha.</p>
-
-    <h3>6. Wajibu wa Mteja</h3>
-    <p>Mteja anakubali:</p>
-    <ul>
-        <li>Kutoa taarifa sahihi wakati wa kuomba bei.</li>
-        <li>Kuheshimu utamaduni na sheria za Zanzibar na Tanzania.</li>
-        <li>Kutunza mazingira na wanyama pori.</li>
-        <li>Kufuata maelekezo ya guide wakati wa safari.</li>
-    </ul>
-
-    <h3>7. Wajibu wa UNP TOURS</h3>
-    <p>UNP TOURS inakubali:</p>
-    <ul>
-        <li>Kutoa huduma za ubora wa hali ya juu.</li>
-        <li>Kuhakikisha usalama wa wateja wakati wa safari.</li>
-        <li>Kutoa taarifa sahihi kuhusu huduma zetu.</li>
-        <li>Kushughulikia malalamiko kwa haraka na kwa haki.</li>
-    </ul>
-
-    <h3>8. Bima (Insurance)</h3>
-    <p>Tunashauri wateja wote kupata bima ya safari (travel insurance) kabla ya kuja Zanzibar. UNP TOURS haitoi bima ya safari, lakini tunaweza kukusaidia kuipata.</p>
-
-    <h3>9. Haki Miliki (Intellectual Property)</h3>
-    <p>Maudhui yote kwenye website hii (picha, video, maandishi, logo) ni mali ya UNP TOURS. Hairuhusiwi kunakili au kutumia bila idhini yetu.</p>
-
-    <h3>10. Faragha (Privacy)</h3>
-    <p>Taarifa zako binafsi zinahifadhiwa kwa usalama. Kwa maelezo zaidi, tafadhali soma <a href="privacy.html">Sera zetu za Faragha</a>.</p>
-
-    <h3>11. Mabadiliko ya Masharti</h3>
-    <p>UNP TOURS ina haki ya kubadilisha masharti haya wakati wowote. Mabadiliko yatatangazwa kwenye website yetu.</p>
-
-    <h3>12. Sheria Zinazotumika</h3>
-    <p>Masharti haya yanatawaliwa na sheria za Jamhuri ya Muungano wa Tanzania. Migogoro yoyote itatatuliwa kwa njia ya upatanisho au mahakama za Tanzania.</p>
-
-    <h3>13. Wasiliana Nasi</h3>
-    <p>Kwa swali lolote kuhusu masharti haya, wasiliana nasi:</p>
-    <ul>
-        <li><i class="fas fa-phone" style="color: var(--royal-gold);"></i> Simu: +255 655 728 982</li>
-        <li><i class="fas fa-envelope" style="color: var(--royal-gold);"></i> Email: salimnasoro11@gmail.com</li>
-        <li><i class="fas fa-map-marker-alt" style="color: var(--royal-gold);"></i> Zanzibar, Tanzania</li>
-    </ul>
-</section>
-
-<!-- FOOTER -->
-<footer class="footer">
-    <div class="footer-content">
-        <div>
-            <h3>UNIQUE NATURE PARADISE (UNP)</h3>
-            <p style="font-size: 0.9rem; max-width: 350px;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p>
-        </div>
-        <div>
-            <h4>Direct Contact</h4>
-            <p style="font-size: 0.9rem; margin-top: 8px;"><i class="fab fa-whatsapp" style="color: var(--royal-gold);"></i> Phone: +255 655 728 982</p>
-            <p style="font-size: 0.9rem; margin-top: 5px;"><i class="fas fa-envelope" style="color: var(--royal-gold);"></i> Email: salimnasoro11@gmail.com</p>
-            <div class="social-links">
-                <a href="https://wa.me/255655728982" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                <a href="mailto:salimnasoro11@gmail.com"><i class="fas fa-envelope"></i></a>
-                <a href="https://www.tiktok.com/@unptours" target="_blank"><i class="fab fa-tiktok"></i></a>
-                <a href="https://www.instagram.com/unpsoulvoyoge" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.facebook.com/profile.php?id=61595094232501" target="_blank"><i class="fab fa-facebook"></i></a>
-            </div>
-        </div>
-    </div>
-</footer>
-
-<!-- FLOATING WHATSAPP -->
-<a href="https://wa.me/255655728982" class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
-
-<!-- CHATBOT -->
-<div class="chatbot-toggle" onclick="toggleChatbot()"><i class="fas fa-robot"></i></div>
-<div class="chatbot-container" id="chatbotContainer">
-    <div class="chatbot-header">
-        <div class="avatar">U</div>
-        <div><h4>UNP Assistant</h4><span>Yupo Mtandaoni</span></div>
-        <button onclick="toggleChatbot()" style="margin-left:auto;background:none;border:none;color:#fff;font-size:1.2rem;cursor:pointer;"><i class="fas fa-times"></i></button>
-    </div>
-    <div class="chatbot-messages" id="chatMessages">
-        <div class="message bot">Karibu UNP TOURS! Ninaweza kukusaidia vipi leo?</div>
-    </div>
-    <div class="chatbot-input">
-        <input type="text" id="chatInput" placeholder="Andika ujumbe wako..." onkeypress="handleKeyPress(event)">
-        <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
-    </div>
-</div>
-
-<!-- COOKIES BANNER -->
-<div id="cookieBanner" style="position: fixed; bottom: 0; left: 0; right: 0; background: var(--dark-green); color: #fff; padding: 15px; text-align: center; z-index: 9999; display: none;">
-    <p style="margin: 0 0 10px 0; font-size: 0.9rem;">Tunatumia cookies kuboresha uzoefu wako. Kwa kuendelea kutumia website yetu, unakubali <a href="privacy.html" style="color: var(--royal-gold); text-decoration: underline;">Sera zetu za Faragha</a>.</p>
-    <button onclick="acceptCookies()" style="background: var(--royal-gold); color: var(--dark-green); border: none; padding: 8px 20px; border-radius: 5px; font-weight: 700; cursor: pointer;">Nakubali</button>
-</div>
-
-<!-- TAWK.TO LIVE CHAT -->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/6ab95c20dade22344616d64e/1k3i0vorc';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-
-<!-- ONESIGNAL PUSH -->
-<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
-<script>
-  window.OneSignalDeferred = window.OneSignalDeferred || [];
-  OneSignalDeferred.push(async function(OneSignal) {
-    await OneSignal.init({
-      appId: "e772eb04-4c02-457d-bc15-ad77d7a29d4d",
-    });
-  });
-</script>
-
-<!-- GTRANSLATE SCRIPT -->
-<script>
-window.gtranslateSettings = {
-  "default_language": "sw",
-  "languages": ["sw", "en", "fr", "it", "de", "ru", "ar", "zh-CN"],
-  "wrapper_selector": ".gtranslate_wrapper"
-};
-</script>
-<script src="https://cdn.gtranslate.net/widgets/latest/dropdown.js" defer></script>
-
-<!-- SCRIPT.JS -->
-<script src="script.js"></script>
-
-</body>
-</html>
+/* ==========================================
+   MOBILE RESPONSIVE
+   ========================================== */
+@media (max-width: 768px) {
+    .menu-toggle { display: block; }
+    .nav-links { display: none; flex-direction: column; width: 100%; background: var(--deep-navy); padding: 20px; position: absolute; top: 100%; left: 0; right: 0; z-index: 999; border-top: 2px solid var(--royal-gold); }
+    .nav-links.active { display: flex; }
+    .nav-links li { width: 100%; }
+    .nav-links a { padding: 10px 0; width: 100%; }
+    .hero h1 { font-size: 1.8rem; }
+    .services-grid { grid-template-columns: 1fr; }
+    .footer-content { flex-direction: column; text-align: center; }
+    .social-links { justify-content: center; }
+                                                                                                                                  }
