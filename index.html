@@ -70,120 +70,6 @@
 
 <!-- ELFSIGHT PLATFORM -->
 <script src="https://elfsightcdn.com/platform.js" async></script>
-
-<style>
-    :root {
-        --royal-green: #064e3b;
-        --dark-green: #032b1a;
-        --royal-gold: #d4af37;
-        --gold-light: #f0c75e;
-        --light-bg: #f8f9fa;
-        --white: #ffffff;
-        --text-dark: #1e293b;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-    body { background-color: var(--light-bg); color: #333; line-height: 1.6; }
-    a { text-decoration: none; color: inherit; }
-
-    /* HEADER */
-    .top-bar { background: var(--dark-green); padding: 8px 20px; display: flex; justify-content: flex-end; align-items: center; gap: 15px; }
-    .header { background: var(--royal-green); padding: 15px 20px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
-    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; position: relative; }
-    .logo-area { display: flex; align-items: center; gap: 15px; }
-    .logo-holder { width: 60px; height: 60px; border: 2px dashed var(--royal-gold); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
-    .logo-fallback { color: var(--royal-gold); font-weight: 700; font-size: 0.7rem; text-align: center; line-height: 1.1; }
-    .logo-text h2 { color: #fff; font-size: 1.3rem; font-weight: 700; }
-    .logo-text span { color: var(--royal-gold); font-size: 0.8rem; }
-    .nav-links { display: flex; gap: 20px; list-style: none; }
-    .nav-links a { color: #fff; font-size: 0.85rem; transition: color 0.3s; display: flex; align-items: center; gap: 5px; }
-    .nav-links a:hover { color: var(--royal-gold); }
-    .menu-toggle { display: none; background: none; border: none; color: var(--royal-gold); font-size: 26px; cursor: pointer; }
-
-    /* HERO */
-    .hero-video-section { position: relative; width: 100%; height: 100vh; min-height: 500px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
-    .hero-video { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); min-width: 100%; min-height: 100%; z-index: -2; object-fit: cover; }
-    .hero-overlay { position: relative; z-index: 1; text-align: center; color: #fff; padding: 40px 20px; background: rgba(3, 43, 26, 0.6); width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-    .hero-overlay h1 { font-size: 2.8rem; color: var(--royal-gold); margin-bottom: 15px; font-weight: 700; text-transform: uppercase; text-shadow: 2px 2px 10px rgba(0,0,0,0.7); }
-    .hero-overlay p { max-width: 700px; margin: 0 auto 30px auto; font-size: 1.1rem; color: #fff; text-shadow: 1px 1px 5px rgba(0,0,0,0.7); }
-    .btn-primary { background: var(--royal-gold); color: var(--dark-green); padding: 12px 30px; border-radius: 30px; font-weight: 700; transition: all 0.3s; display: inline-block; }
-    .btn-primary:hover { background: #fff; color: var(--royal-green); transform: scale(1.05); }
-
-    /* SECTIONS */
-    .section-title { text-align: center; font-size: 2rem; color: var(--royal-green); margin: 40px 0 20px; position: relative; padding-bottom: 15px; }
-    .section-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background: var(--royal-gold); border-radius: 2px; }
-    .interactive-box { background: #fff; padding: 30px; border-radius: 15px; margin: 20px auto; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-    .interactive-box h2 { color: var(--royal-green); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
-    .interactive-box h2 i { color: var(--royal-gold); }
-
-    /* SERVICES GRID */
-    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; padding: 0 20px; max-width: 1200px; margin: 0 auto; }
-    .service-card { background: #fff; border-radius: 15px; padding: 25px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); border-top: 4px solid var(--royal-green); transition: transform 0.3s; }
-    .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
-    .service-card .card-icon { font-size: 2.5rem; color: var(--royal-gold); margin-bottom: 15px; }
-    .service-card h3 { color: var(--royal-green); margin-bottom: 10px; font-size: 1.2rem; }
-    .service-card p { color: #555; font-size: 0.95rem; line-height: 1.6; }
-
-    /* FORM */
-    .form-group { margin-bottom: 15px; }
-    .form-group label { display: block; font-weight: 600; color: var(--dark-green); margin-bottom: 5px; }
-    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; font-family: 'Poppins', sans-serif; }
-
-    /* STAR RATING */
-    .star-rating { display: flex !important; gap: 10px !important; font-size: 2.2rem !important; cursor: pointer; margin: 10px 0; visibility: visible !important; width: 100%; }
-    .star-rating .fa-star { color: #ccc !important; display: inline-block !important; visibility: visible !important; transition: color 0.2s, transform 0.2s; }
-    .star-rating .fa-star.active { color: #d4af37 !important; transform: scale(1.1); }
-
-    .btn-full { width: 100%; text-align: center; background: var(--royal-gold); color: var(--dark-green); padding: 15px; border: none; border-radius: 10px; font-weight: 700; font-size: 1.1rem; cursor: pointer; transition: all 0.3s; }
-    .btn-full:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4); }
-    .alert-message { margin-top: 15px; padding: 10px; border-radius: 8px; display: none; }
-    .alert-success { background: #d4edda; color: #155724; display: block; }
-    .alert-error { background: #f8d7da; color: #721c24; display: block; }
-
-    /* WIDGET CONTAINERS */
-    .widget-container { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
-    .widget-title { text-align: center; font-size: 1.8rem; color: var(--royal-green); margin-bottom: 20px; }
-
-    /* FOOTER */
-    .footer { background: var(--dark-green); color: #fff; padding: 40px 20px; margin-top: 40px; }
-    .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-    .footer h3, .footer h4 { color: var(--royal-gold); margin-bottom: 15px; }
-    .social-links { display: flex; gap: 15px; margin-top: 15px; }
-    .social-links a { color: var(--royal-gold); font-size: 1.2rem; transition: transform 0.3s; }
-    .social-links a:hover { transform: scale(1.2); }
-
-    /* FLOATING WHATSAPP */
-    .floating-whatsapp { position: fixed; bottom: 25px; right: 25px; background: #25d366; color: #fff; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 1100; transition: transform 0.3s; }
-    .floating-whatsapp:hover { transform: scale(1.1); }
-
-    /* CHATBOT */
-    .chatbot-toggle { position: fixed; bottom: 100px; right: 25px; background-color: var(--royal-green); color: var(--royal-gold); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 1100; cursor: pointer; border: 2px solid var(--royal-gold); }
-    .chatbot-container { position: fixed; bottom: 170px; right: 25px; width: 350px; max-width: 90vw; height: 500px; background: #fff; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); z-index: 1100; display: none; flex-direction: column; overflow: hidden; border: 2px solid var(--royal-gold); }
-    .chatbot-container.active { display: flex; }
-    .chatbot-header { background: var(--royal-green); color: #fff; padding: 15px; display: flex; align-items: center; gap: 10px; }
-    .chatbot-header .avatar { width: 40px; height: 40px; background: var(--royal-gold); color: var(--dark-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem; }
-    .chatbot-header h4 { margin: 0; font-size: 1rem; color: #fff; }
-    .chatbot-header span { font-size: 0.75rem; color: #ddd; display: block; }
-    .chatbot-messages { flex-grow: 1; padding: 15px; overflow-y: auto; background: #f9f9f9; display: flex; flex-direction: column; gap: 10px; }
-    .message { max-width: 80%; padding: 10px 15px; border-radius: 15px; font-size: 0.85rem; }
-    .message.bot { background: #e9ecef; align-self: flex-start; }
-    .message.user { background: var(--royal-green); color: #fff; align-self: flex-end; }
-    .chatbot-input { display: flex; padding: 10px; border-top: 1px solid #eee; }
-    .chatbot-input input { flex-grow: 1; padding: 10px; border: 1px solid #ddd; border-radius: 20px; outline: none; font-family: 'Poppins', sans-serif; }
-    .chatbot-input button { background: var(--royal-gold); color: var(--dark-green); border: none; width: 40px; height: 40px; border-radius: 50%; margin-left: 8px; cursor: pointer; font-size: 1rem; }
-
-    /* GTRANSLATE */
-    .gtranslate_wrapper { position: relative; }
-
-    /* MOBILE RESPONSIVE */
-    @media (max-width: 768px) {
-        .menu-toggle { display: block; }
-        .nav-links { display: none; flex-direction: column; width: 100%; background: var(--dark-green); padding: 20px; position: absolute; top: 100%; left: 0; right: 0; z-index: 999; border-top: 2px solid var(--royal-gold); }
-        .nav-links.active { display: flex; }
-        .nav-links li { width: 100%; }
-        .nav-links a { padding: 10px 0; width: 100%; }
-        .hero-overlay h1 { font-size: 1.8rem; }
-    }
-</style>
 </head>
 <body>
 
@@ -342,4 +228,119 @@
 <!-- CHATBOT -->
 <div class="chatbot-toggle" onclick="toggleChatbot()"><i class="fas fa-robot"></i></div>
 <div class="chatbot-container" id="chatbotContainer">
-    <div 
+    <div class="chatbot-header">
+        <div class="avatar">U</div>
+        <div><h4>UNP Assistant</h4><span>Yupo Mtandaoni</span></div>
+        <button onclick="toggleChatbot()" style="margin-left:auto;background:none;border:none;color:#fff;font-size:1.2rem;cursor:pointer;"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="chatbot-messages" id="chatMessages">
+        <div class="message bot">Karibu UNP TOURS! Ninaweza kukusaidia vipi leo?</div>
+    </div>
+    <div class="chatbot-input">
+        <input type="text" id="chatInput" placeholder="Andika ujumbe wako..." onkeypress="handleKeyPress(event)">
+        <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
+    </div>
+</div>
+
+<!-- COOKIES BANNER -->
+<div id="cookieBanner" style="position: fixed; bottom: 0; left: 0; right: 0; background: var(--deep-navy); color: #fff; padding: 15px; text-align: center; z-index: 9999; display: none;">
+    <p style="margin: 0 0 10px 0; font-size: 0.9rem;">Tunatumia cookies kuboresha uzoefu wako. Kwa kuendelea kutumia website yetu, unakubali <a href="privacy.html" style="color: var(--royal-gold); text-decoration: underline;">Sera zetu za Faragha</a>.</p>
+    <button onclick="acceptCookies()" style="background: var(--royal-gold); color: var(--deep-navy); border: none; padding: 8px 20px; border-radius: 5px; font-weight: 700; cursor: pointer;">Nakubali</button>
+</div>
+
+<!-- ========================================== -->
+<!-- SCRIPTS                                      -->
+<!-- ========================================== -->
+
+<!-- TAWK.TO LIVE CHAT -->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6ab95c20dade22344616d64e/1k3i0vorc';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+
+<!-- ONESIGNAL PUSH -->
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "e772eb04-4c02-457d-bc15-ad77d7a29d4d",
+    });
+  });
+</script>
+
+<!-- GTRANSLATE SCRIPT -->
+<script>
+window.gtranslateSettings = {
+  "default_language": "sw",
+  "languages": ["sw", "en", "fr", "it", "de", "ru", "ar", "zh-CN"],
+  "wrapper_selector": ".gtranslate_wrapper"
+};
+</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/dropdown.js" defer></script>
+
+<!-- FIREBASE - REVIEWS FORM (Module) -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+  import { getFirestore, collection, addDoc, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyD2YtPFL2L_ZwAKdSYpXtvLt8gJUm2IX6s",
+    authDomain: "unptours.firebaseapp.com",
+    projectId: "unptours",
+    storageBucket: "unptours.firebasestorage.app",
+    messagingSenderId: "233326851661",
+    appId: "1:233326851661:web:354156110a5cee29904e04",
+    measurementId: "G-5QJ1X38ZLC"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  const reviewForm = document.getElementById('reviewForm');
+  const reviewMessageBox = document.getElementById('reviewMessageBox');
+  const ratingInput = document.getElementById('selectedReviewRating');
+
+  if (reviewForm) {
+      reviewForm.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const rating = ratingInput.value;
+          if (rating === "0") {
+              reviewMessageBox.textContent = "Tafadhali chagua nyota kwanza!";
+              reviewMessageBox.className = "alert-message alert-error";
+              return;
+          }
+          try {
+              await addDoc(collection(db, "reviews"), {
+                  name: document.getElementById('reviewName').value,
+                  service: document.getElementById('reviewService').value,
+                  rating: parseInt(rating),
+                  message: document.getElementById('reviewMessage').value,
+                  approved: false,
+                  createdAt: new Date()
+              });
+              reviewMessageBox.textContent = "Asante! Maoni yako yametumwa.";
+              reviewMessageBox.className = "alert-message alert-success";
+              reviewForm.reset();
+              document.querySelectorAll('#reviewStars .fa-star').forEach(s => s.classList.remove('active'));
+              ratingInput.value = "0";
+          } catch (error) {
+              reviewMessageBox.textContent = "Kosa: " + error.message;
+              reviewMessageBox.className = "alert-message alert-error";
+          }
+      });
+  }
+</script>
+
+<!-- SCRIPT.JS -->
+<script src="script.js"></script>
+
+</body>
+  </html>
