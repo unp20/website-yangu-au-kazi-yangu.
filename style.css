@@ -90,7 +90,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* ==========================================
-   HERO YA KURASA ZA NDANI (BOOKING, ABOUT, N.K.)
+   HERO YA KURASA ZA NDANI
    ========================================== */
 .hero {
     background: linear-gradient(135deg, var(--deep-navy) 0%, var(--royal-blue) 100%);
@@ -216,11 +216,11 @@ a { text-decoration: none; color: inherit; }
 .floating-whatsapp:hover { transform: scale(1.1); }
 
 /* ==========================================
-   CHATBOT (SASA JUU YA WHATSAPP)
+   CHATBOT - IMEPANGWA VIZURI
    ========================================== */
 .chatbot-toggle { 
     position: fixed; 
-    bottom: 100px; 
+    bottom: 95px; 
     right: 25px; 
     background-color: var(--royal-blue); 
     color: var(--royal-gold); 
@@ -241,7 +241,7 @@ a { text-decoration: none; color: inherit; }
 
 .chatbot-container { 
     position: fixed; 
-    bottom: 175px; 
+    bottom: 165px; 
     right: 25px; 
     width: 350px; 
     max-width: 90vw; 
@@ -304,7 +304,7 @@ a { text-decoration: none; color: inherit; }
 .terms-last-updated { text-align: center; color: #777; font-size: 0.85rem; font-style: italic; margin-bottom: 20px; }
 
 /* ==========================================
-   BOOKING PAGE - TIERS, FORM, WRAPPER
+   BOOKING PAGE
    ========================================== */
 .booking-wrapper {
     max-width: 900px;
@@ -440,7 +440,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* ==========================================
-   SCROLLBAR (KWA CHATBOT NA UKURASA)
+   SCROLLBAR
    ========================================== */
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-track { background: #f1f1f1; }
@@ -518,16 +518,16 @@ a { text-decoration: none; color: inherit; }
         margin-top: 5px;
     }
     
-    /* Chatbot Mobile - JUU ZAIDI */
+    /* Chatbot Mobile */
     .chatbot-toggle {
-        bottom: 100px;
+        bottom: 95px;
         right: 20px;
         width: 55px;
         height: 55px;
         font-size: 24px;
     }
     .chatbot-container {
-        bottom: 175px;
+        bottom: 165px;
         right: 15px;
         width: calc(100vw - 30px);
         max-width: 380px;
@@ -543,4 +543,4 @@ a { text-decoration: none; color: inherit; }
         height: 55px;
         font-size: 26px;
     }
-              }
+}
