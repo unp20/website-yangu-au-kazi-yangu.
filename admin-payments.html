@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Payments | UNP TOURS</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta name="robots" content="noindex, nofollow">
+<style>
+body { font-family: 'Poppins', sans-serif; background: #f8f9fa; padding: 20px; color: #333; }
+.container { max-width: 1200px; margin: 0 auto; }
+.header { background: linear-gradient(135deg, #082f49, #0c4a6e); color: #fff; padding: 30px; border-radius: 15px; text-align: center; margin-bottom: 20px; border-bottom: 5px solid #d4af37; }
+.header h1 { color: #d4af37; margin-bottom: 10px; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-bottom: 20px; }
+.stat { background: #fff; padding: 20px; border-radius: 12px; text-align: center; box-shadow: 0 3px 10px rgba(0,0,0,0.05); border-top: 4px solid #d4af37; }
+.stat h3 { font-size: 1.8rem; color: #0c4a6e; margin-bottom: 5px; }
+.stat p { font-size: 0.85rem; color: #777; }
+.box { background: #fff; padding: 25px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); }
+.box h2 { color: #0c4a6e; margin-bottom: 15px; }
+table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 10px; overflow: hidden; }
+th { background: #0c4a6e; color: #fff; padding: 12px; text-align: left; font-size: 0.85rem; }
+td { padding: 12px; border-bottom: 1px solid #eee; font-size: 0.85rem; color: #555; }
+tr:hover { background: #f9f9f9; }
+.badge { padding: 4px 10px; border-radius: 15px; font-size: 0.75rem; font-weight: 600; }
+.badge-pending { background: #fff3cd; color: #856404; }
+.badge-paid { background: #d4edda; color: #155724; }
+.btn { background: #d4af37; color: #082f49; padding: 10px 20px; border: none; border-radius: 25px; font-weight: 700; cursor: pointer; font-size: 0.9rem; margin-bottom: 15px; }
+.btn:hover { background: #082f49; color: #d4af37; }
+#loading { text-align: center; padding: 20px; color: #777; }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1><i class="fas fa-credit-card"></i> Admin — Malipo</h1>
+        <p>Angalia malipo yote kutoka Firebase Firestore</p>
+    </div>
+
+    <div class="stats">
+        <div class="stat"><h3 id="totalPayments">0</h3><p>Malipo Yote</p></div>
+        <div class="stat"><h3 id="pendingPayments">0</h3><p>Yanasubiri</p></div>
+        <div class="stat"><h3 id="paidPayments">0</h3><p>Yamelipwa</p></div>
+        <div class="stat"><h3 id="totalAmount">$0</h3><p>Jumla ya Pesa</p></div>
+    </div>
+
+    <div class="box">
+        <h2><i class="fas fa-list"></i> Malipo Yote</h2>
+        <button class="btn" onclick="loadPayments()"><i class="fas fa-sync"></i> Refresh</button>
+        <div id="loading">Inapakia...</div>
+        <div style="overflow-x: auto; margin-top: 15px;">
+            <table id="paymentsTable" style="display: none;">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Jina</th>
+                        <th>Njia</th>
+                        <th>Kiasi</th>
+                        <th>Ref</th>
+                        <th>Hali</th>
+                    </tr>
+                </thead>
+                <tbody id="paymentsBody"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyD2YtPFL2L_ZwAKdSYpXtvLt8gJUm2IX6s",
+    authDomain: "unptours.firebaseapp.com",
+    projectId: "unptours",
+    storageBucket: "unptours.firebasestorage.app",
+    messagingSenderId: "233326851661",
+    appId: "1:233326851661:web:354156110a5cee29904e04"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+window.loadPayments = async function() {
+    const loading = document.getElementById('loading');
+    const table = document.getElementById('paymentsTable');
+    const tbody = document.getElementById('paymentsBody');
+    loading.style.display = 'block';
+    table.style.display = 'none';
+    tbody.innerHTML = '';
+
+    try {
+        const snap = await getDocs(collection(db, "payments"));
+        let total = 0, pending = 0, paid = 0, totalAmount = 0;
+
+        snap.forEach((doc) => {
+            const d = doc.data();
+            total++;
+            totalAmount += parseFloat(d.amount || 0);
+            if (d.status === 'Imelipwa') paid++;
+            else pending++;
+
+            const badge = d.status === 'Imelipwa' 
+                ? '<span class="badge badge-paid">Imelipwa</span>' 
+                : '<span class="badge badge-pending">Inasubiri</span>';
+
+            tbody.innerHTML += `<tr>
+                <td>${total}</td>
+                <td>${d.name || '-'}</td>
+                <td>${d.method || '-'}</td>
+                <td>$${d.amount || '0'}</td>
+                <td>${d.reference || '-'}</td>
+                <td>${badge}</td>
+            </tr>`;
+        });
+
+        document.getElementById('totalPayments').textContent = total;
+        document.getElementById('pendingPayments').textContent = pending;
+        document.getElementById('paidPayments').textContent = paid;
+        document.getElementById('totalAmount').textContent = '$' + totalAmount.toFixed(2);
+
+        loading.style.display = 'none';
+        table.style.display = 'table';
+
+        if (total === 0) {
+            loading.textContent = 'Hakuna malipo bado.';
+            loading.style.display = 'block';
+        }
+    } catch (e) {
+        loading.textContent = 'Kosa: ' + e.message;
+    }
+};
+
+window.addEventListener('load', loadPayments);
+</script>
+</body>
+  </html>
