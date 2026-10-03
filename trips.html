@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trips Zetu | UNP TOURS</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<meta name="description" content="Trips zetu zote - Zanzibar, Safari, Water Sports, Luxury. Chagua trip yako.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://unp.tours/trips.html">
+<style>
+.trips-header { background: linear-gradient(135deg, #082f49, #0c4a6e); color: #fff; text-align: center; padding: 70px 20px; border-bottom: 5px solid #d4af37; }
+.trips-header h1 { font-size: 2.5rem; color: #d4af37; margin-bottom: 10px; }
+.trips-header p { font-size: 1.1rem; color: #ddd; max-width: 700px; margin: 0 auto; }
+.filters { max-width: 1200px; margin: 20px auto; padding: 0 20px; display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+.filter-btn { background: #fff; color: #0c4a6e; padding: 10px 20px; border-radius: 25px; border: 2px solid #d4af37; cursor: pointer; font-weight: 600; font-size: 0.9rem; }
+.filter-btn:hover, .filter-btn.active { background: #d4af37; color: #082f49; }
+.trips-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1200px; margin: 30px auto; padding: 0 20px; }
+.trip-card { background: #fff; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.08); border-top: 5px solid #d4af37; transition: transform 0.3s; display: flex; flex-direction: column; }
+.trip-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+.trip-card .img { height: 180px; background: #0c4a6e; color: #d4af37; display: flex; align-items: center; justify-content: center; font-size: 3rem; }
+.trip-card .body { padding: 20px; flex-grow: 1; display: flex; flex-direction: column; }
+.trip-card .category { background: #d4af37; color: #082f49; padding: 4px 12px; border-radius: 15px; font-size: 0.75rem; font-weight: 700; display: inline-block; margin-bottom: 10px; }
+.trip-card h3 { color: #082f49; margin-bottom: 10px; font-size: 1.15rem; }
+.trip-card p { color: #555; font-size: 0.88rem; line-height: 1.6; margin-bottom: 10px; flex-grow: 1; }
+.trip-card .location { color: #0c4a6e; font-size: 0.85rem; margin-bottom: 10px; }
+.trip-card .prices { display: flex; gap: 10px; margin-bottom: 15px; font-size: 0.85rem; }
+.trip-card .price { background: #f0f7ff; padding: 5px 10px; border-radius: 8px; color: #0c4a6e; font-weight: 600; }
+.trip-card .btn { background: #d4af37; color: #082f49; padding: 10px 20px; border-radius: 25px; font-weight: 700; text-align: center; display: block; }
+.trip-card .btn:hover { background: #082f49; color: #d4af37; }
+#loading { text-align: center; padding: 40px; color: #777; }
+</style>
+</head>
+<body>
+
+<header class="header">
+    <div class="nav-container">
+        <a href="index.html" class="logo-area">
+            <div class="logo-holder"><span class="logo-fallback">UNP<br>LOGO</span></div>
+            <div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
+        </a>
+        <button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html"><i class="fas fa-home"></i> Nyumbani</a></li>
+            <li><a href="trips.html" style="color: #d4af37;"><i class="fas fa-suitcase-rolling"></i> Trips</a></li>
+            <li><a href="destinations.html"><i class="fas fa-globe"></i> Destinations</a></li>
+            <li><a href="booking.html"><i class="fas fa-calendar-check"></i> Booking</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Wasiliana</a></li>
+        </ul>
+    </div>
+</header>
+
+<section class="trips-header">
+    <h1><i class="fas fa-suitcase-rolling"></i> Trips Zetu</h1>
+    <p>Chagua trip yako — Zanzibar, Safari, Water Sports, Luxury. Tunayo trips 20+.</p>
+</section>
+
+<div class="filters">
+    <button class="filter-btn active" onclick="filterTrips('all', this)">Zote</button>
+    <button class="filter-btn" onclick="filterTrips('Zanzibar', this)">Zanzibar</button>
+    <button class="filter-btn" onclick="filterTrips('Safari', this)">Safari</button>
+    <button class="filter-btn" onclick="filterTrips('Water Sports', this)">Water Sports</button>
+    <button class="filter-btn" onclick="filterTrips('Luxury', this)">Luxury</button>
+</div>
+
+<div id="loading">Inapakia trips...</div>
+
+<section class="trips-grid" id="tripsGrid"></section>
+
+<footer class="footer">
+    <div class="footer-content">
+        <div>
+            <h3>UNIQUE NATURE PARADISE (UNP)</h3>
+            <p style="font-size: 0.9rem;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p>
+        </div>
+        <div>
+            <h4>Direct Contact</h4>
+            <p style="font-size: 0.9rem;"><i class="fab fa-whatsapp" style="color: #d4af37;"></i> +255 655 728 982</p>
+            <p style="font-size: 0.9rem;"><i class="fas fa-envelope" style="color: #d4af37;"></i> salimnasoro11@gmail.com</p>
+        </div>
+    </div>
+</footer>
+
+<a href="https://wa.me/255655728982" class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyD2YtPFL2L_ZwAKdSYpXtvLt8gJUm2IX6s",
+    authDomain: "unptours.firebaseapp.com",
+    projectId: "unptours",
+    storageBucket: "unptours.firebasestorage.app",
+    messagingSenderId: "233326851661",
+    appId: "1:233326851661:web:354156110a5cee29904e04"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+let allTrips = [];
+
+async function loadTrips() {
+    const loading = document.getElementById('loading');
+    const grid = document.getElementById('tripsGrid');
+    try {
+        const snap = await getDocs(collection(db, "trips"));
+        allTrips = [];
+        snap.forEach((doc) => {
+            allTrips.push({ id: doc.id, ...doc.data() });
+        });
+
+        loading.style.display = 'none';
+
+        if (allTrips.length === 0) {
+            loading.style.display = 'block';
+            loading.textContent = 'Hakuna trips bado.';
+            return;
+        }
+
+        renderTrips(allTrips);
+    } catch (e) {
+        loading.textContent = 'Kosa: ' + e.message;
+    }
+}
+
+function renderTrips(trips) {
+    const grid = document.getElementById('tripsGrid');
+    grid.innerHTML = '';
+    trips.forEach(trip => {
+        grid.innerHTML += `
+            <div class="trip-card">
+                <div class="img"><i class="fas fa-map-marked-alt"></i></div>
+                <div class="body">
+                    <span class="category">${trip.category || 'Trip'}</span>
+                    <h3>${trip.name || 'Trip'}</h3>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> ${trip.location || 'Tanzania'}</p>
+                    <p>${trip.description || ''}</p>
+                    <div class="prices">
+                        <span class="price">$${trip.priceBudget || '-'}</span>
+                        <span class="price">$${trip.priceMid || '-'}</span>
+                        <span class="price">$${trip.priceLuxury || '-'}</span>
+                    </div>
+                    <a href="booking.html?trip=${trip.id}" class="btn">Omba Bei</a>
+                </div>
+            </div>
+        `;
+    });
+}
+
+window.filterTrips = function(category, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    if (category === 'all') {
+        renderTrips(allTrips);
+    } else {
+        renderTrips(allTrips.filter(t => t.category === category));
+    }
+};
+
+window.addEventListener('load', loadTrips);
+</script>
+
+<script>
+  const menuToggleBtn = document.getElementById('menuToggleBtn');
+  const navLinks = document.getElementById('navLinks');
+  if(menuToggleBtn) { menuToggleBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); }); }
+</script>
+
+</body>
+  </html>
