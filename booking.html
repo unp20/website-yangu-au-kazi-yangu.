@@ -46,7 +46,7 @@
     .nav-links { display: flex; gap: 20px; list-style: none; }
     .nav-links a { color: #fff; font-size: 0.85rem; display: flex; align-items: center; gap: 5px; }
     .nav-links a:hover { color: var(--gold); }
-    .menu-toggle { display: none; background: none; border: none; color: var(--gold); font-size: 26px; cursor: pointer; }
+    .menu-toggle { display: none; background: none; border: none; color: var(--gold); font-size: 26px; cursor: pointer; z-index: 1001; }
 
     /* HERO */
     .hero { background: linear-gradient(135deg, var(--deep-navy), var(--ocean-blue)); color: #fff; text-align: center; padding: 70px 20px; border-bottom: 5px solid var(--gold); }
@@ -58,7 +58,8 @@
     .booking-info { background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin-bottom: 25px; border-left: 5px solid var(--gold); }
     .booking-info h3 { color: var(--ocean-blue); margin-bottom: 12px; font-size: 1.2rem; }
     .booking-info p { color: #555; font-size: 0.95rem; line-height: 1.8; }
-    .highlight { background: transparent; padding: 0; border-radius: 0; font-weight: 600; color: #555; }
+    /* HIGHLIGHT: rangi moja tu, hakuna background */
+    .highlight { color: #555; font-weight: 600; }
 
     .form-container { background: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); margin-bottom: 25px; }
     .form-container h2 { color: var(--ocean-blue); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
@@ -136,10 +137,23 @@
 
     @media (max-width: 768px) {
         .menu-toggle { display: block; }
-        .nav-links { display: none; flex-direction: column; width: 100%; background: var(--deep-navy); padding: 20px; position: absolute; top: 100%; left: 0; right: 0; z-index: 999; border-top: 2px solid var(--gold); }
+        .nav-links { 
+            display: none; 
+            flex-direction: column; 
+            width: 100%; 
+            background: var(--deep-navy); 
+            padding: 20px; 
+            position: absolute; 
+            top: 100%; 
+            left: 0; 
+            right: 0; 
+            z-index: 999; 
+            border-top: 2px solid var(--gold);
+            gap: 0;
+        }
         .nav-links.active { display: flex; }
         .nav-links li { width: 100%; }
-        .nav-links a { padding: 10px 0; width: 100%; }
+        .nav-links a { padding: 12px 0; width: 100%; font-size: 0.95rem; }
         .tier-option { padding: 12px 10px !important; gap: 10px !important; flex-wrap: nowrap !important; align-items: center !important; }
         .tier-option input[type="radio"] { width: 18px !important; height: 18px !important; min-width: 18px !important; max-width: 18px !important; flex: 0 0 18px !important; }
         .tier-option .tier-details h4 { font-size: 0.9rem !important; }
@@ -161,7 +175,7 @@
             <div class="logo-holder"><span class="logo-fallback">UNP<br>LOGO</span></div>
             <div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
         </a>
-        <button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
+        <button class="menu-toggle" id="menuToggleBtn" type="button"><i class="fas fa-bars"></i></button>
         <ul class="nav-links" id="navLinks">
             <li><a href="index.html"><i class="fas fa-home"></i> Nyumbani</a></li>
             <li><a href="about.html"><i class="fas fa-info-circle"></i> Kuhusu Sisi</a></li>
@@ -323,15 +337,4 @@
                 <textarea id="guestMessage" rows="4" placeholder="Tuambie zaidi kuhusu safari unayotaka..."></textarea>
             </div>
 
-            <button type="submit" class="btn-primary btn-full">
-                <i class="fas fa-paper-plane"></i> Tuma Ombi Lako
-            </button>
-
-        </form>
-    </section>
-
-</div>
-
-<footer class="footer">
-    <div class="footer-content">
- 
+            <button type="submit
