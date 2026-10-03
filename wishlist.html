@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wishlist | UNP TOURS</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<meta name="description" content="Wishlist - Vitu unavyopenda UNP TOURS.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://unp.tours/wishlist.html">
+<style>
+.wishlist-header { background: linear-gradient(135deg, #082f49, #0c4a6e); color: #fff; text-align: center; padding: 70px 20px; border-bottom: 5px solid #d4af37; }
+.wishlist-header h1 { font-size: 2.5rem; color: #d4af37; margin-bottom: 10px; }
+.wishlist-header p { font-size: 1.1rem; color: #ddd; max-width: 700px; margin: 0 auto; }
+.wishlist-container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+.wishlist-item { background: #fff; border-radius: 15px; padding: 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); border-left: 5px solid #d4af37; display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; flex-wrap: wrap; gap: 15px; }
+.wishlist-item .info h3 { color: #082f49; margin-bottom: 5px; font-size: 1.1rem; }
+.wishlist-item .info p { color: #777; font-size: 0.88rem; }
+.wishlist-item .info .price { color: #0c4a6e; font-weight: 700; font-size: 1rem; margin-top: 5px; }
+.wishlist-item .actions { display: flex; gap: 10px; }
+.wishlist-item .btn { background: #d4af37; color: #082f49; padding: 10px 20px; border-radius: 25px; font-weight: 700; font-size: 0.85rem; }
+.wishlist-item .btn:hover { background: #082f49; color: #d4af37; }
+.wishlist-item .btn-remove { background: #dc3545; color: #fff; }
+.empty { text-align: center; padding: 60px 20px; color: #777; }
+.empty i { font-size: 4rem; color: #d4af37; margin-bottom: 20px; }
+</style>
+</head>
+<body>
+
+<header class="header">
+    <div class="nav-container">
+        <a href="index.html" class="logo-area">
+            <div class="logo-holder"><span class="logo-fallback">UNP<br>LOGO</span></div>
+            <div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
+        </a>
+        <button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html"><i class="fas fa-home"></i> Nyumbani</a></li>
+            <li><a href="trips.html"><i class="fas fa-suitcase-rolling"></i> Trips</a></li>
+            <li><a href="wishlist.html" style="color: #d4af37;"><i class="fas fa-heart"></i> Wishlist</a></li>
+            <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Wasiliana</a></li>
+        </ul>
+    </div>
+</header>
+
+<section class="wishlist-header">
+    <h1><i class="fas fa-heart"></i> Wishlist Yangu</h1>
+    <p>Vitu unavyopenda — unaweza kuomba bei baadaye.</p>
+</section>
+
+<div class="wishlist-container" id="wishlistContainer">
+    <div class="empty">
+        <i class="fas fa-heart"></i>
+        <h2>Wishlist ni tupu</h2>
+        <p>Ongeza trips unazozipenda kwenye wishlist.</p>
+        <a href="trips.html" style="display:inline-block; margin-top:15px; background:#d4af37; color:#082f49; padding:12px 25px; border-radius:25px; font-weight:700;">Ona Trips</a>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="footer-content">
+        <div>
+            <h3>UNIQUE NATURE PARADISE (UNP)</h3>
+            <p style="font-size: 0.9rem;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p>
+        </div>
+        <div>
+            <h4>Direct Contact</h4>
+            <p style="font-size: 0.9rem;"><i class="fab fa-whatsapp" style="color: #d4af37;"></i> +255 655 728 982</p>
+            <p style="font-size: 0.9rem;"><i class="fas fa-envelope" style="color: #d4af37;"></i> salimnasoro11@gmail.com</p>
+        </div>
+    </div>
+</footer>
+
+<a href="https://wa.me/255655728982" class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+// Wishlist logic (localStorage)
+function loadWishlist() {
+    const container = document.getElementById('wishlistContainer');
+    const wishlist = JSON.parse(localStorage.getItem('unpWishlist') || '[]');
+
+    if (wishlist.length === 0) {
+        container.innerHTML = `
+            <div class="empty">
+                <i class="fas fa-heart"></i>
+                <h2>Wishlist ni tupu</h2>
+                <p>Ongeza trips unazozipenda kwenye wishlist.</p>
+                <a href="trips.html" style="display:inline-block; margin-top:15px; background:#d4af37; color:#082f49; padding:12px 25px; border-radius:25px; font-weight:700;">Ona Trips</a>
+            </div>
+        `;
+        return;
+    }
+
+    container.innerHTML = '';
+    wishlist.forEach((item, index) => {
+        container.innerHTML += `
+            <div class="wishlist-item">
+                <div class="info">
+                    <h3>${item.name || 'Trip'}</h3>
+                    <p>${item.category || 'Trip'}</p>
+                    <div class="price">$${item.price || '0'}</div>
+                </div>
+                <div class="actions">
+                    <a href="booking.html?trip=${item.id || ''}" class="btn">Omba Bei</a>
+                    <button class="btn btn-remove" onclick="removeFromWishlist(${index})">Ondoa</button>
+                </div>
+            </div>
+        `;
+    });
+}
+
+window.removeFromWishlist = function(index) {
+    const wishlist = JSON.parse(localStorage.getItem('unpWishlist') || '[]');
+    wishlist.splice(index, 1);
+    localStorage.setItem('unpWishlist', JSON.stringify(wishlist));
+    loadWishlist();
+};
+
+window.addEventListener('load', loadWishlist);
+</script>
+
+<script>
+  const menuToggleBtn = document.getElementById('menuToggleBtn');
+  const navLinks = document.getElementById('navLinks');
+  if(menuToggleBtn) { menuToggleBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); }); }
+</script>
+
+</body>
+                                                                                      </html>
