@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Community | UNP TOURS</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<meta name="description" content="Community - Jamii ya UNP TOURS. Hadithi, picha, na maoni.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://unp.tours/community.html">
+<style>
+.community-header { background: linear-gradient(135deg, #082f49, #0c4a6e); color: #fff; text-align: center; padding: 70px 20px; border-bottom: 5px solid #d4af37; }
+.community-header h1 { font-size: 2.5rem; color: #d4af37; margin-bottom: 10px; }
+.community-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+.community-card { background: #fff; border-radius: 15px; padding: 25px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); border-top: 5px solid #d4af37; text-align: center; transition: transform 0.3s; }
+.community-card:hover { transform: translateY(-5px); }
+.community-card i { font-size: 2.5rem; color: #0c4a6e; margin-bottom: 15px; }
+.community-card h3 { color: #082f49; margin-bottom: 10px; font-size: 1.15rem; }
+.community-card p { color: #555; font-size: 0.9rem; line-height: 1.6; margin-bottom: 15px; }
+.community-card a { background: #d4af37; color: #082f49; padding: 10px 22px; border-radius: 25px; font-weight: 700; display: inline-block; font-size: 0.85rem; }
+</style>
+</head>
+<body>
+<header class="header">
+    <div class="nav-container">
+        <a href="index.html" class="logo-area">
+            <div class="logo-holder"><span class="logo-fallback">UNP<br>LOGO</span></div>
+            <div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
+        </a>
+        <button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html"><i class="fas fa-home"></i> Nyumbani</a></li>
+            <li><a href="community.html" style="color: #d4af37;"><i class="fas fa-users"></i> Community</a></li>
+            <li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
+            <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Wasiliana</a></li>
+        </ul>
+    </div>
+</header>
+
+<section class="community-header">
+    <h1><i class="fas fa-users"></i> Community</h1>
+    <p>Jiunge na jamii yetu ya watalii kutoka duniani kote.</p>
+</section>
+
+<section class="community-grid">
+    <div class="community-card">
+        <i class="fas fa-comments"></i>
+        <h3>Forum</h3>
+        <p>Jadiliana na watalii wengine kuhusu safari, tips, na uzoefu.</p>
+        <a href="contact.html">Ingia →</a>
+    </div>
+    <div class="community-card">
+        <i class="fas fa-book-open"></i>
+        <h3>Stories</h3>
+        <p>Hadithi za wateja wetu — uzoefu wao wa Zanzibar na Tanzania.</p>
+        <a href="blog.html">Soma →</a>
+    </div>
+    <div class="community-card">
+        <i class="fas fa-camera"></i>
+        <h3>Photos</h3>
+        <p>Picha za wateja wetu — wakishiriki uzuri wa Zanzibar.</p>
+        <a href="gallery.html">Ona →</a>
+    </div>
+    <div class="community-card">
+        <i class="fas fa-star"></i>
+        <h3>Reviews</h3>
+        <p>Maoni ya wateja wetu — kile wanachosema kuhusu sisi.</p>
+        <a href="testimonials.html">Soma →</a>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-content">
+        <div><h3>UNIQUE NATURE PARADISE (UNP)</h3><p style="font-size: 0.9rem;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p></div>
+        <div><h4>Direct Contact</h4><p><i class="fab fa-whatsapp" style="color: #d4af37;"></i> +255 655 728 982</p><p><i class="fas fa-envelope" style="color: #d4af37;"></i> salimnasoro11@gmail.com</p></div>
+    </div>
+</footer>
+
+<a href="https://wa.me/255655728982" class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+  const menuToggleBtn = document.getElementById('menuToggleBtn');
+  const navLinks = document.getElementById('navLinks');
+  if(menuToggleBtn) { menuToggleBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); }); }
+</script>
+
+</body>
+                  </html>
