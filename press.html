@@ -3,20 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Habari kwa Vyombo | UNP TOURS Zanzibar</title>
+<title>Press Room | UNP TOURS Zanzibar</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
 
 <!-- SEO META TAGS -->
-<meta name="description" content="Habari kwa Vyombo vya Habari - UNP TOURS. Taarifa, picha, na mawasiliano kwa waandishi wa habari na blogu.">
-<meta name="keywords" content="UNP tours press, Zanzibar tourism press, habari za utalii, press release Zanzibar">
+<meta name="description" content="Press Room ya UNP TOURS - Taarifa za habari, media kit, na mawasiliano kwa waandishi.">
+<meta name="keywords" content="UNP tours press, Zanzibar tourism press, habari za utalii">
 <meta name="author" content="UNP TOURS Zanzibar">
 <meta name="robots" content="index, follow">
 
 <!-- Open Graph -->
-<meta property="og:title" content="Habari kwa Vyombo | UNP TOURS Zanzibar">
-<meta property="og:description" content="Taarifa kwa waandishi wa habari na blogu.">
+<meta property="og:title" content="Press Room | UNP TOURS Zanzibar">
+<meta property="og:description" content="Taarifa za habari, media kit, na mawasiliano.">
 <meta property="og:image" content="https://unp.tours/images/logo.png">
 <meta property="og:url" content="https://unp.tours/press.html">
 <meta property="og:type" content="website">
@@ -24,8 +24,8 @@
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Habari kwa Vyombo | UNP TOURS Zanzibar">
-<meta name="twitter:description" content="Taarifa kwa waandishi wa habari na blogu.">
+<meta name="twitter:title" content="Press Room | UNP TOURS Zanzibar">
+<meta name="twitter:description" content="Taarifa za habari, media kit, na mawasiliano.">
 <meta name="twitter:image" content="https://unp.tours/images/logo.png">
 
 <!-- Canonical -->
@@ -87,87 +87,205 @@
     .nav-links a:hover { color: var(--gold); }
     .menu-toggle { display: none; background: none; border: none; color: var(--gold); font-size: 26px; cursor: pointer; }
 
-    /* HERO */
-    .hero { background: linear-gradient(135deg, var(--deep-navy), var(--ocean-blue)); color: #fff; text-align: center; padding: 70px 20px; border-bottom: 5px solid var(--gold); }
-    .hero h1 { font-size: 2.2rem; color: var(--gold); margin-bottom: 10px; }
-    .hero p { font-size: 1rem; color: #ddd; max-width: 700px; margin: 0 auto; }
-
-    /* INTERACTIVE BOX */
-    .interactive-box { background: #fff; padding: 30px; border-radius: 12px; margin: 40px auto; box-shadow: 0 5px 15px rgba(0,0,0,0.05); max-width: 900px; }
-    .interactive-box h2 { color: var(--ocean-blue); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
-    .interactive-box h2 i { color: var(--gold); }
-
-    /* PRESS ITEMS */
-    .press-item {
-        background: #f9f9f9;
-        padding: 20px;
-        border-radius: 10px;
-        margin-bottom: 15px;
-        border-left: 4px solid var(--gold);
-    }
-    .press-item h3 { color: var(--deep-navy); margin-bottom: 8px; font-size: 1.1rem; }
-    .press-item .date { color: #777; font-size: 0.8rem; margin-bottom: 10px; display: block; }
-    .press-item p { color: #555; font-size: 0.9rem; line-height: 1.7; margin-bottom: 10px; }
-    .press-item a { color: var(--ocean-blue); font-weight: 600; font-size: 0.9rem; text-decoration: underline; }
-
-    /* MEDIA KIT */
-    .media-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 15px;
-        margin-top: 20px;
-    }
-    .media-item {
-        background: #fff;
-        border: 2px solid #eee;
-        border-radius: 10px;
-        padding: 20px;
+    /* HERO — TOFAUTI: Kofia ya Gazeti */
+    .press-hero {
+        background: linear-gradient(135deg, var(--deep-navy) 0%, var(--ocean-blue) 100%);
+        color: #fff;
+        padding: 80px 20px 60px;
         text-align: center;
+        border-bottom: 5px solid var(--gold);
+        position: relative;
+    }
+    .press-hero::before {
+        content: "PRESS ROOM";
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size: 0.7rem;
+        letter-spacing: 3px;
+        color: var(--gold);
+        font-weight: 700;
+    }
+    .press-hero::after {
+        content: "UNP TOURS";
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 0.7rem;
+        letter-spacing: 3px;
+        color: var(--gold);
+        font-weight: 700;
+    }
+    .press-hero h1 {
+        font-size: 2.5rem;
+        color: var(--gold);
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 10px;
+    }
+    .press-hero p {
+        font-size: 1.1rem;
+        color: #ddd;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    /* STATS BAR */
+    .press-stats {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        flex-wrap: wrap;
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px dashed rgba(212, 175, 55, 0.3);
+    }
+    .press-stat { text-align: center; }
+    .press-stat .num { font-size: 2rem; color: var(--gold); font-weight: 700; }
+    .press-stat .label { font-size: 0.8rem; color: #bbb; text-transform: uppercase; }
+
+    /* TABS */
+    .press-tabs {
+        max-width: 1000px;
+        margin: 30px auto 0;
+        padding: 0 20px;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .press-tab {
+        background: #fff;
+        color: var(--ocean-blue);
+        padding: 12px 24px;
+        border-radius: 25px;
+        border: 2px solid #eee;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 0.9rem;
         transition: 0.3s;
     }
-    .media-item:hover { border-color: var(--gold); }
-    .media-item i { font-size: 2.5rem; color: var(--gold); margin-bottom: 10px; }
-    .media-item h4 { color: var(--deep-navy); font-size: 1rem; margin-bottom: 5px; }
-    .media-item p { font-size: 0.8rem; color: #777; margin-bottom: 10px; }
-    .btn-download {
-        display: inline-block;
-        background: var(--gold);
+    .press-tab:hover { border-color: var(--gold); }
+    .press-tab.active { background: var(--ocean-blue); color: #fff; border-color: var(--ocean-blue); }
+
+    /* TAB CONTENT */
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    /* PRESS RELEASES - NEWSPAPER STYLE */
+    .press-newspaper {
+        max-width: 1000px;
+        margin: 30px auto;
+        padding: 0 20px;
+    }
+    .press-item {
+        background: #fff;
+        padding: 25px;
+        margin-bottom: 20px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        border-left: 5px solid var(--gold);
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+    }
+    .press-date-box {
+        background: var(--ocean-blue);
+        color: #fff;
+        padding: 12px;
+        border-radius: 8px;
+        text-align: center;
+        min-width: 70px;
+        flex-shrink: 0;
+    }
+    .press-date-box .day { font-size: 1.6rem; font-weight: 700; color: var(--gold); line-height: 1; }
+    .press-date-box .month { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; }
+    .press-date-box .year { font-size: 0.7rem; color: #bbb; }
+    .press-content { flex: 1; }
+    .press-content h3 {
         color: var(--deep-navy);
-        padding: 8px 15px;
-        border-radius: 5px;
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        line-height: 1.3;
+    }
+    .press-content p {
+        color: #555;
+        font-size: 0.9rem;
+        line-height: 1.7;
+        margin-bottom: 12px;
+    }
+    .press-content .read-more {
+        color: var(--ocean-blue);
+        font-weight: 600;
+        font-size: 0.9rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        transition: 0.3s;
+    }
+    .press-content .read-more:hover { color: var(--gold); gap: 10px; }
+
+    /* MEDIA KIT - GRID */
+    .media-kit {
+        max-width: 1000px;
+        margin: 30px auto;
+        padding: 0 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+    }
+    .media-card {
+        background: #fff;
+        border-radius: 12px;
+        padding: 25px;
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        border-top: 4px solid var(--gold);
+        transition: 0.3s;
+    }
+    .media-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+    .media-card i { font-size: 2.5rem; color: var(--gold); margin-bottom: 12px; }
+    .media-card h4 { color: var(--deep-navy); margin-bottom: 5px; font-size: 1rem; }
+    .media-card p { font-size: 0.8rem; color: #777; margin-bottom: 15px; }
+    .btn-download {
+        background: var(--ocean-blue);
+        color: #fff;
+        padding: 8px 18px;
+        border-radius: 20px;
         font-size: 0.8rem;
         font-weight: 600;
-        text-decoration: none;
+        display: inline-block;
         transition: 0.3s;
     }
-    .btn-download:hover { background: var(--deep-navy); color: var(--gold); }
+    .btn-download:hover { background: var(--gold); color: var(--deep-navy); }
 
-    /* PRESS CONTACT */
-    .press-contact {
+    /* CONTACT - VIP STYLE */
+    .press-contact-box {
+        max-width: 800px;
+        margin: 30px auto;
+        padding: 0 20px;
+    }
+    .press-contact-card {
         background: linear-gradient(135deg, var(--deep-navy), var(--ocean-blue));
         color: #fff;
-        padding: 30px;
-        border-radius: 12px;
+        padding: 40px 30px;
+        border-radius: 15px;
         text-align: center;
+        border: 2px solid var(--gold);
     }
-    .press-contact h2 { color: var(--gold); margin-bottom: 15px; }
-    .press-contact p { color: #ddd; margin-bottom: 20px; }
-    .btn-primary {
-        background-color: var(--gold);
+    .press-contact-card h2 { color: var(--gold); margin-bottom: 15px; font-size: 1.5rem; }
+    .press-contact-card p { color: #ddd; margin-bottom: 25px; }
+    .press-contact-card .btn-primary {
+        background: var(--gold);
         color: var(--deep-navy);
-        padding: 14px 32px;
-        border: none;
+        padding: 14px 28px;
         border-radius: 25px;
         font-weight: 700;
-        cursor: pointer;
-        transition: 0.3s;
         display: inline-block;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        font-size: 0.95rem;
         margin: 5px;
+        transition: 0.3s;
     }
-    .btn-primary:hover { background-color: #fff; transform: translateY(-2px); }
+    .press-contact-card .btn-primary:hover { background: #fff; transform: translateY(-2px); }
 
     /* FOOTER */
     .footer { background: var(--deep-navy); color: #fff; padding: 40px 20px; margin-top: 50px; }
@@ -197,7 +315,6 @@
     .chatbot-input input { flex-grow: 1; padding: 10px; border: 1px solid #ddd; border-radius: 20px; outline: none; font-family: 'Poppins', sans-serif; }
     .chatbot-input button { background: var(--gold); color: var(--deep-navy); border: none; width: 40px; height: 40px; border-radius: 50%; margin-left: 8px; cursor: pointer; font-size: 1rem; }
 
-    /* GTRANSLATE */
     .gtranslate_wrapper { position: relative; }
 
     @media (max-width: 768px) {
@@ -206,7 +323,9 @@
         .nav-links.active { display: flex; }
         .nav-links li { width: 100%; }
         .nav-links a { padding: 10px 0; width: 100%; }
-        .hero h1 { font-size: 1.6rem; }
+        .press-hero h1 { font-size: 1.6rem; }
+        .press-item { flex-direction: column; }
+        .press-date-box { min-width: 100%; }
     }
 </style>
 </head>
@@ -231,141 +350,119 @@
             <li><a href="services.html"><i class="fas fa-briefcase"></i> Huduma</a></li>
             <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
             <li><a href="pricing.html"><i class="fas fa-layer-group"></i> Madaraja</a></li>
-            <li><a href="press.html" style="color: var(--gold);"><i class="fas fa-newspaper"></i> Habari</a></li>
+            <li><a href="press.html" style="color: var(--gold);"><i class="fas fa-newspaper"></i> Press</a></li>
             <li><a href="blog.html"><i class="fas fa-blog"></i> Blog</a></li>
             <li><a href="contact.html"><i class="fas fa-envelope"></i> Wasiliana</a></li>
         </ul>
     </div>
 </header>
 
-<!-- HERO SECTION -->
-<section class="hero">
-    <h1>Habari kwa Vyombo</h1>
+<!-- PRESS HERO -->
+<section class="press-hero">
+    <h1>Press Room</h1>
     <p>Taarifa, picha, na mawasiliano kwa waandishi wa habari na blogu.</p>
-</section>
 
-<!-- PRESS RELEASES -->
-<section class="interactive-box">
-    <h2><i class="fas fa-newspaper"></i> Taarifa kwa Vyombo (Press Releases)</h2>
-
-    <div class="press-item">
-        <h3>UNP TOURS Yazindua Kifurushi Kipya cha VIP Luxury Experience</h3>
-        <span class="date"><i class="fas fa-calendar"></i> 30 Septemba 2026</span>
-        <p>UNP TOURS imetangaza kifurushi kipya cha VIP Luxury Experience kinachojumuisha Private Jet, Secret Garden, na Butler wa Kibinafsi. Kifurushi hiki kinalenga wateja wa hali ya juu wanaotafuta uzoefu wa kipekee Zanzibar.</p>
-        <a href="contact.html">Soma Zaidi →</a>
-    </div>
-
-    <div class="press-item">
-        <h3>UNP TOURS Yashirikiana na Hoteli 10 Zanzibar kwa Ajili ya Safari za Kikundi</h3>
-        <span class="date"><i class="fas fa-calendar"></i> 15 Septemba 2026</span>
-        <p>UNP TOURS imesaini mkataba wa ushirikiano na hoteli 10 Zanzibar ili kutoa huduma bora zaidi kwa wateja wa vikundi. Ushirikiano huu unatarajiwa kuongeza idadi ya watalii kwa 30%.</p>
-        <a href="contact.html">Soma Zaidi →</a>
-    </div>
-
-    <div class="press-item">
-        <h3>UNP TOURS Yashinda Tuzo ya Kampuni Bora ya Utalii Zanzibar 2025</h3>
-        <span class="date"><i class="fas fa-calendar"></i> 20 Desemba 2025</span>
-        <p>UNP TOURS imeshinda tuzo ya "Kampuni Bora ya Utalii Zanzibar 2025" kutokana na huduma zake za kifahari na uzoefu wa kipekee inaowapa wateja.</p>
-        <a href="awards.html">Soma Zaidi →</a>
+    <div class="press-stats">
+        <div class="press-stat">
+            <div class="num">3</div>
+            <div class="label">Press Releases</div>
+        </div>
+        <div class="press-stat">
+            <div class="num">4</div>
+            <div class="label">Media Assets</div>
+        </div>
+        <div class="press-stat">
+            <div class="num">24/7</div>
+            <div class="label">Msaada</div>
+        </div>
     </div>
 </section>
 
-<!-- MEDIA KIT -->
-<section class="interactive-box">
-    <h2><i class="fas fa-photo-video"></i> Media Kit (Vifaa vya Vyombo)</h2>
-    <p style="color: #555; margin-bottom: 20px;">Waandishi wa habari na blogu wanaweza kupakua vifaa vyetu hapa chini.</p>
+<!-- TABS -->
+<div class="press-tabs">
+    <button class="press-tab active" onclick="showTab('releases', this)"><i class="fas fa-newspaper"></i> Press Releases</button>
+    <button class="press-tab" onclick="showTab('media', this)"><i class="fas fa-photo-video"></i> Media Kit</button>
+    <button class="press-tab" onclick="showTab('contact', this)"><i class="fas fa-envelope"></i> Wasiliana</button>
+</div>
 
-    <div class="media-grid">
-        <div class="media-item">
+<!-- TAB 1: PRESS RELEASES -->
+<div class="tab-content active" id="tab-releases">
+    <div class="press-newspaper">
+
+        <div class="press-item">
+            <div class="press-date-box">
+                <div class="day">30</div>
+                <div class="month">Sep</div>
+                <div class="year">2026</div>
+            </div>
+            <div class="press-content">
+                <h3>UNP TOURS Yazindua Kifurushi Kipya cha VIP Luxury Experience</h3>
+                <p>UNP TOURS imetangaza kifurushi kipya cha VIP Luxury Experience kinachojumuisha Private Jet, Secret Garden, na Butler wa Kibinafsi. Kifurushi hiki kinalenga wateja wa hali ya juu wanaotafuta uzoefu wa kipekee Zanzibar.</p>
+                <a href="contact.html" class="read-more">Soma Zaidi <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+
+        <div class="press-item">
+            <div class="press-date-box">
+                <div class="day">15</div>
+                <div class="month">Sep</div>
+                <div class="year">2026</div>
+            </div>
+            <div class="press-content">
+                <h3>UNP TOURS Yashirikiana na Hoteli 10 Zanzibar kwa Ajili ya Safari za Kikundi</h3>
+                <p>UNP TOURS imesaini mkataba wa ushirikiano na hoteli 10 Zanzibar ili kutoa huduma bora zaidi kwa wateja wa vikundi. Ushirikiano huu unatarajiwa kuongeza idadi ya watalii kwa 30%.</p>
+                <a href="contact.html" class="read-more">Soma Zaidi <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+
+        <div class="press-item">
+            <div class="press-date-box">
+                <div class="day">20</div>
+                <div class="month">Dec</div>
+                <div class="year">2025</div>
+            </div>
+            <div class="press-content">
+                <h3>UNP TOURS Yashinda Tuzo ya Kampuni Bora ya Utalii Zanzibar 2025</h3>
+                <p>UNP TOURS imeshinda tuzo ya "Kampuni Bora ya Utalii Zanzibar 2025" kutokana na huduma zake za kifahari na uzoefu wa kipekee inaowapa wateja.</p>
+                <a href="awards.html" class="read-more">Soma Zaidi <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- TAB 2: MEDIA KIT -->
+<div class="tab-content" id="tab-media">
+    <div class="media-kit">
+        <div class="media-card">
             <i class="fas fa-image"></i>
             <h4>Logo ya UNP</h4>
             <p>PNG, SVG</p>
             <a href="images/logo.png" download class="btn-download">Pakua</a>
         </div>
-
-        <div class="media-item">
+        <div class="media-card">
             <i class="fas fa-camera"></i>
             <h4>Picha za UNP</h4>
             <p>JPG, High Resolution</p>
             <a href="gallery.html" class="btn-download">Ona Gallery</a>
         </div>
-
-        <div class="media-item">
+        <div class="media-card">
             <i class="fas fa-video"></i>
             <h4>Video za UNP</h4>
             <p>MP4, 4K</p>
             <a href="gallery.html" class="btn-download">Ona Video</a>
         </div>
-
-        <div class="media-item">
+        <div class="media-card">
             <i class="fas fa-file-pdf"></i>
             <h4>Fact Sheet</h4>
             <p>PDF</p>
             <a href="about.html" class="btn-download">Soma</a>
         </div>
     </div>
-</section>
-
-<!-- PRESS CONTACT -->
-<section class="interactive-box" style="padding: 0; background: transparent; box-shadow: none;">
-    <div class="press-contact">
-        <h2><i class="fas fa-envelope"></i> Wasiliana na Timu Yetu ya Habari</h2>
-        <p>Kwa mahojiano, taarifa zaidi, au media kit kamili, wasiliana nasi:</p>
-        <a href="mailto:salimnasoro11@gmail.com" class="btn-primary"><i class="fas fa-envelope"></i> Barua Pepe</a>
-        <a href="https://wa.me/255655728982" class="btn-primary"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-    </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="footer">
-    <div class="footer-content">
-        <div>
-            <h3>UNIQUE NATURE PARADISE (UNP)</h3>
-            <p style="font-size: 0.9rem; max-width: 350px;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p>
-        </div>
-        <div>
-            <h4>Direct Contact</h4>
-            <p style="font-size: 0.9rem; margin-top: 8px;"><i class="fab fa-whatsapp" style="color: var(--gold);"></i> Phone: +255 655 728 982</p>
-            <p style="font-size: 0.9rem; margin-top: 5px;"><i class="fas fa-envelope" style="color: var(--gold);"></i> Email: salimnasoro11@gmail.com</p>
-            <div class="social-links">
-                <a href="https://wa.me/255655728982" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                <a href="mailto:salimnasoro11@gmail.com"><i class="fas fa-envelope"></i></a>
-                <a href="https://www.tiktok.com/@unptours" target="_blank"><i class="fab fa-tiktok"></i></a>
-                <a href="https://www.instagram.com/unpsoulvoyoge" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.facebook.com/profile.php?id=61595094232501" target="_blank"><i class="fab fa-facebook"></i></a>
-            </div>
-        </div>
-    </div>
-    <!-- SOCIAL SHARING BUTTONS -->
-    <div style="text-align: center; margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.2);">
-        <p style="color: var(--gold); font-size: 0.9rem; margin-bottom: 10px;">Shiriki UNP TOURS:</p>
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https://unp.tours/press.html" target="_blank" style="display: inline-block; margin: 0 5px; color: var(--gold); font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
-        <a href="https://twitter.com/intent/tweet?url=https://unp.tours/press.html" target="_blank" style="display: inline-block; margin: 0 5px; color: var(--gold); font-size: 1.5rem;"><i class="fab fa-twitter"></i></a>
-        <a href="https://wa.me/?text=Check%20out%20UNP%20Press!%20https://unp.tours/press.html" target="_blank" style="display: inline-block; margin: 0 5px; color: var(--gold); font-size: 1.5rem;"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://unp.tours/press.html" target="_blank" style="display: inline-block; margin: 0 5px; color: var(--gold); font-size: 1.5rem;"><i class="fab fa-linkedin"></i></a>
-        <a href="https://t.me/share/url?url=https://unp.tours/press.html" target="_blank" style="display: inline-block; margin: 0 5px; color: var(--gold); font-size: 1.5rem;"><i class="fab fa-telegram"></i></a>
-    </div>
-</footer>
-
-<!-- FLOATING WHATSAPP -->
-<a href="https://wa.me/255655728982" class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
-
-<!-- CHATBOT -->
-<div class="chatbot-toggle" onclick="toggleChatbot()"><i class="fas fa-robot"></i></div>
-<div class="chatbot-container" id="chatbotContainer">
-    <div class="chatbot-header">
-        <div class="avatar">U</div>
-        <div><h4>UNP Assistant</h4><span>Yupo Mtandaoni</span></div>
-        <button onclick="toggleChatbot()" style="margin-left:auto;background:none;border:none;color:#fff;font-size:1.2rem;cursor:pointer;"><i class="fas fa-times"></i></button>
-    </div>
-    <div class="chatbot-messages" id="chatMessages">
-        <div class="message bot">Karibu UNP TOURS! Ninaweza kukusaidia vipi leo?</div>
-    </div>
-    <div class="chatbot-input">
-        <input type="text" id="chatInput" placeholder="Andika ujumbe wako..." onkeypress="handleKeyPress(event)">
-        <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
-    </div>
 </div>
 
-<!-- COOKIES BANNER -->
-<div id="cookieBa
+<!-- TAB 3: CONTACT -->
+<div class="tab-content" id="tab-contact">
+    <div class="press-contact-box">
+        <div class="press-contact-card">
+            <h2><i class="fas fa-envelope"></
