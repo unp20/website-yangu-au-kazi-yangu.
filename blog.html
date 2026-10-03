@@ -37,6 +37,27 @@
 <meta name="geo.position" content="-6.165917;39.202641">
 <meta name="ICBM" content="-6.165917, 39.202641">
 
+<!-- GOOGLE ANALYTICS -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5QJ1X38ZLC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5QJ1X38ZLC');
+</script>
+
+<!-- YANDEX METRICA -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113203659', 'ym');
+    ym(113203659, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/113203659" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
 <!-- ELFSIGHT PLATFORM -->
 <script src="https://elfsightcdn.com/platform.js" async></script>
 
@@ -57,7 +78,7 @@
     /* HEADER */
     .top-bar { background: var(--deep-navy); padding: 8px 20px; display: flex; justify-content: flex-end; align-items: center; gap: 15px; }
     .header { background: var(--ocean-blue); padding: 15px 20px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
-    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; position: relative; }
     .logo-area { display: flex; align-items: center; gap: 15px; }
     .logo-holder { width: 60px; height: 60px; border: 2px dashed var(--gold); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
     .logo-fallback { color: var(--gold); font-weight: 700; font-size: 0.7rem; text-align: center; line-height: 1.1; }
@@ -94,7 +115,7 @@
         border-left: 5px solid var(--gold);
     }
     .blog-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
-    .blog-card .img-wrapper { width: 100%; height: 220px; overflow: hidden; position: relative; }
+    .blog-card .img-wrapper { width: 100%; height: 220px; overflow: hidden; position: relative; background: #eee; }
     .blog-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s; }
     .blog-card:hover img { transform: scale(1.05); }
     .blog-card .img-fallback {
@@ -118,6 +139,7 @@
         text-decoration: none; border-radius: 8px;
         font-weight: 600; font-size: 0.9rem;
         transition: background 0.3s; text-align: center;
+        cursor: pointer;
     }
     .blog-card .btn-read:hover { background: var(--gold); color: var(--deep-navy); }
 
@@ -187,8 +209,10 @@
 
     @media (max-width: 768px) {
         .menu-toggle { display: block; }
-        .nav-links { display: none; flex-direction: column; width: 100%; background: var(--deep-navy); padding: 20px; position: absolute; top: 80px; left: 0; z-index: 999; }
+        .nav-links { display: none; flex-direction: column; width: 100%; background: var(--deep-navy); padding: 20px; position: absolute; top: 100%; left: 0; right: 0; z-index: 999; border-top: 2px solid var(--gold); }
         .nav-links.active { display: flex; }
+        .nav-links li { width: 100%; }
+        .nav-links a { padding: 10px 0; width: 100%; }
         .page-header h1 { font-size: 1.8rem; }
     }
 </style>
@@ -264,6 +288,15 @@
             </div>
         </div>
     </div>
+    <!-- SOCIAL SHARING BUTTONS -->
+    <div style="text-align: center; margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.2);">
+        <p style="color: var(--gold); font-size: 0.9rem; margin-bottom: 10px;">Shiriki UNP TOURS:</p>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://unp.tours/blog.html" target="_blank" style="display: inline-block; margin: 0 5px; color: var(--gold); font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
+        <a href="https://twitter.com/intent/tweet?url=https://unp.tours/blog.html" target="_blank" style="display: inline-block; margin: 0 5px; color: var(--gold); font-size: 1.5rem;"><i class="fab fa-twitter"></i></a>
+        <a href="https://wa.me/?text=Check%20out%20UNP%20Blog!%20https://unp.tours/blog.html" target="_blank" style="display: inline-block; margin: 0 5px; color: var(--gold); font-size: 1.5rem;"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://unp.tours/blog.html" target="_blank" style="display: inline-block; margin: 0 5px; color: var(--gold); font-size: 1.5rem;"><i class="fab fa-linkedin"></i></a>
+        <a href="https://t.me/share/url?url=https://unp.tours/blog.html" target="_blank" style="display: inline-block; margin: 0 5px; color: var(--gold); font-size: 1.5rem;"><i class="fab fa-telegram"></i></a>
+    </div>
 </footer>
 
 <!-- FLOATING WHATSAPP -->
@@ -287,7 +320,7 @@
 </div>
 
 <!-- COOKIES BANNER -->
-<div id="cookieBanner" style="position: fixed; bottom: 0; left: 0; right: 0; background: #082f49; color: #fff; padding: 15px; text-align: center; z-index: 9999; display: none;">
+<div id="cookieBanner" style="position: fixed; bottom: 0; left: 0; right: 0; background: var(--deep-navy); color: #fff; padding: 15px; text-align: center; z-index: 9999; display: none;">
     <p style="margin: 0 0 10px 0; font-size: 0.9rem;">Tunatumia cookies kuboresha uzoefu wako. Kwa kuendelea kutumia website yetu, unakubali <a href="privacy.html" style="color: var(--gold); text-decoration: underline;">Sera zetu za Faragha</a>.</p>
     <button onclick="acceptCookies()" style="background: var(--gold); color: var(--deep-navy); border: none; padding: 8px 20px; border-radius: 5px; font-weight: 700; cursor: pointer;">Nakubali</button>
 </div>
@@ -333,36 +366,4 @@ window.gtranslateSettings = {
 
   const firebaseConfig = {
     apiKey: "AIzaSyD2YtPFL2L_ZwAKdSYpXtvLt8gJUm2IX6s",
-    authDomain: "unptours.firebaseapp.com",
-    projectId: "unptours",
-    storageBucket: "unptours.firebasestorage.app",
-    messagingSenderId: "233326851661",
-    appId: "1:233326851661:web:354156110a5cee29904e04",
-    measurementId: "G-5QJ1X38ZLC"
-  };
-
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
-
-  const menuToggleBtn = document.getElementById('menuToggleBtn');
-  const navLinks = document.getElementById('navLinks');
-  if(menuToggleBtn) { menuToggleBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); }); }
-
-  // BLOG ARTICLES
-  const articles = [
-      { title: "Uzuri wa Zanzibar: Kisiwa cha Viungo", category: "Zanzibar", date: "Septemba 2026", author: "Salim Nasoro", image: "images/blog-1.jpg", excerpt: "Zanzibar ni kisiwa chenye historia tajiri, fukwe nzuri, na viungo vya kipekee. Soma makala hii kujua zaidi kuhusu uzuri wa kisiwa hiki." },
-      { title: "Safari ya Wanyama Pori: Serengeti na Ngorongoro", category: "Safari", date: "Septemba 2026", author: "Amina Hassan", image: "images/blog-2.jpg", excerpt: "Kama unataka kuona wanyama pori kwa karibu, Serengeti na Ngorongoro ni sehemu bora. Soma makala hii kujua safari hizi." },
-      { title: "Utamaduni wa Wazanzibari: Mila na Desturi", category: "Utamaduni", date: "Agosti 2026", author: "Juma Ali", image: "images/blog-3.jpg", excerpt: "Wazanzibari wana utamaduni tajiri wa Kiarabu, Kiafrika, na Kihindi. Soma kuhusu mila na desturi zao za kipekee." },
-      { title: "Sanaa za Mikono: Banana Leaf Artwork", category: "Sanaa", date: "Agosti 2026", author: "Fatma Said", image: "images/blog-4.jpg", excerpt: "Sanaa za mikono zinazotengenezwa kwa majani ya ndizi ni moja ya vivutio vya Zanzibar. Soma jinsi zinavyotengenezwa." },
-      { title: "Chakula cha Zanzibar: Ladha za Kipekee", category: "Chakula", date: "Julai 2026", author: "Salim Nasoro", image: "images/blog-5.jpg", excerpt: "Chakula cha Zanzibar ni mchanganyiko wa ladha za Kiarabu, Kiafrika, na Kihindi. Soma kuhusu vyakula vya kipekee vya kisiwa hiki." },
-      { title: "Michezo ya Majini: Jet Ski na Drone Kayak", category: "Michezo", date: "Julai 2026", author: "Juma Ali", image: "images/blog-6.jpg", excerpt: "Kama unapenda michezo ya majini, Zanzibar ni sehemu sahihi. Soma kuhusu Jet Ski, Jet Car, na Drone Kayak." }
-  ];
-
-  const blogGrid = document.getElementById('blogGrid');
-  blogGrid.innerHTML = '';
-  articles.forEach(article => {
-      const card = document.createElement('div');
-      card.className = 'blog-card';
-      card.innerHTML = `
-          <div class="img-wrapper">
-              <img src="${article.image}" alt="${article.title}" onerror="this.style.display='none'; this.parentEleme
+  
