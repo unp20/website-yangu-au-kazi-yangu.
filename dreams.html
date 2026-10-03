@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dream Maker | UNP TOURS</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<meta name="description" content="Dream Maker - Kukusaidia kutimiza ndoto zako kwenye utalii.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://unp.tours/dreams.html">
+<style>
+.dreams-header { background: linear-gradient(135deg, #082f49, #0c4a6e); color: #fff; text-align: center; padding: 80px 20px; border-bottom: 5px solid #d4af37; }
+.dreams-header h1 { font-size: 2.8rem; color: #d4af37; margin-bottom: 15px; }
+.dreams-header p { font-size: 1.2rem; color: #ddd; max-width: 800px; margin: 0 auto; }
+.dream-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+.dream-card { background: #fff; border-radius: 15px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); border-top: 5px solid #d4af37; text-align: center; transition: transform 0.3s; }
+.dream-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+.dream-card i { font-size: 3rem; color: #0c4a6e; margin-bottom: 20px; }
+.dream-card h3 { color: #082f49; margin-bottom: 15px; font-size: 1.3rem; }
+.dream-card p { color: #555; font-size: 0.95rem; line-height: 1.7; }
+</style>
+</head>
+<body>
+<header class="header">
+    <div class="nav-container">
+        <a href="index.html" class="logo-area">
+            <div class="logo-holder"><span class="logo-fallback">UNP<br>LOGO</span></div>
+            <div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
+        </a>
+        <button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html"><i class="fas fa-home"></i> Nyumbani</a></li>
+            <li><a href="dreams.html" style="color: #d4af37;"><i class="fas fa-star"></i> Dream Maker</a></li>
+            <li><a href="guide.html"><i class="fas fa-book"></i> Guide</a></li>
+            <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Wasiliana</a></li>
+        </ul>
+    </div>
+</header>
+
+<section class="dreams-header">
+    <h1><i class="fas fa-star"></i> Dream Maker</h1>
+    <p>UNP TOURS ni silaha yako ya kutimiza ndoto zako kwenye utalii. Tuko hapa kukusaidia kila hatua.</p>
+</section>
+
+<section class="dream-grid">
+    <div class="dream-card">
+        <i class="fas fa-plane-departure"></i>
+        <h3>Safari ya Kwanza</h3>
+        <p>Kama hujawahi kusafiri — tunakusaidia kuanza. Tunakupa mwongozo kamili.</p>
+    </div>
+    <div class="dream-card">
+        <i class="fas fa-heart"></i>
+        <h3>Honeymoon ya Ndoto</h3>
+        <p>Tunakupangia honeymoon ya kifahari — fukwe, chakula, na mapenzi.</p>
+    </div>
+    <div class="dream-card">
+        <i class="fas fa-users"></i>
+        <h3>Safari ya Familia</h3>
+        <p>Safari ya familia — watoto, wazee, na kila mtu. Furaha kwa wote.</p>
+    </div>
+    <div class="dream-card">
+        <i class="fas fa-camera"></i>
+        <h3>Safari ya Picha</h3>
+        <p>Kwa wapiga picha — tunakupa maeneo bora ya kupiga picha.</p>
+    </div>
+    <div class="dream-card">
+        <i class="fas fa-mountain"></i>
+        <h3>Kupanda Kilimanjaro</h3>
+        <p>Ndoto yako ya kupanda Kilimanjaro — tunakusaidia kufikia kilele.</p>
+    </div>
+    <div class="dream-card">
+        <i class="fas fa-binoculars"></i>
+        <h3>Great Migration</h3>
+        <p>Kuona Great Migration — wanyama milioni wakihama. Uzoefu wa maisha.</p>
+    </div>
+    <div class="dream-card">
+        <i class="fas fa-crown"></i>
+        <h3>Luxury VIP</h3>
+        <p>Kwa wateja wa kifahari — Private Jet, Yacht, Butler, na zaidi.</p>
+    </div>
+    <div class="dream-card">
+        <i class="fas fa-graduation-cap"></i>
+        <h3>Kujifunza Utalii</h3>
+        <p>Kwa wanaotaka kujifunza utalii — tunakupa mwongozo na mafunzo.</p>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-content">
+        <div><h3>UNIQUE NATURE PARADISE (UNP)</h3><p style="font-size: 0.9rem;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p></div>
+        <div><h4>Direct Contact</h4><p><i class="fab fa-whatsapp" style="color: #d4af37;"></i> +255 655 728 982</p><p><i class="fas fa-envelope" style="color: #d4af37;"></i> salimnasoro11@gmail.com</p></div>
+    </div>
+</footer>
+
+<a href="https://wa.me/255655728982" class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+  const menuToggleBtn = document.getElementById('menuToggleBtn');
+  const navLinks = document.getElementById('navLinks');
+  if(menuToggleBtn) { menuToggleBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); }); }
+</script>
+
+</body>
+          </html>
