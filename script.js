@@ -3,6 +3,11 @@
    ========================================== */
 
 // ==========================================
+// 0. GLOBAL VARIABLES
+// ==========================================
+let selectedStars = 0;
+
+// ==========================================
 // 1. MENU TOGGLE
 // ==========================================
 const menuToggleBtn = document.getElementById('menuToggleBtn');
@@ -24,7 +29,6 @@ if (menuToggleBtn && navLinks) {
 // 2. STAR RATING
 // ==========================================
 const stars = document.querySelectorAll('#starContainer .fa-star, #reviewStars .fa-star');
-let selectedStars = 0;
 
 if (stars.length > 0) {
     stars.forEach(function (star) {
@@ -125,15 +129,18 @@ window.handleKeyPress = function(e) {
 
 window.sendMessage = function() {
     const input = document.getElementById('chatInput');
+    if (!input) return;
     const msg = input.value.trim();
     if (!msg) return;
 
     const chatMessages = document.getElementById('chatMessages');
-    chatMessages.innerHTML += `<div class="message user">${msg}</div>`;
+    if (!chatMessages) return;
+
+    chatMessages.innerHTML += '<div class="message user">' + msg + '</div>';
     input.value = '';
 
-    setTimeout(() => {
-        chatMessages.innerHTML += `<div class="message bot">Asante kwa ujumbe wako! Tutakujibu hivi punde. Kwa haraka, wasiliana nasi kwa WhatsApp: +255 655 728 982</div>`;
+    setTimeout(function() {
+        chatMessages.innerHTML += '<div class="message bot">Asante kwa ujumbe wako! Tutakujibu hivi punde. Kwa haraka, wasiliana nasi kwa WhatsApp: +255 655 728 982</div>';
         chatMessages.scrollTop = chatMessages.scrollHeight;
     }, 1000);
 };
@@ -143,7 +150,9 @@ window.sendMessage = function() {
 // ==========================================
 document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener('click', function (e) {
-        const target = document.querySelector(this.getAttribute('href'));
+        const href = this.getAttribute('href');
+        if (href === '#') return;
+        const target = document.querySelector(href);
         if (target) {
             e.preventDefault();
             target.scrollIntoView({ behavior: 'smooth' });
@@ -171,30 +180,12 @@ if (header) {
 const backToTop = document.createElement('button');
 backToTop.innerHTML = '<i class="fas fa-arrow-up"></i>';
 backToTop.id = 'backToTop';
-backToTop.style.cssText = `
-    position: fixed;
-    bottom: 170px;
-    right: 25px;
-    background-color: var(--royal-gold, #d4af37);
-    color: var(--deep-navy, #082f49);
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-    font-size: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    z-index: 1099;
-    display: none;
-    transition: all 0.3s;
-`;
+backToTop.style.cssText = 'position: fixed; bottom: 170px; right: 25px; background-color: #d4af37; color: #082f49; width: 50px; height: 50px; border-radius: 50%; border: none; cursor: pointer; font-size: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 1099; display: none; align-items: center; justify-content: center; transition: all 0.3s;';
 document.body.appendChild(backToTop);
 
 window.addEventListener('scroll', function () {
     if (window.scrollY > 300) {
         backToTop.style.display = 'flex';
-        backToTop.style.alignItems = 'center';
-        backToTop.style.justifyContent = 'center';
     } else {
         backToTop.style.display = 'none';
     }
