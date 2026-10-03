@@ -1,21 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sw">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Entertainment & Party Vibe | UNP Tours</title>
+<title>Entertainment & Party Vibe | UNP TOURS Zanzibar</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
+
+<!-- SEO META TAGS -->
+<meta name="description" content="Entertainment & Party Vibe Zanzibar - Kalenda ya hali ya hewa, ramani ya party, na matukio makubwa ya mwaka.">
+<meta name="keywords" content="Zanzibar party, entertainment Zanzibar, Sauti za Busara, ZIFF, Full Moon Party Zanzibar">
+<meta name="author" content="UNP TOURS Zanzibar">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Entertainment & Party Vibe | UNP TOURS Zanzibar">
+<meta property="og:description" content="Gundua sehemu bora za sherehe Zanzibar.">
+<meta property="og:image" content="https://unp.tours/images/logo.png">
+<meta property="og:url" content="https://unp.tours/entertainment.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="UNP TOURS">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Entertainment & Party Vibe | UNP TOURS Zanzibar">
+<meta name="twitter:description" content="Gundua sehemu bora za sherehe Zanzibar.">
+<meta name="twitter:image" content="https://unp.tours/images/logo.png">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://unp.tours/entertainment.html">
+
+<!-- Geo Tags -->
+<meta name="geo.region" content="TZ-07">
+<meta name="geo.placename" content="Zanzibar">
+<meta name="geo.position" content="-6.165917;39.202641">
+<meta name="ICBM" content="-6.165917, 39.202641">
+
+<!-- GOOGLE ANALYTICS -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5QJ1X38ZLC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5QJ1X38ZLC');
+</script>
+
+<!-- YANDEX METRICA -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113203659', 'ym');
+    ym(113203659, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/113203659" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+<!-- ELFSIGHT PLATFORM -->
+<script src="https://elfsightcdn.com/platform.js" async></script>
+
+<!-- LEAFLET MAP -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
 <style>
-    .page-header {
-        text-align: center; padding: 120px 20px 40px;
-        background: linear-gradient(135deg, #1a3c34, #2c5e4f); color: white;
+    :root {
+        --ocean-blue: #0c4a6e;
+        --deep-navy: #082f49;
+        --gold: #d4af37;
+        --gold-light: #f0c75e;
+        --light-bg: #f8f9fa;
+        --white: #ffffff;
+        --text-dark: #1e293b;
     }
-    .page-header h1 { font-size: 2.5rem; margin-bottom: 10px; }
-    .page-header p { font-size: 1.1rem; max-width: 700px; margin: 0 auto; }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body { background-color: var(--light-bg); color: #333; line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+
+    /* HEADER */
+    .top-bar { background: var(--deep-navy); padding: 8px 20px; display: flex; justify-content: flex-end; align-items: center; gap: 15px; }
+    .header { background: var(--ocean-blue); padding: 15px 20px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; position: relative; }
+    .logo-area { display: flex; align-items: center; gap: 15px; }
+    .logo-holder { width: 60px; height: 60px; border: 2px dashed var(--gold); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+    .logo-fallback { color: var(--gold); font-weight: 700; font-size: 0.7rem; text-align: center; line-height: 1.1; }
+    .logo-text h2 { color: #fff; font-size: 1.3rem; font-weight: 700; }
+    .logo-text span { color: var(--gold); font-size: 0.8rem; }
+    .nav-links { display: flex; gap: 20px; list-style: none; flex-wrap: wrap; }
+    .nav-links a { color: #fff; font-size: 0.85rem; transition: color 0.3s; display: flex; align-items: center; gap: 5px; }
+    .nav-links a:hover { color: var(--gold); }
+    .menu-toggle { display: none; background: none; border: none; color: var(--gold); font-size: 26px; cursor: pointer; }
+
+    /* PAGE HEADER */
+    .page-header {
+        text-align: center;
+        padding: 70px 20px 40px;
+        background: linear-gradient(135deg, var(--deep-navy), var(--ocean-blue));
+        color: white;
+        border-bottom: 5px solid var(--gold);
+    }
+    .page-header h1 { font-size: 2.5rem; margin-bottom: 10px; color: var(--gold); }
+    .page-header p { font-size: 1.1rem; max-width: 700px; margin: 0 auto; color: #ddd; }
+
     .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
-    .section-title { text-align: center; color: #1a3c34; margin-bottom: 10px; font-size: 2rem; }
+    .section-title { text-align: center; color: var(--ocean-blue); margin-bottom: 10px; font-size: 2rem; }
+    .section-title i { color: var(--gold); }
     .section-subtitle { text-align: center; color: #666; margin-bottom: 30px; }
 
     /* Weather Calendar Table */
@@ -26,7 +117,7 @@
         box-shadow: 0 5px 20px rgba(0,0,0,0.08);
     }
     .weather-table th {
-        background: #1a3c34; color: #c5a059; padding: 15px;
+        background: var(--ocean-blue); color: var(--gold); padding: 15px;
         text-align: left; font-size: 0.9rem;
     }
     .weather-table td {
@@ -59,94 +150,147 @@
     .event-card {
         background: white; border-radius: 15px; overflow: hidden;
         box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-        border-left: 5px solid #c5a059;
+        border-left: 5px solid var(--gold);
         transition: transform 0.3s;
     }
     .event-card:hover { transform: translateY(-5px); }
     .event-card .card-body { padding: 25px; }
     .event-card .date {
-        display: inline-block; background: #1a3c34; color: #c5a059;
+        display: inline-block; background: var(--ocean-blue); color: var(--gold);
         padding: 5px 15px; border-radius: 20px; font-size: 0.75rem;
         font-weight: 700; margin-bottom: 12px;
     }
-    .event-card h3 { color: #1a3c34; font-size: 1.2rem; margin-bottom: 10px; }
+    .event-card h3 { color: var(--ocean-blue); font-size: 1.2rem; margin-bottom: 10px; }
     .event-card p { color: #666; font-size: 0.9rem; line-height: 1.6; }
-    .event-card .location { color: #c5a059; font-size: 0.85rem; margin-top: 10px; font-weight: 600; }
+    .event-card .location { color: var(--gold); font-size: 0.85rem; margin-top: 10px; font-weight: 600; }
 
     /* Music Player */
     .music-player-box {
-        background: linear-gradient(135deg, #1a3c34, #2c5e4f);
+        background: linear-gradient(135deg, var(--deep-navy), var(--ocean-blue));
         border-radius: 15px; padding: 30px; color: white;
         text-align: center; margin-top: 30px;
+        border: 2px solid var(--gold);
     }
-    .music-player-box h3 { color: #c5a059; margin-bottom: 15px; }
+    .music-player-box h3 { color: var(--gold); margin-bottom: 15px; }
     .music-player-box p { font-size: 0.9rem; opacity: 0.9; margin-bottom: 20px; }
     .btn-party-mode {
-        display: inline-block; padding: 15px 35px; background: #c5a059;
-        color: #1a3c34; border: none; border-radius: 30px;
+        display: inline-block; padding: 15px 35px; background: var(--gold);
+        color: var(--deep-navy); border: none; border-radius: 30px;
         font-weight: 700; font-size: 1rem; cursor: pointer;
         font-family: 'Poppins', sans-serif; transition: background 0.3s;
     }
-    .btn-party-mode:hover { background: white; }
+    .btn-party-mode:hover { background: var(--gold-light); }
 
     /* Tips Box */
     .tips-box {
-        background: #f9f9f9; border-left: 4px solid #c5a059;
+        background: #f9f9f9; border-left: 4px solid var(--gold);
         padding: 25px; border-radius: 10px; margin-top: 30px;
     }
-    .tips-box h3 { color: #1a3c34; margin-bottom: 15px; }
+    .tips-box h3 { color: var(--ocean-blue); margin-bottom: 15px; }
     .tips-box ul { list-style: none; padding: 0; }
     .tips-box ul li { padding: 8px 0; color: #555; font-size: 0.9rem; }
-    .tips-box ul li i { color: #c5a059; margin-right: 10px; }
+    .tips-box ul li i { color: var(--gold); margin-right: 10px; }
+
+    /* FOOTER */
+    .footer { background: var(--deep-navy); color: #fff; padding: 40px 20px; margin-top: 40px; }
+    .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+    .footer h3, .footer h4 { color: var(--gold); margin-bottom: 15px; }
+    .social-links { display: flex; gap: 15px; margin-top: 15px; }
+    .social-links a { color: var(--gold); font-size: 1.2rem; transition: transform 0.3s; }
+    .social-links a:hover { transform: scale(1.2); }
+
+    /* FLOATING WHATSAPP */
+    .floating-whatsapp {
+        position: fixed; bottom: 25px; right: 25px;
+        background: #25d366; color: #fff;
+        width: 60px; height: 60px; border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        z-index: 1100; transition: transform 0.3s;
+    }
+    .floating-whatsapp:hover { transform: scale(1.1); }
+
+    /* CHATBOT */
+    .chatbot-toggle {
+        position: fixed; bottom: 100px; right: 25px;
+        background-color: var(--ocean-blue); color: var(--gold);
+        width: 60px; height: 60px; border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 28px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        z-index: 1100; cursor: pointer; border: 2px solid var(--gold);
+    }
+    .chatbot-container {
+        position: fixed; bottom: 170px; right: 25px;
+        width: 350px; max-width: 90vw; height: 500px;
+        background: #fff; border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        z-index: 1100; display: none; flex-direction: column;
+        overflow: hidden; border: 2px solid var(--gold);
+    }
+    .chatbot-container.active { display: flex; }
+    .chatbot-header { background: var(--ocean-blue); color: #fff; padding: 15px; display: flex; align-items: center; gap: 10px; }
+    .chatbot-header .avatar { width: 40px; height: 40px; background: var(--gold); color: var(--deep-navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem; }
+    .chatbot-header h4 { margin: 0; font-size: 1rem; color: #fff; }
+    .chatbot-header span { font-size: 0.75rem; color: #ddd; display: block; }
+    .chatbot-messages { flex-grow: 1; padding: 15px; overflow-y: auto; background: #f9f9f9; display: flex; flex-direction: column; gap: 10px; }
+    .message { max-width: 80%; padding: 10px 15px; border-radius: 15px; font-size: 0.85rem; }
+    .message.bot { background: #e9ecef; align-self: flex-start; }
+    .message.user { background: var(--ocean-blue); color: #fff; align-self: flex-end; }
+    .chatbot-input { display: flex; padding: 10px; border-top: 1px solid #eee; }
+    .chatbot-input input { flex-grow: 1; padding: 10px; border: 1px solid #ddd; border-radius: 20px; outline: none; font-family: 'Poppins', sans-serif; }
+    .chatbot-input button { background: var(--gold); color: var(--deep-navy); border: none; width: 40px; height: 40px; border-radius: 50%; margin-left: 8px; cursor: pointer; font-size: 1rem; }
+
+    /* GTRANSLATE */
+    .gtranslate_wrapper { position: relative; }
+
+    @media (max-width: 768px) {
+        .menu-toggle { display: block; }
+        .nav-links { display: none; flex-direction: column; width: 100%; background: var(--deep-navy); padding: 20px; position: absolute; top: 100%; left: 0; right: 0; z-index: 999; border-top: 2px solid var(--gold); }
+        .nav-links.active { display: flex; }
+        .nav-links li { width: 100%; }
+        .nav-links a { padding: 10px 0; width: 100%; }
+        .page-header h1 { font-size: 1.8rem; }
+    }
 </style>
 </head>
 <body>
 
+<!-- TOP BAR WITH GTRANSLATE -->
 <div class="top-bar">
-<div class="lang-container">
-<i class="fas fa-globe"></i>
-<select class="lang-select" id="languageSelector">
-<option value="en">English</option>
-<option value="sw">Kiswahili</option>
-</select>
-</div>
+    <div class="gtranslate_wrapper"></div>
 </div>
 
+<!-- HEADER -->
 <header class="header">
-<div class="nav-container">
-<a href="index.html" class="logo-area">
-<div class="logo-holder">
-<img src="logo.png" alt="UNP Tours Logo" class="logo-img" onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=logo-fallback>UNP<br>LOGO</span>';">
-</div>
-<div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
-</a>
-<button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
-<ul class="nav-links" id="navLinks">
-<li><a href="index.html">Nyumbani</a></li>
-<li><a href="about.html">Kuhusu Sisi</a></li>
-<li><a href="gallery.html">Gallery</a></li>
-<li><a href="pricing.html">Bei</a></li>
-<li><a href="entertainment.html">Entertainment</a></li>
-<li><a href="blog.html">Blog</a></li>
-<li><a href="shop.html">Duka</a></li>
-<li><a href="testimonials.html">Maoni</a></li>
-<li><a href="contact.html">Wasiliana</a></li>
-<li><a href="profile.html">Wasifu</a></li>
-<li><a href="login.html" style="color: #c5a059; font-weight: bold;">Ingia</a></li>
-<li><a href="signup.html" style="background: #c5a059; color: #1a3c34; padding: 8px 15px; border-radius: 5px;">Jiunge</a></li>
-</ul>
-</div>
+    <div class="nav-container">
+        <a href="index.html" class="logo-area">
+            <div class="logo-holder"><span class="logo-fallback">UNP<br>LOGO</span></div>
+            <div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
+        </a>
+        <button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html"><i class="fas fa-home"></i> Nyumbani</a></li>
+            <li><a href="about.html"><i class="fas fa-info-circle"></i> Kuhusu Sisi</a></li>
+            <li><a href="services.html"><i class="fas fa-briefcase"></i> Huduma</a></li>
+            <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+            <li><a href="pricing.html"><i class="fas fa-layer-group"></i> Madaraja</a></li>
+            <li><a href="entertainment.html" style="color: var(--gold);"><i class="fas fa-music"></i> Entertainment</a></li>
+            <li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Wasiliana</a></li>
+        </ul>
+    </div>
 </header>
 
+<!-- PAGE HEADER -->
 <div class="page-header">
-    <h1>Entertainment & Party Vibe</h1>
+    <h1><i class="fas fa-music"></i> Entertainment & Party Vibe</h1>
     <p>Gundua sehemu bora za sherehe Zanzibar, kalenda ya hali ya hewa, na matukio makubwa ya mwaka.</p>
 </div>
 
 <div class="container">
 
     <!-- 1. KALENDA YA HALI YA HEWA -->
-    <h2 class="section-title"><i class="fas fa-cloud-sun" style="color: #c5a059;"></i> Kalenda ya Hali ya Hewa</h2>
+    <h2 class="section-title"><i class="fas fa-cloud-sun"></i> Kalenda ya Hali ya Hewa</h2>
     <p class="section-subtitle">Jua wakati mzuri wa kuja Zanzibar kulingana na hali ya hewa.</p>
 
     <div class="weather-table-wrapper">
@@ -162,113 +306,29 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td><strong>Januari</strong></td>
-                    <td>Jua kali</td>
-                    <td>28-32°C</td>
-                    <td>Chini</td>
-                    <td><span class="season-badge badge-high">Wengi</span></td>
-                    <td>Sherehe za Mwaka Mpya</td>
-                </tr>
-                <tr>
-                    <td><strong>Februari</strong></td>
-                    <td>Jua kali</td>
-                    <td>28-32°C</td>
-                    <td>Chini</td>
-                    <td><span class="season-badge badge-high">Wengi</span></td>
-                    <td>Sauti za Busara</td>
-                </tr>
-                <tr>
-                    <td><strong>Machi</strong></td>
-                    <td>Jua + Mvua kidogo</td>
-                    <td>27-31°C</td>
-                    <td>Kati</td>
-                    <td><span class="season-badge badge-mid">Wastani</span></td>
-                    <td>—</td>
-                </tr>
-                <tr>
-                    <td><strong>Aprili</strong></td>
-                    <td>Mvua Kubwa (Masika)</td>
-                    <td>25-29°C</td>
-                    <td>Juu</td>
-                    <td><span class="season-badge badge-low">Chini</span></td>
-                    <td>—</td>
-                </tr>
-                <tr>
-                    <td><strong>Mei</strong></td>
-                    <td>Mvua Kubwa</td>
-                    <td>24-28°C</td>
-                    <td>Juu</td>
-                    <td><span class="season-badge badge-low">Chini</span></td>
-                    <td>—</td>
-                </tr>
-                <tr>
-                    <td><strong>Juni</strong></td>
-                    <td>Jua + Upepo</td>
-                    <td>24-28°C</td>
-                    <td>Chini</td>
-                    <td><span class="season-badge badge-mid">Wastani</span></td>
-                    <td>—</td>
-                </tr>
-                <tr>
-                    <td><strong>Julai</strong></td>
-                    <td>Jua + Upepo</td>
-                    <td>23-27°C</td>
-                    <td>Chini</td>
-                    <td><span class="season-badge badge-high">Wengi</span></td>
-                    <td>ZIFF (Film Festival)</td>
-                </tr>
-                <tr>
-                    <td><strong>Agosti</strong></td>
-                    <td>Jua + Upepo</td>
-                    <td>23-27°C</td>
-                    <td>Chini</td>
-                    <td><span class="season-badge badge-high">Wengi</span></td>
-                    <td>Full Moon Party</td>
-                </tr>
-                <tr>
-                    <td><strong>Septemba</strong></td>
-                    <td>Jua kali</td>
-                    <td>24-28°C</td>
-                    <td>Chini</td>
-                    <td><span class="season-badge badge-mid">Wastani</span></td>
-                    <td>—</td>
-                </tr>
-                <tr>
-                    <td><strong>Oktoba</strong></td>
-                    <td>Jua kali</td>
-                    <td>25-29°C</td>
-                    <td>Chini</td>
-                    <td><span class="season-badge badge-mid">Wastani</span></td>
-                    <td>—</td>
-                </tr>
-                <tr>
-                    <td><strong>Novemba</strong></td>
-                    <td>Mvua kidogo (Vuli)</td>
-                    <td>26-30°C</td>
-                    <td>Kati</td>
-                    <td><span class="season-badge badge-mid">Wastani</span></td>
-                    <td>—</td>
-                </tr>
-                <tr>
-                    <td><strong>Desemba</strong></td>
-                    <td>Jua kali</td>
-                    <td>27-31°C</td>
-                    <td>Chini</td>
-                    <td><span class="season-badge badge-high">Wengi</span></td>
-                    <td>Sherehe za Krismasi</td>
-                </tr>
+                <tr><td><strong>Januari</strong></td><td>Jua kali</td><td>28-32°C</td><td>Chini</td><td><span class="season-badge badge-high">Wengi</span></td><td>Sherehe za Mwaka Mpya</td></tr>
+                <tr><td><strong>Februari</strong></td><td>Jua kali</td><td>28-32°C</td><td>Chini</td><td><span class="season-badge badge-high">Wengi</span></td><td>Sauti za Busara</td></tr>
+                <tr><td><strong>Machi</strong></td><td>Jua + Mvua kidogo</td><td>27-31°C</td><td>Kati</td><td><span class="season-badge badge-mid">Wastani</span></td><td>—</td></tr>
+                <tr><td><strong>Aprili</strong></td><td>Mvua Kubwa (Masika)</td><td>25-29°C</td><td>Juu</td><td><span class="season-badge badge-low">Chini</span></td><td>—</td></tr>
+                <tr><td><strong>Mei</strong></td><td>Mvua Kubwa</td><td>24-28°C</td><td>Juu</td><td><span class="season-badge badge-low">Chini</span></td><td>—</td></tr>
+                <tr><td><strong>Juni</strong></td><td>Jua + Upepo</td><td>24-28°C</td><td>Chini</td><td><span class="season-badge badge-mid">Wastani</span></td><td>—</td></tr>
+                <tr><td><strong>Julai</strong></td><td>Jua + Upepo</td><td>23-27°C</td><td>Chini</td><td><span class="season-badge badge-high">Wengi</span></td><td>ZIFF (Film Festival)</td></tr>
+                <tr><td><strong>Agosti</strong></td><td>Jua + Upepo</td><td>23-27°C</td><td>Chini</td><td><span class="season-badge badge-high">Wengi</span></td><td>Full Moon Party</td></tr>
+                <tr><td><strong>Septemba</strong></td><td>Jua kali</td><td>24-28°C</td><td>Chini</td><td><span class="season-badge badge-mid">Wastani</span></td><td>—</td></tr>
+                <tr><td><strong>Oktoba</strong></td><td>Jua kali</td><td>25-29°C</td><td>Chini</td><td><span class="season-badge badge-mid">Wastani</span></td><td>—</td></tr>
+                <tr><td><strong>Novemba</strong></td><td>Mvua kidogo (Vuli)</td><td>26-30°C</td><td>Kati</td><td><span class="season-badge badge-mid">Wastani</span></td><td>—</td></tr>
+                <tr><td><strong>Desemba</strong></td><td>Jua kali</td><td>27-31°C</td><td>Chini</td><td><span class="season-badge badge-high">Wengi</span></td><td>Sherehe za Krismasi</td></tr>
             </tbody>
         </table>
     </div>
 
     <!-- 2. RAMANI YA PARTY -->
-    <h2 class="section-title" style="margin-top: 60px;"><i class="fas fa-map-marked-alt" style="color: #c5a059;"></i> Ramani ya Party Zanzibar</h2>
+    <h2 class="section-title" style="margin-top: 60px;"><i class="fas fa-map-marked-alt"></i> Ramani ya Party Zanzibar</h2>
     <p class="section-subtitle">Sehemu zote za sherehe Zanzibar na Tanzania.</p>
     <div id="map"></div>
 
     <!-- 3. MATUKIO MAKUBWA -->
-    <h2 class="section-title" style="margin-top: 60px;"><i class="fas fa-calendar-star" style="color: #c5a059;"></i> Matukio Makubwa</h2>
+    <h2 class="section-title" style="margin-top: 60px;"><i class="fas fa-star"></i> Matukio Makubwa</h2>
     <p class="section-subtitle">Sherehe na matukio muhimu ya mwaka.</p>
 
     <div class="events-grid">
@@ -317,128 +377,4 @@
                 <span class="date">Agosti</span>
                 <h3>Paje Beach Festival</h3>
                 <p>Tamasha la muziki na michezo ya majini kwenye pwani ya Paje.</p>
-                <p class="location"><i class="fas fa-map-marker-alt"></i> Paje, Zanzibar</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- 4. MUZIKI WA PARTY -->
-    <div class="music-player-box">
-        <h3><i class="fas fa-music"></i> Party Mode</h3>
-        <p>Bonyeza kitufe hapa chini ili kusikiliza muziki wa sherehe wa Zanzibar.</p>
-        <button class="btn-party-mode" id="partyBtn"><i class="fas fa-play"></i> Washa Party Mode</button>
-        <div id="musicMessage" style="margin-top: 15px; font-size: 0.85rem;"></div>
-    </div>
-
-    <!-- 5. USHAURI KWA WAGENI -->
-    <div class="tips-box">
-        <h3><i class="fas fa-lightbulb" style="color: #c5a059;"></i> Ushauri kwa Wageni</h3>
-        <ul>
-            <li><i class="fas fa-check"></i> <strong>Wakati Bora wa Kuja:</strong> Juni-Oktoba, Desemba-Februari.</li>
-            <li><i class="fas fa-check"></i> <strong>Wakati wa Mvua:</strong> Aprili-Mei (bei nafuu).</li>
-            <li><i class="fas fa-check"></i> <strong>Nini cha Kuvaa:</strong> Nguo nyepesi, kofia, miwani.</li>
-            <li><i class="fas fa-check"></i> <strong>Usalama:</strong> Kaa na mwongozo, epuka usiku wa manane.</li>
-            <li><i class="fas fa-check"></i> <strong>Muziki:</strong> Sherehe za Taarab, Bongo Flava, na Afrobeat.</li>
-        </ul>
-    </div>
-
-</div>
-
-<footer class="footer">
-<div class="footer-content">
-<div>
-<h3>UNIQUE NATURE PARADISE (UNP)</h3>
-<p style="font-size: 0.9rem; max-width: 350px;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p>
-</div>
-<div>
-<h4>Direct Contact</h4>
-<p style="font-size: 0.9rem; margin-top: 8px;"><i class="fab fa-whatsapp" style="color: #c5a059;"></i> +255 655 728 982</p>
-<p style="font-size: 0.9rem; margin-top: 5px;"><i class="fas fa-envelope" style="color: #c5a059;"></i> salimnasoro11@gmail.com</p>
-<div class="social-links">
-<a href="https://wa.me/255655728982" target="_blank"><i class="fab fa-whatsapp"></i></a>
-<a href="mailto:salimnasoro11@gmail.com"><i class="fas fa-envelope"></i></a>
-<a href="https://www.tiktok.com/@unptours" target="_blank"><i class="fab fa-tiktok"></i></a>
-<a href="https://www.instagram.com/unpsoulvoyoge" target="_blank"><i class="fab fa-instagram"></i></a>
-<a href="https://www.facebook.com/profile.php?id=61595094232501" target="_blank"><i class="fab fa-facebook"></i></a>
-</div>
-</div>
-</div>
-</footer>
-
-<!-- Leaflet Map -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
-<script>
-    // Ramani ya Zanzibar
-    const map = L.map('map').setView([-6.1659, 39.2026], 9);
-
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© OpenStreetMap'
-    }).addTo(map);
-
-    // Sehemu za Party
-    const partyLocations = [
-        { name: "Nungwi Beach Party", lat: -5.7261, lng: 39.2964, type: "Beach Party" },
-        { name: "Kendwa Full Moon Party", lat: -5.7422, lng: 39.2917, type: "Full Moon Party" },
-        { name: "Paje Beach Bars", lat: -6.2617, lng: 39.5342, type: "Beach Bar" },
-        { name: "Jambiani Nightlife", lat: -6.3156, lng: 39.5483, type: "Nightlife" },
-        { name: "Stone Town Forodhani", lat: -6.1619, lng: 39.1888, type: "Night Market" },
-        { name: "Old Fort Sherehe", lat: -6.1622, lng: 39.1889, type: "Cultural Events" },
-        { name: "Kiwengwa Beach Party", lat: -5.9883, lng: 39.3831, type: "Beach Party" }
-    ];
-
-    partyLocations.forEach(loc => {
-        const marker = L.marker([loc.lat, loc.lng]).addTo(map);
-        marker.bindPopup(`<strong>${loc.name}</strong><br>${loc.type}`);
-    });
-
-    // Party Mode Button
-    const partyBtn = document.getElementById('partyBtn');
-    const musicMessage = document.getElementById('musicMessage');
-    let isPlaying = false;
-
-    partyBtn.addEventListener('click', () => {
-        if (!isPlaying) {
-            partyBtn.innerHTML = '<i class="fas fa-pause"></i> Zima Party Mode';
-            musicMessage.textContent = "Muziki unapiga... (Weka faili la muziki kwenye repository)";
-            isPlaying = true;
-            // Hapa unaweza kuweka code ya muziki halisi:
-            // const audio = new Audio('party-music.mp3');
-            // audio.play();
-        } else {
-            partyBtn.innerHTML = '<i class="fas fa-play"></i> Washa Party Mode';
-            musicMessage.textContent = "";
-            isPlaying = false;
-            // audio.pause();
-        }
-    });
-</script>
-
-<!-- Firebase Remote Config -->
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
-  import { getRemoteConfig, fetchAndActivate, getValue } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-remote-config.js";
-
-  const firebaseConfig = {
-    apiKey: "AIzaSyD2YtPFL2L_ZwAKdSYpXtvLt8gJUm2IX6s",
-    authDomain: "unptours.firebaseapp.com",
-    projectId: "unptours",
-    storageBucket: "unptours.firebasestorage.app",
-    messagingSenderId: "233326851661",
-    appId: "1:233326851661:web:354156110a5cee29904e04",
-    measurementId: "G-5QJ1X38ZLC"
-  };
-
-  const app = initializeApp(firebaseConfig);
-  const remoteConfig = getRemoteConfig(app);
-  remoteConfig.settings.minimumFetchIntervalMillis = 3600000;
-
-  fetchAndActivate(remoteConfig).then(() => {
-    // Remote Config ready
-  });
-</script>
-
-<script src="script.js"></script>
-</body>
-  </html>
+  
