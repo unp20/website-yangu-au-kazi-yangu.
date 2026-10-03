@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tafuta Trips | UNP TOURS</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<meta name="description" content="Tafuta trips - UNP TOURS.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://unp.tours/search.html">
+<style>
+.search-header { background: linear-gradient(135deg, #082f49, #0c4a6e); color: #fff; text-align: center; padding: 70px 20px; border-bottom: 5px solid #d4af37; }
+.search-header h1 { font-size: 2.5rem; color: #d4af37; margin-bottom: 10px; }
+.search-header p { font-size: 1.1rem; color: #ddd; max-width: 700px; margin: 0 auto; }
+.search-box { max-width: 700px; margin: 30px auto; padding: 0 20px; }
+.search-input { width: 100%; padding: 15px 20px; border: 2px solid #d4af37; border-radius: 30px; font-family: 'Poppins', sans-serif; font-size: 1rem; }
+.search-input:focus { outline: none; border-color: #0c4a6e; }
+.trips-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1200px; margin: 30px auto; padding: 0 20px; }
+.trip-card { background: #fff; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.08); border-top: 5px solid #d4af37; transition: transform 0.3s; }
+.trip-card:hover { transform: translateY(-5px); }
+.trip-card .img { height: 160px; background: #0c4a6e; color: #d4af37; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; }
+.trip-card .body { padding: 20px; }
+.trip-card .category { background: #d4af37; color: #082f49; padding: 4px 12px; border-radius: 15px; font-size: 0.75rem; font-weight: 700; display: inline-block; margin-bottom: 10px; }
+.trip-card h3 { color: #082f49; margin-bottom: 10px; font-size: 1.1rem; }
+.trip-card p { color: #555; font-size: 0.88rem; line-height: 1.6; margin-bottom: 10px; }
+.trip-card .btn { background: #d4af37; color: #082f49; padding: 10px 20px; border-radius: 25px; font-weight: 700; text-align: center; display: block; }
+#loading { text-align: center; padding: 40px; color: #777; }
+</style>
+</head>
+<body>
+
+<header class="header">
+    <div class="nav-container">
+        <a href="index.html" class="logo-area">
+            <div class="logo-holder"><span class="logo-fallback">UNP<br>LOGO</span></div>
+            <div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
+        </a>
+        <button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html"><i class="fas fa-home"></i> Nyumbani</a></li>
+            <li><a href="trips.html"><i class="fas fa-suitcase-rolling"></i> Trips</a></li>
+            <li><a href="search.html" style="color: #d4af37;"><i class="fas fa-search"></i> Tafuta</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Wasiliana</a></li>
+        </ul>
+    </div>
+</header>
+
+<section class="search-header">
+    <h1><i class="fas fa-search"></i> Tafuta Trips</h1>
+    <p>Tafuta trips kwa jina au kategoria.</p>
+</section>
+
+<div class="search-box">
+    <input type="text" id="searchInput" class="search-input" placeholder="Andika jina la trip..." onkeyup="searchTrips()">
+</div>
+
+<div id="loading">Inapakia trips...</div>
+
+<section class="trips-grid" id="tripsGrid"></section>
+
+<footer class="footer">
+    <div class="footer-content">
+        <div>
+            <h3>UNIQUE NATURE PARADISE (UNP)</h3>
+            <p style="font-size: 0.9rem;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p>
+        </div>
+        <div>
+            <h4>Direct Contact</h4>
+            <p style="font-size: 0.9rem;"><i class="fab fa-whatsapp" style="color: #d4af37;"></i> +255 655 728 982</p>
+            <p style="font-size: 0.9rem;"><i class="fas fa-envelope" style="color: #d4af37;"></i> salimnasoro11@gmail.com</p>
+        </div>
+    </div>
+</footer>
+
+<a href="https://wa.me/255655728982" class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyD2YtPFL2L_ZwAKdSYpXtvLt8gJUm2IX6s",
+    authDomain: "unptours.firebaseapp.com",
+    projectId: "unptours",
+    storageBucket: "unptours.firebasestorage.app",
+    messagingSenderId: "233326851661",
+    appId: "1:233326851661:web:354156110a5cee29904e04"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+let allTrips = [];
+
+async function loadTrips() {
+    const loading = document.getElementById('loading');
+    try {
+        const snap = await getDocs(collection(db, "trips"));
+        allTrips = [];
+        snap.forEach((doc) => {
+            allTrips.push({ id: doc.id, ...doc.data() });
+        });
+        loading.style.display = 'none';
+        renderTrips(allTrips);
+    } catch (e) {
+        loading.textContent = 'Kosa: ' + e.message;
+    }
+}
+
+function renderTrips(trips) {
+    const grid = document.getElementById('tripsGrid');
+    grid.innerHTML = '';
+    if (trips.length === 0) {
+        grid.innerHTML = '<p style="text-align:center; grid-column: 1/-1; color:#777;">Hakuna trips zilizopatikana.</p>';
+        return;
+    }
+    trips.forEach(trip => {
+        grid.innerHTML += `
+            <div class="trip-card">
+                <div class="img"><i class="fas fa-map-marked-alt"></i></div>
+                <div class="body">
+                    <span class="category">${trip.category || 'Trip'}</span>
+                    <h3>${trip.name || 'Trip'}</h3>
+                    <p>${trip.description || ''}</p>
+                    <a href="trip-detail.html?id=${trip.id}" class="btn">Ona Zaidi</a>
+                </div>
+            </div>
+        `;
+    });
+}
+
+window.searchTrips = function() {
+    const query = document.getElementById('searchInput').value.toLowerCase();
+    const filtered = allTrips.filter(t =>
+        (t.name || '').toLowerCase().includes(query) ||
+        (t.category || '').toLowerCase().includes(query) ||
+        (t.description || '').toLowerCase().includes(query)
+    );
+    renderTrips(filtered);
+};
+
+window.addEventListener('load', loadTrips);
+</script>
+
+<script>
+  const menuToggleBtn = document.getElementById('menuToggleBtn');
+  const navLinks = document.getElementById('navLinks');
+  if(menuToggleBtn) { menuToggleBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); }); }
+</script>
+
+</body>
+  </html>
