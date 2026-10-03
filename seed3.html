@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seed 3 | UNP TOURS Admin</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta name="robots" content="noindex, nofollow">
+<style>
+body { font-family: 'Poppins', sans-serif; background: #f8f9fa; padding: 20px; color: #333; }
+.container { max-width: 900px; margin: 0 auto; }
+.header { background: linear-gradient(135deg, #082f49, #0c4a6e); color: #fff; padding: 30px; border-radius: 15px; text-align: center; margin-bottom: 20px; border-bottom: 5px solid #d4af37; }
+.header h1 { color: #d4af37; margin-bottom: 10px; }
+.box { background: #fff; padding: 25px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); margin-bottom: 20px; }
+.box h2 { color: #0c4a6e; margin-bottom: 15px; }
+.btn { background: #d4af37; color: #082f49; padding: 12px 25px; border: none; border-radius: 25px; font-weight: 700; cursor: pointer; font-size: 1rem; margin: 5px; }
+.btn:hover { background: #082f49; color: #d4af37; }
+.btn-danger { background: #dc3545; color: #fff; }
+#log { background: #1e293b; color: #10b981; padding: 15px; border-radius: 10px; font-family: monospace; font-size: 0.85rem; max-height: 400px; overflow-y: auto; margin-top: 15px; }
+#log p { margin: 3px 0; }
+.status { padding: 15px; border-radius: 10px; margin-top: 15px; font-weight: 600; text-align: center; }
+.status.ok { background: #d4edda; color: #155724; }
+.status.err { background: #f8d7da; color: #721c24; }
+.status.info { background: #cce5ff; color: #004085; }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1><i class="fas fa-database"></i> Seed 3 — Trips 20</h1>
+        <p>Weka trips 20 kwenye Firebase Firestore</p>
+    </div>
+
+    <div class="box">
+        <h2><i class="fas fa-info-circle"></i> Maelezo</h2>
+        <p>Ukurasa huu unasaidia kuweka trips 20 kwenye Firebase Firestore. Bonyeza kitufe hapa chini kuanza.</p>
+        <p><strong>Trips:</strong> Zanzibar (5), Safari (5), Water Sports (5), Luxury (5)</p>
+    </div>
+
+    <div class="box" style="text-align: center;">
+        <h2><i class="fas fa-play"></i> Anza Kuweka Trips</h2>
+        <button class="btn" onclick="seedTrips()"><i class="fas fa-upload"></i> Weka Trips 20</button>
+        <button class="btn btn-danger" onclick="clearLog()"><i class="fas fa-trash"></i> Futa Log</button>
+        <div id="status" class="status info">Tayari kuanza...</div>
+        <div id="log"></div>
+    </div>
+</div>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyD2YtPFL2L_ZwAKdSYpXtvLt8gJUm2IX6s",
+    authDomain: "unptours.firebaseapp.com",
+    projectId: "unptours",
+    storageBucket: "unptours.firebasestorage.app",
+    messagingSenderId: "233326851661",
+    appId: "1:233326851661:web:354156110a5cee29904e04"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+const trips = [
+    { name: "Zanzibar Excursions", category: "Zanzibar", days: 1, description: "Kutembelea Stone Town, Forodhani, na vivutio vya Zanzibar.", featured: true, image: "images/zanzibar-tours.jpg", location: "Zanzibar, Tanzania", priceBudget: 80, priceMid: 120, priceLuxury: 250 },
+    { name: "Jozani Forest", category: "Zanzibar", days: 1, description: "Kuona monkeys wa kipekee (Red Colobus) na msitu wa Jozani.", featured: false, image: "images/jozani-forest.jpg", location: "Zanzibar, Tanzania", priceBudget: 50, priceMid: 80, priceLuxury: 150 },
+    { name: "Safari Blue", category: "Zanzibar", days: 1, description: "Safari ya meli na snorkeling kwenye visiwa vya Zanzibar.", featured: true, image: "images/zanzibar-tours.jpg", location: "Zanzibar, Tanzania", priceBudget: 70, priceMid: 110, priceLuxury: 200 },
+    { name: "Dolphin Tour", category: "Zanzibar", days: 1, description: "Kuona dolphins kwenye bahari ya Zanzibar.", featured: false, image: "images/zanzibar-tours.jpg", location: "Kizimkazi, Zanzibar", priceBudget: 60, priceMid: 90, priceLuxury: 180 },
+    { name: "Stone Town Tour", category: "Zanzibar", days: 1, description: "Kutembelea mji wa kihistoria wa Stone Town.", featured: true, image: "images/city-tour.jpg", location: "Stone Town, Zanzibar", priceBudget: 40, priceMid: 70, priceLuxury: 150 },
+    { name: "Serengeti Safari", category: "Safari", days: 5, description: "Safari ya siku 5 Serengeti — Great Migration, wanyama wengi.", featured: true, image: "images/tanzania-safari.jpg", location: "Serengeti, Tanzania", priceBudget: 1200, priceMid: 1800, priceLuxury: 3500 },
+    { name: "Ngorongoro Crater", category: "Safari", days: 3, description: "Safari ya siku 3 Ngorongoro — crater kubwa duniani.", featured: true, image: "images/tanzania-safari.jpg", location: "Ngorongoro, Tanzania", priceBudget: 800, priceMid: 1200, priceLuxury: 2500 },
+    { name: "Tarangire Safari", category: "Safari", days: 2, description: "Safari ya siku 2 Tarangire — tembo wengi, baobab.", featured: false, image: "images/tanzania-safari.jpg", location: "Tarangire, Tanzania", priceBudget: 500, priceMid: 800, priceLuxury: 1500 },
+    { name: "Lake Manyara Safari", category: "Safari", days: 2, description: "Safari ya siku 2 Lake Manyara — flamingos, ndege.", featured: false, image: "images/tanzania-safari.jpg", location: "Lake Manyara, Tanzania", priceBudget: 450, priceMid: 700, priceLuxury: 1400 },
+    { name: "Kilimanjaro Trekking", category: "Safari", days: 7, description: "Kupanda Kilimanjaro — mlima mrefu Afrika (5,895m).", featured: true, image: "images/tanzania-safari.jpg", location: "Kilimanjaro, Tanzania", priceBudget: 1500, priceMid: 2500, priceLuxury: 5000 },
+    { name: "Jet Ski Adventure", category: "Water Sports", days: 1, description: "Kupanda jet ski kwenye bahari ya Zanzibar.", featured: false, image: "images/jet-ski-water.jpg", location: "Nungwi, Zanzibar", priceBudget: 80, priceMid: 120, priceLuxury: 250 },
+    { name: "Drone Kayak", category: "Water Sports", days: 1, description: "Kayak na drone — uzoefu wa kipekee.", featured: true, image: "images/jet-ski-water.jpg", location: "Zanzibar, Tanzania", priceBudget: 100, priceMid: 150, priceLuxury: 300 },
+    { name: "Parasailing", category: "Water Sports", days: 1, description: "Kupaa juu ya bahari kwa parasailing.", featured: false, image: "images/jet-ski-water.jpg", location: "Nungwi, Zanzibar", priceBudget: 90, priceMid: 140, priceLuxury: 280 },
+    { name: "Kitesurfing Paje", category: "Water Sports", days: 1, description: "Kitesurfing kwenye fukwe ya Paje.", featured: true, image: "images/jet-ski-water.jpg", location: "Paje, Zanzibar", priceBudget: 100, priceMid: 150, priceLuxury: 300 },
+    { name: "Scuba Diving", category: "Water Sports", days: 1, description: "Scuba diving kwenye miamba ya Zanzibar.", featured: false, image: "images/jet-ski-water.jpg", location: "Zanzibar, Tanzania", priceBudget: 120, priceMid: 180, priceLuxury: 350 },
+    { name: "Private Yacht Charter", category: "Luxury", days: 1, description: "Kukodisha yacht ya kifahari kwa siku.", featured: true, image: "images/vip-image.jpg", location: "Zanzibar, Tanzania", priceBudget: 500, priceMid: 800, priceLuxury: 2000 },
+    { name: "Helicopter Tour", category: "Luxury", days: 1, description: "Kupaa kwa helicopter juu ya Zanzibar.", featured: true, image: "images/vip-image.jpg", location: "Zanzibar, Tanzania", priceBudget: 400, priceMid: 600, priceLuxury: 1500 },
+    { name: "Private Island Getaway", category: "Luxury", days: 2, description: "Kukaa kwenye kisiwa cha kibinafsi.", featured: false, image: "images/vip-image.jpg", location: "Zanzibar, Tanzania", priceBudget: 800, priceMid: 1500, priceLuxury: 5000 },
+    { name: "Romantic Dinner Beach", category: "Luxury", days: 1, description: "Chakula cha jioni cha kimapenzi pwani.", featured: false, image: "images/romantic-dinner.jpg", location: "Zanzibar, Tanzania", priceBudget: 150, priceMid: 250, priceLuxury: 500 },
+    { name: "Luxury Spa Day", category: "Luxury", days: 1, description: "Siku ya spa ya kifahari na massage.", featured: false, image: "images/secret-garden.jpg", location: "Zanzibar, Tanzania", priceBudget: 100, priceMid: 180, priceLuxury: 400 }
+];
+
+window.clearLog = function() {
+    document.getElementById('log').innerHTML = '';
+    document.getElementById('status').className = 'status info';
+    document.getElementById('status').textContent = 'Tayari kuanza...';
+};
+
+window.seedTrips = async function() {
+    const log = document.getElementById('log');
+    const status = document.getElementById('status');
+    log.innerHTML = '';
+    status.className = 'status info';
+    status.textContent = 'Inaweka trips...';
+
+    let success = 0;
+    let failed = 0;
+
+    for (let i = 0; i < trips.length; i++) {
+        try {
+            await addDoc(collection(db, "trips"), trips[i]);
+            success++;
+            log.innerHTML += '<p>✅ ' + (i+1) + '. ' + trips[i].name + '</p>';
+        } catch (e) {
+            failed++;
+            log.innerHTML += '<p>❌ ' + (i+1) + '. ' + trips[i].name + ' — Kosa: ' + e.message + '</p>';
+        }
+        log.scrollTop = log.scrollHeight;
+    }
+
+    if (failed === 0) {
+        status.className = 'status ok';
+        status.textContent = '✅ Trips ' + success + ' zimewekwa kwa mafanikio!';
+    } else {
+        status.className = 'status err';
+        status.textContent = '⚠️ Trips ' + success + ' zimewekwa, ' + failed + ' zimeshindwa.';
+    }
+};
+</script>
+</body>
+  </html>
