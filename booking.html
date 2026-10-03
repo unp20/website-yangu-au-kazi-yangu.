@@ -23,6 +23,9 @@
 <link rel="canonical" href="https://unp.tours/booking.html">
 
 <style>
+    /* =========================================
+       RANGI ZA UNP: BLUE + GOLD
+       ========================================= */
     :root {
         --ocean-blue: #0c4a6e;
         --deep-navy: #082f49;
@@ -55,13 +58,20 @@
 
     /* BOOKING WRAPPER */
     .booking-wrapper { max-width: 900px; margin: 0 auto; padding: 20px; }
-    .booking-info { background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin-bottom: 25px; border-left: 5px solid var(--gold); }
-    .booking-info h3 { color: var(--ocean-blue); margin-bottom: 12px; font-size: 1.2rem; }
-    .booking-info p { color: #555; font-size: 0.95rem; line-height: 1.8; }
-    /* HIGHLIGHT: rangi moja tu, hakuna background */
+    .booking-info {
+        background: #fff;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        margin-bottom: 25px;
+        border-left: 5px solid var(--gold);
+        text-align: center;
+    }
+    .booking-info h3 { color: var(--ocean-blue); margin-bottom: 12px; font-size: 1.3rem; }
+    .booking-info p { color: #555; font-size: 1rem; line-height: 1.8; }
     .highlight { color: #555; font-weight: 600; }
 
-    .form-container { background: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); margin-bottom: 25px; }
+    .form-container { background: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); margin-bottom: 25px; border: 2px solid var(--gold); }
     .form-container h2 { color: var(--ocean-blue); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
     .form-container h2 i { color: var(--gold); }
     .form-section-title { color: var(--ocean-blue); margin: 25px 0 15px; font-size: 1.1rem; border-left: 4px solid var(--gold); padding-left: 10px; }
@@ -73,8 +83,9 @@
         border: 2px solid #ddd; border-radius: 8px;
         font-family: 'Poppins', sans-serif; font-size: 0.95rem;
         transition: border-color 0.3s;
+        background: #fff; color: #333;
     }
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--gold); }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 2px rgba(212,175,55,0.2); }
 
     /* TIER-OPTION */
     .tier-option {
@@ -103,8 +114,30 @@
     .tier-option:has(input[type="radio"]:checked) .tier-badge { background: var(--ocean-blue) !important; color: #ffffff !important; }
 
     /* BUTTONS */
-    .btn-primary { background: var(--gold); color: var(--deep-navy); padding: 14px 30px; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 1rem; transition: 0.3s; display: inline-block; text-align: center; }
-    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .btn-primary {
+        background: var(--gold);
+        color: var(--deep-navy);
+        padding: 16px 30px;
+        border: 2px solid var(--gold);
+        border-radius: 8px;
+        font-weight: 700;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: 0.3s;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        text-align: center;
+        width: 100%;
+    }
+    .btn-primary:hover {
+        background: var(--deep-navy);
+        color: var(--gold);
+        border-color: var(--deep-navy);
+        transform: translateY(-2px);
+    }
     .btn-full { width: 100%; }
 
     /* FOOTER */
@@ -117,37 +150,21 @@
     /* FLOATING WHATSAPP */
     .floating-whatsapp { position: fixed; bottom: 25px; right: 25px; background: #25d366; color: #fff; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 1100; }
 
-    /* CHATBOT */
-    .chatbot-toggle { position: fixed; bottom: 100px; right: 25px; background-color: var(--ocean-blue); color: var(--gold); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 1100; cursor: pointer; border: 2px solid var(--gold); }
-    .chatbot-container { position: fixed; bottom: 170px; right: 25px; width: 350px; max-width: 90vw; height: 500px; background: #fff; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); z-index: 1100; display: none; flex-direction: column; overflow: hidden; border: 2px solid var(--gold); }
-    .chatbot-container.active { display: flex; }
-    .chatbot-header { background: var(--ocean-blue); color: #fff; padding: 15px; display: flex; align-items: center; gap: 10px; }
-    .chatbot-header .avatar { width: 40px; height: 40px; background: var(--gold); color: var(--deep-navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; }
-    .chatbot-header h4 { margin: 0; font-size: 1rem; color: #fff; }
-    .chatbot-header span { font-size: 0.75rem; color: #ddd; display: block; }
-    .chatbot-messages { flex-grow: 1; padding: 15px; overflow-y: auto; background: #f9f9f9; display: flex; flex-direction: column; gap: 10px; }
-    .message { max-width: 80%; padding: 10px 15px; border-radius: 15px; font-size: 0.85rem; }
-    .message.bot { background: #e9ecef; align-self: flex-start; }
-    .message.user { background: var(--ocean-blue); color: #fff; align-self: flex-end; }
-    .chatbot-input { display: flex; padding: 10px; border-top: 1px solid #eee; }
-    .chatbot-input input { flex-grow: 1; padding: 10px; border: 1px solid #ddd; border-radius: 20px; outline: none; }
-    .chatbot-input button { background: var(--gold); color: var(--deep-navy); border: none; width: 40px; height: 40px; border-radius: 50%; margin-left: 8px; cursor: pointer; }
-
     .gtranslate_wrapper { position: relative; }
 
     @media (max-width: 768px) {
         .menu-toggle { display: block; }
-        .nav-links { 
-            display: none; 
-            flex-direction: column; 
-            width: 100%; 
-            background: var(--deep-navy); 
-            padding: 20px; 
-            position: absolute; 
-            top: 100%; 
-            left: 0; 
-            right: 0; 
-            z-index: 999; 
+        .nav-links {
+            display: none;
+            flex-direction: column;
+            width: 100%;
+            background: var(--deep-navy);
+            padding: 20px;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            z-index: 999;
             border-top: 2px solid var(--gold);
             gap: 0;
         }
@@ -197,17 +214,9 @@
 <div class="booking-wrapper">
 
     <div class="booking-info">
-        <h3><i class="fas fa-heart"></i> Karibu UNP Family — Nyumbani Kwako</h3>
+        <h3><i class="fas fa-heart"></i> Karibu UNP Family</h3>
         <p>
-            <strong>Wewe si mgeni — wewe ni sehemu ya familia yetu.</strong> 
-            Hapa tunaandaa safari zenye upendo, heshima, na furaha ya kukumbukwa milele.
-        </p>
-        <p style="margin-top: 12px;">
-            Jaza fomu hii kwa urahisi. Ukiisha jaza, 
-            <span class="highlight">tunarudi kwako mara moja na ofa maalum iliyoandaliwa kwa heshima yako</span>.
-        </p>
-        <p style="margin-top: 12px; color: #0c4a6e; font-weight: 600; font-style: italic;">
-            🌴 Karibu nyumbani. Tunakusubiri kwa furaha! ✨
+            <strong>Wewe ni familia yetu, karibu tukuudumie.</strong>
         </p>
     </div>
 
@@ -337,4 +346,42 @@
                 <textarea id="guestMessage" rows="4" placeholder="Tuambie zaidi kuhusu safari unayotaka..."></textarea>
             </div>
 
-            <button type="submit
+            <button type="submit" class="btn-primary btn-full">
+                <i class="fas fa-paper-plane"></i> Tuma Ombi Lako
+            </button>
+
+        </form>
+    </section>
+
+</div>
+
+<footer class="footer">
+    <div class="footer-content">
+        <div>
+            <h3>UNIQUE NATURE PARADISE (UNP)</h3>
+            <p style="font-size: 0.9rem;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <div>
+            <h4>Direct Contact</h4>
+            <p style="font-size: 0.9rem;"><i class="fab fa-whatsapp" style="color: #d4af37;"></i> +255 655 728 982</p>
+            <p style="font-size: 0.9rem;"><i class="fas fa-envelope" style="color: #d4af37;"></i> salimnasoro11@gmail.com</p>
+            <p style="font-size: 0.9rem;"><i class="fas fa-map-marker-alt" style="color: #d4af37;"></i> Zanzibar, Tanzania</p>
+        </div>
+        <div>
+            <h4>Links za Haraka</h4>
+            <p style="font-size: 0.9rem;"><a href="index.html" style="color: #ddd;">Nyumbani</a></p>
+            <p style="font-size: 0.9rem;"><a href="trips.html" style="color: #ddd;">Trips</a></p>
+            <p style="font-size: 0.9rem;"><a href="about.html" style="color: #ddd;">Kuhusu Sisi</a></p>
+            <p style="font-size: 0.9rem;"><a href="contact.html" style="color: #ddd;">Wasiliana</a></p>
+        </div>
+    </div>
+    <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #1e3a5f; color: #999; font-size: 0.85rem;">
+        &copy; 2025 UNP TOURS. Haki zote zimehifadhiwa.
+    </div>
+</foote
