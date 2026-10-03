@@ -37,26 +37,71 @@
 <meta name="geo.position" content="-6.165917;39.202641">
 <meta name="ICBM" content="-6.165917, 39.202641">
 
+<!-- GOOGLE ANALYTICS -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5QJ1X38ZLC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5QJ1X38ZLC');
+</script>
+
+<!-- YANDEX METRICA -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113203659', 'ym');
+    ym(113203659, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/113203659" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
 <!-- ELFSIGHT PLATFORM -->
 <script src="https://elfsightcdn.com/platform.js" async></script>
 
 <style>
-    .hero {
-        background: linear-gradient(135deg, var(--dark-green) 0%, var(--royal-green) 100%);
-        padding: 70px 20px;
-        text-align: center;
-        color: #fff;
-        border-bottom: 5px solid var(--royal-gold);
+    :root {
+        --ocean-blue: #0c4a6e;
+        --deep-navy: #082f49;
+        --gold: #d4af37;
+        --gold-light: #f0c75e;
+        --light-bg: #f8f9fa;
     }
-    .hero h1 { font-size: 2.2rem; color: var(--royal-gold); margin-bottom: 10px; }
-    .hero p { max-width: 600px; margin: 0 auto; color: #ddd; font-size: 1rem; }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body { background-color: var(--light-bg); color: #333; line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
 
+    /* HEADER */
+    .top-bar { background: var(--deep-navy); padding: 8px 20px; display: flex; justify-content: flex-end; align-items: center; gap: 15px; }
+    .header { background: var(--ocean-blue); padding: 15px 20px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; position: relative; }
+    .logo-area { display: flex; align-items: center; gap: 15px; }
+    .logo-holder { width: 60px; height: 60px; border: 2px dashed var(--gold); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+    .logo-fallback { color: var(--gold); font-weight: 700; font-size: 0.7rem; text-align: center; line-height: 1.1; }
+    .logo-text h2 { color: #fff; font-size: 1.3rem; font-weight: 700; }
+    .logo-text span { color: var(--gold); font-size: 0.8rem; }
+    .nav-links { display: flex; gap: 20px; list-style: none; }
+    .nav-links a { color: #fff; font-size: 0.85rem; transition: color 0.3s; display: flex; align-items: center; gap: 5px; }
+    .nav-links a:hover { color: var(--gold); }
+    .menu-toggle { display: none; background: none; border: none; color: var(--gold); font-size: 26px; cursor: pointer; }
+
+    /* HERO */
+    .hero { background: linear-gradient(135deg, var(--deep-navy), var(--ocean-blue)); color: #fff; text-align: center; padding: 70px 20px; border-bottom: 5px solid var(--gold); }
+    .hero h1 { font-size: 2.2rem; color: var(--gold); margin-bottom: 10px; }
+    .hero p { font-size: 1rem; color: #ddd; max-width: 700px; margin: 0 auto; }
+
+    /* INTERACTIVE BOX */
+    .interactive-box { max-width: 900px; margin: 40px auto; background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+
+    /* CONTENT */
     .terms-content h3 {
-        color: var(--royal-green);
+        color: var(--ocean-blue);
         margin-top: 25px;
         margin-bottom: 10px;
         font-size: 1.2rem;
-        border-left: 4px solid var(--royal-gold);
+        border-left: 4px solid var(--gold);
         padding-left: 10px;
     }
     .terms-content p {
@@ -83,78 +128,43 @@
         margin-bottom: 20px;
     }
 
-    .interactive-box {
-        max-width: 900px;
-        margin: 40px auto;
-        background: #fff;
-        padding: 30px;
-        border-radius: 12px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    }
+    /* FOOTER */
+    .footer { background: var(--deep-navy); color: #fff; padding: 40px 20px; margin-top: 50px; }
+    .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+    .footer h3, .footer h4 { color: var(--gold); margin-bottom: 15px; }
+    .social-links { display: flex; gap: 15px; margin-top: 15px; }
+    .social-links a { color: var(--gold); font-size: 1.2rem; transition: transform 0.3s; }
+    .social-links a:hover { transform: scale(1.2); }
 
-    .footer {
-        background-color: var(--dark-green);
-        color: #fff; padding: 40px 5% 20px 5%;
-        margin-top: 50px;
-        border-top: 3px solid var(--royal-gold);
-    }
-    .footer-content {
-        display: flex; justify-content: space-between;
-        flex-wrap: wrap; gap: 30px;
-        max-width: 1200px; margin: 0 auto;
-    }
-    .footer h3, .footer h4 { color: var(--royal-gold); margin-bottom: 10px; }
-    .social-links { margin-top: 15px; display: flex; gap: 15px; }
-    .social-links a { font-size: 22px; color: var(--royal-gold); transition: color 0.3s, transform 0.3s; }
-    .social-links a:hover { color: #fff; transform: scale(1.2); }
-
-    .floating-whatsapp {
-        position: fixed; bottom: 25px; right: 25px;
-        background-color: #25d366; color: white;
-        width: 60px; height: 60px; border-radius: 50%;
-        display: flex; align-items: center; justify-content: center;
-        font-size: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-        z-index: 1000; transition: transform 0.3s;
-    }
+    /* FLOATING WHATSAPP */
+    .floating-whatsapp { position: fixed; bottom: 25px; right: 25px; background: #25d366; color: #fff; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 1100; transition: transform 0.3s; }
     .floating-whatsapp:hover { transform: scale(1.1); }
 
-    .chatbot-toggle {
-        position: fixed; bottom: 100px; right: 25px;
-        background-color: var(--royal-green); color: var(--royal-gold);
-        width: 60px; height: 60px; border-radius: 50%;
-        display: flex; align-items: center; justify-content: center;
-        font-size: 28px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        z-index: 1100; cursor: pointer; border: 2px solid var(--royal-gold);
-        transition: transform 0.3s;
-    }
-    .chatbot-toggle:hover { transform: scale(1.1); }
-    .chatbot-container {
-        position: fixed; bottom: 170px; right: 25px;
-        width: 350px; max-width: 90vw; height: 500px;
-        background: #fff; border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        z-index: 1100; display: none; flex-direction: column;
-        overflow: hidden; border: 2px solid var(--royal-gold);
-    }
+    /* CHATBOT */
+    .chatbot-toggle { position: fixed; bottom: 100px; right: 25px; background-color: var(--ocean-blue); color: var(--gold); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 1100; cursor: pointer; border: 2px solid var(--gold); }
+    .chatbot-container { position: fixed; bottom: 170px; right: 25px; width: 350px; max-width: 90vw; height: 500px; background: #fff; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); z-index: 1100; display: none; flex-direction: column; overflow: hidden; border: 2px solid var(--gold); }
     .chatbot-container.active { display: flex; }
-    .chatbot-header { background: var(--royal-green); color: #fff; padding: 15px; display: flex; align-items: center; gap: 10px; }
-    .chatbot-header .avatar { width: 40px; height: 40px; background: var(--royal-gold); color: var(--dark-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem; }
+    .chatbot-header { background: var(--ocean-blue); color: #fff; padding: 15px; display: flex; align-items: center; gap: 10px; }
+    .chatbot-header .avatar { width: 40px; height: 40px; background: var(--gold); color: var(--deep-navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem; }
     .chatbot-header h4 { margin: 0; font-size: 1rem; color: #fff; }
     .chatbot-header span { font-size: 0.75rem; color: #ddd; display: block; }
     .chatbot-messages { flex-grow: 1; padding: 15px; overflow-y: auto; background: #f9f9f9; display: flex; flex-direction: column; gap: 10px; }
     .message { max-width: 80%; padding: 10px 15px; border-radius: 15px; font-size: 0.85rem; }
     .message.bot { background: #e9ecef; align-self: flex-start; }
-    .message.user { background: var(--royal-green); color: #fff; align-self: flex-end; }
+    .message.user { background: var(--ocean-blue); color: #fff; align-self: flex-end; }
     .chatbot-input { display: flex; padding: 10px; border-top: 1px solid #eee; }
     .chatbot-input input { flex-grow: 1; padding: 10px; border: 1px solid #ddd; border-radius: 20px; outline: none; font-family: 'Poppins', sans-serif; }
-    .chatbot-input button { background: var(--royal-gold); color: var(--dark-green); border: none; width: 40px; height: 40px; border-radius: 50%; margin-left: 8px; cursor: pointer; font-size: 1rem; }
+    .chatbot-input button { background: var(--gold); color: var(--deep-navy); border: none; width: 40px; height: 40px; border-radius: 50%; margin-left: 8px; cursor: pointer; font-size: 1rem; }
 
+    /* GTRANSLATE */
     .gtranslate_wrapper { position: relative; }
 
     @media (max-width: 768px) {
         .menu-toggle { display: block; }
-        .nav-links { display: none; flex-direction: column; width: 100%; background-color: var(--royal-green); padding: 15px 0; gap: 10px; }
+        .nav-links { display: none; flex-direction: column; width: 100%; background: var(--deep-navy); padding: 20px; position: absolute; top: 100%; left: 0; right: 0; z-index: 999; border-top: 2px solid var(--gold); }
         .nav-links.active { display: flex; }
+        .nav-links li { width: 100%; }
+        .nav-links a { padding: 10px 0; width: 100%; }
         .hero h1 { font-size: 1.6rem; }
     }
 </style>
@@ -247,8 +257,8 @@
         </div>
         <div>
             <h4>Direct Contact</h4>
-            <p style="font-size: 0.9rem; margin-top: 8px;"><i class="fab fa-whatsapp" style="color: var(--royal-gold);"></i> Phone: +255 655 728 982</p>
-            <p style="font-size: 0.9rem; margin-top: 5px;"><i class="fas fa-envelope" style="color: var(--royal-gold);"></i> Email: salimnasoro11@gmail.com</p>
+            <p style="font-size: 0.9rem; margin-top: 8px;"><i class="fab fa-whatsapp" style="color: var(--gold);"></i> Phone: +255 655 728 982</p>
+            <p style="font-size: 0.9rem; margin-top: 5px;"><i class="fas fa-envelope" style="color: var(--gold);"></i> Email: salimnasoro11@gmail.com</p>
             <div class="social-links">
                 <a href="https://wa.me/255655728982" target="_blank"><i class="fab fa-whatsapp"></i></a>
                 <a href="mailto:salimnasoro11@gmail.com"><i class="fas fa-envelope"></i></a>
@@ -257,6 +267,15 @@
                 <a href="https://www.facebook.com/profile.php?id=61595094232501" target="_blank"><i class="fab fa-facebook"></i></a>
             </div>
         </div>
+    </div>
+    <!-- SOCIAL SHARING BUTTONS -->
+    <div style="text-align: center; margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.2);">
+        <p style="color: var(--gold); font-size: 0.9rem; margin-bottom: 10px;">Shiriki UNP TOURS:</p>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://unp.tours/privacy.html" target="_blank" style="display: inline-block; margin: 0 5px; color: var(--gold); font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
+        <a href="https://twitter.com/intent/tweet?url=https://unp.tours/privacy.html" target="_blank" style="display: inline-block; margin: 0 5px; color: var(--gold); font-size: 1.5rem;"><i class="fab fa-twitter"></i></a>
+        <a href="https://wa.me/?text=Check%20out%20UNP%20Privacy!%20https://unp.tours/privacy.html" target="_blank" style="display: inline-block; margin: 0 5px; color: var(--gold); font-size: 1.5rem;"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://unp.tours/privacy.html" target="_blank" style="display: inline-block; margin: 0 5px; color: var(--gold); font-size: 1.5rem;"><i class="fab fa-linkedin"></i></a>
+        <a href="https://t.me/share/url?url=https://unp.tours/privacy.html" target="_blank" style="display: inline-block; margin: 0 5px; color: var(--gold); font-size: 1.5rem;"><i class="fab fa-telegram"></i></a>
     </div>
 </footer>
 
@@ -281,9 +300,9 @@
 </div>
 
 <!-- COOKIES BANNER -->
-<div id="cookieBanner" style="position: fixed; bottom: 0; left: 0; right: 0; background: var(--dark-green); color: #fff; padding: 15px; text-align: center; z-index: 9999; display: none;">
-    <p style="margin: 0 0 10px 0; font-size: 0.9rem;">Tunatumia cookies kuboresha uzoefu wako. Kwa kuendelea kutumia website yetu, unakubali <a href="privacy.html" style="color: var(--royal-gold); text-decoration: underline;">Sera zetu za Faragha</a>.</p>
-    <button onclick="acceptCookies()" style="background: var(--royal-gold); color: var(--dark-green); border: none; padding: 8px 20px; border-radius: 5px; font-weight: 700; cursor: pointer;">Nakubali</button>
+<div id="cookieBanner" style="position: fixed; bottom: 0; left: 0; right: 0; background: var(--deep-navy); color: #fff; padding: 15px; text-align: center; z-index: 9999; display: none;">
+    <p style="margin: 0 0 10px 0; font-size: 0.9rem;">Tunatumia cookies kuboresha uzoefu wako. Kwa kuendelea kutumia website yetu, unakubali <a href="privacy.html" style="color: var(--gold); text-decoration: underline;">Sera zetu za Faragha</a>.</p>
+    <button onclick="acceptCookies()" style="background: var(--gold); color: var(--deep-navy); border: none; padding: 8px 20px; border-radius: 5px; font-weight: 700; cursor: pointer;">Nakubali</button>
 </div>
 
 <!-- TAWK.TO LIVE CHAT -->
@@ -320,8 +339,35 @@ window.gtranslateSettings = {
 </script>
 <script src="https://cdn.gtranslate.net/widgets/latest/dropdown.js" defer></script>
 
-<!-- SCRIPT.JS -->
-<script src="script.js"></script>
+<!-- MENU TOGGLE, COOKIES, CHATBOT -->
+<script>
+  const menuToggleBtn = document.getElementById('menuToggleBtn');
+  const navLinks = document.getElementById('navLinks');
+  if(menuToggleBtn) { menuToggleBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); }); }
+
+  if (!localStorage.getItem('cookiesAccepted')) {
+      document.getElementById('cookieBanner').style.display = 'block';
+  }
+  window.acceptCookies = function() {
+      localStorage.setItem('cookiesAccepted', 'true');
+      document.getElementById('cookieBanner').style.display = 'none';
+  };
+
+  window.toggleChatbot = function() { document.getElementById('chatbotContainer').classList.toggle('active'); };
+  window.handleKeyPress = function(e) { if (e.key === 'Enter') sendMessage(); };
+  window.sendMessage = function() {
+      const input = document.getElementById('chatInput');
+      const msg = input.value.trim();
+      if (!msg) return;
+      const chatMessages = document.getElementById('chatMessages');
+      chatMessages.innerHTML += `<div class="message user">${msg}</div>`;
+      input.value = '';
+      setTimeout(() => {
+          chatMessages.innerHTML += `<div class="message bot">Asante! Tutakujibu hivi punde. WhatsApp: +255 655 728 982</div>`;
+          chatMessages.scrollTop = chatMessages.scrollHeight;
+      }, 1000);
+  };
+</script>
 
 </body>
-     </html>
+    </html>
