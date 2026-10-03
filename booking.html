@@ -23,9 +23,6 @@
 <link rel="canonical" href="https://unp.tours/booking.html">
 
 <style>
-    /* =========================================
-       RANGI ZA UNP: BLUE + GOLD
-       ========================================= */
     :root {
         --ocean-blue: #0c4a6e;
         --deep-navy: #082f49;
@@ -41,15 +38,46 @@
     .top-bar { background: var(--deep-navy); padding: 8px 20px; display: flex; justify-content: flex-end; align-items: center; gap: 15px; }
     .header { background: var(--ocean-blue); padding: 15px 20px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
     .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; position: relative; }
-    .logo-area { display: flex; align-items: center; gap: 15px; }
+
+    .logo-area { display: flex; align-items: center; gap: 15px; z-index: 1; }
     .logo-holder { width: 60px; height: 60px; border: 2px dashed var(--gold); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
     .logo-fallback { color: var(--gold); font-weight: 700; font-size: 0.7rem; text-align: center; line-height: 1.1; }
     .logo-text h2 { color: #fff; font-size: 1.3rem; font-weight: 700; }
     .logo-text span { color: var(--gold); font-size: 0.8rem; }
+
     .nav-links { display: flex; gap: 20px; list-style: none; }
     .nav-links a { color: #fff; font-size: 0.85rem; display: flex; align-items: center; gap: 5px; }
     .nav-links a:hover { color: var(--gold); }
-    .menu-toggle { display: none; background: none; border: none; color: var(--gold); font-size: 26px; cursor: pointer; z-index: 1001; }
+
+    /* =========================================
+       MENU TOGGLE - IMEREKEBISHWA KIKAMILIFU
+       ========================================= */
+    .menu-toggle {
+        display: none;
+        background: transparent;
+        border: none;
+        color: var(--gold);
+        font-size: 30px;
+        cursor: pointer;
+        padding: 12px 16px;           /* Eneo kubwa la kubonyeza */
+        border-radius: 8px;
+        z-index: 9999;                 /* Juu ya kila kitu */
+        position: relative;             /* Inafanya z-index ifanye kazi */
+        pointer-events: auto;           /* Inaruhusu kubonyeza */
+        -webkit-tap-highlight-color: transparent;
+        min-width: 50px;
+        min-height: 50px;
+        align-items: center;
+        justify-content: center;
+        line-height: 1;
+    }
+    .menu-toggle:hover,
+    .menu-toggle:active {
+        background: rgba(212, 175, 55, 0.15);
+    }
+    .menu-toggle i {
+        pointer-events: none;           /* Icon haizuii kubonyeza */
+    }
 
     /* HERO */
     .hero { background: linear-gradient(135deg, var(--deep-navy), var(--ocean-blue)); color: #fff; text-align: center; padding: 70px 20px; border-bottom: 5px solid var(--gold); }
@@ -58,15 +86,7 @@
 
     /* BOOKING WRAPPER */
     .booking-wrapper { max-width: 900px; margin: 0 auto; padding: 20px; }
-    .booking-info {
-        background: #fff;
-        padding: 25px;
-        border-radius: 12px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        margin-bottom: 25px;
-        border-left: 5px solid var(--gold);
-        text-align: center;
-    }
+    .booking-info { background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin-bottom: 25px; border-left: 5px solid var(--gold); text-align: center; }
     .booking-info h3 { color: var(--ocean-blue); margin-bottom: 12px; font-size: 1.3rem; }
     .booking-info p { color: #555; font-size: 1rem; line-height: 1.8; }
     .highlight { color: #555; font-weight: 600; }
@@ -152,8 +172,13 @@
 
     .gtranslate_wrapper { position: relative; }
 
+    /* =========================================
+       MOBILE
+       ========================================= */
     @media (max-width: 768px) {
-        .menu-toggle { display: block; }
+        .menu-toggle {
+            display: flex !important;    /* Inaonyesha kitufe */
+        }
         .nav-links {
             display: none;
             flex-direction: column;
@@ -164,13 +189,14 @@
             top: 100%;
             left: 0;
             right: 0;
-            z-index: 999;
+            z-index: 998;
             border-top: 2px solid var(--gold);
             gap: 0;
         }
         .nav-links.active { display: flex; }
         .nav-links li { width: 100%; }
         .nav-links a { padding: 12px 0; width: 100%; font-size: 0.95rem; }
+
         .tier-option { padding: 12px 10px !important; gap: 10px !important; flex-wrap: nowrap !important; align-items: center !important; }
         .tier-option input[type="radio"] { width: 18px !important; height: 18px !important; min-width: 18px !important; max-width: 18px !important; flex: 0 0 18px !important; }
         .tier-option .tier-details h4 { font-size: 0.9rem !important; }
@@ -192,7 +218,9 @@
             <div class="logo-holder"><span class="logo-fallback">UNP<br>LOGO</span></div>
             <div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
         </a>
-        <button class="menu-toggle" id="menuToggleBtn" type="button"><i class="fas fa-bars"></i></button>
+        <button class="menu-toggle" id="menuToggleBtn" type="button" aria-label="Fungua Menu">
+            <i class="fas fa-bars"></i>
+        </button>
         <ul class="nav-links" id="navLinks">
             <li><a href="index.html"><i class="fas fa-home"></i> Nyumbani</a></li>
             <li><a href="about.html"><i class="fas fa-info-circle"></i> Kuhusu Sisi</a></li>
@@ -215,9 +243,7 @@
 
     <div class="booking-info">
         <h3><i class="fas fa-heart"></i> Karibu UNP Family</h3>
-        <p>
-            <strong>Wewe ni familia yetu, karibu tukuudumie.</strong>
-        </p>
+        <p><strong>Wewe ni familia yetu, karibu tukuudumie.</strong></p>
     </div>
 
     <section class="form-container">
@@ -370,18 +396,4 @@
         <div>
             <h4>Direct Contact</h4>
             <p style="font-size: 0.9rem;"><i class="fab fa-whatsapp" style="color: #d4af37;"></i> +255 655 728 982</p>
-            <p style="font-size: 0.9rem;"><i class="fas fa-envelope" style="color: #d4af37;"></i> salimnasoro11@gmail.com</p>
-            <p style="font-size: 0.9rem;"><i class="fas fa-map-marker-alt" style="color: #d4af37;"></i> Zanzibar, Tanzania</p>
-        </div>
-        <div>
-            <h4>Links za Haraka</h4>
-            <p style="font-size: 0.9rem;"><a href="index.html" style="color: #ddd;">Nyumbani</a></p>
-            <p style="font-size: 0.9rem;"><a href="trips.html" style="color: #ddd;">Trips</a></p>
-            <p style="font-size: 0.9rem;"><a href="about.html" style="color: #ddd;">Kuhusu Sisi</a></p>
-            <p style="font-size: 0.9rem;"><a href="contact.html" style="color: #ddd;">Wasiliana</a></p>
-        </div>
-    </div>
-    <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid #1e3a5f; color: #999; font-size: 0.85rem;">
-        &copy; 2025 UNP TOURS. Haki zote zimehifadhiwa.
-    </div>
-</foote
+            <p style="font-size: 0.9rem;"><i class="fas fa-envelope" st
