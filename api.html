@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>API | UNP TOURS</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<meta name="description" content="API - UNP TOURS. API kwa washirika na developers.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://unp.tours/api.html">
+<style>
+.api-header { background: linear-gradient(135deg, #082f49, #0c4a6e); color: #fff; text-align: center; padding: 70px 20px; border-bottom: 5px solid #d4af37; }
+.api-header h1 { font-size: 2.5rem; color: #d4af37; margin-bottom: 10px; }
+.api-header p { font-size: 1.1rem; color: #ddd; max-width: 700px; margin: 0 auto; }
+.api-content { max-width: 900px; margin: 40px auto; padding: 30px; background: #fff; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); }
+.api-content h2 { color: #0c4a6e; margin: 25px 0 15px; border-left: 5px solid #d4af37; padding-left: 12px; }
+.api-content p, .api-content li { color: #555; line-height: 1.8; }
+.api-content ul { padding-left: 20px; }
+.code-box { background: #1e293b; color: #10b981; padding: 20px; border-radius: 10px; font-family: monospace; font-size: 0.85rem; overflow-x: auto; margin: 15px 0; line-height: 1.6; }
+.info-box { background: #f9f9f9; padding: 20px; border-radius: 10px; border-left: 4px solid #d4af37; margin: 15px 0; }
+.info-box h4 { color: #082f49; margin-bottom: 8px; font-size: 1.05rem; }
+.info-box p { font-size: 0.9rem; color: #555; line-height: 1.6; }
+</style>
+</head>
+<body>
+
+<header class="header">
+    <div class="nav-container">
+        <a href="index.html" class="logo-area">
+            <div class="logo-holder"><span class="logo-fallback">UNP<br>LOGO</span></div>
+            <div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
+        </a>
+        <button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html"><i class="fas fa-home"></i> Nyumbani</a></li>
+            <li><a href="api.html" style="color: #d4af37;"><i class="fas fa-code"></i> API</a></li>
+            <li><a href="partners.html"><i class="fas fa-handshake"></i> Washirika</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Wasiliana</a></li>
+        </ul>
+    </div>
+</header>
+
+<section class="api-header">
+    <h1><i class="fas fa-code"></i> API</h1>
+    <p>API kwa washirika na developers — unganisha mifumo yako na UNP TOURS.</p>
+</section>
+
+<section class="api-content">
+    <h2>Kuhusu API Yetu</h2>
+    <p>UNP TOURS inatoa API kwa washirika na developers wanaotaka kuunganisha mifumo yao na yetu. Unaweza kuchukua taarifa za trips, bookings, na zaidi.</p>
+
+    <h2>Vitu Unavyoweza Kufanya</h2>
+    <ul>
+        <li>Kuchukua taarifa za trips zote</li>
+        <li>Kuchukua trip moja kwa ID</li>
+        <li>Kutafuta trips kwa kategoria</li>
+        <li>Kuweka booking mpya</li>
+        <li>Kuchukua bookings za mteja</li>
+        <li>Kuchukua reviews za wateja</li>
+    </ul>
+
+    <h2>Jinsi ya Kuanza</h2>
+    <div class="info-box">
+        <h4>1. Omba API Key</h4>
+        <p>Wasiliana nasi kwa WhatsApp au email ili kupata API key yako.</p>
+    </div>
+    <div class="info-box">
+        <h4>2. Tumia API Key</h4>
+        <p>Weka API key yako kwenye kila ombi (request) unalotuma.</p>
+    </div>
+    <div class="info-box">
+        <h4>3. Anza Kutuma Maombi</h4>
+        <p>Tuma maombi kwa REST API yetu na upate data.</p>
+    </div>
+
+    <h2>Mifano ya API Calls</h2>
+
+    <p><strong>1. Chukua Trips Zote:</strong></p>
+    <div class="code-box">
+GET https://api.unp.tours/v1/trips
+Headers: { "Authorization": "Bearer YOUR_API_KEY" }
+    </div>
+
+    <p><strong>2. Chukua Trip Moja:</strong></p>
+    <div class="code-box">
+GET https://api.unp.tours/v1/trips/{trip_id}
+Headers: { "Authorization": "Bearer YOUR_API_KEY" }
+    </div>
+
+    <p><strong>3. Tafuta Trips:</strong></p>
+    <div class="code-box">
+GET https://api.unp.tours/v1/trips/search?category=Zanzibar&limit=10
+Headers: { "Authorization": "Bearer YOUR_API_KEY" }
+    </div>
+
+    <p><strong>4. Weka Booking:</strong></p>
+    <div class="code-box">
+POST https://api.unp.tours/v1/bookings
+Headers: {
+  "Authorization": "Bearer YOUR_API_KEY",
+  "Content-Type": "application/json"
+}
+Body: {
+  "trip_id": "trip_123",
+  "name": "John Doe",
+  "email": "john@example.com",
+  "date": "2026-12-15",
+  "guests": 2
+}
+    </div>
+
+    <h2>Rate Limits</h2>
+    <ul>
+        <li>Free: 100 requests / siku</li>
+        <li>Basic: 1,000 requests / siku</li>
+        <li>Pro: 10,000 requests / siku</li>
+        <li>Enterprise: Bila kikomo</li>
+    </ul>
+
+    <h2>Gharama</h2>
+    <ul>
+        <li><strong>Free:</strong> Bure — 100 requests/siku</li>
+        <li><strong>Basic:</strong> $50/mwezi — 1,000 requests/siku</li>
+        <li><strong>Pro:</strong> $200/mwezi — 10,000 requests/siku</li>
+        <li><strong>Enterprise:</strong> Wasiliana nasi</li>
+    </ul>
+
+    <div class="info-box">
+        <h4>Msaada</h4>
+        <p>Kama unahitaji msaada wa API, wasiliana nasi: salimnasoro11@gmail.com</p>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-content">
+        <div>
+            <h3>UNIQUE NATURE PARADISE (UNP)</h3>
+            <p style="font-size: 0.9rem;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p>
+        </div>
+        <div>
+            <h4>Direct Contact</h4>
+            <p style="font-size: 0.9rem;"><i class="fab fa-whatsapp" style="color: #d4af37;"></i> +255 655 728 982</p>
+            <p style="font-size: 0.9rem;"><i class="fas fa-envelope" style="color: #d4af37;"></i> salimnasoro11@gmail.com</p>
+        </div>
+    </div>
+</footer>
+
+<a href="https://wa.me/255655728982" class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+  const menuToggleBtn = document.getElementById('menuToggleBtn');
+  const navLinks = document.getElementById('navLinks');
+  if(menuToggleBtn) { menuToggleBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); }); }
+</script>
+
+</body>
+  </html>
