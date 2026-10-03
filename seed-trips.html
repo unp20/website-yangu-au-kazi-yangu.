@@ -10,131 +10,122 @@ button { background: #d4af37; color: #032b1a; padding: 15px 30px; border: none; 
 #log { background: #032b1a; padding: 15px; border-radius: 10px; text-align: left; font-family: monospace; font-size: 0.8rem; margin-top: 15px; max-height: 60vh; overflow-y: auto; white-space: pre-wrap; }
 .ok { color: #4ade80; }
 .err { color: #f87171; }
+.info { color: #fbbf24; }
 </style>
 </head>
 <body>
 <h1>UNP Trips - Kuweka Firebase</h1>
 <p>Bonyeza kitufe kuweka trips 80</p>
-<button onclick="seed()">Weka Trips 80</button>
+<button onclick="startSeed()">Weka Trips 80</button>
 <div id="log"></div>
 
 <script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+const log = document.getElementById('log');
+log.innerHTML = '<span class="info">🔄 Inaanza...</span>\n';
 
-const cfg = {
-  apiKey: "AIzaSyD2YtPFL2L_ZwAKdSYpXtvLt8gJUm2IX6s",
-  authDomain: "unptours.firebaseapp.com",
-  projectId: "unptours",
-  storageBucket: "unptours.firebasestorage.app",
-  messagingSenderId: "233326851661",
-  appId: "1:233326851661:web:354156110a5cee29904e04"
-};
-const app = initializeApp(cfg);
-const db = getFirestore(app);
+try {
+  const { initializeApp } = await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js");
+  const { getFirestore, collection, addDoc } = await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js");
+  log.innerHTML += '<span class="ok">✅ Firebase SDK imepakiwa</span>\n';
 
-const IMG = "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800";
+  const cfg = {
+    apiKey: "AIzaSyD2YtPFL2L_ZwAKdSYpXtvLt8gJUm2IX6s",
+    authDomain: "unptours.firebaseapp.com",
+    projectId: "unptours",
+    storageBucket: "unptours.firebasestorage.app",
+    messagingSenderId: "233326851661",
+    appId: "1:233326851661:web:354156110a5cee29904e04"
+  };
+  const app = initializeApp(cfg);
+  const db = getFirestore(app);
+  log.innerHTML += '<span class="ok">✅ Firebase imeunganishwa</span>\n';
 
-const trips = [
-  {name:"Zanzibar Excursions",category:"Zanzibar",days:1,description:"Kutembelea Stone Town, Safari Blue, na kobe wakubwa katika safari ya siku moja Zanzibar.",featured:false,image:IMG,location:"Zanzibar, Tanzania",priceBudget:80,priceMid:120,priceLuxury:250},
-  {name:"Jozani Forest",category:"Zanzibar",days:1,description:"Kuchunguza msitu maarufu wa Jozani na kuona nyani Red Colobus adimu.",featured:false,image:IMG,location:"Jozani, Zanzibar",priceBudget:50,priceMid:80,priceLuxury:150},
-  {name:"Safari Blue",category:"Zanzibar",days:1,description:"Kusafiri kwa mashua za jadi, kufanya snorkeling, na kufurahia samaki wa hali ya juu katika Kisiwa cha Kwale.",featured:true,image:IMG,location:"Fumba, Zanzibar",priceBudget:90,priceMid:150,priceLuxury:300},
-  {name:"Dolphin Tour",category:"Zanzibar",days:1,description:"Kuogelea na pomboo pori katika ufukwe wa Kizimkazi.",featured:false,image:IMG,location:"Kizimkazi, Zanzibar",priceBudget:60,priceMid:100,priceLuxury:200},
-  {name:"Stone Town Tour",category:"Zanzibar",days:1,description:"Kugundua eneo la UNESCO la Stone Town - historia, utamaduni, na usanifu.",featured:false,image:IMG,location:"Stone Town, Zanzibar",priceBudget:45,priceMid:75,priceLuxury:150},
-  {name:"Nungwi Beach",category:"Zanzibar",days:1,description:"Kupumzika kwenye mchanga mweupe wa Nungwi Beach.",featured:false,image:IMG,location:"Nungwi, Zanzibar",priceBudget:70,priceMid:120,priceLuxury:250},
-  {name:"Kendwa Beach",category:"Zanzibar",days:1,description:"Kupata uzoefu wa Kendwa Beach - pwani pekee Zanzibar unaweza kuogelea wakati wowote.",featured:false,image:IMG,location:"Kendwa, Zanzibar",priceBudget:70,priceMid:120,priceLuxury:250},
-  {name:"Spice Tour",category:"Zanzibar",days:1,description:"Kugundua viungo vya Zanzibar - kuonja, kunusa, na kujifunza.",featured:false,image:IMG,location:"Kizimbani, Zanzibar",priceBudget:40,priceMid:70,priceLuxury:130},
-  {name:"Prison Island",category:"Zanzibar",days:1,description:"Kutembelea Kisiwa cha Prison - nyumbani kwa kobe wakubwa wa Aldabra.",featured:false,image:IMG,location:"Prison Island, Zanzibar",priceBudget:55,priceMid:90,priceLuxury:180},
-  {name:"Nakupenda Sandbank",category:"Zanzibar",days:1,description:"Kupumzika kwenye mchanga safi katikati ya Bahari ya Hindi.",featured:true,image:IMG,location:"Nakupenda, Zanzibar",priceBudget:65,priceMid:110,priceLuxury:220},
-  {name:"Mnemba Island",category:"Zanzibar",days:1,description:"Snorkeling au kupiga mbizi karibu na Kisiwa cha Mnemba.",featured:false,image:IMG,location:"Mnemba, Zanzibar",priceBudget:120,priceMid:200,priceLuxury:400},
-  {name:"Kizimkazi Village",category:"Zanzibar",days:1,description:"Kutembelea Kizimkazi - kijiji cha uvuvi cha kihistoria chenye msikiti wa zamani Afrika Mashariki.",featured:false,image:IMG,location:"Kizimkazi, Zanzibar",priceBudget:50,priceMid:85,priceLuxury:170},
-  {name:"Paje Beach",category:"Zanzibar",days:1,description:"Kupata uzoefu wa Paje Beach - maarufu kwa kitesurfing na mchanga mweupe.",featured:false,image:IMG,location:"Paje, Zanzibar",priceBudget:60,priceMid:100,priceLuxury:200},
-  {name:"Jambiani Beach",category:"Zanzibar",days:1,description:"Kugundua Jambiani - kijiji cha uvuvi chenye amani na fukwe nzuri.",featured:false,image:IMG,location:"Jambiani, Zanzibar",priceBudget:55,priceMid:95,priceLuxury:190},
-  {name:"Seaweed Tour",category:"Zanzibar",days:1,description:"Kujifunza kuhusu kilimo cha mwani Zanzibar.",featured:false,image:IMG,location:"Paje, Zanzibar",priceBudget:40,priceMid:70,priceLuxury:130},
-  {name:"Serengeti Great Migration",category:"Safari",days:5,description:"Kuona uhamiaji mkubwa wa wanyama - wildebeest milioni 1.5+ na zebra 250,000+ wanahama kila mwaka kati ya Serengeti na Masai Mara.",featured:true,image:IMG,location:"Serengeti National Park, Tanzania",priceBudget:900,priceMid:2000,priceLuxury:3500},
-  {name:"Ngorongoro Crater",category:"Safari",days:3,description:"Kushuhudia wanyama wakubwa watano na mandhari nzuri ya crater.",featured:true,image:IMG,location:"Ngorongoro, Tanzania",priceBudget:400,priceMid:750,priceLuxury:1500},
-  {name:"Tarangire National Park",category:"Safari",days:2,description:"Maarufu kwa miti mikubwa ya baobab na makundi makubwa ya tembo.",featured:false,image:IMG,location:"Tarangire, Tanzania",priceBudget:300,priceMid:550,priceLuxury:1100},
-  {name:"Lake Manyara",category:"Safari",days:2,description:"Nyumbani kwa simba wanaopanda miti na flamingo maelfu.",featured:false,image:IMG,location:"Lake Manyara, Tanzania",priceBudget:250,priceMid:450,priceLuxury:900},
-  {name:"Kilimanjaro Trekking",category:"Safari",days:7,description:"Kupanda kilele cha juu kabisa Afrika - mita 5,895.",featured:true,image:IMG,location:"Kilimanjaro, Tanzania",priceBudget:1500,priceMid:2500,priceLuxury:5000},
-  {name:"Mount Meru",category:"Safari",days:4,description:"Kupanda mlima wa pili wa juu Tanzania.",featured:false,image:IMG,location:"Mount Meru, Tanzania",priceBudget:800,priceMid:1400,priceLuxury:2800},
-  {name:"Arusha National Park",category:"Safari",days:1,description:"Nyumbani kwa Mount Meru na nyani wa colobus nyeusi na nyeupe.",featured:false,image:IMG,location:"Arusha, Tanzania",priceBudget:200,priceMid:350,priceLuxury:700},
-  {name:"Ruaha National Park",category:"Safari",days:3,description:"Hifadhi kubwa zaidi Tanzania.",featured:false,image:IMG,location:"Ruaha, Tanzania",priceBudget:450,priceMid:800,priceLuxury:1600},
-  {name:"Mikumi National Park",category:"Safari",days:2,description:"Uangalizi bora wa wanyama karibu na Dar es Salaam.",featured:false,image:IMG,location:"Mikumi, Tanzania",priceBudget:300,priceMid:550,priceLuxury:1100},
-  {name:"Selous Game Reserve",category:"Safari",days:3,description:"Moja ya hifadhi kubwa zaidi duniani.",featured:false,image:IMG,location:"Selous, Tanzania",priceBudget:500,priceMid:900,priceLuxury:1800},
-  {name:"Sea Walk",category:"Water Sports",days:1,description:"Kutembea chini ya bahari kwa kofia maalum - uzoefu wa kipekee.",featured:true,image:IMG,location:"Nungwi, Zanzibar",priceBudget:100,priceMid:180,priceLuxury:350},
-  {name:"Sky Diving",category:"Adventure",days:1,description:"Kuruka kutoka futi 10,000 juu ya pwani ya Zanzibar.",featured:true,image:IMG,location:"Nungwi, Zanzibar",priceBudget:350,priceMid:500,priceLuxury:800},
-  {name:"Jet Ski",category:"Water Sports",days:1,description:"Kupanda mawimbi kwa jet ski.",featured:false,image:IMG,location:"Nungwi, Zanzibar",priceBudget:80,priceMid:150,priceLuxury:300},
-  {name:"Jet Car",category:"Water Sports",days:1,description:"Kuendesha gari la maji - mtindo mpya Zanzibar.",featured:false,image:IMG,location:"Nungwi, Zanzibar",priceBudget:120,priceMid:200,priceLuxury:400},
-  {name:"Drone Kayak",category:"Water Sports",days:1,description:"Kayak huku ukirekodiwa na drone.",featured:false,image:IMG,location:"Paje, Zanzibar",priceBudget:90,priceMid:160,priceLuxury:320},
-  {name:"Parasailing",category:"Water Sports",days:1,description:"Kupaa juu ya bahari kwa parachuti.",featured:false,image:IMG,location:"Nungwi, Zanzibar",priceBudget:100,priceMid:180,priceLuxury:350},
-  {name:"Kitesurfing Paje",category:"Water Sports",days:1,description:"Kujifunza kitesurfing kwenye sehemu bora duniani.",featured:false,image:IMG,location:"Paje, Zanzibar",priceBudget:120,priceMid:200,priceLuxury:400},
-  {name:"Scuba Diving",category:"Water Sports",days:1,description:"Kupiga mbizi katika ulimwengu wa chini ya maji wa Zanzibar.",featured:false,image:IMG,location:"Mnemba, Zanzibar",priceBudget:150,priceMid:250,priceLuxury:500},
-  {name:"Snorkeling Adventure",category:"Water Sports",days:1,description:"Snorkeling kwenye maji safi ya Zanzibar.",featured:false,image:IMG,location:"Mnemba, Zanzibar",priceBudget:70,priceMid:130,priceLuxury:260},
-  {name:"Deep Sea Fishing",category:"Water Sports",days:1,description:"Kuvua marlin, tuna, na sailfish.",featured:false,image:IMG,location:"Nungwi, Zanzibar",priceBudget:200,priceMid:350,priceLuxury:700},
-  {name:"Stand Up Paddle Board",category:"Water Sports",days:1,description:"Paddle board kwenye maji tulivu.",featured:false,image:IMG,location:"Paje, Zanzibar",priceBudget:50,priceMid:90,priceLuxury:180},
-  {name:"Flyboarding",category:"Water Sports",days:1,description:"Kupaa juu ya maji kwa flyboard.",featured:false,image:IMG,location:"Nungwi, Zanzibar",priceBudget:130,priceMid:220,priceLuxury:440},
-  {name:"Wakeboarding",category:"Water Sports",days:1,description:"Kupanda mawimbi kwa wakeboard.",featured:false,image:IMG,location:"Nungwi, Zanzibar",priceBudget:90,priceMid:160,priceLuxury:320},
-  {name:"Banana Boat Ride",category:"Water Sports",days:1,description:"Kupanda banana boat na familia.",featured:false,image:IMG,location:"Nungwi, Zanzibar",priceBudget:40,priceMid:70,priceLuxury:140},
-  {name:"Dhow Sunset Cruise",category:"Water Sports",days:1,description:"Kusafiri kwa dhow ya jadi wakati wa jua kutua.",featured:true,image:IMG,location:"Nungwi, Zanzibar",priceBudget:80,priceMid:150,priceLuxury:300},
-  {name:"Maasai Village",category:"Cultural",days:1,description:"Kutembelea kijiji cha jadi cha Maasai.",featured:false,image:IMG,location:"Maasai Village, Tanzania",priceBudget:100,priceMid:180,priceLuxury:350},
-  {name:"Hadzabe Tribe",category:"Cultural",days:1,description:"Kukutana na mmoja wa makabila ya mwisho ya wawindaji.",featured:false,image:IMG,location:"Lake Eyasi, Tanzania",priceBudget:150,priceMid:250,priceLuxury:500},
-  {name:"Datoga Tribe",category:"Cultural",days:1,description:"Kutembelea Datoga - wahunzi hodari.",featured:false,image:IMG,location:"Lake Eyasi, Tanzania",priceBudget:120,priceMid:200,priceLuxury:400},
-  {name:"Chaga Tribe Kilimanjaro",category:"Cultural",days:1,description:"Utamaduni wa Chaga kwenye miteremko ya Kilimanjaro.",featured:false,image:IMG,location:"Kilimanjaro, Tanzania",priceBudget:80,priceMid:140,priceLuxury:280},
-  {name:"Swahili Culture Bagamoyo",category:"Cultural",days:1,description:"Historia ya Kiswahili huko Bagamoyo.",featured:false,image:IMG,location:"Bagamoyo, Tanzania",priceBudget:60,priceMid:110,priceLuxury:220},
-  {name:"Makonde Carving Tour",category:"Cultural",days:1,description:"Kujifunza kuhusu kuchonga mbao kwa Makonde.",featured:false,image:IMG,location:"Dar es Salaam, Tanzania",priceBudget:50,priceMid:90,priceLuxury:180},
-  {name:"Mto wa Mbu Village",category:"Cultural",days:1,description:"Kijiji chenye makabila 120+ karibu na Lake Manyara.",featured:false,image:IMG,location:"Mto wa Mbu, Tanzania",priceBudget:70,priceMid:130,priceLuxury:260},
-  {name:"Pare Tribe",category:"Cultural",days:1,description:"Kutembelea watu wa Pare kwenye Milima ya Pare.",featured:false,image:IMG,location:"Pare Mountains, Tanzania",priceBudget:80,priceMid:140,priceLuxury:280},
-  {name:"Mafia Island",category:"Beach & Islands",days:3,description:"Kisiwa cha siri chenye fukwe nzuri na kupiga mbizi bora duniani.",featured:false,image:IMG,location:"Mafia Island, Tanzania",priceBudget:500,priceMid:900,priceLuxury:1800},
-  {name:"Pemba Island",category:"Beach & Islands",days:2,description:"Kisiwa cha Kijani - maarufu kwa karafuu na kupiga mbizi.",featured:false,image:IMG,location:"Pemba, Tanzania",priceBudget:400,priceMid:700,priceLuxury:1400},
-  {name:"Fanjove Island",category:"Beach & Islands",days:2,description:"Kisiwa cha faragha karibu na pwani ya kusini ya Tanzania.",featured:false,image:IMG,location:"Fanjove, Tanzania",priceBudget:800,priceMid:1400,priceLuxury:2800},
-  {name:"Chapwani Island",category:"Beach & Islands",days:1,description:"Kisiwa kidogo cha faragha karibu na Zanzibar.",featured:false,image:IMG,location:"Chapwani, Zanzibar",priceBudget:150,priceMid:250,priceLuxury:500},
-  {name:"Chumbe Island",category:"Beach & Islands",days:1,description:"Kisiwa cha matumbawe kilichohifadhiwa.",featured:false,image:IMG,location:"Chumbe, Zanzibar",priceBudget:200,priceMid:350,priceLuxury:700},
-  {name:"Sinda Island",category:"Beach & Islands",days:1,description:"Kisiwa kidogo kisicho na watu karibu na Dar es Salaam.",featured:false,image:IMG,location:"Sinda, Tanzania",priceBudget:100,priceMid:180,priceLuxury:360},
-  {name:"Kigamboni Beach",category:"Beach & Islands",days:1,description:"Fukwe maarufu ya Dar es Salaam.",featured:false,image:IMG,location:"Kigamboni, Tanzania",priceBudget:50,priceMid:90,priceLuxury:180},
-  {name:"Bagamoyo Beach",category:"Beach & Islands",days:1,description:"Mji wa kihistoria wa pwani wenye mchanga mzuri.",featured:false,image:IMG,location:"Bagamoyo, Tanzania",priceBudget:60,priceMid:110,priceLuxury:220},
-  {name:"Pangani Beach",category:"Beach & Islands",days:2,description:"Mji wa pwani wenye amani na historia ya Kiswahili.",featured:false,image:IMG,location:"Pangani, Tanzania",priceBudget:150,priceMid:250,priceLuxury:500},
-  {name:"Saadani National Park",category:"Beach & Islands",days:2,description:"Hifadhi pekee Tanzania ambapo wanyama wanakutana na bahari.",featured:false,image:IMG,location:"Saadani, Tanzania",priceBudget:300,priceMid:550,priceLuxury:1100},
-  {name:"Hot Air Balloon Safari",category:"Nature & Adventure",days:1,description:"Kuelea juu ya Serengeti kwenye balloon ya hewa ya moto.",featured:true,image:IMG,location:"Serengeti, Tanzania",priceBudget:500,priceMid:700,priceLuxury:1200},
-  {name:"Zipline Adventure",category:"Nature & Adventure",days:1,description:"Kupaa kwenye miti kwa zipline.",featured:false,image:IMG,location:"Arusha, Tanzania",priceBudget:80,priceMid:140,priceLuxury:280},
-  {name:"Mountain Biking",category:"Nature & Adventure",days:1,description:"Kupanda baiskeli katika mandhari nzuri ya Tanzania.",featured:false,image:IMG,location:"Arusha, Tanzania",priceBudget:70,priceMid:130,priceLuxury:260},
-  {name:"Horse Riding Arusha",category:"Nature & Adventure",days:1,description:"Kupanda farasi kwenye miteremko ya Mount Meru.",featured:false,image:IMG,location:"Arusha, Tanzania",priceBudget:100,priceMid:180,priceLuxury:360},
-  {name:"Kayaking Lake Victoria",category:"Nature & Adventure",days:1,description:"Kayak kwenye ziwa kubwa zaidi Afrika.",featured:false,image:IMG,location:"Lake Victoria, Tanzania",priceBudget:80,priceMid:140,priceLuxury:280},
-  {name:"Lake Tanganyika",category:"Nature & Adventure",days:3,description:"Ziwa la pili kwa kina duniani.",featured:false,image:IMG,location:"Lake Tanganyika, Tanzania",priceBudget:400,priceMid:700,priceLuxury:1400},
-  {name:"Lake Victoria Tour",category:"Nature & Adventure",days:2,description:"Vijiji vya uvuvi, visiwa, na ndege wengi.",featured:false,image:IMG,location:"Lake Victoria, Tanzania",priceBudget:300,priceMid:550,priceLuxury:1100},
-  {name:"Lake Natron",category:"Nature & Adventure",days:2,description:"Ziwa la soda la kipekee lenye flamingo.",featured:false,image:IMG,location:"Lake Natron, Tanzania",priceBudget:250,priceMid:450,priceLuxury:900},
-  {name:"Olduvai Gorge",category:"Nature & Adventure",days:1,description:"'Cradle of Mankind' - ambapo fossils za binadamu wa kwanza zilipatikana.",featured:false,image:IMG,location:"Olduvai, Tanzania",priceBudget:150,priceMid:250,priceLuxury:500},
-  {name:"Kondoa Rock Art",category:"Nature & Adventure",days:1,description:"Sanaa za miamba za kale - eneo la UNESCO.",featured:false,image:IMG,location:"Kondoa, Tanzania",priceBudget:100,priceMid:180,priceLuxury:360},
-  {name:"Udzungwa Mountains",category:"Nature & Adventure",days:3,description:"Nyumbani kwa nyani wa kipekee na maporomoko mazuri.",featured:false,image:IMG,location:"Udzungwa, Tanzania",priceBudget:400,priceMid:700,priceLuxury:1400},
-  {name:"Gombe Stream",category:"Nature & Adventure",days:3,description:"Kutembelea sokwe huko Gombe Stream.",featured:false,image:IMG,location:"Gombe, Tanzania",priceBudget:600,priceMid:1000,priceLuxury:2000},
-  {name:"Bungee Jumping",category:"Nature & Adventure",days:1,description:"Uzoefu mkubwa wa adrenaline.",featured:false,image:IMG,location:"Arusha, Tanzania",priceBudget:150,priceMid:250,priceLuxury:500},
-  {name:"Rock Climbing",category:"Nature & Adventure",days:1,description:"Kupanda miamba kwa mwongozo.",featured:false,image:IMG,location:"Arusha, Tanzania",priceBudget:100,priceMid:180,priceLuxury:360},
-  {name:"Usambara Mountains Hike",category:"Nature & Adventure",days:3,description:"Misitu, maporomoko, na mandhari nzuri.",featured:false,image:IMG,location:"Usambara, Tanzania",priceBudget:350,priceMid:600,priceLuxury:1200},
-  {name:"Private Yacht Charter",category:"Luxury & VIP",days:1,description:"Kukodisha yacht ya faragha - anasa kamili.",featured:true,image:IMG,location:"Zanzibar, Tanzania",priceBudget:800,priceMid:1500,priceLuxury:3000},
-  {name:"Helicopter Tour",category:"Luxury & VIP",days:1,description:"Kuona Zanzibar kutoka juu.",featured:true,image:IMG,location:"Zanzibar, Tanzania",priceBudget:500,priceMid:900,priceLuxury:1800},
-  {name:"Private Island Getaway",category:"Luxury & VIP",days:3,description:"Faragha kamili na anasa.",featured:false,image:IMG,location:"Zanzibar, Tanzania",priceBudget:1500,priceMid:3000,priceLuxury:6000},
-  {name:"Romantic Dinner on Beach",category:"Luxury & VIP",days:1,description:"Chakula cha jioni kwa mishumaa kwenye pwani ya faragha.",featured:true,image:IMG,location:"Zanzibar, Tanzania",priceBudget:150,priceMid:280,priceLuxury:550},
-  {name:"Luxury Spa Day",category:"Luxury & VIP",days:1,description:"Massage, facial, na zaidi.",featured:false,image:IMG,location:"Zanzibar, Tanzania",priceBudget:200,priceMid:350,priceLuxury:700},
-  {name:"VIP Nightlife Experience",category:"Luxury & VIP",days:1,description:"Maisha ya usiku bora Zanzibar.",featured:false,image:IMG,location:"Zanzibar, Tanzania",priceBudget:150,priceMid:280,priceLuxury:550},
-  {name:"Sunset Dinner Cruise",category:"Luxury & VIP",days:1,description:"Safari ya kifahari na chakula cha jioni.",featured:true,image:IMG,location:"Zanzibar, Tanzania",priceBudget:120,priceMid:220,priceLuxury:440}
-];
+  const IMG = "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800";
 
-window.seed = async function() {
-  const log = document.getElementById('log');
-  log.textContent = 'Inaanza...\n';
-  let ok = 0, fail = 0;
-  for (let i = 0; i < trips.length; i++) {
-    try {
-      await addDoc(collection(db, "trips"), trips[i]);
-      log.innerHTML += '<span class="ok">✅ ' + (i+1) + '. ' + trips[i].name + '</span>\n';
-      ok++;
-    } catch(e) {
-      log.innerHTML += '<span class="err">❌ ' + (i+1) + '. ' + trips[i].name + ' — ' + e.message + '</span>\n';
-      fail++;
-    }
-    log.scrollTop = log.scrollHeight;
-  }
-  log.innerHTML += '\n🎉 JUMLA: ' + ok + ' zimewekwa, ' + fail + ' zimeshindwa';
-};
-</script>
-</body>
-  </html>
+  const trips = [
+    {name:"Zanzibar Excursions",category:"Zanzibar",days:1,description:"Kutembelea Stone Town, Safari Blue, na kobe wakubwa katika safari ya siku moja Zanzibar.",featured:false,image:IMG,location:"Zanzibar, Tanzania",priceBudget:80,priceMid:120,priceLuxury:250},
+    {name:"Jozani Forest",category:"Zanzibar",days:1,description:"Kuchunguza msitu maarufu wa Jozani na kuona nyani Red Colobus adimu.",featured:false,image:IMG,location:"Jozani, Zanzibar",priceBudget:50,priceMid:80,priceLuxury:150},
+    {name:"Safari Blue",category:"Zanzibar",days:1,description:"Kusafiri kwa mashua za jadi, kufanya snorkeling, na kufurahia samaki wa hali ya juu katika Kisiwa cha Kwale.",featured:true,image:IMG,location:"Fumba, Zanzibar",priceBudget:90,priceMid:150,priceLuxury:300},
+    {name:"Dolphin Tour",category:"Zanzibar",days:1,description:"Kuogelea na pomboo pori katika ufukwe wa Kizimkazi.",featured:false,image:IMG,location:"Kizimkazi, Zanzibar",priceBudget:60,priceMid:100,priceLuxury:200},
+    {name:"Stone Town Tour",category:"Zanzibar",days:1,description:"Kugundua eneo la UNESCO la Stone Town - historia, utamaduni, na usanifu.",featured:false,image:IMG,location:"Stone Town, Zanzibar",priceBudget:45,priceMid:75,priceLuxury:150},
+    {name:"Nungwi Beach",category:"Zanzibar",days:1,description:"Kupumzika kwenye mchanga mweupe wa Nungwi Beach.",featured:false,image:IMG,location:"Nungwi, Zanzibar",priceBudget:70,priceMid:120,priceLuxury:250},
+    {name:"Kendwa Beach",category:"Zanzibar",days:1,description:"Kupata uzoefu wa Kendwa Beach - pwani pekee Zanzibar unaweza kuogelea wakati wowote.",featured:false,image:IMG,location:"Kendwa, Zanzibar",priceBudget:70,priceMid:120,priceLuxury:250},
+    {name:"Spice Tour",category:"Zanzibar",days:1,description:"Kugundua viungo vya Zanzibar - kuonja, kunusa, na kujifunza.",featured:false,image:IMG,location:"Kizimbani, Zanzibar",priceBudget:40,priceMid:70,priceLuxury:130},
+    {name:"Prison Island",category:"Zanzibar",days:1,description:"Kutembelea Kisiwa cha Prison - nyumbani kwa kobe wakubwa wa Aldabra.",featured:false,image:IMG,location:"Prison Island, Zanzibar",priceBudget:55,priceMid:90,priceLuxury:180},
+    {name:"Nakupenda Sandbank",category:"Zanzibar",days:1,description:"Kupumzika kwenye mchanga safi katikati ya Bahari ya Hindi.",featured:true,image:IMG,location:"Nakupenda, Zanzibar",priceBudget:65,priceMid:110,priceLuxury:220},
+    {name:"Mnemba Island",category:"Zanzibar",days:1,description:"Snorkeling au kupiga mbizi karibu na Kisiwa cha Mnemba.",featured:false,image:IMG,location:"Mnemba, Zanzibar",priceBudget:120,priceMid:200,priceLuxury:400},
+    {name:"Kizimkazi Village",category:"Zanzibar",days:1,description:"Kutembelea Kizimkazi - kijiji cha uvuvi cha kihistoria chenye msikiti wa zamani Afrika Mashariki.",featured:false,image:IMG,location:"Kizimkazi, Zanzibar",priceBudget:50,priceMid:85,priceLuxury:170},
+    {name:"Paje Beach",category:"Zanzibar",days:1,description:"Kupata uzoefu wa Paje Beach - maarufu kwa kitesurfing na mchanga mweupe.",featured:false,image:IMG,location:"Paje, Zanzibar",priceBudget:60,priceMid:100,priceLuxury:200},
+    {name:"Jambiani Beach",category:"Zanzibar",days:1,description:"Kugundua Jambiani - kijiji cha uvuvi chenye amani na fukwe nzuri.",featured:false,image:IMG,location:"Jambiani, Zanzibar",priceBudget:55,priceMid:95,priceLuxury:190},
+    {name:"Seaweed Tour",category:"Zanzibar",days:1,description:"Kujifunza kuhusu kilimo cha mwani Zanzibar.",featured:false,image:IMG,location:"Paje, Zanzibar",priceBudget:40,priceMid:70,priceLuxury:130},
+    {name:"Serengeti Great Migration",category:"Safari",days:5,description:"Kuona uhamiaji mkubwa wa wanyama - wildebeest milioni 1.5+ na zebra 250,000+ wanahama kila mwaka kati ya Serengeti na Masai Mara.",featured:true,image:IMG,location:"Serengeti National Park, Tanzania",priceBudget:900,priceMid:2000,priceLuxury:3500},
+    {name:"Ngorongoro Crater",category:"Safari",days:3,description:"Kushuhudia wanyama wakubwa watano na mandhari nzuri ya crater.",featured:true,image:IMG,location:"Ngorongoro, Tanzania",priceBudget:400,priceMid:750,priceLuxury:1500},
+    {name:"Tarangire National Park",category:"Safari",days:2,description:"Maarufu kwa miti mikubwa ya baobab na makundi makubwa ya tembo.",featured:false,image:IMG,location:"Tarangire, Tanzania",priceBudget:300,priceMid:550,priceLuxury:1100},
+    {name:"Lake Manyara",category:"Safari",days:2,description:"Nyumbani kwa simba wanaopanda miti na flamingo maelfu.",featured:false,image:IMG,location:"Lake Manyara, Tanzania",priceBudget:250,priceMid:450,priceLuxury:900},
+    {name:"Kilimanjaro Trekking",category:"Safari",days:7,description:"Kupanda kilele cha juu kabisa Afrika - mita 5,895.",featured:true,image:IMG,location:"Kilimanjaro, Tanzania",priceBudget:1500,priceMid:2500,priceLuxury:5000},
+    {name:"Mount Meru",category:"Safari",days:4,description:"Kupanda mlima wa pili wa juu Tanzania.",featured:false,image:IMG,location:"Mount Meru, Tanzania",priceBudget:800,priceMid:1400,priceLuxury:2800},
+    {name:"Arusha National Park",category:"Safari",days:1,description:"Nyumbani kwa Mount Meru na nyani wa colobus nyeusi na nyeupe.",featured:false,image:IMG,location:"Arusha, Tanzania",priceBudget:200,priceMid:350,priceLuxury:700},
+    {name:"Ruaha National Park",category:"Safari",days:3,description:"Hifadhi kubwa zaidi Tanzania.",featured:false,image:IMG,location:"Ruaha, Tanzania",priceBudget:450,priceMid:800,priceLuxury:1600},
+    {name:"Mikumi National Park",category:"Safari",days:2,description:"Uangalizi bora wa wanyama karibu na Dar es Salaam.",featured:false,image:IMG,location:"Mikumi, Tanzania",priceBudget:300,priceMid:550,priceLuxury:1100},
+    {name:"Selous Game Reserve",category:"Safari",days:3,description:"Moja ya hifadhi kubwa zaidi duniani.",featured:false,image:IMG,location:"Selous, Tanzania",priceBudget:500,priceMid:900,priceLuxury:1800},
+    {name:"Sea Walk",category:"Water Sports",days:1,description:"Kutembea chini ya bahari kwa kofia maalum - uzoefu wa kipekee.",featured:true,image:IMG,location:"Nungwi, Zanzibar",priceBudget:100,priceMid:180,priceLuxury:350},
+    {name:"Sky Diving",category:"Adventure",days:1,description:"Kuruka kutoka futi 10,000 juu ya pwani ya Zanzibar.",featured:true,image:IMG,location:"Nungwi, Zanzibar",priceBudget:350,priceMid:500,priceLuxury:800},
+    {name:"Jet Ski",category:"Water Sports",days:1,description:"Kupanda mawimbi kwa jet ski.",featured:false,image:IMG,location:"Nungwi, Zanzibar",priceBudget:80,priceMid:150,priceLuxury:300},
+    {name:"Jet Car",category:"Water Sports",days:1,description:"Kuendesha gari la maji - mtindo mpya Zanzibar.",featured:false,image:IMG,location:"Nungwi, Zanzibar",priceBudget:120,priceMid:200,priceLuxury:400},
+    {name:"Drone Kayak",category:"Water Sports",days:1,description:"Kayak huku ukirekodiwa na drone.",featured:false,image:IMG,location:"Paje, Zanzibar",priceBudget:90,priceMid:160,priceLuxury:320},
+    {name:"Parasailing",category:"Water Sports",days:1,description:"Kupaa juu ya bahari kwa parachuti.",featured:false,image:IMG,location:"Nungwi, Zanzibar",priceBudget:100,priceMid:180,priceLuxury:350},
+    {name:"Kitesurfing Paje",category:"Water Sports",days:1,description:"Kujifunza kitesurfing kwenye sehemu bora duniani.",featured:false,image:IMG,location:"Paje, Zanzibar",priceBudget:120,priceMid:200,priceLuxury:400},
+    {name:"Scuba Diving",category:"Water Sports",days:1,description:"Kupiga mbizi katika ulimwengu wa chini ya maji wa Zanzibar.",featured:false,image:IMG,location:"Mnemba, Zanzibar",priceBudget:150,priceMid:250,priceLuxury:500},
+    {name:"Snorkeling Adventure",category:"Water Sports",days:1,description:"Snorkeling kwenye maji safi ya Zanzibar.",featured:false,image:IMG,location:"Mnemba, Zanzibar",priceBudget:70,priceMid:130,priceLuxury:260},
+    {name:"Deep Sea Fishing",category:"Water Sports",days:1,description:"Kuvua marlin, tuna, na sailfish.",featured:false,image:IMG,location:"Nungwi, Zanzibar",priceBudget:200,priceMid:350,priceLuxury:700},
+    {name:"Stand Up Paddle Board",category:"Water Sports",days:1,description:"Paddle board kwenye maji tulivu.",featured:false,image:IMG,location:"Paje, Zanzibar",priceBudget:50,priceMid:90,priceLuxury:180},
+    {name:"Flyboarding",category:"Water Sports",days:1,description:"Kupaa juu ya maji kwa flyboard.",featured:false,image:IMG,location:"Nungwi, Zanzibar",priceBudget:130,priceMid:220,priceLuxury:440},
+    {name:"Wakeboarding",category:"Water Sports",days:1,description:"Kupanda mawimbi kwa wakeboard.",featured:false,image:IMG,location:"Nungwi, Zanzibar",priceBudget:90,priceMid:160,priceLuxury:320},
+    {name:"Banana Boat Ride",category:"Water Sports",days:1,description:"Kupanda banana boat na familia.",featured:false,image:IMG,location:"Nungwi, Zanzibar",priceBudget:40,priceMid:70,priceLuxury:140},
+    {name:"Dhow Sunset Cruise",category:"Water Sports",days:1,description:"Kusafiri kwa dhow ya jadi wakati wa jua kutua.",featured:true,image:IMG,location:"Nungwi, Zanzibar",priceBudget:80,priceMid:150,priceLuxury:300},
+    {name:"Maasai Village",category:"Cultural",days:1,description:"Kutembelea kijiji cha jadi cha Maasai.",featured:false,image:IMG,location:"Maasai Village, Tanzania",priceBudget:100,priceMid:180,priceLuxury:350},
+    {name:"Hadzabe Tribe",category:"Cultural",days:1,description:"Kukutana na mmoja wa makabila ya mwisho ya wawindaji.",featured:false,image:IMG,location:"Lake Eyasi, Tanzania",priceBudget:150,priceMid:250,priceLuxury:500},
+    {name:"Datoga Tribe",category:"Cultural",days:1,description:"Kutembelea Datoga - wahunzi hodari.",featured:false,image:IMG,location:"Lake Eyasi, Tanzania",priceBudget:120,priceMid:200,priceLuxury:400},
+    {name:"Chaga Tribe Kilimanjaro",category:"Cultural",days:1,description:"Utamaduni wa Chaga kwenye miteremko ya Kilimanjaro.",featured:false,image:IMG,location:"Kilimanjaro, Tanzania",priceBudget:80,priceMid:140,priceLuxury:280},
+    {name:"Swahili Culture Bagamoyo",category:"Cultural",days:1,description:"Historia ya Kiswahili huko Bagamoyo.",featured:false,image:IMG,location:"Bagamoyo, Tanzania",priceBudget:60,priceMid:110,priceLuxury:220},
+    {name:"Makonde Carving Tour",category:"Cultural",days:1,description:"Kujifunza kuhusu kuchonga mbao kwa Makonde.",featured:false,image:IMG,location:"Dar es Salaam, Tanzania",priceBudget:50,priceMid:90,priceLuxury:180},
+    {name:"Mto wa Mbu Village",category:"Cultural",days:1,description:"Kijiji chenye makabila 120+ karibu na Lake Manyara.",featured:false,image:IMG,location:"Mto wa Mbu, Tanzania",priceBudget:70,priceMid:130,priceLuxury:260},
+    {name:"Pare Tribe",category:"Cultural",days:1,description:"Kutembelea watu wa Pare kwenye Milima ya Pare.",featured:false,image:IMG,location:"Pare Mountains, Tanzania",priceBudget:80,priceMid:140,priceLuxury:280},
+    {name:"Mafia Island",category:"Beach & Islands",days:3,description:"Kisiwa cha siri chenye fukwe nzuri na kupiga mbizi bora duniani.",featured:false,image:IMG,location:"Mafia Island, Tanzania",priceBudget:500,priceMid:900,priceLuxury:1800},
+    {name:"Pemba Island",category:"Beach & Islands",days:2,description:"Kisiwa cha Kijani - maarufu kwa karafuu na kupiga mbizi.",featured:false,image:IMG,location:"Pemba, Tanzania",priceBudget:400,priceMid:700,priceLuxury:1400},
+    {name:"Fanjove Island",category:"Beach & Islands",days:2,description:"Kisiwa cha faragha karibu na pwani ya kusini ya Tanzania.",featured:false,image:IMG,location:"Fanjove, Tanzania",priceBudget:800,priceMid:1400,priceLuxury:2800},
+    {name:"Chapwani Island",category:"Beach & Islands",days:1,description:"Kisiwa kidogo cha faragha karibu na Zanzibar.",featured:false,image:IMG,location:"Chapwani, Zanzibar",priceBudget:150,priceMid:250,priceLuxury:500},
+    {name:"Chumbe Island",category:"Beach & Islands",days:1,description:"Kisiwa cha matumbawe kilichohifadhiwa.",featured:false,image:IMG,location:"Chumbe, Zanzibar",priceBudget:200,priceMid:350,priceLuxury:700},
+    {name:"Sinda Island",category:"Beach & Islands",days:1,description:"Kisiwa kidogo kisicho na watu karibu na Dar es Salaam.",featured:false,image:IMG,location:"Sinda, Tanzania",priceBudget:100,priceMid:180,priceLuxury:360},
+    {name:"Kigamboni Beach",category:"Beach & Islands",days:1,description:"Fukwe maarufu ya Dar es Salaam.",featured:false,image:IMG,location:"Kigamboni, Tanzania",priceBudget:50,priceMid:90,priceLuxury:180},
+    {name:"Bagamoyo Beach",category:"Beach & Islands",days:1,description:"Mji wa kihistoria wa pwani wenye mchanga mzuri.",featured:false,image:IMG,location:"Bagamoyo, Tanzania",priceBudget:60,priceMid:110,priceLuxury:220},
+    {name:"Pangani Beach",category:"Beach & Islands",days:2,description:"Mji wa pwani wenye amani na historia ya Kiswahili.",featured:false,image:IMG,location:"Pangani, Tanzania",priceBudget:150,priceMid:250,priceLuxury:500},
+    {name:"Saadani National Park",category:"Beach & Islands",days:2,description:"Hifadhi pekee Tanzania ambapo wanyama wanakutana na bahari.",featured:false,image:IMG,location:"Saadani, Tanzania",priceBudget:300,priceMid:550,priceLuxury:1100},
+    {name:"Hot Air Balloon Safari",category:"Nature & Adventure",days:1,description:"Kuelea juu ya Serengeti kwenye balloon ya hewa ya moto.",featured:true,image:IMG,location:"Serengeti, Tanzania",priceBudget:500,priceMid:700,priceLuxury:1200},
+    {name:"Zipline Adventure",category:"Nature & Adventure",days:1,description:"Kupaa kwenye miti kwa zipline.",featured:false,image:IMG,location:"Arusha, Tanzania",priceBudget:80,priceMid:140,priceLuxury:280},
+    {name:"Mountain Biking",category:"Nature & Adventure",days:1,description:"Kupanda baiskeli katika mandhari nzuri ya Tanzania.",featured:false,image:IMG,location:"Arusha, Tanzania",priceBudget:70,priceMid:130,priceLuxury:260},
+    {name:"Horse Riding Arusha",category:"Nature & Adventure",days:1,description:"Kupanda farasi kwenye miteremko ya Mount Meru.",featured:false,image:IMG,location:"Arusha, Tanzania",priceBudget:100,priceMid:180,priceLuxury:360},
+    {name:"Kayaking Lake Victoria",category:"Nature & Adventure",days:1,description:"Kayak kwenye ziwa kubwa zaidi Afrika.",featured:false,image:IMG,location:"Lake Victoria, Tanzania",priceBudget:80,priceMid:140,priceLuxury:280},
+    {name:"Lake Tanganyika",category:"Nature & Adventure",days:3,description:"Ziwa la pili kwa kina duniani.",featured:false,image:IMG,location:"Lake Tanganyika, Tanzania",priceBudget:400,priceMid:700,priceLuxury:1400},
+    {name:"Lake Victoria Tour",category:"Nature & Adventure",days:2,description:"Vijiji vya uvuvi, visiwa, na ndege wengi.",featured:false,image:IMG,location:"Lake Victoria, Tanzania",priceBudget:300,priceMid:550,priceLuxury:1100},
+    {name:"Lake Natron",category:"Nature & Adventure",days:2,description:"Ziwa la soda la kipekee lenye flamingo.",featured:false,image:IMG,location:"Lake Natron, Tanzania",priceBudget:250,priceMid:450,priceLuxury:900},
+    {name:"Olduvai Gorge",category:"Nature & Adventure",days:1,description:"'Cradle of Mankind' - ambapo fossils za binadamu wa kwanza zilipatikana.",featured:false,image:IMG,location:"Olduvai, Tanzania",priceBudget:150,priceMid:250,priceLuxury:500},
+    {name:"Kondoa Rock Art",category:"Nature & Adventure",days:1,description:"Sanaa za miamba za kale - eneo la UNESCO.",featured:false,image:IMG,location:"Kondoa, Tanzania",priceBudget:100,priceMid:180,priceLuxury:360},
+    {name:"Udzungwa Mountains",category:"Nature & Adventure",days:3,description:"Nyumbani kwa nyani wa kipekee na maporomoko mazuri.",featured:false,image:IMG,location:"Udzungwa, Tanzania",priceBudget:400,priceMid:700,priceLuxury:1400},
+    {name:"Gombe Stream",category:"Nature & Adventure",days:3,description:"Kutembelea sokwe huko Gombe Stream.",featured:false,image:IMG,location:"Gombe, Tanzania",priceBudget:600,priceMid:1000,priceLuxury:2000},
+    {name:"Bungee Jumping",category:"Nature & Adventure",days:1,description:"Uzoefu mkubwa wa adrenaline.",featured:false,image:IMG,location:"Arusha, Tanzania",priceBudget:150,priceMid:250,priceLuxury:500},
+    {name:"Rock Climbing",category:"Nature & Adventure",days:1,description:"Kupanda miamba kwa mwongozo.",featured:false,image:IMG,location:"Arusha, Tanzania",priceBudget:100,priceMid:180,priceLuxury:360},
+    {name:"Usambara Mountains Hike",category:"Nature & Adventure",days:3,description:"Misitu, maporomoko, na mandhari nzuri.",featured:false,image:IMG,location:"Usambara, Tanzania",priceBudget:350,priceMid:600,priceLuxury:1200},
+    {name:"Private Yacht Charter",category:"Luxury & VIP",days:1,description:"Kukodisha yacht ya faragha - anasa kamili.",featured:true,image:IMG,location:"Zanzibar, Tanzania",priceBudget:800,priceMid:1500,priceLuxury:3000},
+    {name:"Helicopter Tour",category:"Luxury & VIP",days:1,description:"Kuona Zanzibar kutoka juu.",featured:true,image:IMG,location:"Zanzibar, Tanzania",priceBudget:500,priceMid:900,priceLuxury:1800},
+    {name:"Private Island Getaway",category:"Luxury & VIP",days:3,description:"Faragha kamili na anasa.",featured:false,image:IMG,location:"Zanzibar, Tanzania",priceBudget:1500,priceMid:3000,priceLuxury:6000},
+    {name:"Romantic Dinner on Beach",category:"Luxury & VIP",days:1,description:"Chakula cha jioni kwa mishumaa kwenye pwani ya faragha.",featured:true,image:IMG,location:"Zanzibar, Tanzania",priceBudget:150,priceMid:280,priceLuxury:550},
+    {name:"Luxury Spa Day",category:"Luxury & VIP",days:1,description:"Massage, facial, na zaidi.",featured:false,image:IMG,location:"Zanzibar, Tanzania",priceBudget:200,priceMid:350,priceLuxury:700},
+    {name:"VIP Nightlife Experience",category:"Luxury & VIP",days:1,description:"Maisha ya usiku bora Zanzibar.",featured:false,image:IMG,location:"Zanzibar, Tanzania",priceBudget:150,priceMid:280,priceLuxury:550},
+    {name:"Sunset Dinner Cruise",category:"Luxury & VIP",days:1,description:"Safari ya kifahari na chakula cha jioni.",featured:true,image:IMG,location:"Zanzibar, Tanzania",priceBudget:120,priceMid:220,priceLuxury:440}
+  ];
+
+  log.innerHTML += '<span class="ok">✅ Trips 80 zimepakiwa</span>\n';
+  log.innerHTML += '<span class="info">👉 Bonyeza kitufe "Weka Trips 80"</span>\n';
+
+  w
