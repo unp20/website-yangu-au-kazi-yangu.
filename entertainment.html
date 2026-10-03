@@ -8,13 +8,11 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="style.css">
 
-<!-- SEO META TAGS -->
 <meta name="description" content="Entertainment & Party Vibe Zanzibar - Kalenda ya hali ya hewa, ramani ya party, na matukio makubwa ya mwaka.">
 <meta name="keywords" content="Zanzibar party, entertainment Zanzibar, Sauti za Busara, ZIFF, Full Moon Party Zanzibar">
 <meta name="author" content="UNP TOURS Zanzibar">
 <meta name="robots" content="index, follow">
 
-<!-- Open Graph -->
 <meta property="og:title" content="Entertainment & Party Vibe | UNP TOURS Zanzibar">
 <meta property="og:description" content="Gundua sehemu bora za sherehe Zanzibar.">
 <meta property="og:image" content="https://unp.tours/images/logo.png">
@@ -22,22 +20,18 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="UNP TOURS">
 
-<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Entertainment & Party Vibe | UNP TOURS Zanzibar">
 <meta name="twitter:description" content="Gundua sehemu bora za sherehe Zanzibar.">
 <meta name="twitter:image" content="https://unp.tours/images/logo.png">
 
-<!-- Canonical -->
 <link rel="canonical" href="https://unp.tours/entertainment.html">
 
-<!-- Geo Tags -->
 <meta name="geo.region" content="TZ-07">
 <meta name="geo.placename" content="Zanzibar">
 <meta name="geo.position" content="-6.165917;39.202641">
 <meta name="ICBM" content="-6.165917, 39.202641">
 
-<!-- GOOGLE ANALYTICS -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QJ1X38ZLC"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -46,7 +40,6 @@
   gtag('config', 'G-5QJ1X38ZLC');
 </script>
 
-<!-- YANDEX METRICA -->
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){
         m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -58,28 +51,17 @@
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/113203659" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 
-<!-- ELFSIGHT PLATFORM -->
 <script src="https://elfsightcdn.com/platform.js" async></script>
 
-<!-- LEAFLET MAP -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 <style>
-    :root {
-        --ocean-blue: #0c4a6e;
-        --deep-navy: #082f49;
-        --gold: #d4af37;
-        --gold-light: #f0c75e;
-        --light-bg: #f8f9fa;
-        --white: #ffffff;
-        --text-dark: #1e293b;
-    }
+    :root { --ocean-blue: #0c4a6e; --deep-navy: #082f49; --gold: #d4af37; --gold-light: #f0c75e; --light-bg: #f8f9fa; }
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
     body { background-color: var(--light-bg); color: #333; line-height: 1.6; }
     a { text-decoration: none; color: inherit; }
 
-    /* HEADER */
     .top-bar { background: var(--deep-navy); padding: 8px 20px; display: flex; justify-content: flex-end; align-items: center; gap: 15px; }
     .header { background: var(--ocean-blue); padding: 15px 20px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
     .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; position: relative; }
@@ -89,18 +71,11 @@
     .logo-text h2 { color: #fff; font-size: 1.3rem; font-weight: 700; }
     .logo-text span { color: var(--gold); font-size: 0.8rem; }
     .nav-links { display: flex; gap: 20px; list-style: none; flex-wrap: wrap; }
-    .nav-links a { color: #fff; font-size: 0.85rem; transition: color 0.3s; display: flex; align-items: center; gap: 5px; }
+    .nav-links a { color: #fff; font-size: 0.85rem; display: flex; align-items: center; gap: 5px; }
     .nav-links a:hover { color: var(--gold); }
     .menu-toggle { display: none; background: none; border: none; color: var(--gold); font-size: 26px; cursor: pointer; }
 
-    /* PAGE HEADER */
-    .page-header {
-        text-align: center;
-        padding: 70px 20px 40px;
-        background: linear-gradient(135deg, var(--deep-navy), var(--ocean-blue));
-        color: white;
-        border-bottom: 5px solid var(--gold);
-    }
+    .page-header { text-align: center; padding: 70px 20px 40px; background: linear-gradient(135deg, var(--deep-navy), var(--ocean-blue)); color: white; border-bottom: 5px solid var(--gold); }
     .page-header h1 { font-size: 2.5rem; margin-bottom: 10px; color: var(--gold); }
     .page-header p { font-size: 1.1rem; max-width: 700px; margin: 0 auto; color: #ddd; }
 
@@ -109,127 +84,52 @@
     .section-title i { color: var(--gold); }
     .section-subtitle { text-align: center; color: #666; margin-bottom: 30px; }
 
-    /* Weather Calendar Table */
     .weather-table-wrapper { overflow-x: auto; margin-top: 20px; }
-    .weather-table {
-        width: 100%; border-collapse: collapse; background: white;
-        border-radius: 15px; overflow: hidden;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    }
-    .weather-table th {
-        background: var(--ocean-blue); color: var(--gold); padding: 15px;
-        text-align: left; font-size: 0.9rem;
-    }
-    .weather-table td {
-        padding: 15px; border-bottom: 1px solid #eee;
-        font-size: 0.9rem; color: #555;
-    }
-    .weather-table tr:last-child td { border-bottom: none; }
+    .weather-table { width: 100%; border-collapse: collapse; background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.08); }
+    .weather-table th { background: var(--ocean-blue); color: var(--gold); padding: 15px; text-align: left; font-size: 0.9rem; }
+    .weather-table td { padding: 15px; border-bottom: 1px solid #eee; font-size: 0.9rem; color: #555; }
     .weather-table tr:hover { background: #f9f9f9; }
-    .season-badge {
-        display: inline-block; padding: 4px 12px; border-radius: 20px;
-        font-size: 0.75rem; font-weight: 700;
-    }
+    .season-badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; }
     .badge-high { background: #d4edda; color: #155724; }
     .badge-mid { background: #fff3cd; color: #856404; }
     .badge-low { background: #f8d7da; color: #721c24; }
 
-    /* Party Map */
-    #map {
-        height: 400px; width: 100%; border-radius: 15px;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-        margin-top: 20px;
-        z-index: 1;
-    }
+    #map { height: 400px; width: 100%; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); margin-top: 20px; z-index: 1; }
 
-    /* Events Grid */
-    .events-grid {
-        display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 25px; margin-top: 30px;
-    }
-    .event-card {
-        background: white; border-radius: 15px; overflow: hidden;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-        border-left: 5px solid var(--gold);
-        transition: transform 0.3s;
-    }
+    .events-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px; }
+    .event-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.08); border-left: 5px solid var(--gold); transition: transform 0.3s; }
     .event-card:hover { transform: translateY(-5px); }
     .event-card .card-body { padding: 25px; }
-    .event-card .date {
-        display: inline-block; background: var(--ocean-blue); color: var(--gold);
-        padding: 5px 15px; border-radius: 20px; font-size: 0.75rem;
-        font-weight: 700; margin-bottom: 12px;
-    }
+    .event-card .date { display: inline-block; background: var(--ocean-blue); color: var(--gold); padding: 5px 15px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; margin-bottom: 12px; }
     .event-card h3 { color: var(--ocean-blue); font-size: 1.2rem; margin-bottom: 10px; }
     .event-card p { color: #666; font-size: 0.9rem; line-height: 1.6; }
     .event-card .location { color: var(--gold); font-size: 0.85rem; margin-top: 10px; font-weight: 600; }
 
-    /* Music Player */
-    .music-player-box {
-        background: linear-gradient(135deg, var(--deep-navy), var(--ocean-blue));
-        border-radius: 15px; padding: 30px; color: white;
-        text-align: center; margin-top: 30px;
-        border: 2px solid var(--gold);
-    }
+    .music-player-box { background: linear-gradient(135deg, var(--deep-navy), var(--ocean-blue)); border-radius: 15px; padding: 30px; color: white; text-align: center; margin-top: 30px; border: 2px solid var(--gold); }
     .music-player-box h3 { color: var(--gold); margin-bottom: 15px; }
     .music-player-box p { font-size: 0.9rem; opacity: 0.9; margin-bottom: 20px; }
-    .btn-party-mode {
-        display: inline-block; padding: 15px 35px; background: var(--gold);
-        color: var(--deep-navy); border: none; border-radius: 30px;
-        font-weight: 700; font-size: 1rem; cursor: pointer;
-        font-family: 'Poppins', sans-serif; transition: background 0.3s;
-    }
+    .btn-party-mode { display: inline-block; padding: 15px 35px; background: var(--gold); color: var(--deep-navy); border: none; border-radius: 30px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: background 0.3s; }
     .btn-party-mode:hover { background: var(--gold-light); }
 
-    /* Tips Box */
-    .tips-box {
-        background: #f9f9f9; border-left: 4px solid var(--gold);
-        padding: 25px; border-radius: 10px; margin-top: 30px;
-    }
+    .tips-box { background: #f9f9f9; border-left: 4px solid var(--gold); padding: 25px; border-radius: 10px; margin-top: 30px; }
     .tips-box h3 { color: var(--ocean-blue); margin-bottom: 15px; }
     .tips-box ul { list-style: none; padding: 0; }
     .tips-box ul li { padding: 8px 0; color: #555; font-size: 0.9rem; }
     .tips-box ul li i { color: var(--gold); margin-right: 10px; }
 
-    /* FOOTER */
     .footer { background: var(--deep-navy); color: #fff; padding: 40px 20px; margin-top: 40px; }
     .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
     .footer h3, .footer h4 { color: var(--gold); margin-bottom: 15px; }
     .social-links { display: flex; gap: 15px; margin-top: 15px; }
-    .social-links a { color: var(--gold); font-size: 1.2rem; transition: transform 0.3s; }
-    .social-links a:hover { transform: scale(1.2); }
+    .social-links a { color: var(--gold); font-size: 1.2rem; }
 
-    /* FLOATING WHATSAPP */
-    .floating-whatsapp {
-        position: fixed; bottom: 25px; right: 25px;
-        background: #25d366; color: #fff;
-        width: 60px; height: 60px; border-radius: 50%;
-        display: flex; align-items: center; justify-content: center;
-        font-size: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        z-index: 1100; transition: transform 0.3s;
-    }
-    .floating-whatsapp:hover { transform: scale(1.1); }
+    .floating-whatsapp { position: fixed; bottom: 25px; right: 25px; background: #25d366; color: #fff; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 1100; }
 
-    /* CHATBOT */
-    .chatbot-toggle {
-        position: fixed; bottom: 100px; right: 25px;
-        background-color: var(--ocean-blue); color: var(--gold);
-        width: 60px; height: 60px; border-radius: 50%;
-        display: flex; align-items: center; justify-content: center;
-        font-size: 28px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        z-index: 1100; cursor: pointer; border: 2px solid var(--gold);
-    }
-    .chatbot-container {
-        position: fixed; bottom: 170px; right: 25px;
-        width: 350px; max-width: 90vw; height: 500px;
-        background: #fff; border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        z-index: 1100; display: none; flex-direction: column;
-        overflow: hidden; border: 2px solid var(--gold);
-    }
+    .chatbot-toggle { position: fixed; bottom: 100px; right: 25px; background-color: var(--ocean-blue); color: var(--gold); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 1100; cursor: pointer; border: 2px solid var(--gold); }
+    .chatbot-container { position: fixed; bottom: 170px; right: 25px; width: 350px; max-width: 90vw; height: 500px; background: #fff; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); z-index: 1100; display: none; flex-direction: column; overflow: hidden; border: 2px solid var(--gold); }
     .chatbot-container.active { display: flex; }
     .chatbot-header { background: var(--ocean-blue); color: #fff; padding: 15px; display: flex; align-items: center; gap: 10px; }
-    .chatbot-header .avatar { width: 40px; height: 40px; background: var(--gold); color: var(--deep-navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem; }
+    .chatbot-header .avatar { width: 40px; height: 40px; background: var(--gold); color: var(--deep-navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; }
     .chatbot-header h4 { margin: 0; font-size: 1rem; color: #fff; }
     .chatbot-header span { font-size: 0.75rem; color: #ddd; display: block; }
     .chatbot-messages { flex-grow: 1; padding: 15px; overflow-y: auto; background: #f9f9f9; display: flex; flex-direction: column; gap: 10px; }
@@ -237,10 +137,9 @@
     .message.bot { background: #e9ecef; align-self: flex-start; }
     .message.user { background: var(--ocean-blue); color: #fff; align-self: flex-end; }
     .chatbot-input { display: flex; padding: 10px; border-top: 1px solid #eee; }
-    .chatbot-input input { flex-grow: 1; padding: 10px; border: 1px solid #ddd; border-radius: 20px; outline: none; font-family: 'Poppins', sans-serif; }
-    .chatbot-input button { background: var(--gold); color: var(--deep-navy); border: none; width: 40px; height: 40px; border-radius: 50%; margin-left: 8px; cursor: pointer; font-size: 1rem; }
+    .chatbot-input input { flex-grow: 1; padding: 10px; border: 1px solid #ddd; border-radius: 20px; outline: none; }
+    .chatbot-input button { background: var(--gold); color: var(--deep-navy); border: none; width: 40px; height: 40px; border-radius: 50%; margin-left: 8px; cursor: pointer; }
 
-    /* GTRANSLATE */
     .gtranslate_wrapper { position: relative; }
 
     @media (max-width: 768px) {
@@ -255,12 +154,8 @@
 </head>
 <body>
 
-<!-- TOP BAR WITH GTRANSLATE -->
-<div class="top-bar">
-    <div class="gtranslate_wrapper"></div>
-</div>
+<div class="top-bar"><div class="gtranslate_wrapper"></div></div>
 
-<!-- HEADER -->
 <header class="header">
     <div class="nav-container">
         <a href="index.html" class="logo-area">
@@ -281,7 +176,6 @@
     </div>
 </header>
 
-<!-- PAGE HEADER -->
 <div class="page-header">
     <h1><i class="fas fa-music"></i> Entertainment & Party Vibe</h1>
     <p>Gundua sehemu bora za sherehe Zanzibar, kalenda ya hali ya hewa, na matukio makubwa ya mwaka.</p>
@@ -289,21 +183,13 @@
 
 <div class="container">
 
-    <!-- 1. KALENDA YA HALI YA HEWA -->
     <h2 class="section-title"><i class="fas fa-cloud-sun"></i> Kalenda ya Hali ya Hewa</h2>
     <p class="section-subtitle">Jua wakati mzuri wa kuja Zanzibar kulingana na hali ya hewa.</p>
 
     <div class="weather-table-wrapper">
         <table class="weather-table">
             <thead>
-                <tr>
-                    <th>Mwezi</th>
-                    <th>Hali ya Hewa</th>
-                    <th>Joto</th>
-                    <th>Mvua</th>
-                    <th>Wageni</th>
-                    <th>Matukio</th>
-                </tr>
+                <tr><th>Mwezi</th><th>Hali ya Hewa</th><th>Joto</th><th>Mvua</th><th>Wageni</th><th>Matukio</th></tr>
             </thead>
             <tbody>
                 <tr><td><strong>Januari</strong></td><td>Jua kali</td><td>28-32°C</td><td>Chini</td><td><span class="season-badge badge-high">Wengi</span></td><td>Sherehe za Mwaka Mpya</td></tr>
@@ -322,12 +208,10 @@
         </table>
     </div>
 
-    <!-- 2. RAMANI YA PARTY -->
     <h2 class="section-title" style="margin-top: 60px;"><i class="fas fa-map-marked-alt"></i> Ramani ya Party Zanzibar</h2>
     <p class="section-subtitle">Sehemu zote za sherehe Zanzibar na Tanzania.</p>
     <div id="map"></div>
 
-    <!-- 3. MATUKIO MAKUBWA -->
     <h2 class="section-title" style="margin-top: 60px;"><i class="fas fa-star"></i> Matukio Makubwa</h2>
     <p class="section-subtitle">Sherehe na matukio muhimu ya mwaka.</p>
 
@@ -377,4 +261,37 @@
                 <span class="date">Agosti</span>
                 <h3>Paje Beach Festival</h3>
                 <p>Tamasha la muziki na michezo ya majini kwenye pwani ya Paje.</p>
-  
+                <p class="location"><i class="fas fa-map-marker-alt"></i> Paje, Zanzibar</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="music-player-box">
+        <h3><i class="fas fa-music"></i> Party Mode</h3>
+        <p>Bonyeza kitufe hapa chini ili kusikiliza muziki wa sherehe wa Zanzibar.</p>
+        <button class="btn-party-mode" id="partyBtn"><i class="fas fa-play"></i> Washa Party Mode</button>
+        <div id="musicMessage" style="margin-top: 15px; font-size: 0.85rem;"></div>
+    </div>
+
+    <div class="tips-box">
+        <h3><i class="fas fa-lightbulb"></i> Ushauri kwa Wageni</h3>
+        <ul>
+            <li><i class="fas fa-check"></i> <strong>Wakati Bora wa Kuja:</strong> Juni-Oktoba, Desemba-Februari.</li>
+            <li><i class="fas fa-check"></i> <strong>Wakati wa Mvua:</strong> Aprili-Mei (bei nafuu).</li>
+            <li><i class="fas fa-check"></i> <strong>Nini cha Kuvaa:</strong> Nguo nyepesi, kofia, miwani.</li>
+            <li><i class="fas fa-check"></i> <strong>Usalama:</strong> Kaa na mwongozo, epuka usiku wa manane.</li>
+            <li><i class="fas fa-check"></i> <strong>Muziki:</strong> Sherehe za Taarab, Bongo Flava, na Afrobeat.</li>
+        </ul>
+    </div>
+
+</div>
+
+<footer class="footer">
+    <div class="footer-content">
+        <div>
+            <h3>UNIQUE NATURE PARADISE (UNP)</h3>
+            <p style="font-size: 0.9rem; max-width: 350px;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p>
+        </div>
+        <div>
+            <h4>Direct Contact</h4>
+            <p style="font-size: 0.9rem; margin-top: 8px;"><i class="fab fa-whatsapp" style="color: var(--gold);"></i> +255 655 728 
