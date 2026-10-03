@@ -9,8 +9,8 @@
 <link rel="stylesheet" href="style.css">
 
 <!-- SEO META TAGS -->
-<meta name="description" content="Jiunge na UNP TOURS - Tunakaribisha vipaji, wabunifu, na washirika kutoka sekta mbalimbali duniani kote. Tuma maombi yako leo.">
-<meta name="keywords" content="kujiunga UNP tours, kazi Zanzibar, partnership Zanzibar, vipaji Zanzibar, washirika wa utalii">
+<meta name="description" content="Jiunge na UNP TOURS - Tunakaribisha vipaji, wabunifu, na washirika kutoka sekta mbalimbali duniani kote.">
+<meta name="keywords" content="kujiunga UNP tours, kazi Zanzibar, partnership Zanzibar, vipaji Zanzibar">
 <meta name="author" content="UNP TOURS Zanzibar">
 <meta name="robots" content="index, follow">
 
@@ -22,6 +22,12 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="UNP TOURS">
 
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Jiunge Nasi | UNP TOURS Zanzibar">
+<meta name="twitter:description" content="Tuma maombi yako ya kujiunga na timu yetu ya kifahari.">
+<meta name="twitter:image" content="https://unp.tours/images/logo.png">
+
 <!-- Canonical -->
 <link rel="canonical" href="https://unp.tours/join.html">
 
@@ -31,50 +37,69 @@
 <meta name="geo.position" content="-6.165917;39.202641">
 <meta name="ICBM" content="-6.165917, 39.202641">
 
+<!-- GOOGLE ANALYTICS -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5QJ1X38ZLC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5QJ1X38ZLC');
+</script>
+
+<!-- YANDEX METRICA -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113203659', 'ym');
+    ym(113203659, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/113203659" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
 <!-- ELFSIGHT PLATFORM -->
 <script src="https://elfsightcdn.com/platform.js" async></script>
 
 <style>
     :root {
-        --royal-green: #0077b6;
-        --dark-green: #003049;
-        --royal-gold: #d4af37;
+        --ocean-blue: #0c4a6e;
+        --deep-navy: #082f49;
+        --gold: #d4af37;
         --gold-light: #f0c75e;
         --light-bg: #f8f9fa;
-        --white: #ffffff;
-        --text-dark: #1e293b;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
     body { background-color: var(--light-bg); color: #333; line-height: 1.6; }
     a { text-decoration: none; color: inherit; }
 
     /* HEADER */
-    .top-bar { background: var(--dark-green); padding: 8px 20px; display: flex; justify-content: flex-end; align-items: center; gap: 15px; }
-    .header { background: var(--royal-green); padding: 15px 20px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+    .top-bar { background: var(--deep-navy); padding: 8px 20px; display: flex; justify-content: flex-end; align-items: center; gap: 15px; }
+    .header { background: var(--ocean-blue); padding: 15px 20px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
     .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; position: relative; }
     .logo-area { display: flex; align-items: center; gap: 15px; }
-    .logo-holder { width: 60px; height: 60px; border: 2px dashed var(--royal-gold); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
-    .logo-fallback { color: var(--royal-gold); font-weight: 700; font-size: 0.7rem; text-align: center; line-height: 1.1; }
+    .logo-holder { width: 60px; height: 60px; border: 2px dashed var(--gold); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+    .logo-fallback { color: var(--gold); font-weight: 700; font-size: 0.7rem; text-align: center; line-height: 1.1; }
     .logo-text h2 { color: #fff; font-size: 1.3rem; font-weight: 700; }
-    .logo-text span { color: var(--royal-gold); font-size: 0.8rem; }
+    .logo-text span { color: var(--gold); font-size: 0.8rem; }
     .nav-links { display: flex; gap: 20px; list-style: none; }
     .nav-links a { color: #fff; font-size: 0.85rem; transition: color 0.3s; display: flex; align-items: center; gap: 5px; }
-    .nav-links a:hover { color: var(--royal-gold); }
-    .menu-toggle { display: none; background: none; border: none; color: var(--royal-gold); font-size: 26px; cursor: pointer; }
+    .nav-links a:hover { color: var(--gold); }
+    .menu-toggle { display: none; background: none; border: none; color: var(--gold); font-size: 26px; cursor: pointer; }
 
     /* JOIN HEADER */
     .join-header {
-        background: linear-gradient(135deg, var(--dark-green) 0%, var(--royal-green) 100%);
+        background: linear-gradient(135deg, var(--deep-navy) 0%, var(--ocean-blue) 100%);
         color: #fff; padding: 70px 20px; text-align: center;
-        border-bottom: 5px solid var(--royal-gold);
+        border-bottom: 5px solid var(--gold);
     }
-    .join-header h1 { color: var(--royal-gold); font-size: 2.2rem; text-transform: uppercase; margin-bottom: 10px; }
+    .join-header h1 { color: var(--gold); font-size: 2.2rem; text-transform: uppercase; margin-bottom: 10px; }
     .join-header p { font-size: 1rem; color: #ddd; max-width: 700px; margin: 0 auto; }
 
     /* INTERACTIVE BOX */
     .interactive-box { max-width: 1100px; margin: 40px auto; padding: 30px; background: #fff; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-    .interactive-box h2 { color: var(--royal-green); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
-    .interactive-box h2 i { color: var(--royal-gold); }
+    .interactive-box h2 { color: var(--ocean-blue); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+    .interactive-box h2 i { color: var(--gold); }
 
     /* SECTOR GRID */
     .sector-grid {
@@ -84,28 +109,28 @@
     }
     .sector-card {
         background: #fff; padding: 20px; border-radius: 10px;
-        border-left: 4px solid var(--royal-gold);
+        border-left: 4px solid var(--gold);
         text-align: center; transition: transform 0.3s;
         box-shadow: 0 3px 10px rgba(0,0,0,0.05);
     }
     .sector-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
-    .sector-card i { font-size: 2rem; color: var(--royal-green); margin-bottom: 10px; }
-    .sector-card h4 { color: var(--dark-green); margin-bottom: 5px; font-size: 1rem; }
+    .sector-card i { font-size: 2rem; color: var(--ocean-blue); margin-bottom: 10px; }
+    .sector-card h4 { color: var(--deep-navy); margin-bottom: 5px; font-size: 1rem; }
     .sector-card p { font-size: 0.8rem; color: #777; }
 
     /* FORM */
     .form-group { margin-bottom: 15px; }
-    .form-group label { display: block; font-weight: 600; color: var(--dark-green); margin-bottom: 5px; }
+    .form-group label { display: block; font-weight: 600; color: var(--deep-navy); margin-bottom: 5px; }
     .form-group input, .form-group select, .form-group textarea {
         width: 100%; padding: 12px; border: 2px solid #ddd;
         border-radius: 8px; font-family: 'Poppins', sans-serif;
         font-size: 1rem; transition: border-color 0.3s;
     }
     .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-        outline: none; border-color: var(--royal-gold);
+        outline: none; border-color: var(--gold);
     }
     .btn-primary {
-        background-color: var(--royal-gold); color: var(--dark-green);
+        background-color: var(--gold); color: var(--deep-navy);
         padding: 14px 32px; border: none; border-radius: 25px;
         font-weight: 700; cursor: pointer; transition: 0.3s;
         display: inline-block; text-transform: uppercase;
@@ -115,11 +140,11 @@
     .btn-full { width: 100%; }
 
     /* FOOTER */
-    .footer { background: var(--dark-green); color: #fff; padding: 40px 20px; margin-top: 40px; }
+    .footer { background: var(--deep-navy); color: #fff; padding: 40px 20px; margin-top: 40px; }
     .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-    .footer h3, .footer h4 { color: var(--royal-gold); margin-bottom: 15px; }
+    .footer h3, .footer h4 { color: var(--gold); margin-bottom: 15px; }
     .social-links { display: flex; gap: 15px; margin-top: 15px; }
-    .social-links a { color: var(--royal-gold); font-size: 1.2rem; transition: transform 0.3s; }
+    .social-links a { color: var(--gold); font-size: 1.2rem; transition: transform 0.3s; }
     .social-links a:hover { transform: scale(1.2); }
 
     /* FLOATING WHATSAPP */
@@ -127,27 +152,27 @@
     .floating-whatsapp:hover { transform: scale(1.1); }
 
     /* CHATBOT */
-    .chatbot-toggle { position: fixed; bottom: 100px; right: 25px; background-color: var(--royal-green); color: var(--royal-gold); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 1100; cursor: pointer; border: 2px solid var(--royal-gold); }
-    .chatbot-container { position: fixed; bottom: 170px; right: 25px; width: 350px; max-width: 90vw; height: 500px; background: #fff; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); z-index: 1100; display: none; flex-direction: column; overflow: hidden; border: 2px solid var(--royal-gold); }
+    .chatbot-toggle { position: fixed; bottom: 100px; right: 25px; background-color: var(--ocean-blue); color: var(--gold); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 1100; cursor: pointer; border: 2px solid var(--gold); }
+    .chatbot-container { position: fixed; bottom: 170px; right: 25px; width: 350px; max-width: 90vw; height: 500px; background: #fff; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); z-index: 1100; display: none; flex-direction: column; overflow: hidden; border: 2px solid var(--gold); }
     .chatbot-container.active { display: flex; }
-    .chatbot-header { background: var(--royal-green); color: #fff; padding: 15px; display: flex; align-items: center; gap: 10px; }
-    .chatbot-header .avatar { width: 40px; height: 40px; background: var(--royal-gold); color: var(--dark-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem; }
+    .chatbot-header { background: var(--ocean-blue); color: #fff; padding: 15px; display: flex; align-items: center; gap: 10px; }
+    .chatbot-header .avatar { width: 40px; height: 40px; background: var(--gold); color: var(--deep-navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem; }
     .chatbot-header h4 { margin: 0; font-size: 1rem; color: #fff; }
     .chatbot-header span { font-size: 0.75rem; color: #ddd; display: block; }
     .chatbot-messages { flex-grow: 1; padding: 15px; overflow-y: auto; background: #f9f9f9; display: flex; flex-direction: column; gap: 10px; }
     .message { max-width: 80%; padding: 10px 15px; border-radius: 15px; font-size: 0.85rem; }
     .message.bot { background: #e9ecef; align-self: flex-start; }
-    .message.user { background: var(--royal-green); color: #fff; align-self: flex-end; }
+    .message.user { background: var(--ocean-blue); color: #fff; align-self: flex-end; }
     .chatbot-input { display: flex; padding: 10px; border-top: 1px solid #eee; }
     .chatbot-input input { flex-grow: 1; padding: 10px; border: 1px solid #ddd; border-radius: 20px; outline: none; font-family: 'Poppins', sans-serif; }
-    .chatbot-input button { background: var(--royal-gold); color: var(--dark-green); border: none; width: 40px; height: 40px; border-radius: 50%; margin-left: 8px; cursor: pointer; font-size: 1rem; }
+    .chatbot-input button { background: var(--gold); color: var(--deep-navy); border: none; width: 40px; height: 40px; border-radius: 50%; margin-left: 8px; cursor: pointer; font-size: 1rem; }
 
     /* GTRANSLATE */
     .gtranslate_wrapper { position: relative; }
 
     @media (max-width: 768px) {
         .menu-toggle { display: block; }
-        .nav-links { display: none; flex-direction: column; width: 100%; background: var(--dark-green); padding: 20px; position: absolute; top: 100%; left: 0; right: 0; z-index: 999; border-top: 2px solid var(--royal-gold); }
+        .nav-links { display: none; flex-direction: column; width: 100%; background: var(--deep-navy); padding: 20px; position: absolute; top: 100%; left: 0; right: 0; z-index: 999; border-top: 2px solid var(--gold); }
         .nav-links.active { display: flex; }
         .nav-links li { width: 100%; }
         .nav-links a { padding: 10px 0; width: 100%; }
@@ -176,7 +201,7 @@
             <li><a href="services.html"><i class="fas fa-briefcase"></i> Huduma</a></li>
             <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
             <li><a href="pricing.html"><i class="fas fa-layer-group"></i> Madaraja</a></li>
-            <li><a href="join.html" style="color: var(--royal-gold);"><i class="fas fa-handshake"></i> Jiunge Nasi</a></li>
+            <li><a href="join.html" style="color: var(--gold);"><i class="fas fa-handshake"></i> Jiunge Nasi</a></li>
             <li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
             <li><a href="contact.html"><i class="fas fa-envelope"></i> Wasiliana</a></li>
         </ul>
@@ -193,7 +218,7 @@
 <section class="interactive-box">
     <h2><i class="fas fa-briefcase"></i> Sekta Tunazohitaji</h2>
     <p style="margin-bottom: 20px;">Tunahitaji watu kutoka sekta hizi:</p>
-    
+
     <div class="sector-grid">
         <div class="sector-card">
             <i class="fas fa-graduation-cap"></i>
@@ -232,16 +257,16 @@
 <section class="interactive-box" id="application">
     <h2><i class="fas fa-file-signature"></i> Fomu ya Maombi</h2>
     <p style="margin-bottom: 20px;">Jaza fomu hii kwa makini. Tutawasiliana nawe ndani ya siku 7.</p>
-    
+
     <form id="joinForm">
-        <h3 style="color: var(--royal-green); margin-bottom: 15px;"><i class="fas fa-user"></i> Taarifa Binafsi</h3>
+        <h3 style="color: var(--ocean-blue); margin-bottom: 15px;"><i class="fas fa-user"></i> Taarifa Binafsi</h3>
         <div class="form-group"><label>Jina Lako Kamili:</label><input type="text" id="joinName" placeholder="Weka jina lako" required></div>
         <div class="form-group"><label>Barua Pepe:</label><input type="email" id="joinEmail" placeholder="email@domain.com" required></div>
         <div class="form-group"><label>Namba ya Simu:</label><input type="tel" id="joinPhone" placeholder="+255..." required></div>
         <div class="form-group"><label>Nchi Unayotoka:</label><input type="text" id="joinCountry" placeholder="Mfano: Tanzania, USA" required></div>
         <div class="form-group"><label>Umri:</label><input type="number" id="joinAge" placeholder="Mfano: 25" required></div>
 
-        <h3 style="color: var(--royal-green); margin: 25px 0 15px 0;"><i class="fas fa-graduation-cap"></i> Elimu na Uzoefu</h3>
+        <h3 style="color: var(--ocean-blue); margin: 25px 0 15px 0;"><i class="fas fa-graduation-cap"></i> Elimu na Uzoefu</h3>
         <div class="form-group"><label>Kiwango cha Elimu:</label>
             <select id="joinEducation" required>
                 <option value="">Chagua...</option>
@@ -256,21 +281,21 @@
         <div class="form-group"><label>Fani/Utaalamu Wako:</label><input type="text" id="joinField" placeholder="Mfano: IT, Utalii, Biashara" required></div>
         <div class="form-group"><label>Uzoefu wa Kazi (miaka):</label><input type="number" id="joinExperience" placeholder="Mfano: 3" required></div>
 
-        <h3 style="color: var(--royal-green); margin: 25px 0 15px 0;"><i class="fas fa-briefcase"></i> Sekta Unayotaka Kujiunga</h3>
+        <h3 style="color: var(--ocean-blue); margin: 25px 0 15px 0;"><i class="fas fa-briefcase"></i> Sekta Unayotaka Kujiunga</h3>
         <div class="form-group"><label>Chagua Sekta:</label>
             <select id="joinSector" required>
                 <option value="">Chagua...</option>
-                <option value="Kisomi (Utafiti, Sayansi, Elimu)">Kisomi (Utafiti, Sayansi, Elimu)</option>
-                <option value="Biashara (Uuzaji, Masoko, Fedha)">Biashara (Uuzaji, Masoko, Fedha)</option>
-                <option value="Teknolojia (IT, AI, Programming)">Teknolojia (IT, AI, Programming)</option>
-                <option value="Sanaa (Muziki, Filamu, Uchoraji)">Sanaa (Muziki, Filamu, Uchoraji)</option>
-                <option value="Utalii (Guide, Hotel, Safari)">Utalii (Guide, Hotel, Safari)</option>
-                <option value="Afya (Daktari, Muuguzi, Lishe)">Afya (Daktari, Muuguzi, Lishe)</option>
+                <option value="Kisomi">Kisomi (Utafiti, Sayansi, Elimu)</option>
+                <option value="Biashara">Biashara (Uuzaji, Masoko, Fedha)</option>
+                <option value="Teknolojia">Teknolojia (IT, AI, Programming)</option>
+                <option value="Sanaa">Sanaa (Muziki, Filamu, Uchoraji)</option>
+                <option value="Utalii">Utalii (Guide, Hotel, Safari)</option>
+                <option value="Afya">Afya (Daktari, Muuguzi, Lishe)</option>
                 <option value="Nyingine">Nyingine</option>
             </select>
         </div>
 
-        <h3 style="color: var(--royal-green); margin: 25px 0 15px 0;"><i class="fas fa-lightbulb"></i> Wazo Lako na Mchango Wako</h3>
+        <h3 style="color: var(--ocean-blue); margin: 25px 0 15px 0;"><i class="fas fa-lightbulb"></i> Wazo Lako na Mchango Wako</h3>
         <div class="form-group"><label>Ni wazo gani muhimu unalotaka kuongeza kwenye UNP TOURS?</label>
             <textarea id="joinIdea" rows="4" placeholder="Eleza wazo lako kwa kina..." required></textarea>
         </div>
@@ -283,6 +308,7 @@
 
         <button type="submit" class="btn-primary btn-full" style="margin-top: 15px;"><i class="fab fa-whatsapp"></i> Tuma Maombi kwa WhatsApp</button>
     </form>
+    <p id="joinMsg" style="margin-top: 15px; font-weight: 600; display: none; text-align: center;"></p>
 </section>
 
 <!-- FOOTER -->
@@ -294,8 +320,8 @@
         </div>
         <div>
             <h4>Direct Contact</h4>
-            <p style="font-size: 0.9rem; margin-top: 8px;"><i class="fab fa-whatsapp" style="color: var(--royal-gold);"></i> Phone: +255 655 728 982</p>
-            <p style="font-size: 0.9rem; margin-top: 5px;"><i class="fas fa-envelope" style="color: var(--royal-gold);"></i> Email: salimnasoro11@gmail.com</p>
+            <p style="font-size: 0.9rem; margin-top: 8px;"><i class="fab fa-whatsapp" style="color: var(--gold);"></i> Phone: +255 655 728 982</p>
+            <p style="font-size: 0.9rem; margin-top: 5px;"><i class="fas fa-envelope" style="color: var(--gold);"></i> Email: salimnasoro11@gmail.com</p>
             <div class="social-links">
                 <a href="https://wa.me/255655728982" target="_blank"><i class="fab fa-whatsapp"></i></a>
                 <a href="mailto:salimnasoro11@gmail.com"><i class="fas fa-envelope"></i></a>
@@ -305,41 +331,10 @@
             </div>
         </div>
     </div>
-</footer>
-
-<!-- FLOATING WHATSAPP -->
-<a href="https://wa.me/255655728982" class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
-
-<!-- CHATBOT -->
-<div class="chatbot-toggle" onclick="toggleChatbot()"><i class="fas fa-robot"></i></div>
-<div class="chatbot-container" id="chatbotContainer">
-    <div class="chatbot-header">
-        <div class="avatar">U</div>
-        <div><h4>UNP Assistant</h4><span>Yupo Mtandaoni</span></div>
-        <button onclick="toggleChatbot()" style="margin-left:auto;background:none;border:none;color:#fff;font-size:1.2rem;cursor:pointer;"><i class="fas fa-times"></i></button>
-    </div>
-    <div class="chatbot-messages" id="chatMessages">
-        <div class="message bot">Karibu UNP TOURS! Ninaweza kukusaidia vipi leo?</div>
-    </div>
-    <div class="chatbot-input">
-        <input type="text" id="chatInput" placeholder="Andika ujumbe wako..." onkeypress="handleKeyPress(event)">
-        <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
-    </div>
-</div>
-
-<!-- COOKIES BANNER -->
-<div id="cookieBanner" style="position: fixed; bottom: 0; left: 0; right: 0; background: var(--dark-green); color: #fff; padding: 15px; text-align: center; z-index: 9999; display: none;">
-    <p style="margin: 0 0 10px 0; font-size: 0.9rem;">Tunatumia cookies kuboresha uzoefu wako. Kwa kuendelea kutumia website yetu, unakubali <a href="privacy.html" style="color: var(--royal-gold); text-decoration: underline;">Sera zetu za Faragha</a>.</p>
-    <button onclick="acceptCookies()" style="background: var(--royal-gold); color: var(--dark-green); border: none; padding: 8px 20px; border-radius: 5px; font-weight: 700; cursor: pointer;">Nakubali</button>
-</div>
-
-<!-- TAWK.TO LIVE CHAT -->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/6ab95c20dade22344616d64e/1k3i0vorc';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s
+    <!-- SOCIAL SHARING BUTTONS -->
+    <div style="text-align: center; margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.2);">
+        <p style="color: var(--gold); font-size: 0.9rem; margin-bottom: 10px;">Shiriki UNP TOURS:</p>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://unp.tours/join.html" target="_blank" style="display: inline-block; margin: 0 5px; color: var(--gold); font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
+        <a href="https://twitter.com/intent/tweet?url=https://unp.tours/join.html" target="_blank" style="display: inline-block; margin: 0 5px; color: var(--gold); font-size: 1.5rem;"><i class="fab fa-twitter"></i></a>
+        <a href="https://wa.me/?text=Check%20out%20UNP%20Join!%20https://unp.tours/join.html" target="_blank" style="display: inline-block; margin: 0 5px; color: var(--gold); font-size: 1.5rem;"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.linkedin.com/sharing/share-off
