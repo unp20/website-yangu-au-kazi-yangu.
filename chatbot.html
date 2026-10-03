@@ -20,9 +20,37 @@
 <meta property="og:image" content="https://unp.tours/images/logo.png">
 <meta property="og:url" content="https://unp.tours/chatbot.html">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="UNP TOURS">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="UNP Assistant | UNP TOURS Zanzibar">
+<meta name="twitter:description" content="Msaidizi wako wa kidijitali wa UNP TOURS.">
+<meta name="twitter:image" content="https://unp.tours/images/logo.png">
 
 <!-- Canonical -->
 <link rel="canonical" href="https://unp.tours/chatbot.html">
+
+<!-- GOOGLE ANALYTICS -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5QJ1X38ZLC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5QJ1X38ZLC');
+</script>
+
+<!-- YANDEX METRICA -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113203659', 'ym');
+    ym(113203659, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/113203659" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 
 <!-- ELFSIGHT PLATFORM -->
 <script src="https://elfsightcdn.com/platform.js" async></script>
@@ -44,7 +72,7 @@
     /* HEADER */
     .top-bar { background: var(--deep-navy); padding: 8px 20px; display: flex; justify-content: flex-end; align-items: center; gap: 15px; }
     .header { background: var(--ocean-blue); padding: 15px 20px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
-    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; position: relative; }
     .logo-area { display: flex; align-items: center; gap: 15px; }
     .logo-holder { width: 60px; height: 60px; border: 2px dashed var(--gold); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
     .logo-fallback { color: var(--gold); font-weight: 700; font-size: 0.7rem; text-align: center; line-height: 1.1; }
@@ -229,8 +257,10 @@
 
     @media (max-width: 768px) {
         .menu-toggle { display: block; }
-        .nav-links { display: none; flex-direction: column; width: 100%; background: var(--deep-navy); padding: 20px; position: absolute; top: 80px; left: 0; z-index: 999; }
+        .nav-links { display: none; flex-direction: column; width: 100%; background: var(--deep-navy); padding: 20px; position: absolute; top: 100%; left: 0; right: 0; z-index: 999; border-top: 2px solid var(--gold); }
         .nav-links.active { display: flex; }
+        .nav-links li { width: 100%; }
+        .nav-links a { padding: 10px 0; width: 100%; }
         .hero h1 { font-size: 1.6rem; }
     }
 </style>
@@ -344,13 +374,22 @@
             </div>
         </div>
     </div>
+    <!-- SOCIAL SHARING BUTTONS -->
+    <div style="text-align: center; margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.2);">
+        <p style="color: var(--gold); font-size: 0.9rem; margin-bottom: 10px;">Shiriki UNP TOURS:</p>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://unp.tours/chatbot.html" target="_blank" style="display: inline-block; margin: 0 5px; color: var(--gold); font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
+        <a href="https://twitter.com/intent/tweet?url=https://unp.tours/chatbot.html" target="_blank" style="display: inline-block; margin: 0 5px; color: var(--gold); font-size: 1.5rem;"><i class="fab fa-twitter"></i></a>
+        <a href="https://wa.me/?text=Check%20out%20UNP%20Assistant!%20https://unp.tours/chatbot.html" target="_blank" style="display: inline-block; margin: 0 5px; color: var(--gold); font-size: 1.5rem;"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://unp.tours/chatbot.html" target="_blank" style="display: inline-block; margin: 0 5px; color: var(--gold); font-size: 1.5rem;"><i class="fab fa-linkedin"></i></a>
+        <a href="https://t.me/share/url?url=https://unp.tours/chatbot.html" target="_blank" style="display: inline-block; margin: 0 5px; color: var(--gold); font-size: 1.5rem;"><i class="fab fa-telegram"></i></a>
+    </div>
 </footer>
 
 <!-- FLOATING WHATSAPP -->
 <a href="https://wa.me/255655728982" class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
 <!-- COOKIES BANNER -->
-<div id="cookieBanner" style="position: fixed; bottom: 0; left: 0; right: 0; background: #082f49; color: #fff; padding: 15px; text-align: center; z-index: 9999; display: none;">
+<div id="cookieBanner" style="position: fixed; bottom: 0; left: 0; right: 0; background: var(--deep-navy); color: #fff; padding: 15px; text-align: center; z-index: 9999; display: none;">
     <p style="margin: 0 0 10px 0; font-size: 0.9rem;">Tunatumia cookies kuboresha uzoefu wako. Kwa kuendelea kutumia website yetu, unakubali <a href="privacy.html" style="color: var(--gold); text-decoration: underline;">Sera zetu za Faragha</a>.</p>
     <button onclick="acceptCookies()" style="background: var(--gold); color: var(--deep-navy); border: none; padding: 8px 20px; border-radius: 5px; font-weight: 700; cursor: pointer;">Nakubali</button>
 </div>
@@ -391,71 +430,4 @@ window.gtranslateSettings = {
 
 <!-- CHATBOT LOGIC -->
 <script>
-  // MENU TOGGLE
-  const menuToggleBtn = document.getElementById('menuToggleBtn');
-  const navLinks = document.getElementById('navLinks');
-  if(menuToggleBtn) { menuToggleBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); }); }
-
-  // ==== CHATBOT LOGIC ====
-  window.toggleChatbot = function() {
-      const container = document.getElementById('chatbotContainer');
-      container.classList.toggle('active');
-  };
-
-  window.handleKeyPress = function(event) {
-      if (event.key === 'Enter') {
-          sendMessage();
-      }
-  };
-
-  window.sendQuickReply = function(text) {
-      document.getElementById('chatInput').value = text;
-      sendMessage();
-  };
-
-  window.sendMessage = function() {
-      const input = document.getElementById('chatInput');
-      const messageText = input.value.trim();
-      if (messageText === '') return;
-
-      const messagesContainer = document.getElementById('chatMessages');
-
-      const userMessage = document.createElement('div');
-      userMessage.className = 'message user';
-      userMessage.textContent = messageText;
-      messagesContainer.appendChild(userMessage);
-
-      input.value = '';
-
-      setTimeout(() => {
-          const botMessage = document.createElement('div');
-          botMessage.className = 'message bot';
-          botMessage.textContent = getBotReply(messageText);
-          messagesContainer.appendChild(botMessage);
-          messagesContainer.scrollTop = messagesContainer.scrollHeight;
-      }, 800);
-
-      messagesContainer.scrollTop = messagesContainer.scrollHeight;
-  };
-
-  // ==== AKILI YA BOT ====
-  function getBotReply(message) {
-      const msg = message.toLowerCase();
-
-      if (msg.includes('booking') || msg.includes('weka nafasi') || msg.includes('book')) {
-          return "Unaweza kuweka booking kwa urahisi kwa kubonyeza kitufe cha 'Weka Nafasi' kwenye ukurasa wa Nyumbani, au tembelea ukurasa wa Booking. Pia unaweza kutuma ombi lako moja kwa moja kwa WhatsApp yetu: +255 655 728 982.";
-      }
-
-      if (msg.includes('bei') || msg.includes('price') || msg.includes('gharama') || msg.includes('cost')) {
-          return "Bei zetu ni: Basic Tour ($50), Standard Tour ($120), na VIP Luxury Experience ($500+). Kwa bei maalum za kikundi au safari maalum, wasiliana nasi kwa WhatsApp: +255 655 728 982.";
-      }
-
-      if (msg.includes('huduma') || msg.includes('service') || msg.includes('safari') || msg.includes('tour')) {
-          return "Tunatoa huduma za kifahari ikiwa ni pamoja na: Zanzibar Historic Tours, Jozani Forest, VIP Transfers, Water Sports (Jet Ski), Tanzania Safaris, na Secret Garden (Private Oasis). Tembelea ukurasa wa 'Bei' kwa maelezo zaidi.";
-      }
-
-      if (msg.includes('muda') || msg.includes('time') || msg.includes('saa') || msg.includes('lini')) {
-          return "Tunafanya kazi saa 24, siku 7 kwa wiki. Unaweza kuwasiliana nasi wakati wowote kupitia WhatsApp: +255 655 728 982 au barua pepe: salimnasoro11@gmail.com.";
-      }
-
-      if (msg.includes('malipo') || msg.includes('payment') || msg.i
+  /
