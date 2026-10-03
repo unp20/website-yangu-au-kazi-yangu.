@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forum | UNP TOURS</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<meta name="description" content="Forum - UNP TOURS. Jadiliana na watalii wengine kuhusu safari, tips, na uzoefu.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://unp.tours/forum.html">
+<style>
+.forum-header { background: linear-gradient(135deg, #082f49, #0c4a6e); color: #fff; text-align: center; padding: 70px 20px; border-bottom: 5px solid #d4af37; }
+.forum-header h1 { font-size: 2.5rem; color: #d4af37; margin-bottom: 10px; }
+.forum-header p { font-size: 1.1rem; color: #ddd; max-width: 700px; margin: 0 auto; }
+.forum-container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+.forum-category { background: #fff; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); border-top: 5px solid #d4af37; margin-bottom: 25px; overflow: hidden; }
+.forum-category h2 { color: #0c4a6e; padding: 20px 25px; background: #f9f9f9; margin: 0; font-size: 1.2rem; border-bottom: 2px solid #eee; }
+.forum-topic { display: flex; justify-content: space-between; align-items: center; padding: 15px 25px; border-bottom: 1px solid #eee; transition: background 0.3s; flex-wrap: wrap; gap: 10px; }
+.forum-topic:hover { background: #f9f9f9; }
+.forum-topic .topic-info h4 { color: #082f49; margin-bottom: 5px; font-size: 1rem; }
+.forum-topic .topic-info p { color: #777; font-size: 0.85rem; }
+.forum-topic .topic-stats { display: flex; gap: 20px; font-size: 0.85rem; color: #777; }
+.forum-topic .topic-stats span { display: flex; align-items: center; gap: 5px; }
+.forum-topic .topic-stats i { color: #d4af37; }
+.btn-new-post { background: #d4af37; color: #082f49; padding: 14px 32px; border-radius: 25px; font-weight: 700; display: inline-block; text-align: center; font-size: 1rem; margin-bottom: 25px; border: none; cursor: pointer; }
+.btn-new-post:hover { background: #082f49; color: #d4af37; }
+</style>
+</head>
+<body>
+
+<header class="header">
+    <div class="nav-container">
+        <a href="index.html" class="logo-area">
+            <div class="logo-holder"><span class="logo-fallback">UNP<br>LOGO</span></div>
+            <div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
+        </a>
+        <button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html"><i class="fas fa-home"></i> Nyumbani</a></li>
+            <li><a href="forum.html" style="color: #d4af37;"><i class="fas fa-comments"></i> Forum</a></li>
+            <li><a href="community.html"><i class="fas fa-users"></i> Community</a></li>
+            <li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Wasiliana</a></li>
+        </ul>
+    </div>
+</header>
+
+<section class="forum-header">
+    <h1><i class="fas fa-comments"></i> Forum</h1>
+    <p>Jadiliana na watalii wengine kuhusu safari, tips, na uzoefu.</p>
+</section>
+
+<div class="forum-container">
+    <div style="text-align: center;">
+        <a href="https://wa.me/255655728982?text=Hello%20UNP%20TOURS!%20Nataka%20kuanza%20topic%20mpya%20kwenye%20forum." class="btn-new-post"><i class="fas fa-plus"></i> Anza Topic Mpya</a>
+    </div>
+
+    <div class="forum-category">
+        <h2><i class="fas fa-plane"></i> Safari & Trips</h2>
+        <div class="forum-topic">
+            <div class="topic-info">
+                <h4>Uzoefu wa Serengeti — Wanyama Wengi!</h4>
+                <p>Na Amina M. — 2 siku zilizopita</p>
+            </div>
+            <div class="topic-stats">
+                <span><i class="fas fa-comments"></i> 15</span>
+                <span><i class="fas fa-eye"></i> 120</span>
+            </div>
+        </div>
+        <div class="forum-topic">
+            <div class="topic-info">
+                <h4>Ngorongoro Crater — Crater Kubwa Duniani</h4>
+                <p>Na James D. — 3 siku zilizopita</p>
+            </div>
+            <div class="topic-stats">
+                <span><i class="fas fa-comments"></i> 8</span>
+                <span><i class="fas fa-eye"></i> 89</span>
+            </div>
+        </div>
+        <div class="forum-topic">
+            <div class="topic-info">
+                <h4>Kilimanjaro — Kupanda Kilele cha Uhuru</h4>
+                <p>Na Rashid B. — 5 siku zilizopita</p>
+            </div>
+            <div class="topic-stats">
+                <span><i class="fas fa-comments"></i> 25</span>
+                <span><i class="fas fa-eye"></i> 200</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="forum-category">
+        <h2><i class="fas fa-umbrella-beach"></i> Zanzibar</h2>
+        <div class="forum-topic">
+            <div class="topic-info">
+                <h4>Nungwi Beach — Fukwe Bora Duniani</h4>
+                <p>Na Fatma N. — 1 siku iliyopita</p>
+            </div>
+            <div class="topic-stats">
+                <span><i class="fas fa-comments"></i> 12</span>
+                <span><i class="fas fa-eye"></i> 95</span>
+            </div>
+        </div>
+        <div class="forum-topic">
+            <div class="topic-info">
+                <h4>Stone Town — Mji wa Kihistoria</h4>
+                <p>Na Juma O. — 4 siku zilizopita</p>
+            </div>
+            <div class="topic-stats">
+                <span><i class="fas fa-comments"></i> 18</span>
+                <span><i class="fas fa-eye"></i> 145</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="forum-category">
+        <h2><i class="fas fa-lightbulb"></i> Tips & Advice</h2>
+        <div class="forum-topic">
+            <div class="topic-info">
+                <h4>Vidokezo vya Kusafiri Tanzania</h4>
+                <p>Na Salim N. — 1 wiki iliyopita</p>
+            </div>
+            <div class="topic-stats">
+                <span><i class="fas fa-comments"></i> 35</span>
+                <span><i class="fas fa-eye"></i> 320</span>
+            </div>
+        </div>
+        <div class="forum-topic">
+            <div class="topic-info">
+                <h4>Bima ya Safari — Kwa Nini Ni Muhimu?</h4>
+                <p>Na Maria L. — 1 wiki iliyopita</p>
+            </div>
+            <div class="topic-stats">
+                <span><i class="fas fa-comments"></i> 22</span>
+                <span><i class="fas fa-eye"></i> 180</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="forum-category">
+        <h2><i class="fas fa-globe"></i> Utalii wa Milimani</h2>
+        <div class="forum-topic">
+            <div class="topic-info">
+                <h4>Udzungwa Mountains — Sanje Waterfall</h4>
+                <p>Na Peter K. — 2 siku zilizopita</p>
+            </div>
+            <div class="topic-stats">
+                <span><i class="fas fa-comments"></i> 10</span>
+                <span><i class="fas fa-eye"></i> 78</span>
+            </div>
+        </div>
+        <div class="forum-topic">
+            <div class="topic-info">
+                <h4>Usambara Mountains — Lushoto</h4>
+                <p>Na Sofia K. — 6 siku zilizopita</p>
+            </div>
+            <div class="topic-stats">
+                <span><i class="fas fa-comments"></i> 14</span>
+                <span><i class="fas fa-eye"></i> 110</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="footer-content">
+        <div>
+            <h3>UNIQUE NATURE PARADISE (UNP)</h3>
+            <p style="font-size: 0.9rem;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p>
+        </div>
+        <div>
+            <h4>Direct Contact</h4>
+            <p style="font-size: 0.9rem;"><i class="fab fa-whatsapp" style="color: #d4af37;"></i> +255 655 728 982</p>
+            <p style="font-size: 0.9rem;"><i class="fas fa-envelope" style="color: #d4af37;"></i> salimnasoro11@gmail.com</p>
+        </div>
+    </div>
+</footer>
+
+<a href="https://wa.me/255655728982" class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+  const menuToggleBtn = document.getElementById('menuToggleBtn');
+  const navLinks = document.getElementById('navLinks');
+  if(menuToggleBtn) { menuToggleBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); }); }
+</script>
+
+</body>
+                                                          </html>
