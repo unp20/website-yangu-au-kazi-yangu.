@@ -22,7 +22,6 @@
 body { background: var(--light-bg); color: #333; line-height: 1.6; padding: 20px; }
 .container { max-width: 1100px; margin: 0 auto; }
 
-/* HEADER */
 .dash-header {
     background: linear-gradient(135deg, var(--dark-green), var(--royal-green));
     color: #fff; padding: 30px 25px; border-radius: 15px;
@@ -33,7 +32,6 @@ body { background: var(--light-bg); color: #333; line-height: 1.6; padding: 20px
 .dash-header p { color: #ddd; font-size: 0.9rem; }
 .dash-header .date { color: var(--royal-gold); font-weight: 600; margin-top: 8px; font-size: 0.85rem; }
 
-/* STATS */
 .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-bottom: 25px; }
 .stat-card {
     background: #fff; padding: 20px 15px; border-radius: 12px;
@@ -50,7 +48,6 @@ body { background: var(--light-bg); color: #333; line-height: 1.6; padding: 20px
 .stat-card h3 { font-size: 1.8rem; color: var(--dark-green); margin-bottom: 4px; }
 .stat-card p { font-size: 0.8rem; color: #777; }
 
-/* SECTION */
 .section {
     background: #fff; padding: 25px; border-radius: 15px;
     margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);
@@ -62,7 +59,6 @@ body { background: var(--light-bg); color: #333; line-height: 1.6; padding: 20px
 }
 .section h2 i { color: var(--royal-gold); }
 
-/* LIST ITEMS */
 .item {
     display: flex; align-items: center; gap: 12px;
     padding: 12px 15px; margin-bottom: 8px;
@@ -92,7 +88,6 @@ body { background: var(--light-bg); color: #333; line-height: 1.6; padding: 20px
 .item .badge.warn { background: var(--warning); color: #fff; }
 .item .badge.green { background: var(--success); color: #fff; }
 
-/* TASKS */
 .task {
     display: flex; align-items: flex-start; gap: 12px;
     padding: 12px 15px; margin-bottom: 8px;
@@ -105,12 +100,10 @@ body { background: var(--light-bg); color: #333; line-height: 1.6; padding: 20px
 .task .task-text span { color: #666; font-size: 0.8rem; }
 .task.done .task-text strong { text-decoration: line-through; color: #999; }
 
-/* PRIORITY */
 .priority-1 { border-left-color: var(--danger) !important; }
 .priority-2 { border-left-color: var(--warning) !important; }
 .priority-3 { border-left-color: var(--info) !important; }
 
-/* ADVICE BOX */
 .advice {
     background: linear-gradient(135deg, var(--dark-green), var(--royal-green));
     color: #fff; padding: 20px; border-radius: 12px;
@@ -119,21 +112,10 @@ body { background: var(--light-bg); color: #333; line-height: 1.6; padding: 20px
 .advice h3 { color: var(--royal-gold); margin-bottom: 8px; font-size: 1rem; }
 .advice p { color: #ddd; font-size: 0.88rem; line-height: 1.6; margin: 0; }
 
-/* PROGRESS */
-.progress-bar {
-    background: #e5e7eb; height: 10px; border-radius: 5px;
-    overflow: hidden; margin-top: 8px;
-}
-.progress-fill {
-    background: linear-gradient(90deg, var(--royal-green), var(--royal-gold));
-    height: 100%; transition: width 0.5s ease;
-}
-.progress-label {
-    display: flex; justify-content: space-between;
-    font-size: 0.8rem; color: #666; margin-top: 5px;
-}
+.progress-bar { background: #e5e7eb; height: 10px; border-radius: 5px; overflow: hidden; margin-top: 8px; }
+.progress-fill { background: linear-gradient(90deg, var(--royal-green), var(--royal-gold)); height: 100%; transition: width 0.5s ease; }
+.progress-label { display: flex; justify-content: space-between; font-size: 0.8rem; color: #666; margin-top: 5px; }
 
-/* FOOTER */
 .footer {
     text-align: center; padding: 20px; color: #777;
     font-size: 0.8rem; margin-top: 30px;
@@ -151,342 +133,105 @@ body { background: var(--light-bg); color: #333; line-height: 1.6; padding: 20px
 
 <div class="container">
 
-    <!-- HEADER -->
     <div class="dash-header">
         <h1><i class="fas fa-tachometer-alt"></i> UNP TOURS — Dashboard</h1>
         <p>Kumbukumbu ya Kazi na Miundombinu</p>
         <div class="date"><i class="fas fa-calendar"></i> Ilisasishwa: 3 Oktoba 2026</div>
     </div>
 
-    <!-- STATS -->
     <div class="stats-grid">
-        <div class="stat-card success">
-            <i class="fas fa-check-circle"></i>
-            <h3>18</h3>
-            <p>Kurasa Zinazofanya Kazi</p>
-        </div>
-        <div class="stat-card warning">
-            <i class="fas fa-exclamation-triangle"></i>
-            <h3>3</h3>
-            <p>Zinahitaji Kazi</p>
-        </div>
-        <div class="stat-card danger">
-            <i class="fas fa-times-circle"></i>
-            <h3>2</h3>
-            <p>Hazipo</p>
-        </div>
-        <div class="stat-card">
-            <i class="fas fa-chart-line"></i>
-            <h3>75%</h3>
-            <p>Maendeleo</p>
-        </div>
+        <div class="stat-card success"><i class="fas fa-check-circle"></i><h3>18</h3><p>Kurasa Zinazofanya Kazi</p></div>
+        <div class="stat-card warning"><i class="fas fa-exclamation-triangle"></i><h3>3</h3><p>Zinahitaji Kazi</p></div>
+        <div class="stat-card danger"><i class="fas fa-times-circle"></i><h3>2</h3><p>Hazipo</p></div>
+        <div class="stat-card"><i class="fas fa-chart-line"></i><h3>75%</h3><p>Maendeleo</p></div>
     </div>
 
-    <!-- SEHEMU 1: HALI YA KURASA -->
     <div class="section">
         <h2><i class="fas fa-file-alt"></i> 1. Hali ya Kurasa</h2>
-
-        <div class="item ok">
-            <i class="fas fa-check-circle status-icon"></i>
-            <div class="text"><strong>index.html</strong><span>Ukurasa wa mbele — unafanya kazi</span></div>
-            <span class="badge green">SAWA</span>
-        </div>
-
-        <div class="item ok">
-            <i class="fas fa-check-circle status-icon"></i>
-            <div class="text"><strong>about.html</strong><span>Kuhusu Sisi — widgets 4</span></div>
-            <span class="badge green">SAWA</span>
-        </div>
-
-        <div class="item ok">
-            <i class="fas fa-check-circle status-icon"></i>
-            <div class="text"><strong>awards.html</strong><span>Tuzo — Hall of Fame, Nomination</span></div>
-            <span class="badge green">SAWA</span>
-        </div>
-
-        <div class="item ok">
-            <i class="fas fa-check-circle status-icon"></i>
-            <div class="text"><strong>blog.html</strong><span>Blog — makala 6, newsletter</span></div>
-            <span class="badge green">SAWA</span>
-        </div>
-
-        <div class="item ok">
-            <i class="fas fa-check-circle status-icon"></i>
-            <div class="text"><strong>booking.html</strong><span>Fomu ya booking — tiers 10</span></div>
-            <span class="badge green">SAWA</span>
-        </div>
-
-        <div class="item ok">
-            <i class="fas fa-check-circle status-icon"></i>
-            <div class="text"><strong>careers.html</strong><span>JOB — Investor, Talent, Partner</span></div>
-            <span class="badge green">SAWA</span>
-        </div>
-
-        <div class="item ok">
-            <i class="fas fa-check-circle status-icon"></i>
-            <div class="text"><strong>chatbot.html</strong><span>UNP Assistant — akili ya bot</span></div>
-            <span class="badge green">SAWA</span>
-        </div>
-
-        <div class="item ok">
-            <i class="fas fa-check-circle status-icon"></i>
-            <div class="text"><strong>contact.html</strong><span>Wasiliana — form + map</span></div>
-            <span class="badge green">SAWA</span>
-        </div>
-
-        <div class="item ok">
-            <i class="fas fa-check-circle status-icon"></i>
-            <div class="text"><strong>pricing.html</strong><span>Madaraja — Pricing, Calculator, Converter</span></div>
-            <span class="badge green">SAWA</span>
-        </div>
-
-        <div class="item warn">
-            <i class="fas fa-exclamation-triangle status-icon"></i>
-            <div class="text"><strong>admin.html</strong><span>Admin panel — inasoma Firebase</span></div>
-            <span class="badge warn">INAHITAJI</span>
-        </div>
-
-        <div class="item bad">
-            <i class="fas fa-times-circle status-icon"></i>
-            <div class="text"><strong>trips.html</strong><span>Ukurasa wa trips — HAPANA</span></div>
-            <span class="badge red">HAIPO</span>
-        </div>
-
-        <div class="item bad">
-            <i class="fas fa-times-circle status-icon"></i>
-            <div class="text"><strong>Video ya Hero</strong><span>hero-video.mp4 — HAPANA</span></div>
-            <span class="badge red">HAIPO</span>
-        </div>
+        <div class="item ok"><i class="fas fa-check-circle status-icon"></i><div class="text"><strong>index.html</strong><span>Ukurasa wa mbele — unafanya kazi</span></div><span class="badge green">SAWA</span></div>
+        <div class="item ok"><i class="fas fa-check-circle status-icon"></i><div class="text"><strong>about.html</strong><span>Kuhusu Sisi — widgets 4</span></div><span class="badge green">SAWA</span></div>
+        <div class="item ok"><i class="fas fa-check-circle status-icon"></i><div class="text"><strong>awards.html</strong><span>Tuzo — Hall of Fame, Nomination</span></div><span class="badge green">SAWA</span></div>
+        <div class="item ok"><i class="fas fa-check-circle status-icon"></i><div class="text"><strong>blog.html</strong><span>Blog — makala 6, newsletter</span></div><span class="badge green">SAWA</span></div>
+        <div class="item ok"><i class="fas fa-check-circle status-icon"></i><div class="text"><strong>booking.html</strong><span>Fomu ya booking — tiers 10</span></div><span class="badge green">SAWA</span></div>
+        <div class="item ok"><i class="fas fa-check-circle status-icon"></i><div class="text"><strong>careers.html</strong><span>JOB — Investor, Talent, Partner</span></div><span class="badge green">SAWA</span></div>
+        <div class="item ok"><i class="fas fa-check-circle status-icon"></i><div class="text"><strong>chatbot.html</strong><span>UNP Assistant — akili ya bot</span></div><span class="badge green">SAWA</span></div>
+        <div class="item ok"><i class="fas fa-check-circle status-icon"></i><div class="text"><strong>contact.html</strong><span>Wasiliana — form + map</span></div><span class="badge green">SAWA</span></div>
+        <div class="item ok"><i class="fas fa-check-circle status-icon"></i><div class="text"><strong>pricing.html</strong><span>Madaraja — Pricing, Calculator, Converter</span></div><span class="badge green">SAWA</span></div>
+        <div class="item warn"><i class="fas fa-exclamation-triangle status-icon"></i><div class="text"><strong>admin.html</strong><span>Admin panel — inasoma Firebase</span></div><span class="badge warn">INAHITAJI</span></div>
+        <div class="item bad"><i class="fas fa-times-circle status-icon"></i><div class="text"><strong>trips.html</strong><span>Ukurasa wa trips — HAPANA</span></div><span class="badge red">HAIPO</span></div>
+        <div class="item bad"><i class="fas fa-times-circle status-icon"></i><div class="text"><strong>Video ya Hero</strong><span>hero-video.mp4 — HAPANA</span></div><span class="badge red">HAIPO</span></div>
     </div>
 
-    <!-- SEHEMU 2: WIDGETS ZILIZOWEKWA -->
     <div class="section">
         <h2><i class="fas fa-puzzle-piece"></i> 2. Widgets Zilizowekwa</h2>
-
-        <div class="item ok">
-            <i class="fas fa-check-circle status-icon"></i>
-            <div class="text"><strong>Tawk.to Live Chat</strong><span>Inafanya kazi kwenye kurasa zote</span></div>
-            <span class="badge green">SAWA</span>
-        </div>
-
-        <div class="item ok">
-            <i class="fas fa-check-circle status-icon"></i>
-            <div class="text"><strong>OneSignal Push</strong><span>Inafanya kazi</span></div>
-            <span class="badge green">SAWA</span>
-        </div>
-
-        <div class="item ok">
-            <i class="fas fa-check-circle status-icon"></i>
-            <div class="text"><strong>GTranslate</strong><span>Lugha 8 — inafanya kazi</span></div>
-            <span class="badge green">SAWA</span>
-        </div>
-
-        <div class="item ok">
-            <i class="fas fa-check-circle status-icon"></i>
-            <div class="text"><strong>Chatbot UNP</strong><span>Inajibu maswali 10+</span></div>
-            <span class="badge green">SAWA</span>
-        </div>
-
-        <div class="item ok">
-            <i class="fas fa-check-circle status-icon"></i>
-            <div class="text"><strong>Elfsight Widgets</strong><span>28 widgets zimewekwa</span></div>
-            <span class="badge green">28</span>
-        </div>
-
-        <div class="item ok">
-            <i class="fas fa-check-circle status-icon"></i>
-            <div class="text"><strong>Google Analytics</strong><span>Inafuatilia wateja</span></div>
-            <span class="badge green">SAWA</span>
-        </div>
-
-        <div class="item ok">
-            <i class="fas fa-check-circle status-icon"></i>
-            <div class="text"><strong>Yandex Metrica</strong><span>Inafanya kazi</span></div>
-            <span class="badge green">SAWA</span>
-        </div>
-
-        <div class="item ok">
-            <i class="fas fa-check-circle status-icon"></i>
-            <div class="text"><strong>Firebase</strong><span>Collections 11 zimeundwa</span></div>
-            <span class="badge green">11</span>
-        </div>
+        <div class="item ok"><i class="fas fa-check-circle status-icon"></i><div class="text"><strong>Tawk.to Live Chat</strong><span>Inafanya kazi kwenye kurasa zote</span></div><span class="badge green">SAWA</span></div>
+        <div class="item ok"><i class="fas fa-check-circle status-icon"></i><div class="text"><strong>OneSignal Push</strong><span>Inafanya kazi</span></div><span class="badge green">SAWA</span></div>
+        <div class="item ok"><i class="fas fa-check-circle status-icon"></i><div class="text"><strong>GTranslate</strong><span>Lugha 8 — inafanya kazi</span></div><span class="badge green">SAWA</span></div>
+        <div class="item ok"><i class="fas fa-check-circle status-icon"></i><div class="text"><strong>Chatbot UNP</strong><span>Inajibu maswali 10+</span></div><span class="badge green">SAWA</span></div>
+        <div class="item ok"><i class="fas fa-check-circle status-icon"></i><div class="text"><strong>Elfsight Widgets</strong><span>28 widgets zimewekwa</span></div><span class="badge green">28</span></div>
+        <div class="item ok"><i class="fas fa-check-circle status-icon"></i><div class="text"><strong>Google Analytics</strong><span>Inafuatilia wateja</span></div><span class="badge green">SAWA</span></div>
+        <div class="item ok"><i class="fas fa-check-circle status-icon"></i><div class="text"><strong>Yandex Metrica</strong><span>Inafanya kazi</span></div><span class="badge green">SAWA</span></div>
+        <div class="item ok"><i class="fas fa-check-circle status-icon"></i><div class="text"><strong>Firebase</strong><span>Collections 11 zimeundwa</span></div><span class="badge green">11</span></div>
     </div>
 
-    <!-- SEHEMU 3: KAZI ZINAZOHITAJIKA -->
     <div class="section">
         <h2><i class="fas fa-tasks"></i> 3. Kazi Zinazohitajika</h2>
-
-        <div class="task priority-1">
-            <input type="checkbox" id="task1">
-            <div class="task-text">
-                <strong>1. Kuweka Trips 19 Firebase</strong>
-                <span>🔴 Muhimu Sana — biashara yako kuu</span>
-            </div>
-        </div>
-
-        <div class="task priority-1">
-            <input type="checkbox" id="task2">
-            <div class="task-text">
-                <strong>2. Kuunda trips.html</strong>
-                <span>🔴 Muhimu — kuonyesha trips kwa wateja</span>
-            </div>
-        </div>
-
-        <div class="task priority-1">
-            <input type="checkbox" id="task3">
-            <div class="task-text">
-                <strong>3. Kufanya admin.html Ifanye Kazi</strong>
-                <span>🔴 Muhimu — kuona bookings na reviews</span>
-            </div>
-        </div>
-
-        <div class="task priority-2">
-            <input type="checkbox" id="task4">
-            <div class="task-text">
-                <strong>4. Kuunganisha Reviews na Firebase</strong>
-                <span>🟡 Maoni ya wateja yaonekane</span>
-            </div>
-        </div>
-
-        <div class="task priority-2">
-            <input type="checkbox" id="task5">
-            <div class="task-text">
-                <strong>5. Kuweka Logo Halisi</strong>
-                <span>🟡 logo.png badala ya dashed</span>
-            </div>
-        </div>
-
-        <div class="task priority-2">
-            <input type="checkbox" id="task6">
-            <div class="task-text">
-                <strong>6. Kuweka Video ya Hero</strong>
-                <span>🟡 hero-video.mp4 au badilisha kwa picha</span>
-            </div>
-        </div>
-
-        <div class="task priority-3">
-            <input type="checkbox" id="task7">
-            <div class="task-text">
-                <strong>7. Kuboresha Chatbot</strong>
-                <span>🟢 Ijibu maswali mbalimbali</span>
-            </div>
-        </div>
-
-        <div class="task priority-3">
-            <input type="checkbox" id="task8">
-            <div class="task-text">
-                <strong>8. Kuzindua Website</strong>
-                <span>🟢 Kuanza kupata wateja</span>
-            </div>
-        </div>
+        <div class="task priority-1"><input type="checkbox" id="task1"><div class="task-text"><strong>1. Kuweka Trips 19 Firebase</strong><span>🔴 Muhimu Sana — biashara yako kuu</span></div></div>
+        <div class="task priority-1"><input type="checkbox" id="task2"><div class="task-text"><strong>2. Kuunda trips.html</strong><span>🔴 Muhimu — kuonyesha trips kwa wateja</span></div></div>
+        <div class="task priority-1"><input type="checkbox" id="task3"><div class="task-text"><strong>3. Kufanya admin.html Ifanye Kazi</strong><span>🔴 Muhimu — kuona bookings na reviews</span></div></div>
+        <div class="task priority-2"><input type="checkbox" id="task4"><div class="task-text"><strong>4. Kuunganisha Reviews na Firebase</strong><span>🟡 Maoni ya wateja yaonekane</span></div></div>
+        <div class="task priority-2"><input type="checkbox" id="task5"><div class="task-text"><strong>5. Kuweka Logo Halisi</strong><span>🟡 logo.png badala ya dashed</span></div></div>
+        <div class="task priority-2"><input type="checkbox" id="task6"><div class="task-text"><strong>6. Kuweka Video ya Hero</strong><span>🟡 hero-video.mp4 au badilisha kwa picha</span></div></div>
+        <div class="task priority-3"><input type="checkbox" id="task7"><div class="task-text"><strong>7. Kuboresha Chatbot</strong><span>🟢 Ijibu maswali mbalimbali</span></div></div>
+        <div class="task priority-3"><input type="checkbox" id="task8"><div class="task-text"><strong>8. Kuzindua Website</strong><span>🟢 Kuanza kupata wateja</span></div></div>
     </div>
 
-    <!-- SEHEMU 4: MAPENDEKEZO -->
     <div class="section">
         <h2><i class="fas fa-lightbulb"></i> 4. Mapendekezo</h2>
-
-        <div class="advice">
-            <h3>🎯 Ushauri wa Kwanza</h3>
-            <p>Anza na <strong>Kuweka Trips 19 Firebase</strong>. Hii ni biashara yako kuu. Bila trips, booking haina maana. Chukua siku moja — weka trips 5 — kisha 5 — kisha 5 — kisha 4. Utakamilisha kwa siku 2.</p>
-        </div>
-
-        <div class="advice">
-            <h3>🎯 Ushauri wa Pili</h3>
-            <p>Kisha <strong>kuunda trips.html</strong>. Ukurasa mmoja — unaonyesha trips zote 20. Kila kadi ina "Book Now" — inaenda booking.html. Hii itarahisisha wateja.</p>
-        </div>
-
-        <div class="advice">
-            <h3>🎯 Ushauri wa Tatu</h3>
-            <p><strong>admin.html</strong> — hii ni kazi ya wiki 1. Kwa sasa, unaweza kuona bookings moja kwa moja kwenye Firebase Console. Hautahitaji admin.html kwa sasa.</p>
-        </div>
-
-        <div class="advice">
-            <h3>🎯 Ushauri wa Nne</h3>
-            <p><strong>Reviews</strong> — weka reviews 5-10 za wateja wa zamani moja kwa moja kwenye Firebase. Kisha kuunganisha na website. Hii itaongeza uaminifu.</p>
-        </div>
-
-        <div class="advice">
-            <h3>🎯 Ushauri wa Tano</h3>
-            <p><strong>Logo</strong> — muhimu sana. Tafuta mtu wa kukutengenezea logo ya kitaalamu. Au — tafuta template kwenye Canva — kisha ibadilishe.</p>
-        </div>
+        <div class="advice"><h3>🎯 Ushauri wa Kwanza</h3><p>Anza na <strong>Kuweka Trips 19 Firebase</strong>. Hii ni biashara yako kuu. Bila trips, booking haina maana. Chukua siku moja — weka trips 5 — kisha 5 — kisha 5 — kisha 4. Utakamilisha kwa siku 2.</p></div>
+        <div class="advice"><h3>🎯 Ushauri wa Pili</h3><p>Kisha <strong>kuunda trips.html</strong>. Ukurasa mmoja — unaonyesha trips zote 20. Kila kadi ina "Book Now" — inaenda booking.html. Hii itarahisisha wateja.</p></div>
+        <div class="advice"><h3>🎯 Ushauri wa Tatu</h3><p><strong>admin.html</strong> — hii ni kazi ya wiki 1. Kwa sasa, unaweza kuona bookings moja kwa moja kwenye Firebase Console. Hautahitaji admin.html kwa sasa.</p></div>
+        <div class="advice"><h3>🎯 Ushauri wa Nne</h3><p><strong>Reviews</strong> — weka reviews 5-10 za wateja wa zamani moja kwa moja kwenye Firebase. Kisha kuunganisha na website. Hii itaongeza uaminifu.</p></div>
+        <div class="advice"><h3>🎯 Ushauri wa Tano</h3><p><strong>Logo</strong> — muhimu sana. Tafuta mtu wa kukutengenezea logo ya kitaalamu. Au — tafuta template kwenye Canva — kisha ibadilishe.</p></div>
     </div>
 
-    <!-- SEHEMU 5: KUMBUKUMBU -->
     <div class="section">
         <h2><i class="fas fa-bell"></i> 5. Kumbukumbu za Kila Siku</h2>
-
-        <div class="item info">
-            <i class="fas fa-clock status-icon"></i>
-            <div class="text"><strong>Kila Asubuhi</strong><span>Angalia dashboard — kama kuna hitilafu mpya</span></div>
-        </div>
-
-        <div class="item info">
-            <i class="fas fa-clock status-icon"></i>
-            <div class="text"><strong>Kila Jioni</strong><span>Angalia bookings mpya kwenye Firebase</span></div>
-        </div>
-
-        <div class="item info">
-            <i class="fas fa-clock status-icon"></i>
-            <div class="text"><strong>Kila Wiki</strong><span>Angalia reviews — approve zilizofaa</span></div>
-        </div>
-
-        <div class="item info">
-            <i class="fas fa-clock status-icon"></i>
-            <div class="text"><strong>Kila Mwezi</strong><span>Angalia Google Analytics — wateja wangapi</span></div>
-        </div>
+        <div class="item info"><i class="fas fa-clock status-icon"></i><div class="text"><strong>Kila Asubuhi</strong><span>Angalia dashboard — kama kuna hitilafu mpya</span></div></div>
+        <div class="item info"><i class="fas fa-clock status-icon"></i><div class="text"><strong>Kila Jioni</strong><span>Angalia bookings mpya kwenye Firebase</span></div></div>
+        <div class="item info"><i class="fas fa-clock status-icon"></i><div class="text"><strong>Kila Wiki</strong><span>Angalia reviews — approve zilizofaa</span></div></div>
+        <div class="item info"><i class="fas fa-clock status-icon"></i><div class="text"><strong>Kila Mwezi</strong><span>Angalia Google Analytics — wateja wangapi</span></div></div>
     </div>
 
-    <!-- SEHEMU 6: MAENDELEO -->
     <div class="section">
         <h2><i class="fas fa-chart-line"></i> 6. Maendeleo ya Website</h2>
-
         <div style="margin-bottom: 20px;">
-            <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
-                <span><strong>Kurasa za HTML</strong></span>
-                <span>30 / 30</span>
-            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 5px;"><span><strong>Kurasa za HTML</strong></span><span>30 / 30</span></div>
             <div class="progress-bar"><div class="progress-fill" style="width: 100%;"></div></div>
             <div class="progress-label"><span>Zimeundwa</span><span>100%</span></div>
         </div>
-
         <div style="margin-bottom: 20px;">
-            <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
-                <span><strong>Firebase Trips</strong></span>
-                <span>1 / 20</span>
-            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 5px;"><span><strong>Firebase Trips</strong></span><span>1 / 20</span></div>
             <div class="progress-bar"><div class="progress-fill" style="width: 5%;"></div></div>
             <div class="progress-label"><span>Zimewekwa</span><span>5%</span></div>
         </div>
-
         <div style="margin-bottom: 20px;">
-            <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
-                <span><strong>Widgets</strong></span>
-                <span>28 / 28</span>
-            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 5px;"><span><strong>Widgets</strong></span><span>28 / 28</span></div>
             <div class="progress-bar"><div class="progress-fill" style="width: 100%;"></div></div>
             <div class="progress-label"><span>Zimewekwa</span><span>100%</span></div>
         </div>
-
         <div style="margin-bottom: 20px;">
-            <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
-                <span><strong>Reviews kwenye Website</strong></span>
-                <span>0 / 10</span>
-            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 5px;"><span><strong>Reviews kwenye Website</strong></span><span>0 / 10</span></div>
             <div class="progress-bar"><div class="progress-fill" style="width: 0%;"></div></div>
             <div class="progress-label"><span>Zimewekwa</span><span>0%</span></div>
         </div>
-
         <div style="margin-bottom: 20px;">
-            <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
-                <span><strong>Admin Panel</strong></span>
-                <span>30 / 100</span>
-            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 5px;"><span><strong>Admin Panel</strong></span><span>30 / 100</span></div>
             <div class="progress-bar"><div class="progress-fill" style="width: 30%;"></div></div>
             <div class="progress-label"><span>Imekamilika</span><span>30%</span></div>
         </div>
     </div>
 
-    <!-- FOOTER -->
     <div class="footer">
         <p><i class="fas fa-lock"></i> Ukurasa huu ni wa siri — hauwezi kuonekana Google</p>
         <p style="margin-top: 8px;">UNP TOURS © 2026 — Unique & Natural Paradise</p>
@@ -496,4 +241,23 @@ body { background: var(--light-bg); color: #333; line-height: 1.6; padding: 20px
 
 <script>
 // TASKS CHECKBOX — Hifadhi kwenye localStorage
-document.que
+document.querySelectorAll('.task input[type="checkbox"]').forEach(cb => {
+    const key = 'unp-task-' + cb.id;
+    if (localStorage.getItem(key) === 'done') {
+        cb.checked = true;
+        cb.closest('.task').classList.add('done');
+    }
+    cb.addEventListener('change', () => {
+        if (cb.checked) {
+            localStorage.setItem(key, 'done');
+            cb.closest('.task').classList.add('done');
+        } else {
+            localStorage.removeItem(key);
+            cb.closest('.task').classList.remove('done');
+        }
+    });
+});
+</script>
+
+</body>
+    </html>
