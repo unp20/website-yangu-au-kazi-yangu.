@@ -3,130 +3,335 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Admin Bookings | UNP TOURS</title>
+<title>Weka Nafasi | UNP TOURS Zanzibar</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="style.css">
+
+<meta name="description" content="Weka nafasi yako ya safari na UNP TOURS. Jaza fomu na tutakujibu haraka.">
+<meta name="keywords" content="UNP booking, Zanzibar booking, Tanzania safari booking, weka nafasi">
+<meta name="author" content="UNP TOURS Zanzibar">
+<meta name="robots" content="index, follow">
+
+<meta property="og:title" content="Weka Nafasi | UNP TOURS Zanzibar">
+<meta property="og:description" content="Weka nafasi yako ya safari na UNP TOURS.">
+<meta property="og:image" content="https://unp.tours/images/logo.png">
+<meta property="og:url" content="https://unp.tours/booking.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="UNP TOURS">
+
+<link rel="canonical" href="https://unp.tours/booking.html">
+
 <style>
-body { font-family: 'Poppins', sans-serif; background: #f8f9fa; padding: 20px; color: #333; }
-.container { max-width: 1200px; margin: 0 auto; }
-.header { background: linear-gradient(135deg, #082f49, #0c4a6e); color: #fff; padding: 30px; border-radius: 15px; text-align: center; margin-bottom: 20px; border-bottom: 5px solid #d4af37; }
-.header h1 { color: #d4af37; margin-bottom: 10px; }
-.box { background: #fff; padding: 25px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); margin-bottom: 20px; }
-.box h2 { color: #0c4a6e; margin-bottom: 15px; }
-.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-bottom: 20px; }
-.stat { background: #fff; padding: 20px; border-radius: 12px; text-align: center; box-shadow: 0 3px 10px rgba(0,0,0,0.05); border-top: 4px solid #d4af37; }
-.stat h3 { font-size: 1.8rem; color: #0c4a6e; margin-bottom: 5px; }
-.stat p { font-size: 0.85rem; color: #777; }
-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 10px; overflow: hidden; }
-th { background: #0c4a6e; color: #fff; padding: 12px; text-align: left; font-size: 0.85rem; }
-td { padding: 12px; border-bottom: 1px solid #eee; font-size: 0.85rem; color: #555; }
-tr:hover { background: #f9f9f9; }
-.btn { background: #d4af37; color: #082f49; padding: 10px 20px; border: none; border-radius: 25px; font-weight: 700; cursor: pointer; font-size: 0.9rem; }
-.btn:hover { background: #082f49; color: #d4af37; }
-#loading { text-align: center; padding: 20px; color: #777; }
+    :root {
+        --ocean-blue: #0c4a6e;
+        --deep-navy: #082f49;
+        --gold: #d4af37;
+        --gold-light: #f0c75e;
+        --light-bg: #f8f9fa;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body { background-color: var(--light-bg); color: #333; line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+
+    /* HEADER */
+    .top-bar { background: var(--deep-navy); padding: 8px 20px; display: flex; justify-content: flex-end; align-items: center; gap: 15px; }
+    .header { background: var(--ocean-blue); padding: 15px 20px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; position: relative; }
+    .logo-area { display: flex; align-items: center; gap: 15px; }
+    .logo-holder { width: 60px; height: 60px; border: 2px dashed var(--gold); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+    .logo-fallback { color: var(--gold); font-weight: 700; font-size: 0.7rem; text-align: center; line-height: 1.1; }
+    .logo-text h2 { color: #fff; font-size: 1.3rem; font-weight: 700; }
+    .logo-text span { color: var(--gold); font-size: 0.8rem; }
+    .nav-links { display: flex; gap: 20px; list-style: none; }
+    .nav-links a { color: #fff; font-size: 0.85rem; display: flex; align-items: center; gap: 5px; }
+    .nav-links a:hover { color: var(--gold); }
+    .menu-toggle { display: none; background: none; border: none; color: var(--gold); font-size: 26px; cursor: pointer; }
+
+    /* HERO */
+    .hero { background: linear-gradient(135deg, var(--deep-navy), var(--ocean-blue)); color: #fff; text-align: center; padding: 70px 20px; border-bottom: 5px solid var(--gold); }
+    .hero h1 { font-size: 2.2rem; color: var(--gold); margin-bottom: 10px; }
+    .hero p { font-size: 1rem; color: #ddd; max-width: 700px; margin: 0 auto; }
+
+    /* BOOKING WRAPPER */
+    .booking-wrapper { max-width: 900px; margin: 0 auto; padding: 20px; }
+    .booking-info { background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin-bottom: 25px; border-left: 5px solid var(--gold); }
+    .booking-info h3 { color: var(--ocean-blue); margin-bottom: 12px; font-size: 1.2rem; }
+    .booking-info p { color: #555; font-size: 0.95rem; line-height: 1.8; }
+    .highlight { background: transparent; padding: 0; border-radius: 0; font-weight: 600; color: #555; }
+
+    .form-container { background: #fff; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); margin-bottom: 25px; }
+    .form-container h2 { color: var(--ocean-blue); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+    .form-container h2 i { color: var(--gold); }
+    .form-section-title { color: var(--ocean-blue); margin: 25px 0 15px; font-size: 1.1rem; border-left: 4px solid var(--gold); padding-left: 10px; }
+
+    .form-group { margin-bottom: 18px; }
+    .form-group label { display: block; font-weight: 600; color: var(--deep-navy); margin-bottom: 6px; font-size: 0.9rem; }
+    .form-group input, .form-group select, .form-group textarea {
+        width: 100%; padding: 12px 15px;
+        border: 2px solid #ddd; border-radius: 8px;
+        font-family: 'Poppins', sans-serif; font-size: 0.95rem;
+        transition: border-color 0.3s;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: var(--gold); }
+
+    /* TIER-OPTION */
+    .tier-option {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 15px !important;
+        padding: 16px 18px !important;
+        border: 2px solid #e5e7eb !important;
+        border-radius: 12px !important;
+        margin-bottom: 12px !important;
+        cursor: pointer !important;
+        background: #fff !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        transition: all 0.3s ease !important;
+        position: relative !important;
+    }
+    .tier-option:hover { border-color: var(--gold) !important; background: #fffdf7 !important; transform: translateY(-2px) !important; box-shadow: 0 6px 20px rgba(212, 175, 55, 0.15) !important; }
+    .tier-option input[type="radio"] { width: 22px !important; height: 22px !important; min-width: 22px !important; max-width: 22px !important; flex: 0 0 22px !important; margin: 0 !important; padding: 0 !important; display: inline-block !important; accent-color: var(--ocean-blue) !important; cursor: pointer !important; }
+    .tier-option .tier-details { flex: 1 1 auto !important; min-width: 0 !important; display: block !important; }
+    .tier-option .tier-details h4 { margin: 0 0 4px 0 !important; color: var(--deep-navy) !important; font-size: 1rem !important; font-weight: 700 !important; line-height: 1.3 !important; display: block !important; }
+    .tier-option .tier-details p { margin: 0 !important; font-size: 0.85rem !important; color: #6b7280 !important; line-height: 1.4 !important; display: block !important; }
+    .tier-option .tier-badge { margin-left: auto !important; font-weight: 700 !important; font-size: 0.75rem !important; background: var(--gold) !important; color: var(--deep-navy) !important; padding: 6px 14px !important; border-radius: 20px !important; white-space: nowrap !important; flex: 0 0 auto !important; display: inline-block !important; min-width: 70px !important; text-align: center !important; text-transform: uppercase !important; letter-spacing: 0.5px !important; border: none !important; }
+    .tier-option:has(input[type="radio"]:checked) { border-color: var(--ocean-blue) !important; background: #f0f7ff !important; box-shadow: 0 4px 15px rgba(12, 74, 110, 0.15) !important; }
+    .tier-option:has(input[type="radio"]:checked) .tier-badge { background: var(--ocean-blue) !important; color: #ffffff !important; }
+
+    /* BUTTONS */
+    .btn-primary { background: var(--gold); color: var(--deep-navy); padding: 14px 30px; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 1rem; transition: 0.3s; display: inline-block; text-align: center; }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .btn-full { width: 100%; }
+
+    /* FOOTER */
+    .footer { background: var(--deep-navy); color: #fff; padding: 40px 20px; margin-top: 40px; }
+    .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+    .footer h3, .footer h4 { color: var(--gold); margin-bottom: 15px; }
+    .social-links { display: flex; gap: 15px; margin-top: 15px; }
+    .social-links a { color: var(--gold); font-size: 1.2rem; }
+
+    /* FLOATING WHATSAPP */
+    .floating-whatsapp { position: fixed; bottom: 25px; right: 25px; background: #25d366; color: #fff; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 1100; }
+
+    /* CHATBOT */
+    .chatbot-toggle { position: fixed; bottom: 100px; right: 25px; background-color: var(--ocean-blue); color: var(--gold); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 1100; cursor: pointer; border: 2px solid var(--gold); }
+    .chatbot-container { position: fixed; bottom: 170px; right: 25px; width: 350px; max-width: 90vw; height: 500px; background: #fff; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); z-index: 1100; display: none; flex-direction: column; overflow: hidden; border: 2px solid var(--gold); }
+    .chatbot-container.active { display: flex; }
+    .chatbot-header { background: var(--ocean-blue); color: #fff; padding: 15px; display: flex; align-items: center; gap: 10px; }
+    .chatbot-header .avatar { width: 40px; height: 40px; background: var(--gold); color: var(--deep-navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; }
+    .chatbot-header h4 { margin: 0; font-size: 1rem; color: #fff; }
+    .chatbot-header span { font-size: 0.75rem; color: #ddd; display: block; }
+    .chatbot-messages { flex-grow: 1; padding: 15px; overflow-y: auto; background: #f9f9f9; display: flex; flex-direction: column; gap: 10px; }
+    .message { max-width: 80%; padding: 10px 15px; border-radius: 15px; font-size: 0.85rem; }
+    .message.bot { background: #e9ecef; align-self: flex-start; }
+    .message.user { background: var(--ocean-blue); color: #fff; align-self: flex-end; }
+    .chatbot-input { display: flex; padding: 10px; border-top: 1px solid #eee; }
+    .chatbot-input input { flex-grow: 1; padding: 10px; border: 1px solid #ddd; border-radius: 20px; outline: none; }
+    .chatbot-input button { background: var(--gold); color: var(--deep-navy); border: none; width: 40px; height: 40px; border-radius: 50%; margin-left: 8px; cursor: pointer; }
+
+    .gtranslate_wrapper { position: relative; }
+
+    @media (max-width: 768px) {
+        .menu-toggle { display: block; }
+        .nav-links { display: none; flex-direction: column; width: 100%; background: var(--deep-navy); padding: 20px; position: absolute; top: 100%; left: 0; right: 0; z-index: 999; border-top: 2px solid var(--gold); }
+        .nav-links.active { display: flex; }
+        .nav-links li { width: 100%; }
+        .nav-links a { padding: 10px 0; width: 100%; }
+        .tier-option { padding: 12px 10px !important; gap: 10px !important; flex-wrap: nowrap !important; align-items: center !important; }
+        .tier-option input[type="radio"] { width: 18px !important; height: 18px !important; min-width: 18px !important; max-width: 18px !important; flex: 0 0 18px !important; }
+        .tier-option .tier-details h4 { font-size: 0.9rem !important; }
+        .tier-option .tier-details p { font-size: 0.75rem !important; }
+        .tier-option .tier-badge { font-size: 0.65rem !important; padding: 4px 8px !important; min-width: 55px !important; }
+        .hero h1 { font-size: 1.6rem; }
+    }
 </style>
 </head>
 <body>
-<div class="container">
-    <div class="header">
-        <h1><i class="fas fa-calendar-check"></i> Admin — Bookings</h1>
-        <p>Angalia bookings zote kutoka Firebase Firestore</p>
-    </div>
 
-    <div class="stats">
-        <div class="stat"><h3 id="totalBookings">0</h3><p>Bookings Zote</p></div>
-        <div class="stat"><h3 id="pendingBookings">0</h3><p>Zinasubiri</p></div>
-        <div class="stat"><h3 id="confirmedBookings">0</h3><p>Zimethibitishwa</p></div>
-    </div>
-
-    <div class="box">
-        <h2><i class="fas fa-list"></i> Bookings Zote</h2>
-        <button class="btn" onclick="loadBookings()"><i class="fas fa-sync"></i> Refresh</button>
-        <div id="loading">Inapakia...</div>
-        <div style="overflow-x: auto; margin-top: 15px;">
-            <table id="bookingsTable" style="display: none;">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Jina</th>
-                        <th>Email</th>
-                        <th>Simu</th>
-                        <th>Daraja</th>
-                        <th>Tarehe</th>
-                        <th>Watu</th>
-                        <th>Hali</th>
-                    </tr>
-                </thead>
-                <tbody id="bookingsBody"></tbody>
-            </table>
-        </div>
-    </div>
+<div class="top-bar">
+    <div class="gtranslate_wrapper"></div>
 </div>
 
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
-import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+<header class="header">
+    <div class="nav-container">
+        <a href="index.html" class="logo-area">
+            <div class="logo-holder"><span class="logo-fallback">UNP<br>LOGO</span></div>
+            <div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
+        </a>
+        <button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html"><i class="fas fa-home"></i> Nyumbani</a></li>
+            <li><a href="about.html"><i class="fas fa-info-circle"></i> Kuhusu Sisi</a></li>
+            <li><a href="services.html"><i class="fas fa-briefcase"></i> Huduma</a></li>
+            <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
+            <li><a href="pricing.html"><i class="fas fa-layer-group"></i> Madaraja</a></li>
+            <li><a href="booking.html" style="color: var(--gold);"><i class="fas fa-calendar-check"></i> Weka Nafasi</a></li>
+            <li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Wasiliana</a></li>
+        </ul>
+    </div>
+</header>
 
-const firebaseConfig = {
-    apiKey: "AIzaSyD2YtPFL2L_ZwAKdSYpXtvLt8gJUm2IX6s",
-    authDomain: "unptours.firebaseapp.com",
-    projectId: "unptours",
-    storageBucket: "unptours.firebasestorage.app",
-    messagingSenderId: "233326851661",
-    appId: "1:233326851661:web:354156110a5cee29904e04"
-};
+<section class="hero">
+    <h1>Weka Nafasi Yako</h1>
+    <p>Jaza fomu hapa chini na tutakujibu haraka iwezekanavyo.</p>
+</section>
 
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+<div class="booking-wrapper">
 
-window.loadBookings = async function() {
-    const loading = document.getElementById('loading');
-    const table = document.getElementById('bookingsTable');
-    const tbody = document.getElementById('bookingsBody');
-    loading.style.display = 'block';
-    table.style.display = 'none';
-    tbody.innerHTML = '';
+    <div class="booking-info">
+        <h3><i class="fas fa-heart"></i> Karibu UNP Family — Nyumbani Kwako</h3>
+        <p>
+            <strong>Wewe si mgeni — wewe ni sehemu ya familia yetu.</strong> 
+            Hapa tunaandaa safari zenye upendo, heshima, na furaha ya kukumbukwa milele.
+        </p>
+        <p style="margin-top: 12px;">
+            Jaza fomu hii kwa urahisi. Ukiisha jaza, 
+            <span class="highlight">tunarudi kwako mara moja na ofa maalum iliyoandaliwa kwa heshima yako</span>.
+        </p>
+        <p style="margin-top: 12px; color: #0c4a6e; font-weight: 600; font-style: italic;">
+            🌴 Karibu nyumbani. Tunakusubiri kwa furaha! ✨
+        </p>
+    </div>
 
-    try {
-        const snap = await getDocs(collection(db, "bookings"));
-        let total = 0, pending = 0, confirmed = 0;
+    <section class="form-container">
+        <h2><i class="fas fa-calendar-check"></i> Fomu ya Kuweka Nafasi</h2>
 
-        snap.forEach((doc) => {
-            const d = doc.data();
-            total++;
-            if (d.status === 'Imethibitishwa') confirmed++;
-            else pending++;
+        <form id="bookingForm">
 
-            tbody.innerHTML += `<tr>
-                <td>${total}</td>
-                <td>${d.name || '-'}</td>
-                <td>${d.email || '-'}</td>
-                <td>${d.contact || d.phone || '-'}</td>
-                <td>${d.tier || d.package || '-'}</td>
-                <td>${d.date || '-'}</td>
-                <td>${d.guests || '-'}</td>
-                <td>${d.status || 'Inasubiri'}</td>
-            </tr>`;
-        });
+            <h3 class="form-section-title"><i class="fas fa-layer-group"></i> Hatua 1: Chagua Daraja Lako</h3>
 
-        document.getElementById('totalBookings').textContent = total;
-        document.getElementById('pendingBookings').textContent = pending;
-        document.getElementById('confirmedBookings').textContent = confirmed;
+            <label class="tier-option">
+                <input type="radio" name="tier" value="Solo Traveler">
+                <div class="tier-details"><h4>Solo Traveler</h4><p>Kwa mtu mmoja anayetaka uhuru wake.</p></div>
+                <span class="tier-badge">Solo</span>
+            </label>
 
-        loading.style.display = 'none';
-        table.style.display = 'table';
+            <label class="tier-option">
+                <input type="radio" name="tier" value="Couple / Honeymoon">
+                <div class="tier-details"><h4>Couple / Honeymoon</h4><p>Kwa wanandoa na wapenzi.</p></div>
+                <span class="tier-badge">Couple</span>
+            </label>
 
-        if (total === 0) {
-            loading.textContent = 'Hakuna bookings bado.';
-            loading.style.display = 'block';
-        }
-    } catch (e) {
-        loading.textContent = 'Kosa: ' + e.message;
-    }
-};
+            <label class="tier-option">
+                <input type="radio" name="tier" value="Family (Small)">
+                <div class="tier-details"><h4>Family (Small)</h4><p>Familia ndogo (watu 3-5).</p></div>
+                <span class="tier-badge">Family</span>
+            </label>
 
-window.addEventListener('load', loadBookings);
-</script>
-</body>
-          </html>
+            <label class="tier-option">
+                <input type="radio" name="tier" value="Family (Large)">
+                <div class="tier-details"><h4>Family (Large)</h4><p>Familia kubwa (watu 6+).</p></div>
+                <span class="tier-badge">Family+</span>
+            </label>
+
+            <label class="tier-option">
+                <input type="radio" name="tier" value="Executive / Business">
+                <div class="tier-details"><h4>Executive / Business</h4><p>Kwa wafanyabiashara na viongozi.</p></div>
+                <span class="tier-badge">Executive</span>
+            </label>
+
+            <label class="tier-option">
+                <input type="radio" name="tier" value="Royal / Celebrity">
+                <div class="tier-details"><h4>Royal / Celebrity</h4><p>Kwa matajiri na celebrities.</p></div>
+                <span class="tier-badge">Royal</span>
+            </label>
+
+            <label class="tier-option">
+                <input type="radio" name="tier" value="Government / Diplomatic">
+                <div class="tier-details"><h4>Government / Diplomatic</h4><p>Kwa viongozi wa serikali na mabalozi.</p></div>
+                <span class="tier-badge">Government</span>
+            </label>
+
+            <label class="tier-option">
+                <input type="radio" name="tier" value="King / Queen">
+                <div class="tier-details"><h4>King / Queen</h4><p>Kwa wafalme na malkia.</p></div>
+                <span class="tier-badge">King</span>
+            </label>
+
+            <label class="tier-option">
+                <input type="radio" name="tier" value="President / Head of State">
+                <div class="tier-details"><h4>President / Head of State</h4><p>Kwa marais na wakuu wa nchi.</p></div>
+                <span class="tier-badge">President</span>
+            </label>
+
+            <label class="tier-option">
+                <input type="radio" name="tier" value="Divine / God Tier">
+                <div class="tier-details"><h4>Divine / God Tier</h4><p>Kwa Mungu na miungu.</p></div>
+                <span class="tier-badge">Divine</span>
+            </label>
+
+            <h3 class="form-section-title"><i class="fas fa-user"></i> Hatua 2: Taarifa Zako</h3>
+
+            <div class="form-group">
+                <label>Jina Lako Kamili:</label>
+                <input type="text" id="guestName" placeholder="Weka jina lako kamili" required>
+            </div>
+
+            <div class="form-group">
+                <label>Barua Pepe:</label>
+                <input type="email" id="guestEmail" placeholder="email@domain.com" required>
+            </div>
+
+            <div class="form-group">
+                <label>Namba ya Simu / WhatsApp:</label>
+                <input type="tel" id="guestContact" placeholder="+255..." required>
+            </div>
+
+            <div class="form-group">
+                <label>Nchi Unayotoka:</label>
+                <input type="text" id="guestCountry" placeholder="Mfano: Tanzania, USA" required>
+            </div>
+
+            <h3 class="form-section-title"><i class="fas fa-calendar-alt"></i> Hatua 3: Tarehe na Idadi</h3>
+
+            <div class="form-group">
+                <label>Tarehe Unayotaka:</label>
+                <input type="date" id="guestDate" required>
+            </div>
+
+            <div class="form-group">
+                <label>Idadi ya Watu:</label>
+                <input type="number" id="guestCount" min="1" value="2" required>
+            </div>
+
+            <div class="form-group">
+                <label>Chagua Aina ya Safari (Hiari):</label>
+                <select id="guestService">
+                    <option value="">Chagua...</option>
+                    <option value="Zanzibar Excursions">Zanzibar Excursions</option>
+                    <option value="Jozani Forest">Jozani Forest</option>
+                    <option value="Safari Blue">Safari Blue</option>
+                    <option value="Dolphin Tour">Dolphin Tour</option>
+                    <option value="Tanzania Safari">Tanzania Safari</option>
+                    <option value="Serengeti Migration">Serengeti Migration</option>
+                    <option value="Ngorongoro Crater">Ngorongoro Crater</option>
+                    <option value="Kilimanjaro Trekking">Kilimanjaro Trekking</option>
+                    <option value="VIP Experience">VIP Experience</option>
+                    <option value="Vehicle Rentals">Vehicle Rentals</option>
+                    <option value="VIP Luxury">VIP Luxury</option>
+                    <option value="Water Sports">Water Sports</option>
+                    <option value="Cultural Tour">Cultural Tour</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Ujumbe wa Ziada (Hiari):</label>
+                <textarea id="guestMessage" rows="4" placeholder="Tuambie zaidi kuhusu safari unayotaka..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary btn-full">
+                <i class="fas fa-paper-plane"></i> Tuma Ombi Lako
+            </button>
+
+        </form>
+    </section>
+
+</div>
+
+<footer class="footer">
+    <div class="footer-content">
+ 
