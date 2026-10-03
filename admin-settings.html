@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Settings | UNP TOURS</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta name="robots" content="noindex, nofollow">
+<style>
+body { font-family: 'Poppins', sans-serif; background: #f8f9fa; padding: 20px; color: #333; }
+.container { max-width: 900px; margin: 0 auto; }
+.header { background: linear-gradient(135deg, #082f49, #0c4a6e); color: #fff; padding: 30px; border-radius: 15px; text-align: center; margin-bottom: 20px; border-bottom: 5px solid #d4af37; }
+.header h1 { color: #d4af37; margin-bottom: 10px; }
+.box { background: #fff; padding: 25px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); margin-bottom: 20px; }
+.box h2 { color: #0c4a6e; margin-bottom: 15px; }
+.form-group { margin-bottom: 15px; }
+.form-group label { display: block; font-weight: 600; color: #082f49; margin-bottom: 5px; font-size: 0.9rem; }
+.form-group input, .form-group textarea, .form-group select { width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-family: 'Poppins', sans-serif; font-size: 0.95rem; }
+.form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline: none; border-color: #d4af37; }
+.btn { background: #d4af37; color: #082f49; padding: 12px 25px; border: none; border-radius: 25px; font-weight: 700; cursor: pointer; font-size: 0.95rem; }
+.btn:hover { background: #082f49; color: #d4af37; }
+.info-box { background: #f9f9f9; padding: 20px; border-radius: 10px; border-left: 4px solid #d4af37; margin-bottom: 15px; }
+.info-box h4 { color: #082f49; margin-bottom: 8px; font-size: 1.05rem; }
+.info-box p { font-size: 0.9rem; color: #555; line-height: 1.6; }
+#msg { text-align: center; padding: 15px; border-radius: 10px; margin-top: 15px; font-weight: 600; display: none; }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1><i class="fas fa-cog"></i> Admin — Mipangilio</h1>
+        <p>Badilisha mipangilio ya website na mifumo</p>
+    </div>
+
+    <div class="box">
+        <h2><i class="fas fa-building"></i> Taarifa za Kampuni</h2>
+        <div class="form-group">
+            <label>Jina la Kampuni:</label>
+            <input type="text" id="setCompany" value="UNP TOURS - Unique & Natural Paradise">
+        </div>
+        <div class="form-group">
+            <label>Barua Pepe:</label>
+            <input type="email" id="setEmail" value="salimnasoro11@gmail.com">
+        </div>
+        <div class="form-group">
+            <label>Namba ya Simu:</label>
+            <input type="tel" id="setPhone" value="+255 655 728 982">
+        </div>
+        <div class="form-group">
+            <label>Mahali:</label>
+            <input type="text" id="setLocation" value="Zanzibar, Tanzania">
+        </div>
+    </div>
+
+    <div class="box">
+        <h2><i class="fas fa-globe"></i> Mipangilio ya Website</h2>
+        <div class="form-group">
+            <label>Domain:</label>
+            <input type="text" id="setDomain" value="unp.tours">
+        </div>
+        <div class="form-group">
+            <label>Lugha ya Msingi:</label>
+            <select id="setLanguage">
+                <option value="sw">Kiswahili</option>
+                <option value="en">Kiingereza</option>
+                <option value="fr">Kifaransa</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Rangi ya Msingi:</label>
+            <input type="text" id="setColor" value="#d4af37">
+        </div>
+    </div>
+
+    <div class="box">
+        <h2><i class="fas fa-share-alt"></i> Mitandao ya Kijamii</h2>
+        <div class="form-group">
+            <label>WhatsApp:</label>
+            <input type="text" id="setWhatsapp" value="+255 655 728 982">
+        </div>
+        <div class="form-group">
+            <label>Instagram:</label>
+            <input type="text" id="setInstagram" value="unpsoulvoyoge">
+        </div>
+        <div class="form-group">
+            <label>TikTok:</label>
+            <input type="text" id="setTiktok" value="unptours">
+        </div>
+        <div class="form-group">
+            <label>Facebook:</label>
+            <input type="text" id="setFacebook" value="UNP TOURS">
+        </div>
+    </div>
+
+    <div class="box">
+        <h2><i class="fas fa-database"></i> Mipangilio ya Firebase</h2>
+        <div class="info-box">
+            <h4>Project ID</h4>
+            <p>unptours</p>
+        </div>
+        <div class="info-box">
+            <h4>Collections</h4>
+            <p>trips, bookings, reviews, messages, users, applications, careers, nominations, newsletter, payments, chats</p>
+        </div>
+        <div class="info-box">
+            <h4>Auth Domain</h4>
+            <p>unptours.firebaseapp.com</p>
+        </div>
+    </div>
+
+    <div class="box" style="text-align: center;">
+        <button class="btn" onclick="saveSettings()"><i class="fas fa-save"></i> Hifadhi Mipangilio</button>
+        <div id="msg"></div>
+    </div>
+</div>
+
+<script>
+function saveSettings() {
+    const msg = document.getElementById('msg');
+    const settings = {
+        company: document.getElementById('setCompany').value,
+        email: document.getElementById('setEmail').value,
+        phone: document.getElementById('setPhone').value,
+        location: document.getElementById('setLocation').value,
+        domain: document.getElementById('setDomain').value,
+        language: document.getElementById('setLanguage').value,
+        color: document.getElementById('setColor').value,
+        whatsapp: document.getElementById('setWhatsapp').value,
+        instagram: document.getElementById('setInstagram').value,
+        tiktok: document.getElementById('setTiktok').value,
+        facebook: document.getElementById('setFacebook').value
+    };
+
+    localStorage.setItem('unpSettings', JSON.stringify(settings));
+
+    msg.style.display = 'block';
+    msg.style.background = '#d4edda';
+    msg.style.color = '#155724';
+    msg.textContent = 'Mipangilio imehifadhiwa kwa mafanikio!';
+    setTimeout(() => { msg.style.display = 'none'; }, 3000);
+}
+
+// Load saved settings
+window.addEventListener('load', function() {
+    const saved = localStorage.getItem('unpSettings');
+    if (saved) {
+        const s = JSON.parse(saved);
+        if (s.company) document.getElementById('setCompany').value = s.company;
+        if (s.email) document.getElementById('setEmail').value = s.email;
+        if (s.phone) document.getElementById('setPhone').value = s.phone;
+        if (s.location) document.getElementById('setLocation').value = s.location;
+        if (s.domain) document.getElementById('setDomain').value = s.domain;
+        if (s.language) document.getElementById('setLanguage').value = s.language;
+        if (s.color) document.getElementById('setColor').value = s.color;
+        if (s.whatsapp) document.getElementById('setWhatsapp').value = s.whatsapp;
+        if (s.instagram) document.getElementById('setInstagram').value = s.instagram;
+        if (s.tiktok) document.getElementById('setTiktok').value = s.tiktok;
+        if (s.facebook) document.getElementById('setFacebook').value = s.facebook;
+    }
+});
+</script>
+</body>
+  </html>
