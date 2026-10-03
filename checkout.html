@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout | UNP TOURS</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<meta name="description" content="Checkout - Kukamilisha malipo UNP TOURS.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://unp.tours/checkout.html">
+<style>
+.checkout-header { background: linear-gradient(135deg, #082f49, #0c4a6e); color: #fff; text-align: center; padding: 70px 20px; border-bottom: 5px solid #d4af37; }
+.checkout-header h1 { font-size: 2.5rem; color: #d4af37; margin-bottom: 10px; }
+.checkout-header p { font-size: 1.1rem; color: #ddd; max-width: 700px; margin: 0 auto; }
+.checkout-container { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+.checkout-box { background: #fff; border-radius: 15px; padding: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); border-top: 5px solid #d4af37; margin-bottom: 20px; }
+.checkout-box h2 { color: #0c4a6e; margin-bottom: 20px; }
+.form-group { margin-bottom: 15px; }
+.form-group label { display: block; font-weight: 600; color: #082f49; margin-bottom: 5px; font-size: 0.9rem; }
+.form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-family: 'Poppins', sans-serif; font-size: 0.95rem; }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: #d4af37; }
+.btn-submit { background: #d4af37; color: #082f49; padding: 15px 32px; border: none; border-radius: 25px; font-weight: 700; cursor: pointer; font-size: 1rem; width: 100%; }
+.btn-submit:hover { background: #082f49; color: #d4af37; }
+.summary-item { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px dashed #eee; font-size: 0.9rem; color: #555; }
+.summary-item.total { border-bottom: none; border-top: 2px solid #d4af37; margin-top: 10px; padding-top: 15px; font-weight: 700; font-size: 1.1rem; color: #082f49; }
+#msg { text-align: center; padding: 15px; border-radius: 10px; margin-top: 15px; font-weight: 600; display: none; }
+</style>
+</head>
+<body>
+
+<header class="header">
+    <div class="nav-container">
+        <a href="index.html" class="logo-area">
+            <div class="logo-holder"><span class="logo-fallback">UNP<br>LOGO</span></div>
+            <div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
+        </a>
+        <button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html"><i class="fas fa-home"></i> Nyumbani</a></li>
+            <li><a href="trips.html"><i class="fas fa-suitcase-rolling"></i> Trips</a></li>
+            <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+            <li><a href="checkout.html" style="color: #d4af37;"><i class="fas fa-credit-card"></i> Checkout</a></li>
+            <li><a href="contact.html"><i class="fas fa-envelope"></i> Wasiliana</a></li>
+        </ul>
+    </div>
+</header>
+
+<section class="checkout-header">
+    <h1><i class="fas fa-credit-card"></i> Checkout</h1>
+    <p>Kamilisha malipo yako — tutakujibu haraka.</p>
+</section>
+
+<div class="checkout-container">
+    <div class="checkout-box">
+        <h2><i class="fas fa-user"></i> Taarifa Zako</h2>
+        <form id="checkoutForm">
+            <div class="form-group"><label>Jina Lako Kamili:</label><input type="text" id="coName" required></div>
+            <div class="form-group"><label>Barua Pepe:</label><input type="email" id="coEmail" required></div>
+            <div class="form-group"><label>Namba ya Simu / WhatsApp:</label><input type="tel" id="coPhone" required></div>
+            <div class="form-group"><label>Nchi Unayotoka:</label><input type="text" id="coCountry" required></div>
+            <div class="form-group"><label>Tarehe ya Safari:</label><input type="date" id="coDate" required></div>
+            <div class="form-group"><label>Idadi ya Watu:</label><input type="number" id="coGuests" min="1" value="2" required></div>
+            <div class="form-group"><label>Njia ya Malipo:</label>
+                <select id="coPayment" required>
+                    <option value="">Chagua...</option>
+                    <option value="M-Pesa">M-Pesa</option>
+                    <option value="Tigo Pesa">Tigo Pesa</option>
+                    <option value="Airtel Money">Airtel Money</option>
+                    <option value="Visa/Mastercard">Visa / Mastercard</option>
+                    <option value="PayPal">PayPal</option>
+                    <option value="Bank Transfer">Bank Transfer</option>
+                </select>
+            </div>
+            <div class="form-group"><label>Maelezo ya Ziada:</label><textarea id="coNotes" rows="3" placeholder="Mahitaji maalum..."></textarea></div>
+        </form>
+    </div>
+
+    <div class="checkout-box">
+        <h2><i class="fas fa-list"></i> Muhtasari wa Cart</h2>
+        <div id="cartSummary">Inapakia...</div>
+        <button class="btn-submit" onclick="submitCheckout()"><i class="fab fa-whatsapp"></i> Kamilisha kwa WhatsApp</button>
+        <div id="msg"></div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="footer-content">
+        <div>
+            <h3>UNIQUE NATURE PARADISE (UNP)</h3>
+            <p style="font-size: 0.9rem;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p>
+        </div>
+        <div>
+            <h4>Direct Contact</h4>
+            <p style="font-size: 0.9rem;"><i class="fab fa-whatsapp" style="color: #d4af37;"></i> +255 655 728 982</p>
+            <p style="font-size: 0.9rem;"><i class="fas fa-envelope" style="color: #d4af37;"></i> salimnasoro11@gmail.com</p>
+        </div>
+    </div>
+</footer>
+
+<a href="https://wa.me/255655728982" class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<script>
+function loadSummary() {
+    const summary = document.getElementById('cartSummary');
+    const cart = JSON.parse(localStorage.getItem('unpCart') || '[]');
+
+    if (cart.length === 0) {
+        summary.innerHTML = '<p style="color:#777;">Cart ni tupu. <a href="trips.html" style="color:#0c4a6e; font-weight:600;">Ongeza trips</a></p>';
+        return;
+    }
+
+    let total = 0;
+    let html = '';
+    cart.forEach(item => {
+        total += parseFloat(item.price || 0);
+        html += `<div class="summary-item"><span>${item.name || 'Trip'}</span><span>$${item.price || '0'}</span></div>`;
+    });
+    html += `<div class="summary-item total"><span>Jumla</span><span>$${total.toFixed(2)}</span></div>`;
+    summary.innerHTML = html;
+}
+
+window.submitCheckout = function() {
+    const msg = document.getElementById('msg');
+    const name = document.getElementById('coName').value;
+    const email = document.getElementById('coEmail').value;
+    const phone = document.getElementById('coPhone').value;
+    const country = document.getElementById('coCountry').value;
+    const date = document.getElementById('coDate').value;
+    const guests = document.getElementById('coGuests').value;
+    const payment = document.getElementById('coPayment').value;
+    const notes = document.getElementById('coNotes').value;
+
+    if (!name || !email || !phone || !country || !date || !payment) {
+        msg.style.display = 'block';
+        msg.style.background = '#f8d7da';
+        msg.style.color = '#721c24';
+        msg.textContent = 'Tafadhali jaza taarifa zote!';
+        return;
+    }
+
+    const cart = JSON.parse(localStorage.getItem('unpCart') || '[]');
+    let items = cart.map(i => i.name).join(', ');
+    let total = cart.reduce((sum, i) => sum + parseFloat(i.price || 0), 0);
+
+    let message = '*UNP TOURS - CHECKOUT*%0A%0A';
+    message += '*Jina:* ' + encodeURIComponent(name) + '%0A';
+    message += '*Email:* ' + encodeURIComponent(email) + '%0A';
+    message += '*Simu:* ' + encodeURIComponent(phone) + '%0A';
+    message += '*Nchi:* ' + encodeURIComponent(country) + '%0A';
+    message += '*Tarehe:* ' + encodeURIComponent(date) + '%0A';
+    message += '*Watu:* ' + encodeURIComponent(guests) + '%0A';
+    message += '*Malipo:* ' + encodeURIComponent(payment) + '%0A';
+    message += '*Trips:* ' + encodeURIComponent(items) + '%0A';
+    message += '*Jumla:* $' + total.toFixed(2) + '%0A';
+    message += '*Maelezo:* ' + encodeURIComponent(notes || 'Hakuna');
+
+    window.open('https://wa.me/255655728982?text=' + message, '_blank');
+
+    msg.style.display = 'block';
+    msg.style.background = '#d4edda';
+    msg.style.color = '#155724';
+    msg.textContent = 'Asante! Ombi lako limetumwa kwa WhatsApp.';
+};
+
+window.addEventListener('load', loadSummary);
+</script>
+
+<script>
+  const menuToggleBtn = document.getElementById('menuToggleBtn');
+  const navLinks = document.getElementById('navLinks');
+  if(menuToggleBtn) { menuToggleBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); }); }
+</script>
+
+</body>
+          </html>
