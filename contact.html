@@ -37,6 +37,27 @@
 <meta name="geo.position" content="-6.165917;39.202641">
 <meta name="ICBM" content="-6.165917, 39.202641">
 
+<!-- GOOGLE ANALYTICS -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5QJ1X38ZLC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5QJ1X38ZLC');
+</script>
+
+<!-- YANDEX METRICA -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113203659', 'ym');
+    ym(113203659, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/113203659" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
 <!-- ELFSIGHT PLATFORM -->
 <script src="https://elfsightcdn.com/platform.js" async></script>
 
@@ -57,7 +78,7 @@
     /* HEADER */
     .top-bar { background: var(--deep-navy); padding: 8px 20px; display: flex; justify-content: flex-end; align-items: center; gap: 15px; }
     .header { background: var(--ocean-blue); padding: 15px 20px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
-    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; position: relative; }
     .logo-area { display: flex; align-items: center; gap: 15px; }
     .logo-holder { width: 60px; height: 60px; border: 2px dashed var(--gold); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
     .logo-fallback { color: var(--gold); font-weight: 700; font-size: 0.7rem; text-align: center; line-height: 1.1; }
@@ -191,8 +212,10 @@
 
     @media (max-width: 768px) {
         .menu-toggle { display: block; }
-        .nav-links { display: none; flex-direction: column; width: 100%; background: var(--deep-navy); padding: 20px; position: absolute; top: 80px; left: 0; z-index: 999; }
+        .nav-links { display: none; flex-direction: column; width: 100%; background: var(--deep-navy); padding: 20px; position: absolute; top: 100%; left: 0; right: 0; z-index: 999; border-top: 2px solid var(--gold); }
         .nav-links.active { display: flex; }
+        .nav-links li { width: 100%; }
+        .nav-links a { padding: 10px 0; width: 100%; }
         .hero h1 { font-size: 1.6rem; }
     }
 </style>
@@ -264,6 +287,7 @@
         <div class="form-group"><label>Ujumbe Wako:</label><textarea id="contactMessage" rows="5" placeholder="Andika ujumbe wako hapa..." required></textarea></div>
         <button type="submit" class="btn-primary btn-full"><i class="fab fa-whatsapp"></i> Tuma kwa WhatsApp</button>
     </form>
+    <p id="contactMsg" style="margin-top: 15px; font-weight: 600; display: none; text-align: center;"></p>
 </section>
 
 <!-- RAMANI YA ZANZIBAR -->
@@ -294,6 +318,15 @@
             </div>
         </div>
     </div>
+    <!-- SOCIAL SHARING BUTTONS -->
+    <div style="text-align: center; margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.2);">
+        <p style="color: var(--gold); font-size: 0.9rem; margin-bottom: 10px;">Shiriki UNP TOURS:</p>
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://unp.tours/contact.html" target="_blank" style="display: inline-block; margin: 0 5px; color: var(--gold); font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
+        <a href="https://twitter.com/intent/tweet?url=https://unp.tours/contact.html" target="_blank" style="display: inline-block; margin: 0 5px; color: var(--gold); font-size: 1.5rem;"><i class="fab fa-twitter"></i></a>
+        <a href="https://wa.me/?text=Check%20out%20UNP%20TOURS!%20https://unp.tours/contact.html" target="_blank" style="display: inline-block; margin: 0 5px; color: var(--gold); font-size: 1.5rem;"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://unp.tours/contact.html" target="_blank" style="display: inline-block; margin: 0 5px; color: var(--gold); font-size: 1.5rem;"><i class="fab fa-linkedin"></i></a>
+        <a href="https://t.me/share/url?url=https://unp.tours/contact.html" target="_blank" style="display: inline-block; margin: 0 5px; color: var(--gold); font-size: 1.5rem;"><i class="fab fa-telegram"></i></a>
+    </div>
 </footer>
 
 <!-- FLOATING WHATSAPP -->
@@ -317,7 +350,7 @@
 </div>
 
 <!-- COOKIES BANNER -->
-<div id="cookieBanner" style="position: fixed; bottom: 0; left: 0; right: 0; background: #082f49; color: #fff; padding: 15px; text-align: center; z-index: 9999; display: none;">
+<div id="cookieBanner" style="position: fixed; bottom: 0; left: 0; right: 0; background: var(--deep-navy); color: #fff; padding: 15px; text-align: center; z-index: 9999; display: none;">
     <p style="margin: 0 0 10px 0; font-size: 0.9rem;">Tunatumia cookies kuboresha uzoefu wako. Kwa kuendelea kutumia website yetu, unakubali <a href="privacy.html" style="color: var(--gold); text-decoration: underline;">Sera zetu za Faragha</a>.</p>
     <button onclick="acceptCookies()" style="background: var(--gold); color: var(--deep-navy); border: none; padding: 8px 20px; border-radius: 5px; font-weight: 700; cursor: pointer;">Nakubali</button>
 </div>
@@ -335,75 +368,4 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 
-<!-- ONESIGNAL PUSH -->
-<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
-<script>
-  window.OneSignalDeferred = window.OneSignalDeferred || [];
-  OneSignalDeferred.push(async function(OneSignal) {
-    await OneSignal.init({
-      appId: "e772eb04-4c02-457d-bc15-ad77d7a29d4d",
-    });
-  });
-</script>
-
-<!-- GTRANSLATE SCRIPT -->
-<script>
-window.gtranslateSettings = {
-  "default_language": "sw",
-  "languages": ["sw", "en", "fr", "it", "de", "ru", "ar", "zh-CN"],
-  "wrapper_selector": ".gtranslate_wrapper"
-};
-</script>
-<script src="https://cdn.gtranslate.net/widgets/latest/dropdown.js" defer></script>
-
-<!-- FIREBASE & CONTACT LOGIC -->
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
-  import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
-
-  const firebaseConfig = {
-    apiKey: "AIzaSyD2YtPFL2L_ZwAKdSYpXtvLt8gJUm2IX6s",
-    authDomain: "unptours.firebaseapp.com",
-    projectId: "unptours",
-    storageBucket: "unptours.firebasestorage.app",
-    messagingSenderId: "233326851661",
-    appId: "1:233326851661:web:354156110a5cee29904e04",
-    measurementId: "G-5QJ1X38ZLC"
-  };
-
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
-
-  // MENU TOGGLE
-  const menuToggleBtn = document.getElementById('menuToggleBtn');
-  const navLinks = document.getElementById('navLinks');
-  if(menuToggleBtn) { menuToggleBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); }); }
-
-  // CONTACT FORM LOGIC
-  const contactForm = document.getElementById('contactForm');
-  contactForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const name = document.getElementById('contactName').value;
-      const email = document.getElementById('contactEmail').value;
-      const message = document.getElementById('contactMessage').value;
-
-      try {
-          await addDoc(collection(db, "messages"), {
-              name: name, email: email, message: message, createdAt: new Date()
-          });
-          const whatsappMessage = `Hello UNP Tours!%0A%0A*Name:* ${name}%0A*Contact:* ${email}%0A*Message:* ${message}`;
-          window.open(`https://wa.me/255655728982?text=${whatsappMessage}`, '_blank');
-          alert("Ujumbe wako umetumwa kwa mafanikio!");
-          contactForm.reset();
-      } catch (error) {
-          alert("Kuna hitilafu imetokea: " + error.message);
-      }
-  });
-
-  // COOKIES BANNER
-  if (!localStorage.getItem('cookiesAccepted')) {
-      document.getElementById('cookieBanner').style.display = 'block';
-  }
-  window.acceptCookies = function() {
-      localStorage.setItem('cookiesAccepted', 'true');
-      document.getElementById('cookieBanner'
+<!-- ONESIG
