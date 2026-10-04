@@ -1,315 +1,82 @@
 <!DOCTYPE html>
 <html lang="sw">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UNP TOURS | Unique & Natural Paradise Zanzibar</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="style.css">
-
-<!-- SEO META TAGS -->
-<meta name="description" content="UNP TOURS - Unique & Natural Paradise. Luxury tours, safaris, VIP experiences, water sports, and handmade artwork in Zanzibar & Tanzania.">
-<meta name="keywords" content="UNP TOURS, Zanzibar tours, Tanzania safari, luxury tours, VIP experience">
-<meta name="author" content="UNP TOURS Zanzibar">
-<meta name="robots" content="index, follow">
-
-<!-- Open Graph -->
-<meta property="og:title" content="UNP TOURS - Unique & Natural Paradise Zanzibar">
-<meta property="og:description" content="Discover Zanzibar & Tanzania's most exquisite luxury tours, safaris, and VIP experiences.">
-<meta property="og:image" content="https://unp.tours/images/logo.png">
-<meta property="og:url" content="https://unp.tours/">
-<meta property="og:type" content="website">
-
-<!-- Structured Data -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "TravelAgency",
-  "name": "UNP TOURS - Unique & Natural Paradise",
-  "url": "https://unp.tours",
-  "telephone": "+255655728982",
-  "email": "salimnasoro11@gmail.com",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Zanzibar",
-    "addressCountry": "TZ"
-  }
-}
-</script>
-
-<!-- GOOGLE ANALYTICS -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5QJ1X38ZLC"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-5QJ1X38ZLC');
-</script>
-
-<!-- ELFSIGHT PLATFORM -->
-<script src="https://elfsightcdn.com/platform.js" async></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNP TOURS - Unique & Natural Paradise</title>
+    <!-- Tunatumia Tailwind CSS kupata muonekano safi na wa kisasa -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-gray-50 text-gray-800 font-sans">
 
-<!-- TOP BAR WITH GTRANSLATE -->
-<div class="top-bar">
-    <div class="gtranslate_wrapper"></div>
-</div>
-
-<!-- ANNOUNCEMENT BAR -->
-<div class="elfsight-app-1584a501-4f26-439e-b8ec-35003117565b" data-elfsight-app-lazy></div>
-
-<!-- HEADER -->
-<header class="header">
-    <div class="nav-container">
-        <a href="index.html" class="logo-area">
-            <div class="logo-holder">UNP<br>TOURS</div>
-            <div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
-        </a>
-        <button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="index.html" class="active"><i class="fas fa-home"></i> Nyumbani</a></li>
-            <li><a href="about.html"><i class="fas fa-info-circle"></i> Kuhusu Sisi</a></li>
-            <li><a href="services.html"><i class="fas fa-briefcase"></i> Huduma</a></li>
-            <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
-            <li><a href="pricing.html"><i class="fas fa-layer-group"></i> Madaraja</a></li>
-            <li><a href="events.html"><i class="fas fa-calendar-alt"></i> Matukio</a></li>
-            <li><a href="contact.html"><i class="fas fa-envelope"></i> Wasiliana</a></li>
-        </ul>
-    </div>
-</header>
-
-<!-- HERO -->
-<section class="hero-video-section">
-    <video autoplay muted loop playsinline class="hero-video">
-        <source src="videos/hero-video.mp4" type="video/mp4">
-    </video>
-    <div class="hero-overlay">
-        <h1>UNP TOURS <span>ZANZIBAR</span></h1>
-        <p>Discover Zanzibar & Tanzania's most exquisite luxury tours, water sports, handmade artwork, and private sanctuary experiences in full freedom.</p>
-        <a href="booking.html" class="btn-primary">Book VIP Experience</a>
-    </div>
-</section>
-
-<!-- SOCIAL MEDIA WIDGET -->
-<section class="widget-container">
-    <div class="elfsight-app-012ad856-780a-415b-9574-aec6a8d2af0f" data-elfsight-app-lazy></div>
-</section>
-
-<!-- SERVICES GRID -->
-<section id="excursions">
-<h2 class="section-title">Our Exclusive Experiences</h2>
-<div class="services-grid">
-    <div class="service-card">
-        <div class="card-icon"><i class="fas fa-archway"></i></div>
-        <h3>Zanzibar Excursions</h3>
-        <p>Visit giant tortoises, Safari Blue, and Stone Town historical sites.</p>
-    </div>
-    <div class="service-card">
-        <div class="card-icon"><i class="fas fa-tree"></i></div>
-        <h3>Jozani Forest</h3>
-        <p>Explore rare Red Colobus Monkeys in their natural habitat.</p>
-    </div>
-    <div class="service-card">
-        <div class="card-icon"><i class="fas fa-car"></i></div>
-        <h3>Vehicle Rentals</h3>
-        <p>Car rentals, scooters, and quad bikes for island self-exploration.</p>
-    </div>
-    <div class="service-card">
-        <div class="card-icon"><i class="fas fa-shuttle-van"></i></div>
-        <h3>Luxury Transfers</h3>
-        <p>VIP chauffeur transfers with high-speed Wi-Fi and premium A/C.</p>
-    </div>
-    <div class="service-card">
-        <div class="card-icon"><i class="fas fa-paw"></i></div>
-        <h3>Tanzania Safaris</h3>
-        <p>Fly-in safaris directly to Serengeti, Ngorongoro, and Mikumi.</p>
-    </div>
-    <div class="service-card">
-        <div class="card-icon"><i class="fas fa-water"></i></div>
-        <h3>Water Sports</h3>
-        <p>Jet Ski, Jet Car, and Drone Kayak experiences on turquoise waters.</p>
-    </div>
-</div>
-</section>
-
-<!-- NUMBER COUNTER WIDGET -->
-<section class="widget-container">
-    <div class="elfsight-app-2674303a-e396-4f5e-b021-17071e631185" data-elfsight-app-lazy></div>
-</section>
-
-<!-- VIDEO GALLERY WIDGET -->
-<section class="widget-container">
-    <h2 class="widget-title">Video Zetu</h2>
-    <div class="elfsight-app-e817e7ee-16af-4160-b44e-c44aaa5fcf2a" data-elfsight-app-lazy></div>
-</section>
-
-<!-- REVIEWS FORM -->
-<section class="interactive-box" id="review-section">
-    <h2><i class="fas fa-star" style="color: var(--royal-gold);"></i> Acha Maoni Yako</h2>
-    <form id="reviewForm">
-        <div class="form-group">
-            <label>Jina Lako:</label>
-            <input type="text" id="reviewName" placeholder="Weka jina lako" required>
-        </div>
-        <div class="form-group">
-            <label>Chagua Huduma Uliyopata:</label>
-            <select id="reviewService" required>
-                <option value="">Chagua...</option>
-                <option value="Zanzibar Historic Tours">Zanzibar Historic Tours</option>
-                <option value="Jozani Forest">Jozani Forest</option>
-                <option value="Safari Blue">Safari Blue</option>
-                <option value="VIP Luxury Experience">VIP Luxury Experience</option>
-                <option value="Tanzania Safari">Tanzania Safari</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label>Kiwango cha Kuridhika (1-5 Nyota):</label>
-            <div class="star-rating" id="reviewStars">
-                <i class="fas fa-star" data-value="1"></i>
-                <i class="fas fa-star" data-value="2"></i>
-                <i class="fas fa-star" data-value="3"></i>
-                <i class="fas fa-star" data-value="4"></i>
-                <i class="fas fa-star" data-value="5"></i>
+    <!-- Header / Menyu Kuu -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold tracking-wider text-emerald-700">
+                UNP <span class="text-gray-900">TOURS</span>
             </div>
-            <input type="hidden" id="selectedReviewRating" value="0">
-        </div>
-        <div class="form-group">
-            <label>Maoni Yako:</label>
-            <textarea id="reviewMessage" rows="4" placeholder="Andika maoni yako..." required></textarea>
-        </div>
-        <button type="submit" class="btn-full"><i class="fas fa-paper-plane"></i> Tuma Maoni</button>
-    </form>
-    <div id="reviewMessageBox" class="alert-message"></div>
-</section>
-
-<!-- REVIEWS WIDGET -->
-<section class="widget-container">
-    <h2 class="widget-title">Maoni Kutoka Mitandao</h2>
-    <div class="elfsight-app-a499af83-a687-40f3-9434-2177a625457e" data-elfsight-app-lazy></div>
-</section>
-
-<!-- PARTNERS / LOGO SHOWCASE -->
-<section class="widget-container">
-    <h2 class="widget-title">Washirika Wetu</h2>
-    <div class="elfsight-app-15c9807c-d31b-4959-8438-b6647863a3a4" data-elfsight-app-lazy></div>
-</section>
-
-<!-- FOOTER -->
-<footer class="footer">
-    <div class="footer-content">
-        <div>
-            <h3>UNIQUE NATURE PARADISE (UNP)</h3>
-            <p style="font-size: 0.9rem; max-width: 350px; color: #cbd5e1;">Luxury tours, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p>
-        </div>
-        <div>
-            <h4>Direct Contact</h4>
-            <p style="font-size: 0.9rem; margin-top: 8px; color: #cbd5e1;"><i class="fab fa-whatsapp" style="color: var(--royal-gold);"></i> Phone: +255 655 728 982</p>
-            <p style="font-size: 0.9rem; margin-top: 5px; color: #cbd5e1;"><i class="fas fa-envelope" style="color: var(--royal-gold);"></i> Email: salimnasoro11@gmail.com</p>
-            <div class="social-links">
-                <a href="https://wa.me/255655728982" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                <a href="mailto:salimnasoro11@gmail.com"><i class="fas fa-envelope"></i></a>
-                <a href="https://www.tiktok.com/@unptours" target="_blank"><i class="fab fa-tiktok"></i></a>
-                <a href="https://www.instagram.com/unpsoulvoyoge" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.facebook.com/profile.php?id=61595094232501" target="_blank"><i class="fab fa-facebook"></i></a>
+            <nav class="hidden md:flex space-x-8 font-medium">
+                <a href="#" class="text-emerald-700 hover:text-emerald-900">Nyumbani</a>
+                <a href="#" class="text-gray-600 hover:text-emerald-900">Kuhusu Sisi</a>
+                <a href="#" class="text-gray-600 hover:text-emerald-900">Huduma & Safari</a>
+                <a href="#" class="text-gray-600 hover:text-emerald-900">Sanaa za Mikono</a>
+                <a href="#" class="text-gray-600 hover:text-emerald-900">Mawasiliano</a>
+            </nav>
+            <div>
+                <a href="https://wa.me/255655728982" target="_blank" class="bg-emerald-600 text-white px-5 py-2.5 rounded-full font-medium shadow hover:bg-emerald-700 transition">WhatsApp Yetu</a>
             </div>
         </div>
-    </div>
-</footer>
+    </header>
 
-<!-- FLOATING WHATSAPP -->
-<a href="https://wa.me/255655728982" class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <!-- Hero Section (Sehemu ya Mbele Kabisa) -->
+    <section class="relative bg-emerald-900 text-white py-24 md:py-32">
+        <div class="absolute inset-0 opacity-40 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="relative max-w-7xl mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6">Gundua Urembo na Asili Halisi</h1>
+            <p class="text-lg md:text-xl max-w-2xl mx-auto mb-10 text-emerald-100">Tunakupa uzoefu wa kipekee wa safari za kitalii Zanzibar na Tanzania Bara, pamoja na kazi za kipekee za sanaa za mikono.</p>
+            <div class="flex justify-center space-x-4">
+                <a href="#" class="bg-white text-emerald-900 font-bold px-8 py-3 rounded-lg shadow hover:bg-gray-100 transition">Angalia Safari</a>
+                <a href="#" class="border-2 border-white text-white font-bold px-8 py-3 rounded-lg hover:bg-white hover:text-emerald-900 transition">Wasiliana Nasi</a>
+            </div>
+        </div>
+    </section>
 
-<!-- CHATBOT -->
-<div class="chatbot-toggle" onclick="toggleChatbot()"><i class="fas fa-robot"></i></div>
-<div class="chatbot-container" id="chatbotContainer">
-    <div class="chatbot-header">
-        <div class="avatar">U</div>
-        <div><h4>UNP Assistant</h4><span>Yupo Mtandaoni</span></div>
-        <button onclick="toggleChatbot()" style="margin-left:auto;background:none;border:none;color:#fff;font-size:1.2rem;cursor:pointer;"><i class="fas fa-times"></i></button>
-    </div>
-    <div class="chatbot-messages" id="chatMessages">
-        <div class="message bot">Karibu UNP TOURS! Ninaweza kukusaidia vipi leo?</div>
-    </div>
-    <div class="chatbot-input">
-        <input type="text" id="chatInput" placeholder="Andika ujumbe wako..." onkeypress="handleKeyPress(event)">
-        <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
-    </div>
-</div>
+    <!-- Sehemu ya Huduma Kuu (Features) -->
+    <section class="py-20 max-w-7xl mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Huduma Zetu Kuu</h2>
+            <p class="text-gray-600 max-w-xl mx-auto">Tunajivunia kukuletea huduma bora zilizoundwa kukupa thamani halisi ya fedha yako.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Huduma 1 -->
+            <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                <div class="text-emerald-600 text-3xl mb-4 font-bold">🌴</div>
+                <h3 class="text-xl font-bold mb-2">Safari za Zanzibar</h3>
+                <p class="text-gray-600">Jionee ukanda mzuri wa pwani, Stone Town, Jozani Forest, na Safari Blue kwa ukarimu wa hali ya juu.</p>
+            </div>
+            <!-- Huduma 2 -->
+            <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                <div class="text-emerald-600 text-3xl mb-4 font-bold">🦁</div>
+                <h3 class="text-xl font-bold mb-2">Utalii wa Wanyama Pori</h3>
+                <p class="text-gray-600">Pata fursa ya kutembelea mbuga za wanyama za Serengeti, Ngorongoro, na Mikumi.</p>
+            </div>
+            <!-- Huduma 3 -->
+            <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                <div class="text-emerald-600 text-3xl mb-4 font-bold">🎨</div>
+                <h3 class="text-xl font-bold mb-2">Sanaa za Mikono</h3>
+                <p class="text-gray-600">Kazi za kipekee za mikono zilizotengenezwa kwa majani ya ndizi yenye ubora na mvuto wa asili.</p>
+            </div>
+        </div>
+    </section>
 
-<!-- COOKIES BANNER -->
-<div id="cookieBanner" style="position: fixed; bottom: 0; left: 0; right: 0; background: var(--deep-navy); color: #fff; padding: 15px; text-align: center; z-index: 9999; display: none; border-top: 2px solid var(--royal-gold);">
-    <p style="margin: 0 0 10px 0; font-size: 0.9rem;">Tunatumia cookies kuboresha uzoefu wako. Kwa kuendelea kutumia website yetu, unakubali Sera zetu.</p>
-    <button onclick="acceptCookies()" style="background: var(--royal-gold); color: var(--deep-navy); border: none; padding: 8px 20px; border-radius: 5px; font-weight: 700; cursor: pointer;">Nakubali</button>
-</div>
-
-<!-- GTRANSLATE SCRIPT -->
-<script>
-window.gtranslateSettings = {
-  "default_language": "sw",
-  "languages": ["sw", "en", "fr", "it", "de", "ru", "ar", "zh-CN"],
-  "wrapper_selector": ".gtranslate_wrapper"
-};
-</script>
-<script src="https://cdn.gtranslate.net/widgets/latest/dropdown.js" defer></script>
-
-<!-- FIREBASE - REVIEWS FORM (Module) -->
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
-  import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
-
-  const firebaseConfig = {
-    apiKey: "AIzaSyD2YtPFL2L_ZwAKdSYpXtvLt8gJUm2IX6s",
-    authDomain: "unptours.firebaseapp.com",
-    projectId: "unptours",
-    storageBucket: "unptours.firebasestorage.app",
-    messagingSenderId: "233326851661",
-    appId: "1:233326851661:web:354156110a5cee29904e04",
-    measurementId: "G-5QJ1X38ZLC"
-  };
-
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
-
-  const reviewForm = document.getElementById('reviewForm');
-  const reviewMessageBox = document.getElementById('reviewMessageBox');
-  const ratingInput = document.getElementById('selectedReviewRating');
-
-  if (reviewForm) {
-      reviewForm.addEventListener('submit', async (e) => {
-          e.preventDefault();
-          const rating = ratingInput.value;
-          if (rating === "0") {
-              reviewMessageBox.textContent = "Tafadhali chagua nyota kwanza!";
-              reviewMessageBox.className = "alert-message alert-error";
-              return;
-          }
-          try {
-              await addDoc(collection(db, "reviews"), {
-                  name: document.getElementById('reviewName').value,
-                  service: document.getElementById('reviewService').value,
-                  rating: parseInt(rating),
-                  message: document.getElementById('reviewMessage').value,
-                  approved: false,
-                  createdAt: new Date()
-              });
-              reviewMessageBox.textContent = "Asante! Maoni yako yametumwa kikamilifu.";
-              reviewMessageBox.className = "alert-message alert-success";
-              reviewForm.reset();
-              document.querySelectorAll('#reviewStars .fa-star').forEach(s => s.classList.remove('active'));
-              ratingInput.value = "0";
-          } catch (error) {
-              reviewMessageBox.textContent = "Kosa: " + error.message;
-              reviewMessageBox.className = "alert-message alert-error";
-          }
-      });
-  }
-</script>
-
-<!-- CUSTOM SCRIPT -->
-<script src="script.js"></script>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p>&copy; 2026 UNP TOURS (Unique & Natural Paradise). Haki zote zimehifadhiwa.</p>
+            <p class="text-sm mt-2">Barua pepe: salimnasoro11@gmail.com | Simu: +255 655 728 982</p>
+        </div>
+    </footer>
 
 </body>
-                                                   </html>
-              
+  </html>
+  
