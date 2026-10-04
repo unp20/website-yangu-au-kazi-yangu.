@@ -66,7 +66,7 @@
             line-height: 1.6;
         }
 
-        /* Header & Navigation Bar */
+        /* Header & Navigation Bar yenye Logo na Lugha Nyingi */
         header {
             display: flex;
             justify-content: space-between;
@@ -87,14 +87,22 @@
             text-decoration: none;
         }
 
+        .logo-img {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 1px solid var(--gold-color);
+        }
+
         .logo-text h1 {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: var(--gold-color);
             letter-spacing: 1.5px;
         }
 
         .logo-text p {
-            font-size: 0.65rem;
+            font-size: 0.6rem;
             color: var(--text-gray);
             letter-spacing: 2px;
             text-transform: uppercase;
@@ -104,6 +112,34 @@
             display: flex;
             align-items: center;
             gap: 15px;
+        }
+
+        /* Sehemu ya Lugha Nyingi (Multi-Language Selector) */
+        .language-selector {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            background-color: rgba(212, 175, 55, 0.08);
+            border: 1px solid var(--gold-color);
+            padding: 6px 12px;
+            border-radius: 20px;
+            color: var(--gold-color);
+            font-size: 0.8rem;
+        }
+
+        .language-selector select {
+            background: transparent;
+            border: none;
+            color: var(--gold-color);
+            font-size: 0.8rem;
+            cursor: pointer;
+            outline: none;
+            font-weight: 600;
+        }
+
+        .language-selector select option {
+            background-color: var(--card-bg);
+            color: var(--text-white);
         }
 
         .menu-btn {
@@ -131,7 +167,7 @@
             background-color: var(--card-bg);
             border: 1px solid var(--gold-color);
             border-radius: 12px;
-            width: 320px;
+            width: 300px;
             max-height: 75vh;
             overflow-y: auto;
             box-shadow: 0px 10px 30px rgba(0,0,0,0.8);
@@ -145,11 +181,12 @@
 
         .mega-menu h4 {
             color: var(--gold-color);
-            padding: 0 20px 10px;
-            font-size: 0.85rem;
+            padding: 0 20px 8px;
+            font-size: 0.8rem;
             border-bottom: 1px solid rgba(212, 175, 55, 0.2);
             text-transform: uppercase;
             letter-spacing: 1px;
+            margin-top: 8px;
         }
 
         .mega-menu ul {
@@ -158,10 +195,10 @@
 
         .mega-menu ul li a {
             display: block;
-            padding: 10px 20px;
+            padding: 9px 20px;
             color: var(--text-white);
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             transition: 0.2s;
         }
 
@@ -258,7 +295,7 @@
         footer {
             text-align: center;
             padding: 30px;
-            background-color: #032b1a;
+            background-color: var(--card-bg);
             border-top: 1px solid rgba(212, 175, 55, 0.2);
             font-size: 0.85rem;
             color: var(--text-gray);
@@ -267,9 +304,11 @@
 </head>
 <body>
 
-    <!-- Header & Menu Kuu -->
+    <!-- Header & Navigation Bar yenye Logo, Lugha 14, na Menu -->
     <header>
         <a href="index.html" class="logo-container">
+            <!-- Weka picha halisi ya logo kwenye faili lako la '1000009263.jpg' -->
+            <img src="1000009263.jpg" alt="UNP Tours Logo" class="logo-img">
             <div class="logo-text">
                 <h1>UNP TOURS</h1>
                 <p>Unique & Natural Paradise</p>
@@ -277,10 +316,31 @@
         </a>
 
         <div class="nav-controls">
-            <button class="menu-btn" id="menuToggle">☰ Menu Kuu (150+)</button>
+            <!-- Sehemu ya Lugha Nyingi (Multi-Language) -->
+            <div class="language-selector">
+                <span>🌐</span>
+                <select id="langSelect" aria-label="Chagua Lugha">
+                    <option value="sw">Kiswahili</option>
+                    <option value="en">English</option>
+                    <option value="ar">العربية</option>
+                    <option value="zh">中文</option>
+                    <option value="ru">Русский</option>
+                    <option value="fr">Français</option>
+                    <option value="de">Deutsch</option>
+                    <option value="es">Español</option>
+                    <option value="it">Italiano</option>
+                    <option value="ja">日本語</option>
+                    <option value="ko">한국어</option>
+                    <option value="pt">Português</option>
+                    <option value="hi">हिन्दी</option>
+                    <option value="la">Latina</option>
+                </select>
+            </div>
+
+            <button class="menu-btn" id="menuToggle">☰ Menu</button>
         </div>
 
-        <!-- Mega Menu inayounganisha kurasa na vipengele vyote -->
+        <!-- Mega Menu inayounganisha kurasa zote za mfumo -->
         <div class="mega-menu" id="megaMenu">
             <h4>Pande Kuu za UNP</h4>
             <ul>
@@ -288,13 +348,13 @@
                 <li><a href="services.html">🌴 Zanzibar Excursions & Safari</a></li>
                 <li><a href="services.html#watersports">🌊 Water Sports & Adventure</a></li>
                 <li><a href="services.html#luxury">👑 Luxury & VIP Services</a></li>
-                <li><a href="services.html#artisan">🎨 Our Artisan Treasures (Sanaa)</a></li>
+                <li><a href="services.html#artisan">🎨 Our Artisan Treasures</a></li>
             </ul>
             <h4>Malazi & Usafiri</h4>
             <ul>
                 <li><a href="services.html#accommodation">🏨 Cabin, Hotels & Rentals</a></li>
                 <li><a href="booking.html">✈️ Booking & Travel Services</a></li>
-                <li><a href="payment.html">💳 Malipo na Pesa za Kimataifa</a></li>
+                <li><a href="payment.html">💳 Malipo ya Kimataifa</a></li>
             </ul>
             <h4>Jamii & Taarifa</h4>
             <ul>
@@ -315,7 +375,7 @@
 
         <h3 class="section-title">Safari Zetu Maarufu (Featured Trips)</h3>
         <div class="trips-grid" id="tripsContainer">
-            <!-- Hapa trips zitatoka Firebase moja kwa moja -->
+            <!-- Hapa trips zinatoka Firebase moja kwa moja -->
             <p style="text-align: center; grid-column: 1/-1; color: var(--gold-color);">Inapakia huduma kutoka kwenye mfumo...</p>
         </div>
     </main>
@@ -404,5 +464,4 @@
         loadTrips();
     </script>
 </body>
-    </html>
-    
+</html>
