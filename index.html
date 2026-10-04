@@ -6,81 +6,104 @@
     <title>UNP TOURS - Unique & Natural Paradise</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome kwa ajili ya Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
 
-    <!-- Header / Menyu Kuu na Viongezo Vya Blog na Our Music -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-            <div class="flex items-center space-x-3">
-                <img src="WEKA_LINK_YA_LOGO_YAKO_HAPA.png" alt="UNP Tours Logo" class="h-10 w-auto object-contain">
-                <span class="text-2xl font-bold tracking-wider text-emerald-700">UNP <span class="text-gray-900">TOURS</span></span>
-            </div>
-            
-            <!-- Menyu ya Juu iliyoongezwa Blog na Our Music -->
-            <nav class="hidden lg:flex space-x-6 font-medium text-sm">
-                <a href="#" class="text-emerald-700 hover:text-emerald-900">Home</a>
-                <a href="#" class="text-gray-600 hover:text-emerald-900">About Us</a>
-                <a href="#" class="text-gray-600 hover:text-emerald-900">Services</a>
-                <a href="#" class="text-gray-600 hover:text-emerald-900">Gallery</a>
-                <a href="#" class="text-gray-600 hover:text-emerald-900">Bridges</a>
-                <a href="#" class="text-gray-600 hover:text-emerald-900">Events</a>
-                <a href="#" class="text-emerald-600 font-semibold hover:text-emerald-900">Blog</a>
-                <a href="#" class="text-emerald-600 font-semibold hover:text-emerald-900">Our Music</a>
-                <a href="#" class="text-gray-600 hover:text-emerald-900">Contact</a>
-            </nav>
+    <!-- Upau wa Juu (Top Red Accent kama British Council) -->
+    <div class="bg-red-700 h-2 w-full"></div>
 
-            <div>
-                <a href="https://wa.me/255655728982" target="_blank" class="bg-emerald-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow hover:bg-emerald-700 transition">WhatsApp</a>
+    <!-- Header Kuu -->
+    <header class="bg-[#0b4d3b] text-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            
+            <!-- Logo na Jina -->
+            <div class="flex items-center space-x-3">
+                <img src="WEKA_LINK_YA_LOGO_YAKO_HAPA.png" alt="UNP Tours Logo" class="h-10 w-auto object-contain bg-white p-1 rounded">
+                <div>
+                    <span class="text-xl md:text-2xl font-extrabold tracking-wider block leading-none">UNP TOURS</span>
+                    <span class="text-xs text-emerald-200 tracking-widest uppercase">Unique & Natural</span>
+                </div>
+            </div>
+
+            <!-- Vitufe vya Kulia: Language Switcher, Search na Menu -->
+            <div class="flex items-center space-x-3">
+                <!-- Sehemu ya Kuchagua Lugha (Language Section) -->
+                <div class="hidden sm:flex items-center bg-emerald-800 border border-emerald-600 rounded px-2 py-1 text-xs font-semibold">
+                    <i class="fa-solid fa-globe mr-1 text-emerald-300"></i>
+                    <select class="bg-transparent text-white focus:outline-none cursor-pointer">
+                        <option value="sw" class="bg-emerald-900 text-white">Kiswahili</option>
+                        <option value="en" class="bg-emerald-900 text-white">English</option>
+                    </select>
+                </div>
+
+                <!-- Search Button -->
+                <button aria-label="Tafuta" class="w-10 h-10 rounded border border-emerald-600 flex items-center justify-center hover:bg-emerald-800 transition">
+                    <i class="fa-solid fa-magnifying-glass text-white text-sm"></i>
+                </button>
+
+                <!-- Menu Button -->
+                <button onclick="toggleMenu()" class="flex items-center space-x-2 bg-emerald-800 hover:bg-emerald-700 px-3 py-2 rounded border border-emerald-600 transition">
+                    <span class="text-sm font-semibold tracking-wide">Menu</span>
+                    <i class="fa-solid fa-bars text-lg"></i>
+                </button>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="relative bg-emerald-900 text-white py-24 md:py-32">
-        <div class="absolute inset-0 opacity-40 bg-cover bg-center" style="background-image: url('WEKA_LINK_YA_PICHA_YAKO_KUBWA_HAPA.jpg');"></div>
-        <div class="relative max-w-7xl mx-auto px-4 text-center">
-            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6">Gundua Urembo na Asili Halisi</h1>
-            <p class="text-lg md:text-xl max-w-2xl mx-auto mb-10 text-emerald-100">Safari za kitalii, kazi za sanaa za mikono, na ubunifu wa muziki wa kipekee.</p>
-            <div class="flex justify-center space-x-4">
-                <a href="#" class="bg-white text-emerald-900 font-bold px-8 py-3 rounded-lg shadow hover:bg-gray-100 transition">Angalia Safari</a>
-                <a href="#" class="border-2 border-white text-white font-bold px-8 py-3 rounded-lg hover:bg-white hover:text-emerald-900 transition">Wasiliana Nasi</a>
-            </div>
+    <!-- Menyu ya Kuteleza (Slide-down Menu) -->
+    <div id="mobileMenu" class="hidden bg-[#0b4d3b] text-white border-t border-emerald-800 px-4 py-6 shadow-xl transition-all duration-300">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-lg">
+            <a href="#" class="py-2 px-3 hover:bg-emerald-800 rounded transition flex items-center space-x-3"><i class="fa-solid fa-house w-6 text-emerald-300"></i> <span>Home</span></a>
+            <a href="#" class="py-2 px-3 hover:bg-emerald-800 rounded transition flex items-center space-x-3"><i class="fa-solid fa-circle-info w-6 text-emerald-300"></i> <span>About Us</span></a>
+            <a href="#" class="py-2 px-3 hover:bg-emerald-800 rounded transition flex items-center space-x-3"><i class="fa-solid fa-briefcase w-6 text-emerald-300"></i> <span>Services</span></a>
+            <a href="#" class="py-2 px-3 hover:bg-emerald-800 rounded transition flex items-center space-x-3"><i class="fa-solid fa-images w-6 text-emerald-300"></i> <span>Gallery</span></a>
+            <a href="#" class="py-2 px-3 hover:bg-emerald-800 rounded transition flex items-center space-x-3"><i class="fa-solid fa-layer-group w-6 text-emerald-300"></i> <span>Bridges</span></a>
+            <a href="#" class="py-2 px-3 hover:bg-emerald-800 rounded transition flex items-center space-x-3"><i class="fa-solid fa-calendar-days w-6 text-emerald-300"></i> <span>Events</span></a>
+            <a href="#" class="py-2 px-3 hover:bg-emerald-800 rounded transition flex items-center space-x-3"><i class="fa-solid fa-blog w-6 text-emerald-300"></i> <span>Blog</span></a>
+            <a href="#" class="py-2 px-3 hover:bg-emerald-800 rounded transition flex items-center space-x-3"><i class="fa-solid fa-music w-6 text-emerald-300"></i> <span>Our Music</span></a>
+            <a href="#" class="py-2 px-3 hover:bg-emerald-800 rounded transition flex items-center space-x-3"><i class="fa-solid fa-envelope w-6 text-emerald-300"></i> <span>Contact</span></a>
         </div>
-    </section>
+        <!-- Chaguo la Lugha kwa Simu ndogo chini ya menu -->
+        <div class="mt-6 pt-4 border-t border-emerald-800 flex sm:hidden items-center justify-between">
+            <span class="text-sm text-emerald-200">Lugha / Language:</span>
+            <select class="bg-emerald-800 text-white border border-emerald-600 rounded px-3 py-1 text-sm focus:outline-none">
+                <option value="sw">Kiswahili</option>
+                <option value="en">English</option>
+            </select>
+        </div>
+    </div>
 
-    <!-- Sehemu Mpya ya Our Music & Blog (Muhtasari kwenye Home) -->
-    <section class="py-16 max-w-7xl mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <!-- Sehemu ya Muziki Wako -->
-            <div class="bg-emerald-800 text-white p-8 rounded-2xl shadow-md flex flex-col justify-between">
-                <div>
-                    <span class="bg-emerald-700 text-emerald-200 text-xs px-3 py-1 rounded-full uppercase tracking-wider font-semibold">Vibe Letu</span>
-                    <h3 class="text-2xl font-bold mt-4 mb-2">Our Music</h3>
-                    <p class="text-emerald-100 mb-6">Sikiliza na ufurahie tungo na mistari mizuri ya Hip-Hop yenye ujumbe mkali na ladha ya kipekee.</p>
-                </div>
-                <a href="#" class="inline-block bg-white text-emerald-900 font-bold px-6 py-2.5 rounded-lg text-center hover:bg-gray-100 transition">Sikiliza Muziki</a>
-            </div>
-
-            <!-- Sehemu ya Blog / Habari -->
-            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between">
-                <div>
-                    <span class="bg-gray-100 text-emerald-700 text-xs px-3 py-1 rounded-full uppercase tracking-wider font-semibold">Makala & Habari</span>
-                    <h3 class="text-2xl font-bold text-gray-900 mt-4 mb-2">Blog Yetu</h3>
-                    <p class="text-gray-600 mb-6">Pata kujua zaidi kuhusu vivutio vya utalii, mbinu za sanaa za mikono, na matukio yetu ya kila siku.</p>
-                </div>
-                <a href="#" class="inline-block bg-emerald-700 text-white font-bold px-6 py-2.5 rounded-lg text-center hover:bg-emerald-800 transition">Soma Blog</a>
+    <!-- Hero Section -->
+    <section class="relative bg-emerald-950 text-white py-24 md:py-32">
+        <div class="absolute inset-0 opacity-30 bg-cover bg-center" style="background-image: url('WEKA_LINK_YA_PICHA_YAKO_KUBWA_HAPA.jpg');"></div>
+        <div class="relative max-w-4xl mx-auto px-4 text-center">
+            <h1 class="text-3xl md:text-5xl font-bold tracking-tight mb-6">Gundua Urembo na Asili Halisi</h1>
+            <p class="text-base md:text-lg text-emerald-100 mb-8 max-w-2xl mx-auto">Tunakupa uzoefu wa kipekee wa safari za kitalii Zanzibar na Tanzania Bara, pamoja na kazi za kipekee za sanaa za mikono.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#" class="bg-white text-emerald-950 font-bold px-8 py-3 rounded shadow hover:bg-gray-100 transition">Angalia Safari</a>
+                <a href="https://wa.me/255655728982" target="_blank" class="border-2 border-white text-white font-bold px-8 py-3 rounded hover:bg-white hover:text-emerald-950 transition">Wasiliana Nasi (WhatsApp)</a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-12">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <p>&copy; 2026 UNP TOURS (Unique & Natural Paradise). Haki zote zimehifadhiwa.</p>
-            <p class="text-sm mt-2">Barua pepe: salimnasoro11@gmail.com | Simu: +255 655 728 982</p>
-        </div>
+    <footer class="bg-gray-900 text-gray-400 py-8 text-center text-sm">
+        <p>&copy; 2026 UNP TOURS (Unique & Natural Paradise). Haki zote zimehifadhiwa.</p>
     </footer>
+
+    <!-- JavaScript ya Menyu -->
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("mobileMenu");
+            if (menu.classList.contains("hidden")) {
+                menu.classList.remove("hidden");
+            } else {
+                menu.classList.add("hidden");
+            }
+        }
+    </script>
 
 </body>
     </html>
