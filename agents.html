@@ -25,8 +25,19 @@
 .commission-box h3 { color: #d4af37; margin-bottom: 15px; font-size: 1.3rem; }
 .commission-box .percent { font-size: 3rem; font-weight: 700; color: #d4af37; margin-bottom: 10px; }
 .commission-box p { color: #ddd; font-size: 0.9rem; }
-.btn-apply { background: #d4af37; color: #082f49; padding: 14px 32px; border-radius: 25px; font-weight: 700; display: inline-block; text-align: center; width: 100%; font-size: 1rem; }
+
+/* Mtindo wa Fomu Mpya */
+.agent-form { background: #f8fafc; padding: 25px; border-radius: 12px; border: 1px solid #e2e8f0; margin-top: 30px; }
+.form-group { margin-bottom: 18px; text-align: left; }
+.form-group label { display: block; color: #082f49; font-weight: 600; font-size: 0.9rem; margin-bottom: 6px; }
+.form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 0.95rem; outline: none; transition: 0.3s; background: #fff; color: #333; }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: #d4af37; box-shadow: 0 0 5px rgba(212, 175, 55, 0.3); }
+.form-group textarea { resize: vertical; height: 100px; }
+
+.btn-apply { background: #d4af37; color: #082f49; padding: 14px 32px; border-radius: 25px; font-weight: 700; display: inline-block; text-align: center; width: 100%; font-size: 1rem; border: none; cursor: pointer; transition: 0.3s; }
 .btn-apply:hover { background: #082f49; color: #d4af37; }
+
+#successMsg { display: none; background: #d1fae5; color: #065f46; padding: 12px; border-radius: 8px; text-align: center; font-weight: 600; margin-top: 15px; }
 </style>
 </head>
 <body>
@@ -100,13 +111,48 @@
     <ul>
         <li>Wasiliana nasi kwa WhatsApp: +255 655 728 982</li>
         <li>Tuma barua pepe: salimnasoro11@gmail.com</li>
-        <li>Toa taarifa za biashara yako</li>
+        <li>Toa taarifa za biashara yako kupitia fomu hapa chini</li>
         <li>Tutakujibu ndani ya siku 7</li>
-        <li>Tutajadili masharti ya ushirikiano</li>
     </ul>
 
+    <!-- FOMU YA MAOMBI YA WAKALA (NEW APPLICATION FORM) -->
+    <div class="agent-form">
+        <h3 style="color: #0c4a6e; margin-bottom: 15px; text-align: center;"><i class="fas fa-file-alt"></i> Jaza Fomu Kuomba Kuwa Wakala</h3>
+        <form id="agentAppForm" onsubmit="submitAgentForm(event)">
+            <div class="form-group">
+                <label for="agentName">Jina Lako Kamili</label>
+                <input type="text" id="agentName" required placeholder="Mfano: Juma Ally">
+            </div>
+            <div class="form-group">
+                <label for="agentEmail">Barua Pepe (Email)</label>
+                <input type="email" id="agentEmail" required placeholder="Mfano: juma@example.com">
+            </div>
+            <div class="form-group">
+                <label for="agentPhone">Namba ya Simu / WhatsApp</label>
+                <input type="text" id="agentPhone" required placeholder="Mfano: +255 712 345 678">
+            </div>
+            <div class="form-group">
+                <label for="businessType">Aina ya Biashara / Shughuli</label>
+                <select id="businessType" required>
+                    <option value="">-- Chagua Aina ya Biashara --</option>
+                    <option value="Hotel/Resort">Hoteli au Resort</option>
+                    <option value="Travel Agency">Travel Agency</option>
+                    <option value="Tour Company">Kampuni ya Tours</option>
+                    <option value="Blogger/Influencer">Blogger au Influencer</option>
+                    <option value="Other">Nyinginezo</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="businessDetails">Maelezo Fupi Kuhusu Biashara Yako</label>
+                <textarea id="businessDetails" placeholder="Eleza kwa ufupi uzoefu wako au biashara yako..."></textarea>
+            </div>
+            <button type="submit" class="btn-apply"><i class="fas fa-paper-plane"></i> Tuma Ombi Lako</button>
+            <div id="successMsg">Ombi lako limetumwa kikamilifu! Tutawasiliana nawe ndani ya siku 7.</div>
+        </form>
+    </div>
+
     <div style="text-align: center; margin-top: 30px;">
-        <a href="https://wa.me/255655728982?text=Hello%20UNP%20TOURS!%20Nataka%20kuwa%20Wakala." class="btn-apply"><i class="fab fa-whatsapp"></i> Kuwa Wakala Sasa</a>
+        <a href="https://wa.me/255655728982?text=Hello%20UNP%20TOURS!%20Nataka%20kuwa%20Wakala." class="btn-apply" style="background: #25d366; color: #fff;"><i class="fab fa-whatsapp"></i> Wasiliana Nasi Kupitia WhatsApp Haraka</a>
     </div>
 </section>
 
@@ -130,7 +176,19 @@
   const menuToggleBtn = document.getElementById('menuToggleBtn');
   const navLinks = document.getElementById('navLinks');
   if(menuToggleBtn) { menuToggleBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); }); }
+
+  // Kitendakazi cha fomu ya mawakala
+  function submitAgentForm(e) {
+      e.preventDefault();
+      document.getElementById('agentAppForm').reset();
+      const msg = document.getElementById('successMsg');
+      msg.style.display = 'block';
+      setTimeout(() => {
+          msg.style.display = 'none';
+      }, 6000);
+  }
 </script>
 
 </body>
-                                                                           </html>
+    </html>
+    
