@@ -5,16 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UNP TOURS - Unique & Natural Paradise</title>
     
-    <!-- FontAwesome kwa ajili ya Icons za Mitandao ya Kijamii na UI -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --primary-color: #032b1a; /* Kijani kibichi cha asili */
-            --blue-accent: #0284c7;   /* Bluu ya kimataifa */
-            --accent-color: #d4af37;  /* Dhahabu / Gold */
-            --bg-light: #f0f4f8;      /* Mandhari nyepesi ya bluu hafifu */
+            --primary-color: #032b1a;
+            --blue-accent: #0284c7;
+            --accent-color: #d4af37;
+            --bg-light: #f0f4f8;
             --text-dark: #1e293b;
             --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -35,7 +34,6 @@
 
         a { text-decoration: none; color: inherit; }
 
-        /* Header yenye Logo na Lugha 10 */
         header {
             background: linear-gradient(135deg, var(--primary-color), var(--blue-accent));
             color: #ffffff;
@@ -110,7 +108,6 @@
             color: var(--primary-color);
         }
 
-        /* Sehemu Kuu ya Viewport (SPA Dynamic Content) */
         .container {
             max-width: 1200px;
             margin: 40px auto;
@@ -140,7 +137,7 @@
             color: #475569;
         }
 
-        /* Makundi 7 Grid */
+        /* Grid ya Makundi 7 - Majina Tu */
         .categories-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -155,8 +152,11 @@
             border-top: 5px solid var(--blue-accent);
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
             transition: var(--transition);
+            text-align: center;
         }
 
         .category-card:hover {
@@ -164,72 +164,12 @@
             box-shadow: 0 12px 30px rgba(0,0,0,0.12);
         }
 
-        .media-container {
-            position: relative;
-            width: 100%;
-            height: 180px;
-            background: linear-gradient(135deg, var(--primary-color), var(--blue-accent));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-weight: bold;
-            overflow: hidden;
-        }
-
-        .media-badge {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background: rgba(3, 43, 26, 0.85);
-            color: var(--accent-color);
-            padding: 4px 10px;
-            font-size: 0.75rem;
-            font-weight: bold;
-            border-radius: 4px;
-            text-transform: uppercase;
-        }
-
-        .category-content {
-            padding: 25px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-            justify-content: space-between;
-        }
-
-        .category-content h3 {
+        .category-card h3 {
             font-size: 1.3rem;
             color: var(--primary-color);
-            margin-bottom: 10px;
+            margin: 0;
         }
 
-        .category-content p {
-            font-size: 0.9rem;
-            color: #64748b;
-            margin-bottom: 20px;
-        }
-
-        .explore-btn {
-            display: inline-block;
-            background-color: var(--blue-accent);
-            color: #ffffff;
-            padding: 10px 20px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: bold;
-            text-align: center;
-            cursor: pointer;
-            border: none;
-            transition: var(--transition);
-        }
-
-        .explore-btn:hover {
-            background-color: var(--accent-color);
-            color: var(--primary-color);
-        }
-
-        /* Google Widgets Section */
         .google-widgets-section {
             margin-top: 60px;
             background: #ffffff;
@@ -273,7 +213,6 @@
             font-size: 1rem;
         }
 
-        /* Dynamic Pages Styling (About Us & Services Details) */
         .page-content-box {
             background: #ffffff;
             padding: 40px;
@@ -309,7 +248,6 @@
             margin-bottom: 8px;
         }
 
-        /* Footer */
         .modern-footer {
             background: linear-gradient(135deg, var(--primary-color), var(--blue-accent));
             color: #ffffff;
@@ -438,7 +376,6 @@
             text-align: center;
         }
 
-        /* Floating WhatsApp Button */
         .floating-whatsapp {
             position: fixed;
             bottom: 30px;
@@ -461,7 +398,6 @@
 </head>
 <body>
 
-    <!-- Header yenye Logo na Lugha 10 -->
     <header>
         <div class="logo-container" onclick="router.navigate('home')">
             <img src="logo.png" alt="UNP Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/45?text=UNP'">
@@ -484,12 +420,9 @@
         </div>
     </header>
 
-    <!-- Hapa ndipo maudhui yote yanapobadilika papo hapo (SPA Viewport) -->
     <main id="app-viewport" class="container">
-        <!-- Maudhui ya mwanzo yanajazwa na JavaScript -->
     </main>
 
-    <!-- Footer -->
     <footer class="modern-footer">
         <div class="footer-links-container">
             <div class="footer-accordion-item">
@@ -512,7 +445,6 @@
             </div>
         </div>
 
-        <!-- Sehemu ya Mitandao ya Kijamii -->
         <div class="social-section">
             <h3>Connect with Us</h3>
             <div class="social-icons">
@@ -543,59 +475,95 @@
         </div>
     </footer>
 
-    <!-- Kitufe cha Kuelea cha WhatsApp -->
     <a href="https://wa.me/255655728982" target="_blank" class="floating-whatsapp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- JavaScript Core ya Kuendesha Makundi 7, About Us, na Services -->
     <script>
         const views = {
             home: `
                 <div class="hero-intro">
                     <h2>Unique & Natural Paradise</h2>
-                    <p>Gundua makundi 7 maalum ya vivutio vyetu vya Zanzibar na Tanzania kwa mfumo wa kipekee wa kimataifa.</p>
+                    <p>Gundua makundi 7 maalum ya vivutio vyetu vya Zanzibar na Tanzania.</p>
                 </div>
 
                 <div class="categories-grid">
-                    <!-- 1. Beach & Ocean -->
+                    <!-- Majina 7 Tu -->
                     <div class="category-card">
-                        <div class="media-container">
-                            <span class="media-badge">Beach & Ocean</span>
-                            <i class="fas fa-water fa-3x" style="color: var(--accent-color);"></i>
+                        <h3>Beach & Ocean Experiences</h3>
+                    </div>
+                    <div class="category-card">
+                        <h3>Culture & History</h3>
+                    </div>
+                    <div class="category-card">
+                        <h3>Wildlife & Safari</h3>
+                    </div>
+                    <div class="category-card">
+                        <h3>Luxury & VIP Services</h3>
+                    </div>
+                    <div class="category-card">
+                        <h3>Travel Support Services</h3>
+                    </div>
+                    <div class="category-card">
+                        <h3>Events & Special Occasions</h3>
+                    </div>
+                    <div class="category-card">
+                        <h3>Nature & Adventure</h3>
+                    </div>
+                </div>
+
+                <section class="google-widgets-section">
+                    <h3>Global Location & Traveller Reviews</h3>
+                    <p>Integrated Google Maps API na Live Google Reviews widgets kusaidia uelekeo na uthibitisho wa huduma zetu.</p>
+                    <div class="widgets-grid">
+                        <div class="widget-box">
+                            <h4>🗺️ Google Maps Widget</h4>
+                            <p>Ramani inayoonyesha makao makuu ya UNP Tours na njia kuu za kitalii.</p>
                         </div>
-                        <div class="category-content">
-                            <div>
-                                <h3>1. Beach & Ocean Experiences</h3>
-                                <p>Safari Blue, Dolphin Tour huko Kizimkazi, na michezo ya majini kama Snorkeling, Jet Ski na Kitesurfing.</p>
-                            </div>
-                            <button class="explore-btn" onclick="router.navigate('group-beach')">Fungua Kundi Hili</button>
+                        <div class="widget-box">
+                            <h4>⭐ Google Reviews Widget</h4>
+                            <p>Maoni ya watalii kutoka duniani kote yaliyothibitishwa na Google Business.</p>
                         </div>
                     </div>
-
-                    <!-- 2. Culture & History -->
-                    <div class="category-card">
-                        <div class="media-container">
-                            <span class="media-badge">Culture & History</span>
-                            <i class="fas fa-landmark fa-3x" style="color: var(--accent-color);"></i>
-                        </div>
-                        <div class="category-content">
-                            <div>
-                                <h3>2. Culture & History</h3>
-                                <p>Tembelea Stone Town ya kihistoria, vijiji vya asili, densi, muziki, na vyakula vya jadi (Pilau, Urojo).</p>
-                            </div>
-                            <button class="explore-btn" onclick="router.navigate('group-culture')">Fungua Kundi Hili</button>
-                        </div>
-                    </div>
-
-                    <!-- 3. Wildlife & Safari -->
-                    <div class="category-card">
-                        <div class="media-container">
-                            <span class="media-badge">Wildlife & Safari</span>
-                            <i class="fas fa-paw fa-3x" style="color: var(--accent-color);"></i>
-                        </div>
-                        <div class="category-content">
-                            <div>
-                                <h3>3. Wildlife & Safari</h3>
-                                <p>Serengeti, Ngorongoro, Tarangire, Manyara (Big Five), uhamiaji mkuu wa wanyama, na Kilimanjaro Trekking.</p>
-                       
+                </section>
+            `,
+            'group-beach': `
+                <div class="page-content-box">
+                    <h2>🌊 Group 1: Beach & Ocean Experiences</h2>
+                    <p>Furahia urembo na utulivu wa bahari ya Hindi ukiwa Zanzibar kupitia huduma zetu za kiwango cha juu:</p>
+                    <ul>
+                        <li><strong>Safari Blue:</strong> Safari ya mashua ya jadi, kutembelea visiwa vidogo, kuogelea kwenye miamba ya matumbawe, na chakula cha mchana cha samaki safi na dagaa wa baharini.</li>
+                        <li><strong>Dolphin Tour (Kizimkazi):</strong> Safari maalum ya kuogelea na kutazama pomboo kwenye makazi yao ya asili Kusini mwa Zanzibar.</li>
+                        <li><strong>Water Sports:</strong> Shughuli za kusisimua kama Snorkeling, Scuba Diving, Kitesurfing, Jet Ski, na Paddleboarding.</li>
+                    </ul>
+                    <button class="explore-btn" onclick="router.navigate('home')">⬅ Rudi Nyumbani</button>
+                </div>
+            `,
+            'group-culture': `
+                <div class="page-content-box">
+                    <h2>🏛️ Group 2: Culture & History</h2>
+                    <p>Jifunze historia tajiri na utamaduni wa kipekee wa visiwa vya viungo:</p>
+                    <ul>
+                        <li><strong>Stone Town Tour:</strong> Ziara ya kutembelea mji wa kihistoria uliopo chini ya UNESCO, magofu ya kale, na masoko ya viungo.</li>
+                        <li><strong>Cultural Tour:</strong> Kutembelea vijiji vya asili, kujionea dansi za kitamaduni, muziki wa taarab, na kuonja vyakula vya asili (Pilau, Biryani, Urojo).</li>
+                        <li><strong>Jozani Forest Tour:</strong> Matembezi kwenye msitu pekee wa asili wa Jozani ukikutana na tumbili adimu wa Red Colobus.</li>
+                    </ul>
+                    <button class="explore-btn" onclick="router.navigate('home')">⬅ Rudi Nyumbani</button>
+                </div>
+            `,
+            'group-wildlife': `
+                <div class="page-content-box">
+                    <h2>🦁 Group 3: Wildlife & Safari</h2>
+                    <p>Pata uzoefu wa kusisimua wa wanyama pori Tanzania Bara na visiwani:</p>
+                    <ul>
+                        <li><strong>Tanzania National Parks:</strong> Ziara za kipekee Serengeti, Ngorongoro, Tarangire, na Manyara kuona "Big Five".</li>
+                        <li><strong>Serengeti Migration:</strong> Ushuhuda wa uhamiaji mkubwa wa wanyama pori na kushuka ndani ya Ngorongoro Crater.</li>
+                        <li><strong>Kilimanjaro Trekking:</strong> Kupanda mlima mrefu zaidi barani Afrika ukiongozwa na wataalamu.</li>
+                    </ul>
+                    <button class="explore-btn" onclick="router.navigate('home')">⬅ Rudi Nyumbani</button>
+                </div>
+            `,
+            'group-luxury': `
+                <div class="page-content-box">
+                    <h2>👑 Group 4: Luxury & VIP Services</h2>
+               
