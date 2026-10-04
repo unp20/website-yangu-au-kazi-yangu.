@@ -22,7 +22,7 @@
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Blog & Habari | UNP TOURS Zanzibar">
-<meta name="twitter:description" content="Makula kuhusu Zanzibar, Tanzania, na utalii wa kifahari.">
+<meta name="twitter:description" content="Makala kuhusu Zanzibar, Tanzania, na utalii wa kifahari.">
 <meta name="twitter:image" content="https://unp.tours/images/logo.png">
 
 <link rel="canonical" href="https://unp.tours/blog.html">
@@ -268,23 +268,23 @@ const articles = [
 ];
 
 const blogGrid = document.getElementById('blogGrid');
-blogGrid.innerHTML = '';
-articles.forEach(article => {
-    const card = document.createElement('div');
-    card.className = 'blog-card';
-    card.innerHTML = `
-        <div class="img-wrapper"><i class="fas fa-image"></i></div>
-        <div class="card-body">
-            <span class="category">${article.category}</span>
-            <h3>${article.title}</h3>
-            <p class="meta"><i class="fas fa-user"></i> ${article.author} &nbsp;|&nbsp; <i class="fas fa-calendar"></i> ${article.date}</p>
-            <p>${article.excerpt}</p>
-            <a href="#" class="btn-read" onclick="alert('Makala kamili inakuja hivi karibuni!'); return false;">Soma Zaidi <i class="fas fa-arrow-right"></i></a>
-        </div>
-    `;
-    blogGrid.appendChild(card);
-});
+if(blogGrid) {
+    blogGrid.innerHTML = '';
+    articles.forEach(article => {
+        const card = document.createElement('div');
+        card.className = 'blog-card';
+        card.innerHTML = `
+            <div class="img-wrapper"><i class="fas fa-image"></i></div>
+            <div class="card-body">
+                <span class="category">${article.category}</span>
+                <h3>${article.title}</h3>
+                <p class="meta"><i class="fas fa-user"></i> ${article.author} &nbsp;|&nbsp; <i class="fas fa-calendar"></i> ${article.date}</p>
+                <p>${article.excerpt}</p>
+                <a href="#" class="btn-read" onclick="alert('Makala kamili inakuja hivi karibuni!'); return false;">Soma Zaidi <i class="fas fa-arrow-right"></i></a>
+            </div>
+        `;
+        blogGrid.appendChild(card);
+    });
+}
 
-// NEWSLETTER FORM
-const newsletterForm = document.getElementById('newsletterForm');
-const newsletterMsg 
+// NEWSLETTER FORM & FIR
