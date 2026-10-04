@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sw">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UNP TOURS - Unique & Natural Paradise</title>
     
-    <!-- FontAwesome kwa ajili ya Icons za Mitandao ya Kijamii -->
+    <!-- FontAwesome kwa ajili ya Icons za Mitandao ya Kijamii na UI -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
@@ -15,20 +16,24 @@
             --accent-color: #d4af37;  /* Dhahabu / Gold */
             --bg-light: #f0f4f8;      /* Mandhari nyepesi ya bluu hafifu */
             --text-dark: #1e293b;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
         body {
             background-color: var(--bg-light);
             color: var(--text-dark);
             line-height: 1.6;
+            overflow-x: hidden;
         }
+
+        a { text-decoration: none; color: inherit; }
 
         /* Header yenye Logo na Lugha 10 */
         header {
@@ -42,13 +47,14 @@
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
         }
 
         .logo-container {
             display: flex;
             align-items: center;
             gap: 12px;
-            text-decoration: none;
+            cursor: pointer;
         }
 
         .logo-img {
@@ -73,7 +79,6 @@
             gap: 15px;
         }
 
-        /* Language Section yenye Lugha 10 */
         .language-section {
             background: rgba(255, 255, 255, 0.15);
             border: 1px solid var(--accent-color);
@@ -97,7 +102,7 @@
             border-radius: 4px;
             cursor: pointer;
             font-weight: bold;
-            transition: 0.3s;
+            transition: var(--transition);
         }
 
         .menu-btn:hover {
@@ -105,11 +110,18 @@
             color: var(--primary-color);
         }
 
-        /* Sehemu Kuu ya Kategoria */
+        /* Sehemu Kuu ya Viewport (SPA Dynamic Content) */
         .container {
             max-width: 1200px;
             margin: 40px auto;
             padding: 0 20px;
+            min-height: 65vh;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .hero-intro {
@@ -128,6 +140,7 @@
             color: #475569;
         }
 
+        /* Makundi 7 Grid */
         .categories-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -143,7 +156,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: 0.3s;
+            transition: var(--transition);
         }
 
         .category-card:hover {
@@ -154,8 +167,13 @@
         .media-container {
             position: relative;
             width: 100%;
-            height: 200px;
-            background-color: #cbd5e1;
+            height: 180px;
+            background: linear-gradient(135deg, var(--primary-color), var(--blue-accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: bold;
             overflow: hidden;
         }
 
@@ -181,13 +199,13 @@
         }
 
         .category-content h3 {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             color: var(--primary-color);
             margin-bottom: 10px;
         }
 
         .category-content p {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             color: #64748b;
             margin-bottom: 20px;
         }
@@ -201,7 +219,9 @@
             text-decoration: none;
             font-weight: bold;
             text-align: center;
-            transition: 0.3s;
+            cursor: pointer;
+            border: none;
+            transition: var(--transition);
         }
 
         .explore-btn:hover {
@@ -209,7 +229,7 @@
             color: var(--primary-color);
         }
 
-        /* Google Widgets Section Halisi */
+        /* Google Widgets Section */
         .google-widgets-section {
             margin-top: 60px;
             background: #ffffff;
@@ -253,6 +273,42 @@
             font-size: 1rem;
         }
 
+        /* Dynamic Pages Styling (About Us & Services Details) */
+        .page-content-box {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+            border-top: 6px solid var(--accent-color);
+        }
+
+        .page-content-box h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .page-content-box h3 {
+            color: var(--blue-accent);
+            margin-top: 25px;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .page-content-box p, .page-content-box ul {
+            color: #475569;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        .page-content-box ul {
+            padding-left: 20px;
+        }
+
+        .page-content-box li {
+            margin-bottom: 8px;
+        }
+
         /* Footer */
         .modern-footer {
             background: linear-gradient(135deg, var(--primary-color), var(--blue-accent));
@@ -286,7 +342,6 @@
             align-items: center;
         }
 
-        /* Mpangilio maalum wa Accordion kufanya kazi vizuri kwenye simu */
         .accordion-content {
             display: none;
             padding-bottom: 15px;
@@ -304,6 +359,7 @@
             padding: 8px 0;
             font-size: 0.9rem;
             transition: 0.2s;
+            cursor: pointer;
         }
 
         .accordion-content a:hover {
@@ -339,7 +395,7 @@
             font-size: 0.85rem;
             font-weight: 600;
             text-align: center;
-            transition: 0.3s;
+            transition: var(--transition);
             box-shadow: 0 4px 10px rgba(0,0,0,0.15);
         }
 
@@ -366,6 +422,7 @@
         .footer-bottom-links a {
             color: #e2e8f0;
             text-decoration: none;
+            cursor: pointer;
         }
 
         .footer-bottom-links a:hover {
@@ -380,16 +437,36 @@
             padding-top: 15px;
             text-align: center;
         }
+
+        /* Floating WhatsApp Button */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            color: #fff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            z-index: 1100;
+            transition: var(--transition);
+        }
+        .floating-whatsapp:hover { transform: scale(1.1); }
     </style>
 </head>
 <body>
 
     <!-- Header yenye Logo na Lugha 10 -->
     <header>
-        <a href="index.html" class="logo-container">
+        <div class="logo-container" onclick="router.navigate('home')">
             <img src="logo.png" alt="UNP Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/45?text=UNP'">
             <span class="logo-text">UNP TOURS</span>
-        </a>
+        </div>
         <div class="header-right">
             <select class="language-section" onchange="changeLanguage(this.value)">
                 <option value="en">English (US)</option>
@@ -403,134 +480,34 @@
                 <option value="pt">Português</option>
                 <option value="ja">日本語 (Japanese)</option>
             </select>
-            <button class="menu-btn">Menu ☰</button>
+            <button class="menu-btn" onclick="router.navigate('home')">Home 🏠</button>
         </div>
     </header>
 
-    <main class="container">
-        
-        <div class="hero-intro">
-            <h2>Unique & Natural Paradise</h2>
-            <p>Explore our core categories below featuring immersive photo and video previews of your next destination.</p>
-        </div>
-
-        <!-- Makundi Makuu Matano -->
-        <div class="categories-grid">
-            
-            <!-- 1. Tanzania Safaris -->
-            <div class="category-card">
-                <div class="media-container">
-                    <span class="media-badge">Wildlife Video / Photo</span>
-                    <div style="width:100%; height:100%; background: linear-gradient(45deg, #032b1a, #0284c7); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:bold;">[Safari Media Preview]</div>
-                </div>
-                <div class="category-content">
-                    <div>
-                        <h3>Tanzania Safaris</h3>
-                        <p>Discover breathtaking wildlife adventures across national parks, Serengeti, Ngorongoro, and Zanzibar island paradises.</p>
-                    </div>
-                    <a href="tanzania-safaris.html" class="explore-btn">Explore Category</a>
-                </div>
-            </div>
-
-            <!-- 2. Hiking & Mountain Climbing -->
-            <div class="category-card">
-                <div class="media-container">
-                    <span class="media-badge">Climbing Gallery</span>
-                    <div style="width:100%; height:100%; background: linear-gradient(45deg, #1e293b, #0284c7); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:bold;">[Kilimanjaro Media Preview]</div>
-                </div>
-                <div class="category-content">
-                    <div>
-                        <h3>Hiking & Climbing</h3>
-                        <p>Conquer Africa's highest peaks including Mount Kilimanjaro and Mount Meru with expert guiding and safety tips.</p>
-                    </div>
-                    <a href="climbing.html" class="explore-btn">Explore Category</a>
-                </div>
-            </div>
-
-            <!-- 3. Visa, Laws & Flight Info -->
-            <div class="category-card">
-                <div class="media-container">
-                    <span class="media-badge">Travel Guide Media</span>
-                    <div style="width:100%; height:100%; background: linear-gradient(45deg, #0284c7, #d4af37); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:bold;">[Visa & Flights Preview]</div>
-                </div>
-                <div class="category-content">
-                    <div>
-                        <h3>Visa, Laws & Flights</h3>
-                        <p>Essential guidance on entry visas, local country laws, regulations, and international flight schedules.</p>
-                    </div>
-                    <a href="visa-laws-flights.html" class="explore-btn">Explore Category</a>
-                </div>
-            </div>
-
-            <!-- 4. Rental Services -->
-            <div class="category-card">
-                <div class="media-container">
-                    <span class="media-badge">Rentals & Gear</span>
-                    <div style="width:100%; height:100%; background: linear-gradient(45deg, #032b1a, #16a34a); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:bold;">[Rentals Media Preview]</div>
-                </div>
-                <div class="category-content">
-                    <div>
-                        <h3>Rental Services</h3>
-                        <p>Reliable 4x4 safari vehicles, camping gear, and equipment rentals to keep your journey smooth and secure.</p>
-                    </div>
-                    <a href="rentals.html" class="explore-btn">Explore Category</a>
-                </div>
-            </div>
-
-            <!-- 5. Forum & Blog -->
-            <div class="category-card">
-                <div class="media-container">
-                    <span class="media-badge">Community Stories</span>
-                    <div style="width:100%; height:100%; background: linear-gradient(45deg, #475569, #d4af37); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:bold;">[Forum & Blog Preview]</div>
-                </div>
-                <div class="category-content">
-                    <div>
-                        <h3>Forum & Blog</h3>
-                        <p>Join global traveller discussions, read travel stories, ask questions, and share insights on our community forum.</p>
-                    </div>
-                    <a href="blog.html" class="explore-btn">Explore Category</a>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- Google Widgets Section Halisi -->
-        <section class="google-widgets-section">
-            <h3>Global Location & Traveller Reviews</h3>
-            <p>Integrated Google Maps API and Live Google Reviews widgets to assist your navigation and trust verification.</p>
-            <div class="widgets-grid">
-                <div class="widget-box">
-                    <h4>🗺️ Google Maps Widget</h4>
-                    <p>Embedded interactive map showing UNP Tours headquarters and primary tourist route waypoints.</p>
-                </div>
-                <div class="widget-box">
-                    <h4>⭐ Google Reviews Widget</h4>
-                    <p>Live traveler testimonials and ratings verified securely through Google Business API.</p>
-                </div>
-            </div>
-        </section>
-
+    <!-- Hapa ndipo maudhui yote yanapobadilika papo hapo (SPA Viewport) -->
+    <main id="app-viewport" class="container">
+        <!-- Maudhui ya mwanzo yanajazwa na JavaScript -->
     </main>
 
     <!-- Footer -->
     <footer class="modern-footer">
         <div class="footer-links-container">
             <div class="footer-accordion-item">
-                <button class="accordion-header" type="button">About Us <span>+</span></button>
+                <button class="accordion-header" type="button" onclick="toggleAccordion(this)">About Us <span>+</span></button>
                 <div class="accordion-content">
-                    <a href="about.html">Our Team & Vision</a>
-                    <a href="contact.html">Contact Us</a>
-                    <a href="blog.html">Blog & Articles</a>
+                    <a onclick="router.navigate('about')">Our Team & Vision</a>
+                    <a onclick="router.navigate('contact')">Contact Us</a>
+                    <a onclick="router.navigate('blog')">Blog & Articles</a>
                 </div>
             </div>
             
             <div class="footer-accordion-item">
-                <button class="accordion-header" type="button">Services & Support <span>+</span></button>
+                <button class="accordion-header" type="button" onclick="toggleAccordion(this)">Services & Support <span>+</span></button>
                 <div class="accordion-content">
-                    <a href="tanzania-safaris.html">Tanzania Safaris</a>
-                    <a href="climbing.html">Mountain Climbing</a>
-                    <a href="visa-laws-flights.html">Visa & Flight Guidelines</a>
-                    <a href="rentals.html">Equipment Rentals</a>
+                    <a onclick="router.navigate('group-wildlife')">Wildlife & Safari</a>
+                    <a onclick="router.navigate('group-luxury')">Luxury & VIP Services</a>
+                    <a onclick="router.navigate('group-support')">Travel Support Services</a>
+                    <a onclick="router.navigate('group-nature')">Nature & Adventure</a>
                 </div>
             </div>
         </div>
@@ -555,13 +532,9 @@
         </div>
 
         <div class="footer-bottom-links">
-            <div class="footer-bottom-links">
-                <a href="index.html">UNP Tours Global</a>
-                <a href="#">Privacy & Terms</a>
-                <a href="#">Accessibility</a>
-                <a href="#">Cookies</a>
-                <a href="#">Sitemap</a>
-            </div>
+            <a onclick="router.navigate('home')">UNP Tours Global</a>
+            <a onclick="router.navigate('privacy')">Privacy & Terms</a>
+            <a onclick="router.navigate('contact')">Support & Contact</a>
         </div>
 
         <div class="footer-legal">
@@ -570,7 +543,59 @@
         </div>
     </footer>
 
-    <!-- JavaScript iliyoboreshwa kwa ajili ya simu na vivinjari vyote -->
+    <!-- Kitufe cha Kuelea cha WhatsApp -->
+    <a href="https://wa.me/255655728982" target="_blank" class="floating-whatsapp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript Core ya Kuendesha Makundi 7, About Us, na Services -->
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-         
+        const views = {
+            home: `
+                <div class="hero-intro">
+                    <h2>Unique & Natural Paradise</h2>
+                    <p>Gundua makundi 7 maalum ya vivutio vyetu vya Zanzibar na Tanzania kwa mfumo wa kipekee wa kimataifa.</p>
+                </div>
+
+                <div class="categories-grid">
+                    <!-- 1. Beach & Ocean -->
+                    <div class="category-card">
+                        <div class="media-container">
+                            <span class="media-badge">Beach & Ocean</span>
+                            <i class="fas fa-water fa-3x" style="color: var(--accent-color);"></i>
+                        </div>
+                        <div class="category-content">
+                            <div>
+                                <h3>1. Beach & Ocean Experiences</h3>
+                                <p>Safari Blue, Dolphin Tour huko Kizimkazi, na michezo ya majini kama Snorkeling, Jet Ski na Kitesurfing.</p>
+                            </div>
+                            <button class="explore-btn" onclick="router.navigate('group-beach')">Fungua Kundi Hili</button>
+                        </div>
+                    </div>
+
+                    <!-- 2. Culture & History -->
+                    <div class="category-card">
+                        <div class="media-container">
+                            <span class="media-badge">Culture & History</span>
+                            <i class="fas fa-landmark fa-3x" style="color: var(--accent-color);"></i>
+                        </div>
+                        <div class="category-content">
+                            <div>
+                                <h3>2. Culture & History</h3>
+                                <p>Tembelea Stone Town ya kihistoria, vijiji vya asili, densi, muziki, na vyakula vya jadi (Pilau, Urojo).</p>
+                            </div>
+                            <button class="explore-btn" onclick="router.navigate('group-culture')">Fungua Kundi Hili</button>
+                        </div>
+                    </div>
+
+                    <!-- 3. Wildlife & Safari -->
+                    <div class="category-card">
+                        <div class="media-container">
+                            <span class="media-badge">Wildlife & Safari</span>
+                            <i class="fas fa-paw fa-3x" style="color: var(--accent-color);"></i>
+                        </div>
+                        <div class="category-content">
+                            <div>
+                                <h3>3. Wildlife & Safari</h3>
+                                <p>Serengeti, Ngorongoro, Tarangire, Manyara (Big Five), uhamiaji mkuu wa wanyama, na Kilimanjaro Trekking.</p>
+                       
