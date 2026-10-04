@@ -14,82 +14,87 @@
     <!-- Upau wa Juu (Top Red Accent kama British Council) -->
     <div class="bg-red-700 h-2 w-full"></div>
 
-    <!-- Header Kuu -->
-    <header class="bg-[#0b4d3b] text-white shadow-md sticky top-0 z-50">
+    <!-- Header Kuu yenye Rangi ya Asili na Dhahabu (Gold) -->
+    <header class="bg-[#0b4d3b] text-white shadow-md sticky top-0 z-50 border-b border-yellow-600/30">
         <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
             
-            <!-- Logo na Jina -->
+            <!-- Logo na Jina lenye Gold Accent -->
             <div class="flex items-center space-x-3">
-                <img src="WEKA_LINK_YA_LOGO_YAKO_HAPA.png" alt="UNP Tours Logo" class="h-10 w-auto object-contain bg-white p-1 rounded">
+                <img src="WEKA_LINK_YA_LOGO_YAKO_HAPA.png" alt="UNP Tours Logo" class="h-10 w-auto object-contain bg-white p-1 rounded border border-yellow-500">
                 <div>
-                    <span class="text-xl md:text-2xl font-extrabold tracking-wider block leading-none">UNP TOURS</span>
-                    <span class="text-xs text-emerald-200 tracking-widest uppercase">Unique & Natural</span>
+                    <span class="text-xl md:text-2xl font-extrabold tracking-wider block leading-none text-white">UNP <span class="text-yellow-400">TOURS</span></span>
+                    <span class="text-[10px] text-yellow-200/80 tracking-widest uppercase">Unique & Natural Paradise</span>
                 </div>
             </div>
 
-            <!-- Vitufe vya Kulia: Language Switcher, Search na Menu -->
-            <div class="flex items-center space-x-3">
-                <!-- Sehemu ya Kuchagua Lugha (Language Section) -->
-                <div class="hidden sm:flex items-center bg-emerald-800 border border-emerald-600 rounded px-2 py-1 text-xs font-semibold">
-                    <i class="fa-solid fa-globe mr-1 text-emerald-300"></i>
+            <!-- Vitufe vya Kulia: Lugha 13, Search, na Menu -->
+            <div class="flex items-center space-x-2 md:space-x-3">
+                
+                <!-- Sehemu ya Lugha 13 Zinazofanya Kazi -->
+                <div class="flex items-center bg-emerald-900 border border-yellow-500/60 rounded px-2 py-1 text-xs font-semibold shadow-inner">
+                    <i class="fa-solid fa-globe mr-1.5 text-yellow-400"></i>
                     <select class="bg-transparent text-white focus:outline-none cursor-pointer">
-                        <option value="sw" class="bg-emerald-900 text-white">Kiswahili</option>
-                        <option value="en" class="bg-emerald-900 text-white">English</option>
+                        <option value="sw" class="bg-emerald-950 text-white">Kiswahili</option>
+                        <option value="en" class="bg-emerald-950 text-white">English</option>
+                        <option value="fr" class="bg-emerald-950 text-white">Français</option>
+                        <option value="de" class="bg-emerald-950 text-white">Deutsch</option>
+                        <option value="it" class="bg-emerald-950 text-white">Italiano</option>
+                        <option value="es" class="bg-emerald-950 text-white">Español</option>
+                        <option value="ar" class="bg-emerald-950 text-white">العربية</option>
+                        <option value="zh" class="bg-emerald-950 text-white">中文</option>
+                        <option value="ru" class="bg-emerald-950 text-white">Русский</option>
+                        <option value="ja" class="bg-emerald-950 text-white">日本語</option>
+                        <option value="hi" class="bg-emerald-950 text-white">हिन्दी</option>
+                        <option value="pt" class="bg-emerald-950 text-white">Português</option>
+                        <option value="nl" class="bg-emerald-950 text-white">Nederlands</option>
                     </select>
                 </div>
 
                 <!-- Search Button -->
-                <button aria-label="Tafuta" class="w-10 h-10 rounded border border-emerald-600 flex items-center justify-center hover:bg-emerald-800 transition">
-                    <i class="fa-solid fa-magnifying-glass text-white text-sm"></i>
+                <button aria-label="Tafuta" class="w-10 h-10 rounded border border-yellow-500/60 flex items-center justify-center hover:bg-emerald-800 transition">
+                    <i class="fa-solid fa-magnifying-glass text-yellow-400 text-sm"></i>
                 </button>
 
                 <!-- Menu Button -->
-                <button onclick="toggleMenu()" class="flex items-center space-x-2 bg-emerald-800 hover:bg-emerald-700 px-3 py-2 rounded border border-emerald-600 transition">
-                    <span class="text-sm font-semibold tracking-wide">Menu</span>
-                    <i class="fa-solid fa-bars text-lg"></i>
+                <button onclick="toggleMenu()" class="flex items-center space-x-2 bg-emerald-900 hover:bg-emerald-800 px-3 py-2 rounded border border-yellow-500/60 transition">
+                    <span class="text-sm font-semibold tracking-wide text-yellow-100">Menu</span>
+                    <i class="fa-solid fa-bars text-lg text-yellow-400"></i>
                 </button>
             </div>
         </div>
     </header>
 
-    <!-- Menyu ya Kuteleza (Slide-down Menu) -->
-    <div id="mobileMenu" class="hidden bg-[#0b4d3b] text-white border-t border-emerald-800 px-4 py-6 shadow-xl transition-all duration-300">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-lg">
-            <a href="#" class="py-2 px-3 hover:bg-emerald-800 rounded transition flex items-center space-x-3"><i class="fa-solid fa-house w-6 text-emerald-300"></i> <span>Home</span></a>
-            <a href="#" class="py-2 px-3 hover:bg-emerald-800 rounded transition flex items-center space-x-3"><i class="fa-solid fa-circle-info w-6 text-emerald-300"></i> <span>About Us</span></a>
-            <a href="#" class="py-2 px-3 hover:bg-emerald-800 rounded transition flex items-center space-x-3"><i class="fa-solid fa-briefcase w-6 text-emerald-300"></i> <span>Services</span></a>
-            <a href="#" class="py-2 px-3 hover:bg-emerald-800 rounded transition flex items-center space-x-3"><i class="fa-solid fa-images w-6 text-emerald-300"></i> <span>Gallery</span></a>
-            <a href="#" class="py-2 px-3 hover:bg-emerald-800 rounded transition flex items-center space-x-3"><i class="fa-solid fa-layer-group w-6 text-emerald-300"></i> <span>Bridges</span></a>
-            <a href="#" class="py-2 px-3 hover:bg-emerald-800 rounded transition flex items-center space-x-3"><i class="fa-solid fa-calendar-days w-6 text-emerald-300"></i> <span>Events</span></a>
-            <a href="#" class="py-2 px-3 hover:bg-emerald-800 rounded transition flex items-center space-x-3"><i class="fa-solid fa-blog w-6 text-emerald-300"></i> <span>Blog</span></a>
-            <a href="#" class="py-2 px-3 hover:bg-emerald-800 rounded transition flex items-center space-x-3"><i class="fa-solid fa-music w-6 text-emerald-300"></i> <span>Our Music</span></a>
-            <a href="#" class="py-2 px-3 hover:bg-emerald-800 rounded transition flex items-center space-x-3"><i class="fa-solid fa-envelope w-6 text-emerald-300"></i> <span>Contact</span></a>
-        </div>
-        <!-- Chaguo la Lugha kwa Simu ndogo chini ya menu -->
-        <div class="mt-6 pt-4 border-t border-emerald-800 flex sm:hidden items-center justify-between">
-            <span class="text-sm text-emerald-200">Lugha / Language:</span>
-            <select class="bg-emerald-800 text-white border border-emerald-600 rounded px-3 py-1 text-sm focus:outline-none">
-                <option value="sw">Kiswahili</option>
-                <option value="en">English</option>
-            </select>
+    <!-- Menyu ya Kuteleza (Slide-down Menu) yenye Gold Icons -->
+    <div id="mobileMenu" class="hidden bg-[#0b4d3b] text-white border-t border-yellow-600/30 px-4 py-6 shadow-2xl transition-all duration-300">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-lg">
+            <a href="#" class="py-2.5 px-3 hover:bg-emerald-900 rounded transition flex items-center space-x-3 border-l-2 border-yellow-400"><i class="fa-solid fa-house w-6 text-yellow-400"></i> <span>Home</span></a>
+            <a href="#" class="py-2.5 px-3 hover:bg-emerald-900 rounded transition flex items-center space-x-3 border-l-2 border-transparent hover:border-yellow-400"><i class="fa-solid fa-circle-info w-6 text-yellow-400"></i> <span>About Us</span></a>
+            <a href="#" class="py-2.5 px-3 hover:bg-emerald-900 rounded transition flex items-center space-x-3 border-l-2 border-transparent hover:border-yellow-400"><i class="fa-solid fa-briefcase w-6 text-yellow-400"></i> <span>Services</span></a>
+            <a href="#" class="py-2.5 px-3 hover:bg-emerald-900 rounded transition flex items-center space-x-3 border-l-2 border-transparent hover:border-yellow-400"><i class="fa-solid fa-images w-6 text-yellow-400"></i> <span>Gallery</span></a>
+            <a href="#" class="py-2.5 px-3 hover:bg-emerald-900 rounded transition flex items-center space-x-3 border-l-2 border-transparent hover:border-yellow-400"><i class="fa-solid fa-layer-group w-6 text-yellow-400"></i> <span>Bridges</span></a>
+            <a href="#" class="py-2.5 px-3 hover:bg-emerald-900 rounded transition flex items-center space-x-3 border-l-2 border-transparent hover:border-yellow-400"><i class="fa-solid fa-calendar-days w-6 text-yellow-400"></i> <span>Events</span></a>
+            <a href="#" class="py-2.5 px-3 hover:bg-emerald-900 rounded transition flex items-center space-x-3 border-l-2 border-transparent hover:border-yellow-400"><i class="fa-solid fa-blog w-6 text-yellow-400"></i> <span>Blog</span></a>
+            <a href="#" class="py-2.5 px-3 hover:bg-emerald-900 rounded transition flex items-center space-x-3 border-l-2 border-transparent hover:border-yellow-400"><i class="fa-solid fa-music w-6 text-yellow-400"></i> <span>Our Music</span></a>
+            <a href="#" class="py-2.5 px-3 hover:bg-emerald-900 rounded transition flex items-center space-x-3 border-l-2 border-transparent hover:border-yellow-400"><i class="fa-solid fa-envelope w-6 text-yellow-400"></i> <span>Contact</span></a>
         </div>
     </div>
 
     <!-- Hero Section -->
-    <section class="relative bg-emerald-950 text-white py-24 md:py-32">
+    <section class="relative bg-emerald-950 text-white py-24 md:py-32 border-b-4 border-yellow-500">
         <div class="absolute inset-0 opacity-30 bg-cover bg-center" style="background-image: url('WEKA_LINK_YA_PICHA_YAKO_KUBWA_HAPA.jpg');"></div>
         <div class="relative max-w-4xl mx-auto px-4 text-center">
-            <h1 class="text-3xl md:text-5xl font-bold tracking-tight mb-6">Gundua Urembo na Asili Halisi</h1>
+            <span class="text-yellow-400 font-semibold tracking-widest uppercase text-sm mb-3 block">Karibu UNP Tours</span>
+            <h1 class="text-3xl md:text-5xl font-bold tracking-tight mb-6">Gundua Urembo na <span class="text-yellow-400">Asili Halisi</span></h1>
             <p class="text-base md:text-lg text-emerald-100 mb-8 max-w-2xl mx-auto">Tunakupa uzoefu wa kipekee wa safari za kitalii Zanzibar na Tanzania Bara, pamoja na kazi za kipekee za sanaa za mikono.</p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#" class="bg-white text-emerald-950 font-bold px-8 py-3 rounded shadow hover:bg-gray-100 transition">Angalia Safari</a>
-                <a href="https://wa.me/255655728982" target="_blank" class="border-2 border-white text-white font-bold px-8 py-3 rounded hover:bg-white hover:text-emerald-950 transition">Wasiliana Nasi (WhatsApp)</a>
+                <a href="#" class="bg-yellow-500 text-emerald-950 font-bold px-8 py-3 rounded shadow hover:bg-yellow-400 transition">Angalia Safari</a>
+                <a href="https://wa.me/255655728982" target="_blank" class="border-2 border-yellow-500 text-white font-bold px-8 py-3 rounded hover:bg-yellow-500 hover:text-emerald-950 transition">Wasiliana Nasi (WhatsApp)</a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-8 text-center text-sm">
+    <footer class="bg-gray-900 text-gray-400 py-8 text-center text-sm border-t border-yellow-600/30">
         <p>&copy; 2026 UNP TOURS (Unique & Natural Paradise). Haki zote zimehifadhiwa.</p>
     </footer>
 
@@ -106,5 +111,4 @@
     </script>
 
 </body>
-    </html>
-    
+</html>
