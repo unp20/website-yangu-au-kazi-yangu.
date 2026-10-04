@@ -3,212 +3,386 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNP Tours - Tanzania</title>
+    <title>UNP TOURS - Tanzania</title>
     <style>
         :root {
-            --bc-purple: #4b0082;
-            --bc-pink: #e31b6d;
-            --text-dark: #333333;
+            --unp-green: #032b1a;   /* Rangi rasmi ya Kijani ya UNP */
+            --unp-gold: #d4af37;    /* Rangi rasmi ya Dhahabu ya UNP */
+            --bg-light: #f4f6f9;
+            --text-dark: #1e293b;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background-color: #f4f4f4;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
         }
 
-        /* BRITISH COUNCIL EXACT HERO BANNER STYLE */
-        .bc-hero-container {
+        /* 1. HEADER YA UNP (Inayotumia Rangi za UNP na Multi-language) */
+        header {
+            background-color: var(--unp-green);
+            color: #ffffff;
+            padding: 12px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid var(--unp-gold);
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--unp-gold);
+            background: #fff;
+        }
+
+        .brand-title {
+            font-size: 1.2rem;
+            color: var(--unp-gold);
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        /* Sehemu ya Multi-language na Nav ya Kulia */
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .lang-select {
+            background: transparent;
+            color: #ffffff;
+            border: 2px solid var(--unp-gold);
+            padding: 6px 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            outline: none;
+        }
+
+        .lang-select option {
+            background: var(--unp-green);
+            color: #fff;
+        }
+
+        .menu-search-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        .nav-btn {
+            background: none;
+            border: 2px solid var(--unp-gold);
+            color: #ffffff;
+            padding: 6px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: 0.3s;
+        }
+
+        .nav-btn:hover {
+            background: var(--unp-gold);
+            color: var(--unp-green);
+        }
+
+        /* 2. BRITISH COUNCIL STYLE HERO SLIDER (Ikiwa na Rangi za UNP Framework) */
+        .hero-slider-container {
             position: relative;
             width: 100%;
-            max-width: 1200px;
-            margin: 20px auto;
+            max-width: 1000px;
+            margin: 25px auto;
             background: #ffffff;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
             overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 1px solid #e2e8f0;
         }
 
-        .bc-slide {
+        .slide-item {
             display: none;
             position: relative;
-            height: 400px;
+            height: 380px;
         }
 
-        .bc-slide.active {
+        .slide-item.active {
             display: block;
         }
 
-        /* Hapa ndipo utakapoweka picha zako. Majina ya picha yametolewa chini */
-        .bc-slide img {
+        /* Hapa ndipo picha zako zitakaa. Weka picha kwa majina haya chini */
+        .slide-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        /* Vidoti vya juu kulia (Dots indicators kama British Council) */
-        .bc-dots-top {
+        /* Vidoti vya Juu Kulia (Dots) */
+        .slider-dots-top {
             position: absolute;
             top: 15px;
             right: 15px;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(3, 43, 26, 0.7);
             padding: 6px 12px;
             border-radius: 20px;
             display: flex;
-            gap: 8px;
+            gap: 6px;
             z-index: 10;
         }
 
-        .bc-dot {
+        .dot-indicator {
             width: 10px;
             height: 10px;
             border-radius: 50%;
-            background: #ffffff;
-            opacity: 0.5;
+            background: rgba(255, 255, 255, 0.5);
             cursor: pointer;
-            transition: 0.3s;
         }
 
-        .bc-dot.active {
-            opacity: 1;
-            background: var(--bc-pink);
+        .dot-indicator.active {
+            background: var(--unp-gold);
         }
 
         /* Vitufe vya Mishale (Arrows) */
-        .bc-arrow {
+        .slider-arrow {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: #ffffff;
-            color: var(--text-dark);
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--unp-green);
             border: none;
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
             transition: 0.3s;
             z-index: 10;
         }
 
-        .bc-arrow:hover {
-            background: var(--bc-pink);
-            color: #ffffff;
+        .slider-arrow:hover {
+            background: var(--unp-gold);
+            color: #fff;
         }
 
-        .bc-prev { left: 20px; }
-        .bc-next { right: 20px; }
+        .prev-btn { left: 15px; }
+        .next-btn { right: 15px; }
 
-        /* Sehemu ya Maelezo na Kitufe chini ya Slider */
-        .bc-content-box {
+        /* Maongezi na Maelezo yanayobadilika chini ya Slider */
+        .slider-caption-box {
             text-align: center;
-            padding: 40px 20px;
+            padding: 30px 20px;
             background: #ffffff;
         }
 
-        .bc-content-box h2 {
-            font-size: 1.8rem;
-            color: var(--text-dark);
-            margin-bottom: 20px;
-            font-weight: normal;
+        .slider-caption-box h2 {
+            font-size: 1.6rem;
+            color: var(--unp-green);
+            margin-bottom: 10px;
         }
 
-        .bc-btn {
+        .slider-caption-box p {
+            color: #64748b;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
             display: inline-block;
-            background-color: var(--bc-purple);
+            background-color: var(--unp-green);
             color: #ffffff;
-            padding: 12px 35px;
-            border-radius: 30px;
+            padding: 10px 30px;
+            border-radius: 25px;
             text-decoration: none;
             font-weight: bold;
+            border: 2px solid var(--unp-gold);
             transition: 0.3s;
         }
 
-        .bc-btn:hover {
-            background-color: var(--bc-pink);
+        .cta-button:hover {
+            background-color: var(--unp-gold);
+            color: var(--unp-green);
+        }
+
+        /* 3. SEHEMU YA PILI (Unique & Natural Paradise Section) */
+        .second-section {
+            background-color: #ffffff;
+            text-align: center;
+            padding: 50px 20px;
+            margin-top: 30px;
+            border-top: 4px solid var(--unp-gold);
+        }
+
+        .second-section h2 {
+            font-size: 2rem;
+            color: var(--unp-green);
+            margin-bottom: 15px;
+        }
+
+        .second-section p {
+            font-size: 1.1rem;
+            color: #475569;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
         }
     </style>
 </head>
 <body>
 
-    <!-- ENEO LA SLIDER YA JUU -->
-    <div class="bc-hero-container">
-        
-        <!-- Vidoti vya juu kulia -->
-        <div class="bc-dots-top">
-            <span class="bc-dot active" onclick="currentSlide(1)"></span>
-            <span class="bc-dot" onclick="currentSlide(2)"></span>
-            <span class="bc-dot" onclick="currentSlide(3)"></span>
-            <span class="bc-dot" onclick="currentSlide(4)"></span>
-            <span class="bc-dot" onclick="currentSlide(5)"></span>
-            <span class="bc-dot" onclick="currentSlide(6)"></span>
-            <span class="bc-dot" onclick="currentSlide(7)"></span>
+    <!-- HEADER YA UNP (Multi-language + Logo + Search & Menu) -->
+    <header>
+        <div class="logo-area">
+            <img src="logo.png" alt="UNP Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/45?text=UNP'">
+            <span class="brand-title">UNP TOURS</span>
         </div>
 
-        <!-- 1. Beach & Ocean Experiences -->
-        <div class="bc-slide active">
-            <img src="beach-ocean.jpg" alt="Beach & Ocean" onerror="this.src='https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80'">
+        <div class="header-right">
+            <!-- Multi-language Dropdown -->
+            <select class="lang-select">
+                <option value="en">English (US)</option>
+                <option value="sw">Kiswahili</option>
+                <option value="fr">Français</option>
+            </select>
+
+            <div class="menu-search-group">
+                <button class="nav-btn">🔍 Search</button>
+                <button class="nav-btn">Menu ☰</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SLIDER (Mfumo wa British Council wenye Rangi za UNP na Maongezi/Picha zinazobadilika) -->
+    <div class="hero-slider-container">
+        
+        <!-- Vidoti vya juu kulia -->
+        <div class="slider-dots-top">
+            <span class="dot-indicator active" onclick="currentSlide(1)"></span>
+            <span class="dot-indicator" onclick="currentSlide(2)"></span>
+            <span class="dot-indicator" onclick="currentSlide(3)"></span>
+            <span class="dot-indicator" onclick="currentSlide(4)"></span>
+            <span class="dot-indicator" onclick="currentSlide(5)"></span>
+            <span class="dot-indicator" onclick="currentSlide(6)"></span>
+            <span class="dot-indicator" onclick="currentSlide(7)"></span>
+        </div>
+
+        <!-- 1. Beach & Ocean -->
+        <div class="slide-item active">
+            <img src="beach-ocean.jpg" alt="Beach & Ocean" onerror="this.src='https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=80'">
         </div>
 
         <!-- 2. Culture & History -->
-        <div class="bc-slide">
-            <img src="culture-history.jpg" alt="Culture & History" onerror="this.src='https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1200&q=80'">
+        <div class="slide-item">
+            <img src="culture-history.jpg" alt="Culture & History" onerror="this.src='https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1000&q=80'">
         </div>
 
         <!-- 3. Wildlife & Safari -->
-        <div class="bc-slide">
-            <img src="wildlife-safari.jpg" alt="Wildlife & Safari" onerror="this.src='https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1200&q=80'">
+        <div class="slide-item">
+            <img src="wildlife-safari.jpg" alt="Wildlife & Safari" onerror="this.src='https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1000&q=80'">
         </div>
 
         <!-- 4. Luxury & VIP Services -->
-        <div class="bc-slide">
-            <img src="luxury-vip.jpg" alt="Luxury & VIP" onerror="this.src='https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80'">
+        <div class="slide-item">
+            <img src="luxury-vip.jpg" alt="Luxury & VIP" onerror="this.src='https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80'">
         </div>
 
-        <!-- 5. Travel Support Services -->
-        <div class="bc-slide">
-            <img src="travel-support.jpg" alt="Travel Support" onerror="this.src='https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1200&q=80'">
+        <!-- 5. Travel Support -->
+        <div class="slide-item">
+            <img src="travel-support.jpg" alt="Travel Support" onerror="this.src='https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1000&q=80'">
         </div>
 
         <!-- 6. Events & Special Occasions -->
-        <div class="bc-slide">
-            <img src="events-occasions.jpg" alt="Events" onerror="this.src='https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1200&q=80'">
+        <div class="slide-item">
+            <img src="events-occasions.jpg" alt="Events" onerror="this.src='https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1000&q=80'">
         </div>
 
         <!-- 7. Nature & Adventure -->
-        <div class="bc-slide">
-            <img src="nature-adventure.jpg" alt="Nature & Adventure" onerror="this.src='https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80'">
+        <div class="slide-item">
+            <img src="nature-adventure.jpg" alt="Nature & Adventure" onerror="this.src='https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=80'">
         </div>
 
-        <!-- Mishale ya Kusogeza (Kushoto na Kulia) -->
-        <button class="bc-arrow bc-prev" onclick="moveSlide(-1)">❮</button>
-        <button class="bc-arrow bc-next" onclick="moveSlide(1)">❯</button>
+        <!-- Mishale ya Kusogeza -->
+        <button class="slider-arrow prev-btn" onclick="moveSlide(-1)">❮</button>
+        <button class="slider-arrow next-btn" onclick="moveSlide(1)">❯</button>
     </div>
 
-    <!-- Maelezo na Kitufe Chini ya Slider -->
-    <div class="bc-content-box">
-        <h2 id="bc-title">Beach & Ocean Experiences</h2>
-        <a href="#" class="bc-btn">Find out more</a>
+    <!-- Maongezi na Kitufe Kinachobadilika Kulingana na Picha -->
+    <div class="slider-caption-box">
+        <h2 id="slide-title">Beach & Ocean Experiences</h2>
+        <p id="slide-desc">Explore the most pristine coastal lines and crystal clear waters with our tailored luxury experiences.</p>
+        <a href="#" id="slide-btn" class="cta-button">Find out more</a>
     </div>
 
+    <!-- SEHEMU YA PILI: Unique & Natural Paradise -->
+    <div class="second-section">
+        <h2>Unique & Natural Paradise</h2>
+        <p>Explore our core categories below featuring immersive photo previews of your next destination, crafted specially to bring you closer to nature and unforgettable adventures.</p>
+    </div>
+
+    <!-- Javascript ya Kusogeza Picha na Kubadilisha Maongezi/Title Moja kwa Moja -->
     <script>
         let slideIndex = 1;
-        const titles = [
-            "Beach & Ocean Experiences",
-            "Culture & History",
-            "Wildlife & Safari",
-            "Luxury & VIP Services",
-            "Travel Support Services",
-            "Events & Special Occasions",
-            "Nature & Adventure"
+        
+        // Data za Maongezi/Maelezo kwa ajili ya kila picha
+        const slideData = [
+            {
+                title: "Beach & Ocean Experiences",
+                desc: "Explore the most pristine coastal lines and crystal clear waters with our tailored luxury experiences.",
+                btnText: "Explore Beaches"
+            },
+            {
+                title: "Culture & History",
+                desc: "Immerse yourself in rich heritage, historical landmarks, and vibrant local traditions.",
+                btnText: "Discover History"
+            },
+            {
+                title: "Wildlife & Safari",
+                desc: "Witness magnificent wildlife in their natural habitats across Tanzania's finest parks.",
+                btnText: "Book Safari"
+            },
+            {
+                title: "Luxury & VIP Services",
+                desc: "Enjoy top-tier exclusive hospitality designed for ultimate comfort and elegance.",
+                btnText: "View VIP Packages"
+            },
+            {
+                title: "Travel Support Services",
+                desc: "Get seamless planning, guidance, and dedicated assistance throughout your journey.",
+                btnText: "Get Support"
+            },
+            {
+                title: "Events & Special Occasions",
+                desc: "Celebrate unforgettable moments and private gatherings in breathtaking scenic spots.",
+                btnText: "Plan Event"
+            },
+            {
+                title: "Nature & Adventure",
+                desc: "Push your limits with thrilling outdoor explorations and majestic natural landscapes.",
+                btnText: "Start Adventure"
+            }
         ];
 
         showSlide(slideIndex);
@@ -222,9 +396,11 @@
         }
 
         function showSlide(n) {
-            let slides = document.getElementsByClassName("bc-slide");
-            let dots = document.getElementsByClassName("bc-dot");
-            let titleElem = document.getElementById("bc-title");
+            let slides = document.getElementsByClassName("slide-item");
+            let dots = document.getElementsByClassName("dot-indicator");
+            let titleElem = document.getElementById("slide-title");
+            let descElem = document.getElementById("slide-desc");
+            let btnElem = document.getElementById("slide-btn");
 
             if (n > slides.length) { slideIndex = 1; }
             if (n < 1) { slideIndex = slides.length; }
@@ -236,9 +412,13 @@
 
             slides[slideIndex - 1].classList.add("active");
             dots[slideIndex - 1].classList.add("active");
-            titleElem.textContent = titles[slideIndex - 1];
+            
+            // Badilisha maongezi na maandishi kulingana na picha husika
+            titleElem.textContent = slideData[slideIndex - 1].title;
+            descElem.textContent = slideData[slideIndex - 1].desc;
+            btnElem.textContent = slideData[slideIndex - 1].btnText;
         }
     </script>
 </body>
-            </html>
-            
+    </html>
+    
