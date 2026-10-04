@@ -22,6 +22,7 @@
         body {
             background-color: var(--bg-light);
             color: var(--text-dark);
+            scroll-behavior: smooth;
         }
 
         /* 1. HEADER YA UNP */
@@ -33,6 +34,9 @@
             justify-content: space-between;
             align-items: center;
             border-bottom: 3px solid var(--unp-gold);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         .logo-area {
@@ -212,30 +216,13 @@
             margin-right: auto;
         }
 
-        .cta-button {
-            display: inline-block;
-            background-color: var(--unp-green);
-            color: #ffffff;
-            padding: 10px 30px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: bold;
-            border: 2px solid var(--unp-gold);
-            transition: 0.3s;
-        }
-
-        .cta-button:hover {
-            background-color: var(--unp-gold);
-            color: var(--unp-green);
-        }
-
-        /* 3. SEHEMU MPYA YA UJUMBE WA WAGENI NA KITUFE CHA DHAHABU (GET YOUR EXPERIENCE) */
+        /* 3. SEHEMU YA WAKARIBISHO NA KITUFE CHA DHAHABU (GET YOUR EXPERIENCE) */
         .welcome-experience-section {
             max-width: 1000px;
-            margin: 30px auto 50px auto;
+            margin: 30px auto;
             background: var(--unp-green);
             color: #ffffff;
-            padding: 50px 30px;
+            padding: 40px 30px;
             border-radius: 8px;
             text-align: center;
             box-shadow: 0 6px 20px rgba(0,0,0,0.15);
@@ -246,25 +233,23 @@
             font-size: 2.2rem;
             color: var(--unp-gold);
             margin-bottom: 15px;
-            letter-spacing: 0.5px;
         }
 
         .welcome-experience-section p {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             line-height: 1.7;
             max-width: 800px;
-            margin: 0 auto 30px auto;
+            margin: 0 auto 25px auto;
             color: #e2e8f0;
         }
 
-        /* Kitufe maalum cha Dhahabu chenye neno GET YOUR EXPERIENCE */
         .gold-experience-btn {
             display: inline-block;
             background-color: var(--unp-gold);
             color: var(--unp-green);
-            padding: 14px 35px;
+            padding: 12px 30px;
             border-radius: 30px;
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: bold;
             text-decoration: none;
             text-transform: uppercase;
@@ -277,6 +262,78 @@
             background-color: #ffffff;
             color: var(--unp-green);
             transform: translateY(-2px);
+        }
+
+        /* --- SEHEMU MPYA: SECTIONS 5 KINA (BLOG, EVENTS, FORUM, OUR MUSIC, ARTISAN TREASURE + SECRET GARDEN) --- */
+        .deep-sections-container {
+            max-width: 1000px;
+            margin: 0 auto 50px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .content-card {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 35px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-left: 6px solid var(--unp-green);
+            transition: transform 0.3s ease;
+        }
+
+        .content-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .content-card.secret-garden-card {
+            border-left-color: var(--unp-gold);
+            background: linear-gradient(to right, #fffdf5, #ffffff);
+        }
+
+        .content-card h3 {
+            font-size: 1.8rem;
+            color: var(--unp-green);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .content-card.secret-garden-card h3 {
+            color: #997a15;
+        }
+
+        .card-divider {
+            width: 40px;
+            height: 3px;
+            background-color: var(--unp-gold);
+            margin-bottom: 15px;
+        }
+
+        .content-card p {
+            color: #475569;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .card-btn {
+            display: inline-block;
+            background-color: var(--unp-green);
+            color: #ffffff;
+            padding: 10px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: 2px solid var(--unp-gold);
+            transition: 0.3s;
+        }
+
+        .card-btn:hover {
+            background-color: var(--unp-gold);
+            color: var(--unp-green);
         }
     </style>
 </head>
@@ -344,16 +401,66 @@
     <div class="slider-caption-box">
         <h2 id="slide-title">Beach & Ocean Experiences</h2>
         <p id="slide-desc">Explore the most pristine coastal lines and crystal clear waters with our tailored luxury experiences.</p>
-        <a href="#" id="slide-btn" class="cta-button">Find out more</a>
     </div>
 
-    <!-- SEHEMU YA WAKARIBISHO NA KITUFE CHA DHAHABU (GET YOUR EXPERIENCE) -->
+    <!-- WELCOME & GET YOUR EXPERIENCE -->
     <div class="welcome-experience-section">
         <h2>Karibu UNP Tours - Your Gateway to Tanzania</h2>
         <p>Tunakukaribisha kwa moyo mkunjufu kujionea na kufurahia uzuri wa kipekee wa asili, fuo za bahari, na vivutio vya kuvutia. Chagua uzoefu wako maalum wa safari leo na ujionee maajabu yatakayobadilisha maisha yako ya usafiri kuwa ya kukumbukwa milele.</p>
-        
-        <!-- Kitufe kinachopeleka ukurasa wa maoni na kuchagua kisha submit -->
         <a href="feedback-booking.html" class="gold-experience-btn">Get Your Experience</a>
+    </div>
+
+    <!-- SEHEMU ZA KINA (BLOG, EVENTS, FORUM, MUSIC, ARTISAN, SECRET GARDEN) -->
+    <div class="deep-sections-container">
+
+        <!-- 1. BLOG -->
+        <div class="content-card">
+            <h3>📖 UNP Travel Blog</h3>
+            <div class="card-divider"></div>
+            <p>Soma hadithi za kusisimua za kitalii, siri za mbuga za wanyama za Tanzania bara, uzuri wa fukwe za Zanzibar, na miongozo ya kipekee itakayokupa mwanga wa safari yako ijayo. Kila makala imeandikwa kukusogeza karibu na uoto wa asili.</p>
+            <a href="blog.html" class="card-btn">Explore Blog Articles</a>
+        </div>
+
+        <!-- 2. EVENTS -->
+        <div class="content-card">
+            <h3>🎉 Tanzania & Zanzibar Cultural Events</h3>
+            <div class="card-divider"></div>
+            <p>Jionee matukio makubwa ya sherehe za kitamaduni, tamasha za muziki, na sherehe za pwani zinazofanyika Zanzibar na Tanzania bara. Tunakuwekea ratiba rasmi ili usipitwe na burudani na shamrashamra zote za kitalii.</p>
+            <a href="events.html" class="card-btn">Discover Events</a>
+        </div>
+
+        <!-- 3. FORUM (FAMILIA MOJA YA UNP) -->
+        <div class="content-card">
+            <h3>🌍 UNP Global Family Forum</h3>
+            <div class="card-divider"></div>
+            <p>Hapa ndipo mahali ambapo wasafiri na wapenda asili kutoka kona zote za dunia hukutana kuwa familia moja. Badilishana mawazo, toa maoni yako kuhusu maisha na tamaduni mbalimbali, na jenga urafiki wa kudumu na watu wanaopenda utalii kama wewe.</p>
+            <a href="forum.html" class="card-btn">Join Community Forum</a>
+        </div>
+
+        <!-- 4. OUR MUSIC -->
+        <div class="content-card">
+            <h3>🎵 The Rhythm of UNP (Our Music)</h3>
+            <div class="card-divider"></div>
+            <p>Sikia mapigo ya kipekee ya muziki wa kitalii, mashairi ya kuvutia ya hip-hop na midundo ya asili ya Kitanzania inayobeba hisia za mandhari nzuri, milima, na fukwe za bahari kuu. Muziki unaounganisha roho na safari.</p>
+            <a href="music.html" class="card-btn">Listen to UNP Music</a>
+        </div>
+
+        <!-- 5. ARTISAN TREASURE -->
+        <div class="content-card">
+            <h3>🎨 Artisan Treasure & Handcrafts</h3>
+            <div class="card-divider"></div>
+            <p>Thamini ubunifu wa mikono! Kuanzia sanamu za wanyama zilizotengenezwa kwa umakini mkubwa hadi sanaa za majani makavu ya migomba zenye simulizi za maisha ya vijijini vya Tanzania. Kila kipande kina historia yake ya kipekee.</p>
+            <a href="artisan.html" class="card-btn">View Artisan Treasures</a>
+        </div>
+
+        <!-- 6. SECRET GARDEN (VIP & STAREHE KUBWA KUBWA) -->
+        <div class="content-card secret-garden-card">
+            <h3>✨ The Secret Garden (VIP & Elite Experiences)</h3>
+            <div class="card-divider" style="background-color: var(--unp-gold);"></div>
+            <p>Ingia katika ulimwengu wa kipekee wa starehe za hali ya juu. *Secret Garden* inakupa huduma za kifahari zikiwemo **Makasino ya kisasa (Casinos), usafiri wa kifahari wa Yacht baharini**, na huduma za kifalme zilizobuniwa maalum kwa ajili ya wageni wanaotamani starehe na utulivu wa kiwango cha juu kabisa.</p>
+            <a href="secret-garden.html" class="card-btn" style="background-color: var(--unp-gold); color: var(--unp-green);">Explore Secret Garden</a>
+        </div>
+
     </div>
 
     <!-- Javascript ya Kusogeza Slider -->
@@ -361,13 +468,13 @@
         let slideIndex = 1;
         
         const slideData = [
-            { title: "Beach & Ocean Experiences", desc: "Explore the most pristine coastal lines and crystal clear waters with our tailored luxury experiences.", btnText: "Explore Beaches" },
-            { title: "Culture & History", desc: "Immerse yourself in rich heritage, historical landmarks, and vibrant local traditions.", btnText: "Discover History" },
-            { title: "Wildlife & Safari", desc: "Witness magnificent wildlife in their natural habitats across Tanzania's finest parks.", btnText: "Book Safari" },
-            { title: "Luxury & VIP Services", desc: "Enjoy top-tier exclusive hospitality designed for ultimate comfort and elegance.", btnText: "View VIP Packages" },
-            { title: "Travel Support Services", desc: "Get seamless planning, guidance, and dedicated assistance throughout your journey.", btnText: "Get Support" },
-            { title: "Events & Special Occasions", desc: "Celebrate unforgettable moments and private gatherings in breathtaking scenic spots.", btnText: "Plan Event" },
-            { title: "Nature & Adventure", desc: "Push your limits with thrilling outdoor explorations and majestic natural landscapes.", btnText: "Start Adventure" }
+            { title: "Beach & Ocean Experiences", desc: "Explore the most pristine coastal lines and crystal clear waters with our tailored luxury experiences." },
+            { title: "Culture & History", desc: "Immerse yourself in rich heritage, historical landmarks, and vibrant local traditions." },
+            { title: "Wildlife & Safari", desc: "Witness magnificent wildlife in their natural habitats across Tanzania's finest parks." },
+            { title: "Luxury & VIP Services", desc: "Enjoy top-tier exclusive hospitality designed for ultimate comfort and elegance." },
+            { title: "Travel Support Services", desc: "Get seamless planning, guidance, and dedicated assistance throughout your journey." },
+            { title: "Events & Special Occasions", desc: "Celebrate unforgettable moments and private gatherings in breathtaking scenic spots." },
+            { title: "Nature & Adventure", desc: "Push your limits with thrilling outdoor explorations and majestic natural landscapes." }
         ];
 
         showSlide(slideIndex);
@@ -376,16 +483,11 @@
             showSlide(slideIndex += n);
         }
 
-        function currentSlide(n) {
-            showSlide(slideIndex = n);
-        }
-
         function showSlide(n) {
             let slides = document.getElementsByClassName("slide-item");
             let dots = document.getElementsByClassName("dot-indicator");
             let titleElem = document.getElementById("slide-title");
             let descElem = document.getElementById("slide-desc");
-            let btnElem = document.getElementById("slide-btn");
 
             if (n > slides.length) { slideIndex = 1; }
             if (n < 1) { slideIndex = slides.length; }
@@ -400,8 +502,8 @@
             
             titleElem.textContent = slideData[slideIndex - 1].title;
             descElem.textContent = slideData[slideIndex - 1].desc;
-            btnElem.textContent = slideData[slideIndex - 1].btnText;
         }
     </script>
 </body>
-</html>
+    </html>
+    
