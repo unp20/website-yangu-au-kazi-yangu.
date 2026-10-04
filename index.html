@@ -306,6 +306,39 @@
             padding-left: 5px;
         }
 
+        .social-section {
+            margin-bottom: 30px;
+        }
+
+        .social-section h3 {
+            color: var(--accent-color);
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        .social-icons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+        }
+
+        .social-icons a {
+            background-color: rgba(212, 175, 55, 0.1);
+            color: #ffffff;
+            padding: 10px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            text-align: center;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+        }
+
         .footer-bottom-links {
             display: flex;
             flex-wrap: wrap;
@@ -367,7 +400,7 @@
             <p>Explore our core categories below featuring immersive photo and video previews of your next destination.</p>
         </div>
 
-        <!-- Makundi Makuu 7 -->
+        <!-- Makundi Makuu Saba -->
         <div class="categories-grid">
             
             <!-- 1. Beach & Ocean Experiences -->
@@ -501,7 +534,9 @@
             <div class="footer-accordion-item">
                 <button class="accordion-header">About Us <span>+</span></button>
                 <div class="accordion-content">
-                    <a href="index.html">Home</a>
+                    <a href="about.html">Our Team & Vision</a>
+                    <a href="contact.html">Contact Us</a>
+                    <a href="blog.html">Blog & Articles</a>
                 </div>
             </div>
             
@@ -519,34 +554,13 @@
             </div>
         </div>
 
-        <div class="footer-bottom-links">
-            <a href="index.html">UNP Tours Global</a>
-            <a href="#">Privacy & Terms</a>
-            <a href="#">Accessibility</a>
-            <a href="#">Cookies</a>
-            <a href="#">Sitemap</a>
-        </div>
-
-        <div class="footer-legal">
-            <p>&copy; 2026 UNP TOURS (unp.tours). All rights reserved.</p>
-            <p>Unique & Natural Paradise - Official international portal for tourism, hospitality, and nature craftsmanship.</p>
-        </div>
-    </footer>
-
-    <script>
-        document.querySelectorAll('.accordion-header').forEach(button => {
-            button.addEventListener('click', () => {
-                const content = button.nextElementSibling;
-                content.classList.toggle('active');
-                const span = button.querySelector('span');
-                span.textContent = content.classList.contains('active') ? '-' : '+';
-            });
-        });
-
-        function changeLanguage(lang) {
-            alert("Language updated to: " + lang.toUpperCase() + " (Translation engine active).");
-        }
-    </script>
-</body>
-    </html>
-                        
+        <div class="social-section">
+            <h3>Connect with Us</h3>
+            <div class="social-icons">
+                <a href="#" target="_blank">📘 Facebook</a>
+                <a href="#" target="_blank">✖️ X (Twitter)</a>
+                <a href="#" target="_blank">📸 Instagram</a>
+                <a href="#" target="_blank">🎵 TikTok</a>
+                <a href="#" target="_blank">📡 RSS</a>
+            </div>
+        </
