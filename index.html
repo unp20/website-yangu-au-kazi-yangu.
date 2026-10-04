@@ -24,7 +24,7 @@
             color: var(--text-dark);
         }
 
-        /* 1. HEADER YA UNP (Inayotumia Rangi za UNP na Multi-language) */
+        /* 1. HEADER YA UNP */
         header {
             background-color: var(--unp-green);
             color: #ffffff;
@@ -57,7 +57,6 @@
             letter-spacing: 1px;
         }
 
-        /* Sehemu ya Multi-language na Nav ya Kulia */
         .header-right {
             display: flex;
             align-items: center;
@@ -104,17 +103,18 @@
             color: var(--unp-green);
         }
 
-        /* 2. BRITISH COUNCIL STYLE HERO SLIDER (Ikiwa na Rangi za UNP Framework) */
+        /* 2. HERO SLIDER */
         .hero-slider-container {
             position: relative;
             width: 100%;
             max-width: 1000px;
-            margin: 25px auto;
+            margin: 25px auto 0 auto;
             background: #ffffff;
-            border-radius: 8px;
+            border-radius: 8px 8px 0 0;
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             border: 1px solid #e2e8f0;
+            border-bottom: none;
         }
 
         .slide-item {
@@ -127,14 +127,12 @@
             display: block;
         }
 
-        /* Hapa ndipo picha zako zitakaa. Weka picha kwa majina haya chini */
         .slide-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        /* Vidoti vya Juu Kulia (Dots) */
         .slider-dots-top {
             position: absolute;
             top: 15px;
@@ -159,7 +157,6 @@
             background: var(--unp-gold);
         }
 
-        /* Vitufe vya Mishale (Arrows) */
         .slider-arrow {
             position: absolute;
             top: 50%;
@@ -188,11 +185,16 @@
         .prev-btn { left: 15px; }
         .next-btn { right: 15px; }
 
-        /* Maongezi na Maelezo yanayobadilika chini ya Slider */
         .slider-caption-box {
             text-align: center;
-            padding: 30px 20px;
+            padding: 25px 20px;
             background: #ffffff;
+            max-width: 1000px;
+            margin: 0 auto;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+            border-top: none;
+            border-radius: 0 0 8px 8px;
         }
 
         .slider-caption-box h2 {
@@ -227,13 +229,14 @@
             color: var(--unp-green);
         }
 
-        /* 3. SEHEMU YA PILI (Unique & Natural Paradise Section) */
+        /* 3. SEHEMU YA PILI */
         .second-section {
             background-color: #ffffff;
             text-align: center;
-            padding: 50px 20px;
+            padding: 40px 20px;
             margin-top: 30px;
             border-top: 4px solid var(--unp-gold);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
         }
 
         .second-section h2 {
@@ -249,11 +252,70 @@
             margin: 0 auto;
             line-height: 1.6;
         }
+
+        /* 4. AWAMU YA TATU: SEHEMU YA BOOKINGS & LINKS (Mtindo wa British Council) */
+        .third-section {
+            max-width: 1000px;
+            margin: 30px auto 50px auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-left: 6px solid var(--unp-gold);
+        }
+
+        .third-section h2 {
+            font-size: 1.8rem;
+            color: var(--unp-green);
+            margin-bottom: 10px;
+        }
+
+        .heading-underline {
+            width: 60px;
+            height: 4px;
+            background-color: var(--unp-green);
+            margin-bottom: 20px;
+        }
+
+        .third-section p {
+            color: #475569;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        /* Orodha ya Links za Kwenda Kufanya Bookings */
+        .booking-links-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .booking-links-list li a {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--unp-green);
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .booking-links-list li a:hover {
+            color: var(--unp-gold);
+            text-decoration: underline;
+        }
+
+        .booking-links-list li a span {
+            font-size: 1.2rem;
+        }
     </style>
 </head>
 <body>
 
-    <!-- HEADER YA UNP (Multi-language + Logo + Search & Menu) -->
+    <!-- HEADER YA UNP -->
     <header>
         <div class="logo-area">
             <img src="logo.png" alt="UNP Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/45?text=UNP'">
@@ -261,7 +323,6 @@
         </div>
 
         <div class="header-right">
-            <!-- Multi-language Dropdown -->
             <select class="lang-select">
                 <option value="en">English (US)</option>
                 <option value="sw">Kiswahili</option>
@@ -275,10 +336,8 @@
         </div>
     </header>
 
-    <!-- HERO SLIDER (Mfumo wa British Council wenye Rangi za UNP na Maongezi/Picha zinazobadilika) -->
+    <!-- HERO SLIDER -->
     <div class="hero-slider-container">
-        
-        <!-- Vidoti vya juu kulia -->
         <div class="slider-dots-top">
             <span class="dot-indicator active" onclick="currentSlide(1)"></span>
             <span class="dot-indicator" onclick="currentSlide(2)"></span>
@@ -289,100 +348,70 @@
             <span class="dot-indicator" onclick="currentSlide(7)"></span>
         </div>
 
-        <!-- 1. Beach & Ocean -->
         <div class="slide-item active">
             <img src="beach-ocean.jpg" alt="Beach & Ocean" onerror="this.src='https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=80'">
         </div>
-
-        <!-- 2. Culture & History -->
         <div class="slide-item">
             <img src="culture-history.jpg" alt="Culture & History" onerror="this.src='https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1000&q=80'">
         </div>
-
-        <!-- 3. Wildlife & Safari -->
         <div class="slide-item">
             <img src="wildlife-safari.jpg" alt="Wildlife & Safari" onerror="this.src='https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1000&q=80'">
         </div>
-
-        <!-- 4. Luxury & VIP Services -->
         <div class="slide-item">
             <img src="luxury-vip.jpg" alt="Luxury & VIP" onerror="this.src='https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80'">
         </div>
-
-        <!-- 5. Travel Support -->
         <div class="slide-item">
             <img src="travel-support.jpg" alt="Travel Support" onerror="this.src='https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1000&q=80'">
         </div>
-
-        <!-- 6. Events & Special Occasions -->
         <div class="slide-item">
             <img src="events-occasions.jpg" alt="Events" onerror="this.src='https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1000&q=80'">
         </div>
-
-        <!-- 7. Nature & Adventure -->
         <div class="slide-item">
             <img src="nature-adventure.jpg" alt="Nature & Adventure" onerror="this.src='https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=80'">
         </div>
 
-        <!-- Mishale ya Kusogeza -->
         <button class="slider-arrow prev-btn" onclick="moveSlide(-1)">❮</button>
         <button class="slider-arrow next-btn" onclick="moveSlide(1)">❯</button>
     </div>
 
-    <!-- Maongezi na Kitufe Kinachobadilika Kulingana na Picha -->
     <div class="slider-caption-box">
         <h2 id="slide-title">Beach & Ocean Experiences</h2>
         <p id="slide-desc">Explore the most pristine coastal lines and crystal clear waters with our tailored luxury experiences.</p>
         <a href="#" id="slide-btn" class="cta-button">Find out more</a>
     </div>
 
-    <!-- SEHEMU YA PILI: Unique & Natural Paradise -->
+    <!-- SEHEMU YA PILI -->
     <div class="second-section">
         <h2>Unique & Natural Paradise</h2>
         <p>Explore our core categories below featuring immersive photo previews of your next destination, crafted specially to bring you closer to nature and unforgettable adventures.</p>
     </div>
 
-    <!-- Javascript ya Kusogeza Picha na Kubadilisha Maongezi/Title Moja kwa Moja -->
+    <!-- AWAMU YA TATU: SEHEMU YA BOOKINGS & LINKS -->
+    <div class="third-section">
+        <h2>Secure Your Experience with UNP Tours</h2>
+        <div class="heading-underline"></div>
+        <p>We make your travel planning effortless. Choose from our quick links below to reserve your trips, check availability, or speak with our hospitality specialists instantly.</p>
+        
+        <ul class="booking-links-list">
+            <li><a href="booking-page.html"><span>›</span> Book Now & Reserve Your Spot ❐</a></li>
+            <li><a href="safari-packages.html"><span>›</span> Explore Custom Safari & Beach Packages ❐</a></li>
+            <li><a href="vip-consultation.html"><span>›</span> Schedule a VIP Travel Consultation ❐</a></li>
+            <li><a href="contact-support.html"><span>›</span> Contact Our Support Team for Special Arrangements ❐</a></li>
+        </ul>
+    </div>
+
+    <!-- Javascript ya Kusogeza Slider -->
     <script>
         let slideIndex = 1;
         
-        // Data za Maongezi/Maelezo kwa ajili ya kila picha
         const slideData = [
-            {
-                title: "Beach & Ocean Experiences",
-                desc: "Explore the most pristine coastal lines and crystal clear waters with our tailored luxury experiences.",
-                btnText: "Explore Beaches"
-            },
-            {
-                title: "Culture & History",
-                desc: "Immerse yourself in rich heritage, historical landmarks, and vibrant local traditions.",
-                btnText: "Discover History"
-            },
-            {
-                title: "Wildlife & Safari",
-                desc: "Witness magnificent wildlife in their natural habitats across Tanzania's finest parks.",
-                btnText: "Book Safari"
-            },
-            {
-                title: "Luxury & VIP Services",
-                desc: "Enjoy top-tier exclusive hospitality designed for ultimate comfort and elegance.",
-                btnText: "View VIP Packages"
-            },
-            {
-                title: "Travel Support Services",
-                desc: "Get seamless planning, guidance, and dedicated assistance throughout your journey.",
-                btnText: "Get Support"
-            },
-            {
-                title: "Events & Special Occasions",
-                desc: "Celebrate unforgettable moments and private gatherings in breathtaking scenic spots.",
-                btnText: "Plan Event"
-            },
-            {
-                title: "Nature & Adventure",
-                desc: "Push your limits with thrilling outdoor explorations and majestic natural landscapes.",
-                btnText: "Start Adventure"
-            }
+            { title: "Beach & Ocean Experiences", desc: "Explore the most pristine coastal lines and crystal clear waters with our tailored luxury experiences.", btnText: "Explore Beaches" },
+            { title: "Culture & History", desc: "Immerse yourself in rich heritage, historical landmarks, and vibrant local traditions.", btnText: "Discover History" },
+            { title: "Wildlife & Safari", desc: "Witness magnificent wildlife in their natural habitats across Tanzania's finest parks.", btnText: "Book Safari" },
+            { title: "Luxury & VIP Services", desc: "Enjoy top-tier exclusive hospitality designed for ultimate comfort and elegance.", btnText: "View VIP Packages" },
+            { title: "Travel Support Services", desc: "Get seamless planning, guidance, and dedicated assistance throughout your journey.", btnText: "Get Support" },
+            { title: "Events & Special Occasions", desc: "Celebrate unforgettable moments and private gatherings in breathtaking scenic spots.", btnText: "Plan Event" },
+            { title: "Nature & Adventure", desc: "Push your limits with thrilling outdoor explorations and majestic natural landscapes.", btnText: "Start Adventure" }
         ];
 
         showSlide(slideIndex);
@@ -413,12 +442,11 @@
             slides[slideIndex - 1].classList.add("active");
             dots[slideIndex - 1].classList.add("active");
             
-            // Badilisha maongezi na maandishi kulingana na picha husika
             titleElem.textContent = slideData[slideIndex - 1].title;
             descElem.textContent = slideData[slideIndex - 1].desc;
             btnElem.textContent = slideData[slideIndex - 1].btnText;
         }
     </script>
 </body>
-    </html>
-    
+            </html>
+            
