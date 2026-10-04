@@ -4,16 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UNP TOURS - Unique & Natural Paradise</title>
-    <!-- Tunatumia Tailwind CSS kupata muonekano safi na wa kisasa -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
 
-    <!-- Header / Menyu Kuu -->
+    <!-- Header / Menyu Kuu na Logo -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold tracking-wider text-emerald-700">
-                UNP <span class="text-gray-900">TOURS</span>
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <!-- Hapa utaweka link au jina la picha yako ya Logo kwenye sehemu ya src -->
+                <img src="WEKA_LINK_YA_LOGO_YAKO_HAPA.png" alt="UNP Tours Logo" class="h-10 w-auto object-contain">
+                <span class="text-2xl font-bold tracking-wider text-emerald-700">UNP <span class="text-gray-900">TOURS</span></span>
             </div>
             <nav class="hidden md:flex space-x-8 font-medium">
                 <a href="#" class="text-emerald-700 hover:text-emerald-900">Nyumbani</a>
@@ -28,9 +30,9 @@
         </div>
     </header>
 
-    <!-- Hero Section (Sehemu ya Mbele Kabisa) -->
+    <!-- Hero Section (Sehemu ya Mbele) -->
     <section class="relative bg-emerald-900 text-white py-24 md:py-32">
-        <div class="absolute inset-0 opacity-40 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1920&q=80');"></div>
+        <div class="absolute inset-0 opacity-40 bg-cover bg-center" style="background-image: url('WEKA_LINK_YA_PICHA_YAKO_KUBWA_HAPA.jpg');"></div>
         <div class="relative max-w-7xl mx-auto px-4 text-center">
             <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6">Gundua Urembo na Asili Halisi</h1>
             <p class="text-lg md:text-xl max-w-2xl mx-auto mb-10 text-emerald-100">Tunakupa uzoefu wa kipekee wa safari za kitalii Zanzibar na Tanzania Bara, pamoja na kazi za kipekee za sanaa za mikono.</p>
@@ -41,30 +43,30 @@
         </div>
     </section>
 
-    <!-- Sehemu ya Huduma Kuu (Features) -->
+    <!-- Sehemu ya Huduma na Kazi Zako -->
     <section class="py-20 max-w-7xl mx-auto px-4">
         <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">Huduma Zetu Kuu</h2>
-            <p class="text-gray-600 max-w-xl mx-auto">Tunajivunia kukuletea huduma bora zilizoundwa kukupa thamani halisi ya fedha yako.</p>
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Huduma Zetu na Sanaa za Asili</h2>
+            <p class="text-gray-600 max-w-xl mx-auto">Tunajivunia kukuletea huduma bora na bidhaa za kipekee zilizoundwa kwa upendo.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- Huduma 1 -->
-            <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
-                <div class="text-emerald-600 text-3xl mb-4 font-bold">🌴</div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <div class="h-48 bg-gray-200 rounded-lg mb-4 bg-cover bg-center" style="background-image: url('WEKA_PICHA_YA_ZANZIBAR_HAPA.jpg');"></div>
                 <h3 class="text-xl font-bold mb-2">Safari za Zanzibar</h3>
-                <p class="text-gray-600">Jionee ukanda mzuri wa pwani, Stone Town, Jozani Forest, na Safari Blue kwa ukarimu wa hali ya juu.</p>
+                <p class="text-gray-600">Jionee pwani nzuri, Stone Town, na Safari Blue kwa ukarimu wa hali ya juu.</p>
             </div>
             <!-- Huduma 2 -->
-            <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
-                <div class="text-emerald-600 text-3xl mb-4 font-bold">🦁</div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <div class="h-48 bg-gray-200 rounded-lg mb-4 bg-cover bg-center" style="background-image: url('WEKA_PICHA_YA_WANYAMA_PORI_HAPA.jpg');"></div>
                 <h3 class="text-xl font-bold mb-2">Utalii wa Wanyama Pori</h3>
-                <p class="text-gray-600">Pata fursa ya kutembelea mbuga za wanyama za Serengeti, Ngorongoro, na Mikumi.</p>
+                <p class="text-gray-600">Tembelea mbuga za wanyama za Serengeti, Ngorongoro, na Mikumi.</p>
             </div>
             <!-- Huduma 3 -->
-            <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
-                <div class="text-emerald-600 text-3xl mb-4 font-bold">🎨</div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <div class="h-48 bg-gray-200 rounded-lg mb-4 bg-cover bg-center" style="background-image: url('WEKA_PICHA_YA_SANAA_ZA_MIKONO_HAPA.jpg');"></div>
                 <h3 class="text-xl font-bold mb-2">Sanaa za Mikono</h3>
-                <p class="text-gray-600">Kazi za kipekee za mikono zilizotengenezwa kwa majani ya ndizi yenye ubora na mvuto wa asili.</p>
+                <p class="text-gray-600">Kazi za kipekee za mikono zilizotengenezwa kwa majani ya ndizi yenye mvuto wa asili.</p>
             </div>
         </div>
     </section>
@@ -78,5 +80,5 @@
     </footer>
 
 </body>
-  </html>
-  
+            </html>
+            
