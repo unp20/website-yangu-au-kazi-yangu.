@@ -25,11 +25,11 @@
             line-height: 1.6;
         }
 
-        /* Global Header ya Kimataifa */
+        /* Global Header ya Kimataifa yenye Language Switcher */
         header {
             background-color: var(--primary-color);
             color: #ffffff;
-            padding: 20px 5%;
+            padding: 15px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -40,16 +40,38 @@
         }
 
         header h1 {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             color: var(--accent-color);
             letter-spacing: 1px;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        /* Mfumo wa Kubadilisha Lugha */
+        .language-switcher {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--accent-color);
+            color: #ffffff;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+
+        .language-switcher option {
+            background: var(--primary-color);
+            color: #ffffff;
         }
 
         .menu-btn {
             background: none;
             border: 2px solid var(--accent-color);
             color: #ffffff;
-            padding: 8px 16px;
+            padding: 6px 14px;
             border-radius: 4px;
             cursor: pointer;
             font-weight: bold;
@@ -61,7 +83,7 @@
             color: var(--primary-color);
         }
 
-        /* Sehemu Kuu ya Vivutio (Global Sections) */
+        /* Sehemu Kuu ya Vivutio */
         .container {
             max-width: 1200px;
             margin: 40px auto;
@@ -78,19 +100,19 @@
         }
 
         .global-section h2 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: var(--primary-color);
             margin-bottom: 15px;
         }
 
         .global-section p {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: #475569;
             margin-bottom: 25px;
             max-width: 800px;
         }
 
-        /* Vitufe vya Kimataifa vya Kuchunguza (Explore / Dive in Buttons) */
+        /* Vitufe vya Kimataifa vya Kuchunguza */
         .explore-btn {
             display: inline-block;
             background-color: var(--primary-color);
@@ -110,10 +132,10 @@
             transform: translateY(-2px);
         }
 
-        /* Kadi za Ndani (Subfiles / Sub-content Cards) */
+        /* Kadi za Ndani (Subfiles Grid) */
         .subfile-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
             margin-top: 30px;
         }
@@ -133,7 +155,7 @@
 
         .subfile-img {
             width: 100%;
-            height: 200px;
+            height: 180px;
             object-fit: cover;
             background-color: #cbd5e1;
         }
@@ -143,7 +165,7 @@
         }
 
         .subfile-category {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: bold;
             color: var(--accent-color);
             text-transform: uppercase;
@@ -152,7 +174,7 @@
         }
 
         .subfile-title {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             color: var(--primary-color);
             margin-bottom: 10px;
             text-decoration: none;
@@ -164,11 +186,11 @@
         }
 
         .subfile-desc {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             color: #64748b;
         }
 
-        /* Footer Mpya yenye Muonekano Sahihi wa Kimataifa */
+        /* Footer ya Kimataifa */
         .modern-footer {
             background-color: var(--primary-color);
             color: #ffffff;
@@ -237,7 +259,7 @@
 
         .social-icons {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
             gap: 10px;
         }
 
@@ -289,54 +311,96 @@
 </head>
 <body>
 
-    <!-- Header ya Tovuti -->
+    <!-- Header ya Tovuti yenye Language Switcher -->
     <header>
         <h1>UNP TOURS</h1>
-        <button class="menu-btn">Menyu ☰</button>
+        <div class="header-right">
+            <select class="language-switcher" onchange="changeLanguage(this.value)">
+                <option value="sw">Kiswahili</option>
+                <option value="en">English</option>
+            </select>
+            <button class="menu-btn">Menyu ☰</button>
+        </div>
     </header>
 
     <main class="container">
         
-        <!-- Sehemu ya Kwanza: Utalii na Safari -->
+        <!-- 1. Huduma za Safari Tanzania -->
         <section class="global-section">
-            <h2>Utalii na Matukio ya Kipekee</h2>
-            <p>Gundua mandhari nzuri za Zanzibar, michezo ya majini ya kusisimua, na huduma za kimataifa za kitalii zilizoundwa kukupa uzoefu usiosahaulika.</p>
-            <a href="services.html" class="explore-btn">Chunguza Zaidi (Explore)</a>
+            <h2>Huduma za Safari Tanzania (Tanzania Safari Tours)</h2>
+            <p>Pata uzoefu wa kipekee wa mbuga za wanyama, maliasili, na mandhari nzuri za Tanzania Bara na Visiwani.</p>
+            <a href="tanzania-safaris.html" class="explore-btn">Chunguza Safari (Explore)</a>
             
             <div class="subfile-grid">
                 <div class="subfile-card">
                     <div class="subfile-img" style="background: linear-gradient(45deg, #032b1a, #054c2e);"></div>
                     <div class="subfile-content">
-                        <span class="subfile-category">Mwongozo wa Safari</span>
-                        <a href="services.html" class="subfile-title">Matembezi ya Visiwani na Baharini</a>
-                        <p class="subfile-desc">Jifunze jinsi ya kupanga safari yako ya kitalii kwenda maeneo bora zaidi kwa urahisi.</p>
+                        <span class="subfile-category">Mbuga za Wanyama</span>
+                        <a href="tanzania-safaris.html" class="subfile-title">Serengeti na Ngorongoro Safaris</a>
+                        <p class="subfile-desc">Tazama uhamiaji mkubwa wa wanyama na mandhari za kusisimua za porini.</p>
                     </div>
                 </div>
 
                 <div class="subfile-card">
                     <div class="subfile-img" style="background: linear-gradient(45deg, #d4af37, #967819);"></div>
                     <div class="subfile-content">
-                        <span class="subfile-category">Huduma za VIP</span>
-                        <a href="services.html" class="subfile-title">Usafiri wa Boti na Malazi ya Kifahari</a>
-                        <p class="subfile-desc">Angalia ripoti na chaguzi mbalimbali za usafiri wa majini na hoteli zilizoboreshwa.</p>
+                        <span class="subfile-category">Visiwani</span>
+                        <a href="tanzania-safaris.html" class="subfile-title">Utalii wa Zanzibar na Fukwe</a>
+                        <p class="subfile-desc">Furahia fukwe za mchanga mweupe, historia ya mji mkongwe, na michezo ya majini.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Sehemu ya Pili: Sanaa za Mikono (Artisan Paradise) -->
+        <!-- 2. Hiking and Mountain Climbing -->
         <section class="global-section">
-            <h2>Sanaa za Asili na Ubunifu</h2>
-            <p>Tazama kazi za mikono zilizotengenezwa kwa uangalifu na upendo mkubwa, zikionyesha wanyamapori na mandhari halisi ya vijijini.</p>
-            <a href="artisan.html" class="explore-btn">Ingia Ndani (Dive in)</a>
+            <h2>Kupanda Milima na Matembezi (Hiking & Climbing)</h2>
+            <p>Changamoto akili na mwili wako kwa kupanda milima mirefu na maarufu kama Mlima Kilimanjaro na Mlima Meru.</p>
+            <a href="climbing.html" class="explore-btn">panda Mlima (Dive in)</a>
             
             <div class="subfile-grid">
                 <div class="subfile-card">
                     <div class="subfile-img" style="background: linear-gradient(45deg, #1e293b, #475569);"></div>
                     <div class="subfile-content">
-                        <span class="subfile-category">Sanaa za Majani Makavu</span>
-                        <a href="artisan.html" class="subfile-title">Mkusanyiko wa Kazi za Mikono 2026</a>
-                        <p class="subfile-desc">Pata maelezo ya kina kuhusu picha za simba, tembo, na twiga zilizotengenezwa kwa ustadi.</p>
+                        <span class="subfile-category">Mlima Kilimanjaro</span>
+                        <a href="climbing.html" class="subfile-title">Maelezo ya Njia za Kupanda Kili</a>
+                        <p class="subfile-desc">Jifunze kuhusu njia za Marangu, Machame, Lemosho na maandalizi yake.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Huduma za Kukodisha (Rental Services) -->
+        <section class="global-section">
+            <h2>Huduma za Kukodisha (Rental Services)</h2>
+            <p>Tunakodisha vyombo vya usafiri vya kuaminika, magari ya kitalii ya safari, na vifaa vya kupiga kambi.</p>
+            <a href="rentals.html" class="explore-btn">Ona Vifaa (Explore)</a>
+            
+            <div class="subfile-grid">
+                <div class="subfile-card">
+                    <div class="subfile-img" style="background: linear-gradient(45deg, #032b1a, #22c55e);"></div>
+                    <div class="subfile-content">
+                        <span class="subfile-category">Usafiri na Vifaa</span>
+                        <a href="rentals.html" class="subfile-title">Magari ya Safari na Vifaa vya Kambi</a>
+                        <p class="subfile-desc">Pata magari ya 4x4 na vifaa bora vya kufanya safari yako iwe salama na rahisi.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Jukwaa la Foramu na Blog (Forum & Blog) -->
+        <section class="global-section">
+            <h2>Jukwaa la Majadiliano na Blog (Forum & Blog)</h2>
+            <p>Soma makala mpya za kitalii, shiriki maoni yako, na uulize maswali kwenye jukwaa letu la kimataifa.</p>
+            <a href="blog.html" class="explore-btn">Ingia Kwenye Blog (Read More)</a>
+            
+            <div class="subfile-grid">
+                <div class="subfile-card">
+                    <div class="subfile-img" style="background: linear-gradient(45deg, #d4af37, #eab308);"></div>
+                    <div class="subfile-content">
+                        <span class="subfile-category">Makala na Ushauri</span>
+                        <a href="blog.html" class="subfile-title">Ushauri wa Safari na Hadithi za Wasafiri</a>
+                        <p class="subfile-desc">Soma uzoefu wa wasafiri wengine na upate miongozo ya kupanga bajeti ya safari.</p>
                     </div>
                 </div>
             </div>
@@ -344,7 +408,7 @@
 
     </main>
 
-    <!-- Footer yenye Menyu za Kukunjwa (Accordion) na Viungo Vya Kimataifa -->
+    <!-- Footer yenye Menyu za Kukunjwa (Accordion) -->
     <footer class="modern-footer">
         <div class="footer-links-container">
             <div class="footer-accordion-item">
@@ -357,11 +421,12 @@
             </div>
             
             <div class="footer-accordion-item">
-                <button class="accordion-header">Shirikiana Nasi (Partner with us) <span>+</span></button>
+                <button class="accordion-header">Shirikiana Nasi & Huduma (Services) <span>+</span></button>
                 <div class="accordion-content">
-                    <a href="services.html">Huduma za Kitalii</a>
+                    <a href="tanzania-safaris.html">Safari za Tanzania</a>
+                    <a href="climbing.html">Kupanda Milima</a>
+                    <a href="rentals.html">Huduma za Kukodisha</a>
                     <a href="artisan.html">Sanaa za Mikono</a>
-                    <a href="admin.html">Usimamizi (Admin Portal)</a>
                 </div>
             </div>
         </div>
@@ -401,8 +466,17 @@
                 span.textContent = content.classList.contains('active') ? '-' : '+';
             });
         });
+
+        // Kazi ya kubadilisha lugha (Inaweza kuunganishwa na mfumo wa tafsiri hapo mbeleni)
+        function changeLanguage(lang) {
+            if(lang === 'en') {
+                alert("Language switched to English (Utaratibu wa kutafsiri kwenda Kiingereza utakaa hapa).");
+            } else {
+                alert("Lugha imebadilishwa kuwa Kiswahili.");
+            }
+        }
     </script>
 
 </body>
     </html>
-    
+                    
