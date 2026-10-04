@@ -209,7 +209,7 @@
             color: var(--primary-color);
         }
 
-        /* Google Widgets Halisi */
+        /* Google Widgets Section Halisi */
         .google-widgets-section {
             margin-top: 60px;
             background: #ffffff;
@@ -286,14 +286,14 @@
             align-items: center;
         }
 
-        /* Hapa ndipo kulikuwa na tatizo la kutofunguka */
+        /* Mpangilio maalum wa Accordion kufanya kazi vizuri kwenye simu */
         .accordion-content {
-            display: none; 
+            display: none;
             padding-bottom: 15px;
             padding-left: 10px;
         }
 
-        .accordion-content.active {
+        .accordion-content.show {
             display: block !important;
         }
 
@@ -516,7 +516,7 @@
     <footer class="modern-footer">
         <div class="footer-links-container">
             <div class="footer-accordion-item">
-                <button class="accordion-header">About Us <span>+</span></button>
+                <button class="accordion-header" type="button">About Us <span>+</span></button>
                 <div class="accordion-content">
                     <a href="about.html">Our Team & Vision</a>
                     <a href="contact.html">Contact Us</a>
@@ -525,7 +525,7 @@
             </div>
             
             <div class="footer-accordion-item">
-                <button class="accordion-header">Services & Support <span>+</span></button>
+                <button class="accordion-header" type="button">Services & Support <span>+</span></button>
                 <div class="accordion-content">
                     <a href="tanzania-safaris.html">Tanzania Safaris</a>
                     <a href="climbing.html">Mountain Climbing</a>
@@ -555,11 +555,13 @@
         </div>
 
         <div class="footer-bottom-links">
-            <a href="index.html">UNP Tours Global</a>
-            <a href="#">Privacy & Terms</a>
-            <a href="#">Accessibility</a>
-            <a href="#">Cookies</a>
-            <a href="#">Sitemap</a>
+            <div class="footer-bottom-links">
+                <a href="index.html">UNP Tours Global</a>
+                <a href="#">Privacy & Terms</a>
+                <a href="#">Accessibility</a>
+                <a href="#">Cookies</a>
+                <a href="#">Sitemap</a>
+            </div>
         </div>
 
         <div class="footer-legal">
@@ -568,9 +570,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript ya kuwezesha Accordion na Language Change -->
+    <!-- JavaScript iliyoboreshwa kwa ajili ya simu na vivinjari vyote -->
     <script>
-        document.querySelectorAll('.accordion-header').forEach(button => {
-            button.addEventListener('click', () => {
-                const content = button.nextElementSibling;
-                content.classList
+        document.addEventListener("DOMContentLoaded", function() {
+         
