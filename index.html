@@ -216,7 +216,7 @@
             margin-right: auto;
         }
 
-        /* 3. SEHEMU YA WAKARIBISHO NA KITUFE CHA DHAHABU (GET YOUR EXPERIENCE) */
+        /* 3. WELCOME & GET YOUR EXPERIENCE */
         .welcome-experience-section {
             max-width: 1000px;
             margin: 30px auto;
@@ -264,62 +264,75 @@
             transform: translateY(-2px);
         }
 
-        /* --- SEHEMU MPYA: SECTIONS 5 KINA (BLOG, EVENTS, FORUM, OUR MUSIC, ARTISAN TREASURE + SECRET GARDEN) --- */
+        /* --- MTINDO WA KADI ZENYE PICHA NA MAELEZO (KAMA MZEE ALIVYOTAKA) --- */
         .deep-sections-container {
             max-width: 1000px;
             margin: 0 auto 50px auto;
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 35px;
         }
 
-        .content-card {
+        .image-card {
             background: #ffffff;
-            border-radius: 8px;
-            padding: 35px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border-left: 6px solid var(--unp-green);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border: 1px solid #e2e8f0;
             transition: transform 0.3s ease;
         }
 
-        .content-card:hover {
-            transform: translateY(-3px);
+        .image-card:hover {
+            transform: translateY(-4px);
         }
 
-        .content-card.secret-garden-card {
-            border-left-color: var(--unp-gold);
-            background: linear-gradient(to right, #fffdf5, #ffffff);
+        .card-img-box {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
         }
 
-        .content-card h3 {
-            font-size: 1.8rem;
+        .card-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .image-card:hover .card-img-box img {
+            transform: scale(1.03);
+        }
+
+        .card-body {
+            padding: 30px;
+        }
+
+        .image-card.secret-garden-card {
+            border: 2px solid var(--unp-gold);
+            background: linear-gradient(to bottom, #fffdf5, #ffffff);
+        }
+
+        .card-body h3 {
+            font-size: 1.6rem;
             color: var(--unp-green);
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            margin-bottom: 12px;
         }
 
-        .content-card.secret-garden-card h3 {
+        .image-card.secret-garden-card .card-body h3 {
             color: #997a15;
         }
 
-        .card-divider {
-            width: 40px;
-            height: 3px;
-            background-color: var(--unp-gold);
-            margin-bottom: 15px;
-        }
-
-        .content-card p {
+        .card-body p {
             color: #475569;
             font-size: 1.05rem;
             line-height: 1.7;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .card-btn {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             background-color: var(--unp-green);
             color: #ffffff;
             padding: 10px 24px;
@@ -410,55 +423,79 @@
         <a href="feedback-booking.html" class="gold-experience-btn">Get Your Experience</a>
     </div>
 
-    <!-- SEHEMU ZA KINA (BLOG, EVENTS, FORUM, MUSIC, ARTISAN, SECRET GARDEN) -->
+    <!-- SEHEMU ZA KINA (ZILIZOPANGWA KAMA KADI ZA PICHA NA MAELEZO) -->
     <div class="deep-sections-container">
 
         <!-- 1. BLOG -->
-        <div class="content-card">
-            <h3>📖 UNP Travel Blog</h3>
-            <div class="card-divider"></div>
-            <p>Soma hadithi za kusisimua za kitalii, siri za mbuga za wanyama za Tanzania bara, uzuri wa fukwe za Zanzibar, na miongozo ya kipekee itakayokupa mwanga wa safari yako ijayo. Kila makala imeandikwa kukusogeza karibu na uoto wa asili.</p>
-            <a href="blog.html" class="card-btn">Explore Blog Articles</a>
+        <div class="image-card">
+            <div class="card-img-box">
+                <img src="blog-img.jpg" alt="UNP Travel Blog" onerror="this.src='https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1000&q=80'">
+            </div>
+            <div class="card-body">
+                <h3>📖 UNP Travel Blog</h3>
+                <p>Soma hadithi za kusisimua za kitalii, siri za mbuga za wanyama za Tanzania bara, uzuri wa fukwe za Zanzibar, na miongozo ya kipekee itakayokupa mwanga wa safari yako ijayo. Kila makala imeandikwa kukusogeza karibu na uoto wa asili.</p>
+                <a href="blog.html" class="card-btn">Explore Blog Articles ❐</a>
+            </div>
         </div>
 
         <!-- 2. EVENTS -->
-        <div class="content-card">
-            <h3>🎉 Tanzania & Zanzibar Cultural Events</h3>
-            <div class="card-divider"></div>
-            <p>Jionee matukio makubwa ya sherehe za kitamaduni, tamasha za muziki, na sherehe za pwani zinazofanyika Zanzibar na Tanzania bara. Tunakuwekea ratiba rasmi ili usipitwe na burudani na shamrashamra zote za kitalii.</p>
-            <a href="events.html" class="card-btn">Discover Events</a>
+        <div class="image-card">
+            <div class="card-img-box">
+                <img src="events-img.jpg" alt="Cultural Events" onerror="this.src='https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1000&q=80'">
+            </div>
+            <div class="card-body">
+                <h3>🎉 Tanzania & Zanzibar Cultural Events</h3>
+                <p>Jionee matukio makubwa ya sherehe za kitamaduni, tamasha za muziki, na sherehe za pwani zinazofanyika Zanzibar na Tanzania bara. Tunakuwekea ratiba rasmi ili usipitwe na burudani na shamrashamra zote za kitalii.</p>
+                <a href="events.html" class="card-btn">Discover Events ❐</a>
+            </div>
         </div>
 
-        <!-- 3. FORUM (FAMILIA MOJA YA UNP) -->
-        <div class="content-card">
-            <h3>🌍 UNP Global Family Forum</h3>
-            <div class="card-divider"></div>
-            <p>Hapa ndipo mahali ambapo wasafiri na wapenda asili kutoka kona zote za dunia hukutana kuwa familia moja. Badilishana mawazo, toa maoni yako kuhusu maisha na tamaduni mbalimbali, na jenga urafiki wa kudumu na watu wanaopenda utalii kama wewe.</p>
-            <a href="forum.html" class="card-btn">Join Community Forum</a>
+        <!-- 3. FORUM -->
+        <div class="image-card">
+            <div class="card-img-box">
+                <img src="forum-img.jpg" alt="Global Family Forum" onerror="this.src='https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1000&q=80'">
+            </div>
+            <div class="card-body">
+                <h3>🌍 UNP Global Family Forum</h3>
+                <p>Hapa ndipo mahali ambapo wasafiri na wapenda asili kutoka kona zote za dunia hukutana kuwa familia moja. Badilishana mawazo, toa maoni yako kuhusu maisha na tamaduni mbalimbali, na jenga urafiki wa kudumu na watu wanaopenda utalii kama wewe.</p>
+                <a href="forum.html" class="card-btn">Join Community Forum ❐</a>
+            </div>
         </div>
 
         <!-- 4. OUR MUSIC -->
-        <div class="content-card">
-            <h3>🎵 The Rhythm of UNP (Our Music)</h3>
-            <div class="card-divider"></div>
-            <p>Sikia mapigo ya kipekee ya muziki wa kitalii, mashairi ya kuvutia ya hip-hop na midundo ya asili ya Kitanzania inayobeba hisia za mandhari nzuri, milima, na fukwe za bahari kuu. Muziki unaounganisha roho na safari.</p>
-            <a href="music.html" class="card-btn">Listen to UNP Music</a>
+        <div class="image-card">
+            <div class="card-img-box">
+                <img src="music-img.jpg" alt="Our Music" onerror="this.src='https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1000&q=80'">
+            </div>
+            <div class="card-body">
+                <h3>🎵 The Rhythm of UNP (Our Music)</h3>
+                <p>Sikia mapigo ya kipekee ya muziki wa kitalii, mashairi ya kuvutia ya hip-hop na midundo ya asili ya Kitanzania inayobeba hisia za mandhari nzuri, milima, na fukwe za bahari kuu. Muziki unaounganisha roho na safari.</p>
+                <a href="music.html" class="card-btn">Listen to UNP Music ❐</a>
+            </div>
         </div>
 
         <!-- 5. ARTISAN TREASURE -->
-        <div class="content-card">
-            <h3>🎨 Artisan Treasure & Handcrafts</h3>
-            <div class="card-divider"></div>
-            <p>Thamini ubunifu wa mikono! Kuanzia sanamu za wanyama zilizotengenezwa kwa umakini mkubwa hadi sanaa za majani makavu ya migomba zenye simulizi za maisha ya vijijini vya Tanzania. Kila kipande kina historia yake ya kipekee.</p>
-            <a href="artisan.html" class="card-btn">View Artisan Treasures</a>
+        <div class="image-card">
+            <div class="card-img-box">
+                <img src="artisan-img.jpg" alt="Artisan Treasure" onerror="this.src='https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=1000&q=80'">
+            </div>
+            <div class="card-body">
+                <h3>🎨 Artisan Treasure & Handcrafts</h3>
+                <p>Thamini ubunifu wa mikono! Kuanzia sanamu za wanyama zilizotengenezwa kwa umakini mkubwa hadi sanaa za majani makavu ya migomba zenye simulizi za maisha ya vijijini vya Tanzania. Kila kipande kina historia yake ya kipekee.</p>
+                <a href="artisan.html" class="card-btn">View Artisan Treasures ❐</a>
+            </div>
         </div>
 
-        <!-- 6. SECRET GARDEN (VIP & STAREHE KUBWA KUBWA) -->
-        <div class="content-card secret-garden-card">
-            <h3>✨ The Secret Garden (VIP & Elite Experiences)</h3>
-            <div class="card-divider" style="background-color: var(--unp-gold);"></div>
-            <p>Ingia katika ulimwengu wa kipekee wa starehe za hali ya juu. *Secret Garden* inakupa huduma za kifahari zikiwemo **Makasino ya kisasa (Casinos), usafiri wa kifahari wa Yacht baharini**, na huduma za kifalme zilizobuniwa maalum kwa ajili ya wageni wanaotamani starehe na utulivu wa kiwango cha juu kabisa.</p>
-            <a href="secret-garden.html" class="card-btn" style="background-color: var(--unp-gold); color: var(--unp-green);">Explore Secret Garden</a>
+        <!-- 6. SECRET GARDEN -->
+        <div class="image-card secret-garden-card">
+            <div class="card-img-box">
+                <img src="secret-garden-img.jpg" alt="Secret Garden VIP" onerror="this.src='https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80'">
+            </div>
+            <div class="card-body">
+                <h3>✨ The Secret Garden (VIP & Elite Experiences)</h3>
+                <p>Ingia katika ulimwengu wa kipekee wa starehe za hali ya juu. *Secret Garden* inakupa huduma za kifahari zikiwemo <strong>Makasino ya kisasa (Casinos), usafiri wa kifahari wa Yacht baharini</strong>, na huduma za kifalme zilizobuniwa maalum kwa ajili ya wageni wanaotamani starehe na utulivu wa kiwango cha juu kabisa.</p>
+                <a href="secret-garden.html" class="card-btn" style="background-color: var(--unp-gold); color: var(--unp-green);">Explore Secret Garden ❐</a>
+            </div>
         </div>
 
     </div>
@@ -500,10 +537,4 @@
             slides[slideIndex - 1].classList.add("active");
             dots[slideIndex - 1].classList.add("active");
             
-            titleElem.textContent = slideData[slideIndex - 1].title;
-            descElem.textContent = slideData[slideIndex - 1].desc;
-        }
-    </script>
-</body>
-    </html>
-    
+          
