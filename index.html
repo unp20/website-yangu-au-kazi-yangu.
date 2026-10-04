@@ -3,54 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNP TOURS - Unique & Natural Paradise | Luxury Travel & Artisan Treasures</title>
-    
-    <!-- Google Search Console & Bing Verification -->
-    <meta name="google-site-verification" content="USfpMungNhAZSkEqLJL4b9AfkP224BIGvn6N_8nIThM" />
-    <meta name="msvalidate.01" content="F45DA5D31B65604116EE3B77682567A7" />
-    <meta name="yandex-verification" content="d563c0867b5c735c" />
-
-    <!-- Google Analytics (GA4) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QJ1X38ZLC"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-5QJ1X38ZLC');
-    </script>
-
-    <!-- Yandex Metrica -->
-    <script type="text/javascript">
-        (function(m,e,t,r,i,k,a){
-            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-            m[i].l=1*new Date();
-            for (let j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113203659', 'ym');
-        ym(113203659, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
-    </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/113203659" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-
-    <!-- Elfsight Platform -->
-    <script src="https://elfsightcdn.com/platform.js" async></script>
-
-    <!-- OneSignal Push Notifications -->
-    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
-    <script>
-      window.OneSignalDeferred = window.OneSignalDeferred || [];
-      OneSignalDeferred.push(async function(OneSignal) {
-        await OneSignal.init({ appId: "e772eb04-4c02-457d-bc15-ad77d7a29d4d" });
-      });
-    </script>
-
+    <title>UNP TOURS - Unique & Natural Paradise</title>
     <style>
         :root {
-            --bg-color: #064e3b;
-            --card-bg: #032b1a;
-            --gold-color: #d4af37;
-            --lux-gold-light: #f3e5ab;
-            --text-white: #ffffff;
-            --text-gray: #e2e8f0;
+            --primary-color: #032b1a; /* Kijani kibichi cha asili */
+            --accent-color: #d4af37;  /* Dhahabu / Gold */
+            --bg-light: #f4f6f5;
+            --text-dark: #1e293b;
         }
 
         * {
@@ -61,434 +20,389 @@
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-white);
+            background-color: var(--bg-light);
+            color: var(--text-dark);
             line-height: 1.6;
         }
 
-        /* Header & Navigation Bar yenye Logo na Lugha Nyingi */
+        /* Global Header ya Kimataifa */
         header {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            padding: 20px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 5%;
-            background-color: rgba(3, 43, 26, 0.95);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            border-bottom: 3px solid var(--accent-color);
             position: sticky;
             top: 0;
             z-index: 1000;
-            backdrop-filter: blur(10px);
         }
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-        }
-
-        .logo-img {
-            width: 48px;
-            height: 48px;
-            border-radius: 8px;
-            object-fit: cover;
-            border: 1px solid var(--gold-color);
-        }
-
-        .logo-text h1 {
-            font-size: 1.1rem;
-            color: var(--gold-color);
-            letter-spacing: 1.5px;
-        }
-
-        .logo-text p {
-            font-size: 0.6rem;
-            color: var(--text-gray);
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .nav-controls {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        /* Sehemu ya Lugha Nyingi */
-        .language-selector {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            background-color: rgba(212, 175, 55, 0.08);
-            border: 1px solid var(--gold-color);
-            padding: 6px 12px;
-            border-radius: 20px;
-            color: var(--gold-color);
-            font-size: 0.8rem;
-        }
-
-        .language-selector select {
-            background: transparent;
-            border: none;
-            color: var(--gold-color);
-            font-size: 0.8rem;
-            cursor: pointer;
-            outline: none;
-            font-weight: 600;
-        }
-
-        .language-selector select option {
-            background-color: var(--card-bg);
-            color: var(--text-white);
+        header h1 {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            letter-spacing: 1px;
         }
 
         .menu-btn {
-            background: var(--gold-color);
-            color: var(--card-bg);
-            border: none;
-            padding: 8px 18px;
-            border-radius: 20px;
+            background: none;
+            border: 2px solid var(--accent-color);
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 4px;
             cursor: pointer;
-            font-weight: 700;
-            font-size: 0.85rem;
+            font-weight: bold;
             transition: 0.3s;
         }
 
         .menu-btn:hover {
-            background-color: var(--lux-gold-light);
+            background-color: var(--accent-color);
+            color: var(--primary-color);
         }
 
-        /* Mega Navigation Drawer */
-        .mega-menu {
-            display: none;
-            position: fixed;
-            top: 75px;
-            right: 5%;
-            background-color: var(--card-bg);
-            border: 1px solid var(--gold-color);
+        /* Sehemu Kuu ya Vivutio (Global Sections) */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .global-section {
+            background: #ffffff;
             border-radius: 12px;
-            width: 300px;
-            max-height: 75vh;
-            overflow-y: auto;
-            box-shadow: 0px 10px 30px rgba(0,0,0,0.8);
-            z-index: 1001;
-            padding: 15px 0;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-left: 6px solid var(--primary-color);
         }
 
-        .mega-menu.active {
-            display: block;
-        }
-
-        .mega-menu h4 {
-            color: var(--gold-color);
-            padding: 0 20px 8px;
-            font-size: 0.8rem;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 8px;
-        }
-
-        .mega-menu ul {
-            list-style: none;
-        }
-
-        .mega-menu ul li a {
-            display: block;
-            padding: 9px 20px;
-            color: var(--text-white);
-            text-decoration: none;
-            font-size: 0.88rem;
-            transition: 0.2s;
-        }
-
-        .mega-menu ul li a:hover {
-            background-color: rgba(212, 175, 55, 0.15);
-            color: var(--gold-color);
-            padding-left: 25px;
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 60px 5%;
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .hero h2 {
-            font-size: 2.5rem;
-            color: var(--gold-color);
+        .global-section h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
             margin-bottom: 15px;
         }
 
-        .hero p {
+        .global-section p {
             font-size: 1.1rem;
-            color: var(--text-gray);
-            margin-bottom: 30px;
+            color: #475569;
+            margin-bottom: 25px;
+            max-width: 800px;
         }
 
-        /* Dynamic Trips Section */
-        .section-title {
-            text-align: center;
-            color: var(--gold-color);
-            font-size: 1.8rem;
-            margin: 40px 0 20px;
+        /* Vitufe vya Kimataifa vya Kuchunguza (Explore / Dive in Buttons) */
+        .explore-btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #ffffff;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(3, 43, 26, 0.2);
         }
 
-        .trips-grid {
+        .explore-btn:hover {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Kadi za Ndani (Subfiles / Sub-content Cards) */
+        .subfile-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            padding: 0 5% 60px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
         }
 
-        .trip-card {
-            background-color: var(--card-bg);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: 10px;
+        .subfile-card {
+            background: #ffffff;
+            border-radius: 8px;
             overflow: hidden;
+            border: 1px solid #e2e8f0;
             transition: 0.3s;
         }
 
-        .trip-card:hover {
+        .subfile-card:hover {
             transform: translateY(-5px);
-            border-color: var(--gold-color);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
         }
 
-        .trip-card img {
+        .subfile-img {
             width: 100%;
-            height: 180px;
+            height: 200px;
             object-fit: cover;
+            background-color: #cbd5e1;
         }
 
-        .trip-info {
-            padding: 15px;
+        .subfile-content {
+            padding: 20px;
         }
 
-        .trip-info h3 {
-            color: var(--gold-color);
-            font-size: 1.1rem;
-            margin-bottom: 8px;
-        }
-
-        .trip-info p {
+        .subfile-category {
             font-size: 0.85rem;
-            color: var(--text-gray);
-            margin-bottom: 12px;
-        }
-
-        .trip-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.8rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 10px;
-        }
-
-        .price {
-            color: var(--gold-color);
             font-weight: bold;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            display: block;
         }
 
-        footer {
-            text-align: center;
-            padding: 40px 5%;
-            background-color: var(--card-bg);
-            border-top: 1px solid rgba(212, 175, 55, 0.2);
-            font-size: 0.85rem;
-            color: var(--text-gray);
+        .subfile-title {
+            font-size: 1.25rem;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .subfile-title:hover {
+            text-decoration: underline;
+        }
+
+        .subfile-desc {
+            font-size: 0.95rem;
+            color: #64748b;
+        }
+
+        /* Footer Mpya yenye Muonekano Sahihi wa Kimataifa */
+        .modern-footer {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            padding: 40px 5% 20px;
+            border-top: 2px solid var(--accent-color);
             margin-top: 50px;
         }
 
-        /* Kuficha au kupangilia Google Translate Widget isiharibu muonekano */
-        #google_translate_element {
+        .footer-links-container {
+            margin-bottom: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-accordion-item {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .accordion-header {
+            width: 100%;
+            background: none;
+            border: none;
+            color: var(--accent-color);
+            padding: 15px 0;
+            text-align: left;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .accordion-content {
             display: none;
+            padding-bottom: 15px;
+            padding-left: 10px;
+        }
+
+        .accordion-content.active {
+            display: block;
+        }
+
+        .accordion-content a {
+            display: block;
+            color: #e2e8f0;
+            text-decoration: none;
+            padding: 6px 0;
+            font-size: 0.9rem;
+            transition: 0.2s;
+        }
+
+        .accordion-content a:hover {
+            color: var(--accent-color);
+            padding-left: 5px;
+        }
+
+        .social-section {
+            margin-bottom: 30px;
+        }
+
+        .social-section h3 {
+            color: var(--accent-color);
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        .social-icons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 10px;
+        }
+
+        .social-icons a {
+            background-color: rgba(212, 175, 55, 0.1);
+            color: #ffffff;
+            padding: 10px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            text-align: center;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+        }
+
+        .footer-bottom-links a {
+            color: #e2e8f0;
+            text-decoration: none;
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+
+        .footer-legal {
+            font-size: 0.75rem;
+            color: #94a3b8;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 15px;
+            text-align: center;
         }
     </style>
 </head>
 <body>
 
-    <!-- Header & Navigation Bar -->
+    <!-- Header ya Tovuti -->
     <header>
-        <a href="index.html" class="logo-container">
-            <img src="1000009263.jpg" alt="UNP Tours Logo" class="logo-img">
-            <div class="logo-text">
-                <h1>UNP TOURS</h1>
-                <p>Unique & Natural Paradise</p>
-            </div>
-        </a>
-
-        <div class="nav-controls">
-            <!-- Sehemu ya Lugha Nyingi Inayobadilisha Ukurasa Mzima -->
-            <div class="language-selector">
-                <span>🌐</span>
-                <select id="langSelect" onchange="changeLanguage(this.value)" aria-label="Chagua Lugha">
-                    <option value="sw">Kiswahili</option>
-                    <option value="en">English</option>
-                    <option value="ar">العربية</option>
-                    <option value="zh-CN">中文</option>
-                    <option value="ru">Русский</option>
-                    <option value="fr">Français</option>
-                    <option value="de">Deutsch</option>
-                    <option value="es">Español</option>
-                    <option value="it">Italiano</option>
-                    <option value="ja">日本語</option>
-                    <option value="ko">한국어</option>
-                    <option value="pt">Português</option>
-                    <option value="hi">हिन्दी</option>
-                    <option value="la">Latina</option>
-                </select>
-            </div>
-
-            <button class="menu-btn" id="menuToggle">☰ Menu</button>
-        </div>
-
-        <!-- Mega Menu -->
-        <div class="mega-menu" id="megaMenu">
-            <h4>Pande Kuu za UNP</h4>
-            <ul>
-                <li><a href="index.html">🏠 Nyumbani (Home)</a></li>
-                <li><a href="services.html">🌴 Zanzibar Excursions & Safari</a></li>
-                <li><a href="services.html#watersports">🌊 Water Sports & Adventure</a></li>
-                <li><a href="services.html#luxury">👑 Luxury & VIP Services</a></li>
-                <li><a href="services.html#artisan">🎨 Our Artisan Treasures</a></li>
-            </ul>
-            <h4>Malazi & Usafiri</h4>
-            <ul>
-                <li><a href="services.html#accommodation">🏨 Cabin, Hotels & Rentals</a></li>
-                <li><a href="booking.html">✈️ Booking & Travel Services</a></li>
-                <li><a href="payment.html">💳 Malipo ya Kimataifa</a></li>
-            </ul>
-            <h4>Jamii & Taarifa</h4>
-            <ul>
-                <li><a href="blog.html">📚 Blog & Makala</a></li>
-                <li><a href="events.html">🎉 Events & Matukio</a></li>
-                <li><a href="about.html">👥 Kuhusu Sisi & Team</a></li>
-                <li><a href="contact.html">📞 Wasiliana Nasi</a></li>
-            </ul>
-        </div>
+        <h1>UNP TOURS</h1>
+        <button class="menu-btn">Menyu ☰</button>
     </header>
 
-    <!-- Hero Section -->
-    <main>
-        <section class="hero">
-            <h2>10-Star Luxury & Natural Paradise</h2>
-            <p>Gundua vivutio vya kipekee vya Zanzibar na Tanzania Bara, huduma za kifahari, na hazina zetu za sanaa za mikono.</p>
+    <main class="container">
+        
+        <!-- Sehemu ya Kwanza: Utalii na Safari -->
+        <section class="global-section">
+            <h2>Utalii na Matukio ya Kipekee</h2>
+            <p>Gundua mandhari nzuri za Zanzibar, michezo ya majini ya kusisimua, na huduma za kimataifa za kitalii zilizoundwa kukupa uzoefu usiosahaulika.</p>
+            <a href="services.html" class="explore-btn">Chunguza Zaidi (Explore)</a>
+            
+            <div class="subfile-grid">
+                <div class="subfile-card">
+                    <div class="subfile-img" style="background: linear-gradient(45deg, #032b1a, #054c2e);"></div>
+                    <div class="subfile-content">
+                        <span class="subfile-category">Mwongozo wa Safari</span>
+                        <a href="services.html" class="subfile-title">Matembezi ya Visiwani na Baharini</a>
+                        <p class="subfile-desc">Jifunze jinsi ya kupanga safari yako ya kitalii kwenda maeneo bora zaidi kwa urahisi.</p>
+                    </div>
+                </div>
+
+                <div class="subfile-card">
+                    <div class="subfile-img" style="background: linear-gradient(45deg, #d4af37, #967819);"></div>
+                    <div class="subfile-content">
+                        <span class="subfile-category">Huduma za VIP</span>
+                        <a href="services.html" class="subfile-title">Usafiri wa Boti na Malazi ya Kifahari</a>
+                        <p class="subfile-desc">Angalia ripoti na chaguzi mbalimbali za usafiri wa majini na hoteli zilizoboreshwa.</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <h3 class="section-title">Safari Zetu Maarufu (Featured Trips)</h3>
-        <div class="trips-grid" id="tripsContainer">
-            <p style="text-align: center; grid-column: 1/-1; color: var(--gold-color);">Inapakia huduma kutoka kwenye mfumo...</p>
-        </div>
+        <!-- Sehemu ya Pili: Sanaa za Mikono (Artisan Paradise) -->
+        <section class="global-section">
+            <h2>Sanaa za Asili na Ubunifu</h2>
+            <p>Tazama kazi za mikono zilizotengenezwa kwa uangalifu na upendo mkubwa, zikionyesha wanyamapori na mandhari halisi ya vijijini.</p>
+            <a href="artisan.html" class="explore-btn">Ingia Ndani (Dive in)</a>
+            
+            <div class="subfile-grid">
+                <div class="subfile-card">
+                    <div class="subfile-img" style="background: linear-gradient(45deg, #1e293b, #475569);"></div>
+                    <div class="subfile-content">
+                        <span class="subfile-category">Sanaa za Majani Makavu</span>
+                        <a href="artisan.html" class="subfile-title">Mkusanyiko wa Kazi za Mikono 2026</a>
+                        <p class="subfile-desc">Pata maelezo ya kina kuhusu picha za simba, tembo, na twiga zilizotengenezwa kwa ustadi.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <!-- Footer yenye maelezo ya chini na mahali pa Google Translate Widget -->
-    <footer>
-        <p>&copy; 2026 UNP TOURS (unp.tours). Haki zote zimehifadhiwa.</p>
-        <div id="google_translate_element" style="margin-top: 15px;"></div>
+    <!-- Footer yenye Menyu za Kukunjwa (Accordion) na Viungo Vya Kimataifa -->
+    <footer class="modern-footer">
+        <div class="footer-links-container">
+            <div class="footer-accordion-item">
+                <button class="accordion-header">Kuhusu Sisi (About us) <span>+</span></button>
+                <div class="accordion-content">
+                    <a href="about.html">Timu Yetu na Malengo</a>
+                    <a href="contact.html">Wasiliana Nasi</a>
+                    <a href="blog.html">Blog na Makala</a>
+                </div>
+            </div>
+            
+            <div class="footer-accordion-item">
+                <button class="accordion-header">Shirikiana Nasi (Partner with us) <span>+</span></button>
+                <div class="accordion-content">
+                    <a href="services.html">Huduma za Kitalii</a>
+                    <a href="artisan.html">Sanaa za Mikono</a>
+                    <a href="admin.html">Usimamizi (Admin Portal)</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="social-section">
+            <h3>Ungana Nasi (Connect with us)</h3>
+            <div class="social-icons">
+                <a href="#" target="_blank">📘 Facebook</a>
+                <a href="#" target="_blank">✖️ X (Twitter)</a>
+                <a href="#" target="_blank">📸 Instagram</a>
+                <a href="#" target="_blank">🎵 TikTok</a>
+                <a href="#" target="_blank">📡 RSS</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom-links">
+            <a href="index.html">UNP Tours Global</a>
+            <a href="#">Sera ya Faragha (Privacy and terms)</a>
+            <a href="#">Upatikanaji (Accessibility)</a>
+            <a href="#">Cookies</a>
+            <a href="#">Sitemap</a>
+        </div>
+
+        <div class="footer-legal">
+            <p>&copy; 2026 UNP TOURS (unp.tours). Haki zote zimehifadhiwa.</p>
+            <p>Unique & Natural Paradise - Tovuti rasmi ya kimataifa ya utalii, ukarimu na kazi za mikono ya asili.</p>
+        </div>
     </footer>
 
-    <!-- Google Translate Script ya Kuwezesha Lugha Zote Kubadilika -->
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'sw',
-                includedLanguages: 'sw,en,ar,zh-CN,ru,fr,de,es,it,ja,ko,pt,hi,la',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-            }, 'google_translate_element');
-        }
-
-        function changeLanguage(langCode) {
-            var selectField = document.querySelector(".goog-te-combo");
-            if (selectField) {
-                selectField.value = langCode;
-                selectField.dispatchEvent(new Event('change'));
-            } else {
-                // Kama widget haijajipakia bado, jaribu tena baada ya sekunde moja
-                setTimeout(function() { changeLanguage(langCode); }, 1000);
-            }
-        }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-    <!-- Tawk.to Live Chat (Imewekwa chini kabisa kwenye Footer/Background) -->
-    <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/6ab95c20dade22344616d64e/1k3i0vorc';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-    })();
-    </script>
-
-    <!-- Firebase SDK & Script ya kuvuta Trips -->
-    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
-    
     <script>
-        const menuToggle = document.getElementById('menuToggle');
-        const megaMenu = document.getElementById('megaMenu');
-
-        menuToggle.addEventListener('click', (e) => {
-            e.stopPropagation();
-            megaMenu.classList.toggle('active');
+        // Script ya kufungua na kufunga menu za chini (Accordion)
+        document.querySelectorAll('.accordion-header').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                content.classList.toggle('active');
+                const span = button.querySelector('span');
+                span.textContent = content.classList.contains('active') ? '-' : '+';
+            });
         });
-
-        window.addEventListener('click', () => {
-            if (megaMenu.classList.contains('active')) {
-                megaMenu.classList.remove('active');
-            }
-        });
-
-        const cfg = {
-          apiKey: "AIzaSyD2YtPFL2L_ZwAKdSYpXtvLt8gJUm2IX6s",
-          authDomain: "unptours.firebaseapp.com",
-          projectId: "unptours",
-          storageBucket: "unptours.firebasestorage.app",
-          messagingSenderId: "233326851661",
-          appId: "1:233326851661:web:354156110a5cee29904e04"
-        };
-
-        firebase.initializeApp(cfg);
-        const db = firebase.firestore();
-
-        async function loadTrips() {
-            const container = document.getElementById('tripsContainer');
-            try {
-                const snapshot = await db.collection("trips").limit(6).get();
-                if(snapshot.empty) {
-                    container.innerHTML = '<p style="text-align:center;">Hakuna trips kwa sasa.</p>';
-                    return;
-                }
-                container.innerHTML = '';
-                snapshot.forEach(doc => {
-                    const t = doc.data();
-                    container.innerHTML += `
-                        <div class="trip-card">
-                            <img src="${t.image || 'https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800'}" alt="${t.name}">
-                            <div class="trip-info">
-                                <h3>${t.name}</h3>
-                                <p>${t.description}</p>
-                                <div class="trip-footer">
-                                    <span>📍 ${t.location}</span>
-                                    <span class="price">Kutoka $${t.priceBudget || 50}</span>
-                                </div>
-                            </div>
-                        </div>
-                    `;
-                });
-            } catch (err) {
-                container.innerHTML = '<p style="text-align:center; color:#f87171;">Imeshindwa kupakia data kwa muda.</p>';
-            }
-        }
-
-        loadTrips();
     </script>
+
 </body>
     </html>
     
