@@ -220,6 +220,16 @@
             margin-bottom: 25px;
         }
 
+        /* Login Gate Styles */
+        #authGate {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        #adminDashboard {
+            display: none; /* Imefichwa hadi nenosiri liwe sahihi */
+        }
+
         .form-group {
             margin-bottom: 18px;
         }
@@ -275,6 +285,13 @@
 
         .submit-btn:hover {
             background-color: var(--lux-gold-light);
+        }
+
+        #authError {
+            color: #ef4444;
+            font-size: 0.85rem;
+            margin-top: 10px;
+            display: none;
         }
 
         #adminSuccess {
@@ -366,39 +383,57 @@
         </div>
     </header>
 
-    <!-- Main Admin Form -->
+    <!-- Main Admin Section -->
     <main>
         <div class="admin-container">
-            <h2>Usimamizi wa Maudhui (Admin Panel)</h2>
-            <p>Ongeza bidhaa mpya ya sanaa ya mikono (Artisan) au huduma moja kwa moja kwenye hifadhi ya Firebase.</p>
-
-            <form id="adminForm" onsubmit="addArtisanItem(event)">
-                <div class="form-group">
-                    <label for="itemName">Jina la Bidhaa / Kazi ya Sanaa</label>
-                    <input type="text" id="itemName" required placeholder="Mfano: Banana Leaf Giraffe Art">
-                </div>
-
-                <div class="form-group">
-                    <label for="itemDescription">Maelezo Fupi (Description)</label>
-                    <textarea id="itemDescription" required placeholder="Eleza kwa ufupi kazi hii ilivyotengenezwa..."></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="itemPrice">Bei kwa USD ($)</label>
-                    <input type="number" id="itemPrice" min="1" required placeholder="Mfano: 75">
-                </div>
-
-                <div class="form-group">
-                    <label for="itemImage">Kiungo cha Picha (Image URL)</label>
-                    <input type="url" id="itemImage" required placeholder="Weka kiungo cha picha (URL)">
-                </div>
-
-                <button type="submit" class="submit-btn">Weka Kwenye Mfumo (Add to Firebase)</button>
-            </form>
-
-            <div id="adminSuccess">
-                Bidhaa au kazi ya sanaa imewekwa kwa mafanikio kwenye mfumo! Sasa inaonekana kwenye ukurasa wa Artisan.
+            
+            <!-- 1. SEHEMU YA KUINGIZA NENOSIRI (SECURITY GATE) -->
+            <div id="authGate">
+                <h2>Ulinzi wa Wasimamizi</h2>
+                <p>Weka nenosiri la siri ili uweze kufungua mfumo wa kuweka bidhaa.</p>
+                <form onsubmit="verifyAdminPassword(event)">
+                    <div class="form-group">
+                        <input type="password" id="adminPasswordInput" required placeholder="Weka nenosiri hapa...">
+                    </div>
+                    <button type="submit" class="submit-btn">Fungua Mfumo</button>
+                    <div id="authError">Nenosiri si sahihi! Tafadhali jaribu tena.</div>
+                </form>
             </div>
+
+            <!-- 2. DASHBODI YA KAZI (ITAONEKANA BAADA YA NENOSIRI SAHIHI) -->
+            <div id="adminDashboard">
+                <h2>Usimamizi wa Maudhui (Admin Panel)</h2>
+                <p>Ongeza bidhaa mpya ya sanaa ya mikono (Artisan) au huduma moja kwa moja kwenye hifadhi ya Firebase.</p>
+
+                <form id="adminForm" onsubmit="addArtisanItem(event)">
+                    <div class="form-group">
+                        <label for="itemName">Jina la Bidhaa / Kazi ya Sanaa</label>
+                        <input type="text" id="itemName" required placeholder="Mfano: Banana Leaf Giraffe Art">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="itemDescription">Maelezo Fupi (Description)</label>
+                        <textarea id="itemDescription" required placeholder="Eleza kwa ufupi kazi hii ilivyotengenezwa..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="itemPrice">Bei kwa USD ($)</label>
+                        <input type="number" id="itemPrice" min="1" required placeholder="Mfano: 75">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="itemImage">Kiungo cha Picha (Image URL)</label>
+                        <input type="url" id="itemImage" required placeholder="Weka kiungo cha picha (URL)">
+                    </div>
+
+                    <button type="submit" class="submit-btn">Weka Kwenye Mfumo (Add to Firebase)</button>
+                </form>
+
+                <div id="adminSuccess">
+                    Bidhaa au kazi ya sanaa imewekwa kwa mafanikio kwenye mfumo! Sasa inaonekana kwenye ukurasa wa Artisan.
+                </div>
+            </div>
+
         </div>
     </main>
 
@@ -461,6 +496,20 @@
             }
         });
 
+        // MFUMO WA KULinda KWA NENOSIRI (Badilisha neno "UNPTours2026@" kwenda unalolitaka wewe)
+        function verifyAdminPassword(event) {
+            event.preventDefault();
+            const enteredPassword = document.getElementById('adminPasswordInput').value;
+            const correctPassword = "UNPTours2026@"; // Hapa unaweza kubadilisha nenosiri lako wakati wowote
+
+            if (enteredPassword === correctPassword) {
+                document.getElementById('authGate').style.display = 'none';
+                document.getElementById('adminDashboard').style.display = 'block';
+            } else {
+                document.getElementById('authError').style.display = 'block';
+            }
+        }
+
         const cfg = {
           apiKey: "AIzaSyD2YtPFL2L_ZwAKdSYpXtvLt8gJUm2IX6s",
           authDomain: "unptours.firebaseapp.com",
@@ -498,4 +547,5 @@
         }
     </script>
 </body>
-</html>
+    </html>
+    
