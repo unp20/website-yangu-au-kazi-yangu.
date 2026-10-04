@@ -286,21 +286,22 @@
             align-items: center;
         }
 
+        /* Hapa ndipo kulikuwa na tatizo la kutofunguka */
         .accordion-content {
-            display: none;
+            display: none; 
             padding-bottom: 15px;
             padding-left: 10px;
         }
 
         .accordion-content.active {
-            display: block;
+            display: block !important;
         }
 
         .accordion-content a {
             display: block;
             color: #e2e8f0;
             text-decoration: none;
-            padding: 6px 0;
+            padding: 8px 0;
             font-size: 0.9rem;
             transition: 0.2s;
         }
@@ -320,7 +321,6 @@
             margin-bottom: 15px;
         }
 
-        /* Mitandao ya Kijamii iliyotenganishwa na kuwekewa rangi/viungo maalum */
         .social-icons {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -348,7 +348,6 @@
             opacity: 0.9;
         }
 
-        /* Rangi maalum kwa kila mtandao wa kijamii */
         .btn-facebook { background-color: #1877F2; }
         .btn-instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
         .btn-tiktok { background-color: #000000; border: 1px solid rgba(255,255,255,0.2); }
@@ -536,23 +535,19 @@
             </div>
         </div>
 
-        <!-- Sehemu ya Mitandao ya Kijamii iliyounganishwa na link zako sahihi -->
+        <!-- Sehemu ya Mitandao ya Kijamii -->
         <div class="social-section">
             <h3>Connect with Us</h3>
             <div class="social-icons">
-                <!-- Facebook -->
                 <a href="https://www.facebook.com/profile.php?id=61595094232501" target="_blank" class="btn-facebook">
                     <i class="fab fa-facebook-f"></i> Facebook
                 </a>
-                <!-- Instagram -->
                 <a href="https://www.instagram.com/unpsoulvoyoge?stkn=MTM0Mjl5d2s3NW56dQ==" target="_blank" class="btn-instagram">
                     <i class="fab fa-instagram"></i> Instagram
                 </a>
-                <!-- TikTok -->
                 <a href="https://www.tiktok.com/@unptours?_r=1&_t=ZS-9AGr64F016j" target="_blank" class="btn-tiktok">
                     <i class="fab fa-tiktok"></i> TikTok
                 </a>
-                <!-- WhatsApp -->
                 <a href="https://wa.me/255655728982" target="_blank" class="btn-whatsapp">
                     <i class="fab fa-whatsapp"></i> WhatsApp
                 </a>
@@ -573,5 +568,9 @@
         </div>
     </footer>
 
+    <!-- JavaScript ya kuwezesha Accordion na Language Change -->
     <script>
-        document.querySelectorAll('.accordion-he
+        document.querySelectorAll('.accordion-header').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                content.classList
