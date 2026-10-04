@@ -1,362 +1,537 @@
 <!DOCTYPE html>
 <html lang="sw">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Huduma Zetu | UNP TOURS Zanzibar</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safari na Huduma Zote - UNP TOURS</title>
+    
+    <!-- Google Search Console & Bing Verification -->
+    <meta name="google-site-verification" content="USfpMungNhAZSkEqLJL4b9AfkP224BIGvn6N_8nIThM" />
+    <meta name="msvalidate.01" content="F45DA5D31B65604116EE3B77682567A7" />
+    <meta name="yandex-verification" content="d563c0867b5c735c" />
 
-<!-- SEO META TAGS -->
-<meta name="description" content="Huduma za UNP TOURS - Safari, VIP experiences, water sports, handmade artwork, na zaidi katika Zanzibar na Tanzania.">
-<meta name="keywords" content="Zanzibar tours, Tanzania safari, luxury services, VIP experience, water sports Zanzibar">
-<meta name="author" content="UNP TOURS Zanzibar">
-<meta name="robots" content="index, follow">
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QJ1X38ZLC"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-5QJ1X38ZLC');
+    </script>
 
-<!-- Open Graph -->
-<meta property="og:title" content="Huduma Zetu | UNP TOURS Zanzibar">
-<meta property="og:description" content="Gundua huduma zetu za kifahari - Safari, VIP, Water Sports, na zaidi.">
-<meta property="og:image" content="https://unp.tours/images/logo.png">
-<meta property="og:url" content="https://unp.tours/services.html">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="UNP TOURS">
+    <!-- Yandex Metrica -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (let j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113203659', 'ym');
+        ym(113203659, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/113203659" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 
-<!-- ELFSIGHT PLATFORM -->
-<script src="https://elfsightcdn.com/platform.js" async></script>
+    <style>
+        :root {
+            --bg-color: #064e3b;
+            --card-bg: #032b1a;
+            --gold-color: #d4af37;
+            --lux-gold-light: #f3e5ab;
+            --text-white: #ffffff;
+            --text-gray: #e2e8f0;
+        }
 
-<style>
-    :root {
-        --royal-green: #0077b6;
-        --dark-green: #003049;
-        --royal-gold: #d4af37;
-        --gold-light: #f0c75e;
-        --light-bg: #f8f9fa;
-        --white: #ffffff;
-        --text-dark: #1e293b;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-    body { background-color: var(--light-bg); color: #333; line-height: 1.6; }
-    a { text-decoration: none; color: inherit; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-    /* HEADER */
-    .top-bar { background: var(--dark-green); padding: 8px 20px; display: flex; justify-content: flex-end; align-items: center; gap: 15px; }
-    .header { background: var(--royal-green); padding: 15px 20px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
-    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; position: relative; }
-    .logo-area { display: flex; align-items: center; gap: 15px; }
-    .logo-holder { width: 60px; height: 60px; border: 2px dashed var(--royal-gold); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
-    .logo-fallback { color: var(--royal-gold); font-weight: 700; font-size: 0.7rem; text-align: center; line-height: 1.1; }
-    .logo-text h2 { color: #fff; font-size: 1.3rem; font-weight: 700; }
-    .logo-text span { color: var(--royal-gold); font-size: 0.8rem; }
-    .nav-links { display: flex; gap: 20px; list-style: none; }
-    .nav-links a { color: #fff; font-size: 0.85rem; transition: color 0.3s; display: flex; align-items: center; gap: 5px; }
-    .nav-links a:hover { color: var(--royal-gold); }
-    .menu-toggle { display: none; background: none; border: none; color: var(--royal-gold); font-size: 26px; cursor: pointer; }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-white);
+            line-height: 1.6;
+        }
 
-    /* HERO */
-    .hero { background: linear-gradient(135deg, var(--dark-green), var(--royal-green)); color: #fff; text-align: center; padding: 70px 20px; border-bottom: 5px solid var(--royal-gold); }
-    .hero h1 { font-size: 2rem; color: var(--royal-gold); margin-bottom: 10px; }
-    .hero p { font-size: 1rem; color: #ddd; max-width: 700px; margin: 0 auto; }
+        /* Header & Navigation Bar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background-color: rgba(3, 43, 26, 0.95);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
 
-    /* SERVICES GRID */
-    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; padding: 40px 20px; max-width: 1200px; margin: 0 auto; }
-    .service-card { background: #fff; border-radius: 12px; padding: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.08); border-top: 4px solid var(--royal-green); transition: transform 0.3s; }
-    .service-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
-    .service-card .card-icon { font-size: 28px; color: var(--royal-gold); margin-bottom: 15px; }
-    .service-card h3 { color: var(--royal-green); margin-bottom: 10px; font-size: 1.1rem; }
-    .service-card p { color: #555; font-size: 0.9rem; line-height: 1.6; }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
 
-    /* SECTIONS */
-    .section-title { text-align: center; font-size: 2rem; color: var(--royal-green); margin: 40px 0 20px; position: relative; padding-bottom: 15px; }
-    .section-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background: var(--royal-gold); border-radius: 2px; }
-    .widget-container { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
-    .widget-title { text-align: center; font-size: 1.8rem; color: var(--royal-green); margin-bottom: 20px; }
+        .logo-img {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 1px solid var(--gold-color);
+        }
 
-    /* FOOTER */
-    .footer { background: var(--dark-green); color: #fff; padding: 40px 20px; margin-top: 40px; }
-    .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-    .footer h3, .footer h4 { color: var(--royal-gold); margin-bottom: 15px; }
-    .social-links { display: flex; gap: 15px; margin-top: 15px; }
-    .social-links a { color: var(--royal-gold); font-size: 1.2rem; transition: transform 0.3s; }
-    .social-links a:hover { transform: scale(1.2); }
+        .logo-text h1 {
+            font-size: 1.1rem;
+            color: var(--gold-color);
+            letter-spacing: 1.5px;
+        }
 
-    /* FLOATING WHATSAPP */
-    .floating-whatsapp { position: fixed; bottom: 25px; right: 25px; background: #25d366; color: #fff; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 1100; transition: transform 0.3s; }
-    .floating-whatsapp:hover { transform: scale(1.1); }
+        .logo-text p {
+            font-size: 0.6rem;
+            color: var(--text-gray);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
 
-    /* CHATBOT */
-    .chatbot-toggle { position: fixed; bottom: 100px; right: 25px; background-color: var(--royal-green); color: var(--royal-gold); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 1100; cursor: pointer; border: 2px solid var(--royal-gold); }
-    .chatbot-container { position: fixed; bottom: 170px; right: 25px; width: 350px; max-width: 90vw; height: 500px; background: #fff; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); z-index: 1100; display: none; flex-direction: column; overflow: hidden; border: 2px solid var(--royal-gold); }
-    .chatbot-container.active { display: flex; }
-    .chatbot-header { background: var(--royal-green); color: #fff; padding: 15px; display: flex; align-items: center; gap: 10px; }
-    .chatbot-header .avatar { width: 40px; height: 40px; background: var(--royal-gold); color: var(--dark-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem; }
-    .chatbot-header h4 { margin: 0; font-size: 1rem; color: #fff; }
-    .chatbot-header span { font-size: 0.75rem; color: #ddd; display: block; }
-    .chatbot-messages { flex-grow: 1; padding: 15px; overflow-y: auto; background: #f9f9f9; display: flex; flex-direction: column; gap: 10px; }
-    .message { max-width: 80%; padding: 10px 15px; border-radius: 15px; font-size: 0.85rem; }
-    .message.bot { background: #e9ecef; align-self: flex-start; }
-    .message.user { background: var(--royal-green); color: #fff; align-self: flex-end; }
-    .chatbot-input { display: flex; padding: 10px; border-top: 1px solid #eee; }
-    .chatbot-input input { flex-grow: 1; padding: 10px; border: 1px solid #ddd; border-radius: 20px; outline: none; font-family: 'Poppins', sans-serif; }
-    .chatbot-input button { background: var(--royal-gold); color: var(--dark-green); border: none; width: 40px; height: 40px; border-radius: 50%; margin-left: 8px; cursor: pointer; font-size: 1rem; }
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
 
-    /* GTRANSLATE */
-    .gtranslate_wrapper { position: relative; }
+        .language-selector {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            background-color: rgba(212, 175, 55, 0.08);
+            border: 1px solid var(--gold-color);
+            padding: 6px 12px;
+            border-radius: 20px;
+            color: var(--gold-color);
+            font-size: 0.8rem;
+        }
 
-    @media (max-width: 768px) {
-        .menu-toggle { display: block; }
-        .nav-links { display: none; flex-direction: column; width: 100%; background: var(--dark-green); padding: 20px; position: absolute; top: 100%; left: 0; right: 0; z-index: 999; border-top: 2px solid var(--royal-gold); }
-        .nav-links.active { display: flex; }
-        .nav-links li { width: 100%; }
-        .nav-links a { padding: 10px 0; width: 100%; }
-        .hero h1 { font-size: 1.6rem; }
-    }
-</style>
+        .language-selector select {
+            background: transparent;
+            border: none;
+            color: var(--gold-color);
+            font-size: 0.8rem;
+            cursor: pointer;
+            outline: none;
+            font-weight: 600;
+        }
+
+        .language-selector select option {
+            background-color: var(--card-bg);
+            color: var(--text-white);
+        }
+
+        .menu-btn {
+            background: var(--gold-color);
+            color: var(--card-bg);
+            border: none;
+            padding: 8px 18px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 0.85rem;
+            transition: 0.3s;
+        }
+
+        .menu-btn:hover {
+            background-color: var(--lux-gold-light);
+        }
+
+        /* Mega Menu */
+        .mega-menu {
+            display: none;
+            position: fixed;
+            top: 75px;
+            right: 5%;
+            background-color: var(--card-bg);
+            border: 1px solid var(--gold-color);
+            border-radius: 12px;
+            width: 300px;
+            max-height: 75vh;
+            overflow-y: auto;
+            box-shadow: 0px 10px 30px rgba(0,0,0,0.8);
+            z-index: 1001;
+            padding: 15px 0;
+        }
+
+        .mega-menu.active {
+            display: block;
+        }
+
+        .mega-menu h4 {
+            color: var(--gold-color);
+            padding: 0 20px 8px;
+            font-size: 0.8rem;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 8px;
+        }
+
+        .mega-menu ul {
+            list-style: none;
+        }
+
+        .mega-menu ul li a {
+            display: block;
+            padding: 9px 20px;
+            color: var(--text-white);
+            text-decoration: none;
+            font-size: 0.88rem;
+            transition: 0.2s;
+        }
+
+        .mega-menu ul li a:hover {
+            background-color: rgba(212, 175, 55, 0.15);
+            color: var(--gold-color);
+            padding-left: 25px;
+        }
+
+        /* Page Header / Filters */
+        .page-header {
+            padding: 40px 5% 20px;
+            text-align: center;
+        }
+
+        .page-header h2 {
+            font-size: 2.2rem;
+            color: var(--gold-color);
+            margin-bottom: 10px;
+        }
+
+        .page-header p {
+            color: var(--text-gray);
+            font-size: 1rem;
+            margin-bottom: 25px;
+        }
+
+        .filters-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .filter-btn {
+            background-color: var(--card-bg);
+            border: 1px solid var(--gold-color);
+            color: var(--text-white);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: 0.3s;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background-color: var(--gold-color);
+            color: var(--card-bg);
+            font-weight: bold;
+        }
+
+        /* Trips Grid */
+        .trips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 0 5% 60px;
+        }
+
+        .trip-card {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .trip-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--gold-color);
+        }
+
+        .trip-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .trip-info {
+            padding: 15px;
+        }
+
+        .trip-info h3 {
+            color: var(--gold-color);
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .trip-info p {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            margin-bottom: 12px;
+        }
+
+        .trip-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding: 12px 15px;
+            background-color: rgba(0,0,0,0.15);
+        }
+
+        .price {
+            color: var(--gold-color);
+            font-weight: bold;
+        }
+
+        .book-link {
+            background-color: var(--gold-color);
+            color: var(--card-bg);
+            padding: 6px 12px;
+            border-radius: 15px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.75rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 5%;
+            background-color: var(--card-bg);
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            margin-top: 50px;
+        }
+
+        #google_translate_element { display: none; }
+    </style>
 </head>
 <body>
 
-<!-- TOP BAR WITH GTRANSLATE -->
-<div class="top-bar">
-    <div class="gtranslate_wrapper"></div>
-</div>
-
-<!-- HEADER -->
-<header class="header">
-    <div class="nav-container">
-        <a href="index.html" class="logo-area">
-            <div class="logo-holder"><span class="logo-fallback">UNP<br>LOGO</span></div>
-            <div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
-        </a>
-        <button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="index.html"><i class="fas fa-home"></i> Nyumbani</a></li>
-            <li><a href="about.html"><i class="fas fa-info-circle"></i> Kuhusu Sisi</a></li>
-            <li><a href="services.html" style="color: var(--royal-gold);"><i class="fas fa-briefcase"></i> Huduma</a></li>
-            <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
-            <li><a href="pricing.html"><i class="fas fa-layer-group"></i> Madaraja</a></li>
-            <li><a href="events.html"><i class="fas fa-calendar-alt"></i> Matukio</a></li>
-            <li><a href="partners.html"><i class="fas fa-handshake"></i> Washirika</a></li>
-            <li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
-            <li><a href="contact.html"><i class="fas fa-envelope"></i> Wasiliana</a></li>
-        </ul>
-    </div>
-</header>
-
-<!-- HERO -->
-<section class="hero">
-    <h1>Huduma Zetu</h1>
-    <p>Huduma za kifahari zinazokupa uzoefu wa kipekee wa Zanzibar na Tanzania.</p>
-</section>
-
-<!-- SERVICES GRID -->
-<section>
-<h2 class="section-title">Tunachokupa</h2>
-<div class="services-grid">
-
-    <div class="service-card">
-        <div class="card-icon"><i class="fas fa-archway"></i></div>
-        <h3>Zanzibar Excursions</h3>
-        <p>Tembelea maeneo ya kihistoria kama Stone Town, Prison Island (kobe), na Safari Blue.</p>
-    </div>
-
-    <div class="service-card">
-        <div class="card-icon"><i class="fas fa-tree"></i></div>
-        <h3>Jozani Forest</h3>
-        <p>Kutana na nyani adimu wa Red Colobus katika msitu wa Jozani.</p>
-    </div>
-
-    <div class="service-card">
-        <div class="card-icon"><i class="fas fa-car"></i></div>
-        <h3>Vehicle Rentals</h3>
-        <p>Kodisha magari, pikipiki, quad bikes, na vifaa vya snorkeling.</p>
-    </div>
-
-    <div class="service-card">
-        <div class="card-icon"><i class="fas fa-shuttle-van"></i></div>
-        <h3>Luxury Transfers</h3>
-        <p>Usafiri wa kifahari kutoka uwanja wa ndege hadi hotelini kwako.</p>
-    </div>
-
-    <div class="service-card">
-        <div class="card-icon"><i class="fas fa-gem"></i></div>
-        <h3>Handmade Artwork</h3>
-        <p>Sanaa za mikono zilizotengenezwa kwa majani ya ndizi.</p>
-    </div>
-
-    <div class="service-card">
-        <div class="card-icon"><i class="fas fa-paw"></i></div>
-        <h3>Tanzania Safaris</h3>
-        <p>Safari za ndege kutoka Zanzibar hadi Serengeti na Ngorongoro.</p>
-    </div>
-
-    <div class="service-card">
-        <div class="card-icon"><i class="fas fa-city"></i></div>
-        <h3>Authentic City Tour</h3>
-        <p>Tembelea mji wa Zanzibar na ujifunze utamaduni wake.</p>
-    </div>
-
-    <div class="service-card">
-        <div class="card-icon"><i class="fas fa-utensils"></i></div>
-        <h3>Romantic Beach Dinner</h3>
-        <p>Chakula cha jioni cha kimapenzi pwani na muziki wa live.</p>
-    </div>
-
-    <div class="service-card">
-        <div class="card-icon"><i class="fas fa-water"></i></div>
-        <h3>Water Sports</h3>
-        <p>Jet Ski, Jet Car, na transparent kayaks zenye drone video.</p>
-    </div>
-
-    <div class="service-card">
-        <div class="card-icon"><i class="fas fa-user-shield"></i></div>
-        <h3>Secret Garden (Private Oasis)</h3>
-        <p>Eneo la kipekee kwa wateja wa kifahari wanaotafuta faragha kamili.</p>
-    </div>
-
-</div>
-</section>
-
-<!-- ==================== WIDGETS ZA ELFSIGHT ==================== -->
-
-<!-- 1. PRICING TABLE -->
-<section class="widget-container">
-    <h2 class="widget-title"><i class="fas fa-layer-group" style="color: var(--royal-gold);"></i> Madaraja ya Huduma</h2>
-    <div class="elfsight-app-d4f9fe3e-824a-41a6-95e3-523908e5ca40" data-elfsight-app-lazy></div>
-</section>
-
-<!-- 2. CALCULATOR -->
-<section class="widget-container">
-    <h2 class="widget-title"><i class="fas fa-calculator" style="color: var(--royal-gold);"></i> Kikokotoo cha Bei</h2>
-    <div class="elfsight-app-2b97f297-e39c-43eb-a26d-1d6d6bd6c1db" data-elfsight-app-lazy></div>
-</section>
-
-<!-- 3. FAQ WIDGET -->
-<section class="widget-container">
-    <h2 class="widget-title"><i class="fas fa-question-circle" style="color: var(--royal-gold);"></i> Maswali Yanayoulizwa Mara kwa Mara</h2>
-    <div class="elfsight-app-74bf5461-df5c-4350-808f-6b1af5eae93a" data-elfsight-app-lazy></div>
-</section>
-
-<!-- 4. CONTACT FORM -->
-<section class="widget-container">
-    <h2 class="widget-title"><i class="fas fa-envelope" style="color: var(--royal-gold);"></i> Uliza Kuhusu Huduma</h2>
-    <div class="elfsight-app-a47c0944-93bc-44d9-b4af-1576933b9916" data-elfsight-app-lazy></div>
-</section>
-
-<!-- FOOTER -->
-<footer class="footer">
-    <div class="footer-content">
-        <div>
-            <h3>UNIQUE NATURE PARADISE (UNP)</h3>
-            <p style="font-size: 0.9rem;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p>
-        </div>
-        <div>
-            <h4>Direct Contact</h4>
-            <p style="font-size: 0.9rem;"><i class="fab fa-whatsapp" style="color: var(--royal-gold);"></i> +255 655 728 982</p>
-            <p style="font-size: 0.9rem;"><i class="fas fa-envelope" style="color: var(--royal-gold);"></i> salimnasoro11@gmail.com</p>
-            <div class="social-links">
-                <a href="https://wa.me/255655728982" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://www.tiktok.com/@unptours" target="_blank"><i class="fab fa-tiktok"></i></a>
-                <a href="https://www.instagram.com/unpsoulvoyoge" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.facebook.com/profile.php?id=61595094232501" target="_blank"><i class="fab fa-facebook"></i></a>
+    <!-- Header & Navigation Bar -->
+    <header>
+        <a href="index.html" class="logo-container">
+            <img src="1000009263.jpg" alt="UNP Tours Logo" class="logo-img">
+            <div class="logo-text">
+                <h1>UNP TOURS</h1>
+                <p>Unique & Natural Paradise</p>
             </div>
+        </a>
+
+        <div class="nav-controls">
+            <div class="language-selector">
+                <span>🌐</span>
+                <select id="langSelect" onchange="changeLanguage(this.value)" aria-label="Chagua Lugha">
+                    <option value="sw">Kiswahili</option>
+                    <option value="en">English</option>
+                    <option value="ar">العربية</option>
+                    <option value="zh-CN">中文</option>
+                    <option value="ru">Русский</option>
+                    <option value="fr">Français</option>
+                    <option value="de">Deutsch</option>
+                    <option value="es">Español</option>
+                    <option value="it">Italiano</option>
+                    <option value="ja">日本語</option>
+                    <option value="ko">한국어</option>
+                    <option value="pt">Português</option>
+                    <option value="hi">हिन्दी</option>
+                    <option value="la">Latina</option>
+                </select>
+            </div>
+
+            <button class="menu-btn" id="menuToggle">☰ Menu</button>
         </div>
-    </div>
-    <!-- SOCIAL SHARING BUTTONS -->
-    <div style="text-align: center; margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.2);">
-        <p style="color: var(--royal-gold); font-size: 0.9rem; margin-bottom: 10px;">Shiriki UNP TOURS:</p>
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https://unp.tours" target="_blank" style="display: inline-block; margin: 0 5px; color: var(--royal-gold); font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
-        <a href="https://twitter.com/intent/tweet?url=https://unp.tours" target="_blank" style="display: inline-block; margin: 0 5px; color: var(--royal-gold); font-size: 1.5rem;"><i class="fab fa-twitter"></i></a>
-        <a href="https://wa.me/?text=Check%20out%20UNP%20TOURS!%20https://unp.tours" target="_blank" style="display: inline-block; margin: 0 5px; color: var(--royal-gold); font-size: 1.5rem;"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://unp.tours" target="_blank" style="display: inline-block; margin: 0 5px; color: var(--royal-gold); font-size: 1.5rem;"><i class="fab fa-linkedin"></i></a>
-        <a href="https://t.me/share/url?url=https://unp.tours" target="_blank" style="display: inline-block; margin: 0 5px; color: var(--royal-gold); font-size: 1.5rem;"><i class="fab fa-telegram"></i></a>
-    </div>
-</footer>
 
-<a href="https://wa.me/255655728982" class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <!-- Mega Menu -->
+        <div class="mega-menu" id="megaMenu">
+            <h4>Pande Kuu za UNP</h4>
+            <ul>
+                <li><a href="index.html">🏠 Nyumbani (Home)</a></li>
+                <li><a href="services.html">🌴 Zanzibar Excursions & Safari</a></li>
+                <li><a href="services.html#watersports">🌊 Water Sports & Adventure</a></li>
+                <li><a href="services.html#luxury">👑 Luxury & VIP Services</a></li>
+                <li><a href="services.html#artisan">🎨 Our Artisan Treasures</a></li>
+            </ul>
+            <h4>Malazi & Usafiri</h4>
+            <ul>
+                <li><a href="services.html#accommodation">🏨 Cabin, Hotels & Rentals</a></li>
+                <li><a href="booking.html">✈️ Booking & Travel Services</a></li>
+                <li><a href="payment.html">💳 Malipo ya Kimataifa</a></li>
+            </ul>
+            <h4>Jamii & Taarifa</h4>
+            <ul>
+                <li><a href="blog.html">📚 Blog & Makala</a></li>
+                <li><a href="events.html">🎉 Events & Matukio</a></li>
+                <li><a href="about.html">👥 Kuhusu Sisi & Team</a></li>
+                <li><a href="contact.html">📞 Wasiliana Nasi</a></li>
+            </ul>
+        </div>
+    </header>
 
-<!-- CHATBOT -->
-<div class="chatbot-toggle" onclick="toggleChatbot()"><i class="fas fa-robot"></i></div>
-<div class="chatbot-container" id="chatbotContainer">
-    <div class="chatbot-header">
-        <div class="avatar">U</div>
-        <div><h4>UNP Assistant</h4><span>Yupo Mtandaoni</span></div>
-        <button onclick="toggleChatbot()" style="margin-left:auto;background:none;border:none;color:#fff;font-size:1.2rem;cursor:pointer;"><i class="fas fa-times"></i></button>
-    </div>
-    <div class="chatbot-messages" id="chatMessages">
-        <div class="message bot">Karibu UNP TOURS! Ninaweza kukusaidia vipi leo?</div>
-    </div>
-    <div class="chatbot-input">
-        <input type="text" id="chatInput" placeholder="Andika ujumbe wako..." onkeypress="handleKeyPress(event)">
-        <button onclick="sendMessage()"><i class="fas fa-paper-plane"></i></button>
-    </div>
-</div>
+    <!-- Main Content: All Trips & Excursions -->
+    <main>
+        <section class="page-header">
+            <h2>Safari, Excursions na Matukio Yote</h2>
+            <p>Chagua huduma unayoitaka kutoka kwenye orodha yetu kamili ya viwango vya 10-Star Luxury.</p>
+            
+            <!-- Vichujio vya Makundi (Category Filters) -->
+            <div class="filters-container">
+                <button class="filter-btn active" onclick="filterTrips('all', this)">Zote (All)</button>
+                <button class="filter-btn" onclick="filterTrips('Zanzibar', this)">Zanzibar</button>
+                <button class="filter-btn" onclick="filterTrips('Safari', this)">Safari Bara</button>
+                <button class="filter-btn" onclick="filterTrips('Water Sports', this)">Water Sports</button>
+                <button class="filter-btn" onclick="filterTrips('Luxury', this)">Luxury & VIP</button>
+            </div>
+        </section>
 
-<!-- COOKIES BANNER -->
-<div id="cookieBanner" style="position: fixed; bottom: 0; left: 0; right: 0; background: var(--dark-green); color: #fff; padding: 15px; text-align: center; z-index: 9999; display: none;">
-    <p style="margin: 0 0 10px 0; font-size: 0.9rem;">Tunatumia cookies kuboresha uzoefu wako. Kwa kuendelea kutumia website yetu, unakubali <a href="privacy.html" style="color: var(--royal-gold); text-decoration: underline;">Sera zetu za Faragha</a>.</p>
-    <button onclick="acceptCookies()" style="background: var(--royal-gold); color: var(--dark-green); border: none; padding: 8px 20px; border-radius: 5px; font-weight: 700; cursor: pointer;">Nakubali</button>
-</div>
+        <div class="trips-grid" id="allTripsContainer">
+            <p style="text-align: center; grid-column: 1/-1; color: var(--gold-color);">Inapakia huduma zote kutoka Firebase...</p>
+        </div>
+    </main>
 
-<!-- TAWK.TO LIVE CHAT -->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/6ab95c20dade22344616d64e/1k3i0vorc';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 UNP TOURS (unp.tours). Haki zote zimehifadhiwa.</p>
+        <div id="google_translate_element" style="margin-top: 15px;"></div>
+    </footer>
 
-<!-- ONESIGNAL PUSH -->
-<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
-<script>
-  window.OneSignalDeferred = window.OneSignalDeferred || [];
-  OneSignalDeferred.push(async function(OneSignal) {
-    await OneSignal.init({
-      appId: "e772eb04-4c02-457d-bc15-ad77d7a29d4d",
-    });
-  });
-</script>
+    <!-- Google Translate Script -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'sw',
+                includedLanguages: 'sw,en,ar,zh-CN,ru,fr,de,es,it,ja,ko,pt,hi,la',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+        function changeLanguage(langCode) {
+            var selectField = document.querySelector(".goog-te-combo");
+            if (selectField) {
+                selectField.value = langCode;
+                selectField.dispatchEvent(new Event('change'));
+            } else {
+                setTimeout(function() { changeLanguage(langCode); }, 1000);
+            }
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-<!-- GTRANSLATE SCRIPT -->
-<script>
-window.gtranslateSettings = {
-  "default_language": "sw",
-  "languages": ["sw", "en", "fr", "it", "de", "ru", "ar", "zh-CN"],
-  "wrapper_selector": ".gtranslate_wrapper"
-};
-</script>
-<script src="https://cdn.gtranslate.net/widgets/latest/dropdown.js" defer></script>
+    <!-- Tawk.to Live Chat -->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/6ab95c20dade22344616d64e/1k3i0vorc';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
 
-<!-- MENU TOGGLE & CHATBOT LOGIC -->
-<script>
-  // MENU TOGGLE
-  const menuToggleBtn = document.getElementById('menuToggleBtn');
-  const navLinks = document.getElementById('navLinks');
-  if(menuToggleBtn) { menuToggleBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); }); }
+    <!-- Firebase SDK & Dynamic Loading Script -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+    
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const megaMenu = document.getElementById('megaMenu');
 
-  // COOKIES BANNER
-  if (!localStorage.getItem('cookiesAccepted')) {
-      document.getElementById('cookieBanner').style.display = 'block';
-  }
-  window.acceptCookies = function() {
-      localStorage.setItem('cookiesAccepted', 'true');
-      document.getElementById('cookieBanner').style.display = 'none';
-  };
+        menuToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            megaMenu.classList.toggle('active');
+        });
 
-  // CHATBOT
-  window.toggleChatbot = function() {
-      document.getElementById('chatbotContainer').classList.toggle('active');
-  };
-  window.handleKeyPress = function(e) {
-      if (e.key === 'Enter') sendMessage();
-  };
-  window.sendMessage = function() {
-      const input = document.getElementById('chatInput');
-      const msg = input.value.trim();
-      if (!msg) return;
-      const chatMessages = document.getElementById('chatMessages');
-      chatMessages.innerHTML += `<div cl
+        window.addEventListener('click', () => {
+            if (megaMenu.classList.contains('active')) {
+                megaMenu.classList.remove('active');
+            }
+        });
+
+        const cfg = {
+          apiKey: "AIzaSyD2YtPFL2L_ZwAKdSYpXtvLt8gJUm2IX6s",
+          authDomain: "unptours.firebaseapp.com",
+          projectId: "unptours",
+          storageBucket: "unptours.firebasestorage.app",
+          messagingSenderId: "233326851661",
+          appId: "1:233326851661:web:354156110a5cee29904e04"
+        };
+
+        firebase.initializeApp(cfg);
+        const db = firebase.firestore();
+
+        let allTripsData = [];
+
+        async function fetchAllTrips() {
+            const container = document.getElementById('allTripsContainer');
+            try {
+                const snapshot = await db.collection("trips").get();
+                if(snapshot.empty) {
+                    container.innerHTML = '<p style="text-align:center;">Hakuna trips zilizopatikana kwenye mfumo kwa sasa.</p>';
+                    return;
+                }
+                allTripsData = [];
+                snapshot.forEach(doc => {
+                    allTripsData.push(doc.data());
+                });
+                displayTrips(allTripsData);
+            } catch (err) {
+                container.innerHTML = '<p style="text-align:center; color:#f87171;">Imeshindwa kupakia data za Firebase kwa muda.</p>';
+            }
+        }
+
+        function displayTrips(trips) {
+            const container = document.getElementById('allTripsContainer');
+            container.innerHTML = '';
+            trips.forEach(t => {
+                container.innerHTML += `
+                    <div class="trip-card">
+                        <img src="${t.image || 'https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800'}" alt="${t.name}">
+                        <div class="trip-info">
+                            <h3>${t.name}</h3>
+                            <p>${t.description || 'Pata uzoefu wa kipekee wa kitalii na UNP Tours.'}</p>
+                        </div>
+                        <div class="trip-footer">
+                            <span>📍 ${t.location || 'Zanzibar'}</span>
+                            <span class="price">Kutoka $${t.priceBudget || 50}</span>
+                            <a href="booking.html?trip=${encodeURIComponent(t.name)}" class="book-link">Agiza</a>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        function filterTrips(category, btn) {
+            // Badilisha active button styling
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            if(category === 'all') {
+                displayTrips(allTripsData);
+            } else {
+                const filtered = allTripsData.filter(t => t.category && t.category.toLowerCase().includes(category.toLowerCase()));
+                displayTrips(filtered);
+            }
+        }
+
+        fetchAllTrips();
+    </script>
+</body>
+                        </html>
+        
