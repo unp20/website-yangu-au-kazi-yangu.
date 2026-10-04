@@ -229,91 +229,54 @@
             color: var(--unp-green);
         }
 
-        /* 3. SEHEMU YA PILI */
-        .second-section {
-            background-color: #ffffff;
-            text-align: center;
-            padding: 40px 20px;
-            margin-top: 30px;
-            border-top: 4px solid var(--unp-gold);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-        }
-
-        .second-section h2 {
-            font-size: 2rem;
-            color: var(--unp-green);
-            margin-bottom: 15px;
-        }
-
-        .second-section p {
-            font-size: 1.1rem;
-            color: #475569;
-            max-width: 800px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-
-        /* 4. AWAMU YA TATU: BOOKING (Maneno yameunganishwa moja kwa moja hapa) */
-        .third-section {
+        /* 3. SEHEMU MPYA YA UJUMBE WA WAGENI NA KITUFE CHA DHAHABU (GET YOUR EXPERIENCE) */
+        .welcome-experience-section {
             max-width: 1000px;
             margin: 30px auto 50px auto;
-            background: #ffffff;
-            padding: 40px;
+            background: var(--unp-green);
+            color: #ffffff;
+            padding: 50px 30px;
             border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border-left: 6px solid var(--unp-gold);
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            border-top: 4px solid var(--unp-gold);
         }
 
-        .third-section h2 {
-            font-size: 2rem;
+        .welcome-experience-section h2 {
+            font-size: 2.2rem;
+            color: var(--unp-gold);
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .welcome-experience-section p {
+            font-size: 1.15rem;
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            color: #e2e8f0;
+        }
+
+        /* Kitufe maalum cha Dhahabu chenye neno GET YOUR EXPERIENCE */
+        .gold-experience-btn {
+            display: inline-block;
+            background-color: var(--unp-gold);
             color: var(--unp-green);
-            margin-bottom: 10px;
+            padding: 14px 35px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
             text-transform: uppercase;
             letter-spacing: 1px;
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+            transition: all 0.3s ease;
         }
 
-        .heading-underline {
-            width: 50px;
-            height: 4px;
-            background-color: var(--unp-gold);
-            margin-bottom: 20px;
-        }
-
-        .third-section p {
-            color: #475569;
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 25px;
-        }
-
-        /* Orodha ya Links za Bookings Zilizounganishwa */
-        .booking-links-list {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            border-top: 1px solid #e2e8f0;
-            padding-top: 20px;
-        }
-
-        .booking-links-list li a {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
+        .gold-experience-btn:hover {
+            background-color: #ffffff;
             color: var(--unp-green);
-            font-size: 1.1rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .booking-links-list li a:hover {
-            color: var(--unp-gold);
-            text-decoration: underline;
-        }
-
-        .booking-links-list li a span {
-            font-size: 1.2rem;
+            transform: translateY(-2px);
         }
     </style>
 </head>
@@ -384,23 +347,13 @@
         <a href="#" id="slide-btn" class="cta-button">Find out more</a>
     </div>
 
-    <!-- SEHEMU YA PILI -->
-    <div class="second-section">
-        <h2>Unique & Natural Paradise</h2>
-        <p>Explore our core categories below featuring immersive photo previews of your next destination, crafted specially to bring you closer to nature and unforgettable adventures.</p>
-    </div>
-
-    <!-- AWAMU YA TATU: BOOKING (Yenye maelezo uliyoyataka yameunganishwa) -->
-    <div class="third-section">
-        <h2>Booking</h2>
-        <div class="heading-underline"></div>
-        <p>Explore our core categories below featuring immersive photo previews of your next destination, crafted specially to bring you closer to nature and unforgettable adventures.</p>
+    <!-- SEHEMU YA WAKARIBISHO NA KITUFE CHA DHAHABU (GET YOUR EXPERIENCE) -->
+    <div class="welcome-experience-section">
+        <h2>Karibu UNP Tours - Your Gateway to Tanzania</h2>
+        <p>Tunakukaribisha kwa moyo mkunjufu kujionea na kufurahia uzuri wa kipekee wa asili, fuo za bahari, na vivutio vya kuvutia. Chagua uzoefu wako maalum wa safari leo na ujionee maajabu yatakayobadilisha maisha yako ya usafiri kuwa ya kukumbukwa milele.</p>
         
-        <ul class="booking-links-list">
-            <li><a href="booking-page.html"><span>›</span> Start Your Direct Booking Process ❐</a></li>
-            <li><a href="safari-packages.html"><span>›</span> Reserve Custom Safari & Beach Packages ❐</a></li>
-            <li><a href="vip-consultation.html"><span>›</span> Book VIP Travel Consultation ❐</a></li>
-        </ul>
+        <!-- Kitufe kinachopeleka ukurasa wa maoni na kuchagua kisha submit -->
+        <a href="feedback-booking.html" class="gold-experience-btn">Get Your Experience</a>
     </div>
 
     <!-- Javascript ya Kusogeza Slider -->
@@ -451,5 +404,4 @@
         }
     </script>
 </body>
-                    </html>
-                    
+</html>
