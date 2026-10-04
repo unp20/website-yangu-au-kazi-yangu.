@@ -114,7 +114,7 @@
             gap: 15px;
         }
 
-        /* Sehemu ya Lugha Nyingi (Multi-Language Selector) */
+        /* Sehemu ya Lugha Nyingi */
         .language-selector {
             display: flex;
             align-items: center;
@@ -294,20 +294,25 @@
 
         footer {
             text-align: center;
-            padding: 30px;
+            padding: 40px 5%;
             background-color: var(--card-bg);
             border-top: 1px solid rgba(212, 175, 55, 0.2);
             font-size: 0.85rem;
             color: var(--text-gray);
+            margin-top: 50px;
+        }
+
+        /* Kuficha au kupangilia Google Translate Widget isiharibu muonekano */
+        #google_translate_element {
+            display: none;
         }
     </style>
 </head>
 <body>
 
-    <!-- Header & Navigation Bar yenye Logo, Lugha 14, na Menu -->
+    <!-- Header & Navigation Bar -->
     <header>
         <a href="index.html" class="logo-container">
-            <!-- Weka picha halisi ya logo kwenye faili lako la '1000009263.jpg' -->
             <img src="1000009263.jpg" alt="UNP Tours Logo" class="logo-img">
             <div class="logo-text">
                 <h1>UNP TOURS</h1>
@@ -316,14 +321,14 @@
         </a>
 
         <div class="nav-controls">
-            <!-- Sehemu ya Lugha Nyingi (Multi-Language) -->
+            <!-- Sehemu ya Lugha Nyingi Inayobadilisha Ukurasa Mzima -->
             <div class="language-selector">
                 <span>🌐</span>
-                <select id="langSelect" aria-label="Chagua Lugha">
+                <select id="langSelect" onchange="changeLanguage(this.value)" aria-label="Chagua Lugha">
                     <option value="sw">Kiswahili</option>
                     <option value="en">English</option>
                     <option value="ar">العربية</option>
-                    <option value="zh">中文</option>
+                    <option value="zh-CN">中文</option>
                     <option value="ru">Русский</option>
                     <option value="fr">Français</option>
                     <option value="de">Deutsch</option>
@@ -340,7 +345,7 @@
             <button class="menu-btn" id="menuToggle">☰ Menu</button>
         </div>
 
-        <!-- Mega Menu inayounganisha kurasa zote za mfumo -->
+        <!-- Mega Menu -->
         <div class="mega-menu" id="megaMenu">
             <h4>Pande Kuu za UNP</h4>
             <ul>
@@ -375,17 +380,40 @@
 
         <h3 class="section-title">Safari Zetu Maarufu (Featured Trips)</h3>
         <div class="trips-grid" id="tripsContainer">
-            <!-- Hapa trips zinatoka Firebase moja kwa moja -->
             <p style="text-align: center; grid-column: 1/-1; color: var(--gold-color);">Inapakia huduma kutoka kwenye mfumo...</p>
         </div>
     </main>
 
-    <!-- Footer -->
+    <!-- Footer yenye maelezo ya chini na mahali pa Google Translate Widget -->
     <footer>
         <p>&copy; 2026 UNP TOURS (unp.tours). Haki zote zimehifadhiwa.</p>
+        <div id="google_translate_element" style="margin-top: 15px;"></div>
     </footer>
 
-    <!-- Tawk.to Live Chat Integration -->
+    <!-- Google Translate Script ya Kuwezesha Lugha Zote Kubadilika -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'sw',
+                includedLanguages: 'sw,en,ar,zh-CN,ru,fr,de,es,it,ja,ko,pt,hi,la',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+
+        function changeLanguage(langCode) {
+            var selectField = document.querySelector(".goog-te-combo");
+            if (selectField) {
+                selectField.value = langCode;
+                selectField.dispatchEvent(new Event('change'));
+            } else {
+                // Kama widget haijajipakia bado, jaribu tena baada ya sekunde moja
+                setTimeout(function() { changeLanguage(langCode); }, 1000);
+            }
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <!-- Tawk.to Live Chat (Imewekwa chini kabisa kwenye Footer/Background) -->
     <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
     (function(){
@@ -403,7 +431,6 @@
     <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
     
     <script>
-        // Fungua/Funga Menyu Kuu
         const menuToggle = document.getElementById('menuToggle');
         const megaMenu = document.getElementById('megaMenu');
 
@@ -418,7 +445,6 @@
             }
         });
 
-        // Kuunganisha Firebase na kuonyesha trips kwenye ukurasa
         const cfg = {
           apiKey: "AIzaSyD2YtPFL2L_ZwAKdSYpXtvLt8gJUm2IX6s",
           authDomain: "unptours.firebaseapp.com",
@@ -464,4 +490,5 @@
         loadTrips();
     </script>
 </body>
-</html>
+    </html>
+    
