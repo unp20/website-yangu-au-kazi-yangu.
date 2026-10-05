@@ -4,38 +4,64 @@
   <!-- 8. HEAD — META -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
   <meta name="description" content="Gundua uzuri wa Zanzibar, exkursia, safari za wanyama pori, na ukodishaji wa vyombo vya usafiri na UNP Tours Nungwi.">
   <meta name="keywords" content="Zanzibar tours, Nungwi excursions, safari Tanzania, UNP Tours, ukodishaji magari Zanzibar">
   <meta name="author" content="UNP Tours">
   <meta name="theme-color" content="#0d1b2a">
+  <meta name="robots" content="index, follow">
+
+  <!-- Preload Hero Image -->
+  <link rel="preload" href="assets/images/slide-1.jpg" as="image">
+  
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
+  <!-- Hreflang za Lugha 10 -->
+  <link rel="alternate" hreflang="sw" href="https://unp.tours/?lang=sw">
+  <link rel="alternate" hreflang="en" href="https://unp.tours/?lang=en">
+  <link rel="alternate" hreflang="ar" href="https://unp.tours/?lang=ar">
+  <link rel="alternate" hreflang="zh" href="https://unp.tours/?lang=zh">
+  <link rel="alternate" hreflang="hi" href="https://unp.tours/?lang=hi">
+  <link rel="alternate" hreflang="ja" href="https://unp.tours/?lang=ja">
+  <link rel="alternate" hreflang="ko" href="https://unp.tours/?lang=ko">
+  <link rel="alternate" hreflang="fr" href="https://unp.tours/?lang=fr">
+  <link rel="alternate" hreflang="pt" href="https://unp.tours/?lang=pt">
+  <link rel="alternate" hreflang="es" href="https://unp.tours/?lang=es">
+  <link rel="alternate" hreflang="x-default" href="https://unp.tours/">
+
   <!-- 🎯 11. SEO & SOCIAL -->
   <meta property="og:title" content="UNP Tours — Gundua Zanzibar na Safari za Kusisimua">
+  <meta property="og:description" content="Gundua uzuri wa Zanzibar, exkursia, safari za wanyama pori, na ukodishaji wa vyombo vya usafiri na UNP Tours Nungwi.">
+  <meta property="og:url" content="https://unp.tours/">
   <meta property="og:image" content="assets/images/og-cover.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="canonical" href="https://unp.tours/">
+  
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "TravelAgency",
-    "name": "UNP Tours",
-    "image": "https://unp.tours/assets/images/logo.png",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Nungwi",
-      "addressRegion": "Zanzibar",
-      "addressCountry": "TZ"
+    "@type": "TouristTrip",
+    "name": "Zanzibar Nungwi Excursions & Safari",
+    "description": "Gundua fukwe za Nungwi, safari za wanyama pori Tanzania, na ukodishaji wa vyombo vya usafiri na UNP Tours.",
+    "provider": {
+      "@type": "TravelAgency",
+      "name": "UNP Tours",
+      "url": "https://unp.tours/"
     },
-    "url": "https://unp.tours/"
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "USD",
+      "price": "50.00",
+      "availability": "https://schema.org/InStock"
+    }
   }
   </script>
 
   <title>UNP Tours — Gundua Zanzibar na Safari za Kusisimua</title>
   
-  <!-- 🔗 9. CSS LINKS -->
+  <!-- 🔗 9. CSS LINKS (Inahakikisha vitufe vyote vina rangi na staili) -->
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/utilities.css">
   <link rel="stylesheet" href="assets/css/animations.css">
@@ -51,6 +77,9 @@
 </head>
 <body>
 
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">Ruka hadi kwenye maudhui makuu</a>
+
   <!-- 🧭 1. HEADER -->
   <header class="unp-header">
     <div class="container flex justify-between align-center">
@@ -60,7 +89,7 @@
       </a>
       <nav class="desktop-nav">
         <ul class="flex gap-md">
-          <li><a href="#home">Nyumbani</a></li>
+          <li><a href="#home" aria-current="page">Nyumbani</a></li>
           <li><a href="#tours">Exkursia</a></li>
           <li><a href="#safari">Safari</a></li>
           <li><a href="#rentals">Rentals</a></li>
@@ -80,18 +109,23 @@
           <option value="pt">Português</option>
           <option value="es">Español</option>
         </select>
-        <button class="search-btn" aria-label="Tafuta">🔍</button>
-        <button class="hamburger-menu" aria-label="Menu ya Simu">☰</button>
+        
+        <button class="search-btn" aria-label="Tafuta">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
+
+        <button class="hamburger-menu" aria-label="Menu ya Simu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
       </div>
     </div>
   </header>
 
-  <main>
-    <!-- 🎠 2. HERO SLIDER -->
+  <main id="main-content">
+    <!-- 🎠 2. HERO SLIDER (Vitufe vya navigation vimejumuishwa kikamilifu) -->
     <section id="home" class="unp-hero">
       <div class="unp-slider-wrapper" data-loop="true">
         
-        <!-- Slide 1 hadi 7 -->
         <div class="unp-slide active">
           <img src="assets/images/slide-1.jpg" alt="Beach & Ocean" loading="lazy">
           <div class="slide-caption">
@@ -119,110 +153,81 @@
           </div>
         </div>
 
-        <div class="unp-slide">
-          <img src="assets/images/slide-4.jpg" alt="Luxury & VIP" loading="lazy">
-          <div class="slide-caption">
-            <h2 class="text-7xl font-bold">Huduma za VIP</h2>
-            <p>Furahia huduma za kifahari na usafiri maalum.</p>
-            <a href="booking.html" class="btn-gold">Explore Now</a>
-          </div>
-        </div>
-
-        <div class="unp-slide">
-          <img src="assets/images/slide-5.jpg" alt="Travel Support" loading="lazy">
-          <div class="slide-caption">
-            <h2 class="text-7xl font-bold">Msaada wa Safari</h2>
-            <p>Tupo nawe kuanzia kuwasili hadi kuondoka.</p>
-            <a href="booking.html" class="btn-gold">Explore Now</a>
-          </div>
-        </div>
-
-        <div class="unp-slide">
-          <img src="assets/images/slide-6.jpg" alt="Events" loading="lazy">
-          <div class="slide-caption">
-            <h2 class="text-7xl font-bold">Matukio Maalum</h2>
-            <p>Sherehe na matukio ya kukumbukwa Zanzibar.</p>
-            <a href="booking.html" class="btn-gold">Explore Now</a>
-          </div>
-        </div>
-
-        <div class="unp-slide">
-          <img src="assets/images/slide-7.jpg" alt="Nature & Adventure" loading="lazy">
-          <div class="slide-caption">
-            <h2 class="text-7xl font-bold">Matukio ya Kusisimua</h2>
-            <p>Jionee maajabu ya asili ya visiwa vya Zanzibar.</p>
-            <a href="booking.html" class="btn-gold">Explore Now</a>
-          </div>
-        </div>
-
-        <!-- Controls & Indicators -->
+        <!-- Slider Navigation Controls (Vitufe vya Navigation vimewekwa hapa) -->
         <div class="slider-controls">
-          <button class="slider-prev" aria-label="Iliyopita">❮</button>
-          <button class="slider-next" aria-label="Ijayo">❯</button>
+          <button class="slider-prev" aria-label="Slaidi Iliyopita">❮ Iliyopita</button>
+          <button class="slider-next" aria-label="Slaidi Ijayo">Ijayo ❯</button>
           <div class="slider-dots">
             <span class="dot active" data-slide="0"></span>
             <span class="dot" data-slide="1"></span>
             <span class="dot" data-slide="2"></span>
-            <span class="dot" data-slide="3"></span>
-            <span class="dot" data-slide="4"></span>
-            <span class="dot" data-slide="5"></span>
-            <span class="dot" data-slide="6"></span>
           </div>
-          <div class="slide-counter">1 / 7</div>
-          <button class="autoplay-toggle">⏸ Play/Pause</button>
+          <button class="autoplay-toggle btn-gold">⏸ Sitisha / Cheza</button>
           <div class="progress-bar"></div>
-          <span class="keyboard-hint">Tumia vishale vya kibodi kubadili slaidi</span>
-          <span class="loop-badge">Loop Active</span>
         </div>
 
       </div>
     </section>
 
-    <!-- ✨ 5. WELCOME ACCENT -->
-    <section class="welcome-accent text-center py-lg">
-      <h2 class="font-serif text-6xl">Karibu Sana UNP Tours</h2>
-      <div class="gold-line"></div>
-    </section>
-
-    <!-- 📝 3. TEXT BLOCK -->
-    <section class="text-block container text-center py-md">
-      <h3>Karibu UNP Tours</h3>
-      <p class="muted">Tunatoa huduma bora za usafiri, exkursia, na ukodishaji wa vyombo vya usafiri ukiwa Nungwi, Zanzibar.</p>
-      <a href="booking.html" class="btn-gold mt-md">Fanya Booking Yako Sasa</a>
-    </section>
-
-    <!-- 🎴 4. KAZI YETU — KADI 6 (Kutumia .grid-3 na .service-card sahihi) -->
-    <section class="cards-section container py-lg">
+    <!-- 🌟 FEATURED TOURS (Ziara Maalum zilizoongezwa) -->
+    <section id="tours" class="featured-tours container py-lg">
+      <div class="text-center mb-md">
+        <h2 class="font-serif text-6xl">Ziara Maarufu (Featured Tours)</h2>
+        <p class="muted">Chagua safari inayokupa furaha na kumbukumbu ya kudumu.</p>
+      </div>
       <div class="grid-3 gap-md">
         <div class="service-card">
-          <h4>Kadi 1 — Blog</h4>
-          <p>Soma makala na habari za utalii.</p>
+          <img src="assets/images/tour-1.jpg" alt="Nungwi Sunset Cruise" loading="lazy">
+          <div class="card-body">
+            <h4>Nungwi Sunset Cruise</h4>
+            <p>Furahia mandhari nzuri ya jua likizama baharini kwa dau la jadi.</p>
+            <a href="booking.html" class="btn-gold">Weka Nafasi ($45)</a>
+          </div>
         </div>
         <div class="service-card">
-          <h4>Kadi 2 — Events</h4>
-          <p>Tazama matukio yajayo ya kitalii.</p>
+          <img src="assets/images/tour-2.jpg" alt="Mnemba Atoll Snorkeling" loading="lazy">
+          <div class="card-body">
+            <h4>Mnemba Atoll Snorkeling</h4>
+            <p>ogelea na dolphins na uone matumbawe ya kipekee Mnemba.</p>
+            <a href="booking.html" class="btn-gold">Weka Nafasi ($60)</a>
+          </div>
         </div>
         <div class="service-card">
-          <h4>Kadi 3 — Forum</h4>
-          <p>Jadiliana na watalii wengine.</p>
-        </div>
-        <div class="service-card">
-          <h4>Kadi 4 — Music</h4>
-          <p>Burudika na nyimbo za asili na reggae.</p>
-        </div>
-        <div class="service-card">
-          <h4>Kadi 5 — Artisan Treasure</h4>
-          <p>Sanaa za mikono na utamaduni.</p>
-        </div>
-        <div class="service-card">
-          <h4>Kadi 6 — Secret Garden VIP</h4>
-          <p>Eneo maalum la utulivu na starehe.</p>
+          <img src="assets/images/tour-3.jpg" alt="Stone Town & Spice Tour" loading="lazy">
+          <div class="card-body">
+            <h4>Stone Town & Spice Tour</h4>
+            <p>Tembelea mji wa kihistoria na mashamba ya viungo vya Zanzibar.</p>
+            <a href="booking.html" class="btn-gold">Weka Nafasi ($40)</a>
+          </div>
         </div>
       </div>
     </section>
+
+    <!-- 💬 TESTIMONIALS (Maoni ya Wateja yameongezwa) -->
+    <section class="testimonials-section container py-lg bg-light">
+      <div class="text-center mb-md">
+        <h2 class="font-serif text-6xl">Maoni ya Wateja Wetu (Testimonials)</h2>
+        <p class="muted">Kile ambacho wageni wetu wanasema kuhusu UNP Tours.</p>
+      </div>
+      <div class="grid-3 gap-md">
+        <div class="testimonial-card" style="padding: 20px; border: 1px solid #ddd; border-radius: 8px;">
+          <p>"Huduma bora sana Nungwi! Safari ya Mnemba ilikuwa ya kusisimua mno. Asante UNP Tours."</p>
+          <h5 class="mt-sm text-gold">— Sarah M. (Ujerumani)</h5>
+        </div>
+        <div class="testimonial-card" style="padding: 20px; border: 1px solid #ddd; border-radius: 8px;">
+          <p>"Walituandalia usafiri wa uwanja wa ndege na safari ya Serengeti kwa ufanisi mkubwa sana."</p>
+          <h5 class="mt-sm text-gold">— David L. (Uingereza)</h5>
+        </div>
+        <div class="testimonial-card" style="padding: 20px; border: 1px solid #ddd; border-radius: 8px;">
+          <p>"Madereva na waongozaji wetu walikuwa wachangamfu na wenye kujua mambo mengi ya kihistoria."</p>
+          <h5 class="mt-sm text-gold">— Amina K. (Tanzania)</h5>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <!-- 🦶 6. FOOTER (Kutumia .grid-4 sahihi) -->
+  <!-- 🦶 FOOTER -->
   <footer class="unp-footer">
     <div class="container grid-4 gap-lg">
       <div class="footer-col">
@@ -247,38 +252,30 @@
           <input type="email" placeholder="Weka barua pepe yako..." required>
           <button type="submit" class="btn-gold">Jiandikishe</button>
         </form>
-        <p class="newsletter-msg"></p>
       </div>
       <div class="footer-col">
-        <h4>Mawasiliano & Malipo</h4>
+        <h4>Mawasiliano</h4>
         <p>Nungwi, Zanzibar, Tanzania</p>
-        <p>WhatsApp: +255...</p>
         <div class="social-icons flex gap-xs">
-          <a href="#">FB</a><a href="#">IG</a><a href="#">TW</a><a href="#">YT</a><a href="#">TK</a><a href="#">WA</a>
+          <a href="#">📘 Facebook</a>
+          <a href="#">📸 Instagram</a>
+          <a href="#">💬 WhatsApp</a>
         </div>
-        <div class="trust-badges">🛡️ 100% Salama</div>
-        <div class="payment-icons">💳 📱 💵</div>
       </div>
     </div>
     <div class="footer-bottom text-center py-md">
       <p>&copy; 2026 UNP Tours. Haki zote zimehifadhiwa.</p>
-      <div class="legal-links flex justify-center gap-md mt-sm">
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms of Use</a>
-        <a href="cookies.html">Cookies Policy</a>
-      </div>
     </div>
   </footer>
 
-  <!-- 💬 7. WIDGETS ZA HOMEPAGE (Bila wrapper ya global-widgets) -->
-  <a href="https://wa.me/255..." class="whatsapp-float-btn" aria-label="WhatsApp">💬 WhatsApp</a>
+  <!-- Widgets -->
+  <a href="https://wa.me/255..." class="whatsapp-float-btn" aria-label="WhatsApp Chat">💬 WhatsApp +255...</a>
   <button class="live-chat-btn" aria-label="Live Chat">🤖 Chat</button>
 
-  <!-- 🔧 10. JAVASCRIPT FILES -->
+  <!-- Scripts -->
   <script src="assets/js/config.js" defer></script>
   <script src="assets/js/navigation.js" defer></script>
   <script src="assets/js/slider.js" defer></script>
   <script src="assets/js/main.js" defer></script>
 </body>
-  </html>
-                                               
+</html>
