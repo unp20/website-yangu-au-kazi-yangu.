@@ -1,0 +1,134 @@
+/* ==========================================================
+   UNP TOURS — GLOBAL COMPLIANCE & ACCESSIBILITY EXTENSION
+   ========================================================== */
+
+/* 1. Cookie Consent Banner (Ujumbe wa ruhusa ya vidakuzi / GDPR) */
+.cookie-consent-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: var(--dark-green);
+  border-top: 1px solid var(--gold-border);
+  padding: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  z-index: var(--z-modal);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(100%);
+  transition: transform var(--transition-normal);
+}
+
+.cookie-consent-banner.show {
+  transform: translateY(0);
+}
+
+.cookie-text {
+  font-size: var(--text-xs);
+  color: #cbd5e1;
+  line-height: var(--leading-relaxed);
+}
+
+.cookie-buttons {
+  display: flex;
+  gap: var(--spacing-xs);
+}
+
+/* 2. Age Verification Modal (Kuhakiki umri kabla ya huduma fulani) */
+.age-verification-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(3, 25, 15, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-modal);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-normal), visibility var(--transition-normal);
+}
+
+.age-verification-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.age-verification-card {
+  background: var(--dark-green);
+  border: 1px solid var(--gold-border);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+}
+
+/* 3. Accessibility Widget (Uwezo wa kusaidia kubadilisha ukubwa wa maandishi/mwanga) */
+.accessibility-widget-btn {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background: var(--royal-gold);
+  color: var(--dark-green);
+  padding: 10px;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  z-index: var(--z-sticky);
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  border: none;
+  font-size: 18px;
+  transition: background var(--transition-fast);
+}
+
+.accessibility-widget-btn:hover {
+  background: var(--pure-white);
+}
+
+/* 4. AI Chatbot Widget Container (Sehemu ya mazungumzo ya papo hapo) */
+.ai-chatbot-container {
+  position: fixed;
+  bottom: 90px;
+  right: 30px;
+  width: 350px;
+  max-height: 500px;
+  background: var(--dark-green);
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  z-index: var(--z-modal);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity var(--transition-normal), transform var(--transition-normal), visibility var(--transition-normal);
+}
+
+.ai-chatbot-container.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* 5. Multi-Currency Price Tag Styling (Badilisho la bei za sarafu tofauti) */
+.price-tag {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  font-family: var(--font-serif);
+  color: var(--royal-gold);
+  font-weight: var(--weight-bold);
+}
+
+.price-currency {
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  color: var(--text-muted);
+  }
