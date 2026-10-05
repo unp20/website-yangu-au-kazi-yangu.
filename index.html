@@ -1,507 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sw">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNP TOURS - Tanzania</title>
-    <style>
-        :root {
-            --unp-green: #032b1a;   /* Rangi rasmi ya Kijani ya UNP */
-            --unp-gold: #d4af37;    /* Rangi rasmi ya Dhahabu ya UNP */
-            --bg-light: #f4f6f9;
-            --text-dark: #1e293b;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            scroll-behavior: smooth;
-        }
-
-        /* 1. HEADER YA UNP */
-        header {
-            background-color: var(--unp-green);
-            color: #ffffff;
-            padding: 12px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 3px solid var(--unp-gold);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .logo-img {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid var(--unp-gold);
-            background: #fff;
-        }
-
-        .brand-title {
-            font-size: 1.2rem;
-            color: var(--unp-gold);
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-
-        .header-right {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .lang-select {
-            background: transparent;
-            color: #ffffff;
-            border: 2px solid var(--unp-gold);
-            padding: 6px 10px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            outline: none;
-        }
-
-        .lang-select option {
-            background: var(--unp-green);
-            color: #fff;
-        }
-
-        .menu-search-group {
-            display: flex;
-            gap: 10px;
-        }
-
-        .nav-btn {
-            background: none;
-            border: 2px solid var(--unp-gold);
-            color: #ffffff;
-            padding: 6px 12px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            transition: 0.3s;
-        }
-
-        .nav-btn:hover {
-            background: var(--unp-gold);
-            color: var(--unp-green);
-        }
-
-        /* 2. HERO SLIDER */
-        .hero-slider-container {
-            position: relative;
-            width: 100%;
-            max-width: 1000px;
-            margin: 25px auto 0 auto;
-            background: #ffffff;
-            border-radius: 8px 8px 0 0;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            border: 1px solid #e2e8f0;
-            border-bottom: none;
-        }
-
-        .slide-item {
-            display: none;
-            position: relative;
-            height: 380px;
-        }
-
-        .slide-item.active {
-            display: block;
-        }
-
-        .slide-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .slider-dots-top {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: rgba(3, 43, 26, 0.7);
-            padding: 6px 12px;
-            border-radius: 20px;
-            display: flex;
-            gap: 6px;
-            z-index: 10;
-        }
-
-        .dot-indicator {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.5);
-            cursor: pointer;
-        }
-
-        .dot-indicator.active {
-            background: var(--unp-gold);
-        }
-
-        .slider-arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.9);
-            color: var(--unp-green);
-            border: none;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            font-size: 1.4rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-            transition: 0.3s;
-            z-index: 10;
-        }
-
-        .slider-arrow:hover {
-            background: var(--unp-gold);
-            color: #fff;
-        }
-
-        .prev-btn { left: 15px; }
-        .next-btn { right: 15px; }
-
-        .slider-caption-box {
-            text-align: center;
-            padding: 25px 20px;
-            background: #ffffff;
-            max-width: 1000px;
-            margin: 0 auto;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border: 1px solid #e2e8f0;
-            border-top: none;
-            border-radius: 0 0 8px 8px;
-        }
-
-        .slider-caption-box h2 {
-            font-size: 1.6rem;
-            color: var(--unp-green);
-            margin-bottom: 10px;
-        }
-
-        .slider-caption-box p {
-            color: #64748b;
-            font-size: 1rem;
-            margin-bottom: 20px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* 3. WELCOME & GET YOUR EXPERIENCE */
-        .welcome-experience-section {
-            max-width: 1000px;
-            margin: 30px auto;
-            background: var(--unp-green);
-            color: #ffffff;
-            padding: 40px 30px;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-            border-top: 4px solid var(--unp-gold);
-        }
-
-        .welcome-experience-section h2 {
-            font-size: 2.2rem;
-            color: var(--unp-gold);
-            margin-bottom: 15px;
-        }
-
-        .welcome-experience-section p {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            max-width: 800px;
-            margin: 0 auto 25px auto;
-            color: #e2e8f0;
-        }
-
-        .gold-experience-btn {
-            display: inline-block;
-            background-color: var(--unp-gold);
-            color: var(--unp-green);
-            padding: 12px 30px;
-            border-radius: 30px;
-            font-size: 1rem;
-            font-weight: bold;
-            text-decoration: none;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
-            transition: all 0.3s ease;
-        }
-
-        .gold-experience-btn:hover {
-            background-color: #ffffff;
-            color: var(--unp-green);
-            transform: translateY(-2px);
-        }
-
-        /* 4. KADI ZENYE PICHA NA MAELEZO (SECTIONS 6) */
-        .deep-sections-container {
-            max-width: 1000px;
-            margin: 0 auto 50px auto;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 35px;
-        }
-
-        .image-card {
-            background: #ffffff;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            border: 1px solid #e2e8f0;
-            transition: transform 0.3s ease;
-        }
-
-        .image-card:hover {
-            transform: translateY(-4px);
-        }
-
-        .card-img-box {
-            width: 100%;
-            height: 250px;
-            overflow: hidden;
-        }
-
-        .card-img-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-
-        .image-card:hover .card-img-box img {
-            transform: scale(1.03);
-        }
-
-        .card-body {
-            padding: 30px;
-        }
-
-        .image-card.secret-garden-card {
-            border: 2px solid var(--unp-gold);
-            background: linear-gradient(to bottom, #fffdf5, #ffffff);
-        }
-
-        .card-body h3 {
-            font-size: 1.6rem;
-            color: var(--unp-green);
-            margin-bottom: 12px;
-        }
-
-        .image-card.secret-garden-card .card-body h3 {
-            color: #997a15;
-        }
-
-        .card-body p {
-            color: #475569;
-            font-size: 1.05rem;
-            line-height: 1.7;
-            margin-bottom: 25px;
-        }
-
-        .card-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background-color: var(--unp-green);
-            color: #ffffff;
-            padding: 10px 24px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            border: 2px solid var(--unp-gold);
-            transition: 0.3s;
-        }
-
-        .card-btn:hover {
-            background-color: var(--unp-gold);
-            color: var(--unp-green);
-        }
-
-        /* 5. FOOTER YA MWISHO (MTINDO ULIOOMBWA) */
-        .footer-section {
-            background-color: #0d1b1e; /* Rangi ya giza ya kifalme */
-            color: #ffffff;
-            padding: 50px 5% 30px 5%;
-            border-top: 4px solid var(--unp-gold);
-            max-width: 1000px;
-            margin: 0 auto;
-            border-radius: 8px 8px 0 0;
-        }
-
-        .footer-links-group {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-bottom: 40px;
-        }
-
-        .footer-row-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 12px 20px;
-            border-radius: 6px;
-            border-left: 3px solid var(--unp-gold);
-        }
-
-        .footer-row-item a {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 1.1rem;
-            font-weight: 500;
-            transition: 0.3s;
-        }
-
-        .footer-row-item a:hover {
-            color: var(--unp-gold);
-        }
-
-        .plus-btn-box {
-            background: rgba(255, 255, 255, 0.1);
-            color: var(--unp-gold);
-            width: 35px;
-            height: 35px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 4px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .plus-btn-box:hover {
-            background: var(--unp-gold);
-            color: #0d1b1e;
-        }
-
-        .footer-connect-title {
-            font-size: 1.3rem;
-            color: var(--unp-gold);
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
-
-        .social-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-
-        .social-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 1rem;
-            transition: 0.3s;
-        }
-
-        .social-item:hover {
-            color: var(--unp-gold);
-        }
-
-        .footer-divider {
-            width: 100%;
-            height: 1px;
-            background: rgba(255, 255, 255, 0.2);
-            margin: 30px 0;
-        }
-
-        .footer-bottom-links {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-bottom: 25px;
-        }
-
-        .footer-bottom-links a {
-            color: #cbd5e1;
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: 0.3s;
-        }
-
-        .footer-bottom-links a:hover {
-            color: var(--unp-gold);
-        }
-
-        .contact-info-box {
-            margin-top: 20px;
-            padding: 15px;
-            background: rgba(212, 175, 55, 0.1);
-            border-radius: 6px;
-            border: 1px dashed var(--unp-gold);
-            font-size: 0.95rem;
-            color: #e2e8f0;
-        }
-
-        .contact-info-box p {
-            margin-bottom: 5px;
-        }
-    </style>
+    <meta name="description" content="UNP Tours - Unique & Natural Paradise. Safari, Zanzibar, Culture, Wildlife in Tanzania.">
+    <title>UNP TOURS - Unique & Natural Paradise | Tanzania</title>
+    
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/homepage.css">
 </head>
 <body>
 
-    <!-- HEADER YA UNP -->
+    <!-- ========== 1. HEADER ========== -->
     <header>
-        <div class="logo-area">
-            <img src="logo.png" alt="UNP Logo" class="logo-img" onerror="this.src='https://via.placeholder.com/45?text=UNP'">
+        <a href="index.html" class="logo-area">
+            <img src="assets/images/logo.png" alt="UNP Logo" class="logo-img" 
+                 onerror="this.src='https://via.placeholder.com/45/032b1a/d4af37?text=UNP'">
             <span class="brand-title">UNP TOURS</span>
-        </div>
+        </a>
 
         <div class="header-right">
-            <select class="lang-select">
-                <option value="en">English (US)</option>
+            <select class="lang-select" onchange="changeLanguage(this.value)">
                 <option value="sw">Kiswahili</option>
+                <option value="en">English</option>
                 <option value="fr">Français</option>
             </select>
 
             <div class="menu-search-group">
-                <button class="nav-btn">🔍 Search</button>
-                <button class="nav-btn">Menu ☰</button>
+                <button class="nav-btn" onclick="toggleSearch()">🔍</button>
+                <button class="nav-btn" onclick="toggleMenu()">Menu ☰</button>
             </div>
         </div>
     </header>
 
-    <!-- HERO SLIDER -->
-    <div class="hero-slider-container">
+    <!-- MOBILE NAV DRAWER -->
+    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+    <nav class="nav-drawer" id="navDrawer">
+        <button class="close-drawer" onclick="toggleMenu()">✕</button>
+        <h3>UNP TOURS</h3>
+        <a href="index.html">🏠 Nyumbani</a>
+        <a href="pages/beach-ocean.html">🏖️ Beach & Ocean</a>
+        <a href="pages/culture-history.html">🏛️ Culture & History</a>
+        <a href="pages/wildlife-safari.html">🦁 Wildlife & Safari</a>
+        <a href="pages/luxury-vip.html">💎 Luxury & VIP</a>
+        <a href="pages/travel-support.html">✈️ Travel Support</a>
+        <a href="pages/events.html">🎉 Events</a>
+        <a href="pages/nature-adventure.html">🏔️ Nature & Adventure</a>
+        <hr>
+        <a href="pages/blog.html">📖 Blog</a>
+        <a href="pages/forum.html">🌍 Forum</a>
+        <a href="pages/music.html">🎵 Music</a>
+        <a href="pages/artisan.html">🎨 Artisan</a>
+        <a href="pages/secret-garden.html">✨ Secret Garden</a>
+        <hr>
+        <a href="pages/booking.html">📅 Book Now</a>
+        <a href="pages/about.html">ℹ️ About Us</a>
+        <a href="pages/contact.html">📞 Contact</a>
+    </nav>
+
+    <!-- SEARCH BAR -->
+    <div class="search-bar-container" id="searchBar">
+        <div class="search-inner">
+            <input type="text" placeholder="Tafuta safari, fuo, matukio..." id="searchInput">
+            <button onclick="performSearch()">Tafuta</button>
+        </div>
+    </div>
+
+    <!-- ========== 2. HERO SLIDER — PICHA 7 ========== -->
+    <section class="hero-slider-container" id="heroSlider">
+        
+        <!-- Dots -->
         <div class="slider-dots-top">
             <span class="dot-indicator active" onclick="currentSlide(1)"></span>
             <span class="dot-indicator" onclick="currentSlide(2)"></span>
@@ -512,100 +82,290 @@
             <span class="dot-indicator" onclick="currentSlide(7)"></span>
         </div>
 
+        <!-- Slide 1: Beach & Ocean -->
         <div class="slide-item active">
-            <img src="beach-ocean.jpg" alt="Beach & Ocean" onerror="this.src='https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=80'">
-        </div>
-        <div class="slide-item">
-            <img src="culture-history.jpg" alt="Culture & History" onerror="this.src='https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1000&q=80'">
-        </div>
-        <div class="slide-item">
-            <img src="wildlife-safari.jpg" alt="Wildlife & Safari" onerror="this.src='https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1000&q=80'">
-        </div>
-        <div class="slide-item">
-            <img src="luxury-vip.jpg" alt="Luxury & VIP" onerror="this.src='https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80'">
-        </div>
-        <div class="slide-item">
-            <img src="travel-support.jpg" alt="Travel Support" onerror="this.src='https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1000&q=80'">
-        </div>
-        <div class="slide-item">
-            <img src="events-occasions.jpg" alt="Events" onerror="this.src='https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1000&q=80'">
-        </div>
-        <div class="slide-item">
-            <img src="nature-adventure.jpg" alt="Nature & Adventure" onerror="this.src='https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=80'">
+            <img src="assets/images/hero/beach-ocean.jpg" alt="Beach & Ocean" 
+                 onerror="this.src='https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=75'">
         </div>
 
-        <button class="slider-arrow prev-btn" onclick="moveSlide(-1)">❮</button>
-        <button class="slider-arrow next-btn" onclick="moveSlide(1)">❯</button>
-    </div>
+        <!-- Slide 2: Culture & History -->
+        <div class="slide-item">
+            <img src="assets/images/hero/culture-history.jpg" alt="Culture & History"
+                 onerror="this.src='https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1000&q=75'">
+        </div>
 
+        <!-- Slide 3: Wildlife & Safari -->
+        <div class="slide-item">
+            <img src="assets/images/hero/wildlife-safari.jpg" alt="Wildlife & Safari"
+                 onerror="this.src='https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1000&q=75'">
+        </div>
+
+        <!-- Slide 4: Luxury & VIP -->
+        <div class="slide-item">
+            <img src="assets/images/hero/luxury-vip.jpg" alt="Luxury & VIP"
+                 onerror="this.src='https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=75'">
+        </div>
+
+        <!-- Slide 5: Travel Support -->
+        <div class="slide-item">
+            <img src="assets/images/hero/travel-support.jpg" alt="Travel Support"
+                 onerror="this.src='https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1000&q=75'">
+        </div>
+
+        <!-- Slide 6: Events -->
+        <div class="slide-item">
+            <img src="assets/images/hero/events-occasions.jpg" alt="Events"
+                 onerror="this.src='https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1000&q=75'">
+        </div>
+
+        <!-- Slide 7: Nature & Adventure -->
+        <div class="slide-item">
+            <img src="assets/images/hero/nature-adventure.jpg" alt="Nature & Adventure"
+                 onerror="this.src='https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1000&q=75'">
+        </div>
+
+        <!-- Arrows -->
+        <button class="slider-arrow prev-btn" onclick="moveSlide(-1)" aria-label="Slide iliyopita">❮</button>
+        <button class="slider-arrow next-btn" onclick="moveSlide(1)" aria-label="Slide inayofuata">❯</button>
+    </section>
+
+    <!-- CAPTION BOX — MAELEZO YA SLIDE -->
     <div class="slider-caption-box">
         <h2 id="slide-title">Beach & Ocean Experiences</h2>
-        <p id="slide-desc">Explore the most pristine coastal lines and crystal clear waters with our tailored luxury experiences.</p>
+        <p id="slide-desc">Jionee fuo za bahari zenye mchanga mweupe safi wa Zanzibar na mawimbi tulivu.</p>
+        <a href="pages/beach-ocean.html" id="slide-link" class="slide-cta-btn">
+            Explore Category ➔
+        </a>
     </div>
 
-    <!-- WELCOME & GET YOUR EXPERIENCE -->
-    <div class="welcome-experience-section">
-        <h2>Karibu UNP Tours - Your Gateway to Tanzania</h2>
-        <p>Tunakukaribisha kwa moyo mkunjufu kujionea na kufurahia uzuri wa kipekee wa asili, fuo za bahari, na vivutio vya kuvutia. Chagua uzoefu wako maalum wa safari leo na ujionee maajabu yatakayobadilisha maisha yako ya usafiri kuwa ya kukumbukwa milele.</p>
-        <a href="feedback-booking.html" class="gold-experience-btn">Get Your Experience</a>
-    </div>
+    <!-- ========== 3. WELCOME SECTION (Inapeleka Booking) ========== -->
+    <section class="welcome-experience-section">
+        <h2>Karibu UNP Tours</h2>
+        <p>
+            Tunakukaribisha kwa moyo mkunjufu kujionea na kufurahia uzuri wa kipekee wa asili, 
+            fuo za bahari, na vivutio vya kuvutia vya Tanzania. Chagua uzoefu wako maalum wa 
+            safari leo na ujionee maajabu yatakayobadilisha maisha yako ya usafiri kuwa ya 
+            kukumbukwa milele.
+        </p>
+        <a href="pages/booking.html" class="gold-experience-btn">
+            Get Your Experience ➔
+        </a>
+    </section>
 
-    <!-- SEHEMU ZA KINA (ZILIZOPANGWA KAMA KADI ZA PICHA NA MAELEZO) -->
-    <div class="deep-sections-container">
+    <!-- ========== 4. WHAT WE DO (Kadi 6) ========== -->
+    <section class="what-we-do-section">
+        <div class="section-header">
+            <h2>Tunachokifanya</h2>
+            <p>Gundua huduma na jamii yetu ya kitalii</p>
+        </div>
 
-        <!-- 1. BLOG -->
-        <div class="image-card">
-            <div class="card-img-box">
-                <img src="blog-img.jpg" alt="UNP Travel Blog" onerror="this.src='https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1000&q=80'">
+        <div class="deep-sections-container">
+
+            <!-- 1. BLOG -->
+            <div class="image-card">
+                <div class="card-img-box">
+                    <img src="assets/images/cards/blog.jpg" alt="UNP Travel Blog" loading="lazy"
+                         onerror="this.src='https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1000&q=75'">
+                </div>
+                <div class="card-body">
+                    <h3>📖 UNP Travel Blog</h3>
+                    <p>Soma hadithi za kusisimua za kitalii, siri za mbuga za wanyama za Tanzania bara, uzuri wa fukwe za Zanzibar, na miongozo ya kipekee itakayokupa mwanga wa safari yako ijayo.</p>
+                    <a href="pages/blog.html" class="card-btn">Explore Blog Articles ➔</a>
+                </div>
             </div>
-            <div class="card-body">
-                <h3>📖 UNP Travel Blog</h3>
-                <p>Soma hadithi za kusisimua za kitalii, siri za mbuga za wanyama za Tanzania bara, uzuri wa fukwe za Zanzibar, na miongozo ya kipekee itakayokupa mwanga wa safari yako ijayo. Kila makala imeandikwa kukusogeza karibu na uoto wa asili.</p>
-                <a href="blog.html" class="card-btn">Explore Blog Articles ❐</a>
+
+            <!-- 2. EVENTS -->
+            <div class="image-card">
+                <div class="card-img-box">
+                    <img src="assets/images/cards/events.jpg" alt="Cultural Events" loading="lazy"
+                         onerror="this.src='https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1000&q=75'">
+                </div>
+                <div class="card-body">
+                    <h3>🎉 Tanzania & Zanzibar Cultural Events</h3>
+                    <p>Jionee matukio makubwa ya sherehe za kitamaduni, tamasha za muziki, na sherehe za pwani zinazofanyika Zanzibar na Tanzania bara.</p>
+                    <a href="pages/events.html" class="card-btn">Discover Events ➔</a>
+                </div>
+            </div>
+
+            <!-- 3. FORUM -->
+            <div class="image-card">
+                <div class="card-img-box">
+                    <img src="assets/images/cards/forum.jpg" alt="Global Family Forum" loading="lazy"
+                         onerror="this.src='https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1000&q=75'">
+                </div>
+                <div class="card-body">
+                    <h3>🌍 UNP Global Family Forum</h3>
+                    <p>Hapa ndipo mahali ambapo wasafiri na wapenda asili kutoka kona zote za dunia hukutana kuwa familia moja. Badilishana mawazo na jenga urafiki wa kudumu.</p>
+                    <a href="pages/forum.html" class="card-btn">Join Community ➔</a>
+                </div>
+            </div>
+
+            <!-- 4. OUR MUSIC -->
+            <div class="image-card">
+                <div class="card-img-box">
+                    <img src="assets/images/cards/music.jpg" alt="Our Music" loading="lazy"
+                         onerror="this.src='https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1000&q=75'">
+                </div>
+                <div class="card-body">
+                    <h3>🎵 The Rhythm of UNP</h3>
+                    <p>Sikia mapigo ya kipekee ya muziki wa kitalii, mashairi ya kuvutia ya hip-hop na midundo ya asili ya Kitanzania inayobeba hisia za mandhari nzuri.</p>
+                    <a href="pages/music.html" class="card-btn">Listen to Music ➔</a>
+                </div>
+            </div>
+
+            <!-- 5. ARTISAN TREASURE -->
+            <div class="image-card">
+                <div class="card-img-box">
+                    <img src="assets/images/cards/artisan.jpg" alt="Artisan Treasure" loading="lazy"
+                         onerror="this.src='https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=1000&q=75'">
+                </div>
+                <div class="card-body">
+                    <h3>🎨 Artisan Treasure & Handcrafts</h3>
+                    <p>Thamini ubunifu wa mikono! Sanamu za wanyama, sanaa za majani makavu ya migomba, na vitu vya kitamaduni vyenye historia ya kipekee.</p>
+                    <a href="pages/artisan.html" class="card-btn">View Treasures ➔</a>
+                </div>
+            </div>
+
+            <!-- 6. SECRET GARDEN -->
+            <div class="image-card secret-garden-card">
+                <div class="card-img-box">
+                    <img src="assets/images/cards/secret-garden.jpg" alt="Secret Garden VIP" loading="lazy"
+                         onerror="this.src='https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=75'">
+                </div>
+                <div class="card-body">
+                    <h3>✨ The Secret Garden (VIP)</h3>
+                    <p>Ingia katika ulimwengu wa kipekee wa starehe za hali ya juu. <strong>Makasino, Yacht,</strong> na huduma za kifalme kwa wageni wa kiwango cha juu kabisa.</p>
+                    <a href="pages/secret-garden.html" class="card-btn gold-btn">Explore Secret Garden ➔</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========== 5. ABOUT US SECTION (Kama kwenye Picha) ========== -->
+    <section class="about-us-homepage">
+        <div class="about-content">
+            <h2>Kuhusu Sisi</h2>
+            <p>
+                UNP Tours ni kampuni ya kitalii ya Kitanzania iliyoanzishwa kwa lengo la kuunganisha 
+                wasafiri wa kimataifa na uzuri wa kipekee wa Tanzania. Tunajivunia kutoa huduma 
+                bora za safari, uzoefu wa kitamaduni, na ukarimu wa kipekee wa Kiafrika.
+            </p>
+            <div class="about-stats">
+                <div class="stat-item">
+                    <span class="stat-number">15,000+</span>
+                    <span class="stat-label">Wasafiri Wenye Furaha</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">10+</span>
+                    <span class="stat-label">Miaka ya Uzoefu</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">4.9★</span>
+                    <span class="stat-label">Kiwango cha Wateja</span>
+                </div>
+            </div>
+            <a href="pages/about.html" class="about-btn">Jifunze Zaidi Kuhusu Sisi ➔</a>
+        </div>
+        <div class="about-image">
+            <img src="assets/images/cards/about-team.jpg" alt="UNP Team" loading="lazy"
+                 onerror="this.src='https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=75'">
+        </div>
+    </section>
+
+    <!-- ========== 6. FOOTER (Kama kwenye Picha) ========== -->
+    <footer class="footer-section">
+        
+        <!-- Links za Accordion -->
+        <div class="footer-links-group">
+            <div class="footer-row-item">
+                <button class="footer-accordion-btn" onclick="toggleFooterAccordion(this)">
+                    About us
+                    <span class="plus-btn-box">+</span>
+                </button>
+                <div class="footer-accordion-content">
+                    <a href="pages/about.html">Kuhusu Sisi</a>
+                    <a href="pages/team.html">Timu Yetu</a>
+                    <a href="pages/contact.html">Wasiliana Nasi</a>
+                </div>
+            </div>
+
+            <div class="footer-row-item">
+                <button class="footer-accordion-btn" onclick="toggleFooterAccordion(this)">
+                    Partner with us
+                    <span class="plus-btn-box">+</span>
+                </button>
+                <div class="footer-accordion-content">
+                    <a href="pages/partners.html">Washirika</a>
+                    <a href="pages/affiliate.html">Affiliate Program</a>
+                    <a href="pages/business.html">Business Inquiry</a>
+                </div>
+            </div>
+
+            <div class="footer-row-item">
+                <button class="footer-accordion-btn" onclick="toggleFooterAccordion(this)">
+                    Teach English & Guide
+                    <span class="plus-btn-box">+</span>
+                </button>
+                <div class="footer-accordion-content">
+                    <a href="pages/teach-english.html">Teach English</a>
+                    <a href="pages/guide-training.html">Guide Training</a>
+                    <a href="pages/jobs.html">Nafasi za Kazi</a>
+                </div>
             </div>
         </div>
 
-        <!-- 2. EVENTS -->
-        <div class="image-card">
-            <div class="card-img-box">
-                <img src="events-img.jpg" alt="Cultural Events" onerror="this.src='https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1000&q=80'">
-            </div>
-            <div class="card-body">
-                <h3>🎉 Tanzania & Zanzibar Cultural Events</h3>
-                <p>Jionee matukio makubwa ya sherehe za kitamaduni, tamasha za muziki, na sherehe za pwani zinazofanyika Zanzibar na Tanzania bara. Tunakuwekea ratiba rasmi ili usipitwe na burudani na shamrashamra zote za kitalii.</p>
-                <a href="events.html" class="card-btn">Discover Events ❐</a>
-            </div>
+        <!-- Connect with us -->
+        <div class="footer-connect-title">Connect with us</div>
+
+        <div class="social-grid">
+            <a href="https://www.facebook.com/profile.php?id=61595094232501" target="_blank" rel="noopener" class="social-item">
+                📘 Facebook
+            </a>
+            <a href="https://twitter.com/unptours" target="_blank" rel="noopener" class="social-item">
+                ✖️ Twitter / X
+            </a>
+            <a href="blog.html" class="social-item">
+                📡 RSS
+            </a>
+            <a href="https://www.instagram.com/unpsoulvoyoge" target="_blank" rel="noopener" class="social-item">
+                📸 Instagram
+            </a>
+            <a href="https://www.tiktok.com/@unptours" target="_blank" rel="noopener" class="social-item">
+                🎵 TikTok
+            </a>
         </div>
 
-        <!-- 3. FORUM -->
-        <div class="image-card">
-            <div class="card-img-box">
-                <img src="forum-img.jpg" alt="Global Family Forum" onerror="this.src='https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1000&q=80'">
-            </div>
-            <div class="card-body">
-                <h3>🌍 UNP Global Family Forum</h3>
-                <p>Hapa ndipo mahali ambapo wasafiri na wapenda asili kutoka kona zote za dunia hukutana kuwa familia moja. Badilishana mawazo, toa maoni yako kuhusu maisha na tamaduni mbalimbali, na jenga urafiki wa kudumu na watu wanaopenda utalii kama wewe.</p>
-                <a href="forum.html" class="card-btn">Join Community Forum ❐</a>
-            </div>
+        <div class="footer-divider"></div>
+
+        <!-- Links za Chini -->
+        <div class="footer-bottom-links">
+            <a href="index.html">UNP Tours Global</a>
+            <a href="pages/privacy.html">Privacy and terms of use</a>
+            <a href="pages/accessibility.html">Accessibility</a>
+            <a href="pages/cookies.html">Cookies</a>
         </div>
 
-        <!-- 4. OUR MUSIC -->
-        <div class="image-card">
-            <div class="card-img-box">
-                <img src="music-img.jpg" alt="Our Music" onerror="this.src='https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=1000&q=80'">
-            </div>
-            <div class="card-body">
-                <h3>🎵 The Rhythm of UNP (Our Music)</h3>
-                <p>Sikia mapigo ya kipekee ya muziki wa kitalii, mashairi ya kuvutia ya hip-hop na midundo ya asili ya Kitanzania inayobeba hisia za mandhari nzuri, milima, na fukwe za bahari kuu. Muziki unaounganisha roho na safari.</p>
-                <a href="music.html" class="card-btn">Listen to UNP Music ❐</a>
-            </div>
+        <!-- Contact Info -->
+        <div class="contact-info-box">
+            <p><strong>Email:</strong> <a href="mailto:salimnasoro11@gmail.com">salimnasoro11@gmail.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+255655728982">+255 655 728 982</a></p>
+            <p><strong>Location:</strong> Tanzania 🇹🇿</p>
         </div>
 
-        <!-- 5. ARTISAN TREASURE -->
-        <div class="image-card">
-            <div class="card-img-box">
-                <img src="artisan-img.jpg" alt="Artisan Treasure" onerror="this.src='https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=1000&q=80'">
-            </div>
-            <div class="card-body">
-                <h3>🎨 Artisan Treasure & Handcrafts</h3>
-                <p>Thamini ubunifu wa mikono! Kuanzia sanamu za wanyama zilizotengenezwa kwa umakini mkubwa hadi sanaa za maj
+        <div class="footer-copyright">
+            <p>&copy; 2026 UNP TOURS. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLOATING BUTTON -->
+    <a href="https://wa.me/255655728982" target="_blank" class="whatsapp-float" aria-label="Chat WhatsApp">
+        💬
+    </a>
+
+    <!-- ========== JAVASCRIPT ========== -->
+    <script src="assets/js/slider.js"></script>
+    <script src="assets/js/navigation.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+                        </html>
