@@ -1,0 +1,108 @@
+/* ==========================================
+   UNP TOURS - COMPONENTS-TOAST.CSS (Ziada na Kamili)
+   ========================================== */
+
+/* 1. TOAST POSITIONS */
+.toast-container.top-right {
+  top: 24px;
+  right: 24px;
+  bottom: auto;
+  left: auto;
+}
+
+.toast-container.top-left {
+  top: 24px;
+  left: 24px;
+  bottom: auto;
+  right: auto;
+}
+
+.toast-container.bottom-left {
+  bottom: 24px;
+  left: 24px;
+  top: auto;
+  right: auto;
+}
+
+.toast-container.top-center {
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: auto;
+  right: auto;
+}
+
+/* 2. ANIMATIONS */
+@keyframes toastSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes toastSlideOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+.toast.show {
+  animation: toastSlideIn 0.3s ease forwards;
+}
+
+.toast.hiding {
+  animation: toastSlideOut 0.3s ease forwards;
+}
+
+/* 3. PROGRESS BAR */
+.toast-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background-color: var(--gold-color, #d4af37);
+  width: 100%;
+  animation: toastProgressAnimation 4s linear forwards;
+  border-bottom-left-radius: var(--radius-md, 8px);
+}
+
+@keyframes toastProgressAnimation {
+  from { width: 100%; }
+  to { width: 0%; }
+}
+
+/* 4. ICON */
+.toast-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  font-size: 1.1rem;
+}
+
+.toast.toast-success .toast-icon {
+  color: #2e7d32;
+}
+
+.toast.toast-error .toast-icon {
+  color: #c62828;
+}
+
+.toast.toast-warning .toast-icon {
+  color: var(--gold-color, #d4af37);
+}
+
+.toast.toast-info .toast-icon {
+  color: var(--primary-color, #0d1b2a);
+}
