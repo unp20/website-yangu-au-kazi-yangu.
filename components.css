@@ -1,0 +1,72 @@
+/* ==========================================================
+   UNP TOURS — MOBILE NAV DRAWER & OVERLAY EXTENSIONS
+   ========================================================== */
+
+/* 1. Overlay ya Drawer (Inafifisha nyuma wakati menu imefunguliwa) */
+.nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-normal), visibility var(--transition-normal);
+  z-index: var(--z-overlay);
+}
+
+.nav-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* 2. Close Button Ndani ya Drawer */
+.drawer-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: 1px solid var(--gold-border);
+  color: var(--pure-white);
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.drawer-close-btn:hover {
+  background: var(--royal-gold);
+  color: var(--dark-green);
+}
+
+/* 3. Hamburger Animation (Inabadilika kuwa umbo la 'X' ikiwa active) */
+.hamburger-btn.active span:nth-child(1) {
+  transform: translateY(9.5px) rotate(45deg);
+}
+
+.hamburger-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-btn.active span:nth-child(3) {
+  transform: translateY(-9.5px) rotate(-45deg);
+}
+
+/* 4. Drawer Slide-In & Slide-Out Smooth Transition */
+.nav-drawer {
+  transition: right var(--transition-normal) cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 5. Body Scroll Lock (Inazuia ukurasa usisogee nyuma menu inapofunguliwa) */
+body.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+  }
