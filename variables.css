@@ -1,5 +1,5 @@
 /* ==========================================================
-   UNP TOURS — DESIGN TOKENS & VARIABLES (FINAL ENHANCED)
+   UNP TOURS — DESIGN TOKENS & VARIABLES (MASTER ENHANCED)
    British Council Style & Luxury Tourism Framework
    ========================================================== */
 
@@ -22,6 +22,15 @@
 
     --border-color: #e2e8f0;      /* Rangi ya mistari ya mipaka (Borders) */
     --gold-border: rgba(212, 175, 55, 0.4); /* Mipaka ya dhahabu hafifu */
+
+    /* --- HERO SLIDES GRADIENTS (Rangi za Kila Slide 7) --- */
+    --bg-gradient-beach: linear-gradient(135deg, #0284c7 0%, #032b1a 100%);     /* 1. Beach & Ocean (Bluu) */
+    --bg-gradient-culture: linear-gradient(135deg, #d4af37 0%, #032b1a 100%);   /* 2. Culture & History (Dhahabu) */
+    --bg-gradient-safari: linear-gradient(135deg, #064e3b 0%, #032b1a 100%);    /* 3. Wildlife & Safari (Kijani) */
+    --bg-gradient-luxury: linear-gradient(135deg, #111111 0%, #032b1a 100%);    /* 4. Luxury & VIP (Nyeusi) */
+    --bg-gradient-support: linear-gradient(135deg, #0284c7 0%, #064e3b 100%);   /* 5. Travel Support (Bluu) */
+    --bg-gradient-events: linear-gradient(135deg, #db2777 0%, #032b1a 100%);    /* 6. Events (Pink) */
+    --bg-gradient-nature: linear-gradient(135deg, #15803d 0%, #032b1a 100%);    /* 7. Nature & Adventure (Kijani) */
 
     /* --- TYPOGRAPHY (FONTS) --- */
     --font-serif: 'Georgia', serif;                  /* Kwa ajili ya vichwa vya habari (Headings) */
@@ -80,6 +89,7 @@
     /* --- Z-INDEX LAYERS --- */
     --z-negative: -1;
     --z-base: 1;
+    --z-sidebar: 50;     /* Sidebar ya Blogu na kurasa za ndani */
     --z-dropdown: 100;
     --z-sticky: 500;
     --z-header: 1000;
@@ -92,6 +102,16 @@
     --opacity-medium: 0.7;
     --opacity-heavy: 0.85;
     --opacity-overlay: 0.5;
+
+    /* --- BACKDROP FILTER EFFECTS --- */
+    --filter-blur-sm: blur(4px);
+    --filter-blur-md: blur(8px);
+    --filter-blur-lg: blur(12px);
+
+    /* --- IMAGE ASPECT RATIOS --- */
+    --aspect-video-ratio: 16 / 9;
+    --aspect-square-ratio: 1 / 1;
+    --aspect-standard-ratio: 4 / 3;
 
     /* --- SHADOWS (VIVULI VYA KISASA) --- */
     --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
