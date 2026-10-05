@@ -1,0 +1,408 @@
+/* ==========================================
+   UNP TOURS - COMPONENTS-HERO-CARDS.CSS (Ziada na Kamili)
+   ========================================== */
+
+/* 1. HERO WRAPPER */
+.unp-hero {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .unp-hero {
+    min-height: 60vh;
+    padding: var(--space-xl, 32px) 0;
+  }
+}
+
+@media (min-width: 1025px) {
+  .unp-hero {
+    min-height: 90vh;
+  }
+}
+
+/* 2. SLIDER WRAPPER */
+.unp-slider-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .unp-slider-wrapper {
+    height: 60vh;
+  }
+}
+
+/* 3. SLIDES */
+.unp-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
+}
+
+.unp-slide.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.unp-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .unp-slide {
+    height: 100%;
+  }
+}
+
+/* 4. SLIDE CAPTION */
+.slide-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: var(--white, #ffffff);
+  z-index: 10;
+  width: 90%;
+  max-width: 900px;
+}
+
+.slide-caption h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: var(--space-md, 16px);
+  color: var(--white, #ffffff);
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+.slide-caption h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: var(--space-md, 16px);
+  color: var(--white, #ffffff);
+  text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+.slide-caption p {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-lg, 24px);
+  color: var(--bg-light, #f8f9fa);
+  text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+}
+
+.slide-caption a.btn-gold {
+  display: inline-block;
+}
+
+/* 5. SLIDER CONTROLS */
+.slider-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 var(--space-md, 16px);
+  z-index: 20;
+  pointer-events: none;
+}
+
+.slider-prev,
+.slider-next {
+  pointer-events: auto;
+  background: rgba(13, 27, 42, 0.6);
+  color: var(--white, #ffffff);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition, all 0.3s ease);
+}
+
+.slider-prev:hover,
+.slider-next:hover {
+  background: var(--gold-color, #d4af37);
+  color: var(--primary-color, #0d1b2a);
+}
+
+/* 6. SLIDER DOTS */
+.slider-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 20;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition, all 0.3s ease);
+}
+
+.dot.active {
+  background: var(--gold-color, #d4af37);
+  width: 28px;
+  border-radius: 6px;
+}
+
+.dot:hover {
+  background: var(--white, #ffffff);
+}
+
+/* 7. SLIDE COUNTER */
+.slide-counter {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(13, 27, 42, 0.7);
+  color: var(--white, #ffffff);
+  padding: 4px 12px;
+  border-radius: var(--radius-sm, 4px);
+  font-size: 0.875rem;
+  z-index: 20;
+}
+
+@media (max-width: 768px) {
+  .slide-counter {
+    top: 10px;
+    right: 10px;
+    font-size: 0.75rem;
+  }
+}
+
+/* 8. AUTOPLAY TOGGLE */
+.autoplay-toggle {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(13, 27, 42, 0.7);
+  color: var(--white, #ffffff);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  transition: var(--transition, all 0.3s ease);
+}
+
+.autoplay-toggle:hover {
+  background: var(--gold-color, #d4af37);
+  color: var(--primary-color, #0d1b2a);
+}
+
+/* 9. PROGRESS BAR */
+.progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  background: var(--gold-color, #d4af37);
+  width: 0%;
+  z-index: 25;
+}
+
+.progress-bar.animation {
+  animation: progressAnimation 5s linear infinite;
+}
+
+@keyframes progressAnimation {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+/* 10. SERVICE CARDS (Kadi 6) */
+.cards-section {
+  padding: var(--space-xxl, 48px) 0;
+}
+
+.service-card {
+  background: var(--white, #ffffff);
+  border-radius: var(--radius-md, 8px);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm, 0 2px 4px rgba(0,0,0,0.05));
+  transition: var(--transition, all 0.3s ease);
+  border: 1px solid var(--border-color, #dddddd);
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg, 0 8px 24px rgba(0,0,0,0.15));
+}
+
+.service-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.service-card:hover img {
+  transform: scale(1.05);
+}
+
+.card-body {
+  padding: var(--space-md, 16px);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-body h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  color: var(--primary-color, #0d1b2a);
+  margin-bottom: var(--space-xs, 8px);
+}
+
+.card-body p {
+  color: var(--text-muted, #666666);
+  font-size: 0.95rem;
+  flex: 1;
+}
+
+/* 11. TESTIMONIALS */
+.testimonials-section {
+  padding: var(--space-xxl, 48px) 0;
+  background-color: var(--bg-light, #f8f9fa);
+}
+
+.testimonial-card {
+  background: var(--white, #ffffff);
+  padding: var(--space-lg, 24px);
+  border-radius: var(--radius-md, 8px);
+  box-shadow: var(--shadow-sm, 0 2px 4px rgba(0,0,0,0.05));
+  transition: var(--transition, all 0.3s ease);
+  border-left: 4px solid var(--gold-color, #d4af37);
+}
+
+.testimonial-card:hover {
+  box-shadow: var(--shadow-md, 0 4px 12px rgba(0,0,0,0.1));
+  transform: translateY(-4px);
+}
+
+.testimonial-card h5 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: var(--primary-color, #0d1b2a);
+  margin-top: var(--space-md, 16px);
+}
+
+/* 12. WELCOME ACCENT */
+.welcome-accent {
+  text-align: center;
+  padding: var(--space-xl, 32px) 0;
+}
+
+.welcome-accent h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.25rem;
+  color: var(--primary-color, #0d1b2a);
+  margin-bottom: var(--space-sm, 8px);
+}
+
+.gold-line {
+  width: 60px;
+  height: 3px;
+  background-color: var(--gold-color, #d4af37);
+  margin: 0 auto var(--space-md, 16px);
+}
+
+/* 13. TEXT BLOCK */
+.text-block {
+  padding: var(--space-md, 16px) 0;
+}
+
+.text-block h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: var(--primary-color, #0d1b2a);
+  margin-bottom: var(--space-sm, 8px);
+}
+
+.text-block p {
+  color: var(--text-muted, #666666);
+  line-height: 1.7;
+}
+
+/* 14. FEATURED TOURS */
+.featured-tours {
+  padding: var(--space-xxl, 48px) 0;
+}
+
+.featured-tours h2 {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: var(--primary-color, #0d1b2a);
+  margin-bottom: var(--space-xl, 32px);
+}
+
+/* 15. SECTIONS ZINGINE & SPACING */
+.container.py-lg {
+  padding-top: var(--space-lg, 24px);
+  padding-bottom: var(--space-lg, 24px);
+}
+
+section + section {
+  border-top: 1px solid var(--border-color, #dddddd);
+}
+
+/* 16. RESPONSIVE MEDIA QUERIES */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .card-grid, .featured-tours .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .slide-caption h1 {
+    font-size: 2.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-grid, .featured-tours .grid-3, .testimonials-section .grid-3 {
+    grid-template-columns: 1fr;
+  }
+  .slide-caption h1 {
+    font-size: 2rem;
+  }
+  .slide-caption h2 {
+    font-size: 1.5rem;
+  }
+  .slide-caption p {
+    font-size: 1rem;
+  }
+}
