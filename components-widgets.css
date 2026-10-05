@@ -1,0 +1,170 @@
+/* ==========================================
+   UNP TOURS - COMPONENTS-WIDGETS.CSS (Ziada na Kamili)
+   ========================================== */
+
+/* 1. WHATSAPP FLOATING BUTTON */
+.whatsapp-float-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: #25d366;
+  color: #ffffff;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg, 0 8px 24px rgba(0,0,0,0.2));
+  z-index: 999;
+  transition: var(--transition, all 0.3s ease);
+  text-decoration: none;
+}
+
+.whatsapp-float-btn:hover {
+  background-color: #20ba5a;
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .whatsapp-float-btn {
+    bottom: 16px;
+    right: 16px;
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/* 2. LIVE CHAT BUTTON */
+.live-chat-btn {
+  position: fixed;
+  bottom: 90px;
+  right: 24px;
+  background-color: var(--primary-color, #0d1b2a);
+  color: var(--gold-color, #d4af37);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md, 0 4px 12px rgba(0,0,0,0.15));
+  z-index: 999;
+  border: 2px solid var(--gold-color, #d4af37);
+  cursor: pointer;
+  transition: var(--transition, all 0.3s ease);
+}
+
+.live-chat-btn:hover {
+  background-color: var(--gold-color, #d4af37);
+  color: var(--primary-color, #0d1b2a);
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .live-chat-btn {
+    bottom: 76px;
+    right: 16px;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* 3. CHAT WINDOW */
+.chat-window {
+  position: fixed;
+  bottom: 150px;
+  right: 24px;
+  width: 340px;
+  height: 450px;
+  background-color: var(--white, #ffffff);
+  border-radius: var(--radius-md, 8px);
+  box-shadow: var(--shadow-lg, 0 8px 24px rgba(0,0,0,0.2));
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: var(--transition, all 0.3s ease);
+  border: 1px solid var(--border-color, #dddddd);
+}
+
+.chat-window.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.chat-header {
+  background-color: var(--primary-color, #0d1b2a);
+  color: var(--white, #ffffff);
+  padding: var(--space-md, 16px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+.chat-body {
+  flex: 1;
+  padding: var(--space-md, 16px);
+  overflow-y: auto;
+  background-color: var(--bg-light, #f8f9fa);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm, 12px);
+}
+
+.chat-input {
+  display: flex;
+  padding: var(--space-sm, 12px);
+  background-color: var(--white, #ffffff);
+  border-top: 1px solid var(--border-color, #dddddd);
+  gap: var(--space-xs, 8px);
+}
+
+/* 4. SOCIAL ICONS */
+.social-icons {
+  display: flex;
+  gap: var(--space-sm, 12px);
+  align-items: center;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--white, #ffffff);
+  transition: var(--transition, all 0.3s ease);
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  background-color: var(--gold-color, #d4af37);
+  color: var(--primary-color, #0d1b2a);
+  transform: translateY(-3px);
+}
+
+/* 5. TRUST & PAYMENT BADGES */
+.trust-badges {
+  display: flex;
+  gap: var(--space-md, 16px);
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: var(--space-md, 16px) 0;
+}
+
+.payment-icons {
+  display: flex;
+  gap: var(--space-xs, 8px);
+  align-items: center;
+  flex-wrap: wrap;
+  }
