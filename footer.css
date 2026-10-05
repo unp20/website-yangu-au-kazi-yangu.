@@ -1,0 +1,119 @@
+/* ==========================================
+   UNP TOURS - FOOTER.CSS (Ziada na Kamili)
+   ========================================== */
+
+/* 1. NEWSLETTER FORM KATIKA FOOTER */
+.footer-col .newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs, 8px);
+  margin-top: var(--space-sm, 12px);
+}
+
+.footer-col .newsletter-form input {
+  padding: 10px 14px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--white, #ffffff);
+  border-radius: var(--radius-sm, 4px);
+  font-family: inherit;
+  font-size: 0.9rem;
+  outline: none;
+  transition: var(--transition, all 0.3s ease);
+}
+
+.footer-col .newsletter-form input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-col .newsletter-form input:focus {
+  border-color: var(--gold-color, #d4af37);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.footer-col .newsletter-form button {
+  padding: 10px 16px;
+  background-color: var(--gold-color, #d4af37);
+  color: var(--primary-color, #0d1b2a);
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius-sm, 4px);
+  cursor: pointer;
+  transition: var(--transition, all 0.3s ease);
+}
+
+.footer-col .newsletter-form button:hover {
+  filter: brightness(1.1);
+}
+
+.footer-col .newsletter-msg {
+  font-size: 0.8rem;
+  margin-top: 4px;
+  color: var(--gold-color, #d4af37);
+}
+
+/* 2. SOCIAL ICONS KATIKA FOOTER */
+.footer-col .social-icons {
+  display: flex;
+  gap: var(--space-sm, 12px);
+  margin-top: var(--space-md, 16px);
+}
+
+.footer-col .social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--white, #ffffff);
+  transition: var(--transition, all 0.3s ease);
+  text-decoration: none;
+}
+
+.footer-col .social-icons a:hover {
+  background-color: var(--gold-color, #d4af37);
+  color: var(--primary-color, #0d1b2a);
+  transform: translateY(-3px);
+}
+
+/* 3. TRUST & PAYMENT ICONS KATIKA FOOTER */
+.footer-col .trust-badges {
+  display: flex;
+  gap: var(--space-sm, 12px);
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: var(--space-md, 16px);
+}
+
+.footer-col .payment-icons {
+  display: flex;
+  gap: var(--space-xs, 8px);
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: var(--space-md, 16px);
+}
+
+/* 4. LOGO NDANI YA FOOTER */
+.footer-col .logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm, 10px);
+  text-decoration: none;
+  color: var(--white, #ffffff);
+  margin-bottom: var(--space-md, 16px);
+}
+
+.footer-col .logo img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+.footer-col .logo span {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: var(--gold-color, #d4af37);
+  font-size: 1.5rem;
+}
