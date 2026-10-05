@@ -1,0 +1,129 @@
+/* ==========================================
+   UNP TOURS - COMPONENTS-MODAL.CSS (Ziada na Kamili)
+   ========================================== */
+
+/* 1. MODAL SIZES */
+.modal-box.modal-sm {
+  max-width: 400px;
+}
+
+.modal-box.modal-lg {
+  max-width: 800px;
+}
+
+.modal-box.modal-xl {
+  max-width: 1100px;
+}
+
+/* 2. MODAL ANIMATIONS */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-overlay.open {
+  animation: modalFadeIn 0.3s ease forwards;
+}
+
+.modal-overlay.open .modal-box {
+  animation: modalSlideUp 0.3s ease forwards;
+}
+
+/* 3. MODAL VARIANTS */
+.modal-box.modal-success .modal-header {
+  background-color: rgba(46, 125, 50, 0.1);
+  border-bottom-color: #2e7d32;
+}
+
+.modal-box.modal-success .modal-title {
+  color: #2e7d32;
+}
+
+.modal-box.modal-error .modal-header {
+  background-color: rgba(198, 40, 40, 0.1);
+  border-bottom-color: #c62828;
+}
+
+.modal-box.modal-error .modal-title {
+  color: #c62828;
+}
+
+.modal-box.modal-warning .modal-header {
+  background-color: rgba(212, 175, 55, 0.1);
+  border-bottom-color: var(--gold-color, #d4af37);
+}
+
+.modal-box.modal-warning .modal-title {
+  color: var(--primary-color, #0d1b2a);
+}
+
+/* 4. AGE VERIFICATION MODAL */
+.age-verification-modal {
+  text-align: center;
+}
+
+.age-verification-modal p {
+  margin-bottom: var(--space-lg, 24px);
+  font-size: 1rem;
+}
+
+.age-verification-actions {
+  display: flex;
+  gap: var(--space-md, 16px);
+  justify-content: center;
+}
+
+@media (max-width: 480px) {
+  .age-verification-actions {
+    flex-direction: column;
+  }
+}
+
+/* 5. COOKIE CONSENT MODAL */
+.cookie-consent-modal {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  max-width: none;
+  border-radius: 0;
+  border-top: 3px solid var(--gold-color, #d4af37);
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
+
+.modal-overlay.open .cookie-consent-modal {
+  transform: translateY(0);
+}
+
+.cookie-consent-actions {
+  display: flex;
+  gap: var(--space-sm, 12px);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .cookie-consent-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .cookie-consent-actions .btn {
+    width: 100%;
+  }
+}
