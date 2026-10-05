@@ -1,0 +1,113 @@
+/* ==========================================================
+   UNP TOURS — DESIGN TOKENS & VARIABLES (FINAL ENHANCED)
+   British Council Style & Luxury Tourism Framework
+   ========================================================== */
+
+:root {
+    /* --- COLOR PALETTE --- */
+    --royal-green: #064e3b;       /* Kijani cha Kifalme */
+    --dark-green: #032b1a;        /* Kijani Cheusi Kikuu (Backgrounds & Headers) */
+    --light-green-bg: #e6f4ea;    /* Kijani chepesi kwa ajili ya mwangaza */
+    
+    --royal-gold: #d4af37;        /* Dhahabu Asilia (Accents & Highlights) */
+    --gold-hover: #b89728;        /* Dhahabu ya giza kidogo wakati wa Hover */
+    --light-gold: #fefcbf;        /* Dhahabu nyepesi kwa notification/alerts */
+
+    --light-bg: #f8f9fa;          /* Mandhari kuu ya nyuma (Off-white) */
+    --pure-white: #ffffff;        /* Nyeupe safi */
+    
+    --text-dark: #222222;         /* Maandishi ya kawaida (High Contrast) */
+    --text-muted: #4a5568;        /* Maandishi ya ziada/maelezo madogo */
+    --text-light: #cbd5e0;        /* Maandishi mepesi ya kwenye background za giza */
+
+    --border-color: #e2e8f0;      /* Rangi ya mistari ya mipaka (Borders) */
+    --gold-border: rgba(212, 175, 55, 0.4); /* Mipaka ya dhahabu hafifu */
+
+    /* --- TYPOGRAPHY (FONTS) --- */
+    --font-serif: 'Georgia', serif;                  /* Kwa ajili ya vichwa vya habari (Headings) */
+    --font-sans: 'Segoe UI', 'Poppins', sans-serif;    /* Kwa ajili ya maelezo na viungo (Body & UI) */
+
+    /* --- FONT SIZES (REM SCALE) --- */
+    --text-xs: 0.75rem;   /* 12px */
+    --text-sm: 0.875rem;  /* 14px */
+    --text-base: 1rem;    /* 16px */
+    --text-lg: 1.125rem;  /* 18px */
+    --text-xl: 1.25rem;   /* 20px */
+    --text-2xl: 1.5rem;   /* 24px */
+    --text-3xl: 2rem;     /* 32px */
+    --text-4xl: 2.6rem;   /* 41.6px - Welcome Accent Headings */
+    --text-5xl: 3.5rem;   /* 56px - Hero Main Titles */
+
+    /* --- FONT WEIGHT --- */
+    --weight-light: 300;
+    --weight-normal: 400;
+    --weight-medium: 500;
+    --weight-semibold: 600;
+    --weight-bold: 700;
+    --weight-black: 800;
+
+    /* --- LETTER SPACING --- */
+    --tracking-tight: -0.5px;
+    --tracking-normal: 0;
+    --tracking-wide: 1px;
+    --tracking-wider: 2px;
+
+    /* --- LINE HEIGHT --- */
+    --leading-tight: 1.15;
+    --leading-normal: 1.6;
+    --leading-relaxed: 1.75;
+
+    /* --- SPACING & SIZING --- */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 40px;
+    --spacing-xxl: 64px;
+
+    /* --- CONTAINER MAX WIDTHS --- */
+    --container-sm: 640px;
+    --container-md: 768px;
+    --container-lg: 1024px;
+    --container-xl: 1300px; /* Upana rasmi wa UNP Tours container */
+
+    /* --- BREAKPOINTS (For documentation & JS matching) --- */
+    --bp-sm: 576px;
+    --bp-md: 768px;
+    --bp-lg: 992px;
+    --bp-xl: 1200px;
+
+    /* --- Z-INDEX LAYERS --- */
+    --z-negative: -1;
+    --z-base: 1;
+    --z-dropdown: 100;
+    --z-sticky: 500;
+    --z-header: 1000;
+    --z-overlay: 1050;
+    --z-modal: 1100;
+    --z-tooltip: 1200;
+
+    /* --- OPACITY SCALE (For Overlays & Fades) --- */
+    --opacity-subtle: 0.4;
+    --opacity-medium: 0.7;
+    --opacity-heavy: 0.85;
+    --opacity-overlay: 0.5;
+
+    /* --- SHADOWS (VIVULI VYA KISASA) --- */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+    --shadow-gold: 0 4px 15px rgba(212, 175, 55, 0.25);
+
+    /* --- BORDER RADIUS (Mviringo wa Kadi na Vitufe) --- */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-full: 50px; /* Kwa ajili ya Pill Buttons na WhatsApp Icon */
+
+    /* --- TRANSITIONS (Kasi ya Mabadiliko) --- */
+    --transition-fast: 0.2s ease-in-out;
+    --transition-normal: 0.3s ease-in-out;
+    --transition-slow: 0.5s ease-in-out;
+    --transition-bounce: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
