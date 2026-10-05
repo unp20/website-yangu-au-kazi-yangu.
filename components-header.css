@@ -1,0 +1,193 @@
+/* ==========================================
+   UNP TOURS - COMPONENTS-HEADER.CSS (Ziada na Kamili)
+   ========================================== */
+
+/* 1. MOBILE NAVIGATION */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 280px;
+  height: 100vh;
+  background-color: var(--primary-color, #0d1b2a);
+  z-index: 1002;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-lg, 24px);
+  transition: right 0.3s ease-in-out;
+  box-shadow: var(--shadow-lg, 0 8px 24px rgba(0,0,0,0.15));
+}
+
+.mobile-nav.open {
+  right: 0;
+}
+
+.mobile-nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1001;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition, all 0.3s ease);
+}
+
+.mobile-nav.open ~ .mobile-nav-overlay,
+.mobile-nav-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md, 16px);
+  margin-top: var(--space-xl, 32px);
+}
+
+.mobile-nav a {
+  color: var(--white, #ffffff);
+  font-size: 1.125rem;
+  font-weight: 500;
+  text-decoration: none;
+  padding: var(--space-xs, 8px) 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: var(--transition, all 0.3s ease);
+}
+
+.mobile-nav a:hover,
+.mobile-nav a[aria-current="page"] {
+  color: var(--gold-color, #d4af37);
+  padding-left: var(--space-xs, 8px);
+}
+
+/* 2. STATES ZA HEADER */
+.unp-header.scrolled {
+  padding: var(--space-xs, 8px) 0;
+  background-color: rgba(13, 27, 42, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-md, 0 4px 12px rgba(0,0,0,0.1));
+}
+
+.unp-header.glass {
+  background-color: rgba(13, 27, 42, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.unp-header.hidden {
+  transform: translateY(-100%);
+}
+
+/* 3. LOGO ZAIDI */
+.logo:hover {
+  opacity: 0.9;
+}
+
+.logo-icon {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+/* 4. NAV ZAIDI */
+.desktop-nav a.active {
+  color: var(--gold-color, #d4af37);
+}
+
+.desktop-nav a:focus {
+  outline: 2px solid var(--gold-color, #d4af37);
+  outline-offset: 2px;
+}
+
+.desktop-nav a:visited {
+  color: inherit;
+}
+
+/* 5. ACTIONS ZAIDI */
+.search-btn.mobile-search {
+  display: none;
+}
+
+.cart-btn {
+  background: transparent;
+  border: none;
+  color: var(--white, #ffffff);
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+}
+.cart-btn:hover {
+  color: var(--gold-color, #d4af37);
+}
+
+/* 6. RESPONSIVE ZAIDI */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .desktop-nav ul {
+    gap: var(--space-sm, 12px);
+  }
+}
+
+@media (max-width: 480px) {
+  .unp-header .logo span {
+    font-size: 1.25rem;
+  }
+  .search-btn.mobile-search {
+    display: flex;
+  }
+}
+
+@media (min-width: 1440px) {
+  .unp-header .container {
+    max-width: 1400px;
+  }
+}
+
+/* 7. ANIMATIONS */
+@keyframes headerSlideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.unp-header {
+  animation: headerSlideDown 0.4s ease-out;
+}
+
+/* 8. ACCESSIBILITY */
+.unp-header button[aria-label],
+.unp-header a[aria-label] {
+  position: relative;
+}
+
+.desktop-nav [role="navigation"] {
+  display: contents;
+}
+
+/* 9. MISC */
+.unp-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.unp-header.transparent {
+  background-color: transparent;
+  position: absolute;
+  width: 100%;
+  box-shadow: none;
+}
