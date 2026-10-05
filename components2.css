@@ -1,0 +1,45 @@
+/* ==========================================================
+   UNP TOURS — PERFORMANCE & ANIMATION ENHANCEMENTS
+   ========================================================== */
+
+/* 1. Staggered Animation (Kadi zinafika kwa mtiririko mmoja baada ya mwingine) */
+.services-grid .service-card:nth-child(1) { animation-delay: 0.1s; }
+.services-grid .service-card:nth-child(2) { animation-delay: 0.2s; }
+.services-grid .service-card:nth-child(3) { animation-delay: 0.3s; }
+.services-grid .service-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* 2. Card Image Skeleton (Sehemu ya picha inayong'aa kabla haijapakia) */
+.service-image-wrapper.loading {
+  background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+  background-size: 200% 100%;
+  animation: skeletonLoading 1.5s infinite;
+}
+
+@keyframes skeletonLoading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* 3. Reduced Motion Support (Kuzima animations kwa wenye mahitaji maalum) */
+@media (prefers-reduced-motion: reduce) {
+  .service-card,
+  .hero-title,
+  .hero-subtitle,
+  .hero-description,
+  .service-image-wrapper img {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* 4. Lazy Load Images (Ulinzi wa mtindo kwa picha zinazotumia lazy loading) */
+img[loading="lazy"] {
+  content-visibility: auto;
+}
+
+/* 5. Content-Visibility (Kwa ajili ya utendaji wa kasi kwenye kurasa ndefu) */
+.services-section,
+.hero-section {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
+}
