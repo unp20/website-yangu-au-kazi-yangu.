@@ -1,0 +1,152 @@
+/* ==========================================
+   UNP TOURS - COMPONENTS-BUTTONS.CSS (Ziada na Kamili)
+   ========================================== */
+
+/* 1. Vitufe vya Ziada */
+.btn-text {
+  background: transparent;
+  color: var(--primary-color, #0d1b2a);
+  border: none;
+  padding: 6px 12px;
+  font-weight: 600;
+}
+.btn-text:hover {
+  color: var(--gold-color, #d4af37);
+  background: transparent;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn-icon {
+  padding: 10px;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-round {
+  border-radius: 50px;
+}
+
+.btn-success {
+  background-color: #2e7d32;
+  color: #ffffff;
+}
+.btn-success:hover {
+  background-color: #27692b;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md, 0 4px 12px rgba(0,0,0,0.1));
+}
+
+.btn-error {
+  background-color: #c62828;
+  color: #ffffff;
+}
+.btn-error:hover {
+  background-color: #b71c1c;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md, 0 4px 12px rgba(0,0,0,0.1));
+}
+
+/* 2. Ukubwa Zaidi */
+.btn-xs {
+  padding: 4px 10px;
+  font-size: 0.75rem;
+}
+
+.btn-xl {
+  padding: 16px 36px;
+  font-size: 1.25rem;
+}
+
+/* 3. States Zaidi (Disabled & Loading) */
+.btn:disabled,
+.btn.is-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.btn-loading {
+  position: relative;
+  color: transparent !important;
+  pointer-events: none;
+}
+.btn-loading::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 50%;
+  left: 50%;
+  margin-top: -9px;
+  margin-left: -9px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  border-right-color: transparent;
+  animation: btn-spin 0.75s linear infinite;
+}
+@keyframes btn-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* 4. Groups */
+.btn-group {
+  display: inline-flex;
+  border-radius: var(--radius-sm, 4px);
+  overflow: hidden;
+}
+.btn-group .btn {
+  border-radius: 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+.btn-group .btn:first-child {
+  border-top-left-radius: var(--radius-sm, 4px);
+  border-bottom-left-radius: var(--radius-sm, 4px);
+}
+.btn-group .btn:last-child {
+  border-top-right-radius: var(--radius-smHapa kuna nyongeza na msimbo kamili wa ziada wa **`components-buildings.css`** (au ongezeko la **`components-buttons.css`**) unaojumuisha vitufe hivi vyote vya ziada, ukubwa, states, makundi, na athari maalum za hover:
+
+```css
+/* ==========================================
+   UNP TOURS - COMPONENTS-BUTTONS.CSS (Ziada)
+   ========================================== */
+
+/* 1. Vitufe vya Ziada */
+.btn-text {
+  background: transparent;
+  color: var(--gold-color, #d4af37);
+  padding: 6px 12px;
+  border: none;
+}
+.btn-text:hover {
+  text-decoration: underline;
+  background: transparent;
+}
+
+.btn-icon {
+  padding: 10px;
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+}
+
+.btn-round {
+  border-radius: 50px;
+}
+
+.btn-success {
+  background-color: #2e7d32;
+  color: #ffffff;
+}
+.btn-success:hover {
+  background-color: #1b5e20;
+}
+
+.btn-error {
+  background-color: #c62828;
+  color: #ffffff;
+}
+.btn-error
