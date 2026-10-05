@@ -1,0 +1,445 @@
+/* ==========================================
+   UNP TOURS - COMPONENTS-FORMS.CSS (Ziada na Kamili)
+   ========================================== */
+
+/* 1. NEWSLETTER FORM */
+.newsletter-form {
+  display: flex;
+  gap: var(--space-sm, 12px);
+  width: 100%;
+  max-width: 500px;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid var(--border-color, #dddddd);
+  border-radius: var(--radius-sm, 4px);
+  background-color: var(--white, #ffffff);
+  font-family: inherit;
+  font-size: 0.95rem;
+  outline: none;
+  transition: var(--transition, all 0.3s ease);
+}
+
+.newsletter-form input:focus {
+  border-color: var(--gold-color, #d4af37);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+}
+
+.newsletter-form button {
+  padding: 12px 24px;
+  background-color: var(--gold-color, #d4af37);
+  color: var(--primary-color, #0d1b2a);
+  font-weight: 700;
+  border: none;
+  border-radius: var(--radius-sm, 4px);
+  cursor: pointer;
+  transition: var(--transition, all 0.3s ease);
+}
+
+.newsletter-form button:hover {
+  filter: brightness(1.1);
+}
+
+.newsletter-msg {
+  font-size: 0.85rem;
+  margin-top: 6px;
+  display: block;
+}
+
+@media (max-width: 480px) {
+  .newsletter-form {
+    flex-direction: column;
+  }
+}
+
+/* 2. PLACEHOLDER STYLING */
+.form-control::placeholder,
+.form-textarea::placeholder {
+  color: #999999;
+  opacity: 1;
+}
+
+/* 3. DISABLED & READONLY STATES */
+.form-control:disabled,
+.form-select:disabled,
+.form-textarea:disabled {
+  background-color: #e9ecef;
+  color: #6c757d;
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+.form-control:read-only,
+.form-textarea:read-only {
+  background-color: #f1f3f5;
+  border-color: #ced4da;
+}
+
+/* 4. AUTOFILL STYLING */
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px var(--bg-light, #f8f9fa) inset !important;
+  -webkit-text-fill-color: var(--primary-color, #0d1b2a) !important;
+}
+
+/* 5. FILE UPLOAD */
+.form-file {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: var(--text-muted, #666666);
+  background-color: var(--bg-light, #f8f9fa);
+  border: 1px dashed var(--border-color, #dddddd);
+  border-radius: var(--radius-sm, 4px);
+  cursor: pointer;
+}
+
+.form-file::-webkit-file-upload-button {
+  background-color: var(--primary-color, #0d1b2a);
+  color: var(--white, #ffffff);
+  padding: 8px 16px;
+  border: none;
+  border-radius: var(--radius-sm, 4px);
+  cursor: pointer;
+  margin-right: 12px;
+  font-weight: 600;
+  transition: var(--transition, all 0.3s ease);
+}
+
+.form-file::-webkit-file-upload-button:hover {
+  background-color: var(--gold-color, #d4af37);
+  color: var(--primary-color, #0d1b2a);
+}
+
+.form-file-label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--primary-color, #0d1b2a);
+  margin-bottom: 4px;
+  display: block;
+}
+
+/* 6. INPUT GROUPS */
+.input-group {
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+
+.input-group .form-control {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.input-group-text {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  background-color: #e9ecef;
+  border: 1px solid var(--border-color, #dddddd);
+  border-left: none;
+  border-top-right-radius: var(--radius-sm, 4px);
+  border-bottom-right-radius: var(--radius-sm, 4px);
+  color: var(--primary-color, #0d1b2a);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* 7. SEARCH FORM */
+.search-form {
+  display: flex;
+  align-items: center;
+  background: var(--white, #ffffff);
+  border: 1px solid var(--border-color, #dddddd);
+  border-radius: var(--radius-sm, 4px);
+  overflow: hidden;
+  max-width: 400px;
+  width: 100%;
+}
+
+.search-form input {
+  flex: 1;
+  padding: 10px 16px;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: 0.95krem;
+}
+
+.search-form button {
+  background: var(--gold-color, #d4af37);
+  color: var(--primary-color, #0d1b2a);
+  border: none;
+  padding: 10px 18px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition, all 0.3s ease);
+}
+
+.search-form button:hover {
+  filter: brightness(1.1);
+}
+
+/* 8. BOOKING FORM */
+.booking-form {
+  background-color: var(--white, #ffffff);
+  padding: var(--space-xl, 32px);
+  border-radius: var(--radius-md, 8px);
+  box-shadow: var(--shadow-md, 0 4px 12px rgba(0,0,0,0.08));
+  border: 1px solid var(--border-color, #dddddd);
+}
+
+.booking-form .form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md, 16px);
+  margin-bottom: var(--space-md, 16px);
+}
+
+@media (max-width: 768px) {
+  .booking-form .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 9. FORM SPACING */
+.form-group-sm {
+  margin-bottom: var(--space-xs, 8px);
+}
+
+.form-group-lg {
+  margin-bottom: var(--space-lg, 24px);
+}
+
+/* 10. VALIDATION ICONS */
+.is-valid {
+  position: relative;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%232e7d32' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-1.1.4-1.4 0z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px 16px;
+  padding-right: 40px;
+}
+
+.is-invalid {
+  position: relative;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23c62828'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2Hapa kuna nyongeza kamili ya **`components-forms.css`** inayojumuisha vipengele hivi vyote 20 vilivyosalia (Newsletter, Placeholder, Disabled & Readonly, Autofill, File Upload, Input Groups, Search Form, Booking Form, Form Spacing, na Validation Icons):
+
+```css
+/* ==========================================
+   UNP TOURS - COMPONENTS-FORMS.CSS (Ziada na Kamili)
+   ========================================== */
+
+/* 1. NEWSLETTER FORM */
+.newsletter-form {
+  display: flex;
+  gap: var(--space-xs, 8px);
+  width: 100%;
+  max-width: 500px;
+}
+
+.newsletter-form input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 1px solid var(--border-color, #dddddd);
+  border-radius: var(--radius-sm, 4px);
+  font-family: inherit;
+  font-size: 1rem;
+  outline: none;
+  background-color: var(--white, #ffffff);
+  color: var(--primary-color, #0d1b2a);
+  transition: var(--transition, all 0.3s ease);
+}
+
+.newsletter-form input:focus {
+  border-color: var(--gold-color, #d4af37);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+}
+
+.newsletter-form button {
+  padding: 12px 24px;
+  background-color: var(--gold-color, #d4af37);
+  color: var(--primary-color, #0d1b2a);
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius-sm, 4px);
+  cursor: pointer;
+  transition: var(--transition, all 0.3s ease);
+  white-space: nowrap;
+}
+
+.newsletter-form button:hover {
+  filter: brightness(1.1);
+}
+
+.newsletter-msg {
+  font-size: 0.875rem;
+  margin-top: var(--space-xs, 6px);
+}
+
+@media (max-width: 480px) {
+  .newsletter-form {
+    flex-direction: column;
+  }
+}
+
+/* 2. PLACEHOLDER STYLING */
+.form-control::placeholder,
+.form-textarea::placeholder,
+.newsletter-form input::placeholder {
+  color: var(--text-muted, #999999);
+  opacity: 1;
+}
+
+/* 3. DISABLED & READONLY STATES */
+.form-control:disabled,
+.form-select:disabled,
+.form-textarea:disabled {
+  background-color: #e9ecef;
+  color: #6c757d;
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+.form-control:read-only,
+.form-textarea:read-only {
+  background-color: #f8f9fa;
+  border-color: var(--border-color, #dddddd);
+}
+
+/* 4. AUTOFILL STYLING */
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px var(--bg-light, #f8f9fa) inset !important;
+  -webkit-text-fill-color: var(--primary-color, #0d1b2a) !important;
+}
+
+/* 5. FILE UPLOAD */
+.form-file {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: var(--text-muted, #666666);
+  background-color: var(--bg-light, #f8f9fa);
+  border: 1px dashed var(--border-color, #dddddd);
+  border-radius: var(--radius-sm, 4px);
+  cursor: pointer;
+}
+
+.form-file-label {
+  font-weight: 500;
+  color: var(--primary-color, #0d1b2a);
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
+/* 6. INPUT GROUPS */
+.input-group {
+  display: flex;
+  width: 100%;
+}
+
+.input-group .form-control {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  flex: 1;
+}
+
+.input-group-text {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  background-color: var(--bg-light, #f8f9fa);
+  border: 1px solid var(--border-color, #dddddd);
+  border-left: none;
+  border-top-right-radius: var(--radius-sm, 4px);
+  border-bottom-right-radius: var(--radius-sm, 4px);
+  color: var(--text-muted, #666666);
+  font-size: 0.9rem;
+}
+
+/* 7. SEARCH FORM */
+.search-form {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.search-form input {
+  width: 100%;
+  padding: 10px 16px 10px 40px;
+  border: 1px solid var(--border-color, #dddddd);
+  border-radius: var(--radius-sm, 50px);
+  font-family: inherit;
+  outline: none;
+  background-color: var(--bg-light, #f8f9fa);
+  transition: var(--transition, all 0.3s ease);
+}
+
+.search-form input:focus {
+  border-color: var(--gold-color, #d4af37);
+  background-color: var(--white, #ffffff);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+}
+
+/* 8. BOOKING FORM */
+.booking-form {
+  background-color: var(--white, #ffffff);
+  padding: var(--space-lg, 24px);
+  border-radius: var(--radius-md, 8px);
+  box-shadow: var(--shadow-md, 0 4px 12px rgba(0,0,0,0.1));
+  border: 1px solid var(--border-color, #dddddd);
+}
+
+.booking-form .form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md, 16px);
+  margin-bottom: var(--space-md, 16px);
+}
+
+@media (max-width: 768px) {
+  .booking-form .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 9. FORM SPACING */
+.form-group-sm {
+  margin-bottom: var(--space-xs, 8px);
+}
+
+.form-group-lg {
+  margin-bottom: var(--space-lg, 24px);
+}
+
+/* 10. VALIDATION ICONS / STATES */
+.form-control.is-valid,
+.form-select.is-valid {
+  border-color: #2e7d32;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)' viewBox='0 0 8 8'%3e%3cpath fill='%232e7d32' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-1.1.5-1.5 0z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px 16px;
+  padding-right: 40px;
+}
+
+.form-control.is-invalid,
+.form-select.is-invalid {
+  border-color: #c62828;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23c62828'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5zM6 8.2h.01'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px 16px;
+  padding-right: 40px;
+  }
