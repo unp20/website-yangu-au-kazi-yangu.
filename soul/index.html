@@ -1,1 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soul Voyara — Journey Beyond Horizons</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: linear-gradient(135deg, #000000 0%, #001a33 50%, #000000 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #ffffff;
+}
+.login-container {
+    background: rgba(11, 15, 25, 0.95);
+    border: 2px solid #0077be;
+    border-radius: 20px;
+    padding: 40px 30px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 20px 60px rgba(0, 119, 190, 0.4);
+    text-align: center;
+}
+.logo-circle {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, #0077be, #d4a017);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    box-shadow: 0 8px 25px rgba(212, 160, 23, 0.5);
+}
+h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+h1 span { color: #d4a017; }
+.tagline {
+    font-size: 13px;
+    color: #9ca3af;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+}
+.input-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+.input-group label {
+    display: block;
+    font-size: 13px;
+    color: #d4a017;
+    margin-bottom: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+.input-group input {
+    width: 100%;
+    padding: 14px 16px;
+    background: #000000;
+    border: 1.5px solid #1f293d;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 15px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+.input-group input:focus {
+    border-color: #0077be;
+    box-shadow: 0 0 0 3px rgba(0, 119, 190, 0.2);
+}
+.input-group input::placeholder { color: #4b5563; }
+.login-btn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #0077be, #005a91);
+    border: none;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(0, 119, 190, 0.4);
+}
+.login-btn:hover {
+    background: linear-gradient(135deg, #005a91, #0077be);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 119, 190, 0.6);
+}
+.signup-link {
+    margin-top: 25px;
+    font-size: 14px;
+    color: #9ca3af;
+}
+.signup-link a {
+    color: #d4a017;
+    text-decoration: none;
+    font-weight: 600;
+}
+.signup-link a:hover { color: #f0c14b; }
+.footer-text {
+    margin-top: 30px;
+    font-size: 11px;
+    color: #4b5563;
+    letter-spacing: 1px;
+}
+</style>
+</head>
+<body>
 
+<div class="login-container">
+    <div class="logo-circle">✨</div>
+    <h1>SOUL <span>VOYARA</span></h1>
+    <p class="tagline">Journey Beyond Horizons</p>
+
+    <form id="loginForm">
+        <div class="input-group">
+            <label for="email">EMAIL</label>
+            <input type="email" id="email" placeholder="you@example.com" required>
+        </div>
+        <div class="input-group">
+            <label for="password">PASSWORD</label>
+            <input type="password" id="password" placeholder="Enter your password" required>
+        </div>
+        <button type="submit" class="login-btn">LOGIN</button>
+    </form>
+
+    <p class="signup-link">
+        Don't have an account? <a href="#">Sign up here</a>
+    </p>
+    <p class="footer-text">© 2026 SOUL VOYARA — All Rights Reserved</p>
+</div>
+
+<script>
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = document.getElementById('email').value;
+    if (email) {
+        alert('Welcome to Soul Voyara, ' + email + '!');
+    }
+});
+</script>
+
+</body>
+  </html>
