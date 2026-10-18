@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Destinations — UNP TOURS Zanzibar</title>
+<meta name="description" content="Explore Zanzibar's most beautiful destinations — Nungwi, Kendwa, Paje, Stone Town, and more.">
+<meta name="robots" content="index, follow">
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0c4a6e">
+<link rel="icon" type="image/png" href="assets/images/logo.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+  body { font-family: 'Inter', sans-serif; background: #f8f9fa; }
+  .dest-card { transition: all 0.3s ease; }
+  .dest-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="fixed top-0 w-full flex justify-between items-center px-5 md:px-12 py-3 z-50 bg-[#0c4a6e] shadow-lg">
+  <a href="index.html" class="flex items-center gap-3">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="h-10 w-10">
+      <circle cx="100" cy="100" r="95" fill="#0b3d2e" stroke="#d4a017" stroke-width="4"/>
+      <text x="100" y="140" font-family="Inter" font-size="30" font-weight="800" fill="#d4a017" text-anchor="middle">UNP</text>
+    </svg>
+    <span class="font-extrabold text-white hidden sm:block">UNP TOURS</span>
+  </a>
+  <a href="index.html" class="text-white font-semibold hover:text-[#d4a017] transition">← Back to Home</a>
+</nav>
+
+<!-- HERO -->
+<section class="pt-32 pb-16 bg-gradient-to-br from-[#0c4a6e] to-[#082f49] text-white">
+  <div class="max-w-4xl mx-auto text-center px-5">
+    <div class="text-5xl mb-4">🌴</div>
+    <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Destinations</h1>
+    <p class="text-lg md:text-xl text-blue-200">Discover the most beautiful places in Zanzibar and Tanzania.</p>
+  </div>
+</section>
+
+<!-- ZANZIBAR DESTINATIONS (Firestore) -->
+<main class="max-w-7xl mx-auto px-5 py-16">
+
+  <h2 class="text-3xl font-extrabold text-[#082f49] mb-8 flex items-center gap-3">
+    🏝️ <span>Zanzibar Beaches & Villages</span>
+  </h2>
+
+  <div id="zanzibarGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+    <div class="text-center py-12 text-gray-400 col-span-full">Loading destinations...</div>
+  </div>
+
+  <!-- TANZANIA SAFARIS (Static) -->
+  <h2 class="text-3xl font-extrabold text-[#082f49] mb-8 flex items-center gap-3">
+    🦁 <span>Tanzania Safari Parks</span>
+  </h2>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <a href="safari.html" class="dest-card bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100">
+      <img src="assets/images/serengeti.jpg" alt="Serengeti" class="w-full h-52 object-cover">
+      <div class="p-6"><h3 class="text-xl font-bold text-[#082f49] mb-2">Serengeti</h3><p class="text-gray-600 text-sm">The Great Migration — 1.5 million wildebeest.</p></div>
+    </a>
+    <a href="safari.html" class="dest-card bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100">
+      <img src="assets/images/ngorongoro.jpg" alt="Ngorongoro" class="w-full h-52 object-cover">
+      <div class="p-6"><h3 class="text-xl font-bold text-[#082f49] mb-2">Ngorongoro Crater</h3><p class="text-gray-600 text-sm">The world's largest inactive volcanic caldera.</p></div>
+    </a>
+    <a href="safari.html" class="dest-card bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100">
+      <img src="assets/images/mikumi.jpg" alt="Mikumi" class="w-full h-52 object-cover">
+      <div class="p-6"><h3 class="text-xl font-bold text-[#082f49] mb-2">Mikumi National Park</h3><p class="text-gray-600 text-sm">Closest safari to Zanzibar — lions, elephants, zebras.</p></div>
+    </a>
+    <a href="safari.html" class="dest-card bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100">
+      <img src="assets/images/nyerere.jpg" alt="Nyerere" class="w-full h-52 object-cover">
+      <div class="p-6"><h3 class="text-xl font-bold text-[#082f49] mb-2">Nyerere National Park</h3><p class="text-gray-600 text-sm">Tanzania's largest park — wild and untouched.</p></div>
+    </a>
+    <a href="safari.html" class="dest-card bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100">
+      <img src="assets/images/serengeti.jpg" alt="Tarangire" class="w-full h-52 object-cover">
+      <div class="p-6"><h3 class="text-xl font-bold text-[#082f49] mb-2">Tarangire National Park</h3><p class="text-gray-600 text-sm">Giant baobabs and large elephant herds.</p></div>
+    </a>
+    <a href="safari.html" class="dest-card bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100">
+      <img src="assets/images/ngorongoro.jpg" alt="Lake Manyara" class="w-full h-52 object-cover">
+      <div class="p-6"><h3 class="text-xl font-bold text-[#082f49] mb-2">Lake Manyara</h3><p class="text-gray-600 text-sm">Tree-climbing lions and flamingo-lined shores.</p></div>
+    </a>
+  </div>
+
+  <!-- CTA -->
+  <div class="mt-16 bg-gradient-to-r from-[#d4a017] to-[#b88a10] rounded-2xl p-8 text-center text-[#082f49]">
+    <h2 class="text-2xl md:text-3xl font-extrabold mb-3">Ready to Explore?</h2>
+    <p class="mb-5">Book your Zanzibar or Tanzania adventure today.</p>
+    <a href="trips.html" class="inline-block bg-[#082f49] text-white px-8 py-3 rounded-full font-bold hover:bg-[#0c4a6e] transition shadow-lg">View All Trips →</a>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-black text-gray-300 py-10 px-5 border-t-4 border-[#d4a017]">
+  <div class="max-w-4xl mx-auto text-center">
+    <p class="font-bold text-[#d4a017] mb-2">UNP TOURS — Unique & Natural Paradise</p>
+    <p class="text-sm">Nungwi, Zanzibar, Tanzania | WhatsApp: +255 655 728 982</p>
+    <p class="text-xs mt-4 text-gray-500">© 2026 UNP Tours. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/255655728982" target="_blank" class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] rounded-full flex justify-center items-center text-3xl text-white shadow-lg hover:scale-110 transition z-50">💬</a>
+
+<!-- ================= FIREBASE ================= -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+  import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyCe5-MZMASwDZtIN3zfLvwlrn0U2ObC17s",
+    authDomain: "soul-unp-tour.firebaseapp.com",
+    projectId: "soul-unp-tour",
+    storageBucket: "soul-unp-tour.firebasestorage.app",
+    messagingSenderId: "503119437259",
+    appId: "1:503119437259:web:aaa65be89a8d77d5abaa4e",
+    measurementId: "G-EC65GSRRKM"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  async function loadZanzibar() {
+    const grid = document.getElementById('zanzibarGrid');
+    try {
+      const snap = await getDocs(collection(db, "zanzibar"));
+      const data = [];
+      snap.forEach((d) => data.push({ id: d.id, ...d.data() }));
+
+      if (data.length === 0) {
+        // Fallback static data kama Firestore haina kitu
+        grid.innerHTML = `
+          <a href="trips.html" class="dest-card bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100">
+            <img src="assets/images/nungwi-beach-paradise.jpg" alt="Nungwi" class="w-full h-52 object-cover">
+            <div class="p-6"><h3 class="text-xl font-bold text-[#082f49] mb-2">Nungwi Beach</h3><p class="text-gray-600 text-sm">The world's best beach — magical sunsets and crystal-clear waters.</p></div>
+          </a>
+          <a href="trips.html" class="dest-card bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100">
+            <img src="assets/images/mnemba-snorkeling.jpg" alt="Mnemba" class="w-full h-52 object-cover">
+            <div class="p-6"><h3 class="text-xl font-bold text-[#082f49] mb-2">Mnemba Atoll</h3><p class="text-gray-600 text-sm">World-class snorkeling and dolphin watching.</p></div>
+          </a>
+          <a href="trips.html" class="dest-card bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100">
+            <img src="assets/images/our-culture-zanzibar.jpg" alt="Stone Town" class="w-full h-52 object-cover">
+            <div class="p-6"><h3 class="text-xl font-bold text-[#082f49] mb-2">Stone Town</h3><p class="text-gray-600 text-sm">UNESCO World Heritage Site — the historic heart of Zanzibar.</p></div>
+          </a>
+          <a href="trips.html" class="dest-card bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100">
+            <img src="assets/images/jozani-forest.jpg" alt="Jozani" class="w-full h-52 object-cover">
+            <div class="p-6"><h3 class="text-xl font-bold text-[#082f49] mb-2">Jozani Forest</h3><p class="text-gray-600 text-sm">Home of the rare Red Colobus monkeys.</p></div>
+          </a>
+          <a href="trips.html" class="dest-card bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100">
+            <img src="assets/images/prison-island.jpg" alt="Prison Island" class="w-full h-52 object-cover">
+            <div class="p-6"><h3 class="text-xl font-bold text-[#082f49] mb-2">Prison Island</h3><p class="text-gray-600 text-sm">Giant tortoises and snorkeling paradise.</p></div>
+          </a>
+          <a href="trips.html" class="dest-card bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100">
+            <img src="assets/images/safari-blue-dhow.jpg" alt="Safari Blue" class="w-full h-52 object-cover">
+            <div class="p-6"><h3 class="text-xl font-bold text-[#082f49] mb-2">Safari Blue</h3><p class="text-gray-600 text-sm">Sandbanks, snorkeling and traditional dhow sailing.</p></div>
+          </a>
+        `;
+        return;
+      }
+
+      // Render kutoka Firestore
+      grid.innerHTML = data.map(z => `
+        <a href="trips.html" class="dest-card bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100">
+          <img src="${z.image || 'assets/images/nungwi-beach-paradise.jpg'}" alt="${z.name}" class="w-full h-52 object-cover" onerror="this.src='assets/images/nungwi-beach-paradise.jpg'">
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-[#082f49] mb-2">${z.name || 'Destination'}</h3>
+            <p class="text-gray-600 text-sm">${z.description || ''}</p>
+            ${z.price ? `<p class="text-[#d4a017] font-bold text-sm mt-2">From $${z.price}</p>` : ''}
+          </div>
+        </a>
+      `).join('');
+
+    } catch (error) {
+      console.error(error);
+      grid.innerHTML = '<div class="text-center py-12 text-gray-400 col-span-full">Error loading destinations.</div>';
+    }
+  }
+
+  loadZanzibar();
+</script>
+
+</body>
+</html>
