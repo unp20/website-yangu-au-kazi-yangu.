@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign Up — UNP TOURS Zanzibar</title>
+<meta name="description" content="Create your UNP TOURS account — track bookings, save favorites, and get exclusive offers.">
+<meta name="robots" content="noindex, nofollow">
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0c4a6e">
+<link rel="icon" type="image/png" href="assets/images/logo.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+  import { getAuth, createUserWithEmailAndPassword, updateProfile } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+  import { getFirestore, doc, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyCe5-MZMASwDZtIN3zfLvwlrn0U2ObC17s",
+    authDomain: "soul-unp-tour.firebaseapp.com",
+    projectId: "soul-unp-tour",
+    storageBucket: "soul-unp-tour.firebasestorage.app",
+    messagingSenderId: "503119437259",
+    appId: "1:503119437259:web:aaa65be89a8d77d5abaa4e",
+    measurementId: "G-EC65GSRRKM"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const db = getFirestore(app);
+
+  // ==================== CUSTOMER SIGNUP ====================
+  window.customerSignup = async function(event) {
+    event.preventDefault();
+
+    const btn = document.getElementById('signupBtn');
+    const msg = document.getElementById('message');
+
+    const name = document.getElementById('signupName').value.trim();
+    const email = document.getElementById('signupEmail').value.trim();
+    const phone = document.getElementById('signupPhone').value.trim();
+    const country = document.getElementById('signupCountry').value.trim();
+    const password = document.getElementById('signupPassword').value;
+    const confirmPassword = document.getElementById('signupConfirmPassword').value;
+
+    msg.style.display = 'none';
+
+    if (password !== confirmPassword) {
+      showMsg('Passwords do not match.', 'error');
+      return;
+    }
+
+    if (password.length < 6) {
+      showMsg('Password must be at least 6 characters.', 'error');
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Creating...';
+
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+
+      // Update profile
+      await updateProfile(user, { displayName: name });
+
+      // Save to Firestore
+      await setDoc(doc(db, "customers", user.uid), {
+        uid: user.uid,
+        name: name,
+        email: email,
+        phone: phone,
+        country: country,
+        tier: 'Silver',
+        status: 'active',
+        created_at: serverTimestamp()
+      });
+
+      showMsg('✅ Account created! Redirecting...', 'success');
+      setTimeout(() => { window.location.href = 'index.html'; }, 1500);
+
+    } catch (error) {
+      console.error(error);
+      if (error.code === 'auth/email-already-in-use') {
+        showMsg('Email already in use. Try logging in.', 'error');
+      } else if (error.code === 'auth/weak-password') {
+        showMsg('Password is too weak.', 'error');
+      } else if (error.code === 'auth/invalid-email') {
+        showMsg('Invalid email address.', 'error');
+      } else {
+        showMsg('Error: ' + error.message, 'error');
+      }
+      btn.disabled = false;
+      btn.textContent = 'Create Account';
+    }
+  };
+
+  function showMsg(text, type) {
+    const msg = document.getElementById('message');
+    msg.style.display = 'block';
+    if (type === 'error') {
+      msg.style.background = '#fee2e2';
+      msg.style.color = '#991b1b';
+    } else {
+      msg.style.background = '#d1fae5';
+      msg.style.color = '#065f46';
+    }
+    msg.textContent = text;
+  }
+
+  window.togglePassword = function (fieldId) {
+    const input = document.getElementById(fieldId);
+    input.type = input.type === 'password' ? 'text' : 'password';
+  };
+</script>
+
+<style>
+  body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #0c4a6e 0%, #082f49 100%);
+    min-height: 100vh;
+  }
+  .signup-card {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+  }
+  .input-field:focus {
+    border-color: #d4a017;
+    box-shadow: 0 0 0 4px rgba(212, 160, 23, 0.15);
+  }
+  .btn-gold {
+    background: linear-gradient(135deg, #d4a017 0%, #b88a10 100%);
+    transition: all 0.3s ease;
+  }
+  .btn-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(212, 160, 23, 0.4);
+  }
+  .btn-gold:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+  }
+</style>
+</head>
+<body class="flex items-center justify-center p-4">
+
+<div class="w-full max-w-md">
+
+  <!-- LOGO -->
+  <div class="text-center mb-8">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="h-24 w-24 mx-auto mb-4">
+      <defs>
+        <linearGradient id="goldLogo" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#d4a017" />
+          <stop offset="50%" style="stop-color:#f5d76e" />
+          <stop offset="100%" style="stop-color:#b88a10" />
+        </linearGradient>
+        <linearGradient id="greenLogo" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#0b3d2e" />
+          <stop offset="100%" style="stop-color:#1a6b4a" />
+        </linearGradient>
+      </defs>
+      <circle cx="100" cy="100" r="95" fill="url(#greenLogo)" stroke="url(#goldLogo)" stroke-width="4"/>
+      <circle cx="100" cy="100" r="85" fill="none" stroke="url(#goldLogo)" stroke-width="1.5"/>
+      <path d="M60 80 Q80 40 120 50 Q130 60 110 80 Q90 100 60 80 Z" fill="url(#goldLogo)"/>
+      <path d="M60 100 Q80 85 100 100 T140 100" fill="none" stroke="url(#goldLogo)" stroke-width="4" stroke-linecap="round"/>
+      <text x="100" y="140" font-family="Inter" font-size="30" font-weight="800" fill="url(#goldLogo)" text-anchor="middle">UNP</text>
+      <text x="100" y="160" font-family="Inter" font-size="7" font-weight="600" fill="url(#goldLogo)" text-anchor="middle">UNIQUE NATURE PARADISE</text>
+    </svg>
+    <h1 class="text-3xl font-extrabold text-white mb-2">Create Account</h1>
+    <p class="text-blue-200 text-sm">Join UNP Tours and unlock exclusive benefits</p>
+  </div>
+
+  <!-- SIGNUP CARD -->
+  <div class="signup-card rounded-3xl p-8 shadow-2xl border-2 border-[#d4a017]">
+
+    <form onsubmit="customerSignup(event)" class="space-y-4">
+
+      <div>
+        <label class="block text-sm font-semibold text-[#082f49] mb-2">👤 Full Name *</label>
+        <input type="text" id="signupName" required placeholder="John Doe" class="input-field w-full px-4 py-3 border-2 border-gray-200 rounded-xl outline-none transition">
+      </div>
+
+      <div>
+        <label class="block text-sm font-semibold text-[#082f49] mb-2">📧 Email *</label>
+        <input type="email" id="signupEmail" required placeholder="your@email.com" class="input-field w-full px-4 py-3 border-2 border-gray-200 rounded-xl outline-none transition">
+      </div>
+
+      <div>
+        <label class="block text-sm font-semibold text-[#082f49] mb-2">📱 Phone / WhatsApp</label>
+        <input type="tel" id="signupPhone" placeholder="+255 712 345 678" class="input-field w-full px-4 py-3 border-2 border-gray-200 rounded-xl outline-none transition">
+      </div>
+
+      <div>
+        <label class="block text-sm font-semibold text-[#082f49] mb-2">🌍 Country</label>
+        <input type="text" id="signupCountry" placeholder="Tanzania" class="input-field w-full px-4 py-3 border-2 border-gray-200 rounded-xl outline-none transition">
+      </div>
+
+      <div>
+        <label class="block text-sm font-semibold text-[#082f49] mb-2">🔑 Password *</label>
+        <div class="relative">
+          <input type="password" id="signupPassword" required minlength="6" placeholder="Min 6 characters" class="input-field w-full px-4 py-3 border-2 border-gray-200 rounded-xl outline-none transition pr-12">
+          <button type="button" onclick="togglePassword('signupPassword')" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-[#0c4a6e] text-xl">👁️</button>
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-sm font-semibold text-[#082f49] mb-2">🔑 Confirm Password *</label>
+        <div class="relative">
+          <input type="password" id="signupConfirmPassword" required minlength="6" placeholder="Repeat password" class="input-field w-full px-4 py-3 border-2 border-gray-200 rounded-xl outline-none transition pr-12">
+          <button type="button" onclick="togglePassword('signupConfirmPassword')" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-[#0c4a6e] text-xl">👁️</button>
+        </div>
+      </div>
+
+      <button type="submit" id="signupBtn" class="btn-gold w-full py-4 rounded-xl text-[#082f49] font-bold text-lg">
+        Create Account
+      </button>
+
+      <div id="message" style="display:none;" class="p-3 rounded-xl text-sm font-semibold text-center"></div>
+
+    </form>
+
+    <div class="flex items-center gap-3 my-6">
+      <div class="flex-1 h-px bg-gray-200"></div>
+      <span class="text-xs text-gray-400 font-semibold">OR</span>
+      <div class="flex-1 h-px bg-gray-200"></div>
+    </div>
+
+    <a href="login.html" class="block w-full text-center bg-[#0c4a6e] text-white py-4 rounded-xl font-bold hover:bg-[#082f49] transition">
+      Already Have an Account? Login
+    </a>
+
+    <div class="text-center mt-6">
+      <a href="index.html" class="text-[#0c4a6e] hover:text-[#d4a017] text-sm font-semibold">← Back to Website</a>
+    </div>
+
+  </div>
+
+  <!-- COPYRIGHT -->
+  <div class="text-center mt-6">
+    <p class="text-blue-200 text-xs">© 2026 UNP Tours. Unique & Natural Paradise.</p>
+  </div>
+
+</div>
+
+</body>
+</html>
