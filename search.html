@@ -1,92 +1,115 @@
 <!DOCTYPE html>
-<html lang="sw">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tafuta Trips | UNP TOURS</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="style.css">
-<meta name="description" content="Tafuta trips - UNP TOURS.">
+<title>Search Trips — UNP TOURS Zanzibar</title>
+<meta name="description" content="Search UNP TOURS trips and experiences in Zanzibar and Tanzania.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://unp.tours/search.html">
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0c4a6e">
+<link rel="icon" type="image/png" href="assets/images/logo.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+
 <style>
-.search-header { background: linear-gradient(135deg, #082f49, #0c4a6e); color: #fff; text-align: center; padding: 70px 20px; border-bottom: 5px solid #d4af37; }
-.search-header h1 { font-size: 2.5rem; color: #d4af37; margin-bottom: 10px; }
-.search-header p { font-size: 1.1rem; color: #ddd; max-width: 700px; margin: 0 auto; }
-.search-box { max-width: 700px; margin: 30px auto; padding: 0 20px; }
-.search-input { width: 100%; padding: 15px 20px; border: 2px solid #d4af37; border-radius: 30px; font-family: 'Poppins', sans-serif; font-size: 1rem; }
-.search-input:focus { outline: none; border-color: #0c4a6e; }
-.trips-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1200px; margin: 30px auto; padding: 0 20px; }
-.trip-card { background: #fff; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.08); border-top: 5px solid #d4af37; transition: transform 0.3s; }
-.trip-card:hover { transform: translateY(-5px); }
-.trip-card .img { height: 160px; background: #0c4a6e; color: #d4af37; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; }
-.trip-card .body { padding: 20px; }
-.trip-card .category { background: #d4af37; color: #082f49; padding: 4px 12px; border-radius: 15px; font-size: 0.75rem; font-weight: 700; display: inline-block; margin-bottom: 10px; }
-.trip-card h3 { color: #082f49; margin-bottom: 10px; font-size: 1.1rem; }
-.trip-card p { color: #555; font-size: 0.88rem; line-height: 1.6; margin-bottom: 10px; }
-.trip-card .btn { background: #d4af37; color: #082f49; padding: 10px 20px; border-radius: 25px; font-weight: 700; text-align: center; display: block; }
-#loading { text-align: center; padding: 40px; color: #777; }
+  body { font-family: 'Inter', sans-serif; background: #f8f9fa; }
+  .trip-card { transition: all 0.3s ease; }
+  .trip-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
 </style>
 </head>
 <body>
 
-<header class="header">
-    <div class="nav-container">
-        <a href="index.html" class="logo-area">
-            <div class="logo-holder"><span class="logo-fallback">UNP<br>LOGO</span></div>
-            <div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
-        </a>
-        <button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="index.html"><i class="fas fa-home"></i> Nyumbani</a></li>
-            <li><a href="trips.html"><i class="fas fa-suitcase-rolling"></i> Trips</a></li>
-            <li><a href="search.html" style="color: #d4af37;"><i class="fas fa-search"></i> Tafuta</a></li>
-            <li><a href="contact.html"><i class="fas fa-envelope"></i> Wasiliana</a></li>
-        </ul>
-    </div>
-</header>
+<!-- ================= NAVBAR ================= -->
+<nav class="fixed top-0 w-full flex justify-between items-center px-5 md:px-12 py-3 z-50 bg-[#0c4a6e] shadow-lg">
+  <a href="index.html" class="flex items-center gap-3">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="h-10 w-10">
+      <defs>
+        <linearGradient id="goldNav" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#d4a017" />
+          <stop offset="50%" style="stop-color:#f5d76e" />
+          <stop offset="100%" style="stop-color:#b88a10" />
+        </linearGradient>
+        <linearGradient id="greenNav" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#0b3d2e" />
+          <stop offset="100%" style="stop-color:#1a6b4a" />
+        </linearGradient>
+      </defs>
+      <circle cx="100" cy="100" r="95" fill="url(#greenNav)" stroke="url(#goldNav)" stroke-width="4"/>
+      <circle cx="100" cy="100" r="85" fill="none" stroke="url(#goldNav)" stroke-width="1.5"/>
+      <path d="M60 80 Q80 40 120 50 Q130 60 110 80 Q90 100 60 80 Z" fill="url(#goldNav)"/>
+      <path d="M60 100 Q80 85 100 100 T140 100" fill="none" stroke="url(#goldNav)" stroke-width="4" stroke-linecap="round"/>
+      <text x="100" y="140" font-family="Inter, sans-serif" font-size="30" font-weight="800" fill="url(#goldNav)" text-anchor="middle" letter-spacing="2">UNP</text>
+    </svg>
+    <span class="font-extrabold text-white hidden sm:block">UNP TOURS</span>
+  </a>
+  <div class="flex items-center gap-4">
+    <a href="index.html" class="text-white font-semibold hover:text-[#d4a017] transition hidden sm:block">Home</a>
+    <a href="index.html" class="text-white font-semibold hover:text-[#d4a017] transition">← Back</a>
+  </div>
+</nav>
 
-<section class="search-header">
-    <h1><i class="fas fa-search"></i> Tafuta Trips</h1>
-    <p>Tafuta trips kwa jina au kategoria.</p>
+<!-- ================= HERO ================= -->
+<section class="pt-32 pb-16 bg-gradient-to-br from-[#0c4a6e] to-[#082f49] text-white border-b-4 border-[#d4a017]">
+  <div class="max-w-4xl mx-auto text-center px-5">
+    <div class="text-6xl mb-4">🔍</div>
+    <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Search Trips</h1>
+    <p class="text-lg md:text-xl text-blue-200">Search for trips by name or category.</p>
+  </div>
 </section>
 
-<div class="search-box">
-    <input type="text" id="searchInput" class="search-input" placeholder="Andika jina la trip..." onkeyup="searchTrips()">
-</div>
+<!-- ================= CONTENT ================= -->
+<main class="max-w-6xl mx-auto px-5 py-16">
 
-<div id="loading">Inapakia trips...</div>
+  <!-- SEARCH BOX -->
+  <div class="max-w-2xl mx-auto mb-12">
+    <input 
+      type="text" 
+      id="searchInput" 
+      onkeyup="searchTrips()" 
+      placeholder="🔍 Type a trip name or category..." 
+      class="w-full px-6 py-4 border-2 border-[#0c4a6e] rounded-full text-lg outline-none focus:border-[#d4a017] transition shadow-lg"
+    >
+  </div>
 
-<section class="trips-grid" id="tripsGrid"></section>
+  <!-- LOADING -->
+  <div id="loading" class="text-center text-gray-500 py-12">Loading trips...</div>
 
-<footer class="footer">
-    <div class="footer-content">
-        <div>
-            <h3>UNIQUE NATURE PARADISE (UNP)</h3>
-            <p style="font-size: 0.9rem;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p>
-        </div>
-        <div>
-            <h4>Direct Contact</h4>
-            <p style="font-size: 0.9rem;"><i class="fab fa-whatsapp" style="color: #d4af37;"></i> +255 655 728 982</p>
-            <p style="font-size: 0.9rem;"><i class="fas fa-envelope" style="color: #d4af37;"></i> salimnasoro11@gmail.com</p>
-        </div>
-    </div>
+  <!-- TRIPS GRID -->
+  <div id="tripsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+  </div>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-black text-gray-300 py-10 px-5 border-t-4 border-[#d4a017]">
+  <div class="max-w-4xl mx-auto text-center">
+    <p class="font-bold text-[#d4a017] mb-2">UNP TOURS — Unique & Natural Paradise</p>
+    <p class="text-sm">Nungwi, Zanzibar, Tanzania | WhatsApp: +255 655 728 982</p>
+    <p class="text-xs mt-4 text-gray-500">© 2026 UNP Tours. All rights reserved.</p>
+  </div>
 </footer>
 
-<a href="https://wa.me/255655728982" class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<!-- WhatsApp Float -->
+<a href="https://wa.me/255655728982" target="_blank" class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] rounded-full flex justify-center items-center text-3xl text-white shadow-lg hover:scale-110 transition z-50">
+  💬
+</a>
 
+<!-- ================= FIREBASE & SEARCH LOGIC ================= -->
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
 import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyD2YtPFL2L_ZwAKdSYpXtvLt8gJUm2IX6s",
-    authDomain: "unptours.firebaseapp.com",
-    projectId: "unptours",
-    storageBucket: "unptours.firebasestorage.app",
-    messagingSenderId: "233326851661",
-    appId: "1:233326851661:web:354156110a5cee29904e04"
+    apiKey: "AIzaSyCe5-MZMASwDZtIN3zfLvwlrn0U2ObC17s",
+    authDomain: "soul-unp-tour.firebaseapp.com",
+    projectId: "soul-unp-tour",
+    storageBucket: "soul-unp-tour.firebasestorage.app",
+    messagingSenderId: "503119437259",
+    appId: "1:503119437259:web:aaa65be89a8d77d5abaa4e",
+    measurementId: "G-EC65GSRRKM"
 };
 
 const app = initializeApp(firebaseConfig);
@@ -105,7 +128,7 @@ async function loadTrips() {
         loading.style.display = 'none';
         renderTrips(allTrips);
     } catch (e) {
-        loading.textContent = 'Kosa: ' + e.message;
+        loading.textContent = 'Error: ' + e.message;
     }
 }
 
@@ -113,18 +136,21 @@ function renderTrips(trips) {
     const grid = document.getElementById('tripsGrid');
     grid.innerHTML = '';
     if (trips.length === 0) {
-        grid.innerHTML = '<p style="text-align:center; grid-column: 1/-1; color:#777;">Hakuna trips zilizopatikana.</p>';
+        grid.innerHTML = '<p class="text-center col-span-full text-gray-500 py-12">No trips found matching your search.</p>';
         return;
     }
     trips.forEach(trip => {
         grid.innerHTML += `
-            <div class="trip-card">
-                <div class="img"><i class="fas fa-map-marked-alt"></i></div>
-                <div class="body">
-                    <span class="category">${trip.category || 'Trip'}</span>
-                    <h3>${trip.name || 'Trip'}</h3>
-                    <p>${trip.description || ''}</p>
-                    <a href="trip-detail.html?id=${trip.id}" class="btn">Ona Zaidi</a>
+            <div class="trip-card bg-white rounded-2xl overflow-hidden shadow-lg border-t-4 border-[#d4a017] flex flex-col">
+                <div class="h-52 overflow-hidden">
+                    <img src="${trip.image || 'assets/images/nungwi-beach-paradise.jpg'}" alt="${trip.name}" class="w-full h-full object-cover">
+                </div>
+                <div class="p-6 flex-grow flex flex-col">
+                    <span class="bg-[#d4a017] text-[#082f49] text-xs font-bold px-3 py-1 rounded-full self-start mb-3">${trip.category || 'Trip'}</span>
+                    <h3 class="text-xl font-bold text-[#082f49] mb-2">${trip.name || 'Trip'}</h3>
+                    <p class="text-gray-600 text-sm mb-4 flex-grow">${trip.description || 'Experience the best of Zanzibar with UNP Tours.'}</p>
+                    <p class="text-sm text-[#0c4a6e] font-semibold mb-4">📍 ${trip.location || 'Zanzibar'}</p>
+                    <a href="booking.html?trip=${encodeURIComponent(trip.name)}" class="block text-center bg-[#0c4a6e] text-white py-3 rounded-xl font-bold hover:bg-[#082f49] transition">Book Now →</a>
                 </div>
             </div>
         `;
@@ -144,11 +170,5 @@ window.searchTrips = function() {
 window.addEventListener('load', loadTrips);
 </script>
 
-<script>
-  const menuToggleBtn = document.getElementById('menuToggleBtn');
-  const navLinks = document.getElementById('navLinks');
-  if(menuToggleBtn) { menuToggleBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); }); }
-</script>
-
 </body>
-  </html>
+    </html>
