@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog & Stories — UNP TOURS Zanzibar</title>
+<meta name="description" content="Read stories, travel tips, and news from UNP TOURS — Zanzibar's premier tour operator.">
+<meta name="robots" content="index, follow">
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0c4a6e">
+<link rel="icon" type="image/png" href="assets/images/logo.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+  import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyCe5-MZMASwDZtIN3zfLvwlrn0U2ObC17s",
+    authDomain: "soul-unp-tour.firebaseapp.com",
+    projectId: "soul-unp-tour",
+    storageBucket: "soul-unp-tour.firebasestorage.app",
+    messagingSenderId: "503119437259",
+    appId: "1:503119437259:web:aaa65be89a8d77d5abaa4e",
+    measurementId: "G-EC65GSRRKM"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  // Blog articles (mock data — unaweza kuweka Firebase baadaye)
+  const articles = [
+    {
+      title: "10 Best Beaches in Zanzibar",
+      category: "Travel Tips",
+      date: "Oct 2026",
+      image: "assets/images/nungwi-beach-paradise.jpg",
+      excerpt: "Discover the most beautiful beaches Zanzibar has to offer — from Nungwi to Paje."
+    },
+    {
+      title: "Safari Blue: The Complete Guide",
+      category: "Activities",
+      date: "Oct 2026",
+      image: "assets/images/safari-blue-dhow.jpg",
+      excerpt: "Everything you need to know about Zanzibar's most famous boat tour."
+    },
+    {
+      title: "When to Visit Zanzibar — A Weather Guide",
+      category: "Travel Tips",
+      date: "Sep 2026",
+      image: "assets/images/our-culture-zanzibar.jpg",
+      excerpt: "The best months to visit Zanzibar based on weather, crowds, and prices."
+    },
+    {
+      title: "The Great Migration Explained",
+      category: "Safari",
+      date: "Sep 2026",
+      image: "assets/images/serengeti.jpg",
+      excerpt: "What, when, where, and why — the greatest wildlife show on Earth."
+    },
+    {
+      title: "Jozani Forest: Meet the Red Colobus Monkeys",
+      category: "Nature",
+      date: "Aug 2026",
+      image: "assets/images/jozani-forest.jpg",
+      excerpt: "A journey into Zanzibar's oldest and most magical forest."
+    },
+    {
+      title: "Stone Town in One Day: A Walking Guide",
+      category: "Culture",
+      date: "Aug 2026",
+      image: "assets/images/our-culture-zanzibar.jpg",
+      excerpt: "Explore Zanzibar's historic UNESCO World Heritage Site on foot."
+    }
+  ];
+
+  function renderArticles() {
+    const container = document.getElementById('blogGrid');
+    container.innerHTML = articles.map(a => `
+      <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition duration-300 border border-gray-100 group">
+        <div class="h-56 overflow-hidden relative">
+          <img src="${a.image}" alt="${a.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+          <span class="absolute top-3 left-3 bg-[#0c4a6e] text-white text-xs font-bold px-3 py-1 rounded-full">${a.category}</span>
+        </div>
+        <div class="p-6">
+          <p class="text-xs text-gray-500 mb-2">📅 ${a.date}</p>
+          <h3 class="text-xl font-bold text-[#082f49] mb-2">${a.title}</h3>
+          <p class="text-gray-600 text-sm mb-4">${a.excerpt}</p>
+          <a href="#" class="text-[#0c4a6e] font-semibold hover:text-[#d4a017] transition">Read More →</a>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  window.addEventListener('load', renderArticles);
+</script>
+
+<style>
+  body { font-family: 'Inter', sans-serif; background: #f8f9fa; }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="fixed top-0 w-full flex justify-between items-center px-5 md:px-12 py-3 z-50 bg-[#0c4a6e] shadow-lg">
+  <a href="index.html" class="flex items-center gap-3">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="h-10 w-10">
+      <circle cx="100" cy="100" r="95" fill="#0b3d2e" stroke="#d4a017" stroke-width="4"/>
+      <text x="100" y="140" font-family="Inter" font-size="30" font-weight="800" fill="#d4a017" text-anchor="middle">UNP</text>
+    </svg>
+    <span class="font-extrabold text-white hidden sm:block">UNP TOURS</span>
+  </a>
+  <a href="index.html" class="text-white font-semibold hover:text-[#d4a017] transition">← Back to Home</a>
+</nav>
+
+<!-- HERO -->
+<section class="pt-32 pb-16 bg-gradient-to-br from-[#0c4a6e] to-[#082f49] text-white">
+  <div class="max-w-4xl mx-auto text-center px-5">
+    <div class="text-5xl mb-4">📚</div>
+    <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Blog & Stories</h1>
+    <p class="text-lg md:text-xl text-blue-200">Travel tips, guides, and stories from Zanzibar.</p>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<main class="max-w-7xl mx-auto px-5 py-16">
+
+  <div id="blogGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="text-center py-12 text-gray-400 col-span-full">Loading articles...</div>
+  </div>
+
+</main>
+
+<!-- NEWSLETTER -->
+<section class="max-w-3xl mx-auto px-5 pb-16">
+  <div class="bg-gradient-to-r from-[#0c4a6e] to-[#082f49] rounded-2xl p-8 text-center text-white border-2 border-[#d4a017]/30">
+    <h2 class="text-2xl font-extrabold text-[#d4a017] mb-3">📧 Join Our Newsletter</h2>
+    <p class="text-blue-200 mb-5">Get the latest travel tips and offers straight to your inbox.</p>
+    <form onsubmit="event.preventDefault(); alert('✅ Subscribed!');" class="flex flex-col md:flex-row gap-3 max-w-md mx-auto">
+      <input type="email" required placeholder="your@email.com" class="flex-1 px-4 py-3 rounded-xl text-gray-900 outline-none">
+      <button type="submit" class="bg-[#d4a017] text-[#082f49] px-6 py-3 rounded-xl font-bold hover:bg-[#b88a10] transition">
+        Subscribe
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-black text-gray-300 py-10 px-5 border-t-4 border-[#d4a017]">
+  <div class="max-w-4xl mx-auto text-center">
+    <p class="font-bold text-[#d4a017] mb-2">UNP TOURS — Unique & Natural Paradise</p>
+    <p class="text-sm">Nungwi, Zanzibar, Tanzania | WhatsApp: +255 655 728 982</p>
+    <p class="text-xs mt-4 text-gray-500">© 2026 UNP Tours. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/255655728982" target="_blank" class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] rounded-full flex justify-center items-center text-3xl text-white shadow-lg hover:scale-110 transition z-50">
+  💬
+</a>
+
+</body>
+</html>
