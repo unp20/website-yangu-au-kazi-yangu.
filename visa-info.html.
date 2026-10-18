@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visa Information — UNP TOURS Zanzibar</title>
+<meta name="description" content="Everything you need to know about getting a visa for Tanzania and Zanzibar with UNP TOURS.">
+<meta name="robots" content="index, follow">
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0c4a6e">
+<link rel="icon" type="image/png" href="assets/images/logo.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+  body { font-family: 'Inter', sans-serif; background: #f8f9fa; }
+  .visa-table th { background: #0c4a6e; color: white; padding: 12px; text-align: left; font-size: 0.85rem; }
+  .visa-table td { padding: 12px; border-bottom: 1px solid #eee; font-size: 0.9rem; color: #4b5563; }
+  .visa-table tr:last-child td { border-bottom: none; }
+  .info-box { background: #f0f9ff; padding: 20px; border-radius: 10px; border-left: 4px solid #d4a017; margin: 15px 0; }
+</style>
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="fixed top-0 w-full flex justify-between items-center px-5 md:px-12 py-3 z-50 bg-[#0c4a6e] shadow-lg">
+  <a href="index.html" class="flex items-center gap-3">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="h-10 w-10">
+      <defs>
+        <linearGradient id="goldNav" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#d4a017" />
+          <stop offset="50%" style="stop-color:#f5d76e" />
+          <stop offset="100%" style="stop-color:#b88a10" />
+        </linearGradient>
+        <linearGradient id="greenNav" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#0b3d2e" />
+          <stop offset="100%" style="stop-color:#1a6b4a" />
+        </linearGradient>
+      </defs>
+      <circle cx="100" cy="100" r="95" fill="url(#greenNav)" stroke="url(#goldNav)" stroke-width="4"/>
+      <circle cx="100" cy="100" r="85" fill="none" stroke="url(#goldNav)" stroke-width="1.5"/>
+      <path d="M60 80 Q80 40 120 50 Q130 60 110 80 Q90 100 60 80 Z" fill="url(#goldNav)"/>
+      <path d="M60 100 Q80 85 100 100 T140 100" fill="none" stroke="url(#goldNav)" stroke-width="4" stroke-linecap="round"/>
+      <text x="100" y="140" font-family="Inter, sans-serif" font-size="30" font-weight="800" fill="url(#goldNav)" text-anchor="middle" letter-spacing="2">UNP</text>
+    </svg>
+    <span class="font-extrabold text-white hidden sm:block">UNP TOURS</span>
+  </a>
+  <div class="flex items-center gap-4">
+    <a href="index.html" class="text-white font-semibold hover:text-[#d4a017] transition hidden sm:block">Home</a>
+    <a href="index.html" class="text-white font-semibold hover:text-[#d4a017] transition">← Back</a>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<section class="pt-32 pb-16 bg-gradient-to-br from-[#0c4a6e] to-[#082f49] text-white border-b-4 border-[#d4a017]">
+  <div class="max-w-4xl mx-auto text-center px-5">
+    <div class="text-6xl mb-4">🛂</div>
+    <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Visa Information</h1>
+    <p class="text-lg md:text-xl text-blue-200">Everything you need to know about getting a visa for Tanzania and Zanzibar.</p>
+  </div>
+</section>
+
+<!-- ================= CONTENT ================= -->
+<main class="max-w-4xl mx-auto px-5 py-16">
+  <div class="bg-white rounded-2xl p-8 shadow-lg border-l-4 border-[#0c4a6e]">
+
+    <h2 class="text-2xl font-extrabold text-[#082f49] mb-4 border-b pb-2">Visa for Tanzania</h2>
+    <p class="text-gray-600 mb-6 leading-relaxed">Most tourists need a visa to enter Tanzania. You can obtain a visa through two methods:</p>
+
+    <div class="info-box">
+      <h4 class="text-lg font-bold text-[#082f49] mb-2">1. Online Visa (e-Visa)</h4>
+      <p class="text-gray-600 text-sm">Visit the official website <strong>visa.immigration.go.tz</strong> to apply for your visa online. It is fast, easy, and highly recommended.</p>
+    </div>
+
+    <div class="info-box">
+      <h4 class="text-lg font-bold text-[#082f49] mb-2">2. Visa on Arrival</h4>
+      <p class="text-gray-600 text-sm">You can obtain a visa upon arrival at the airport in Tanzania. However, please note that this process can take a long time due to queues.</p>
+    </div>
+
+    <h2 class="text-2xl font-extrabold text-[#082f49] mt-10 mb-4 border-b pb-2">Visa Fees</h2>
+    <div class="overflow-x-auto rounded-xl border border-gray-200">
+      <table class="w-full visa-table">
+        <thead>
+          <tr>
+            <th>Visa Type</th>
+            <th>Cost</th>
+            <th>Duration</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Single Entry Visa</td>
+            <td class="font-bold text-[#0c4a6e]">$50 USD</td>
+            <td>90 Days</td>
+          </tr>
+          <tr>
+            <td>Multiple Entry Visa</td>
+            <td class="font-bold text-[#0c4a6e]">$100 USD</td>
+            <td>90 Days</td>
+          </tr>
+          <tr>
+            <td>Transit Visa</td>
+            <td class="font-bold text-[#0c4a6e]">$30 USD</td>
+            <td>7 Days</td>
+          </tr>
+          <tr>
+            <td>US Citizens Visa</td>
+            <td class="font-bold text-[#0c4a6e]">$100 USD</td>
+            <td>90 Days</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 class="text-2xl font-extrabold text-[#082f49] mt-10 mb-4 border-b pb-2">Visa Exempt Countries</h2>
+    <ul class="list-disc pl-6 space-y-2 text-gray-600">
+      <li>Kenya</li>
+      <li>Uganda</li>
+      <li>Rwanda</li>
+      <li>Burundi</li>
+      <li>South Sudan</li>
+      <li>Zambia</li>
+      <li>Malawi</li>
+      <li>Mozambique</li>
+    </ul>
+
+    <h2 class="text-2xl font-extrabold text-[#082f49] mt-10 mb-4 border-b pb-2">Visa for Zanzibar</h2>
+    <p class="text-gray-600 leading-relaxed mb-6">Zanzibar is part of Tanzania — therefore, a Tanzanian visa is valid for Zanzibar as well. There is no separate visa required for Zanzibar.</p>
+
+    <h2 class="text-2xl font-extrabold text-[#082f49] mt-10 mb-4 border-b pb-2">Required Documents</h2>
+    <ul class="list-disc pl-6 space-y-2 text-gray-600">
+      <li>Valid passport (6+ months validity)</li>
+      <li>Passport-sized photograph</li>
+      <li>Return flight ticket</li>
+      <li>Hotel booking confirmation</li>
+      <li>Proof of sufficient funds</li>
+      <li>Completed application form</li>
+    </ul>
+
+    <h2 class="text-2xl font-extrabold text-[#082f49] mt-10 mb-4 border-b pb-2">Visa Tips</h2>
+    <ul class="list-disc pl-6 space-y-2 text-gray-600">
+      <li>Apply for your visa early — at least 30 days before your trip.</li>
+      <li>Ensure your passport is valid and not expiring soon.</li>
+      <li>Keep a photocopy of your passport.</li>
+      <li>Always check the official Tanzania Embassy website for updates.</li>
+    </ul>
+
+    <div class="info-box mt-8 border-l-4 border-red-500 bg-red-50">
+      <h4 class="text-lg font-bold text-red-700 mb-2">Important Notice</h4>
+      <p class="text-red-600 text-sm">Visa information can change. Please check the official Tanzania Embassy website or <strong>visa.immigration.go.tz</strong> for the most recent information.</p>
+    </div>
+
+  </div>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-black text-gray-300 py-10 px-5 border-t-4 border-[#d4a017]">
+  <div class="max-w-4xl mx-auto text-center">
+    <p class="font-bold text-[#d4a017] mb-2">UNP TOURS — Unique & Natural Paradise</p>
+    <p class="text-sm">Nungwi, Zanzibar, Tanzania | WhatsApp: +255 655 728 982</p>
+    <p class="text-xs mt-4 text-gray-500">© 2026 UNP Tours. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/255655728982" target="_blank" class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] rounded-full flex justify-center items-center text-3xl text-white shadow-lg hover:scale-110 transition z-50">
+  💬
+</a>
+
+</body>
+</html>
