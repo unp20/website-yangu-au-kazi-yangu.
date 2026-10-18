@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shop — UNP TOURS Zanzibar</title>
-<meta name="description" content="Buy unique UNP Flame clothing and UNP Souvenirs from Zanzibar.">
+<meta name="description" content="Buy unique UNP Flame clothing and authentic Zanzibar cultural souvenirs.">
 <meta name="robots" content="index, follow">
 
 <link rel="manifest" href="manifest.json">
@@ -17,7 +17,7 @@
 <style>
   body { font-family: 'Inter', sans-serif; background: #f8f9fa; }
   .product-card { transition: all 0.3s ease; }
-  .product-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
+  .product-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
 </style>
 </head>
 <body>
@@ -56,7 +56,7 @@
   <div class="max-w-4xl mx-auto text-center px-5">
     <div class="text-6xl mb-4">🛍️</div>
     <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Our Shop</h1>
-    <p class="text-lg md:text-xl text-blue-200">Buy unique UNP Flame clothing and UNP Souvenirs handcrafted in Zanzibar.</p>
+    <p class="text-lg md:text-xl text-blue-200">Buy unique UNP Flame clothing and authentic Zanzibar cultural souvenirs.</p>
   </div>
 </section>
 
@@ -66,7 +66,7 @@
   <!-- TABS -->
   <div class="flex justify-center gap-3 mb-12 flex-wrap">
     <button class="tab-btn active px-6 py-3 rounded-full font-bold bg-[#0c4a6e] text-white border-2 border-[#0c4a6e] transition" data-target="flame">👕 UNP Flame (Clothing)</button>
-    <button class="tab-btn px-6 py-3 rounded-full font-bold bg-white text-[#0c4a6e] border-2 border-[#0c4a6e] hover:bg-[#0c4a6e] hover:text-white transition" data-target="souvenirs">🎁 UNP Souvenirs (Gifts)</button>
+    <button class="tab-btn px-6 py-3 rounded-full font-bold bg-white text-[#0c4a6e] border-2 border-[#0c4a6e] hover:bg-[#0c4a6e] hover:text-white transition" data-target="souvenirs">🎁 Cultural Souvenirs</button>
   </div>
 
   <!-- FLAME SECTION -->
@@ -80,7 +80,7 @@
   <!-- SOUVENIRS SECTION -->
   <div class="tab-content hidden" id="souvenirs">
     <div class="bg-[#f0f9ff] p-4 rounded-xl border-l-4 border-[#d4a017] mb-8 text-center">
-      <p class="text-gray-700"><strong>UNP SOUVENIRS</strong> — Handcrafted souvenirs to remember your Zanzibar trip.</p>
+      <p class="text-gray-700"><strong>UNP SOUVENIRS</strong> — Handcrafted cultural treasures to remember your Zanzibar trip.</p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="souvenirsGrid"></div>
   </div>
@@ -103,24 +103,30 @@
 
 <!-- ================= JAVASCRIPT ================= -->
 <script>
-    // Bidhaa za UNP FLAME (Nguo)
+    // BIDHAA ZA UNP FLAME (Nguo) - Zimeongezwa T-shirts na nguo za kitamaduni
     const flameProducts = [
-        { name: "UNP Flame T-Shirt", desc: "Premium black t-shirt with the UNP logo. High-quality cotton.", price: "$25", image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&q=80" },
-        { name: "UNP Flame Hoodie", desc: "Luxury hoodie for warm comfort and a unique design.", price: "$45", image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=600&q=80" },
-        { name: "UNP Cap", desc: "Stylish cap with the UNP logo, perfect for safaris.", price: "$15", image: "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=600&q=80" },
-        { name: "UNP Flame Jacket", desc: "Luxury jacket for evening safaris and cool weather.", price: "$65", image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&q=80" },
-        { name: "UNP Trousers", desc: "Comfortable trousers for safaris and city walks.", price: "$35", image: "https://images.unsplash.com/photo-1542272604-787c3835535d?w=600&q=80" },
-        { name: "UNP Shoes", desc: "Durable and stylish UNP TOURS shoes.", price: "$55", image: "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&q=80" }
+        { name: "UNP Flame Classic T-Shirt", desc: "Premium black t-shirt with the UNP logo. 100% cotton, perfect for daily wear.", price: "$25", image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&q=80" },
+        { name: "UNP Flame White T-Shirt", desc: "White t-shirt with gold UNP logo. Lightweight and breathable for Zanzibar heat.", price: "$22", image: "https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=600&q=80" },
+        { name: "UNP Flame Hoodie", desc: "Luxury hoodie for warm comfort and a unique design. Perfect for cool evenings.", price: "$45", image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=600&q=80" },
+        { name: "UNP Safari Cap", desc: "Stylish cap with the UNP logo, perfect for safaris and beach days.", price: "$15", image: "https://images.unsplash.com/photo-1588850561407-ed78c282e89b?w=600&q=80" },
+        { name: "UNP Flame Jacket", desc: "Luxury jacket for evening safaris and cool weather. Water-resistant.", price: "$65", image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=600&q=80" },
+        { name: "UNP Flame Trousers", desc: "Comfortable trousers for safaris and city walks. Lightweight fabric.", price: "$35", image: "https://images.unsplash.com/photo-1542272604-787c3835535d?w=600&q=80" },
+        { name: "UNP Flame Shoes", desc: "Durable and stylish UNP TOURS shoes. Perfect for all terrains.", price: "$55", image: "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=600&q=80" },
+        { name: "UNP Beach Shirt", desc: "Colorful beach shirt with Zanzibar-inspired patterns. Perfect for the coast.", price: "$30", image: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=600&q=80" },
+        { name: "UNP Kitenge Dress", desc: "Beautiful traditional Kitenge dress with UNP touch. Authentic African fabric.", price: "$75", image: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=600&q=80" }
     ];
 
-    // Bidhaa za UNP SOUVENIRS (Vitu vya Utalii)
+    // BIDHAA ZA UNP SOUVENIRS (Vitu vya Kitamaduni vya Zanzibar)
     const souvenirProducts = [
-        { name: "Banana Leaf Art", desc: "Handcrafted art made from banana leaves.", price: "$30", image: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=600&q=80" },
-        { name: "Handwoven Basket", desc: "Handcrafted basket made from bamboo.", price: "$20", image: "https://images.unsplash.com/photo-1595348020949-87cdfbb44174?w=600&q=80" },
-        { name: "Zanzibar Decor", desc: "Unique Zanzibar decorations for your home.", price: "$18", image: "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?w=600&q=80" },
-        { name: "Zanzibar Spices", desc: "Authentic spices from Zanzibar (cloves, cinnamon).", price: "$12", image: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&q=80" },
-        { name: "Zanzibar Photo Print", desc: "Beautiful photo of Zanzibar's beaches as a souvenir.", price: "$25", image: "https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?w=600&q=80" },
-        { name: "Zanzibar Gift Card", desc: "A nice souvenir card from Zanzibar.", price: "$8", image: "https://images.unsplash.com/photo-1607344645866-009c320b63e0?w=600&q=80" }
+        { name: "Handmade Banana Leaf Art", desc: "Traditional Zanzibar art made from banana leaves. Unique piece for your home.", price: "$30", image: "https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=600&q=80" },
+        { name: "Zanzibar Handwoven Basket", desc: "Authentic handwoven basket made from local bamboo. Traditional craft.", price: "$20", image: "https://images.unsplash.com/photo-1595348020949-87cdfbb44174?w=600&q=80" },
+        { name: "Zanzibar Carved Wooden Bowl", desc: "Hand-carved wooden bowl by local artisans. Beautiful traditional design.", price: "$25", image: "https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=600&q=80" },
+        { name: "Zanzibar Spice Set", desc: "Authentic Zanzibar spices (cloves, cinnamon, cardamom). A taste of the island.", price: "$12", image: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=600&q=80" },
+        { name: "Zanzibar Cultural Painting", desc: "Original painting of Zanzibar culture by local artist. One of a kind.", price: "$45", image: "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=600&q=80" },
+        { name: "Zanzibar Souvenir Photo Print", desc: "Beautiful framed photo of Zanzibar's iconic beaches and Stone Town.", price: "$25", image: "https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?w=600&q=80" },
+        { name: "Zanzibar Handmade Beaded Necklace", desc: "Colorful beaded necklace made by local Maasai artisans. Authentic jewelry.", price: "$18", image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=600&q=80" },
+        { name: "Zanzibar Kanga Fabric", desc: "Traditional Kanga fabric with Swahili proverbs. Authentic Zanzibar textile.", price: "$20", image: "https://images.unsplash.com/photo-1590736969955-71cc94901144?w=600&q=80" },
+        { name: "Zanzibar Carved Door Miniature", desc: "Miniature replica of Zanzibar's famous carved wooden doors.", price: "$35", image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" }
     ];
 
     function renderProducts(products, containerId) {
@@ -172,4 +178,4 @@
 </script>
 
 </body>
-</html>
+            </html>
