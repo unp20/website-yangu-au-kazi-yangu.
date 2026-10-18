@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Membership — UNP TOURS Zanzibar</title>
+<meta name="description" content="Join UNP TOURS VIP Membership — Silver, Gold, and Platinum tiers with exclusive benefits.">
+<meta name="robots" content="index, follow">
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0c4a6e">
+<link rel="icon" type="image/png" href="assets/images/logo.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+  body { font-family: 'Inter', sans-serif; background: #f8f9fa; }
+  .tier-card { transition: all 0.3s ease; }
+  .tier-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="fixed top-0 w-full flex justify-between items-center px-5 md:px-12 py-3 z-50 bg-[#0c4a6e] shadow-lg">
+  <a href="index.html" class="flex items-center gap-3">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="h-10 w-10">
+      <circle cx="100" cy="100" r="95" fill="#0b3d2e" stroke="#d4a017" stroke-width="4"/>
+      <text x="100" y="140" font-family="Inter" font-size="30" font-weight="800" fill="#d4a017" text-anchor="middle">UNP</text>
+    </svg>
+    <span class="font-extrabold text-white hidden sm:block">UNP TOURS</span>
+  </a>
+  <a href="index.html" class="text-white font-semibold hover:text-[#d4a017] transition">← Back to Home</a>
+</nav>
+
+<!-- HERO -->
+<section class="pt-32 pb-16 bg-gradient-to-br from-[#0c4a6e] to-[#082f49] text-white">
+  <div class="max-w-4xl mx-auto text-center px-5">
+    <div class="text-5xl mb-4">👑</div>
+    <h1 class="text-4xl md:text-6xl font-extrabold mb-4">VIP Membership</h1>
+    <p class="text-lg md:text-xl text-blue-200">Unlock exclusive benefits with UNP TOURS membership tiers.</p>
+  </div>
+</section>
+
+<!-- TIERS -->
+<main class="max-w-7xl mx-auto px-5 py-16">
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+    <!-- Silver -->
+    <div class="tier-card bg-white rounded-3xl overflow-hidden shadow-md border-t-4 border-gray-400">
+      <div class="bg-gradient-to-r from-gray-400 to-gray-500 p-8 text-center text-white">
+        <div class="text-5xl mb-3">🥈</div>
+        <h3 class="text-2xl font-extrabold">Silver</h3>
+        <p class="text-sm opacity-90">Starter Tier</p>
+      </div>
+      <div class="p-8">
+        <div class="text-center mb-6">
+          <span class="text-5xl font-extrabold text-[#082f49]">FREE</span>
+        </div>
+        <ul class="space-y-3 text-sm text-gray-600 mb-8">
+          <li class="flex items-center gap-2">✅ Browse all trips</li>
+          <li class="flex items-center gap-2">✅ Request quotes</li>
+          <li class="flex items-center gap-2">✅ Email notifications</li>
+          <li class="flex items-center gap-2">❌ No discount</li>
+          <li class="flex items-center gap-2">❌ No VIP benefits</li>
+        </ul>
+        <a href="contact.html" class="block text-center bg-gray-200 text-gray-800 py-3 rounded-xl font-bold hover:bg-gray-300 transition">
+          Get Started Free
+        </a>
+      </div>
+    </div>
+
+    <!-- Gold (Popular) -->
+    <div class="tier-card bg-white rounded-3xl overflow-hidden shadow-2xl border-4 border-[#d4a017] transform md:scale-105 relative">
+      <span class="absolute top-0 right-0 bg-[#d4a017] text-[#082f49] text-xs font-bold px-4 py-2 rounded-bl-xl">POPULAR</span>
+      <div class="bg-gradient-to-r from-[#d4a017] to-[#b88a10] p-8 text-center text-[#082f49]">
+        <div class="text-5xl mb-3">🥇</div>
+        <h3 class="text-2xl font-extrabold">Gold</h3>
+        <p class="text-sm opacity-90">Best Value</p>
+      </div>
+      <div class="p-8">
+        <div class="text-center mb-6">
+          <span class="text-5xl font-extrabold text-[#082f49]">$50</span>
+          <span class="text-sm text-gray-500">/year</span>
+        </div>
+        <ul class="space-y-3 text-sm text-gray-600 mb-8">
+          <li class="flex items-center gap-2">✅ All Silver benefits</li>
+          <li class="flex items-center gap-2">✅ <strong>10% off all trips</strong></li>
+          <li class="flex items-center gap-2">✅ Priority booking</li>
+          <li class="flex items-center gap-2">✅ Exclusive offers</li>
+          <li class="flex items-center gap-2">✅ Dedicated WhatsApp support</li>
+        </ul>
+        <a href="contact.html" class="block text-center bg-gradient-to-r from-[#d4a017] to-[#b88a10] text-[#082f49] py-3 rounded-xl font-bold hover:shadow-lg transition">
+          Join Gold
+        </a>
+      </div>
+    </div>
+
+    <!-- Platinum -->
+    <div class="tier-card bg-white rounded-3xl overflow-hidden shadow-md border-t-4 border-[#0c4a6e]">
+      <div class="bg-gradient-to-r from-[#0c4a6e] to-[#082f49] p-8 text-center text-white">
+        <div class="text-5xl mb-3">💎</div>
+        <h3 class="text-2xl font-extrabold">Platinum</h3>
+        <p class="text-sm opacity-90">VIP Luxury</p>
+      </div>
+      <div class="p-8">
+        <div class="text-center mb-6">
+          <span class="text-5xl font-extrabold text-[#082f49]">$500</span>
+          <span class="text-sm text-gray-500">/year</span>
+        </div>
+        <ul class="space-y-3 text-sm text-gray-600 mb-8">
+          <li class="flex items-center gap-2">✅ All Gold benefits</li>
+          <li class="flex items-center gap-2">✅ <strong>25% off all trips</strong></li>
+          <li class="flex items-center gap-2">✅ Private butler service</li>
+          <li class="flex items-center gap-2">✅ VIP airport transfers</li>
+          <li class="flex items-center gap-2">✅ Secret Garden access</li>
+          <li class="flex items-center gap-2">✅ Free luxury gifts</li>
+        </ul>
+        <a href="contact.html" class="block text-center bg-gradient-to-r from-[#0c4a6e] to-[#082f49] text-white py-3 rounded-xl font-bold hover:shadow-lg transition">
+          Join Platinum
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BENEFITS SECTION -->
+  <section class="mt-16">
+    <h2 class="text-3xl font-extrabold text-[#082f49] text-center mb-8">Why Join UNP Membership?</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <div class="bg-white rounded-2xl p-6 shadow-md border-l-4 border-[#0c4a6e]">
+        <div class="text-4xl mb-3">💰</div>
+        <h3 class="font-bold text-[#082f49] mb-2">Save Money</h3>
+        <p class="text-sm text-gray-600">Up to 25% off all bookings — save hundreds on your Zanzibar adventure.</p>
+      </div>
+
+      <div class="bg-white rounded-2xl p-6 shadow-md border-l-4 border-[#d4a017]">
+        <div class="text-4xl mb-3">🎁</div>
+        <h3 class="font-bold text-[#082f49] mb-2">Exclusive Perks</h3>
+        <p class="text-sm text-gray-600">Free gifts, VIP transfers, butler service, and access to secret experiences.</p>
+      </div>
+
+      <div class="bg-white rounded-2xl p-6 shadow-md border-l-4 border-[#25D366]">
+        <div class="text-4xl mb-3">⚡</div>
+        <h3 class="font-bold text-[#082f49] mb-2">Priority Support</h3>
+        <p class="text-sm text-gray-600">Dedicated WhatsApp support with instant replies — 24/7.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="mt-16 bg-gradient-to-r from-[#d4a017] to-[#b88a10] rounded-2xl p-8 text-center text-[#082f49]">
+    <h2 class="text-2xl md:text-3xl font-extrabold mb-3">Ready to Become a Member?</h2>
+    <p class="mb-5">Contact us on WhatsApp to activate your membership today.</p>
+    <a href="https://wa.me/255655728982" target="_blank" class="inline-block bg-[#082f49] text-white px-8 py-3 rounded-full font-bold hover:bg-[#0c4a6e] transition shadow-lg">
+      💬 Join Now
+    </a>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-black text-gray-300 py-10 px-5 border-t-4 border-[#d4a017]">
+  <div class="max-w-4xl mx-auto text-center">
+    <p class="font-bold text-[#d4a017] mb-2">UNP TOURS — Unique & Natural Paradise</p>
+    <p class="text-sm">Nungwi, Zanzibar, Tanzania | WhatsApp: +255 655 728 982</p>
+    <p class="text-xs mt-4 text-gray-500">© 2026 UNP Tours. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/255655728982" target="_blank" class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] rounded-full flex justify-center items-center text-3xl text-white shadow-lg hover:scale-110 transition z-50">
+  💬
+</a>
+
+</body>
+</html>
