@@ -12,11 +12,26 @@ Sitemap: https://unp.tours/sitemap.xml
 # ==========================================
 # KURASA ZA KUFICHA KUTOKA SEARCH ENGINES
 # ==========================================
+
+# Kurasa za Admin (Folder lote)
+Disallow: /admin/
 Disallow: /admin.html
+
+# Kurasa za Partner (Folder lote)
+Disallow: /dashboarda.html/
+
+# Kurasa za Auth na Wateja
 Disallow: /login.html
 Disallow: /signup.html
 Disallow: /profile.html
 Disallow: /404.html
+Disallow: /booking-success.html
+
+# Faili za Mfumo (System files)
+Disallow: /js/
+Disallow: /assets/videos/
+Disallow: /*.json$
+Disallow: /*.js$
 
 # ==========================================
 # SEARCH ENGINES MAALUM
@@ -25,31 +40,39 @@ Disallow: /404.html
 # Kwa Google
 User-agent: Googlebot
 Allow: /
-Disallow: /admin.html
+Disallow: /admin/
+Disallow: /dashboarda.html/
 Disallow: /login.html
 Disallow: /signup.html
 Disallow: /profile.html
+Disallow: /js/
 
 # Kwa Bing
 User-agent: Bingbot
 Allow: /
-Disallow: /admin.html
+Disallow: /admin/
+Disallow: /dashboarda.html/
 Disallow: /login.html
 Disallow: /signup.html
 Disallow: /profile.html
+Disallow: /js/
 
 # Kwa Yandex (Russia)
 User-agent: Yandex
 Allow: /
-Disallow: /admin.html
+Disallow: /admin/
+Disallow: /dashboarda.html/
 Disallow: /login.html
 Disallow: /signup.html
 Disallow: /profile.html
+Disallow: /js/
 
 # Kwa Baidu (China)
 User-agent: Baiduspider
 Allow: /
-Disallow: /admin.html
+Disallow: /admin/
+Disallow: /dashboarda.html/
 Disallow: /login.html
 Disallow: /signup.html
 Disallow: /profile.html
+Disallow: /js/
