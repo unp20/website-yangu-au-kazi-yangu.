@@ -1,141 +1,177 @@
 <!DOCTYPE html>
-<html lang="sw">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kilimanjaro Cabins | UNP TOURS</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="style.css">
-<meta name="description" content="Kilimanjaro Cabins - Kambi za kifahari karibu na Kilimanjaro.">
+<title>Kilimanjaro Cabins — UNP TOURS Tanzania</title>
+<meta name="description" content="Discover Kilimanjaro Cabins - Luxury lodges and camps near Mount Kilimanjaro.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://unp.tours/kilimanjaro-cabins.html">
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0c4a6e">
+<link rel="icon" type="image/png" href="assets/images/logo.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+
 <style>
-.cabin-header { background: linear-gradient(135deg, #082f49, #0c4a6e); color: #fff; text-align: center; padding: 70px 20px; border-bottom: 5px solid #d4af37; }
-.cabin-header h1 { font-size: 2.5rem; color: #d4af37; margin-bottom: 10px; }
-.cabin-header p { font-size: 1.1rem; color: #ddd; max-width: 700px; margin: 0 auto; }
-.cabin-content { max-width: 900px; margin: 40px auto; padding: 30px; background: #fff; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); }
-.cabin-content h2 { color: #0c4a6e; margin: 25px 0 15px; border-left: 5px solid #d4af37; padding-left: 12px; }
-.cabin-content p, .cabin-content li { color: #555; line-height: 1.8; }
-.cabin-content ul { padding-left: 20px; }
-.cabin-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin: 25px 0; }
-.cabin-item { background: #f9f9f9; padding: 20px; border-radius: 10px; border-left: 4px solid #d4af37; }
-.cabin-item h4 { color: #082f49; margin-bottom: 8px; font-size: 1.05rem; }
-.cabin-item p { font-size: 0.88rem; color: #555; line-height: 1.6; }
-.cabin-item .price { color: #0c4a6e; font-weight: 700; font-size: 0.9rem; margin-top: 10px; display: block; }
+  body { font-family: 'Inter', sans-serif; background: #f8f9fa; }
+  .cabin-card { transition: all 0.3s ease; }
+  .cabin-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
 </style>
 </head>
 <body>
 
-<header class="header">
-    <div class="nav-container">
-        <a href="index.html" class="logo-area">
-            <div class="logo-holder"><span class="logo-fallback">UNP<br>LOGO</span></div>
-            <div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
-        </a>
-        <button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="index.html"><i class="fas fa-home"></i> Nyumbani</a></li>
-            <li><a href="mountain-tourism.html"><i class="fas fa-mountain"></i> Milimani</a></li>
-            <li><a href="mountain-cabins.html"><i class="fas fa-campground"></i> Kambi</a></li>
-            <li><a href="kilimanjaro-cabins.html" style="color: #d4af37;"><i class="fas fa-snowflake"></i> Kilimanjaro</a></li>
-            <li><a href="contact.html"><i class="fas fa-envelope"></i> Wasiliana</a></li>
-        </ul>
-    </div>
-</header>
+<!-- ================= NAVBAR ================= -->
+<nav class="fixed top-0 w-full flex justify-between items-center px-5 md:px-12 py-3 z-50 bg-[#0c4a6e] shadow-lg">
+  <a href="index.html" class="flex items-center gap-3">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="h-10 w-10">
+      <defs>
+        <linearGradient id="goldNav" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#d4a017" />
+          <stop offset="50%" style="stop-color:#f5d76e" />
+          <stop offset="100%" style="stop-color:#b88a10" />
+        </linearGradient>
+        <linearGradient id="greenNav" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#0b3d2e" />
+          <stop offset="100%" style="stop-color:#1a6b4a" />
+        </linearGradient>
+      </defs>
+      <circle cx="100" cy="100" r="95" fill="url(#greenNav)" stroke="url(#goldNav)" stroke-width="4"/>
+      <circle cx="100" cy="100" r="85" fill="none" stroke="url(#goldNav)" stroke-width="1.5"/>
+      <path d="M60 80 Q80 40 120 50 Q130 60 110 80 Q90 100 60 80 Z" fill="url(#goldNav)"/>
+      <path d="M60 100 Q80 85 100 100 T140 100" fill="none" stroke="url(#goldNav)" stroke-width="4" stroke-linecap="round"/>
+      <text x="100" y="140" font-family="Inter, sans-serif" font-size="30" font-weight="800" fill="url(#goldNav)" text-anchor="middle" letter-spacing="2">UNP</text>
+    </svg>
+    <span class="font-extrabold text-white hidden sm:block">UNP TOURS</span>
+  </a>
+  <div class="flex items-center gap-4">
+    <a href="index.html" class="text-white font-semibold hover:text-[#d4a017] transition hidden sm:block">Home</a>
+    <a href="index.html" class="text-white font-semibold hover:text-[#d4a017] transition">← Back</a>
+  </div>
+</nav>
 
-<section class="cabin-header">
-    <h1><i class="fas fa-snowflake"></i> Kilimanjaro Cabins</h1>
-    <p>Kambi za kifahari karibu na Mlima Kilimanjaro — mlima mrefu Afrika (5,895m).</p>
+<!-- ================= HERO ================= -->
+<section class="pt-32 pb-16 bg-gradient-to-br from-[#0c4a6e] to-[#082f49] text-white border-b-4 border-[#d4a017]">
+  <div class="max-w-4xl mx-auto text-center px-5">
+    <div class="text-6xl mb-4">🏔️</div>
+    <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Kilimanjaro Cabins</h1>
+    <p class="text-lg md:text-xl text-blue-200">Luxury lodges and camps near Mount Kilimanjaro — the highest mountain in Africa (5,895m).</p>
+  </div>
 </section>
 
-<section class="cabin-content">
-    <h2>Kuhusu Kilimanjaro</h2>
-    <p>Mount Kilimanjaro ni mlima mrefu Afrika (5,895m). Ipo Moshi, Tanzania. Ni maarufu kwa kupanda — watu elfu nyingi wanapanda kila mwaka. Kuna njia 7 za kupanda:</p>
-    <ul>
-        <li><strong>Marangu Route</strong> — Rahisi, huts</li>
-        <li><strong>Machame Route</strong> — Nzuri, camps</li>
-        <li><strong>Lemosho Route</strong> — Nzuri sana, camps</li>
-        <li><strong>Rongai Route</strong> — Kutoka Kenya, camps</li>
-        <li><strong>Shira Route</strong> — Nzuri, camps</li>
-        <li><strong>Umbwe Route</strong> — Ngumu, camps</li>
-        <li><strong>Northern Circuit</strong> — Nzuri sana, camps</li>
+<!-- ================= CONTENT ================= -->
+<main class="max-w-5xl mx-auto px-5 py-16">
+  
+  <div class="bg-white rounded-2xl p-8 shadow-lg border-l-4 border-[#0c4a6e] mb-10">
+    <h2 class="text-2xl font-extrabold text-[#082f49] mb-4">About Kilimanjaro</h2>
+    <p class="text-gray-600 leading-relaxed text-lg">
+      Mount Kilimanjaro is the highest mountain in Africa (5,895m), located in Moshi, Tanzania. It is world-famous for trekking — thousands of people climb it every year. There are 7 main routes to the summit:
+    </p>
+    <ul class="list-disc pl-6 mt-4 space-y-2 text-gray-600">
+        <li><strong>Marangu Route</strong> — Easiest, hut accommodation</li>
+        <li><strong>Machame Route</strong> — Scenic, camping</li>
+        <li><strong>Lemosho Route</strong> — Very scenic, camping</li>
+        <li><strong>Rongai Route</strong> — From Kenya border, camping</li>
+        <li><strong>Shira Route</strong> — Scenic, camping</li>
+        <li><strong>Umbwe Route</strong> — Challenging, camping</li>
+        <li><strong>Northern Circuit</strong> — Very scenic, camping</li>
     </ul>
+  </div>
 
-    <h2>Kambi za Kilimanjaro</h2>
-    <div class="cabin-list">
-        <div class="cabin-item">
-            <h4>Kilimanjaro Mountain Lodge</h4>
-            <p>Lodge ya kifahari karibu na Machame Gate.</p>
-            <span class="price">Kuanzia $80/usiku</span>
-        </div>
-        <div class="cabin-item">
-            <h4>Moshi Cabins</h4>
-            <p>Cabins nzuri karibu na mji wa Moshi.</p>
-            <span class="price">Kuanzia $50/usiku</span>
-        </div>
-        <div class="cabin-item">
-            <h4>Marangu Hotel</h4>
-            <p>Hoteli ya kihistoria karibu na Marangu Gate.</p>
-            <span class="price">Kuanzia $70/usiku</span>
-        </div>
-        <div class="cabin-item">
-            <h4>Machame Camp</h4>
-            <p>Camp ya kwanza kwenye Machame Route.</p>
-            <span class="price">Kwenye safari</span>
-        </div>
-        <div class="cabin-item">
-            <h4>Shira Camp</h4>
-            <p>Camp ya pili kwenye Machame Route.</p>
-            <span class="price">Kwenye safari</span>
-        </div>
-        <div class="cabin-item">
-            <h4>Barafu Camp</h4>
-            <p>Camp ya mwisho kabla ya kilele.</p>
-            <span class="price">Kwenye safari</span>
-        </div>
+  <h2 class="text-3xl font-extrabold text-[#082f49] mb-6">Cabins & Lodges</h2>
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+    
+    <div class="cabin-card bg-white p-6 rounded-xl shadow-sm border-t-4 border-[#d4a017]">
+      <h4 class="font-bold text-[#082f49] text-lg mb-2">Kilimanjaro Mountain Lodge</h4>
+      <p class="text-gray-600 text-sm mb-4">Luxury lodge located near the Machame Gate.</p>
+      <span class="text-[#d4a017] font-bold">From $80 / night</span>
     </div>
 
-    <h2>Vidokezo vya Kupanda</h2>
-    <ul>
-        <li>Jiandae kimwili — mazoezi ya wiki 4-6</li>
-        <li>Chukua nguo za joto (baridi sana kileleni)</li>
-        <li>Kunywa maji mengi</li>
-        <li>Pumzika vya kutosha</li>
-        <li>Kaa na guide wa uzoefu</li>
-        <li>Weka dawa za altitude sickness</li>
-    </ul>
-
-    <h2>Wakati Bora</h2>
-    <ul>
-        <li><strong>Januari-Machi</strong> — Wakati mzuri</li>
-        <li><strong>Juni-Oktoba</strong> — Wakati bora</li>
-        <li><strong>Aprili-Mei</strong> — Mvua (epuka)</li>
-        <li><strong>Novemba-Desemba</strong> — Mvua kidogo</li>
-    </ul>
-</section>
-
-<footer class="footer">
-    <div class="footer-content">
-        <div>
-            <h3>UNIQUE NATURE PARADISE (UNP)</h3>
-            <p style="font-size: 0.9rem;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p>
-        </div>
-        <div>
-            <h4>Direct Contact</h4>
-            <p style="font-size: 0.9rem;"><i class="fab fa-whatsapp" style="color: #d4af37;"></i> +255 655 728 982</p>
-            <p style="font-size: 0.9rem;"><i class="fas fa-envelope" style="color: #d4af37;"></i> salimnasoro11@gmail.com</p>
-        </div>
+    <div class="cabin-card bg-white p-6 rounded-xl shadow-sm border-t-4 border-[#d4a017]">
+      <h4 class="font-bold text-[#082f49] text-lg mb-2">Moshi Cabins</h4>
+      <p class="text-gray-600 text-sm mb-4">Cozy cabins situated near Moshi town.</p>
+      <span class="text-[#d4a017] font-bold">From $50 / night</span>
     </div>
+
+    <div class="cabin-card bg-white p-6 rounded-xl shadow-sm border-t-4 border-[#d4a017]">
+      <h4 class="font-bold text-[#082f49] text-lg mb-2">Marangu Hotel</h4>
+      <p class="text-gray-600 text-sm mb-4">Historic hotel near the Marangu Gate.</p>
+      <span class="text-[#d4a017] font-bold">From $70 / night</span>
+    </div>
+
+    <div class="cabin-card bg-white p-6 rounded-xl shadow-sm border-t-4 border-[#0c4a6e]">
+      <h4 class="font-bold text-[#082f49] text-lg mb-2">Machame Camp</h4>
+      <p class="text-gray-600 text-sm mb-4">The first camp on the Machame Route.</p>
+      <span class="text-[#0c4a6e] font-bold">During trek</span>
+    </div>
+
+    <div class="cabin-card bg-white p-6 rounded-xl shadow-sm border-t-4 border-[#0c4a6e]">
+      <h4 class="font-bold text-[#082f49] text-lg mb-2">Shira Camp</h4>
+      <p class="text-gray-600 text-sm mb-4">The second camp on the Machame Route.</p>
+      <span class="text-[#0c4a6e] font-bold">During trek</span>
+    </div>
+
+    <div class="cabin-card bg-white p-6 rounded-xl shadow-sm border-t-4 border-[#0c4a6e]">
+      <h4 class="font-bold text-[#082f49] text-lg mb-2">Barafu Camp</h4>
+      <p class="text-gray-600 text-sm mb-4">The final camp before the summit push.</p>
+      <span class="text-[#0c4a6e] font-bold">During trek</span>
+    </div>
+
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+    <div class="bg-white rounded-2xl p-8 shadow-lg border-l-4 border-[#25D366]">
+      <h2 class="text-2xl font-extrabold text-[#082f49] mb-4">Trekking Tips</h2>
+      <ul class="space-y-3 text-gray-600">
+        <li class="flex items-center gap-2"><span class="text-[#d4a017]">✓</span> Train physically 4-6 weeks in advance</li>
+        <li class="flex items-center gap-2"><span class="text-[#d4a017]">✓</span> Pack warm clothes (freezing at summit)</li>
+        <li class="flex items-center gap-2"><span class="text-[#d4a017]">✓</span> Drink plenty of water</li>
+        <li class="flex items-center gap-2"><span class="text-[#d4a017]">✓</span> Rest well and acclimatize</li>
+        <li class="flex items-center gap-2"><span class="text-[#d4a017]">✓</span> Always trek with an experienced guide</li>
+        <li class="flex items-center gap-2"><span class="text-[#d4a017]">✓</span> Carry altitude sickness medication</li>
+      </ul>
+    </div>
+
+    <div class="bg-gradient-to-r from-[#0c4a6e] to-[#082f49] rounded-2xl p-8 text-white shadow-lg">
+      <h2 class="text-2xl font-extrabold text-[#d4a017] mb-4">Best Time to Climb</h2>
+      <div class="space-y-4">
+        <div class="bg-white/10 p-3 rounded-lg flex justify-between">
+          <span class="font-bold text-[#d4a017]">January - March</span>
+          <span class="text-sm">Good Time</span>
+        </div>
+        <div class="bg-white/10 p-3 rounded-lg flex justify-between border border-[#d4a017]">
+          <span class="font-bold text-[#d4a017]">June - October</span>
+          <span class="text-sm font-bold">Best Time</span>
+        </div>
+        <div class="bg-red-500/20 p-3 rounded-lg flex justify-between border border-red-500/50">
+          <span class="font-bold text-red-300">April - May</span>
+          <span class="text-sm text-red-200">Rainy (Avoid)</span>
+        </div>
+        <div class="bg-white/10 p-3 rounded-lg flex justify-between">
+          <span class="font-bold text-[#d4a017]">November - December</span>
+          <span class="text-sm">Light Rain</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-black text-gray-300 py-10 px-5 border-t-4 border-[#d4a017]">
+  <div class="max-w-4xl mx-auto text-center">
+    <p class="font-bold text-[#d4a017] mb-2">UNP TOURS — Unique & Natural Paradise</p>
+    <p class="text-sm">Nungwi, Zanzibar, Tanzania | WhatsApp: +255 655 728 982</p>
+    <p class="text-xs mt-4 text-gray-500">© 2026 UNP Tours. All rights reserved.</p>
+  </div>
 </footer>
 
-<a href="https://wa.me/255655728982" class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
-
-<script>
-  const menuToggleBtn = document.getElementById('menuToggleBtn');
-  const navLinks = document.getElementById('navLinks');
-  if(menuToggleBtn) { menuToggleBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); }); }
-</script>
+<!-- WhatsApp Float -->
+<a href="https://wa.me/255655728982" target="_blank" class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] rounded-full flex justify-center items-center text-3xl text-white shadow-lg hover:scale-110 transition z-50">
+  💬
+</a>
 
 </body>
-  </html>
+              </html>
