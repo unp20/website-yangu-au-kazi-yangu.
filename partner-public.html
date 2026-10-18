@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partner Profile — UNP TOURS Zanzibar</title>
+<meta name="description" content="View partner profile, services, and contact information on UNP TOURS.">
+<meta name="robots" content="index, follow">
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0c4a6e">
+<link rel="icon" type="image/png" href="assets/images/logo.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+  import { getFirestore, collection, getDocs, query, where } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyCe5-MZMASwDZtIN3zfLvwlrn0U2ObC17s",
+    authDomain: "soul-unp-tour.firebaseapp.com",
+    projectId: "soul-unp-tour",
+    storageBucket: "soul-unp-tour.firebasestorage.app",
+    messagingSenderId: "503119437259",
+    appId: "1:503119437259:web:aaa65be89a8d77d5abaa4e",
+    measurementId: "G-EC65GSRRKM"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  let partnerData = null;
+
+  // ==================== LOAD PARTNER FROM URL ====================
+  async function loadPartner() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const flower = urlParams.get('flower');
+
+    if (!flower) {
+      document.getElementById('partnerContent').innerHTML = `
+        <div class="text-center py-16">
+          <span class="text-6xl block mb-4">🌸</span>
+          <p class="text-xl font-bold text-gray-400">No partner specified.</p>
+          <p class="text-sm text-gray-400 mt-2">Use ?flower=FlowerName in the URL.</p>
+          <a href="index.html" class="inline-block mt-6 bg-[#0c4a6e] text-white px-8 py-3 rounded-full font-bold hover:bg-[#082f49] transition">← Back to Home</a>
+        </div>
+      `;
+      return;
+    }
+
+    try {
+      const q = query(collection(db, "partners"), where("flower", "==", flower));
+      const snap = await getDocs(q);
+
+      if (snap.empty) {
+        document.getElementById('partnerContent').innerHTML = `
+          <div class="text-center py-16">
+            <span class="text-6xl block mb-4">🌸</span>
+            <p class="text-xl font-bold text-gray-400">Partner "${flower}" not found.</p>
+            <a href="index.html" class="inline-block mt-6 bg-[#0c4a6e] text-white px-8 py-3 rounded-full font-bold hover:bg-[#082f49] transition">← Back to Home</a>
+          </div>
+        `;
+        return;
+      }
+
+      snap.forEach((d) => partnerData = { id: d.id, ...d.data() });
+
+      // Angalia kama ni active
+      if (partnerData.status !== 'active') {
+        document.getElementById('partnerContent').innerHTML = `
+          <div class="text-center py-16">
+            <span class="text-6xl block mb-4">⏸️</span>
+            <p class="text-xl font-bold text-gray-400">This partner is currently inactive.</p>
+            <a href="index.html" class="inline-block mt-6 bg-[#0c4a6e] text-white px-8 py-3 rounded-full font-bold hover:bg-[#082f49] transition">← Back to Home</a>
+          </div>
+        `;
+        return;
+      }
+
+      renderPartner();
+      loadPartnerServices();
+
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  // ==================== RENDER PARTNER ====================
+  function renderPartner() {
+    const letter = (partnerData.flower || 'P')[0].toUpperCase();
+
+    document.getElementById('partnerContent').innerHTML = `
+      <!-- HERO -->
+      <div class="bg-gradient-to-br from-[#0c4a6e] to-[#082f49] text-white p-8 md:p-12 rounded-3xl mb-8 border-2 border-[#d4a017]/30 relative overflow-hidden">
+        <div class="absolute top-0 right-0 text-9xl opacity-5">🌸</div>
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-20 h-20 bg-gradient-to-br from-[#d4a017] to-[#b88a10] text-[#082f49] rounded-full flex items-center justify-center font-extrabold text-3xl border-4 border-white/20">
+            ${letter}
+          </div>
+          <div>
+            <div class="text-4xl mb-1">🌸 ${partnerData.flower}</div>
+            <h1 class="text-3xl md:text-4xl font-extrabold text-[#d4a017]">${partnerData.business_name || 'UNP Partner'}</h1>
+          </div>
+        </div>
+        <p class="text-blue-200 mt-4">📍 ${partnerData.location || 'Zanzibar'}</p>
+      </div>
+
+      <!-- CONTACT INFO -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+        <a href="https://wa.me/${(partnerData.contact_phone || '').replace(/[^0-9]/g, '')}" target="_blank" class="bg-white rounded-2xl p-5 shadow-md border-l-4 border-[#25D366] hover:shadow-xl transition flex items-center gap-4">
+          <div class="w-12 h-12 bg-[#25D366] text-white rounded-full flex items-center justify-center text-2xl">💬</div>
+          <div>
+            <p class="text-xs text-gray-500">WhatsApp</p>
+            <p class="font-bold text-[#082f49]">${partnerData.contact_phone || 'Contact via UNP'}</p>
+          </div>
+        </a>
+
+        <a href="mailto:${partnerData.contact_email}" class="bg-white rounded-2xl p-5 shadow-md border-l-4 border-[#0c4a6e] hover:shadow-xl transition flex items-center gap-4">
+          <div class="w-12 h-12 bg-[#0c4a6e] text-white rounded-full flex items-center justify-center text-2xl">📧</div>
+          <div>
+            <p class="text-xs text-gray-500">Email</p>
+            <p class="font-bold text-[#082f49] text-sm break-all">${partnerData.contact_email || '-'}</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- ABOUT -->
+      ${partnerData.bio ? `
+        <div class="bg-white rounded-2xl p-6 shadow-md border-l-4 border-[#d4a017] mb-8">
+          <h2 class="text-xl font-bold text-[#082f49] mb-3">About ${partnerData.business_name}</h2>
+          <p class="text-gray-600 leading-relaxed">${partnerData.bio}</p>
+        </div>
+      ` : ''}
+
+      <!-- SERVICES -->
+      <h2 class="text-2xl font-extrabold text-[#082f49] mb-6">🛍️ Services by ${partnerData.business_name}</h2>
+      <div id="partnerServicesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+        <div class="text-center py-8 text-gray-400 col-span-full">Loading services...</div>
+      </div>
+
+      <!-- CTA -->
+      <div class="bg-gradient-to-r from-[#d4a017] to-[#b88a10] rounded-2xl p-8 text-center text-[#082f49]">
+        <h2 class="text-2xl font-extrabold mb-3">Interested in Booking?</h2>
+        <p class="mb-5">Contact ${partnerData.business_name} directly on WhatsApp or send a booking request.</p>
+        <div class="flex flex-col md:flex-row gap-3 justify-center">
+          <a href="https://wa.me/${(partnerData.contact_phone || '255655728982').replace(/[^0-9]/g, '')}" target="_blank" class="bg-[#25D366] text-white px-8 py-3 rounded-full font-bold hover:bg-[#1ebe57] transition">
+            💬 Chat on WhatsApp
+          </a>
+          <a href="booking.html" class="bg-[#082f49] text-white px-8 py-3 rounded-full font-bold hover:bg-[#0c4a6e] transition">
+            Book a Trip →
+          </a>
+        </div>
+      </div>
+    `;
+  }
+
+  // ==================== LOAD PARTNER SERVICES ====================
+  async function loadPartnerServices() {
+    const container = document.getElementById('partnerServicesGrid');
+    if (!container) return;
+
+    try {
+      const q = query(collection(db, "services"), where("partner_uid", "==", partnerData.uid));
+      const snap = await getDocs(q);
+
+      if (snap.empty) {
+        container.innerHTML = `
+          <div class="text-center py-8 text-gray-400 col-span-full">
+            <span class="text-5xl block mb-3">🛍️</span>
+            <p class="text-sm">No services listed yet.</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = '';
+      snap.forEach((d) => {
+        const s = d.data();
+        container.innerHTML += `
+          <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition duration-300 border border-gray-100">
+            ${s.image ? `<img src="${s.image}" alt="${s.name}" class="w-full h-48 object-cover">` : `<div class="w-full h-48 bg-gradient-to-br from-[#0c4a6e] to-[#082f49] flex items-center justify-center text-5xl">🛍️</div>`}
+            <div class="p-6">
+              <h3 class="font-bold text-[#082f49] text-lg mb-2">${s.name || 'Service'}</h3>
+              <p class="text-gray-600 text-sm mb-3">${s.description || ''}</p>
+              <p class="text-2xl font-extrabold text-[#0c4a6e] mb-3">$${s.price || 0}</p>
+              <p class="text-xs text-gray-500">${s.category || 'Service'}</p>
+            </div>
+          </div>
+        `;
+      });
+
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  window.addEventListener('load', loadPartner);
+</script>
+
+<style>
+  body { font-family: 'Inter', sans-serif; background: #f8f9fa; }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="fixed top-0 w-full flex justify-between items-center px-5 md:px-12 py-3 z-50 bg-[#0c4a6e] shadow-lg">
+  <a href="index.html" class="flex items-center gap-3">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="h-10 w-10">
+      <circle cx="100" cy="100" r="95" fill="#0b3d2e" stroke="#d4a017" stroke-width="4"/>
+      <text x="100" y="140" font-family="Inter" font-size="30" font-weight="800" fill="#d4a017" text-anchor="middle">UNP</text>
+    </svg>
+    <span class="font-extrabold text-white hidden sm:block">UNP TOURS</span>
+  </a>
+  <a href="index.html" class="text-white font-semibold hover:text-[#d4a017] transition">← Back to Home</a>
+</nav>
+
+<!-- MAIN -->
+<main class="pt-24 pb-16 max-w-6xl mx-auto px-5">
+  <div id="partnerContent">
+    <div class="text-center py-16 text-gray-400">Loading partner...</div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-black text-gray-300 py-10 px-5 border-t-4 border-[#d4a017]">
+  <div class="max-w-4xl mx-auto text-center">
+    <p class="font-bold text-[#d4a017] mb-2">UNP TOURS — Unique & Natural Paradise</p>
+    <p class="text-sm">Nungwi, Zanzibar, Tanzania | WhatsApp: +255 655 728 982</p>
+    <p class="text-xs mt-4 text-gray-500">© 2026 UNP Tours. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/255655728982" target="_blank" class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] rounded-full flex justify-center items-center text-3xl text-white shadow-lg hover:scale-110 transition z-50">
+  💬
+</a>
+
+</body>
+</html>
