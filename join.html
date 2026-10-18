@@ -1,340 +1,285 @@
 <!DOCTYPE html>
-<html lang="sw">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jiunge Nasi | UNP TOURS Zanzibar</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="style.css">
-
-<!-- SEO META TAGS -->
-<meta name="description" content="Jiunge na UNP TOURS - Tunakaribisha vipaji, wabunifu, na washirika kutoka sekta mbalimbali duniani kote.">
-<meta name="keywords" content="kujiunga UNP tours, kazi Zanzibar, partnership Zanzibar, vipaji Zanzibar">
-<meta name="author" content="UNP TOURS Zanzibar">
+<title>Join Us — UNP TOURS Zanzibar</title>
+<meta name="description" content="Join UNP TOURS - We welcome talents, creators, and partners from various sectors around the world.">
 <meta name="robots" content="index, follow">
 
-<!-- Open Graph -->
-<meta property="og:title" content="Jiunge Nasi | UNP TOURS Zanzibar">
-<meta property="og:description" content="Tuma maombi yako ya kujiunga na timu yetu ya kifahari.">
-<meta property="og:image" content="https://unp.tours/images/logo.png">
-<meta property="og:url" content="https://unp.tours/join.html">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="UNP TOURS">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0c4a6e">
+<link rel="icon" type="image/png" href="assets/images/logo.png">
 
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Jiunge Nasi | UNP TOURS Zanzibar">
-<meta name="twitter:description" content="Tuma maombi yako ya kujiunga na timu yetu ya kifahari.">
-<meta name="twitter:image" content="https://unp.tours/images/logo.png">
-
-<!-- Canonical -->
-<link rel="canonical" href="https://unp.tours/join.html">
-
-<!-- Geo Tags -->
-<meta name="geo.region" content="TZ-07">
-<meta name="geo.placename" content="Zanzibar">
-<meta name="geo.position" content="-6.165917;39.202641">
-<meta name="ICBM" content="-6.165917, 39.202641">
-
-<!-- GOOGLE ANALYTICS -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5QJ1X38ZLC"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-5QJ1X38ZLC');
-</script>
-
-<!-- YANDEX METRICA -->
-<script type="text/javascript">
-    (function(m,e,t,r,i,k,a){
-        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113203659', 'ym');
-    ym(113203659, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/113203659" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-
-<!-- ELFSIGHT PLATFORM -->
-<script src="https://elfsightcdn.com/platform.js" async></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
 
 <style>
-    :root {
-        --ocean-blue: #0c4a6e;
-        --deep-navy: #082f49;
-        --gold: #d4af37;
-        --gold-light: #f0c75e;
-        --light-bg: #f8f9fa;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-    body { background-color: var(--light-bg); color: #333; line-height: 1.6; }
-    a { text-decoration: none; color: inherit; }
-
-    /* HEADER */
-    .top-bar { background: var(--deep-navy); padding: 8px 20px; display: flex; justify-content: flex-end; align-items: center; gap: 15px; }
-    .header { background: var(--ocean-blue); padding: 15px 20px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
-    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; position: relative; }
-    .logo-area { display: flex; align-items: center; gap: 15px; }
-    .logo-holder { width: 60px; height: 60px; border: 2px dashed var(--gold); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
-    .logo-fallback { color: var(--gold); font-weight: 700; font-size: 0.7rem; text-align: center; line-height: 1.1; }
-    .logo-text h2 { color: #fff; font-size: 1.3rem; font-weight: 700; }
-    .logo-text span { color: var(--gold); font-size: 0.8rem; }
-    .nav-links { display: flex; gap: 20px; list-style: none; }
-    .nav-links a { color: #fff; font-size: 0.85rem; transition: color 0.3s; display: flex; align-items: center; gap: 5px; }
-    .nav-links a:hover { color: var(--gold); }
-    .menu-toggle { display: none; background: none; border: none; color: var(--gold); font-size: 26px; cursor: pointer; }
-
-    /* JOIN HEADER */
-    .join-header {
-        background: linear-gradient(135deg, var(--deep-navy) 0%, var(--ocean-blue) 100%);
-        color: #fff; padding: 70px 20px; text-align: center;
-        border-bottom: 5px solid var(--gold);
-    }
-    .join-header h1 { color: var(--gold); font-size: 2.2rem; text-transform: uppercase; margin-bottom: 10px; }
-    .join-header p { font-size: 1rem; color: #ddd; max-width: 700px; margin: 0 auto; }
-
-    /* INTERACTIVE BOX */
-    .interactive-box { max-width: 1100px; margin: 40px auto; padding: 30px; background: #fff; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-    .interactive-box h2 { color: var(--ocean-blue); margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
-    .interactive-box h2 i { color: var(--gold); }
-
-    /* SECTOR GRID */
-    .sector-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 15px; margin: 25px 0;
-    }
-    .sector-card {
-        background: #fff; padding: 20px; border-radius: 10px;
-        border-left: 4px solid var(--gold);
-        text-align: center; transition: transform 0.3s;
-        box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-    }
-    .sector-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
-    .sector-card i { font-size: 2rem; color: var(--ocean-blue); margin-bottom: 10px; }
-    .sector-card h4 { color: var(--deep-navy); margin-bottom: 5px; font-size: 1rem; }
-    .sector-card p { font-size: 0.8rem; color: #777; }
-
-    /* FORM */
-    .form-group { margin-bottom: 15px; }
-    .form-group label { display: block; font-weight: 600; color: var(--deep-navy); margin-bottom: 5px; }
-    .form-group input, .form-group select, .form-group textarea {
-        width: 100%; padding: 12px; border: 2px solid #ddd;
-        border-radius: 8px; font-family: 'Poppins', sans-serif;
-        font-size: 1rem; transition: border-color 0.3s;
-    }
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-        outline: none; border-color: var(--gold);
-    }
-    .btn-primary {
-        background-color: var(--gold); color: var(--deep-navy);
-        padding: 14px 32px; border: none; border-radius: 25px;
-        font-weight: 700; cursor: pointer; transition: 0.3s;
-        display: inline-block; text-transform: uppercase;
-        letter-spacing: 0.5px; font-size: 0.95rem; text-align: center;
-    }
-    .btn-primary:hover { background-color: #fff; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4); }
-    .btn-full { width: 100%; }
-
-    /* FOOTER */
-    .footer { background: var(--deep-navy); color: #fff; padding: 40px 20px; margin-top: 40px; }
-    .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-    .footer h3, .footer h4 { color: var(--gold); margin-bottom: 15px; }
-    .social-links { display: flex; gap: 15px; margin-top: 15px; }
-    .social-links a { color: var(--gold); font-size: 1.2rem; transition: transform 0.3s; }
-    .social-links a:hover { transform: scale(1.2); }
-
-    /* FLOATING WHATSAPP */
-    .floating-whatsapp { position: fixed; bottom: 25px; right: 25px; background: #25d366; color: #fff; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 1100; transition: transform 0.3s; }
-    .floating-whatsapp:hover { transform: scale(1.1); }
-
-    /* CHATBOT */
-    .chatbot-toggle { position: fixed; bottom: 100px; right: 25px; background-color: var(--ocean-blue); color: var(--gold); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 1100; cursor: pointer; border: 2px solid var(--gold); }
-    .chatbot-container { position: fixed; bottom: 170px; right: 25px; width: 350px; max-width: 90vw; height: 500px; background: #fff; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); z-index: 1100; display: none; flex-direction: column; overflow: hidden; border: 2px solid var(--gold); }
-    .chatbot-container.active { display: flex; }
-    .chatbot-header { background: var(--ocean-blue); color: #fff; padding: 15px; display: flex; align-items: center; gap: 10px; }
-    .chatbot-header .avatar { width: 40px; height: 40px; background: var(--gold); color: var(--deep-navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem; }
-    .chatbot-header h4 { margin: 0; font-size: 1rem; color: #fff; }
-    .chatbot-header span { font-size: 0.75rem; color: #ddd; display: block; }
-    .chatbot-messages { flex-grow: 1; padding: 15px; overflow-y: auto; background: #f9f9f9; display: flex; flex-direction: column; gap: 10px; }
-    .message { max-width: 80%; padding: 10px 15px; border-radius: 15px; font-size: 0.85rem; }
-    .message.bot { background: #e9ecef; align-self: flex-start; }
-    .message.user { background: var(--ocean-blue); color: #fff; align-self: flex-end; }
-    .chatbot-input { display: flex; padding: 10px; border-top: 1px solid #eee; }
-    .chatbot-input input { flex-grow: 1; padding: 10px; border: 1px solid #ddd; border-radius: 20px; outline: none; font-family: 'Poppins', sans-serif; }
-    .chatbot-input button { background: var(--gold); color: var(--deep-navy); border: none; width: 40px; height: 40px; border-radius: 50%; margin-left: 8px; cursor: pointer; font-size: 1rem; }
-
-    /* GTRANSLATE */
-    .gtranslate_wrapper { position: relative; }
-
-    @media (max-width: 768px) {
-        .menu-toggle { display: block; }
-        .nav-links { display: none; flex-direction: column; width: 100%; background: var(--deep-navy); padding: 20px; position: absolute; top: 100%; left: 0; right: 0; z-index: 999; border-top: 2px solid var(--gold); }
-        .nav-links.active { display: flex; }
-        .nav-links li { width: 100%; }
-        .nav-links a { padding: 10px 0; width: 100%; }
-        .join-header h1 { font-size: 1.6rem; }
-    }
+  body { font-family: 'Inter', sans-serif; background: #f8f9fa; }
+  .sector-card { transition: all 0.3s ease; }
+  .sector-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+  .input-field:focus { border-color: #d4a017; box-shadow: 0 0 0 4px rgba(212, 160, 23, 0.15); }
 </style>
 </head>
 <body>
 
-<!-- TOP BAR WITH GTRANSLATE -->
-<div class="top-bar">
-    <div class="gtranslate_wrapper"></div>
-</div>
+<!-- ================= NAVBAR ================= -->
+<nav class="fixed top-0 w-full flex justify-between items-center px-5 md:px-12 py-3 z-50 bg-[#0c4a6e] shadow-lg">
+  <a href="index.html" class="flex items-center gap-3">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="h-10 w-10">
+      <defs>
+        <linearGradient id="goldNav" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#d4a017" />
+          <stop offset="50%" stop-color="#f5d76e" />
+          <stop offset="100%" stop-color="#b88a10" />
+        </linearGradient>
+        <linearGradient id="greenNav" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#0b3d2e" />
+          <stop offset="100%" stop-color="#1a6b4a" />
+        </linearGradient>
+      </defs>
+      <circle cx="100" cy="100" r="95" fill="url(#greenNav)" stroke="url(#goldNav)" stroke-width="4"/>
+      <path d="M60 80 Q80 40 120 50 Q130 60 110 80 Q90 100 60 80 Z" fill="url(#goldNav)"/>
+      <path d="M60 100 Q80 85 100 100 T140 100" fill="none" stroke="url(#goldNav)" stroke-width="4" stroke-linecap="round"/>
+      <text x="100" y="140" font-family="Inter, sans-serif" font-size="30" font-weight="800" fill="url(#goldNav)" text-anchor="middle" letter-spacing="2">UNP</text>
+    </svg>
+    <span class="font-extrabold text-white hidden sm:block">UNP TOURS</span>
+  </a>
+  <div class="flex items-center gap-4">
+    <a href="index.html" class="text-white font-semibold hover:text-[#d4a017] transition hidden sm:block">Home</a>
+    <a href="index.html" class="text-white font-semibold hover:text-[#d4a017] transition">← Back</a>
+  </div>
+</nav>
 
-<!-- HEADER -->
-<header class="header">
-    <div class="nav-container">
-        <a href="index.html" class="logo-area">
-            <div class="logo-holder"><span class="logo-fallback">UNP<br>LOGO</span></div>
-            <div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
-        </a>
-        <button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="index.html"><i class="fas fa-home"></i> Nyumbani</a></li>
-            <li><a href="about.html"><i class="fas fa-info-circle"></i> Kuhusu Sisi</a></li>
-            <li><a href="services.html"><i class="fas fa-briefcase"></i> Huduma</a></li>
-            <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
-            <li><a href="pricing.html"><i class="fas fa-layer-group"></i> Madaraja</a></li>
-            <li><a href="join.html" style="color: var(--gold);"><i class="fas fa-handshake"></i> Jiunge Nasi</a></li>
-            <li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
-            <li><a href="contact.html"><i class="fas fa-envelope"></i> Wasiliana</a></li>
-        </ul>
-    </div>
-</header>
-
-<!-- JOIN HEADER -->
-<section class="join-header">
-    <h1><i class="fas fa-handshake"></i> Jiunge Nasi</h1>
-    <p>Tunakaribisha vipaji, wabunifu, na washirika kutoka sekta mbalimbali duniani kote. Tuma maombi yako leo!</p>
+<!-- ================= HERO ================= -->
+<section class="pt-32 pb-16 bg-gradient-to-br from-[#0c4a6e] to-[#082f49] text-white border-b-4 border-[#d4a017]">
+  <div class="max-w-4xl mx-auto text-center px-5">
+    <div class="text-6xl mb-4">🤝</div>
+    <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Join Us</h1>
+    <p class="text-lg md:text-xl text-blue-200">We welcome talents, creators, and partners from various sectors around the world. Apply today!</p>
+  </div>
 </section>
 
-<!-- SECTOR INFO -->
-<section class="interactive-box">
-    <h2><i class="fas fa-briefcase"></i> Sekta Tunazohitaji</h2>
-    <p style="margin-bottom: 20px;">Tunahitaji watu kutoka sekta hizi:</p>
+<!-- ================= CONTENT ================= -->
+<main class="max-w-4xl mx-auto px-5 py-16">
 
-    <div class="sector-grid">
-        <div class="sector-card">
-            <i class="fas fa-graduation-cap"></i>
-            <h4>Kisomi</h4>
-            <p>Utafiti, Sayansi, Elimu</p>
-        </div>
-        <div class="sector-card">
-            <i class="fas fa-chart-line"></i>
-            <h4>Biashara</h4>
-            <p>Uuzaji, Masoko, Fedha</p>
-        </div>
-        <div class="sector-card">
-            <i class="fas fa-laptop-code"></i>
-            <h4>Teknolojia</h4>
-            <p>IT, AI, Programming</p>
-        </div>
-        <div class="sector-card">
-            <i class="fas fa-palette"></i>
-            <h4>Sanaa</h4>
-            <p>Muziki, Filamu, Uchoraji</p>
-        </div>
-        <div class="sector-card">
-            <i class="fas fa-plane"></i>
-            <h4>Utalii</h4>
-            <p>Guide, Hotel, Safari</p>
-        </div>
-        <div class="sector-card">
-            <i class="fas fa-heartbeat"></i>
-            <h4>Afya</h4>
-            <p>Daktari, Muuguzi, Lishe</p>
-        </div>
+  <!-- SECTORS -->
+  <div class="bg-white rounded-2xl p-8 shadow-lg border-l-4 border-[#0c4a6e] mb-10">
+    <h2 class="text-2xl font-extrabold text-[#082f49] mb-4">Sectors We Need</h2>
+    <p class="text-gray-600 mb-6">We are looking for individuals from these sectors:</p>
+    
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <div class="sector-card bg-[#f8f9fa] p-4 rounded-xl text-center border-t-4 border-[#d4a017]">
+        <div class="text-3xl mb-2">🎓</div>
+        <h4 class="font-bold text-[#082f49]">Academic</h4>
+        <p class="text-xs text-gray-500 mt-1">Research, Science, Education</p>
+      </div>
+      <div class="sector-card bg-[#f8f9fa] p-4 rounded-xl text-center border-t-4 border-[#d4a017]">
+        <div class="text-3xl mb-2">📈</div>
+        <h4 class="font-bold text-[#082f49]">Business</h4>
+        <p class="text-xs text-gray-500 mt-1">Sales, Marketing, Finance</p>
+      </div>
+      <div class="sector-card bg-[#f8f9fa] p-4 rounded-xl text-center border-t-4 border-[#d4a017]">
+        <div class="text-3xl mb-2">💻</div>
+        <h4 class="font-bold text-[#082f49]">Technology</h4>
+        <p class="text-xs text-gray-500 mt-1">IT, AI, Programming</p>
+      </div>
+      <div class="sector-card bg-[#f8f9fa] p-4 rounded-xl text-center border-t-4 border-[#d4a017]">
+        <div class="text-3xl mb-2">🎨</div>
+        <h4 class="font-bold text-[#082f49]">Arts</h4>
+        <p class="text-xs text-gray-500 mt-1">Music, Film, Painting</p>
+      </div>
+      <div class="sector-card bg-[#f8f9fa] p-4 rounded-xl text-center border-t-4 border-[#d4a017]">
+        <div class="text-3xl mb-2">✈️</div>
+        <h4 class="font-bold text-[#082f49]">Tourism</h4>
+        <p class="text-xs text-gray-500 mt-1">Guide, Hotel, Safari</p>
+      </div>
+      <div class="sector-card bg-[#f8f9fa] p-4 rounded-xl text-center border-t-4 border-[#d4a017]">
+        <div class="text-3xl mb-2">🏥</div>
+        <h4 class="font-bold text-[#082f49]">Health</h4>
+        <p class="text-xs text-gray-500 mt-1">Doctor, Nurse, Nutrition</p>
+      </div>
     </div>
-</section>
+  </div>
 
-<!-- APPLICATION FORM -->
-<section class="interactive-box" id="application">
-    <h2><i class="fas fa-file-signature"></i> Fomu ya Maombi</h2>
-    <p style="margin-bottom: 20px;">Jaza fomu hii kwa makini. Tutawasiliana nawe ndani ya siku 7.</p>
+  <!-- APPLICATION FORM -->
+  <div class="bg-white rounded-2xl p-8 shadow-lg border-t-4 border-[#d4a017]">
+    <h2 class="text-2xl font-extrabold text-[#082f49] mb-2">Application Form</h2>
+    <p class="text-gray-500 mb-6 text-sm">Fill this form carefully. We will contact you within 7 days.</p>
 
-    <form id="joinForm">
-        <h3 style="color: var(--ocean-blue); margin-bottom: 15px;"><i class="fas fa-user"></i> Taarifa Binafsi</h3>
-        <div class="form-group"><label>Jina Lako Kamili:</label><input type="text" id="joinName" placeholder="Weka jina lako" required></div>
-        <div class="form-group"><label>Barua Pepe:</label><input type="email" id="joinEmail" placeholder="email@domain.com" required></div>
-        <div class="form-group"><label>Namba ya Simu:</label><input type="tel" id="joinPhone" placeholder="+255..." required></div>
-        <div class="form-group"><label>Nchi Unayotoka:</label><input type="text" id="joinCountry" placeholder="Mfano: Tanzania, USA" required></div>
-        <div class="form-group"><label>Umri:</label><input type="number" id="joinAge" placeholder="Mfano: 25" required></div>
-
-        <h3 style="color: var(--ocean-blue); margin: 25px 0 15px 0;"><i class="fas fa-graduation-cap"></i> Elimu na Uzoefu</h3>
-        <div class="form-group"><label>Kiwango cha Elimu:</label>
-            <select id="joinEducation" required>
-                <option value="">Chagua...</option>
-                <option value="Shule ya Msingi">Shule ya Msingi</option>
-                <option value="Sekondari">Sekondari</option>
-                <option value="Diploma">Diploma</option>
-                <option value="Shahada">Shahada</option>
-                <option value="Masters">Masters</option>
-                <option value="PhD">PhD</option>
-            </select>
+    <form id="joinForm" class="space-y-5">
+      
+      <h3 class="text-lg font-bold text-[#0c4a6e] mt-4 border-b pb-2">Personal Information</h3>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div>
+          <label class="block text-sm font-semibold text-[#082f49] mb-2">Full Name *</label>
+          <input type="text" id="joinName" required placeholder="Your full name" class="input-field w-full px-4 py-3 border-2 border-gray-200 rounded-xl outline-none transition">
         </div>
-        <div class="form-group"><label>Fani/Utaalamu Wako:</label><input type="text" id="joinField" placeholder="Mfano: IT, Utalii, Biashara" required></div>
-        <div class="form-group"><label>Uzoefu wa Kazi (miaka):</label><input type="number" id="joinExperience" placeholder="Mfano: 3" required></div>
+        <div>
+          <label class="block text-sm font-semibold text-[#082f49] mb-2">Email Address *</label>
+          <input type="email" id="joinEmail" required placeholder="email@domain.com" class="input-field w-full px-4 py-3 border-2 border-gray-200 rounded-xl outline-none transition">
+        </div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div>
+          <label class="block text-sm font-semibold text-[#082f49] mb-2">Phone Number *</label>
+          <input type="tel" id="joinPhone" required placeholder="+255..." class="input-field w-full px-4 py-3 border-2 border-gray-200 rounded-xl outline-none transition">
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-[#082f49] mb-2">Country *</label>
+          <input type="text" id="joinCountry" required placeholder="e.g., Tanzania, USA" class="input-field w-full px-4 py-3 border-2 border-gray-200 rounded-xl outline-none transition">
+        </div>
+      </div>
 
-        <h3 style="color: var(--ocean-blue); margin: 25px 0 15px 0;"><i class="fas fa-briefcase"></i> Sekta Unayotaka Kujiunga</h3>
-        <div class="form-group"><label>Chagua Sekta:</label>
-            <select id="joinSector" required>
-                <option value="">Chagua...</option>
-                <option value="Kisomi">Kisomi (Utafiti, Sayansi, Elimu)</option>
-                <option value="Biashara">Biashara (Uuzaji, Masoko, Fedha)</option>
-                <option value="Teknolojia">Teknolojia (IT, AI, Programming)</option>
-                <option value="Sanaa">Sanaa (Muziki, Filamu, Uchoraji)</option>
-                <option value="Utalii">Utalii (Guide, Hotel, Safari)</option>
-                <option value="Afya">Afya (Daktari, Muuguzi, Lishe)</option>
-                <option value="Nyingine">Nyingine</option>
-            </select>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div>
+          <label class="block text-sm font-semibold text-[#082f49] mb-2">Age *</label>
+          <input type="number" id="joinAge" required placeholder="e.g., 25" class="input-field w-full px-4 py-3 border-2 border-gray-200 rounded-xl outline-none transition">
         </div>
+        <div>
+          <label class="block text-sm font-semibold text-[#082f49] mb-2">Education Level *</label>
+          <select id="joinEducation" required class="input-field w-full px-4 py-3 border-2 border-gray-200 rounded-xl outline-none transition bg-white">
+            <option value="">Select...</option>
+            <option value="Primary School">Primary School</option>
+            <option value="Secondary">Secondary</option>
+            <option value="Diploma">Diploma</option>
+            <option value="Bachelor's Degree">Bachelor's Degree</option>
+            <option value="Master's Degree">Master's Degree</option>
+            <option value="PhD">PhD</option>
+          </select>
+        </div>
+      </div>
 
-        <h3 style="color: var(--ocean-blue); margin: 25px 0 15px 0;"><i class="fas fa-lightbulb"></i> Wazo Lako na Mchango Wako</h3>
-        <div class="form-group"><label>Ni wazo gani muhimu unalotaka kuongeza kwenye UNP TOURS?</label>
-            <textarea id="joinIdea" rows="4" placeholder="Eleza wazo lako kwa kina..." required></textarea>
-        </div>
-        <div class="form-group"><label>Ni kitu gani utatufanyia kama mshirika?</label>
-            <textarea id="joinContribution" rows="4" placeholder="Eleza kile utakachotufanyia..." required></textarea>
-        </div>
-        <div class="form-group"><label>Kwa nini unataka kujiunga na UNP TOURS?</label>
-            <textarea id="joinReason" rows="4" placeholder="Eleza sababu zako..." required></textarea>
-        </div>
+      <h3 class="text-lg font-bold text-[#0c4a6e] mt-6 border-b pb-2">Experience & Sector</h3>
 
-        <button type="submit" class="btn-primary btn-full" style="margin-top: 15px;"><i class="fab fa-whatsapp"></i> Tuma Maombi kwa WhatsApp</button>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div>
+          <label class="block text-sm font-semibold text-[#082f49] mb-2">Field/Profession *</label>
+          <input type="text" id="joinField" required placeholder="e.g., IT, Tourism, Business" class="input-field w-full px-4 py-3 border-2 border-gray-200 rounded-xl outline-none transition">
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-[#082f49] mb-2">Work Experience (Years) *</label>
+          <input type="number" id="joinExperience" required placeholder="e.g., 3" class="input-field w-full px-4 py-3 border-2 border-gray-200 rounded-xl outline-none transition">
+        </div>
+      </div>
+
+      <div>
+        <label class="block text-sm font-semibold text-[#082f49] mb-2">Sector You Want to Join *</label>
+        <select id="joinSector" required class="input-field w-full px-4 py-3 border-2 border-gray-200 rounded-xl outline-none transition bg-white">
+          <option value="">Select...</option>
+          <option value="Academic">Academic (Research, Science, Education)</option>
+          <option value="Business">Business (Sales, Marketing, Finance)</option>
+          <option value="Technology">Technology (IT, AI, Programming)</option>
+          <option value="Arts">Arts (Music, Film, Painting)</option>
+          <option value="Tourism">Tourism (Guide, Hotel, Safari)</option>
+          <option value="Health">Health (Doctor, Nurse, Nutrition)</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <h3 class="text-lg font-bold text-[#0c4a6e] mt-6 border-b pb-2">Your Idea & Contribution</h3>
+
+      <div>
+        <label class="block text-sm font-semibold text-[#082f49] mb-2">What important idea do you want to add to UNP TOURS? *</label>
+        <textarea id="joinIdea" rows="3" required placeholder="Explain your idea in detail..." class="input-field w-full px-4 py-3 border-2 border-gray-200 rounded-xl outline-none transition"></textarea>
+      </div>
+
+      <div>
+        <label class="block text-sm font-semibold text-[#082f49] mb-2">What will you do for us as a partner? *</label>
+        <textarea id="joinContribution" rows="3" required placeholder="Explain what you will bring..." class="input-field w-full px-4 py-3 border-2 border-gray-200 rounded-xl outline-none transition"></textarea>
+      </div>
+
+      <div>
+        <label class="block text-sm font-semibold text-[#082f49] mb-2">Why do you want to join UNP TOURS? *</label>
+        <textarea id="joinReason" rows="3" required placeholder="Explain your reasons..." class="input-field w-full px-4 py-3 border-2 border-gray-200 rounded-xl outline-none transition"></textarea>
+      </div>
+
+      <button type="submit" class="w-full bg-[#25D366] text-white py-4 rounded-xl font-bold text-lg hover:bg-[#1ebe57] transition flex justify-center items-center gap-2 mt-4">
+        <span class="text-2xl">💬</span> Submit Application via WhatsApp
+      </button>
+
+      <p id="joinMsg" class="text-center font-semibold mt-4 hidden"></p>
+
     </form>
-    <p id="joinMsg" style="margin-top: 15px; font-weight: 600; display: none; text-align: center;"></p>
-</section>
+  </div>
 
-<!-- FOOTER -->
-<footer class="footer">
-    <div class="footer-content">
-        <div>
-            <h3>UNIQUE NATURE PARADISE (UNP)</h3>
-            <p style="font-size: 0.9rem; max-width: 350px;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p>
-        </div>
-        <div>
-            <h4>Direct Contact</h4>
-            <p style="font-size: 0.9rem; margin-top: 8px;"><i class="fab fa-whatsapp" style="color: var(--gold);"></i> Phone: +255 655 728 982</p>
-            <p style="font-size: 0.9rem; margin-top: 5px;"><i class="fas fa-envelope" style="color: var(--gold);"></i> Email: salimnasoro11@gmail.com</p>
-            <div class="social-links">
-                <a href="https://wa.me/255655728982" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                <a href="mailto:salimnasoro11@gmail.com"><i class="fas fa-envelope"></i></a>
-                <a href="https://www.tiktok.com/@unptours" target="_blank"><i class="fab fa-tiktok"></i></a>
-                <a href="https://www.instagram.com/unpsoulvoyoge" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.facebook.com/profile.php?id=61595094232501" target="_blank"><i class="fab fa-facebook"></i></a>
-            </div>
-        </div>
-    </div>
-    <!-- SOCIAL SHARING BUTTONS -->
-    <div style="text-align: center; margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.2);">
-        <p style="color: var(--gold); font-size: 0.9rem; margin-bottom: 10px;">Shiriki UNP TOURS:</p>
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https://unp.tours/join.html" target="_blank" style="display: inline-block; margin: 0 5px; color: var(--gold); font-size: 1.5rem;"><i class="fab fa-facebook"></i></a>
-        <a href="https://twitter.com/intent/tweet?url=https://unp.tours/join.html" target="_blank" style="display: inline-block; margin: 0 5px; color: var(--gold); font-size: 1.5rem;"><i class="fab fa-twitter"></i></a>
-        <a href="https://wa.me/?text=Check%20out%20UNP%20Join!%20https://unp.tours/join.html" target="_blank" style="display: inline-block; margin: 0 5px; color: var(--gold); font-size: 1.5rem;"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://www.linkedin.com/sharing/share-off
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-black text-gray-300 py-10 px-5 border-t-4 border-[#d4a017]">
+  <div class="max-w-4xl mx-auto text-center">
+    <p class="font-bold text-[#d4a017] mb-2">UNP TOURS — Unique & Natural Paradise</p>
+    <p class="text-sm">Nungwi, Zanzibar, Tanzania | WhatsApp: +255 655 728 982</p>
+    <p class="text-xs mt-4 text-gray-500">© 2026 UNP Tours. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/255655728982" target="_blank" class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] rounded-full flex justify-center items-center text-3xl text-white shadow-lg hover:scale-110 transition z-50">
+  💬
+</a>
+
+<!-- ================= JAVASCRIPT (FORM SUBMISSION) ================= -->
+<script>
+  document.getElementById('joinForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const btn = event.target.querySelector('button[type="submit"]');
+    const msg = document.getElementById('joinMsg');
+
+    const name = document.getElementById('joinName').value;
+    const email = document.getElementById('joinEmail').value;
+    const phone = document.getElementById('joinPhone').value;
+    const country = document.getElementById('joinCountry').value;
+    const age = document.getElementById('joinAge').value;
+    const education = document.getElementById('joinEducation').value;
+    const field = document.getElementById('joinField').value;
+    const experience = document.getElementById('joinExperience').value;
+    const sector = document.getElementById('joinSector').value;
+    const idea = document.getElementById('joinIdea').value;
+    const contribution = document.getElementById('joinContribution').value;
+    const reason = document.getElementById('joinReason').value;
+
+    // Andaa ujumbe wa WhatsApp
+    const waMessage = `*UNP TOURS - New Application*%0A%0A` +
+      `*PERSONAL INFO*%0A` +
+      `Name: ${encodeURIComponent(name)}%0A` +
+      `Email: ${encodeURIComponent(email)}%0A` +
+      `Phone: ${encodeURIComponent(phone)}%0A` +
+      `Country: ${encodeURIComponent(country)}%0A` +
+      `Age: ${encodeURIComponent(age)}%0A%0A` +
+      `*EDUCATION & EXPERIENCE*%0A` +
+      `Education: ${encodeURIComponent(education)}%0A` +
+      `Field: ${encodeURIComponent(field)}%0A` +
+      `Experience: ${encodeURIComponent(experience)} years%0A` +
+      `Sector: ${encodeURIComponent(sector)}%0A%0A` +
+      `*IDEAS & CONTRIBUTION*%0A` +
+      `Idea: ${encodeURIComponent(idea)}%0A` +
+      `Contribution: ${encodeURIComponent(contribution)}%0A` +
+      `Reason: ${encodeURIComponent(reason)}`;
+
+    // Fungua WhatsApp
+    window.open('https://wa.me/255655728982?text=' + waMessage, '_blank');
+
+    // Onyesha ujumbe wa mafanikio
+    btn.innerHTML = '✅ Application Sent!';
+    btn.classList.remove('bg-[#25D366]', 'hover:bg-[#1ebe57]');
+    btn.classList.add('bg-green-600');
+    msg.textContent = "Your application has been sent via WhatsApp. We will review it shortly.";
+    msg.classList.remove('hidden');
+    msg.classList.add('text-green-700');
+
+    setTimeout(() => {
+      this.reset();
+      btn.innerHTML = '<span class="text-2xl">💬</span> Submit Application via WhatsApp';
+      btn.classList.remove('bg-green-600');
+      btn.classList.add('bg-[#25D366]', 'hover:bg-[#1ebe57]');
+      msg.classList.add('hidden');
+    }, 5000);
+  });
+</script>
+
+</body>
+  </html>
