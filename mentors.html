@@ -1,394 +1,233 @@
 <!DOCTYPE html>
-<html lang="sw">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Global Mentors | UNP TOURS Zanzibar</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="style.css">
-
-<!-- SEO META TAGS -->
-<meta name="description" content="Global Mentors wa UNP TOURS - Makampuni makubwa ya kimataifa yaliyotuhamasisha: Virtuoso, TUI, Abercrombie & Kent, UNWTO, na zaidi.">
-<meta name="keywords" content="UNP mentors, global tourism mentors, luxury travel mentors, Zanzibar luxury">
-<meta name="author" content="UNP TOURS Zanzibar">
+<title>Our Global Mentors — UNP TOURS Zanzibar</title>
+<meta name="description" content="Discover the global mentors who inspire UNP TOURS - Virtuoso, TUI, Abercrombie & Kent, and more.">
 <meta name="robots" content="index, follow">
 
-<!-- Open Graph -->
-<meta property="og:title" content="Our Global Mentors | UNP TOURS Zanzibar">
-<meta property="og:description" content="Tunajivunia kujifunza kutoka kwa makampuni makubwa ya kimataifa.">
-<meta property="og:image" content="https://unp.tours/images/logo.png">
-<meta property="og:url" content="https://unp.tours/mentors.html">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="UNP TOURS">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0c4a6e">
+<link rel="icon" type="image/png" href="assets/images/logo.png">
 
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Our Global Mentors | UNP TOURS Zanzibar">
-<meta name="twitter:description" content="Tunajivunia kujifunza kutoka kwa makampuni makubwa ya kimataifa.">
-<meta name="twitter:image" content="https://unp.tours/images/logo.png">
-
-<!-- Canonical -->
-<link rel="canonical" href="https://unp.tours/mentors.html">
-
-<!-- Geo Tags -->
-<meta name="geo.region" content="TZ-07">
-<meta name="geo.placename" content="Zanzibar">
-<meta name="geo.position" content="-6.165917;39.202641">
-<meta name="ICBM" content="-6.165917, 39.202641">
-
-<!-- GOOGLE ANALYTICS -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5QJ1X38ZLC"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-5QJ1X38ZLC');
-</script>
-
-<!-- YANDEX METRICA -->
-<script type="text/javascript">
-    (function(m,e,t,r,i,k,a){
-        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113203659', 'ym');
-    ym(113203659, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/113203659" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-
-<!-- ELFSIGHT PLATFORM -->
-<script src="https://elfsightcdn.com/platform.js" async></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
 
 <style>
-    :root {
-        --ocean-blue: #0c4a6e;
-        --deep-navy: #082f49;
-        --gold: #d4af37;
-        --gold-light: #f0c75e;
-        --light-bg: #f8f9fa;
-        --white: #ffffff;
-        --text-dark: #1e293b;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-    body { background-color: var(--light-bg); color: #333; line-height: 1.6; }
-    a { text-decoration: none; color: inherit; }
-
-    /* HEADER */
-    .top-bar { background: var(--deep-navy); padding: 8px 20px; display: flex; justify-content: flex-end; align-items: center; gap: 15px; }
-    .header { background: var(--ocean-blue); padding: 15px 20px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
-    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; position: relative; }
-    .logo-area { display: flex; align-items: center; gap: 15px; }
-    .logo-holder { width: 60px; height: 60px; border: 2px dashed var(--gold); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
-    .logo-fallback { color: var(--gold); font-weight: 700; font-size: 0.7rem; text-align: center; line-height: 1.1; }
-    .logo-text h2 { color: #fff; font-size: 1.3rem; font-weight: 700; }
-    .logo-text span { color: var(--gold); font-size: 0.8rem; }
-    .nav-links { display: flex; gap: 20px; list-style: none; }
-    .nav-links a { color: #fff; font-size: 0.85rem; transition: color 0.3s; display: flex; align-items: center; gap: 5px; }
-    .nav-links a:hover { color: var(--gold); }
-    .menu-toggle { display: none; background: none; border: none; color: var(--gold); font-size: 26px; cursor: pointer; }
-
-    /* MENTORS HERO */
-    .mentors-hero {
-        background: linear-gradient(135deg, var(--deep-navy) 0%, var(--ocean-blue) 50%, var(--deep-navy) 100%);
-        padding: 100px 20px;
-        text-align: center;
-        color: #fff;
-        border-bottom: 5px solid var(--gold);
-    }
-    .mentors-hero h1 {
-        font-size: 2.5rem;
-        color: var(--gold);
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        margin-bottom: 10px;
-    }
-    .mentors-hero p {
-        font-size: 1.1rem;
-        color: #ddd;
-        max-width: 700px;
-        margin: 0 auto;
-    }
-    .mentors-hero .globe-icon {
-        font-size: 4rem;
-        color: var(--gold);
-        margin-bottom: 20px;
-    }
-
-    /* MENTOR CATEGORIES */
-    .mentor-category { margin-bottom: 50px; }
-    .mentor-category h2 {
-        color: var(--ocean-blue);
-        font-size: 1.5rem;
-        margin-bottom: 25px;
-        border-left: 5px solid var(--gold);
-        padding-left: 15px;
-    }
-    .mentor-category h2 i { color: var(--gold); margin-right: 8px; }
-    .mentor-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 25px;
-    }
-    .mentor-card {
-        background: #fff;
-        border-radius: 15px;
-        padding: 25px;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-        border-top: 4px solid var(--gold);
-        transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .mentor-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-    }
-    .mentor-card .mentor-icon {
-        width: 60px;
-        height: 60px;
-        background: var(--ocean-blue);
-        color: var(--gold);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.8rem;
-        margin-bottom: 15px;
-    }
-    .mentor-card h3 { color: var(--deep-navy); font-size: 1.2rem; margin-bottom: 8px; }
-    .mentor-card .mentor-country {
-        display: inline-block;
-        background: var(--gold);
-        color: var(--deep-navy);
-        padding: 3px 12px;
-        border-radius: 15px;
-        font-size: 0.75rem;
-        font-weight: 700;
-        margin-bottom: 12px;
-    }
-    .mentor-card p { color: #555; font-size: 0.9rem; line-height: 1.6; }
-    .mentor-card .mentor-contribution {
-        margin-top: 15px;
-        padding-top: 15px;
-        border-top: 1px dashed #eee;
-        font-size: 0.85rem;
-        color: var(--ocean-blue);
-        font-style: italic;
-    }
-
-    /* INTERACTIVE BOX */
-    .interactive-box { background: #fff; padding: 30px; border-radius: 15px; margin: 40px auto; box-shadow: 0 4px 15px rgba(0,0,0,0.1); max-width: 1200px; }
-
-    /* GRATITUDE */
-    .gratitude-section {
-        background: linear-gradient(135deg, var(--deep-navy) 0%, var(--ocean-blue) 100%);
-        color: #fff;
-        padding: 50px 30px;
-        border-radius: 15px;
-        text-align: center;
-        margin-top: 30px;
-        border: 2px solid var(--gold);
-    }
-    .gratitude-section h2 { color: var(--gold); margin-bottom: 20px; }
-    .gratitude-section p { color: #ddd; font-size: 1rem; line-height: 1.8; max-width: 800px; margin: 0 auto; }
-
-    /* FOOTER */
-    .footer { background: var(--deep-navy); color: #fff; padding: 40px 20px; margin-top: 40px; }
-    .footer-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-    .footer h3, .footer h4 { color: var(--gold); margin-bottom: 15px; }
-    .social-links { display: flex; gap: 15px; margin-top: 15px; }
-    .social-links a { color: var(--gold); font-size: 1.2rem; transition: transform 0.3s; }
-    .social-links a:hover { transform: scale(1.2); }
-
-    /* FLOATING WHATSAPP */
-    .floating-whatsapp { position: fixed; bottom: 25px; right: 25px; background: #25d366; color: #fff; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 1100; transition: transform 0.3s; }
-    .floating-whatsapp:hover { transform: scale(1.1); }
-
-    /* CHATBOT */
-    .chatbot-toggle { position: fixed; bottom: 100px; right: 25px; background-color: var(--ocean-blue); color: var(--gold); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 1100; cursor: pointer; border: 2px solid var(--gold); }
-    .chatbot-container { position: fixed; bottom: 170px; right: 25px; width: 350px; max-width: 90vw; height: 500px; background: #fff; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); z-index: 1100; display: none; flex-direction: column; overflow: hidden; border: 2px solid var(--gold); }
-    .chatbot-container.active { display: flex; }
-    .chatbot-header { background: var(--ocean-blue); color: #fff; padding: 15px; display: flex; align-items: center; gap: 10px; }
-    .chatbot-header .avatar { width: 40px; height: 40px; background: var(--gold); color: var(--deep-navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem; }
-    .chatbot-header h4 { margin: 0; font-size: 1rem; color: #fff; }
-    .chatbot-header span { font-size: 0.75rem; color: #ddd; display: block; }
-    .chatbot-messages { flex-grow: 1; padding: 15px; overflow-y: auto; background: #f9f9f9; display: flex; flex-direction: column; gap: 10px; }
-    .message { max-width: 80%; padding: 10px 15px; border-radius: 15px; font-size: 0.85rem; }
-    .message.bot { background: #e9ecef; align-self: flex-start; }
-    .message.user { background: var(--ocean-blue); color: #fff; align-self: flex-end; }
-    .chatbot-input { display: flex; padding: 10px; border-top: 1px solid #eee; }
-    .chatbot-input input { flex-grow: 1; padding: 10px; border: 1px solid #ddd; border-radius: 20px; outline: none; font-family: 'Poppins', sans-serif; }
-    .chatbot-input button { background: var(--gold); color: var(--deep-navy); border: none; width: 40px; height: 40px; border-radius: 50%; margin-left: 8px; cursor: pointer; font-size: 1rem; }
-
-    /* GTRANSLATE */
-    .gtranslate_wrapper { position: relative; }
-
-    @media (max-width: 768px) {
-        .menu-toggle { display: block; }
-        .nav-links { display: none; flex-direction: column; width: 100%; background: var(--deep-navy); padding: 20px; position: absolute; top: 100%; left: 0; right: 0; z-index: 999; border-top: 2px solid var(--gold); }
-        .nav-links.active { display: flex; }
-        .nav-links li { width: 100%; }
-        .nav-links a { padding: 10px 0; width: 100%; }
-        .mentors-hero h1 { font-size: 1.8rem; }
-    }
+  body { font-family: 'Inter', sans-serif; background: #f8f9fa; }
+  .mentor-card { transition: all 0.3s ease; }
+  .mentor-card:hover { transform: translateY(-8px); box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
 </style>
 </head>
 <body>
 
-<!-- TOP BAR WITH GTRANSLATE -->
-<div class="top-bar">
-    <div class="gtranslate_wrapper"></div>
-</div>
+<!-- ================= NAVBAR ================= -->
+<nav class="fixed top-0 w-full flex justify-between items-center px-5 md:px-12 py-3 z-50 bg-[#0c4a6e] shadow-lg">
+  <a href="index.html" class="flex items-center gap-3">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="h-10 w-10">
+      <defs>
+        <linearGradient id="goldNav" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#d4a017" />
+          <stop offset="50%" style="stop-color:#f5d76e" />
+          <stop offset="100%" style="stop-color:#b88a10" />
+        </linearGradient>
+        <linearGradient id="greenNav" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#0b3d2e" />
+          <stop offset="100%" style="stop-color:#1a6b4a" />
+        </linearGradient>
+      </defs>
+      <circle cx="100" cy="100" r="95" fill="url(#greenNav)" stroke="url(#goldNav)" stroke-width="4"/>
+      <circle cx="100" cy="100" r="85" fill="none" stroke="url(#goldNav)" stroke-width="1.5"/>
+      <path d="M60 80 Q80 40 120 50 Q130 60 110 80 Q90 100 60 80 Z" fill="url(#goldNav)"/>
+      <path d="M60 100 Q80 85 100 100 T140 100" fill="none" stroke="url(#goldNav)" stroke-width="4" stroke-linecap="round"/>
+      <text x="100" y="140" font-family="Inter, sans-serif" font-size="30" font-weight="800" fill="url(#goldNav)" text-anchor="middle" letter-spacing="2">UNP</text>
+    </svg>
+    <span class="font-extrabold text-white hidden sm:block">UNP TOURS</span>
+  </a>
+  <div class="flex items-center gap-4">
+    <a href="index.html" class="text-white font-semibold hover:text-[#d4a017] transition hidden sm:block">Home</a>
+    <a href="index.html" class="text-white font-semibold hover:text-[#d4a017] transition">← Back</a>
+  </div>
+</nav>
 
-<!-- HEADER -->
-<header class="header">
-    <div class="nav-container">
-        <a href="index.html" class="logo-area">
-            <div class="logo-holder"><span class="logo-fallback">UNP<br>LOGO</span></div>
-            <div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
-        </a>
-        <button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="index.html"><i class="fas fa-home"></i> Nyumbani</a></li>
-            <li><a href="about.html"><i class="fas fa-info-circle"></i> Kuhusu Sisi</a></li>
-            <li><a href="services.html"><i class="fas fa-briefcase"></i> Huduma</a></li>
-            <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
-            <li><a href="pricing.html"><i class="fas fa-layer-group"></i> Madaraja</a></li>
-            <li><a href="mentors.html" style="color: var(--gold);"><i class="fas fa-globe"></i> Mentors</a></li>
-            <li><a href="blog.html"><i class="fas fa-newspaper"></i> Blog</a></li>
-            <li><a href="contact.html"><i class="fas fa-envelope"></i> Wasiliana</a></li>
-        </ul>
-    </div>
-</header>
-
-<!-- MENTORS HERO -->
-<section class="mentors-hero">
-    <i class="fas fa-globe globe-icon"></i>
-    <h1>Our Global Mentors</h1>
-    <p>Tunajivunia kujifunza kutoka kwa makampuni makubwa ya kimataifa duniani. Hawa ndio waliotuhamasisha na kutuongoza katika safari yetu ya ubora.</p>
+<!-- ================= HERO ================= -->
+<section class="pt-32 pb-16 bg-gradient-to-br from-[#0c4a6e] to-[#082f49] text-white border-b-4 border-[#d4a017]">
+  <div class="max-w-4xl mx-auto text-center px-5">
+    <div class="text-6xl mb-4">🌍</div>
+    <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Our Global Mentors</h1>
+    <p class="text-lg md:text-xl text-blue-200">We are proud to learn from the world's leading luxury travel companies. They inspire and guide our journey to excellence.</p>
+  </div>
 </section>
 
-<!-- MENTORS CONTENT -->
-<section class="interactive-box">
+<!-- ================= CONTENT ================= -->
+<main class="max-w-5xl mx-auto px-5 py-16">
 
-    <!-- Kundi 1: Hoteli za Kifahari Duniani -->
-    <div class="mentor-category">
-        <h2><i class="fas fa-crown"></i> Hoteli za Kifahari Duniani</h2>
-        <div class="mentor-grid">
-            <div class="mentor-card">
-                <div class="mentor-icon"><i class="fas fa-globe"></i></div>
-                <h3>Virtuoso</h3>
-                <span class="mentor-country">Kimataifa</span>
-                <p>Mtandao wa kifahari wa hoteli 2,800+ duniani.</p>
-                <div class="mentor-contribution">Tumejifunza ubora wa huduma za kifahari na ushirikiano wa kimataifa.</div>
-            </div>
-            <div class="mentor-card">
-                <div class="mentor-icon"><i class="fas fa-plane"></i></div>
-                <h3>Signature Travel Network</h3>
-                <span class="mentor-country">USA/Kanada</span>
-                <p>Mauzo ya $11B+, hoteli za kifahari duniani.</p>
-                <div class="mentor-contribution">Tumejifunza jinsi ya kujenga mtandao mkubwa wa wateja wa kifahari.</div>
-            </div>
-            <div class="mentor-card">
-                <div class="mentor-icon"><i class="fas fa-users"></i></div>
-                <h3>Ensemble Travel Group</h3>
-                <span class="mentor-country">USA/Kanada</span>
-                <p>Mauzo ya $4B, hoteli za kifahari.</p>
-                <div class="mentor-contribution">Tumejifunza umuhimu wa ushirikiano wa kimataifa katika utalii.</div>
-            </div>
-            <div class="mentor-card">
-                <div class="mentor-icon"><i class="fas fa-suitcase-rolling"></i></div>
-                <h3>TUI Group</h3>
-                <span class="mentor-country">Ujerumani</span>
-                <p>Hoteli 460+ na ndege 130 duniani.</p>
-                <div class="mentor-contribution">Tumejifunza jinsi ya kusimamia huduma nyingi kwa wakati mmoja.</div>
-            </div>
-            <div class="mentor-card">
-                <div class="mentor-icon"><i class="fas fa-binoculars"></i></div>
-                <h3>Abercrombie & Kent</h3>
-                <span class="mentor-country">Kimataifa</span>
-                <p>Safari za kifahari duniani.</p>
-                <div class="mentor-contribution">Tumejifunza ubora wa safari za kifahari na ukaribu na wateja.</div>
-            </div>
-        </div>
+  <!-- Category 1: Luxury Hotels -->
+  <div class="mb-16">
+    <h2 class="text-2xl font-extrabold text-[#082f49] mb-6 border-l-4 border-[#d4a017] pl-4 flex items-center gap-2">
+      <span class="text-[#d4a017]">👑</span> World-Class Luxury Hotels
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      
+      <div class="mentor-card bg-white rounded-xl p-6 shadow-sm border-t-4 border-[#d4a017]">
+        <div class="w-12 h-12 bg-[#0c4a6e] text-[#d4a017] rounded-full flex items-center justify-center text-2xl mb-4">🌐</div>
+        <h3 class="text-lg font-bold text-[#082f49]">Virtuoso</h3>
+        <span class="inline-block bg-[#d4a017] text-[#082f49] text-xs font-bold px-3 py-1 rounded-full mt-2 mb-3">Global</span>
+        <p class="text-gray-600 text-sm">A global network of 2,800+ luxury hotels.</p>
+        <p class="text-[#0c4a6e] italic text-xs mt-4 pt-4 border-t border-gray-100">"We learned the standards of luxury service and international collaboration."</p>
+      </div>
+
+      <div class="mentor-card bg-white rounded-xl p-6 shadow-sm border-t-4 border-[#d4a017]">
+        <div class="w-12 h-12 bg-[#0c4a6e] text-[#d4a017] rounded-full flex items-center justify-center text-2xl mb-4">✈️</div>
+        <h3 class="text-lg font-bold text-[#082f49]">Signature Travel Network</h3>
+        <span class="inline-block bg-[#d4a017] text-[#082f49] text-xs font-bold px-3 py-1 rounded-full mt-2 mb-3">USA/Canada</span>
+        <p class="text-gray-600 text-sm">$11B+ in sales, global luxury hotels.</p>
+        <p class="text-[#0c4a6e] italic text-xs mt-4 pt-4 border-t border-gray-100">"We learned how to build a vast network of luxury clients."</p>
+      </div>
+
+      <div class="mentor-card bg-white rounded-xl p-6 shadow-sm border-t-4 border-[#d4a017]">
+        <div class="w-12 h-12 bg-[#0c4a6e] text-[#d4a017] rounded-full flex items-center justify-center text-2xl mb-4">🤝</div>
+        <h3 class="text-lg font-bold text-[#082f49]">Ensemble Travel Group</h3>
+        <span class="inline-block bg-[#d4a017] text-[#082f49] text-xs font-bold px-3 py-1 rounded-full mt-2 mb-3">USA/Canada</span>
+        <p class="text-gray-600 text-sm">$4B in sales, luxury hotels.</p>
+        <p class="text-[#0c4a6e] italic text-xs mt-4 pt-4 border-t border-gray-100">"We learned the importance of international partnerships in tourism."</p>
+      </div>
+
+      <div class="mentor-card bg-white rounded-xl p-6 shadow-sm border-t-4 border-[#d4a017]">
+        <div class="w-12 h-12 bg-[#0c4a6e] text-[#d4a017] rounded-full flex items-center justify-center text-2xl mb-4">🧳</div>
+        <h3 class="text-lg font-bold text-[#082f49]">TUI Group</h3>
+        <span class="inline-block bg-[#d4a017] text-[#082f49] text-xs font-bold px-3 py-1 rounded-full mt-2 mb-3">Germany</span>
+        <p class="text-gray-600 text-sm">460+ hotels and 130 aircraft worldwide.</p>
+        <p class="text-[#0c4a6e] italic text-xs mt-4 pt-4 border-t border-gray-100">"We learned how to manage multiple services simultaneously."</p>
+      </div>
+
+      <div class="mentor-card bg-white rounded-xl p-6 shadow-sm border-t-4 border-[#d4a017]">
+        <div class="w-12 h-12 bg-[#0c4a6e] text-[#d4a017] rounded-full flex items-center justify-center text-2xl mb-4">🔭</div>
+        <h3 class="text-lg font-bold text-[#082f49]">Abercrombie & Kent</h3>
+        <span class="inline-block bg-[#d4a017] text-[#082f49] text-xs font-bold px-3 py-1 rounded-full mt-2 mb-3">Global</span>
+        <p class="text-gray-600 text-sm">World-class luxury safaris.</p>
+        <p class="text-[#0c4a6e] italic text-xs mt-4 pt-4 border-t border-gray-100">"We learned the quality of luxury safaris and closeness to clients."</p>
+      </div>
+
     </div>
+  </div>
 
-    <!-- Kundi 2: Maeneo ya Kifahari Duniani -->
-    <div class="mentor-category">
-        <h2><i class="fas fa-map-marked-alt"></i> Maeneo ya Kifahari Duniani</h2>
-        <div class="mentor-grid">
-            <div class="mentor-card">
-                <div class="mentor-icon"><i class="fas fa-umbrella-beach"></i></div>
-                <h3>Saint-Jean-Cap-Ferrat</h3>
-                <span class="mentor-country">Ufaransa</span>
-                <p>Riviera ya kifahari, hoteli ya Four Seasons.</p>
-                <div class="mentor-contribution">Tumejifunza uzuri wa pwani na huduma za kifahari.</div>
-            </div>
-            <div class="mentor-card">
-                <div class="mentor-icon"><i class="fas fa-island-tropical"></i></div>
-                <h3>Musha Cay</h3>
-                <span class="mentor-country">Bahamas</span>
-                <p>Visiwa 11 vya private, Bill Gates na Oprah wamefika.</p>
-                <div class="mentor-contribution">Tumejifunza faragha na huduma za kipekee kwa wateja wa VIP.</div>
-            </div>
-            <div class="mentor-card">
-                <div class="mentor-icon"><i class="fas fa-water"></i></div>
-                <h3>Laucala Island</h3>
-                <span class="mentor-country">Fiji</span>
-                <p>Villas 25 zenye privacy kamili.</p>
-                <div class="mentor-contribution">Tumejifunza jinsi ya kutoa faragha kamili kwa wateja wa kifahari.</div>
-            </div>
-            <div class="mentor-card">
-                <div class="mentor-icon"><i class="fas fa-gem"></i></div>
-                <h3>Canouan</h3>
-                <span class="mentor-country">St Vincent</span>
-                <p>"Billionaires go to escape millionaires", Prince Harry.</p>
-                <div class="mentor-contribution">Tumejifunza thamani ya faragha na utulivu kwa wateja wa kipekee.</div>
-            </div>
-            <div class="mentor-card">
-                <div class="mentor-icon"><i class="fas fa-skiing"></i></div>
-                <h3>Aspen</h3>
-                <span class="mentor-country">USA</span>
-                <p>Ski resort ya matajiri.</p>
-                <div class="mentor-contribution">Tumejifunza jinsi ya kuhudumia wateja wa kipato cha juu.</div>
-            </div>
-            <div class="mentor-card">
-                <div class="mentor-icon"><i class="fas fa-mountain"></i></div>
-                <h3>Gstaad</h3>
-                <span class="mentor-country">Uswisi</span>
-                <p>Ski resort ya kifahari, $55,600 kwa mita ya mraba.</p>
-                <div class="mentor-contribution">Tumejifunza ubora wa maeneo ya kifahari na huduma bora.</div>
-            </div>
-        </div>
+  <!-- Category 2: Luxury Destinations -->
+  <div class="mb-16">
+    <h2 class="text-2xl font-extrabold text-[#082f49] mb-6 border-l-4 border-[#d4a017] pl-4 flex items-center gap-2">
+      <span class="text-[#d4a017]">🗺️</span> Exclusive Luxury Destinations
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      
+      <div class="mentor-card bg-white rounded-xl p-6 shadow-sm border-t-4 border-[#d4a017]">
+        <div class="w-12 h-12 bg-[#0c4a6e] text-[#d4a017] rounded-full flex items-center justify-center text-2xl mb-4">🏖️</div>
+        <h3 class="text-lg font-bold text-[#082f49]">Saint-Jean-Cap-Ferrat</h3>
+        <span class="inline-block bg-[#d4a017] text-[#082f49] text-xs font-bold px-3 py-1 rounded-full mt-2 mb-3">France</span>
+        <p class="text-gray-600 text-sm">Luxury Riviera, Four Seasons Hotel.</p>
+        <p class="text-[#0c4a6e] italic text-xs mt-4 pt-4 border-t border-gray-100">"We learned the beauty of the coast and luxury services."</p>
+      </div>
+
+      <div class="mentor-card bg-white rounded-xl p-6 shadow-sm border-t-4 border-[#d4a017]">
+        <div class="w-12 h-12 bg-[#0c4a6e] text-[#d4a017] rounded-full flex items-center justify-center text-2xl mb-4">🏝️</div>
+        <h3 class="text-lg font-bold text-[#082f49]">Musha Cay</h3>
+        <span class="inline-block bg-[#d4a017] text-[#082f49] text-xs font-bold px-3 py-1 rounded-full mt-2 mb-3">Bahamas</span>
+        <p class="text-gray-600 text-sm">11 private islands, visited by Bill Gates and Oprah.</p>
+        <p class="text-[#0c4a6e] italic text-xs mt-4 pt-4 border-t border-gray-100">"We learned privacy and exceptional service for VIP clients."</p>
+      </div>
+
+      <div class="mentor-card bg-white rounded-xl p-6 shadow-sm border-t-4 border-[#d4a017]">
+        <div class="w-12 h-12 bg-[#0c4a6e] text-[#d4a017] rounded-full flex items-center justify-center text-2xl mb-4">🌊</div>
+        <h3 class="text-lg font-bold text-[#082f49]">Laucala Island</h3>
+        <span class="inline-block bg-[#d4a017] text-[#082f49] text-xs font-bold px-3 py-1 rounded-full mt-2 mb-3">Fiji</span>
+        <p class="text-gray-600 text-sm">25 villas with total privacy.</p>
+        <p class="text-[#0c4a6e] italic text-xs mt-4 pt-4 border-t border-gray-100">"We learned how to provide complete privacy for luxury clients."</p>
+      </div>
+
+      <div class="mentor-card bg-white rounded-xl p-6 shadow-sm border-t-4 border-[#d4a017]">
+        <div class="w-12 h-12 bg-[#0c4a6e] text-[#d4a017] rounded-full flex items-center justify-center text-2xl mb-4">💎</div>
+        <h3 class="text-lg font-bold text-[#082f49]">Canouan</h3>
+        <span class="inline-block bg-[#d4a017] text-[#082f49] text-xs font-bold px-3 py-1 rounded-full mt-2 mb-3">St Vincent</span>
+        <p class="text-gray-600 text-sm">"Billionaires go to escape millionaires" - Prince Harry.</p>
+        <p class="text-[#0c4a6e] italic text-xs mt-4 pt-4 border-t border-gray-100">"We learned the value of privacy and tranquility for exclusive clients."</p>
+      </div>
+
+      <div class="mentor-card bg-white rounded-xl p-6 shadow-sm border-t-4 border-[#d4a017]">
+        <div class="w-12 h-12 bg-[#0c4a6e] text-[#d4a017] rounded-full flex items-center justify-center text-2xl mb-4">⛷️</div>
+        <h3 class="text-lg font-bold text-[#082f49]">Aspen</h3>
+        <span class="inline-block bg-[#d4a017] text-[#082f49] text-xs font-bold px-3 py-1 rounded-full mt-2 mb-3">USA</span>
+        <p class="text-gray-600 text-sm">The ultimate ski resort for the wealthy.</p>
+        <p class="text-[#0c4a6e] italic text-xs mt-4 pt-4 border-t border-gray-100">"We learned how to cater to high-net-worth clients."</p>
+      </div>
+
+      <div class="mentor-card bg-white rounded-xl p-6 shadow-sm border-t-4 border-[#d4a017]">
+        <div class="w-12 h-12 bg-[#0c4a6e] text-[#d4a017] rounded-full flex items-center justify-center text-2xl mb-4">🏔️</div>
+        <h3 class="text-lg font-bold text-[#082f49]">Gstaad</h3>
+        <span class="inline-block bg-[#d4a017] text-[#082f49] text-xs font-bold px-3 py-1 rounded-full mt-2 mb-3">Switzerland</span>
+        <p class="text-gray-600 text-sm">Luxury ski resort, $55,600 per square meter.</p>
+        <p class="text-[#0c4a6e] italic text-xs mt-4 pt-4 border-t border-gray-100">"We learned the quality of luxury destinations and excellent service."</p>
+      </div>
+
     </div>
+  </div>
 
-    <!-- Kundi 3: Private Jet & Superyacht -->
-    <div class="mentor-category">
-        <h2><i class="fas fa-fighter-jet"></i> Private Jet & Superyacht</h2>
-        <div class="mentor-grid">
-            <div class="mentor-card">
-                <div class="mentor-icon"><i class="fas fa-ship"></i></div>
-                <h3>Sanlorenzo (Bluegame)</h3>
-                <span class="mentor-country">Italia/Japan</span>
-                <p>Yacht za kifahari 12-25m.</p>
-                <div class="mentor-contribution">Tumejifunza ubora wa usafiri wa majini wa kifahari.</div>
-            </div>
-            <div class="mentor-card">
-                <div class="mentor-icon"><i class="fas fa-anchor"></i></div>
-                <h3>Super Yacht Logistics (SYL)</h3>
-                <span class="mentor-country">Japan</span>
-                <p>Kampuni pekee ya yacht agency Japan.</p>
-                <div class="mentor-contribution">Tumejifunza jinsi ya kusimamia huduma za superyacht.</div>
-            </div>
-            <div class="mentor-card">
-                <div class="mentor-icon"><i class="fas fa-sailboat"></i></div>
-                <h3>YACHTZOO Japan</h3>
-                <span class="mentor-country">Monaco/Japan</span>
-                <p>Brokerage ya superyacht.</p>
-                <div class="mentor-contribution">Tumejifunza jinsi ya kuunganisha wateja na yacht za kifahari.</div>
-            </div>
-            <div class="mentor-card">
-                <div class="mentor-icon"><i class="fas fa-water"></i></div>
-                <h3>Konpira Yacht Services</h3>
-                <span class="mentor-country">Japan</span>
-                <p>Yacht brokers, c
+  <!-- Category 3: Private Jet & Superyacht -->
+  <div class="mb-16">
+    <h2 class="text-2xl font-extrabold text-[#082f49] mb-6 border-l-4 border-[#d4a017] pl-4 flex items-center gap-2">
+      <span class="text-[#d4a017]">🚀</span> Private Jet & Superyacht
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      
+      <div class="mentor-card bg-white rounded-xl p-6 shadow-sm border-t-4 border-[#d4a017]">
+        <div class="w-12 h-12 bg-[#0c4a6e] text-[#d4a017] rounded-full flex items-center justify-center text-2xl mb-4">🚢</div>
+        <h3 class="text-lg font-bold text-[#082f49]">Sanlorenzo (Bluegame)</h3>
+        <span class="inline-block bg-[#d4a017] text-[#082f49] text-xs font-bold px-3 py-1 rounded-full mt-2 mb-3">Italy/Japan</span>
+        <p class="text-gray-600 text-sm">Luxury yachts 12-25m.</p>
+        <p class="text-[#0c4a6e] italic text-xs mt-4 pt-4 border-t border-gray-100">"We learned the quality of luxury maritime travel."</p>
+      </div>
+
+      <div class="mentor-card bg-white rounded-xl p-6 shadow-sm border-t-4 border-[#d4a017]">
+        <div class="w-12 h-12 bg-[#0c4a6e] text-[#d4a017] rounded-full flex items-center justify-center text-2xl mb-4">⚓</div>
+        <h3 class="text-lg font-bold text-[#082f49]">Super Yacht Logistics (SYL)</h3>
+        <span class="inline-block bg-[#d4a017] text-[#082f49] text-xs font-bold px-3 py-1 rounded-full mt-2 mb-3">Japan</span>
+        <p class="text-gray-600 text-sm">The only yacht agency in Japan.</p>
+        <p class="text-[#0c4a6e] italic text-xs mt-4 pt-4 border-t border-gray-100">"We learned how to manage superyacht services."</p>
+      </div>
+
+      <div class="mentor-card bg-white rounded-xl p-6 shadow-sm border-t-4 border-[#d4a017]">
+        <div class="w-12 h-12 bg-[#0c4a6e] text-[#d4a017] rounded-full flex items-center justify-center text-2xl mb-4">⛵</div>
+        <h3 class="text-lg font-bold text-[#082f49]">YACHTZOO Japan</h3>
+        <span class="inline-block bg-[#d4a017] text-[#082f49] text-xs font-bold px-3 py-1 rounded-full mt-2 mb-3">Monaco/Japan</span>
+        <p class="text-gray-600 text-sm">Superyacht brokerage.</p>
+        <p class="text-[#0c4a6e] italic text-xs mt-4 pt-4 border-t border-gray-100">"We learned how to connect clients with luxury yachts."</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Gratitude Section -->
+  <div class="bg-gradient-to-r from-[#0c4a6e] to-[#082f49] rounded-2xl p-8 text-white text-center shadow-lg border-2 border-[#d4a017]">
+    <h2 class="text-2xl font-extrabold text-[#d4a017] mb-4">Our Gratitude</h2>
+    <p class="text-blue-200 text-lg leading-relaxed max-w-3xl mx-auto">
+      We are deeply grateful to these global leaders for setting the standard of excellence in the travel industry. Their innovation, dedication to luxury, and commitment to exceptional service inspire us every day to provide the best possible experience to our clients in Zanzibar.
+    </p>
+  </div>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-black text-gray-300 py-10 px-5 border-t-4 border-[#d4a017]">
+  <div class="max-w-4xl mx-auto text-center">
+    <p class="font-bold text-[#d4a017] mb-2">UNP TOURS — Unique & Natural Paradise</p>
+    <p class="text-sm">Nungwi, Zanzibar, Tanzania | WhatsApp: +255 655 728 982</p>
+    <p class="text-xs mt-4 text-gray-500">© 2026 UNP Tours. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/255655728982" target="_blank" class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] rounded-full flex justify-center items-center text-3xl text-white shadow-lg hover:scale-110 transition z-50">
+  💬
+</a>
+
+</body>
+        </html>
