@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ — UNP TOURS Zanzibar</title>
+<meta name="description" content="Frequently asked questions about UNP TOURS — Zanzibar excursions, safaris, booking, and payments.">
+<meta name="robots" content="index, follow">
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0c4a6e">
+<link rel="icon" type="image/png" href="assets/images/logo.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+  body { font-family: 'Inter', sans-serif; background: #f8f9fa; }
+  .faq-item { transition: all 0.3s ease; }
+  .faq-item.active .faq-answer { max-height: 500px; padding-top: 1rem; padding-bottom: 1.5rem; }
+  .faq-item.active .faq-icon { transform: rotate(45deg); }
+  .faq-answer { max-height: 0; overflow: hidden; transition: all 0.4s ease; }
+  .faq-icon { transition: transform 0.3s ease; }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="fixed top-0 w-full flex justify-between items-center px-5 md:px-12 py-3 z-50 bg-[#0c4a6e] shadow-lg">
+  <a href="index.html" class="flex items-center gap-3">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="h-10 w-10">
+      <circle cx="100" cy="100" r="95" fill="#0b3d2e" stroke="#d4a017" stroke-width="4"/>
+      <text x="100" y="140" font-family="Inter" font-size="30" font-weight="800" fill="#d4a017" text-anchor="middle">UNP</text>
+    </svg>
+    <span class="font-extrabold text-white hidden sm:block">UNP TOURS</span>
+  </a>
+  <a href="index.html" class="text-white font-semibold hover:text-[#d4a017] transition">← Back to Home</a>
+</nav>
+
+<!-- HERO -->
+<section class="pt-32 pb-16 bg-gradient-to-br from-[#0c4a6e] to-[#082f49] text-white">
+  <div class="max-w-4xl mx-auto text-center px-5">
+    <div class="text-5xl mb-4">❓</div>
+    <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Frequently Asked Questions</h1>
+    <p class="text-lg md:text-xl text-blue-200">Find answers to common questions about UNP Tours.</p>
+  </div>
+</section>
+
+<!-- FAQ CONTENT -->
+<main class="max-w-4xl mx-auto px-5 py-16">
+
+  <div class="space-y-3">
+
+    <!-- FAQ 1 -->
+    <div class="faq-item bg-white rounded-2xl shadow-md border-l-4 border-[#0c4a6e] overflow-hidden">
+      <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-5 text-left">
+        <span class="font-bold text-[#082f49] text-lg">How do I book a trip?</span>
+        <span class="faq-icon text-[#d4a017] text-2xl font-bold">+</span>
+      </button>
+      <div class="faq-answer px-5 text-gray-600">
+        Simply visit our <a href="booking.html" class="text-[#0c4a6e] font-semibold underline">Booking page</a>, fill in the form, and submit. You can also contact us via WhatsApp at +255 655 728 982 and we will help you book any trip.
+      </div>
+    </div>
+
+    <!-- FAQ 2 -->
+    <div class="faq-item bg-white rounded-2xl shadow-md border-l-4 border-[#0c4a6e] overflow-hidden">
+      <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-5 text-left">
+        <span class="font-bold text-[#082f49] text-lg">What payment methods do you accept?</span>
+        <span class="faq-icon text-[#d4a017] text-2xl font-bold">+</span>
+      </button>
+      <div class="faq-answer px-5 text-gray-600">
+        We accept M-Pesa, Tigo Pesa, Airtel Money, Visa/Mastercard, PayPal, and Bank Transfer. All payments are secure and confirmed via WhatsApp.
+      </div>
+    </div>
+
+    <!-- FAQ 3 -->
+    <div class="faq-item bg-white rounded-2xl shadow-md border-l-4 border-[#0c4a6e] overflow-hidden">
+      <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-5 text-left">
+        <span class="font-bold text-[#082f49] text-lg">Do you provide airport transfers?</span>
+        <span class="faq-icon text-[#d4a017] text-2xl font-bold">+</span>
+      </button>
+      <div class="faq-answer px-5 text-gray-600">
+        Yes! We provide luxury VIP airport transfers from Zanzibar International Airport to any hotel or location. Contact us for a quote.
+      </div>
+    </div>
+
+    <!-- FAQ 4 -->
+    <div class="faq-item bg-white rounded-2xl shadow-md border-l-4 border-[#0c4a6e] overflow-hidden">
+      <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-5 text-left">
+        <span class="font-bold text-[#082f49] text-lg">What languages do your guides speak?</span>
+        <span class="faq-icon text-[#d4a017] text-2xl font-bold">+</span>
+      </button>
+      <div class="faq-answer px-5 text-gray-600">
+        Our guides speak English, Kiswahili, French, Italian, and German. Let us know your preferred language when booking.
+      </div>
+    </div>
+
+    <!-- FAQ 5 -->
+    <div class="faq-item bg-white rounded-2xl shadow-md border-l-4 border-[#0c4a6e] overflow-hidden">
+      <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-5 text-left">
+        <span class="font-bold text-[#082f49] text-lg">Do you offer group discounts?</span>
+        <span class="faq-icon text-[#d4a017] text-2xl font-bold">+</span>
+      </button>
+      <div class="faq-answer px-5 text-gray-600">
+        Yes! Groups of 5+ people receive special discounts. Contact us via WhatsApp for a custom quote for your group.
+      </div>
+    </div>
+
+    <!-- FAQ 6 -->
+    <div class="faq-item bg-white rounded-2xl shadow-md border-l-4 border-[#0c4a6e] overflow-hidden">
+      <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-5 text-left">
+        <span class="font-bold text-[#082f49] text-lg">Can I cancel or change my booking?</span>
+        <span class="faq-icon text-[#d4a017] text-2xl font-bold">+</span>
+      </button>
+      <div class="faq-answer px-5 text-gray-600">
+        Yes. Free cancellation up to 30 days before your trip. Changes made 3+ days in advance are free. Contact us for details.
+      </div>
+    </div>
+
+    <!-- FAQ 7 -->
+    <div class="faq-item bg-white rounded-2xl shadow-md border-l-4 border-[#0c4a6e] overflow-hidden">
+      <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-5 text-left">
+        <span class="font-bold text-[#082f49] text-lg">Do you arrange custom trips?</span>
+        <span class="faq-icon text-[#d4a017] text-2xl font-bold">+</span>
+      </button>
+      <div class="faq-answer px-5 text-gray-600">
+        Absolutely! We specialize in custom luxury trips, honeymoons, and special events. Contact us to design your perfect Zanzibar experience.
+      </div>
+    </div>
+
+    <!-- FAQ 8 -->
+    <div class="faq-item bg-white rounded-2xl shadow-md border-l-4 border-[#0c4a6e] overflow-hidden">
+      <button onclick="toggleFaq(this)" class="w-full flex justify-between items-center p-5 text-left">
+        <span class="font-bold text-[#082f49] text-lg">Is it safe to travel to Zanzibar?</span>
+        <span class="faq-icon text-[#d4a017] text-2xl font-bold">+</span>
+      </button>
+      <div class="faq-answer px-5 text-gray-600">
+        Yes, Zanzibar is a very safe destination for tourists. We use licensed guides, vetted partners, and follow all safety protocols to ensure your experience is safe and enjoyable.
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="mt-12 bg-gradient-to-r from-[#0c4a6e] to-[#082f49] rounded-2xl p-8 text-center text-white border-2 border-[#d4a017]/30">
+    <h2 class="text-2xl font-extrabold text-[#d4a017] mb-3">Still have questions?</h2>
+    <p class="text-blue-200 mb-5">Contact us via WhatsApp — we reply within minutes.</p>
+    <a href="https://wa.me/255655728982" target="_blank" class="inline-block bg-[#25D366] text-white px-8 py-3 rounded-full font-bold hover:bg-[#1ebe57] transition">
+      💬 Chat on WhatsApp
+    </a>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-black text-gray-300 py-10 px-5 border-t-4 border-[#d4a017]">
+  <div class="max-w-4xl mx-auto text-center">
+    <p class="font-bold text-[#d4a017] mb-2">UNP TOURS — Unique & Natural Paradise</p>
+    <p class="text-sm">Nungwi, Zanzibar, Tanzania | WhatsApp: +255 655 728 982</p>
+    <p class="text-xs mt-4 text-gray-500">© 2026 UNP Tours. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/255655728982" target="_blank" class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] rounded-full flex justify-center items-center text-3xl text-white shadow-lg hover:scale-110 transition z-50">
+  💬
+</a>
+
+<script>
+  function toggleFaq(button) {
+    const item = button.parentElement;
+    const isActive = item.classList.contains('active');
+
+    // Funga zote
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+
+    // Fungua hii kama haikuwa active
+    if (!isActive) item.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
