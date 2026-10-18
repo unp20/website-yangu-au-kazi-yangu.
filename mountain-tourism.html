@@ -1,151 +1,195 @@
 <!DOCTYPE html>
-<html lang="sw">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Utalii wa Milimani | UNP TOURS</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="style.css">
-<meta name="description" content="Utalii wa Milimani Tanzania - Kambi za milimani, kupanda milima, hiking, na uzoefu wa kipekee.">
+<title>Mountain Tourism — UNP TOURS Tanzania</title>
+<meta name="description" content="Discover Mountain Tourism in Tanzania - Mountain cabins, climbing, hiking, and unique experiences.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://unp.tours/mountain-tourism.html">
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0c4a6e">
+<link rel="icon" type="image/png" href="assets/images/logo.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+
 <style>
-.mountain-header { background: linear-gradient(135deg, #082f49, #0c4a6e); color: #fff; text-align: center; padding: 80px 20px; border-bottom: 5px solid #d4af37; }
-.mountain-header h1 { font-size: 2.5rem; color: #d4af37; margin-bottom: 10px; }
-.mountain-header p { font-size: 1.1rem; color: #ddd; max-width: 700px; margin: 0 auto; }
-.mountain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1200px; margin: 40px auto; padding: 0 20px; }
-.mountain-card { background: #fff; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.08); border-top: 5px solid #d4af37; transition: transform 0.3s; }
-.mountain-card:hover { transform: translateY(-5px); }
-.mountain-card .icon { background: #0c4a6e; color: #d4af37; padding: 30px; text-align: center; font-size: 3rem; }
-.mountain-card .body { padding: 25px; }
-.mountain-card h3 { color: #082f49; margin-bottom: 10px; font-size: 1.2rem; }
-.mountain-card p { color: #555; font-size: 0.9rem; line-height: 1.6; margin-bottom: 15px; }
-.mountain-card a { background: #d4af37; color: #082f49; padding: 10px 20px; border-radius: 25px; font-weight: 700; display: inline-block; font-size: 0.85rem; }
-.mountain-card a:hover { background: #082f49; color: #d4af37; }
+  body { font-family: 'Inter', sans-serif; background: #f8f9fa; }
+  .mountain-card { transition: all 0.3s ease; }
+  .mountain-card:hover { transform: translateY(-8px); box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
 </style>
 </head>
 <body>
 
-<header class="header">
-    <div class="nav-container">
-        <a href="index.html" class="logo-area">
-            <div class="logo-holder"><span class="logo-fallback">UNP<br>LOGO</span></div>
-            <div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
-        </a>
-        <button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="index.html"><i class="fas fa-home"></i> Nyumbani</a></li>
-            <li><a href="mountain-tourism.html" style="color: #d4af37;"><i class="fas fa-mountain"></i> Milimani</a></li>
-            <li><a href="guide.html"><i class="fas fa-book"></i> Guide</a></li>
-            <li><a href="destinations.html"><i class="fas fa-globe"></i> Destinations</a></li>
-            <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
-            <li><a href="contact.html"><i class="fas fa-envelope"></i> Wasiliana</a></li>
-        </ul>
-    </div>
-</header>
+<!-- ================= NAVBAR ================= -->
+<nav class="fixed top-0 w-full flex justify-between items-center px-5 md:px-12 py-3 z-50 bg-[#0c4a6e] shadow-lg">
+  <a href="index.html" class="flex items-center gap-3">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="h-10 w-10">
+      <defs>
+        <linearGradient id="goldNav" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#d4a017" />
+          <stop offset="50%" style="stop-color:#f5d76e" />
+          <stop offset="100%" style="stop-color:#b88a10" />
+        </linearGradient>
+        <linearGradient id="greenNav" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#0b3d2e" />
+          <stop offset="100%" style="stop-color:#1a6b4a" />
+        </linearGradient>
+      </defs>
+      <circle cx="100" cy="100" r="95" fill="url(#greenNav)" stroke="url(#goldNav)" stroke-width="4"/>
+      <circle cx="100" cy="100" r="85" fill="none" stroke="url(#goldNav)" stroke-width="1.5"/>
+      <path d="M60 80 Q80 40 120 50 Q130 60 110 80 Q90 100 60 80 Z" fill="url(#goldNav)"/>
+      <path d="M60 100 Q80 85 100 100 T140 100" fill="none" stroke="url(#goldNav)" stroke-width="4" stroke-linecap="round"/>
+      <text x="100" y="140" font-family="Inter, sans-serif" font-size="30" font-weight="800" fill="url(#goldNav)" text-anchor="middle" letter-spacing="2">UNP</text>
+    </svg>
+    <span class="font-extrabold text-white hidden sm:block">UNP TOURS</span>
+  </a>
+  <div class="flex items-center gap-4">
+    <a href="index.html" class="text-white font-semibold hover:text-[#d4a017] transition hidden sm:block">Home</a>
+    <a href="index.html" class="text-white font-semibold hover:text-[#d4a017] transition">← Back</a>
+  </div>
+</nav>
 
-<section class="mountain-header">
-    <h1><i class="fas fa-mountain"></i> Utalii wa Milimani</h1>
-    <p>Gundua uzuri wa milima Tanzania — kambi za milimani, kupanda milima, hiking, na uzoefu wa kipekee.</p>
+<!-- ================= HERO ================= -->
+<section class="pt-32 pb-16 bg-gradient-to-br from-[#0c4a6e] to-[#082f49] text-white border-b-4 border-[#d4a017]">
+  <div class="max-w-4xl mx-auto text-center px-5">
+    <div class="text-6xl mb-4">🏔️</div>
+    <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Mountain Tourism</h1>
+    <p class="text-lg md:text-xl text-blue-200">Discover the beauty of Tanzania's mountains — mountain cabins, climbing, hiking, and unique experiences.</p>
+  </div>
 </section>
 
-<section class="mountain-grid">
-    <div class="mountain-card">
-        <div class="icon"><i class="fas fa-campground"></i></div>
-        <div class="body">
-            <h3>Kambi za Milimani</h3>
-            <p>Kaa kwenye cabins na camps za milimani — uzoefu wa kipekee wa kupumzika.</p>
-            <a href="mountain-cabins.html">Fungua →</a>
-        </div>
-    </div>
-    <div class="mountain-card">
-        <div class="icon"><i class="fas fa-snowflake"></i></div>
-        <div class="body">
-            <h3>Kilimanjaro Cabins</h3>
-            <p>Kambi za Kilimanjaro — kwa wanaopanda mlima mrefu Afrika.</p>
-            <a href="kilimanjaro-cabins.html">Fungua →</a>
-        </div>
-    </div>
-    <div class="mountain-card">
-        <div class="icon"><i class="fas fa-mountain"></i></div>
-        <div class="body">
-            <h3>Meru Cabins</h3>
-            <p>Kambi za Mount Meru — mlima wa pili Tanzania.</p>
-            <a href="meru-cabins.html">Fungua →</a>
-        </div>
-    </div>
-    <div class="mountain-card">
-        <div class="icon"><i class="fas fa-tree"></i></div>
-        <div class="body">
-            <h3>Udzungwa Cabins</h3>
-            <p>Kambi za Udzungwa Mountains — milima ya wanyama.</p>
-            <a href="udzungwa-cabins.html">Fungua →</a>
-        </div>
-    </div>
-    <div class="mountain-card">
-        <div class="icon"><i class="fas fa-leaf"></i></div>
-        <div class="body">
-            <h3>Usambara Cabins</h3>
-            <p>Kambi za Usambara Mountains — milima ya Lushoto.</p>
-            <a href="usambara-cabins.html">Fungua →</a>
-        </div>
-    </div>
-    <div class="mountain-card">
-        <div class="icon"><i class="fas fa-paw"></i></div>
-        <div class="body">
-            <h3>Mikumi Cabins</h3>
-            <p>Kambi za Mikumi — karibu na Morogoro.</p>
-            <a href="mikumi-cabins.html">Fungua →</a>
-        </div>
-    </div>
-    <div class="mountain-card">
-        <div class="icon"><i class="fas fa-hiking"></i></div>
-        <div class="body">
-            <h3>Hiking Milimani</h3>
-            <p>Kutembea milimani — hiking kwa wote.</p>
-            <a href="mountain-hiking.html">Fungua →</a>
-        </div>
-    </div>
-    <div class="mountain-card">
-        <div class="icon"><i class="fas fa-mountain"></i></div>
-        <div class="body">
-            <h3>Kupanda Milima</h3>
-            <p>Kupanda milima — kwa wataalamu na wapya.</p>
-            <a href="mountain-climbing.html">Fungua →</a>
-        </div>
-    </div>
-    <div class="mountain-card">
-        <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
-        <div class="body">
-            <h3>Morogoro</h3>
-            <p>Morogoro — utalii wa milimani na Mikumi.</p>
-            <a href="morogoro.html">Fungua →</a>
-        </div>
-    </div>
-</section>
+<!-- ================= CONTENT ================= -->
+<main class="max-w-6xl mx-auto px-5 py-16">
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-<footer class="footer">
-    <div class="footer-content">
-        <div>
-            <h3>UNIQUE NATURE PARADISE (UNP)</h3>
-            <p style="font-size: 0.9rem;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p>
-        </div>
-        <div>
-            <h4>Direct Contact</h4>
-            <p style="font-size: 0.9rem;"><i class="fab fa-whatsapp" style="color: #d4af37;"></i> +255 655 728 982</p>
-            <p style="font-size: 0.9rem;"><i class="fas fa-envelope" style="color: #d4af37;"></i> salimnasoro11@gmail.com</p>
-        </div>
+    <!-- Kambi za Milimani -->
+    <div class="mountain-card bg-white rounded-2xl overflow-hidden shadow-lg border-t-4 border-[#d4a017] flex flex-col">
+      <div class="bg-[#0c4a6e] text-[#d4a017] p-8 text-center">
+        <div class="text-5xl mb-2">🏕️</div>
+      </div>
+      <div class="p-6 flex-grow flex flex-col">
+        <h3 class="text-xl font-bold text-[#082f49] mb-2">Mountain Cabins</h3>
+        <p class="text-gray-600 text-sm mb-4 flex-grow">Stay in beautiful cabins and camps in the mountains — a unique experience.</p>
+        <a href="mountain-cabins.html" class="block text-center bg-[#d4a017] text-[#082f49] py-2 rounded-full font-bold hover:bg-[#b88a10] transition">Explore →</a>
+      </div>
     </div>
+
+    <!-- Kilimanjaro -->
+    <div class="mountain-card bg-white rounded-2xl overflow-hidden shadow-lg border-t-4 border-[#d4a017] flex flex-col">
+      <div class="bg-[#0c4a6e] text-[#d4a017] p-8 text-center">
+        <div class="text-5xl mb-2">❄️</div>
+      </div>
+      <div class="p-6 flex-grow flex flex-col">
+        <h3 class="text-xl font-bold text-[#082f49] mb-2">Kilimanjaro Cabins</h3>
+        <p class="text-gray-600 text-sm mb-4 flex-grow">Cabins near Mount Kilimanjaro — Africa's highest peak.</p>
+        <a href="kilimanjaro-cabins.html" class="block text-center bg-[#d4a017] text-[#082f49] py-2 rounded-full font-bold hover:bg-[#b88a10] transition">Explore →</a>
+      </div>
+    </div>
+
+    <!-- Meru -->
+    <div class="mountain-card bg-white rounded-2xl overflow-hidden shadow-lg border-t-4 border-[#d4a017] flex flex-col">
+      <div class="bg-[#0c4a6e] text-[#d4a017] p-8 text-center">
+        <div class="text-5xl mb-2">⛰️</div>
+      </div>
+      <div class="p-6 flex-grow flex flex-col">
+        <h3 class="text-xl font-bold text-[#082f49] mb-2">Meru Cabins</h3>
+        <p class="text-gray-600 text-sm mb-4 flex-grow">Mountain lodges near Mount Meru — Tanzania's second highest mountain.</p>
+        <a href="meru-cabins.html" class="block text-center bg-[#d4a017] text-[#082f49] py-2 rounded-full font-bold hover:bg-[#b88a10] transition">Explore →</a>
+      </div>
+    </div>
+
+    <!-- Udzungwa -->
+    <div class="mountain-card bg-white rounded-2xl overflow-hidden shadow-lg border-t-4 border-[#d4a017] flex flex-col">
+      <div class="bg-[#0c4a6e] text-[#d4a017] p-8 text-center">
+        <div class="text-5xl mb-2">🌲</div>
+      </div>
+      <div class="p-6 flex-grow flex flex-col">
+        <h3 class="text-xl font-bold text-[#082f49] mb-2">Udzungwa Cabins</h3>
+        <p class="text-gray-600 text-sm mb-4 flex-grow">Eco-lodges in the Udzungwa Mountains, known for waterfalls and primates.</p>
+        <a href="udzungwa-cabins.html" class="block text-center bg-[#d4a017] text-[#082f49] py-2 rounded-full font-bold hover:bg-[#b88a10] transition">Explore →</a>
+      </div>
+    </div>
+
+    <!-- Usambara -->
+    <div class="mountain-card bg-white rounded-2xl overflow-hidden shadow-lg border-t-4 border-[#d4a017] flex flex-col">
+      <div class="bg-[#0c4a6e] text-[#d4a017] p-8 text-center">
+        <div class="text-5xl mb-2">🍃</div>
+      </div>
+      <div class="p-6 flex-grow flex flex-col">
+        <h3 class="text-xl font-bold text-[#082f49] mb-2">Usambara Cabins</h3>
+        <p class="text-gray-600 text-sm mb-4 flex-grow">Luxury cabins in the lush Usambara Mountains (Lushoto).</p>
+        <a href="usambara-cabins.html" class="block text-center bg-[#d4a017] text-[#082f49] py-2 rounded-full font-bold hover:bg-[#b88a10] transition">Explore →</a>
+      </div>
+    </div>
+
+    <!-- Mikumi -->
+    <div class="mountain-card bg-white rounded-2xl overflow-hidden shadow-lg border-t-4 border-[#d4a017] flex flex-col">
+      <div class="bg-[#0c4a6e] text-[#d4a017] p-8 text-center">
+        <div class="text-5xl mb-2">🦁</div>
+      </div>
+      <div class="p-6 flex-grow flex flex-col">
+        <h3 class="text-xl font-bold text-[#082f49] mb-2">Mikumi Cabins</h3>
+        <p class="text-gray-600 text-sm mb-4 flex-grow">Safari lodges near Mikumi National Park.</p>
+        <a href="mikumi-cabins.html" class="block text-center bg-[#d4a017] text-[#082f49] py-2 rounded-full font-bold hover:bg-[#b88a10] transition">Explore →</a>
+      </div>
+    </div>
+
+    <!-- Hiking -->
+    <div class="mountain-card bg-white rounded-2xl overflow-hidden shadow-lg border-t-4 border-[#d4a017] flex flex-col">
+      <div class="bg-[#0c4a6e] text-[#d4a017] p-8 text-center">
+        <div class="text-5xl mb-2">🥾</div>
+      </div>
+      <div class="p-6 flex-grow flex flex-col">
+        <h3 class="text-xl font-bold text-[#082f49] mb-2">Mountain Hiking</h3>
+        <p class="text-gray-600 text-sm mb-4 flex-grow">Explore scenic mountain trails for all levels.</p>
+        <a href="mountain-hiking.html" class="block text-center bg-[#d4a017] text-[#082f49] py-2 rounded-full font-bold hover:bg-[#b88a10] transition">Explore →</a>
+      </div>
+    </div>
+
+    <!-- Climbing -->
+    <div class="mountain-card bg-white rounded-2xl overflow-hidden shadow-lg border-t-4 border-[#d4a017] flex flex-col">
+      <div class="bg-[#0c4a6e] text-[#d4a017] p-8 text-center">
+        <div class="text-5xl mb-2">🧗</div>
+      </div>
+      <div class="p-6 flex-grow flex flex-col">
+        <h3 class="text-xl font-bold text-[#082f49] mb-2">Mountain Climbing</h3>
+        <p class="text-gray-600 text-sm mb-4 flex-grow">Climb majestic peaks — for experts and beginners.</p>
+        <a href="mountain-climbing.html" class="block text-center bg-[#d4a017] text-[#082f49] py-2 rounded-full font-bold hover:bg-[#b88a10] transition">Explore →</a>
+      </div>
+    </div>
+
+    <!-- Morogoro -->
+    <div class="mountain-card bg-white rounded-2xl overflow-hidden shadow-lg border-t-4 border-[#d4a017] flex flex-col">
+      <div class="bg-[#0c4a6e] text-[#d4a017] p-8 text-center">
+        <div class="text-5xl mb-2">🏞️</div>
+      </div>
+      <div class="p-6 flex-grow flex flex-col">
+        <h3 class="text-xl font-bold text-[#082f49] mb-2">Morogoro</h3>
+        <p class="text-gray-600 text-sm mb-4 flex-grow">Gateway to Mikumi and the Udzungwa Mountains.</p>
+        <a href="morogoro.html" class="block text-center bg-[#d4a017] text-[#082f49] py-2 rounded-full font-bold hover:bg-[#b88a10] transition">Explore →</a>
+      </div>
+    </div>
+
+  </div>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-black text-gray-300 py-10 px-5 border-t-4 border-[#d4a017]">
+  <div class="max-w-4xl mx-auto text-center">
+    <p class="font-bold text-[#d4a017] mb-2">UNP TOURS — Unique & Natural Paradise</p>
+    <p class="text-sm">Nungwi, Zanzibar, Tanzania | WhatsApp: +255 655 728 982</p>
+    <p class="text-xs mt-4 text-gray-500">© 2026 UNP Tours. All rights reserved.</p>
+  </div>
 </footer>
 
-<a href="https://wa.me/255655728982" class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
-
-<script>
-  const menuToggleBtn = document.getElementById('menuToggleBtn');
-  const navLinks = document.getElementById('navLinks');
-  if(menuToggleBtn) { menuToggleBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); }); }
-</script>
+<!-- WhatsApp Float -->
+<a href="https://wa.me/255655728982" target="_blank" class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] rounded-full flex justify-center items-center text-3xl text-white shadow-lg hover:scale-110 transition z-50">
+  💬
+</a>
 
 </body>
-</html>
+            </html>
