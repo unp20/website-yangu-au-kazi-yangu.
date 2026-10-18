@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Events & Festivals — UNP TOURS Zanzibar</title>
+<meta name="description" content="Discover Zanzibar events and festivals — Sauti za Busara, ZIFF, Full Moon Party and more.">
+<meta name="robots" content="index, follow">
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0c4a6e">
+<link rel="icon" type="image/png" href="assets/images/logo.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+  import { getFirestore, collection, onSnapshot } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyCe5-MZMASwDZtIN3zfLvwlrn0U2ObC17s",
+    authDomain: "soul-unp-tour.firebaseapp.com",
+    projectId: "soul-unp-tour",
+    storageBucket: "soul-unp-tour.firebasestorage.app",
+    messagingSenderId: "503119437259",
+    appId: "1:503119437259:web:aaa65be89a8d77d5abaa4e",
+    measurementId: "G-EC65GSRRKM"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  function loadEvents() {
+    const container = document.getElementById('eventsGrid');
+    const q = collection(db, "events");
+
+    onSnapshot(q, (snap) => {
+      const events = [];
+      snap.forEach((d) => events.push({ id: d.id, ...d.data() }));
+
+      if (events.length === 0) {
+        // Data ya mfano kama hakuna events bado
+        renderExampleEvents();
+        return;
+      }
+
+      events.sort((a, b) => (a.date?.seconds || 0) - (b.date?.seconds || 0));
+      renderEvents(events);
+    }, (error) => {
+      console.error(error);
+      renderExampleEvents();
+    });
+  }
+
+  function renderEvents(events) {
+    const container = document.getElementById('eventsGrid');
+    container.innerHTML = events.map(e => {
+      const eventDate = e.date?.toDate ? e.date.toDate() : new Date();
+      return `
+        <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition duration-300 border-l-4 border-[#0c4a6e]">
+          <div class="bg-gradient-to-r from-[#0c4a6e] to-[#082f49] p-6 text-white">
+            <div class="flex items-start justify-between gap-3">
+              <div class="flex-1">
+                <div class="text-4xl mb-2">${e.icon || '🎉'}</div>
+                <h3 class="text-xl font-bold">${e.title || 'Untitled Event'}</h3>
+                <p class="text-xs text-blue-200 mt-1">${e.type || 'Event'}</p>
+              </div>
+              <div class="text-center bg-white/10 rounded-xl px-3 py-2">
+                <p class="text-2xl font-extrabold text-[#d4a017]">${eventDate.getDate()}</p>
+                <p class="text-xs text-blue-200">${eventDate.toLocaleDateString('en-US', { month: 'short' }).toUpperCase()}</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-6">
+            <p class="text-gray-600 text-sm mb-4">${e.description || 'No description.'}</p>
+            <div class="space-y-2 text-sm text-gray-500 mb-4">
+              <div>🕐 ${e.time || 'TBA'}</div>
+              <div>📍 ${e.location || 'Online'}</div>
+            </div>
+            <a href="contact.html" class="block text-center bg-gradient-to-r from-[#0c4a6e] to-[#082f49] text-white py-3 rounded-xl font-bold hover:shadow-lg transition">
+              Learn More →
+            </a>
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  function renderExampleEvents() {
+    const container = document.getElementById('eventsGrid');
+    const exampleEvents = [
+      { icon: "🎵", title: "Sauti za Busara", type: "Music Festival", date: "Feb 2027", time: "7:00 PM", location: "Stone Town", description: "East Africa's biggest music festival celebrating Swahili culture." },
+      { icon: "🎬", title: "Zanzibar International Film Festival", type: "Film Festival", date: "Jul 2027", time: "6:00 PM", location: "Stone Town", description: "ZIFF — showcasing African cinema from across the continent." },
+      { icon: "🌕", title: "Full Moon Party", type: "Beach Party", date: "Every Month", time: "9:00 PM", location: "Kendwa Rocks", description: "Zanzibar's legendary Full Moon Party on the beautiful Kendwa beach." },
+      { icon: "🎉", title: "Zanzibar Carnival", type: "Carnival", date: "Dec 2027", time: "All Day", location: "Stone Town", description: "A vibrant celebration of Zanzibari culture, music, and food." },
+      { icon: "🍽️", title: "Forodhani Food Festival", type: "Food Festival", date: "Every Evening", time: "5:00 PM", location: "Forodhani Gardens", description: "Taste the best of Zanzibar street food every night at Forodhani." },
+      { icon: "🌊", title: "Paje Beach Festival", type: "Beach Festival", date: "Aug 2027", time: "All Day", location: "Paje Beach", description: "Kitesurfing, music, and beach fun on Zanzibar's east coast." }
+    ];
+
+    container.innerHTML = exampleEvents.map(e => `
+      <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition duration-300 border-l-4 border-[#0c4a6e]">
+        <div class="bg-gradient-to-r from-[#0c4a6e] to-[#082f49] p-6 text-white">
+          <div class="text-4xl mb-2">${e.icon}</div>
+          <h3 class="text-xl font-bold">${e.title}</h3>
+          <p class="text-xs text-blue-200 mt-1">${e.type}</p>
+        </div>
+        <div class="p-6">
+          <p class="text-gray-600 text-sm mb-4">${e.description}</p>
+          <div class="space-y-2 text-sm text-gray-500 mb-4">
+            <div>📅 ${e.date}</div>
+            <div>🕐 ${e.time}</div>
+            <div>📍 ${e.location}</div>
+          </div>
+          <a href="contact.html" class="block text-center bg-gradient-to-r from-[#0c4a6e] to-[#082f49] text-white py-3 rounded-xl font-bold hover:shadow-lg transition">
+            Learn More →
+          </a>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  window.addEventListener('load', loadEvents);
+</script>
+
+<style>
+  body { font-family: 'Inter', sans-serif; background: #f8f9fa; }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="fixed top-0 w-full flex justify-between items-center px-5 md:px-12 py-3 z-50 bg-[#0c4a6e] shadow-lg">
+  <a href="index.html" class="flex items-center gap-3">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="h-10 w-10">
+      <circle cx="100" cy="100" r="95" fill="#0b3d2e" stroke="#d4a017" stroke-width="4"/>
+      <text x="100" y="140" font-family="Inter" font-size="30" font-weight="800" fill="#d4a017" text-anchor="middle">UNP</text>
+    </svg>
+    <span class="font-extrabold text-white hidden sm:block">UNP TOURS</span>
+  </a>
+  <a href="index.html" class="text-white font-semibold hover:text-[#d4a017] transition">← Back to Home</a>
+</nav>
+
+<!-- HERO -->
+<section class="pt-32 pb-16 bg-gradient-to-br from-[#0c4a6e] to-[#082f49] text-white">
+  <div class="max-w-4xl mx-auto text-center px-5">
+    <div class="text-5xl mb-4">🎉</div>
+    <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Events & Festivals</h1>
+    <p class="text-lg md:text-xl text-blue-200">Experience the vibrant culture and celebrations of Zanzibar.</p>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<main class="max-w-7xl mx-auto px-5 py-16">
+  <div id="eventsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="text-center py-12 text-gray-400 col-span-full">Loading events...</div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-black text-gray-300 py-10 px-5 border-t-4 border-[#d4a017]">
+  <div class="max-w-4xl mx-auto text-center">
+    <p class="font-bold text-[#d4a017] mb-2">UNP TOURS — Unique & Natural Paradise</p>
+    <p class="text-sm">Nungwi, Zanzibar, Tanzania | WhatsApp: +255 655 728 982</p>
+    <p class="text-xs mt-4 text-gray-500">© 2026 UNP Tours. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/255655728982" target="_blank" class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] rounded-full flex justify-center items-center text-3xl text-white shadow-lg hover:scale-110 transition z-50">
+  💬
+</a>
+
+</body>
+</html>
