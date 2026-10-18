@@ -1,537 +1,184 @@
 <!DOCTYPE html>
-<html lang="sw">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Safari na Huduma Zote - UNP TOURS</title>
-    
-    <!-- Google Search Console & Bing Verification -->
-    <meta name="google-site-verification" content="USfpMungNhAZSkEqLJL4b9AfkP224BIGvn6N_8nIThM" />
-    <meta name="msvalidate.01" content="F45DA5D31B65604116EE3B77682567A7" />
-    <meta name="yandex-verification" content="d563c0867b5c735c" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All Services & Excursions — UNP TOURS Zanzibar</title>
+<meta name="description" content="Explore all UNP TOURS services - Zanzibar excursions, safaris, water sports, luxury VIP services, and more.">
+<meta name="robots" content="index, follow">
 
-    <!-- Google Analytics (GA4) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5QJ1X38ZLC"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-5QJ1X38ZLC');
-    </script>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0c4a6e">
+<link rel="icon" type="image/png" href="assets/images/logo.png">
 
-    <!-- Yandex Metrica -->
-    <script type="text/javascript">
-        (function(m,e,t,r,i,k,a){
-            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-            m[i].l=1*new Date();
-            for (let j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113203659', 'ym');
-        ym(113203659, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
-    </script>
-    <noscript><div><img src="https://mc.yandex.ru/watch/113203659" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
 
-    <style>
-        :root {
-            --bg-color: #064e3b;
-            --card-bg: #032b1a;
-            --gold-color: #d4af37;
-            --lux-gold-light: #f3e5ab;
-            --text-white: #ffffff;
-            --text-gray: #e2e8f0;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-white);
-            line-height: 1.6;
-        }
-
-        /* Header & Navigation Bar */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 5%;
-            background-color: rgba(3, 43, 26, 0.95);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            backdrop-filter: blur(10px);
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-        }
-
-        .logo-img {
-            width: 48px;
-            height: 48px;
-            border-radius: 8px;
-            object-fit: cover;
-            border: 1px solid var(--gold-color);
-        }
-
-        .logo-text h1 {
-            font-size: 1.1rem;
-            color: var(--gold-color);
-            letter-spacing: 1.5px;
-        }
-
-        .logo-text p {
-            font-size: 0.6rem;
-            color: var(--text-gray);
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .nav-controls {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .language-selector {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            background-color: rgba(212, 175, 55, 0.08);
-            border: 1px solid var(--gold-color);
-            padding: 6px 12px;
-            border-radius: 20px;
-            color: var(--gold-color);
-            font-size: 0.8rem;
-        }
-
-        .language-selector select {
-            background: transparent;
-            border: none;
-            color: var(--gold-color);
-            font-size: 0.8rem;
-            cursor: pointer;
-            outline: none;
-            font-weight: 600;
-        }
-
-        .language-selector select option {
-            background-color: var(--card-bg);
-            color: var(--text-white);
-        }
-
-        .menu-btn {
-            background: var(--gold-color);
-            color: var(--card-bg);
-            border: none;
-            padding: 8px 18px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-weight: 700;
-            font-size: 0.85rem;
-            transition: 0.3s;
-        }
-
-        .menu-btn:hover {
-            background-color: var(--lux-gold-light);
-        }
-
-        /* Mega Menu */
-        .mega-menu {
-            display: none;
-            position: fixed;
-            top: 75px;
-            right: 5%;
-            background-color: var(--card-bg);
-            border: 1px solid var(--gold-color);
-            border-radius: 12px;
-            width: 300px;
-            max-height: 75vh;
-            overflow-y: auto;
-            box-shadow: 0px 10px 30px rgba(0,0,0,0.8);
-            z-index: 1001;
-            padding: 15px 0;
-        }
-
-        .mega-menu.active {
-            display: block;
-        }
-
-        .mega-menu h4 {
-            color: var(--gold-color);
-            padding: 0 20px 8px;
-            font-size: 0.8rem;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 8px;
-        }
-
-        .mega-menu ul {
-            list-style: none;
-        }
-
-        .mega-menu ul li a {
-            display: block;
-            padding: 9px 20px;
-            color: var(--text-white);
-            text-decoration: none;
-            font-size: 0.88rem;
-            transition: 0.2s;
-        }
-
-        .mega-menu ul li a:hover {
-            background-color: rgba(212, 175, 55, 0.15);
-            color: var(--gold-color);
-            padding-left: 25px;
-        }
-
-        /* Page Header / Filters */
-        .page-header {
-            padding: 40px 5% 20px;
-            text-align: center;
-        }
-
-        .page-header h2 {
-            font-size: 2.2rem;
-            color: var(--gold-color);
-            margin-bottom: 10px;
-        }
-
-        .page-header p {
-            color: var(--text-gray);
-            font-size: 1rem;
-            margin-bottom: 25px;
-        }
-
-        .filters-container {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-bottom: 30px;
-        }
-
-        .filter-btn {
-            background-color: var(--card-bg);
-            border: 1px solid var(--gold-color);
-            color: var(--text-white);
-            padding: 8px 16px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 0.85rem;
-            transition: 0.3s;
-        }
-
-        .filter-btn.active, .filter-btn:hover {
-            background-color: var(--gold-color);
-            color: var(--card-bg);
-            font-weight: bold;
-        }
-
-        /* Trips Grid */
-        .trips-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            padding: 0 5% 60px;
-        }
-
-        .trip-card {
-            background-color: var(--card-bg);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: 10px;
-            overflow: hidden;
-            transition: 0.3s;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .trip-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--gold-color);
-        }
-
-        .trip-card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-        }
-
-        .trip-info {
-            padding: 15px;
-        }
-
-        .trip-info h3 {
-            color: var(--gold-color);
-            font-size: 1.1rem;
-            margin-bottom: 8px;
-        }
-
-        .trip-info p {
-            font-size: 0.85rem;
-            color: var(--text-gray);
-            margin-bottom: 12px;
-        }
-
-        .trip-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.8rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding: 12px 15px;
-            background-color: rgba(0,0,0,0.15);
-        }
-
-        .price {
-            color: var(--gold-color);
-            font-weight: bold;
-        }
-
-        .book-link {
-            background-color: var(--gold-color);
-            color: var(--card-bg);
-            padding: 6px 12px;
-            border-radius: 15px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 0.75rem;
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px 5%;
-            background-color: var(--card-bg);
-            border-top: 1px solid rgba(212, 175, 55, 0.2);
-            font-size: 0.85rem;
-            color: var(--text-gray);
-            margin-top: 50px;
-        }
-
-        #google_translate_element { display: none; }
-    </style>
+<style>
+  body { font-family: 'Inter', sans-serif; background: #f8f9fa; }
+  .trip-card { transition: all 0.3s ease; }
+  .trip-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
+</style>
 </head>
 <body>
 
-    <!-- Header & Navigation Bar -->
-    <header>
-        <a href="index.html" class="logo-container">
-            <img src="1000009263.jpg" alt="UNP Tours Logo" class="logo-img">
-            <div class="logo-text">
-                <h1>UNP TOURS</h1>
-                <p>Unique & Natural Paradise</p>
-            </div>
-        </a>
+<!-- ================= NAVBAR ================= -->
+<nav class="fixed top-0 w-full flex justify-between items-center px-5 md:px-12 py-3 z-50 bg-[#0c4a6e] shadow-lg">
+  <a href="index.html" class="flex items-center gap-3">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="h-10 w-10">
+      <defs>
+        <linearGradient id="goldNav" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#d4a017" />
+          <stop offset="50%" style="stop-color:#f5d76e" />
+          <stop offset="100%" style="stop-color:#b88a10" />
+        </linearGradient>
+        <linearGradient id="greenNav" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#0b3d2e" />
+          <stop offset="100%" style="stop-color:#1a6b4a" />
+        </linearGradient>
+      </defs>
+      <circle cx="100" cy="100" r="95" fill="url(#greenNav)" stroke="url(#goldNav)" stroke-width="4"/>
+      <circle cx="100" cy="100" r="85" fill="none" stroke="url(#goldNav)" stroke-width="1.5"/>
+      <path d="M60 80 Q80 40 120 50 Q130 60 110 80 Q90 100 60 80 Z" fill="url(#goldNav)"/>
+      <path d="M60 100 Q80 85 100 100 T140 100" fill="none" stroke="url(#goldNav)" stroke-width="4" stroke-linecap="round"/>
+      <text x="100" y="140" font-family="Inter, sans-serif" font-size="30" font-weight="800" fill="url(#goldNav)" text-anchor="middle" letter-spacing="2">UNP</text>
+    </svg>
+    <span class="font-extrabold text-white hidden sm:block">UNP TOURS</span>
+  </a>
+  <div class="flex items-center gap-4">
+    <a href="index.html" class="text-white font-semibold hover:text-[#d4a017] transition hidden sm:block">Home</a>
+    <a href="index.html" class="text-white font-semibold hover:text-[#d4a017] transition">← Back</a>
+  </div>
+</nav>
 
-        <div class="nav-controls">
-            <div class="language-selector">
-                <span>🌐</span>
-                <select id="langSelect" onchange="changeLanguage(this.value)" aria-label="Chagua Lugha">
-                    <option value="sw">Kiswahili</option>
-                    <option value="en">English</option>
-                    <option value="ar">العربية</option>
-                    <option value="zh-CN">中文</option>
-                    <option value="ru">Русский</option>
-                    <option value="fr">Français</option>
-                    <option value="de">Deutsch</option>
-                    <option value="es">Español</option>
-                    <option value="it">Italiano</option>
-                    <option value="ja">日本語</option>
-                    <option value="ko">한국어</option>
-                    <option value="pt">Português</option>
-                    <option value="hi">हिन्दी</option>
-                    <option value="la">Latina</option>
-                </select>
-            </div>
+<!-- ================= HERO ================= -->
+<section class="pt-32 pb-16 bg-gradient-to-br from-[#0c4a6e] to-[#082f49] text-white border-b-4 border-[#d4a017]">
+  <div class="max-w-4xl mx-auto text-center px-5">
+    <div class="text-6xl mb-4">🌴</div>
+    <h1 class="text-4xl md:text-6xl font-extrabold mb-4">All Services & Excursions</h1>
+    <p class="text-lg md:text-xl text-blue-200">Choose your experience from our complete list of 10-Star Luxury services.</p>
+  </div>
+</section>
 
-            <button class="menu-btn" id="menuToggle">☰ Menu</button>
-        </div>
+<!-- ================= CONTENT ================= -->
+<main class="max-w-6xl mx-auto px-5 py-16">
 
-        <!-- Mega Menu -->
-        <div class="mega-menu" id="megaMenu">
-            <h4>Pande Kuu za UNP</h4>
-            <ul>
-                <li><a href="index.html">🏠 Nyumbani (Home)</a></li>
-                <li><a href="services.html">🌴 Zanzibar Excursions & Safari</a></li>
-                <li><a href="services.html#watersports">🌊 Water Sports & Adventure</a></li>
-                <li><a href="services.html#luxury">👑 Luxury & VIP Services</a></li>
-                <li><a href="services.html#artisan">🎨 Our Artisan Treasures</a></li>
-            </ul>
-            <h4>Malazi & Usafiri</h4>
-            <ul>
-                <li><a href="services.html#accommodation">🏨 Cabin, Hotels & Rentals</a></li>
-                <li><a href="booking.html">✈️ Booking & Travel Services</a></li>
-                <li><a href="payment.html">💳 Malipo ya Kimataifa</a></li>
-            </ul>
-            <h4>Jamii & Taarifa</h4>
-            <ul>
-                <li><a href="blog.html">📚 Blog & Makala</a></li>
-                <li><a href="events.html">🎉 Events & Matukio</a></li>
-                <li><a href="about.html">👥 Kuhusu Sisi & Team</a></li>
-                <li><a href="contact.html">📞 Wasiliana Nasi</a></li>
-            </ul>
-        </div>
-    </header>
+  <!-- FILTERS -->
+  <div class="flex flex-wrap justify-center gap-3 mb-10">
+    <button class="filter-btn active px-6 py-2 rounded-full font-bold bg-[#0c4a6e] text-white border-2 border-[#0c4a6e] transition" onclick="filterTrips('all', this)">All Services</button>
+    <button class="filter-btn px-6 py-2 rounded-full font-bold bg-white text-[#0c4a6e] border-2 border-[#0c4a6e] hover:bg-[#0c4a6e] hover:text-white transition" onclick="filterTrips('Zanzibar', this)">Zanzibar</button>
+    <button class="filter-btn px-6 py-2 rounded-full font-bold bg-white text-[#0c4a6e] border-2 border-[#0c4a6e] hover:bg-[#0c4a6e] hover:text-white transition" onclick="filterTrips('Safari', this)">Safari</button>
+    <button class="filter-btn px-6 py-2 rounded-full font-bold bg-white text-[#0c4a6e] border-2 border-[#0c4a6e] hover:bg-[#0c4a6e] hover:text-white transition" onclick="filterTrips('Water Sports', this)">Water Sports</button>
+    <button class="filter-btn px-6 py-2 rounded-full font-bold bg-white text-[#0c4a6e] border-2 border-[#0c4a6e] hover:bg-[#0c4a6e] hover:text-white transition" onclick="filterTrips('Luxury', this)">Luxury & VIP</button>
+  </div>
 
-    <!-- Main Content: All Trips & Excursions -->
-    <main>
-        <section class="page-header">
-            <h2>Safari, Excursions na Matukio Yote</h2>
-            <p>Chagua huduma unayoitaka kutoka kwenye orodha yetu kamili ya viwango vya 10-Star Luxury.</p>
-            
-            <!-- Vichujio vya Makundi (Category Filters) -->
-            <div class="filters-container">
-                <button class="filter-btn active" onclick="filterTrips('all', this)">Zote (All)</button>
-                <button class="filter-btn" onclick="filterTrips('Zanzibar', this)">Zanzibar</button>
-                <button class="filter-btn" onclick="filterTrips('Safari', this)">Safari Bara</button>
-                <button class="filter-btn" onclick="filterTrips('Water Sports', this)">Water Sports</button>
-                <button class="filter-btn" onclick="filterTrips('Luxury', this)">Luxury & VIP</button>
-            </div>
-        </section>
+  <!-- TRIPS GRID -->
+  <div id="allTripsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <p class="text-center col-span-full text-gray-500 py-12">Loading services from Firebase...</p>
+  </div>
 
-        <div class="trips-grid" id="allTripsContainer">
-            <p style="text-align: center; grid-column: 1/-1; color: var(--gold-color);">Inapakia huduma zote kutoka Firebase...</p>
-        </div>
-    </main>
+</main>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 UNP TOURS (unp.tours). Haki zote zimehifadhiwa.</p>
-        <div id="google_translate_element" style="margin-top: 15px;"></div>
-    </footer>
+<!-- ================= FOOTER ================= -->
+<footer class="bg-black text-gray-300 py-10 px-5 border-t-4 border-[#d4a017]">
+  <div class="max-w-4xl mx-auto text-center">
+    <p class="font-bold text-[#d4a017] mb-2">UNP TOURS — Unique & Natural Paradise</p>
+    <p class="text-sm">Nungwi, Zanzibar, Tanzania | WhatsApp: +255 655 728 982</p>
+    <p class="text-xs mt-4 text-gray-500">© 2026 UNP Tours. All rights reserved.</p>
+  </div>
+</footer>
 
-    <!-- Google Translate Script -->
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'sw',
-                includedLanguages: 'sw,en,ar,zh-CN,ru,fr,de,es,it,ja,ko,pt,hi,la',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-            }, 'google_translate_element');
-        }
-        function changeLanguage(langCode) {
-            var selectField = document.querySelector(".goog-te-combo");
-            if (selectField) {
-                selectField.value = langCode;
-                selectField.dispatchEvent(new Event('change'));
-            } else {
-                setTimeout(function() { changeLanguage(langCode); }, 1000);
-            }
-        }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<!-- WhatsApp Float -->
+<a href="https://wa.me/255655728982" target="_blank" class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] rounded-full flex justify-center items-center text-3xl text-white shadow-lg hover:scale-110 transition z-50">
+  💬
+</a>
 
-    <!-- Tawk.to Live Chat -->
-    <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/6ab95c20dade22344616d64e/1k3i0vorc';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-    })();
-    </script>
+<!-- ================= FIREBASE SDK ================= -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+  import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
 
-    <!-- Firebase SDK & Dynamic Loading Script -->
-    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
-    
-    <script>
-        const menuToggle = document.getElementById('menuToggle');
-        const megaMenu = document.getElementById('megaMenu');
+  const firebaseConfig = {
+    apiKey: "AIzaSyCe5-MZMASwDZtIN3zfLvwlrn0U2ObC17s",
+    authDomain: "soul-unp-tour.firebaseapp.com",
+    projectId: "soul-unp-tour",
+    storageBucket: "soul-unp-tour.firebasestorage.app",
+    messagingSenderId: "503119437259",
+    appId: "1:503119437259:web:aaa65be89a8d77d5abaa4e",
+    measurementId: "G-EC65GSRRKM"
+  };
 
-        menuToggle.addEventListener('click', (e) => {
-            e.stopPropagation();
-            megaMenu.classList.toggle('active');
-        });
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
 
-        window.addEventListener('click', () => {
-            if (megaMenu.classList.contains('active')) {
-                megaMenu.classList.remove('active');
-            }
-        });
+  let allTripsData = [];
 
-        const cfg = {
-          apiKey: "AIzaSyD2YtPFL2L_ZwAKdSYpXtvLt8gJUm2IX6s",
-          authDomain: "unptours.firebaseapp.com",
-          projectId: "unptours",
-          storageBucket: "unptours.firebasestorage.app",
-          messagingSenderId: "233326851661",
-          appId: "1:233326851661:web:354156110a5cee29904e04"
-        };
+  async function fetchAllTrips() {
+      const container = document.getElementById('allTripsContainer');
+      try {
+          const snapshot = await getDocs(collection(db, "trips"));
+          if(snapshot.empty) {
+              container.innerHTML = '<p class="text-center col-span-full text-gray-500 py-12">No trips available at the moment.</p>';
+              return;
+          }
+          allTripsData = [];
+          snapshot.forEach(doc => {
+              allTripsData.push(doc.data());
+          });
+          displayTrips(allTripsData);
+      } catch (err) {
+          console.error(err);
+          container.innerHTML = '<p class="text-center col-span-full text-red-500 py-12">Failed to load data from Firebase.</p>';
+      }
+  }
 
-        firebase.initializeApp(cfg);
-        const db = firebase.firestore();
+  function displayTrips(trips) {
+      const container = document.getElementById('allTripsContainer');
+      container.innerHTML = '';
+      
+      if(trips.length === 0) {
+          container.innerHTML = '<p class="text-center col-span-full text-gray-500 py-12">No services found for this category.</p>';
+          return;
+      }
 
-        let allTripsData = [];
+      trips.forEach(t => {
+          container.innerHTML += `
+              <div class="trip-card bg-white rounded-2xl overflow-hidden shadow-lg border-t-4 border-[#d4a017] flex flex-col">
+                  <div class="h-56 overflow-hidden">
+                      <img src="${t.image || 'assets/images/nungwi-beach-paradise.jpg'}" alt="${t.name}" class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                  </div>
+                  <div class="p-6 flex-grow flex flex-col">
+                      <h3 class="text-xl font-bold text-[#082f49] mb-2">${t.name}</h3>
+                      <p class="text-gray-600 text-sm mb-4 flex-grow">${t.description || 'Experience a unique adventure with UNP Tours.'}</p>
+                      <p class="text-sm text-[#0c4a6e] font-semibold mb-4">📍 ${t.location || 'Zanzibar'}</p>
+                      <div class="flex justify-between items-center pt-4 border-t border-gray-100 mt-auto">
+                          <span class="text-2xl font-extrabold text-[#d4a017]">From $${t.priceBudget || 50}</span>
+                          <a href="booking.html?trip=${encodeURIComponent(t.name)}" class="bg-[#0c4a6e] text-white px-5 py-2 rounded-xl font-bold text-sm hover:bg-[#082f49] transition">Book Now →</a>
+                      </div>
+                  </div>
+              </div>
+          `;
+      });
+  }
 
-        async function fetchAllTrips() {
-            const container = document.getElementById('allTripsContainer');
-            try {
-                const snapshot = await db.collection("trips").get();
-                if(snapshot.empty) {
-                    container.innerHTML = '<p style="text-align:center;">Hakuna trips zilizopatikana kwenye mfumo kwa sasa.</p>';
-                    return;
-                }
-                allTripsData = [];
-                snapshot.forEach(doc => {
-                    allTripsData.push(doc.data());
-                });
-                displayTrips(allTripsData);
-            } catch (err) {
-                container.innerHTML = '<p style="text-align:center; color:#f87171;">Imeshindwa kupakia data za Firebase kwa muda.</p>';
-            }
-        }
+  window.filterTrips = function(category, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => {
+          b.classList.remove('bg-[#0c4a6e]', 'text-white');
+          b.classList.add('bg-white', 'text-[#0c4a6e]');
+      });
+      btn.classList.remove('bg-white', 'text-[#0c4a6e]');
+      btn.classList.add('bg-[#0c4a6e]', 'text-white');
 
-        function displayTrips(trips) {
-            const container = document.getElementById('allTripsContainer');
-            container.innerHTML = '';
-            trips.forEach(t => {
-                container.innerHTML += `
-                    <div class="trip-card">
-                        <img src="${t.image || 'https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800'}" alt="${t.name}">
-                        <div class="trip-info">
-                            <h3>${t.name}</h3>
-                            <p>${t.description || 'Pata uzoefu wa kipekee wa kitalii na UNP Tours.'}</p>
-                        </div>
-                        <div class="trip-footer">
-                            <span>📍 ${t.location || 'Zanzibar'}</span>
-                            <span class="price">Kutoka $${t.priceBudget || 50}</span>
-                            <a href="booking.html?trip=${encodeURIComponent(t.name)}" class="book-link">Agiza</a>
-                        </div>
-                    </div>
-                `;
-            });
-        }
+      if(category === 'all') {
+          displayTrips(allTripsData);
+      } else {
+          const filtered = allTripsData.filter(t => t.category && t.category.toLowerCase().includes(category.toLowerCase()));
+          displayTrips(filtered);
+      }
+  };
 
-        function filterTrips(category, btn) {
-            // Badilisha active button styling
-            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+  window.addEventListener('load', fetchAllTrips);
+</script>
 
-            if(category === 'all') {
-                displayTrips(allTripsData);
-            } else {
-                const filtered = allTripsData.filter(t => t.category && t.category.toLowerCase().includes(category.toLowerCase()));
-                displayTrips(filtered);
-            }
-        }
-
-        fetchAllTrips();
-    </script>
 </body>
-                        </html>
-        
+    </html>
