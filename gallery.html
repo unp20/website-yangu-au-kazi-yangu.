@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery — UNP TOURS Zanzibar</title>
+<meta name="description" content="Explore UNP TOURS gallery — beautiful photos of Zanzibar beaches, safaris, and experiences.">
+<meta name="robots" content="index, follow">
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0c4a6e">
+<link rel="icon" type="image/png" href="assets/images/logo.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+  body { font-family: 'Inter', sans-serif; background: #f8f9fa; }
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .gallery-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  }
+  .gallery-item:hover .gallery-overlay { opacity: 1; }
+  .gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(8, 47, 73, 0.9), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: flex-end;
+    padding: 1.5rem;
+    color: white;
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="fixed top-0 w-full flex justify-between items-center px-5 md:px-12 py-3 z-50 bg-[#0c4a6e] shadow-lg">
+  <a href="index.html" class="flex items-center gap-3">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="h-10 w-10">
+      <circle cx="100" cy="100" r="95" fill="#0b3d2e" stroke="#d4a017" stroke-width="4"/>
+      <text x="100" y="140" font-family="Inter" font-size="30" font-weight="800" fill="#d4a017" text-anchor="middle">UNP</text>
+    </svg>
+    <span class="font-extrabold text-white hidden sm:block">UNP TOURS</span>
+  </a>
+  <a href="index.html" class="text-white font-semibold hover:text-[#d4a017] transition">← Back to Home</a>
+</nav>
+
+<!-- HERO -->
+<section class="pt-32 pb-16 bg-gradient-to-br from-[#0c4a6e] to-[#082f49] text-white">
+  <div class="max-w-4xl mx-auto text-center px-5">
+    <div class="text-5xl mb-4">📸</div>
+    <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Our Gallery</h1>
+    <p class="text-lg md:text-xl text-blue-200">Beautiful moments captured across Zanzibar and Tanzania.</p>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<main class="max-w-7xl mx-auto px-5 py-16">
+
+  <!-- FILTER -->
+  <div class="flex gap-2 mb-8 overflow-x-auto pb-2 justify-center">
+    <button class="gallery-filter active px-4 py-2 rounded-full text-sm font-semibold bg-[#0c4a6e] text-white whitespace-nowrap" data-filter="all">All</button>
+    <button class="gallery-filter px-4 py-2 rounded-full text-sm font-semibold bg-white text-gray-700 whitespace-nowrap" data-filter="beaches">🏝️ Beaches</button>
+    <button class="gallery-filter px-4 py-2 rounded-full text-sm font-semibold bg-white text-gray-700 whitespace-nowrap" data-filter="safari">🦁 Safari</button>
+    <button class="gallery-filter px-4 py-2 rounded-full text-sm font-semibold bg-white text-gray-700 whitespace-nowrap" data-filter="culture">🎭 Culture</button>
+  </div>
+
+  <!-- GRID -->
+  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+
+    <div class="gallery-item" data-category="beaches">
+      <img src="assets/images/nungwi-beach-paradise.jpg" alt="Nungwi Beach" class="w-full h-64 object-cover">
+      <div class="gallery-overlay">
+        <div>
+          <h3 class="font-bold text-lg">Nungwi Beach</h3>
+          <p class="text-xs text-blue-200">Zanzibar</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-category="safari">
+      <img src="assets/images/serengeti.jpg" alt="Serengeti" class="w-full h-64 object-cover">
+      <div class="gallery-overlay">
+        <div>
+          <h3 class="font-bold text-lg">Serengeti</h3>
+          <p class="text-xs text-blue-200">Tanzania</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-category="beaches">
+      <img src="assets/images/mnemba-snorkeling.jpg" alt="Mnemba" class="w-full h-64 object-cover">
+      <div class="gallery-overlay">
+        <div>
+          <h3 class="font-bold text-lg">Mnemba Snorkeling</h3>
+          <p class="text-xs text-blue-200">Zanzibar</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-category="culture">
+      <img src="assets/images/our-culture-zanzibar.jpg" alt="Culture" class="w-full h-64 object-cover">
+      <div class="gallery-overlay">
+        <div>
+          <h3 class="font-bold text-lg">Zanzibar Culture</h3>
+          <p class="text-xs text-blue-200">Stone Town</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-category="safari">
+      <img src="assets/images/ngorongoro.jpg" alt="Ngorongoro" class="w-full h-64 object-cover">
+      <div class="gallery-overlay">
+        <div>
+          <h3 class="font-bold text-lg">Ngorongoro Crater</h3>
+          <p class="text-xs text-blue-200">Tanzania</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-category="beaches">
+      <img src="assets/images/safari-blue-dhow.jpg" alt="Safari Blue" class="w-full h-64 object-cover">
+      <div class="gallery-overlay">
+        <div>
+          <h3 class="font-bold text-lg">Safari Blue</h3>
+          <p class="text-xs text-blue-200">Zanzibar</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-category="culture">
+      <img src="assets/images/prison-island.jpg" alt="Prison Island" class="w-full h-64 object-cover">
+      <div class="gallery-overlay">
+        <div>
+          <h3 class="font-bold text-lg">Prison Island</h3>
+          <p class="text-xs text-blue-200">Zanzibar</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-category="beaches">
+      <img src="assets/images/jozani-forest.jpg" alt="Jozani" class="w-full h-64 object-cover">
+      <div class="gallery-overlay">
+        <div>
+          <h3 class="font-bold text-lg">Jozani Forest</h3>
+          <p class="text-xs text-blue-200">Zanzibar</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-category="safari">
+      <img src="assets/images/mikumi.jpg" alt="Mikumi" class="w-full h-64 object-cover">
+      <div class="gallery-overlay">
+        <div>
+          <h3 class="font-bold text-lg">Mikumi Safari</h3>
+          <p class="text-xs text-blue-200">Tanzania</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-category="culture">
+      <img src="assets/images/spice-farm.jpg" alt="Spice Farm" class="w-full h-64 object-cover">
+      <div class="gallery-overlay">
+        <div>
+          <h3 class="font-bold text-lg">Spice Farm</h3>
+          <p class="text-xs text-blue-200">Zanzibar</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-category="safari">
+      <img src="assets/images/nyerere.jpg" alt="Nyerere" class="w-full h-64 object-cover">
+      <div class="gallery-overlay">
+        <div>
+          <h3 class="font-bold text-lg">Nyerere National Park</h3>
+          <p class="text-xs text-blue-200">Tanzania</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-category="beaches">
+      <img src="assets/images/hiking.jpg" alt="Hiking" class="w-full h-64 object-cover">
+      <div class="gallery-overlay">
+        <div>
+          <h3 class="font-bold text-lg">Hiking Adventure</h3>
+          <p class="text-xs text-blue-200">Zanzibar</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-black text-gray-300 py-10 px-5 border-t-4 border-[#d4a017]">
+  <div class="max-w-4xl mx-auto text-center">
+    <p class="font-bold text-[#d4a017] mb-2">UNP TOURS — Unique & Natural Paradise</p>
+    <p class="text-sm">Nungwi, Zanzibar, Tanzania | WhatsApp: +255 655 728 982</p>
+    <p class="text-xs mt-4 text-gray-500">© 2026 UNP Tours. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/255655728982" target="_blank" class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] rounded-full flex justify-center items-center text-3xl text-white shadow-lg hover:scale-110 transition z-50">
+  💬
+</a>
+
+<script>
+  // Gallery filter
+  document.querySelectorAll('.gallery-filter').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.gallery-filter').forEach(b => {
+        b.classList.remove('active', 'bg-[#0c4a6e]', 'text-white');
+        b.classList.add('bg-white', 'text-gray-700');
+      });
+      btn.classList.add('active', 'bg-[#0c4a6e]', 'text-white');
+      btn.classList.remove('bg-white', 'text-gray-700');
+
+      const filter = btn.getAttribute('data-filter');
+      document.querySelectorAll('.gallery-item').forEach(item => {
+        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
