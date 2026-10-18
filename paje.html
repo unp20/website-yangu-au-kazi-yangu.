@@ -1,134 +1,178 @@
 <!DOCTYPE html>
-<html lang="sw">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Paje Beach | UNP TOURS</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="style.css">
-<meta name="description" content="Paje Beach Zanzibar - Kitesurfing, fukwe nzuri, na maisha ya usiku.">
+<title>Paje Beach — UNP TOURS Zanzibar</title>
+<meta name="description" content="Discover Paje Beach Zanzibar - Kitesurfing, beautiful beaches, and vibrant nightlife.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://unp.tours/paje.html">
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0c4a6e">
+<link rel="icon" type="image/png" href="assets/images/logo.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+
 <style>
-.place-header { background: linear-gradient(135deg, #082f49, #0c4a6e); color: #fff; text-align: center; padding: 70px 20px; border-bottom: 5px solid #d4af37; }
-.place-header h1 { font-size: 2.5rem; color: #d4af37; margin-bottom: 10px; }
-.place-header p { font-size: 1.1rem; color: #ddd; max-width: 700px; margin: 0 auto; }
-.place-content { max-width: 900px; margin: 40px auto; padding: 30px; background: #fff; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); }
-.place-content h2 { color: #0c4a6e; margin: 25px 0 15px; border-left: 5px solid #d4af37; padding-left: 12px; }
-.place-content p, .place-content li { color: #555; line-height: 1.8; }
-.place-content ul { padding-left: 20px; }
-.attraction-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin: 25px 0; }
-.attraction-item { background: #f9f9f9; padding: 20px; border-radius: 10px; border-left: 4px solid #d4af37; }
-.attraction-item h4 { color: #082f49; margin-bottom: 8px; font-size: 1.05rem; }
-.attraction-item p { font-size: 0.88rem; color: #555; line-height: 1.6; }
+  body { font-family: 'Inter', sans-serif; background: #f8f9fa; }
+  .attraction-card { transition: all 0.3s ease; }
+  .attraction-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
 </style>
 </head>
 <body>
 
-<header class="header">
-    <div class="nav-container">
-        <a href="index.html" class="logo-area">
-            <div class="logo-holder"><span class="logo-fallback">UNP<br>LOGO</span></div>
-            <div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
-        </a>
-        <button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="index.html"><i class="fas fa-home"></i> Nyumbani</a></li>
-            <li><a href="destinations.html"><i class="fas fa-globe"></i> Destinations</a></li>
-            <li><a href="paje.html" style="color: #d4af37;"><i class="fas fa-wind"></i> Paje</a></li>
-            <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
-            <li><a href="contact.html"><i class="fas fa-envelope"></i> Wasiliana</a></li>
-        </ul>
-    </div>
-</header>
+<!-- ================= NAVBAR ================= -->
+<nav class="fixed top-0 w-full flex justify-between items-center px-5 md:px-12 py-3 z-50 bg-[#0c4a6e] shadow-lg">
+  <a href="index.html" class="flex items-center gap-3">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="h-10 w-10">
+      <defs>
+        <linearGradient id="goldNav" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#d4a017" />
+          <stop offset="50%" style="stop-color:#f5d76e" />
+          <stop offset="100%" style="stop-color:#b88a10" />
+        </linearGradient>
+        <linearGradient id="greenNav" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#0b3d2e" />
+          <stop offset="100%" style="stop-color:#1a6b4a" />
+        </linearGradient>
+      </defs>
+      <circle cx="100" cy="100" r="95" fill="url(#greenNav)" stroke="url(#goldNav)" stroke-width="4"/>
+      <circle cx="100" cy="100" r="85" fill="none" stroke="url(#goldNav)" stroke-width="1.5"/>
+      <path d="M60 80 Q80 40 120 50 Q130 60 110 80 Q90 100 60 80 Z" fill="url(#goldNav)"/>
+      <path d="M60 100 Q80 85 100 100 T140 100" fill="none" stroke="url(#goldNav)" stroke-width="4" stroke-linecap="round"/>
+      <text x="100" y="140" font-family="Inter, sans-serif" font-size="30" font-weight="800" fill="url(#goldNav)" text-anchor="middle" letter-spacing="2">UNP</text>
+    </svg>
+    <span class="font-extrabold text-white hidden sm:block">UNP TOURS</span>
+  </a>
+  <div class="flex items-center gap-4">
+    <a href="index.html" class="text-white font-semibold hover:text-[#d4a017] transition hidden sm:block">Home</a>
+    <a href="index.html" class="text-white font-semibold hover:text-[#d4a017] transition">← Back</a>
+  </div>
+</nav>
 
-<section class="place-header">
-    <h1><i class="fas fa-wind"></i> Paje Beach</h1>
-    <p>Kitesurfing, fukwe nzuri, na maisha ya usiku — mashariki mwa Zanzibar.</p>
+<!-- ================= HERO ================= -->
+<section class="pt-32 pb-16 bg-gradient-to-br from-[#0c4a6e] to-[#082f49] text-white border-b-4 border-[#d4a017]">
+  <div class="max-w-4xl mx-auto text-center px-5">
+    <div class="text-6xl mb-4">🪁</div>
+    <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Paje Beach</h1>
+    <p class="text-lg md:text-xl text-blue-200">Kitesurfing, beautiful beaches, and vibrant nightlife on Zanzibar's east coast.</p>
+  </div>
 </section>
 
-<section class="place-content">
-    <h2>Kuhusu Paje</h2>
-    <p>Paje ni kijiji cha wavuvi kilichopo mashariki mwa Zanzibar. Ni maarufu kwa kitesurfing (moja ya maeneo bora duniani), fukwe nzuri, na maisha ya usiku. Ni mahali pazuri kwa wapenda michezo ya majini na watalii wa kijana.</p>
+<!-- ================= CONTENT ================= -->
+<main class="max-w-5xl mx-auto px-5 py-16">
+  
+  <div class="bg-white rounded-2xl p-8 shadow-lg border-l-4 border-[#0c4a6e] mb-10">
+    <h2 class="text-2xl font-extrabold text-[#082f49] mb-4">About Paje</h2>
+    <p class="text-gray-600 leading-relaxed text-lg">
+      Paje is a vibrant fishing village located on the east coast of Zanzibar. It is world-famous for kitesurfing (one of the best spots on the planet), stunning white-sand beaches, and a lively nightlife. It is the perfect destination for water sports enthusiasts and younger travelers.
+    </p>
+  </div>
 
-    <h2>Vivutio vya Paje</h2>
-    <div class="attraction-list">
-        <div class="attraction-item">
-            <h4>Paje Beach</h4>
-            <p>Fukwe nzuri — mchanga mweupe, maji safi.</p>
-        </div>
-        <div class="attraction-item">
-            <h4>Kitesurfing</h4>
-            <p>Moja ya maeneo bora duniani kwa kitesurfing.</p>
-        </div>
-        <div class="attraction-item">
-            <h4>Maisha ya Usiku</h4>
-            <p>Sherehe za usiku — kila wiki.</p>
-        </div>
-        <div class="attraction-item">
-            <h4>Snorkeling</h4>
-            <p>Snorkeling kwenye maji safi.</p>
-        </div>
-        <div class="attraction-item">
-            <h4>Sunrise View</h4>
-            <p>Sunrise nzuri — kila asubuhi.</p>
-        </div>
-        <div class="attraction-item">
-            <h4>Dhow Sunset Cruise</h4>
-            <p>Safari ya boti wakati wa sunset.</p>
-        </div>
+  <h2 class="text-3xl font-extrabold text-[#082f49] mb-6">Attractions in Paje</h2>
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+    
+    <div class="attraction-card bg-white p-6 rounded-xl shadow-sm border-t-4 border-[#d4a017]">
+      <div class="text-3xl mb-3">🏖️</div>
+      <h4 class="font-bold text-[#082f49] text-lg mb-2">Paje Beach</h4>
+      <p class="text-gray-600 text-sm">A stunning beach with powdery white sand and turquoise waters.</p>
     </div>
 
-    <h2>Shughuli za Kufanya</h2>
-    <ul>
-        <li>Kitesurfing (kwa wote)</li>
-        <li>Snorkeling na diving</li>
-        <li>Kuogelea kwenye fukwe nzuri</li>
-        <li>Kupanda dhow (meli ya jadi)</li>
-        <li>Kufurahia sunrise na sunset</li>
-        <li>Kula chakula cha bahari</li>
-        <li>Sherehe za usiku</li>
-    </ul>
-
-    <h2>Hoteli za Paje</h2>
-    <ul>
-        <li>Paje Beach Hotel — nzuri</li>
-        <li>Dhow Inn Boutique Hotel — kifahari</li>
-        <li>Paje by Night — sherehe</li>
-        <li>Mr Kahawa — nzuri</li>
-        <li>Mbuyu Beach Bungalows — nafuu</li>
-    </ul>
-
-    <h2>Wakati Bora</h2>
-    <ul>
-        <li><strong>Juni-Oktoba</strong> — Wakati bora (upepo mzuri)</li>
-        <li><strong>Desemba-Februari</strong> — Wakati mzuri</li>
-        <li><strong>Aprili-Mei</strong> — Mvua (epuka)</li>
-    </ul>
-</section>
-
-<footer class="footer">
-    <div class="footer-content">
-        <div>
-            <h3>UNIQUE NATURE PARADISE (UNP)</h3>
-            <p style="font-size: 0.9rem;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p>
-        </div>
-        <div>
-            <h4>Direct Contact</h4>
-            <p style="font-size: 0.9rem;"><i class="fab fa-whatsapp" style="color: #d4af37;"></i> +255 655 728 982</p>
-            <p style="font-size: 0.9rem;"><i class="fas fa-envelope" style="color: #d4af37;"></i> salimnasoro11@gmail.com</p>
-        </div>
+    <div class="attraction-card bg-white p-6 rounded-xl shadow-sm border-t-4 border-[#d4a017]">
+      <div class="text-3xl mb-3">🪁</div>
+      <h4 class="font-bold text-[#082f49] text-lg mb-2">Kitesurfing</h4>
+      <p class="text-gray-600 text-sm">One of the best kitesurfing destinations in the world, perfect for all levels.</p>
     </div>
+
+    <div class="attraction-card bg-white p-6 rounded-xl shadow-sm border-t-4 border-[#d4a017]">
+      <div class="text-3xl mb-3">🌙</div>
+      <h4 class="font-bold text-[#082f49] text-lg mb-2">Nightlife</h4>
+      <p class="text-gray-600 text-sm">Enjoy vibrant beach parties and events happening every week.</p>
+    </div>
+
+    <div class="attraction-card bg-white p-6 rounded-xl shadow-sm border-t-4 border-[#d4a017]">
+      <div class="text-3xl mb-3">🤿</div>
+      <h4 class="font-bold text-[#082f49] text-lg mb-2">Snorkeling</h4>
+      <p class="text-gray-600 text-sm">Explore the colorful coral reefs in the clear, warm Indian Ocean.</p>
+    </div>
+
+    <div class="attraction-card bg-white p-6 rounded-xl shadow-sm border-t-4 border-[#d4a017]">
+      <div class="text-3xl mb-3">🌅</div>
+      <h4 class="font-bold text-[#082f49] text-lg mb-2">Sunrise Views</h4>
+      <p class="text-gray-600 text-sm">Wake up to breathtaking sunrises over the ocean every morning.</p>
+    </div>
+
+    <div class="attraction-card bg-white p-6 rounded-xl shadow-sm border-t-4 border-[#d4a017]">
+      <div class="text-3xl mb-3">⛵</div>
+      <h4 class="font-bold text-[#082f49] text-lg mb-2">Dhow Sunset Cruise</h4>
+      <p class="text-gray-600 text-sm">Sail on a traditional wooden dhow and enjoy a spectacular sunset.</p>
+    </div>
+
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+    
+    <div class="bg-white rounded-2xl p-8 shadow-lg border-l-4 border-[#0c4a6e]">
+      <h2 class="text-2xl font-extrabold text-[#082f49] mb-4">Things to Do</h2>
+      <ul class="space-y-3 text-gray-600">
+        <li class="flex items-center gap-2"><span class="text-[#d4a017]">✓</span> Kitesurfing (for all levels)</li>
+        <li class="flex items-center gap-2"><span class="text-[#d4a017]">✓</span> Snorkeling and diving</li>
+        <li class="flex items-center gap-2"><span class="text-[#d4a017]">✓</span> Swimming in pristine waters</li>
+        <li class="flex items-center gap-2"><span class="text-[#d4a017]">✓</span> Ride a traditional dhow</li>
+        <li class="flex items-center gap-2"><span class="text-[#d4a017]">✓</span> Enjoy sunrise and sunset</li>
+        <li class="flex items-center gap-2"><span class="text-[#d4a017]">✓</span> Eat fresh seafood</li>
+        <li class="flex items-center gap-2"><span class="text-[#d4a017]">✓</span> Experience the nightlife</li>
+      </ul>
+    </div>
+
+    <div class="bg-white rounded-2xl p-8 shadow-lg border-l-4 border-[#25D366]">
+      <h2 class="text-2xl font-extrabold text-[#082f49] mb-4">Recommended Hotels</h2>
+      <ul class="space-y-3 text-gray-600">
+        <li class="flex items-center gap-2"><span class="text-[#d4a017]">🏨</span> Paje Beach Hotel</li>
+        <li class="flex items-center gap-2"><span class="text-[#d4a017]">🏨</span> Dhow Inn Boutique Hotel (Luxury)</li>
+        <li class="flex items-center gap-2"><span class="text-[#d4a017]">🏨</span> Paje by Night (Party vibe)</li>
+        <li class="flex items-center gap-2"><span class="text-[#d4a017]">🏨</span> Mr Kahawa</li>
+        <li class="flex items-center gap-2"><span class="text-[#d4a017]">🏨</span> Mbuyu Beach Bungalows (Budget)</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="bg-gradient-to-r from-[#0c4a6e] to-[#082f49] rounded-2xl p-8 text-white text-center shadow-lg">
+    <h2 class="text-2xl font-extrabold text-[#d4a017] mb-4">Best Time to Visit</h2>
+    <div class="flex flex-col md:flex-row justify-center gap-6">
+      <div class="bg-white/10 p-4 rounded-xl">
+        <p class="font-bold text-[#d4a017]">June - October</p>
+        <p class="text-sm text-blue-200">Best Time (Good wind)</p>
+      </div>
+      <div class="bg-white/10 p-4 rounded-xl">
+        <p class="font-bold text-[#d4a017]">December - February</p>
+        <p class="text-sm text-blue-200">Good Time</p>
+      </div>
+      <div class="bg-red-500/20 p-4 rounded-xl border border-red-500/50">
+        <p class="font-bold text-red-300">April - May</p>
+        <p class="text-sm text-red-200">Rainy (Avoid)</p>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-black text-gray-300 py-10 px-5 border-t-4 border-[#d4a017]">
+  <div class="max-w-4xl mx-auto text-center">
+    <p class="font-bold text-[#d4a017] mb-2">UNP TOURS — Unique & Natural Paradise</p>
+    <p class="text-sm">Nungwi, Zanzibar, Tanzania | WhatsApp: +255 655 728 982</p>
+    <p class="text-xs mt-4 text-gray-500">© 2026 UNP Tours. All rights reserved.</p>
+  </div>
 </footer>
 
-<a href="https://wa.me/255655728982" class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
-
-<script>
-  const menuToggleBtn = document.getElementById('menuToggleBtn');
-  const navLinks = document.getElementById('navLinks');
-  if(menuToggleBtn) { menuToggleBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); }); }
-</script>
+<!-- WhatsApp Float -->
+<a href="https://wa.me/255655728982" target="_blank" class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] rounded-full flex justify-center items-center text-3xl text-white shadow-lg hover:scale-110 transition z-50">
+  💬
+</a>
 
 </body>
           </html>
