@@ -1,134 +1,178 @@
 <!DOCTYPE html>
-<html lang="sw">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nungwi Beach | UNP TOURS</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="style.css">
-<meta name="description" content="Nungwi Beach Zanzibar - Fukwe nzuri, sherehe za usiku, na hoteli za kifahari.">
+<title>Nungwi Beach — UNP TOURS Zanzibar</title>
+<meta name="description" content="Discover Nungwi Beach Zanzibar - Stunning beaches, vibrant nightlife, and luxury hotels.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://unp.tours/nungwi.html">
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0c4a6e">
+<link rel="icon" type="image/png" href="assets/images/logo.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+
 <style>
-.place-header { background: linear-gradient(135deg, #082f49, #0c4a6e); color: #fff; text-align: center; padding: 70px 20px; border-bottom: 5px solid #d4af37; }
-.place-header h1 { font-size: 2.5rem; color: #d4af37; margin-bottom: 10px; }
-.place-header p { font-size: 1.1rem; color: #ddd; max-width: 700px; margin: 0 auto; }
-.place-content { max-width: 900px; margin: 40px auto; padding: 30px; background: #fff; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); }
-.place-content h2 { color: #0c4a6e; margin: 25px 0 15px; border-left: 5px solid #d4af37; padding-left: 12px; }
-.place-content p, .place-content li { color: #555; line-height: 1.8; }
-.place-content ul { padding-left: 20px; }
-.attraction-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin: 25px 0; }
-.attraction-item { background: #f9f9f9; padding: 20px; border-radius: 10px; border-left: 4px solid #d4af37; }
-.attraction-item h4 { color: #082f49; margin-bottom: 8px; font-size: 1.05rem; }
-.attraction-item p { font-size: 0.88rem; color: #555; line-height: 1.6; }
+  body { font-family: 'Inter', sans-serif; background: #f8f9fa; }
+  .attraction-card { transition: all 0.3s ease; }
+  .attraction-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
 </style>
 </head>
 <body>
 
-<header class="header">
-    <div class="nav-container">
-        <a href="index.html" class="logo-area">
-            <div class="logo-holder"><span class="logo-fallback">UNP<br>LOGO</span></div>
-            <div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
-        </a>
-        <button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="index.html"><i class="fas fa-home"></i> Nyumbani</a></li>
-            <li><a href="destinations.html"><i class="fas fa-globe"></i> Destinations</a></li>
-            <li><a href="nungwi.html" style="color: #d4af37;"><i class="fas fa-umbrella-beach"></i> Nungwi</a></li>
-            <li><a href="gallery.html"><i class="fas fa-images"></i> Gallery</a></li>
-            <li><a href="contact.html"><i class="fas fa-envelope"></i> Wasiliana</a></li>
-        </ul>
-    </div>
-</header>
+<!-- ================= NAVBAR ================= -->
+<nav class="fixed top-0 w-full flex justify-between items-center px-5 md:px-12 py-3 z-50 bg-[#0c4a6e] shadow-lg">
+  <a href="index.html" class="flex items-center gap-3">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="h-10 w-10">
+      <defs>
+        <linearGradient id="goldNav" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#d4a017" />
+          <stop offset="50%" style="stop-color:#f5d76e" />
+          <stop offset="100%" style="stop-color:#b88a10" />
+        </linearGradient>
+        <linearGradient id="greenNav" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#0b3d2e" />
+          <stop offset="100%" style="stop-color:#1a6b4a" />
+        </linearGradient>
+      </defs>
+      <circle cx="100" cy="100" r="95" fill="url(#greenNav)" stroke="url(#goldNav)" stroke-width="4"/>
+      <circle cx="100" cy="100" r="85" fill="none" stroke="url(#goldNav)" stroke-width="1.5"/>
+      <path d="M60 80 Q80 40 120 50 Q130 60 110 80 Q90 100 60 80 Z" fill="url(#goldNav)"/>
+      <path d="M60 100 Q80 85 100 100 T140 100" fill="none" stroke="url(#goldNav)" stroke-width="4" stroke-linecap="round"/>
+      <text x="100" y="140" font-family="Inter, sans-serif" font-size="30" font-weight="800" fill="url(#goldNav)" text-anchor="middle" letter-spacing="2">UNP</text>
+    </svg>
+    <span class="font-extrabold text-white hidden sm:block">UNP TOURS</span>
+  </a>
+  <div class="flex items-center gap-4">
+    <a href="index.html" class="text-white font-semibold hover:text-[#d4a017] transition hidden sm:block">Home</a>
+    <a href="index.html" class="text-white font-semibold hover:text-[#d4a017] transition">← Back</a>
+  </div>
+</nav>
 
-<section class="place-header">
-    <h1><i class="fas fa-umbrella-beach"></i> Nungwi Beach</h1>
-    <p>Fukwe nzuri, sherehe za usiku, na hoteli za kifahari — kaskazini mwa Zanzibar.</p>
+<!-- ================= HERO ================= -->
+<section class="pt-32 pb-16 bg-gradient-to-br from-[#0c4a6e] to-[#082f49] text-white border-b-4 border-[#d4a017]">
+  <div class="max-w-4xl mx-auto text-center px-5">
+    <div class="text-6xl mb-4">🏖️</div>
+    <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Nungwi Beach</h1>
+    <p class="text-lg md:text-xl text-blue-200">Stunning beaches, vibrant nightlife, and luxury hotels on Zanzibar's north coast.</p>
+  </div>
 </section>
 
-<section class="place-content">
-    <h2>Kuhusu Nungwi</h2>
-    <p>Nungwi ni kijiji cha wavuvi kilichopo kaskazini mwa Zanzibar. Ni maarufu kwa fukwe nzuri (moja ya fukwe bora duniani), maji safi ya kijani, na maisha ya usiku. Ni mahali pazuri kwa kupumzika, kuogelea, na kufurahia jua.</p>
+<!-- ================= CONTENT ================= -->
+<main class="max-w-5xl mx-auto px-5 py-16">
+  
+  <div class="bg-white rounded-2xl p-8 shadow-lg border-l-4 border-[#0c4a6e] mb-10">
+    <h2 class="text-2xl font-extrabold text-[#082f49] mb-4">About Nungwi</h2>
+    <p class="text-gray-600 leading-relaxed text-lg">
+      Nungwi is a fishing village located on the northern tip of Zanzibar. It is famous for its stunning beaches (often ranked among the best in the world), crystal-clear turquoise waters, and lively nightlife. It is the perfect place to relax, swim, and soak up the sun.
+    </p>
+  </div>
 
-    <h2>Vivutio vya Nungwi</h2>
-    <div class="attraction-list">
-        <div class="attraction-item">
-            <h4>Nungwi Beach</h4>
-            <p>Fukwe nzuri — moja ya bora duniani.</p>
-        </div>
-        <div class="attraction-item">
-            <h4>Nungwi Lighthouse</h4>
-            <p>Mnara wa taa — view nzuri.</p>
-        </div>
-        <div class="attraction-item">
-            <h4>Mnarani Turtle Aquarium</h4>
-            <p>Kituo cha kasa — kuona na kuwasaidia.</p>
-        </div>
-        <div class="attraction-item">
-            <h4>Sunset View</h4>
-            <p>Sunset nzuri sana — kila jioni.</p>
-        </div>
-        <div class="attraction-item">
-            <h4>Dhow Sunset Cruise</h4>
-            <p>Safari ya boti wakati wa sunset.</p>
-        </div>
-        <div class="attraction-item">
-            <h4>Nightlife</h4>
-            <p>Sherehe za usiku — kila wiki.</p>
-        </div>
+  <h2 class="text-3xl font-extrabold text-[#082f49] mb-6">Attractions in Nungwi</h2>
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+    
+    <div class="attraction-card bg-white p-6 rounded-xl shadow-sm border-t-4 border-[#d4a017]">
+      <div class="text-3xl mb-3">🏖️</div>
+      <h4 class="font-bold text-[#082f49] text-lg mb-2">Nungwi Beach</h4>
+      <p class="text-gray-600 text-sm">One of the most beautiful beaches in the world.</p>
     </div>
 
-    <h2>Shughuli za Kufanya</h2>
-    <ul>
-        <li>Kuogelea kwenye fukwe nzuri</li>
-        <li>Snorkeling na diving</li>
-        <li>Kupanda dhow (meli ya jadi)</li>
-        <li>Kutembelea Mnarani Turtle Aquarium</li>
-        <li>Kufurahia sunset</li>
-        <li>Kula chakula cha bahari</li>
-        <li>Sherehe za usiku</li>
-    </ul>
-
-    <h2>Hoteli za Nungwi</h2>
-    <ul>
-        <li>Nungwi Beach Resort — kifahari</li>
-        <li>DoubleTree by Hilton — kifahari</li>
-        <li>Z Hotel — nzuri</li>
-        <li>Nungwi Inn — nafuu</li>
-        <li>Smiles Beach Hotel — nzuri</li>
-    </ul>
-
-    <h2>Wakati Bora</h2>
-    <ul>
-        <li><strong>Juni-Oktoba</strong> — Wakati bora</li>
-        <li><strong>Desemba-Februari</strong> — Wakati mzuri</li>
-        <li><strong>Aprili-Mei</strong> — Mvua (epuka)</li>
-    </ul>
-</section>
-
-<footer class="footer">
-    <div class="footer-content">
-        <div>
-            <h3>UNIQUE NATURE PARADISE (UNP)</h3>
-            <p style="font-size: 0.9rem;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p>
-        </div>
-        <div>
-            <h4>Direct Contact</h4>
-            <p style="font-size: 0.9rem;"><i class="fab fa-whatsapp" style="color: #d4af37;"></i> +255 655 728 982</p>
-            <p style="font-size: 0.9rem;"><i class="fas fa-envelope" style="color: #d4af37;"></i> salimnasoro11@gmail.com</p>
-        </div>
+    <div class="attraction-card bg-white p-6 rounded-xl shadow-sm border-t-4 border-[#d4a017]">
+      <div class="text-3xl mb-3">🗼</div>
+      <h4 class="font-bold text-[#082f49] text-lg mb-2">Nungwi Lighthouse</h4>
+      <p class="text-gray-600 text-sm">A historic lighthouse offering beautiful views.</p>
     </div>
+
+    <div class="attraction-card bg-white p-6 rounded-xl shadow-sm border-t-4 border-[#d4a017]">
+      <div class="text-3xl mb-3">🐢</div>
+      <h4 class="font-bold text-[#082f49] text-lg mb-2">Mnarani Turtle Aquarium</h4>
+      <p class="text-gray-600 text-sm">A conservation center to see and help protect sea turtles.</p>
+    </div>
+
+    <div class="attraction-card bg-white p-6 rounded-xl shadow-sm border-t-4 border-[#d4a017]">
+      <div class="text-3xl mb-3">🌅</div>
+      <h4 class="font-bold text-[#082f49] text-lg mb-2">Sunset Views</h4>
+      <p class="text-gray-600 text-sm">Experience breathtaking sunsets every evening.</p>
+    </div>
+
+    <div class="attraction-card bg-white p-6 rounded-xl shadow-sm border-t-4 border-[#d4a017]">
+      <div class="text-3xl mb-3">⛵</div>
+      <h4 class="font-bold text-[#082f49] text-lg mb-2">Dhow Sunset Cruise</h4>
+      <p class="text-gray-600 text-sm">Sail on a traditional wooden dhow during a beautiful sunset.</p>
+    </div>
+
+    <div class="attraction-card bg-white p-6 rounded-xl shadow-sm border-t-4 border-[#d4a017]">
+      <div class="text-3xl mb-3">🌙</div>
+      <h4 class="font-bold text-[#082f49] text-lg mb-2">Nightlife</h4>
+      <p class="text-gray-600 text-sm">Enjoy vibrant beach parties and events happening every week.</p>
+    </div>
+
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+    
+    <div class="bg-white rounded-2xl p-8 shadow-lg border-l-4 border-[#0c4a6e]">
+      <h2 class="text-2xl font-extrabold text-[#082f49] mb-4">Things to Do</h2>
+      <ul class="space-y-3 text-gray-600">
+        <li class="flex items-center gap-2"><span class="text-[#d4a017]">✓</span> Swim in the stunning, calm waters</li>
+        <li class="flex items-center gap-2"><span class="text-[#d4a017]">✓</span> Snorkeling and diving</li>
+        <li class="flex items-center gap-2"><span class="text-[#d4a017]">✓</span> Ride a traditional dhow boat</li>
+        <li class="flex items-center gap-2"><span class="text-[#d4a017]">✓</span> Visit the Mnarani Turtle Aquarium</li>
+        <li class="flex items-center gap-2"><span class="text-[#d4a017]">✓</span> Enjoy spectacular sunsets</li>
+        <li class="flex items-center gap-2"><span class="text-[#d4a017]">✓</span> Eat fresh seafood</li>
+        <li class="flex items-center gap-2"><span class="text-[#d4a017]">✓</span> Experience the vibrant nightlife</li>
+      </ul>
+    </div>
+
+    <div class="bg-white rounded-2xl p-8 shadow-lg border-l-4 border-[#25D366]">
+      <h2 class="text-2xl font-extrabold text-[#082f49] mb-4">Recommended Hotels</h2>
+      <ul class="space-y-3 text-gray-600">
+        <li class="flex items-center gap-2"><span class="text-[#d4a017]">🏨</span> Nungwi Beach Resort (Luxury)</li>
+        <li class="flex items-center gap-2"><span class="text-[#d4a017]">🏨</span> DoubleTree by Hilton (Luxury)</li>
+        <li class="flex items-center gap-2"><span class="text-[#d4a017]">🏨</span> Z Hotel</li>
+        <li class="flex items-center gap-2"><span class="text-[#d4a017]">🏨</span> Nungwi Inn (Budget)</li>
+        <li class="flex items-center gap-2"><span class="text-[#d4a017]">🏨</span> Smiles Beach Hotel</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="bg-gradient-to-r from-[#0c4a6e] to-[#082f49] rounded-2xl p-8 text-white text-center shadow-lg">
+    <h2 class="text-2xl font-extrabold text-[#d4a017] mb-4">Best Time to Visit</h2>
+    <div class="flex flex-col md:flex-row justify-center gap-6">
+      <div class="bg-white/10 p-4 rounded-xl border border-[#d4a017]">
+        <p class="font-bold text-[#d4a017]">June - October</p>
+        <p class="text-sm text-blue-200 font-bold">Best Time</p>
+      </div>
+      <div class="bg-white/10 p-4 rounded-xl">
+        <p class="font-bold text-[#d4a017]">December - February</p>
+        <p class="text-sm text-blue-200">Good Time</p>
+      </div>
+      <div class="bg-red-500/20 p-4 rounded-xl border border-red-500/50">
+        <p class="font-bold text-red-300">April - May</p>
+        <p class="text-sm text-red-200">Rainy (Avoid)</p>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-black text-gray-300 py-10 px-5 border-t-4 border-[#d4a017]">
+  <div class="max-w-4xl mx-auto text-center">
+    <p class="font-bold text-[#d4a017] mb-2">UNP TOURS — Unique & Natural Paradise</p>
+    <p class="text-sm">Nungwi, Zanzibar, Tanzania | WhatsApp: +255 655 728 982</p>
+    <p class="text-xs mt-4 text-gray-500">© 2026 UNP Tours. All rights reserved.</p>
+  </div>
 </footer>
 
-<a href="https://wa.me/255655728982" class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
-
-<script>
-  const menuToggleBtn = document.getElementById('menuToggleBtn');
-  const navLinks = document.getElementById('navLinks');
-  if(menuToggleBtn) { menuToggleBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); }); }
-</script>
+<!-- WhatsApp Float -->
+<a href="https://wa.me/255655728982" target="_blank" class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] rounded-full flex justify-center items-center text-3xl text-white shadow-lg hover:scale-110 transition z-50">
+  💬
+</a>
 
 </body>
-                                                       </html>
+              </html>
