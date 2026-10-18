@@ -1,143 +1,178 @@
 <!DOCTYPE html>
-<html lang="sw">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mikumi Cabins | UNP TOURS</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="style.css">
-<meta name="description" content="Mikumi Cabins - Kambi za Mikumi National Park, Morogoro.">
+<title>Mikumi Cabins — UNP TOURS Tanzania</title>
+<meta name="description" content="Discover Mikumi Cabins - Safari lodges and camps in Mikumi National Park, Morogoro.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://unp.tours/mikumi-cabins.html">
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0c4a6e">
+<link rel="icon" type="image/png" href="assets/images/logo.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+
 <style>
-.cabin-header { background: linear-gradient(135deg, #082f49, #0c4a6e); color: #fff; text-align: center; padding: 70px 20px; border-bottom: 5px solid #d4af37; }
-.cabin-header h1 { font-size: 2.5rem; color: #d4af37; margin-bottom: 10px; }
-.cabin-header p { font-size: 1.1rem; color: #ddd; max-width: 700px; margin: 0 auto; }
-.cabin-content { max-width: 900px; margin: 40px auto; padding: 30px; background: #fff; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); }
-.cabin-content h2 { color: #0c4a6e; margin: 25px 0 15px; border-left: 5px solid #d4af37; padding-left: 12px; }
-.cabin-content p, .cabin-content li { color: #555; line-height: 1.8; }
-.cabin-content ul { padding-left: 20px; }
-.cabin-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin: 25px 0; }
-.cabin-item { background: #f9f9f9; padding: 20px; border-radius: 10px; border-left: 4px solid #d4af37; }
-.cabin-item h4 { color: #082f49; margin-bottom: 8px; font-size: 1.05rem; }
-.cabin-item p { font-size: 0.88rem; color: #555; line-height: 1.6; }
-.cabin-item .price { color: #0c4a6e; font-weight: 700; font-size: 0.9rem; margin-top: 10px; display: block; }
+  body { font-family: 'Inter', sans-serif; background: #f8f9fa; }
+  .cabin-card { transition: all 0.3s ease; }
+  .cabin-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
 </style>
 </head>
 <body>
 
-<header class="header">
-    <div class="nav-container">
-        <a href="index.html" class="logo-area">
-            <div class="logo-holder"><span class="logo-fallback">UNP<br>LOGO</span></div>
-            <div class="logo-text"><h2>UNP TOURS</h2><span>Unique & Natural Paradise</span></div>
-        </a>
-        <button class="menu-toggle" id="menuToggleBtn"><i class="fas fa-bars"></i></button>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="index.html"><i class="fas fa-home"></i> Nyumbani</a></li>
-            <li><a href="mountain-tourism.html"><i class="fas fa-mountain"></i> Milimani</a></li>
-            <li><a href="mountain-cabins.html"><i class="fas fa-campground"></i> Kambi</a></li>
-            <li><a href="mikumi-cabins.html" style="color: #d4af37;"><i class="fas fa-paw"></i> Mikumi</a></li>
-            <li><a href="contact.html"><i class="fas fa-envelope"></i> Wasiliana</a></li>
-        </ul>
-    </div>
-</header>
+<!-- ================= NAVBAR ================= -->
+<nav class="fixed top-0 w-full flex justify-between items-center px-5 md:px-12 py-3 z-50 bg-[#0c4a6e] shadow-lg">
+  <a href="index.html" class="flex items-center gap-3">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="h-10 w-10">
+      <defs>
+        <linearGradient id="goldNav" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#d4a017" />
+          <stop offset="50%" style="stop-color:#f5d76e" />
+          <stop offset="100%" style="stop-color:#b88a10" />
+        </linearGradient>
+        <linearGradient id="greenNav" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#0b3d2e" />
+          <stop offset="100%" style="stop-color:#1a6b4a" />
+        </linearGradient>
+      </defs>
+      <circle cx="100" cy="100" r="95" fill="url(#greenNav)" stroke="url(#goldNav)" stroke-width="4"/>
+      <circle cx="100" cy="100" r="85" fill="none" stroke="url(#goldNav)" stroke-width="1.5"/>
+      <path d="M60 80 Q80 40 120 50 Q130 60 110 80 Q90 100 60 80 Z" fill="url(#goldNav)"/>
+      <path d="M60 100 Q80 85 100 100 T140 100" fill="none" stroke="url(#goldNav)" stroke-width="4" stroke-linecap="round"/>
+      <text x="100" y="140" font-family="Inter, sans-serif" font-size="30" font-weight="800" fill="url(#goldNav)" text-anchor="middle" letter-spacing="2">UNP</text>
+    </svg>
+    <span class="font-extrabold text-white hidden sm:block">UNP TOURS</span>
+  </a>
+  <div class="flex items-center gap-4">
+    <a href="index.html" class="text-white font-semibold hover:text-[#d4a017] transition hidden sm:block">Home</a>
+    <a href="index.html" class="text-white font-semibold hover:text-[#d4a017] transition">← Back</a>
+  </div>
+</nav>
 
-<section class="cabin-header">
-    <h1><i class="fas fa-paw"></i> Mikumi Cabins</h1>
-    <p>Kambi za Mikumi National Park — mbuga karibu na Morogoro (283 km kutoka Dar).</p>
+<!-- ================= HERO ================= -->
+<section class="pt-32 pb-16 bg-gradient-to-br from-[#0c4a6e] to-[#082f49] text-white border-b-4 border-[#d4a017]">
+  <div class="max-w-4xl mx-auto text-center px-5">
+    <div class="text-6xl mb-4">🦁</div>
+    <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Mikumi Cabins</h1>
+    <p class="text-lg md:text-xl text-blue-200">Safari lodges and camps in Mikumi National Park — just 283 km from Dar es Salaam.</p>
+  </div>
 </section>
 
-<section class="cabin-content">
-    <h2>Kuhusu Mikumi National Park</h2>
-    <p>Mikumi National Park ni mbuga ya wanyama iliyopo Morogoro, Tanzania. Ni mbuga ya nne kwa ukubwa Tanzania (3,230 km²). Ni maarufu kwa safari za siku moja kutoka Dar es Salaam na wanyama wengi.</p>
+<!-- ================= CONTENT ================= -->
+<main class="max-w-5xl mx-auto px-5 py-16">
+  
+  <div class="bg-white rounded-2xl p-8 shadow-lg border-l-4 border-[#0c4a6e] mb-10">
+    <h2 class="text-2xl font-extrabold text-[#082f49] mb-4">About Mikumi National Park</h2>
+    <p class="text-gray-600 leading-relaxed text-lg">
+      Mikumi National Park is a famous wildlife park located in Morogoro, Tanzania. It is the fourth largest park in Tanzania (3,230 km²) and is renowned for day-trip safaris from Dar es Salaam and its abundant wildlife.
+    </p>
+  </div>
 
-    <h2>Wanyama wa Mikumi</h2>
-    <ul>
-        <li><strong>Simba</strong> — Lions</li>
-        <li><strong>Tembo</strong> — Elephants</li>
-        <li><strong>Twiga</strong> — Giraffes</li>
-        <li><strong>Zebra</strong> — Zebras</li>
-        <li><strong>Buffalo</strong> — Buffaloes</li>
-        <li><strong>Kiboko</strong> — Hippos</li>
-        <li><strong>Swala</strong> — Antelopes</li>
-        <li><strong>Ndege</strong> — Birds 400+</li>
-    </ul>
-
-    <h2>Kambi za Mikumi</h2>
-    <div class="cabin-list">
-        <div class="cabin-item">
-            <h4>Mikumi Wildlife Camp</h4>
-            <p>Camp ya kifahari ndani ya mbuga.</p>
-            <span class="price">Kuanzia $120/usiku</span>
-        </div>
-        <div class="cabin-item">
-            <h4>Mikumi Safari Lodge</h4>
-            <p>Lodge nzuri karibu na mbuga.</p>
-            <span class="price">Kuanzia $90/usiku</span>
-        </div>
-        <div class="cabin-item">
-            <h4>Vuma Hills Tented Camp</h4>
-            <p>Camp ya kifahari na view ya mbuga.</p>
-            <span class="price">Kuanzia $150/usiku</span>
-        </div>
-        <div class="cabin-item">
-            <h4>Tan-Swiss Lodge</h4>
-            <p>Lodge nzuri Morogoro.</p>
-            <span class="price">Kuanzia $70/usiku</span>
-        </div>
-        <div class="cabin-item">
-            <h4>Mikumi Bandas</h4>
-            <p>Bandas za kitalii ndani ya mbuga.</p>
-            <span class="price">Kuanzia $50/usiku</span>
-        </div>
-        <div class="cabin-item">
-            <h4>Morogoro Cabins</h4>
-            <p>Cabins nzuri Morogoro mji.</p>
-            <span class="price">Kuanzia $40/usiku</span>
-        </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+    <div class="bg-white rounded-2xl p-8 shadow-lg border-l-4 border-[#d4a017]">
+      <h2 class="text-2xl font-extrabold text-[#082f49] mb-4">Wildlife in Mikumi</h2>
+      <ul class="space-y-3 text-gray-600">
+        <li class="flex items-center gap-2"><span class="text-[#d4a017]">🦁</span> Lions</li>
+        <li class="flex items-center gap-2"><span class="text-[#d4a017]">🐘</span> Elephants</li>
+        <li class="flex items-center gap-2"><span class="text-[#d4a017]">🦒</span> Giraffes</li>
+        <li class="flex items-center gap-2"><span class="text-[#d4a017]">🦓</span> Zebras</li>
+        <li class="flex items-center gap-2"><span class="text-[#d4a017]">🐃</span> Buffaloes</li>
+        <li class="flex items-center gap-2"><span class="text-[#d4a017]">🦛</span> Hippos</li>
+        <li class="flex items-center gap-2"><span class="text-[#d4a017]">🦌</span> Antelopes</li>
+        <li class="flex items-center gap-2"><span class="text-[#d4a017]">🦜</span> 400+ Bird Species</li>
+      </ul>
     </div>
 
-    <h2>Vidokezo vya Kutembelea</h2>
-    <ul>
-        <li>Chukua camera nzuri</li>
-        <li>Weka nguo za safari</li>
-        <li>Chukua maji mengi</li>
-        <li>Kaa na guide wa uzoefu</li>
-        <li>Furahia wanyama</li>
-        <li>Piga picha nyingi</li>
-    </ul>
-
-    <h2>Wakati Bora</h2>
-    <ul>
-        <li><strong>Juni-Oktoba</strong> — Wakati bora (wanyama wengi)</li>
-        <li><strong>Desemba-Februari</strong> — Wakati mzuri</li>
-        <li><strong>Aprili-Mei</strong> — Mvua (epuka)</li>
-    </ul>
-</section>
-
-<footer class="footer">
-    <div class="footer-content">
-        <div>
-            <h3>UNIQUE NATURE PARADISE (UNP)</h3>
-            <p style="font-size: 0.9rem;">10-Star luxury, adventure, handmade organic artwork, and sanctuary experiences in Zanzibar & Tanzania.</p>
-        </div>
-        <div>
-            <h4>Direct Contact</h4>
-            <p style="font-size: 0.9rem;"><i class="fab fa-whatsapp" style="color: #d4af37;"></i> +255 655 728 982</p>
-            <p style="font-size: 0.9rem;"><i class="fas fa-envelope" style="color: #d4af37;"></i> salimnasoro11@gmail.com</p>
-        </div>
+    <div class="bg-white rounded-2xl p-8 shadow-lg border-l-4 border-[#25D366]">
+      <h2 class="text-2xl font-extrabold text-[#082f49] mb-4">Visiting Tips</h2>
+      <ul class="space-y-3 text-gray-600">
+        <li class="flex items-center gap-2"><span class="text-[#d4a017]">✓</span> Bring a good camera</li>
+        <li class="flex items-center gap-2"><span class="text-[#d4a017]">✓</span> Wear safari-friendly clothes</li>
+        <li class="flex items-center gap-2"><span class="text-[#d4a017]">✓</span> Carry plenty of drinking water</li>
+        <li class="flex items-center gap-2"><span class="text-[#d4a017]">✓</span> Always go with an experienced guide</li>
+        <li class="flex items-center gap-2"><span class="text-[#d4a017]">✓</span> Enjoy the wildlife</li>
+        <li class="flex items-center gap-2"><span class="text-[#d4a017]">✓</span> Take lots of photos!</li>
+      </ul>
     </div>
+  </div>
+
+  <h2 class="text-3xl font-extrabold text-[#082f49] mb-6">Cabins & Lodges</h2>
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+    
+    <div class="cabin-card bg-white p-6 rounded-xl shadow-sm border-t-4 border-[#0c4a6e]">
+      <h4 class="font-bold text-[#082f49] text-lg mb-2">Mikumi Wildlife Camp</h4>
+      <p class="text-gray-600 text-sm mb-4">A luxury camp located inside the national park.</p>
+      <span class="text-[#d4a017] font-bold">From $120 / night</span>
+    </div>
+
+    <div class="cabin-card bg-white p-6 rounded-xl shadow-sm border-t-4 border-[#0c4a6e]">
+      <h4 class="font-bold text-[#082f49] text-lg mb-2">Mikumi Safari Lodge</h4>
+      <p class="text-gray-600 text-sm mb-4">A comfortable lodge near the park entrance.</p>
+      <span class="text-[#d4a017] font-bold">From $90 / night</span>
+    </div>
+
+    <div class="cabin-card bg-white p-6 rounded-xl shadow-sm border-t-4 border-[#0c4a6e]">
+      <h4 class="font-bold text-[#082f49] text-lg mb-2">Vuma Hills Tented Camp</h4>
+      <p class="text-gray-600 text-sm mb-4">A luxury camp with stunning views of the park.</p>
+      <span class="text-[#d4a017] font-bold">From $150 / night</span>
+    </div>
+
+    <div class="cabin-card bg-white p-6 rounded-xl shadow-sm border-t-4 border-[#0c4a6e]">
+      <h4 class="font-bold text-[#082f49] text-lg mb-2">Tan-Swiss Lodge</h4>
+      <p class="text-gray-600 text-sm mb-4">A comfortable lodge located in Morogoro.</p>
+      <span class="text-[#d4a017] font-bold">From $70 / night</span>
+    </div>
+
+    <div class="cabin-card bg-white p-6 rounded-xl shadow-sm border-t-4 border-[#0c4a6e]">
+      <h4 class="font-bold text-[#082f49] text-lg mb-2">Mikumi Bandas</h4>
+      <p class="text-gray-600 text-sm mb-4">Traditional bandas inside the park.</p>
+      <span class="text-[#d4a017] font-bold">From $50 / night</span>
+    </div>
+
+    <div class="cabin-card bg-white p-6 rounded-xl shadow-sm border-t-4 border-[#0c4a6e]">
+      <h4 class="font-bold text-[#082f49] text-lg mb-2">Morogoro Cabins</h4>
+      <p class="text-gray-600 text-sm mb-4">Cozy cabins in Morogoro town.</p>
+      <span class="text-[#d4a017] font-bold">From $40 / night</span>
+    </div>
+
+  </div>
+
+  <div class="bg-gradient-to-r from-[#0c4a6e] to-[#082f49] rounded-2xl p-8 text-white text-center shadow-lg">
+    <h2 class="text-2xl font-extrabold text-[#d4a017] mb-4">Best Time to Visit</h2>
+    <div class="flex flex-col md:flex-row justify-center gap-6">
+      <div class="bg-white/10 p-4 rounded-xl">
+        <p class="font-bold text-[#d4a017]">June - October</p>
+        <p class="text-sm text-blue-200">Best Time (High Wildlife)</p>
+      </div>
+      <div class="bg-white/10 p-4 rounded-xl">
+        <p class="font-bold text-[#d4a017]">December - February</p>
+        <p class="text-sm text-blue-200">Good Time</p>
+      </div>
+      <div class="bg-red-500/20 p-4 rounded-xl border border-red-500/50">
+        <p class="font-bold text-red-300">April - May</p>
+        <p class="text-sm text-red-200">Rainy (Avoid)</p>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-black text-gray-300 py-10 px-5 border-t-4 border-[#d4a017]">
+  <div class="max-w-4xl mx-auto text-center">
+    <p class="font-bold text-[#d4a017] mb-2">UNP TOURS — Unique & Natural Paradise</p>
+    <p class="text-sm">Nungwi, Zanzibar, Tanzania | WhatsApp: +255 655 728 982</p>
+    <p class="text-xs mt-4 text-gray-500">© 2026 UNP Tours. All rights reserved.</p>
+  </div>
 </footer>
 
-<a href="https://wa.me/255655728982" class="floating-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
-
-<script>
-  const menuToggleBtn = document.getElementById('menuToggleBtn');
-  const navLinks = document.getElementById('navLinks');
-  if(menuToggleBtn) { menuToggleBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); }); }
-</script>
+<!-- WhatsApp Float -->
+<a href="https://wa.me/255655728982" target="_blank" class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] rounded-full flex justify-center items-center text-3xl text-white shadow-lg hover:scale-110 transition z-50">
+  💬
+</a>
 
 </body>
-</html>
+    </html>
