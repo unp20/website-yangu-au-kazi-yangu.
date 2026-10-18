@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Activities & Experiences — UNP TOURS Zanzibar</title>
+<meta name="description" content="Explore unique Zanzibar activities, culture, events, and romantic experiences with UNP TOURS.">
+<meta name="robots" content="index, follow">
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0c4a6e">
+<link rel="icon" type="image/png" href="assets/images/logo.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+  import { getFirestore, collection, getDocs, query, where } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyCe5-MZMASwDZtIN3zfLvwlrn0U2ObC17s",
+    authDomain: "soul-unp-tour.firebaseapp.com",
+    projectId: "soul-unp-tour",
+    storageBucket: "soul-unp-tour.firebasestorage.app",
+    messagingSenderId: "503119437259",
+    appId: "1:503119437259:web:aaa65be89a8d77d5abaa4e",
+    measurementId: "G-EC65GSRRKM"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  let allActivities = [];
+
+  // ==================== LOAD ACTIVITIES ====================
+  async function loadActivities() {
+    const container = document.getElementById('activitiesGrid');
+    try {
+      // Tunachukua zote kwa sababu tuna category tofauti (Culture, Events, Romance)
+      const q = query(collection(db, "activities"));
+      const snap = await getDocs(q);
+      allActivities = [];
+      snap.forEach((d) => allActivities.push({ id: d.id, ...d.data() }));
+
+      if (allActivities.length === 0) {
+        container.innerHTML = `
+          <div class="text-center py-16 text-gray-400 col-span-full">
+            <span class="text-6xl block mb-4">🎭</span>
+            <p class="text-lg font-semibold">No activities yet.</p>
+          </div>
+        `;
+        return;
+      }
+
+      renderActivities();
+    } catch (error) {
+      console.error(error);
+      container.innerHTML = '<div class="text-center py-12 text-gray-400 col-span-full">Error loading activities.</div>';
+    }
+  }
+
+  // ==================== RENDER ACTIVITIES ====================
+  function renderActivities() {
+    const container = document.getElementById('activitiesGrid');
+
+    container.innerHTML = allActivities.map(s => {
+      const img = s.image || 'assets/images/nungwi-beach-paradise.jpg'; // Fallback image
+      const budget = s.priceBudget || 0;
+      const mid = s.priceMid || 0;
+      const luxury = s.priceLuxury || 0;
+
+      return `
+        <div class="bg-gray-900 rounded-2xl overflow-hidden border border-gray-800 hover:border-[#d4a017] transition duration-300 group">
+          <div class="h-52 overflow-hidden relative">
+            <img src="${img}" alt="${s.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            ${s.featured ? `<span class="absolute top-3 right-3 bg-[#d4a017] text-[#082f49] text-xs font-bold px-3 py-1 rounded-full">⭐ Featured</span>` : ''}
+            <span class="absolute top-3 left-3 bg-black/60 backdrop-blur text-white text-xs font-bold px-3 py-1 rounded-full">${s.category || 'Activity'}</span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-white mb-2">${s.name}</h3>
+            <p class="text-gray-400 text-sm mb-3">${s.description || ''}</p>
+            <p class="text-xs text-[#d4a017] font-semibold mb-4">📍 ${s.location || 'Zanzibar'}</p>
+            <p class="text-xs text-gray-400 mb-4">🕐 ${s.days || 1} days</p>
+
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="bg-gray-800 text-gray-300 text-xs font-semibold px-3 py-1 rounded-full">Budget $${budget}</span>
+              <span class="bg-[#0c4a6e] text-white text-xs font-bold px-3 py-1 rounded-full">Mid $${mid}</span>
+              <span class="bg-[#d4a017] text-black text-xs font-bold px-3 py-1 rounded-full">Luxury $${luxury}</span>
+            </div>
+
+            <a href="booking.html?trip=${encodeURIComponent(s.name)}" class="block text-center bg-gradient-to-r from-[#0c4a6e] to-[#082f49] text-white py-3 rounded-xl font-bold hover:shadow-lg transition">
+              Book Activity →
+            </a>
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  window.addEventListener('load', loadActivities);
+</script>
+
+<style>
+  body { font-family: 'Inter', sans-serif; background: #000000; }
+</style>
+</head>
+<body class="text-white">
+
+<!-- NAVBAR -->
+<nav class="fixed top-0 w-full flex justify-between items-center px-5 md:px-12 py-3 z-50 bg-[#0c4a6e] shadow-lg">
+  <a href="index.html" class="flex items-center gap-3">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="h-10 w-10">
+      <circle cx="100" cy="100" r="95" fill="#0b3d2e" stroke="#d4a017" stroke-width="4"/>
+      <text x="100" y="140" font-family="Inter" font-size="30" font-weight="800" fill="#d4a017" text-anchor="middle">UNP</text>
+    </svg>
+    <span class="font-extrabold text-white hidden sm:block">UNP TOURS</span>
+  </a>
+  <a href="index.html" class="text-white font-semibold hover:text-[#d4a017] transition">← Back to Home</a>
+</nav>
+
+<!-- HERO -->
+<section class="pt-32 pb-16 bg-gradient-to-br from-black to-[#082f49] text-white border-b-4 border-[#d4a017]">
+  <div class="max-w-4xl mx-auto text-center px-5">
+    <div class="text-6xl mb-4">🎭</div>
+    <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Unique Activities</h1>
+    <p class="text-lg md:text-xl text-gray-400">Discover the soul of Zanzibar — culture, music, and romance.</p>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<main class="max-w-7xl mx-auto px-5 py-12">
+
+  <div id="activitiesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div class="text-center py-12 text-gray-400 col-span-full">Loading activities...</div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-black text-gray-300 py-10 px-5 border-t-4 border-[#d4a017]">
+  <div class="max-w-4xl mx-auto text-center">
+    <p class="font-bold text-[#d4a017] mb-2">UNP TOURS — Unique & Natural Paradise</p>
+    <p class="text-sm">Nungwi, Zanzibar, Tanzania | WhatsApp: +255 655 728 982</p>
+    <p class="text-xs mt-4 text-gray-500">© 2026 UNP Tours. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/255655728982" target="_blank" class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] rounded-full flex justify-center items-center text-3xl text-white shadow-lg hover:scale-110 transition z-50">
+  💬
+</a>
+
+</body>
+</html>
