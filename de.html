@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UNP TOURS — Sansibar | Unique & Natural Paradise</title>
+<meta name="description" content="Entdecken Sie die exklusivsten Luxustouren von Sansibar und Tansania mit UNP TOURS.">
+<meta name="robots" content="index, follow">
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0c4a6e">
+<link rel="icon" type="image/png" href="assets/images/logo.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+  body { font-family: 'Inter', sans-serif; background: #f8f9fa; }
+
+  .card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(12, 74, 110, 0.15);
+  }
+
+  .star {
+    font-size: 2rem;
+    color: #d1d5db;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+  .star.active, .star:hover { color: #d4a017; }
+</style>
+</head>
+<body class="bg-gray-50 font-sans">
+
+<!-- ================= NAVBAR ================= -->
+<nav class="fixed top-0 w-full flex justify-between items-center px-5 md:px-12 py-3 z-50 bg-[#0c4a6e] shadow-lg">
+  <a href="index.html" class="flex items-center gap-3">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="h-10 w-10">
+      <defs>
+        <linearGradient id="goldNav" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#d4a017" />
+          <stop offset="50%" style="stop-color:#f5d76e" />
+          <stop offset="100%" style="stop-color:#b88a10" />
+        </linearGradient>
+        <linearGradient id="greenNav" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#0b3d2e" />
+          <stop offset="100%" style="stop-color:#1a6b4a" />
+        </linearGradient>
+      </defs>
+      <circle cx="100" cy="100" r="95" fill="url(#greenNav)" stroke="url(#goldNav)" stroke-width="4"/>
+      <path d="M60 80 Q80 40 120 50 Q130 60 110 80 Q90 100 60 80 Z" fill="url(#goldNav)"/>
+      <path d="M60 100 Q80 85 100 100 T140 100" fill="none" stroke="url(#goldNav)" stroke-width="4" stroke-linecap="round"/>
+      <text x="100" y="140" font-family="Inter, sans-serif" font-size="30" font-weight="800" fill="url(#goldNav)" text-anchor="middle" letter-spacing="2">UNP</text>
+    </svg>
+    <span class="font-extrabold text-white hidden sm:block">UNP TOURS</span>
+  </a>
+  <div class="hidden md:flex items-center gap-4 text-sm font-semibold text-white">
+    <a href="#experiences" class="hover:text-[#d4a017]">Ausflüge</a>
+    <a href="#about" class="hover:text-[#d4a017]">Über Uns</a>
+    <a href="#gallery" class="hover:text-[#d4a017]">Galerie</a>
+    <a href="#vote" class="hover:text-[#d4a017]">Abstimmung</a>
+    <a href="#vip" class="hover:text-[#d4a017]">VIP</a>
+    <a href="#booking" class="hover:text-[#d4a017]">Buchen</a>
+    <a href="#contact" class="hover:text-[#d4a017]">Kontakt</a>
+  </div>
+  <a href="index.html" class="text-white font-semibold hover:text-[#d4a017] transition">← EN</a>
+</nav>
+
+<!-- ================= HERO ================= -->
+<section class="pt-32 pb-16 bg-gradient-to-br from-[#0c4a6e] to-[#082f49] text-white border-b-4 border-[#d4a017]">
+  <div class="max-w-4xl mx-auto text-center px-5">
+    <div class="text-6xl mb-4">🌍</div>
+    <h1 class="text-4xl md:text-6xl font-extrabold mb-4">UNP TOURS ZANZIBAR</h1>
+    <p class="text-lg md:text-xl text-blue-200 mb-8">Entdecken Sie die exklusivsten Luxustouren von Sansibar und Tansania, Wassersport, handgefertigte Kunst und private Rückzugsorte in völliger Freiheit.</p>
+    <a href="#booking" class="inline-block bg-[#d4a017] text-[#082f49] px-8 py-4 rounded-full font-bold hover:bg-[#b88a10] transition shadow-lg">VIP-Erlebnis Buchen</a>
+  </div>
+</section>
+
+<!-- ================= EXPERIENCES ================= -->
+<section id="experiences" class="py-16 md:py-24 px-5 max-w-7xl mx-auto">
+  <div class="text-center mb-12 md:mb-16">
+    <h2 class="text-3xl md:text-5xl font-extrabold text-[#082f49] mb-4">Unsere Exklusiven Erlebnisse</h2>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <div class="bg-white rounded-2xl p-6 shadow-md card-hover transition duration-300 border-t-4 border-[#d4a017]">
+      <div class="text-4xl mb-3">🏝️</div>
+      <h3 class="text-lg font-bold text-[#082f49] mb-2">1. Sansibar-Ausflüge & Historische Touren</h3>
+      <p class="text-gray-600 text-sm">Besuchen Sie die Riesenschildkröten auf Prison Island, segeln Sie mit Safari Blue und erkunden Sie Stone Town.</p>
+    </div>
+
+    <div class="bg-white rounded-2xl p-6 shadow-md card-hover transition duration-300 border-t-4 border-[#d4a017]">
+      <div class="text-4xl mb-3">🐒</div>
+      <h3 class="text-lg font-bold text-[#082f49] mb-2">2. Jozani Naturschutzgebiet für Rote Colobus-Affen</h3>
+      <p class="text-gray-600 text-sm">Erkunden Sie den Nationalpark Jozani und treffen Sie die seltenen roten Colobus-Affen.</p>
+    </div>
+
+    <div class="bg-white rounded-2xl p-6 shadow-md card-hover transition duration-300 border-t-4 border-[#d4a017]">
+      <div class="text-4xl mb-3">🚗</div>
+      <h3 class="text-lg font-bold text-[#082f49] mb-2">3. Ausrüstung & Fahrzeugvermietung</h3>
+      <p class="text-gray-600 text-sm">Luxusautovermietung, Roller, Quads, Schnorchelausrüstung und Kameras zu Ihrem Hotel.</p>
+    </div>
+
+    <div class="bg-white rounded-2xl p-6 shadow-md card-hover transition duration-300 border-t-4 border-[#d4a017]">
+      <div class="text-4xl mb-3">🚐</div>
+      <h3 class="text-lg font-bold text-[#082f49] mb-2">4. Luxustransporter & Transfers</h3>
+      <p class="text-gray-600 text-sm">VIP-Chauffeurtransfers in Luxus-Alphards, Land Cruisern und Vans mit WLAN und Klimaanlage.</p>
+    </div>
+
+    <div class="bg-white rounded-2xl p-6 shadow-md card-hover transition duration-300 border-t-4 border-[#d4a017]">
+      <div class="text-4xl mb-3">🎨</div>
+      <h3 class="text-lg font-bold text-[#082f49] mb-2">5. Handgefertigte Kunst aus Bananenblättern</h3>
+      <p class="text-gray-600 text-sm">Handgefertigte Kunstwerke aus getrockneten Bananenblättern, die die afrikanische Tierwelt darstellen.</p>
+    </div>
+
+    <div class="bg-white rounded-2xl p-6 shadow-md card-hover transition duration-300 border-t-4 border-[#d4a017]">
+      <div class="text-4xl mb-3">🦁</div>
+      <h3 class="text-lg font-bold text-[#082f49] mb-2">6. Wildtier-Safaris in Tansania</h3>
+      <p class="text-gray-600 text-sm">Fly-in-Safaris von Sansibar zu den Nationalparks Tansanias, inklusive Flügen und Luxuslodges.</p>
+    </div>
+
+    <div class="bg-white rounded-2xl p-6 shadow-md card-hover transition duration-300 border-t-4 border-[#d4a017]">
+      <div class="text-4xl mb-3">🏛️</div>
+      <h3 class="text-lg font-bold text-[#082f49] mb-2">7. Authentische Stadttour</h3>
+      <p class="text-gray-600 text-sm">Erkunden Sie die lokale Kultur, Streetfood-Märkte und historische Architektur mit erfahrenen Reiseleitern.</p>
+    </div>
+
+    <div class="bg-white rounded-2xl p-6 shadow-md card-hover transition duration-300 border-t-4 border-[#d4a017]">
+      <div class="text-4xl mb-3">🌅</div>
+      <h3 class="text-lg font-bold text-[#082f49] mb-2">8. Romantisches Abendessen bei Sonnenuntergang</h3>
+      <p class="text-gray-600 text-sm">Privates Abendessen bei Kerzenschein an weißen Sandstränden mit Live-Musik.</p>
+    </div>
+
+    <div class="bg-white rounded-2xl p-6 shadow-md card-hover transition duration-300 border-t-4 border-[#d4a017]">
+      <div class="text-4xl mb-3">🚤</div>
+      <h3 class="text-lg font-bold text-[#082f49] mb-2">9. Jet Ski, Jet Car & Drohnen-Kajak</h3>
+      <p class="text-gray-600 text-sm">Luxus-Jet Cars und Jet Skis sowie transparente Kajaks mit Drohnen-Videoaufnahmen.</p>
+    </div>
+
+    <div class="bg-white rounded-2xl p-6 shadow-md card-hover transition duration-300 border-t-4 border-[#d4a017]">
+      <div class="text-4xl mb-3">🌿</div>
+      <h3 class="text-lg font-bold text-[#082f49] mb-2">10. Geheimer Garten (Die Private Oase)</h3>
+      <p class="text-gray-600 text-sm">Ultra-privater Rückzugsort für prominente Gäste, die absolute Diskretion suchen.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about" class="py-16 md:py-24 px-5 bg-white">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-3xl md:text-5xl font-extrabold text-[#082f49] mb-6">Über UNP Tours</h2>
+    <p class="text-lg text-gray-700 mb-4">Unique & Natural Paradise (UNP) ist ein erstklassiger Luxusreiseveranstalter mit Sitz in Sansibar, Tansania.</p>
+    <p class="text-gray-600 mb-4">UNP Tours wurde mit der Leidenschaft gegründet, das Beste von Sansibar und Tansania zu präsentieren, und bietet eine kuratierte Sammlung exklusiver Erlebnisse.</p>
+    <p class="text-gray-600">Unser Team lokaler Experten ist bestrebt, einen personalisierten Service zu bieten und sicherzustellen, dass jede Reise auf Ihre Wünsche zugeschnitten ist.</p>
+  </div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section id="gallery" class="py-16 md:py-24 px-5 bg-gray-50">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-5xl font-extrabold text-[#082f49] mb-4">Unsere Galerie</h2>
+      <p class="text-lg text-gray-600">Entdecken Sie die Schönheit von Sansibar und Tansania durch unsere Linse.</p>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <img src="assets/images/nungwi-beach-paradise.jpg" alt="Nungwi Beach" class="w-full h-48 object-cover rounded-xl shadow-md hover:shadow-2xl transition">
+      <img src="assets/images/serengeti.jpg" alt="Serengeti" class="w-full h-48 object-cover rounded-xl shadow-md hover:shadow-2xl transition">
+      <img src="assets/images/mnemba-snorkeling.jpg" alt="Mnemba" class="w-full h-48 object-cover rounded-xl shadow-md hover:shadow-2xl transition">
+      <img src="assets/images/our-culture-zanzibar.jpg" alt="Culture" class="w-full h-48 object-cover rounded-xl shadow-md hover:shadow-2xl transition">
+      <img src="assets/images/ngorongoro.jpg" alt="Ngorongoro" class="w-full h-48 object-cover rounded-xl shadow-md hover:shadow-2xl transition">
+      <img src="assets/images/safari-blue-dhow.jpg" alt="Safari Blue" class="w-full h-48 object-cover rounded-xl shadow-md hover:shadow-2xl transition">
+      <img src="assets/images/prison-island.jpg" alt="Prison Island" class="w-full h-48 object-cover rounded-xl shadow-md hover:shadow-2xl transition">
+      <img src="assets/images/jozani-forest.jpg" alt="Jozani" class="w-full h-48 object-cover rounded-xl shadow-md hover:shadow-2xl transition">
+    </div>
+  </div>
+</section>
+
+<!-- ================= VOTE ================= -->
+<section id="vote" class="py-16 md:py-24 px-5 bg-white">
+  <div class="max-w-3xl mx-auto text-center">
+    <h2 class="text-3xl md:text-5xl font-extrabold text-[#082f49] mb-4">Stimmen Sie für Ihr Lieblings-UNP-Erlebnis</h2>
+    <p class="text-lg text-gray-600 mb-8">Helfen Sie uns, besser zu dienen! Bewerten Sie Ihre Lieblingsaktivität:</p>
+
+    <div class="bg-gray-50 p-8 rounded-2xl shadow-lg border-l-4 border-[#d4a017] text-left">
+      <label class="block text-sm font-bold text-[#082f49] mb-2">Erlebnis Wählen:</label>
+      <select id="voteExperience" class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl mb-6 outline-none focus:border-[#d4a017]">
+        <option>Safari Blue</option>
+        <option>Prison Island</option>
+        <option>Jozani Forest</option>
+        <option>Mnemba Snorkeling</option>
+        <option>Stone Town Tour</option>
+        <option>Tanzania Safari</option>
+      </select>
+
+      <label class="block text-sm font-bold text-[#082f49] mb-2">Bewerten Sie Ihr Erlebnis (1-5 Sterne):</label>
+      <div class="flex gap-2 mb-6" id="starRating">
+        <span class="star" data-value="1">★</span>
+        <span class="star" data-value="2">★</span>
+        <span class="star" data-value="3">★</span>
+        <span class="star" data-value="4">★</span>
+        <span class="star" data-value="5">★</span>
+      </div>
+
+      <button onclick="submitVote()" class="w-full bg-[#0c4a6e] text-white py-3 rounded-xl font-bold hover:bg-[#082f49] transition">Bewertung Absenden</button>
+      <p id="voteMessage" class="text-center mt-4 text-sm font-bold text-green-600 hidden"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VIP ================= -->
+<section id="vip" class="py-16 md:py-24 px-5 bg-gradient-to-br from-[#082f49] to-[#0c4a6e] text-white">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl md:text-5xl font-extrabold text-[#d4a017] mb-4">UNP VIP LUXUS-ERLEBNIS</h2>
+    <p class="text-lg text-blue-200 mb-10">Genießen Sie maximale Diskretion, private Flugbuchungen, persönlichen Butlerservice und Luxustouren.</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+      <div class="bg-white/10 p-6 rounded-2xl border border-[#d4a017]/30">
+        <div class="text-4xl mb-3">🤫</div>
+        <h3 class="font-bold text-[#d4a017] mb-2">100% Diskretion</h3>
+        <p class="text-sm text-blue-200">Privater Check-in und Geheimhaltungsservice.</p>
+      </div>
+      <div class="bg-white/10 p-6 rounded-2xl border border-[#d4a017]/30">
+        <div class="text-4xl mb-3">✈️</div>
+        <h3 class="font-bold text-[#d4a017] mb-2">Privatflüge</h3>
+        <p class="text-sm text-blue-200">Charter-Transfers und Safaris auf der Insel.</p>
+      </div>
+      <div class="bg-white/10 p-6 rounded-2xl border border-[#d4a017]/30">
+        <div class="text-4xl mb-3">👔</div>
+        <h3 class="font-bold text-[#d4a017] mb-2">Privater Butler</h3>
+        <p class="text-sm text-blue-200">24/7 dedizierter persönlicher Concierge.</p>
+      </div>
+    </div>
+
+    <a href="https://wa.me/255655728982?text=Ich%20möchte%20den%20VIP-Concierge%20reservieren" target="_blank" class="inline-block bg-[#d4a017] text-[#082f49] px-8 py-4 rounded-full font-bold hover:bg-[#b88a10] transition shadow-lg">
+      VIP-Concierge Reservieren
+    </a>
+  </div>
+</section>
+
+<!-- ================= BOOKING ================= -->
+<section id="booking" class="py-16 md:py-24 px-5 bg-white">
+  <div class="max-w-2xl mx-auto">
+    <div class="text-center mb-10">
+      <h2 class="text-3xl md:text-5xl font-extrabold text-[#082f49] mb-4">Online-Buchungsformular</h2>
+      <p class="text-lg text-gray-600">Buchen Sie Ihre Touren, VIP-Concierge oder den geheimen Garten über WhatsApp:</p>
+    </div>
+
+    <form onsubmit="submitBooking(event)" class="bg-gray-50 p-8 rounded-2xl shadow-lg border-l-4 border-[#0c4a6e] space-y-5">
+      <div>
+        <label class="block text-sm font-bold text-[#082f49] mb-2">Vollständiger Name:</label>
+        <input type="text" id="guestName" required class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl outline-none focus:border-[#d4a017]">
+      </div>
+      <div>
+        <label class="block text-sm font-bold text-[#082f49] mb-2">E-Mail / Telefonnummer:</label>
+        <input type="text" id="guestContact" required class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl outline-none focus:border-[#d4a017]">
+      </div>
+      <div>
+        <label class="block text-sm font-bold text-[#082f49] mb-2">Erlebnis Auswählen:</label>
+        <select id="guestService" class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl outline-none focus:border-[#d4a017]">
+          <option>Safari Blue</option>
+          <option>Prison Island</option>
+          <option>Jozani Forest</option>
+          <option>Mnemba Snorkeling</option>
+          <option>Stone Town Tour</option>
+          <option>Tanzania Safari</option>
+          <option>VIP Concierge</option>
+          <option>Geheimer Garten</option>
+        </select>
+      </div>
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-bold text-[#082f49] mb-2">Bevorzugtes Datum:</label>
+          <input type="date" id="guestDate" required class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl outline-none focus:border-[#d4a017]">
+        </div>
+        <div>
+          <label class="block text-sm font-bold text-[#082f49] mb-2">Anzahl der Gäste:</label>
+          <input type="number" id="guestCount" min="1" value="2" required class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl outline-none focus:border-[#d4a017]">
+        </div>
+      </div>
+      <div>
+        <label class="block text-sm font-bold text-[#082f49] mb-2">Besondere Wünsche:</label>
+        <textarea id="guestNotes" rows="3" class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl outline-none focus:border-[#d4a017]"></textarea>
+      </div>
+      <button type="submit" class="w-full bg-[#25D366] text-white py-4 rounded-xl font-bold text-lg hover:bg-[#1ebe57] transition">
+        💬 Buchung über WhatsApp Senden
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer id="contact" class="bg-black text-gray-300 py-10 px-5 border-t-4 border-[#d4a017]">
+  <div class="max-w-4xl mx-auto text-center">
+    <p class="font-bold text-[#d4a017] mb-2">UNP TOURS — Unique & Natural Paradise</p>
+    <p class="text-sm mb-2">10-Sterne-Luxus, Abenteuer, handgefertigte Kunst in Sansibar und Tansania.</p>
+    <p class="text-sm">Nungwi, Sansibar, Tansania | WhatsApp: +255 655 728 982</p>
+    <p class="text-xs mt-4 text-gray-500">© 2026 UNP Tours. Alle Rechte vorbehalten.</p>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/255655728982" target="_blank" class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] rounded-full flex justify-center items-center text-3xl text-white shadow-lg hover:scale-110 transition z-50">💬</a>
+
+<!-- ================= JAVASCRIPT ================= -->
+<script>
+  // ==================== STAR RATING ====================
+  const stars = document.querySelectorAll('#starRating .star');
+  let selectedRating = 0;
+
+  stars.forEach(star => {
+    star.addEventListener('click', () => {
+      selectedRating = parseInt(star.getAttribute('data-value'));
+      stars.forEach(s => {
+        if (parseInt(s.getAttribute('data-value')) <= selectedRating) {
+          s.classList.add('active');
+        } else {
+          s.classList.remove('active');
+        }
+      });
+    });
+  });
+
+  function submitVote() {
+    const experience = document.getElementById('voteExperience').value;
+    const msg = document.getElementById('voteMessage');
+
+    if (selectedRating === 0) {
+      alert('Bitte wählen Sie eine Sternebewertung!');
+      return;
+    }
+
+    msg.textContent = `✅ Vielen Dank! Sie haben "${experience}" mit ${selectedRating} Sternen bewertet.`;
+    msg.classList.remove('hidden');
+  }
+
+  // ==================== BOOKING ====================
+  function submitBooking(event) {
+    event.preventDefault();
+
+    const name = document.getElementById('guestName').value;
+    const contact = document.getElementById('guestContact').value;
+    const service = document.getElementById('guestService').value;
+    const date = document.getElementById('guestDate').value;
+    const count = document.getElementById('guestCount').value;
+    const notes = document.getElementById('guestNotes').value;
+
+    const message = `*NEUE BUCHUNG - UNP TOURS*%0A%0A` +
+      `*Name:* ${encodeURIComponent(name)}%0A` +
+      `*Kontakt:* ${encodeURIComponent(contact)}%0A` +
+      `*Erlebnis:* ${encodeURIComponent(service)}%0A` +
+      `*Datum:* ${encodeURIComponent(date)}%0A` +
+      `*Gäste:* ${encodeURIComponent(count)}%0A` +
+      `*Wünsche:* ${encodeURIComponent(notes || 'Keine')}`;
+
+    window.open('https://wa.me/255655728982?text=' + message, '_blank');
+  }
+</script>
+
+</body>
+</html>
