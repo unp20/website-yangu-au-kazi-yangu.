@@ -13,8 +13,64 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
 <script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+  body { font-family: 'Inter', sans-serif; background: #f8f9fa; }
+
+  .calc-btn {
+    background-color: #f3f4f6;
+    color: #082f49;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    font-weight: 700;
+    font-size: 1.25rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .calc-btn:hover { background-color: #e5e7eb; }
+
+  .calc-op {
+    background-color: #0c4a6e;
+    color: #ffffff;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    font-weight: 700;
+    font-size: 1.25rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .calc-op:hover { background-color: #082f49; }
+
+  .calc-equal {
+    background-color: #d4a017;
+    color: #082f49;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    font-weight: 700;
+    font-size: 1.25rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .calc-equal:hover { background-color: #b88a10; }
+
+  .calc-clear {
+    background-color: #ef4444;
+    color: #ffffff;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    font-weight: 700;
+    font-size: 1.25rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .calc-clear:hover { background-color: #dc2626; }
+</style>
 </head>
-<body class="bg-gray-50 font-sans">
+<body>
 
 <!-- ================= NAVBAR ================= -->
 <nav class="fixed top-0 w-full flex justify-between items-center px-5 md:px-12 py-3 z-50 bg-[#0c4a6e] shadow-lg">
@@ -123,13 +179,6 @@
 
 </main>
 
-<style>
-  .calc-btn { @apply bg-gray-100 text-[#082f49] py-4 rounded-xl font-bold text-xl hover:bg-gray-200 transition; }
-  .calc-op { @apply bg-[#0c4a6e] text-white py-4 rounded-xl font-bold text-xl hover:bg-[#082f49] transition; }
-  .calc-equal { @apply bg-[#d4a017] text-[#082f49] py-4 rounded-xl font-bold text-xl hover:bg-[#b88a10] transition; }
-  .calc-clear { @apply bg-red-500 text-white py-4 rounded-xl font-bold text-xl hover:bg-red-600 transition; }
-</style>
-
 <!-- ================= FOOTER ================= -->
 <footer class="bg-black text-gray-300 py-10 px-5 border-t-4 border-[#d4a017]">
   <div class="max-w-4xl mx-auto text-center">
@@ -144,6 +193,7 @@
   💬
 </a>
 
+<!-- ================= JAVASCRIPT ================= -->
 <script>
   async function convertCurrency() {
     const amount = parseFloat(document.getElementById('amount').value);
@@ -185,7 +235,6 @@
       display.value = '';
     } else if (val === '=') {
       try {
-        // Badilisha alama za hesabu
         let expression = calcString.replace(/×/g, '*').replace(/÷/g, '/').replace(/−/g, '-');
         const result = eval(expression);
         display.value = result;
