@@ -14,8 +14,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
 <script src="https://cdn.tailwindcss.com"></script>
 
-<!-- ELFSIGHT PLATFORM -->
-<script src="https://elfsightcdn.com/platform.js" async></script>
+<style>
+  body { font-family: 'Inter', sans-serif; background: #f8f9fa; }
+  .counter-number { font-size: 3rem; font-weight: 800; color: #d4a017; line-height: 1; }
+  
+  .calc-btn { background-color: #f3f4f6; color: #082f49; padding: 1rem; border-radius: 0.75rem; font-weight: 700; font-size: 1.25rem; border: none; cursor: pointer; transition: all 0.3s ease; }
+  .calc-btn:hover { background-color: #e5e7eb; }
+  .calc-op { background-color: #0c4a6e; color: #ffffff; padding: 1rem; border-radius: 0.75rem; font-weight: 700; font-size: 1.25rem; border: none; cursor: pointer; transition: all 0.3s ease; }
+  .calc-op:hover { background-color: #082f49; }
+  .calc-equal { background-color: #d4a017; color: #082f49; padding: 1rem; border-radius: 0.75rem; font-weight: 700; font-size: 1.25rem; border: none; cursor: pointer; transition: all 0.3s ease; }
+  .calc-equal:hover { background-color: #b88a10; }
+  .calc-clear { background-color: #ef4444; color: #ffffff; padding: 1rem; border-radius: 0.75rem; font-weight: 700; font-size: 1.25rem; border: none; cursor: pointer; transition: all 0.3s ease; }
+  .calc-clear:hover { background-color: #dc2626; }
+</style>
 </head>
 <body class="bg-gray-50 font-sans">
 
@@ -56,10 +67,15 @@
 <!-- ================= CONTENT ================= -->
 <main class="max-w-5xl mx-auto px-5 py-16">
 
-  <!-- NUMBER COUNTER (Elfsight) -->
+  <!-- NUMBER COUNTER (Manual) -->
   <section class="mb-16">
-    <div class="bg-gradient-to-r from-[#0c4a6e] to-[#082f49] rounded-2xl shadow-xl border-4 border-[#d4a017] p-4 md:p-8">
-      <div class="elfsight-app-2674303a-e396-4f5e-b021-17071e631185" data-elfsight-app-lazy></div>
+    <div class="bg-gradient-to-r from-[#0c4a6e] to-[#082f49] rounded-2xl shadow-xl border-4 border-[#d4a017] p-8 text-white">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div><p class="counter-number" data-target="10000">0</p><p class="text-sm text-blue-200 mt-2">Happy Guests</p></div>
+        <div><p class="counter-number" data-target="20">0</p><p class="text-sm text-blue-200 mt-2">Experiences</p></div>
+        <div><p class="counter-number" data-target="15">0</p><p class="text-sm text-blue-200 mt-2">Years Combined</p></div>
+        <div><p class="counter-number" data-target="5">0</p><p class="text-sm text-blue-200 mt-2">Star Rating</p></div>
+      </div>
     </div>
   </section>
 
@@ -93,36 +109,94 @@
     <div class="bg-white rounded-2xl p-6 shadow-lg text-center border-t-4 border-[#0c4a6e]">
       <div class="text-5xl mb-4">🎯</div>
       <h3 class="font-bold text-[#082f49] text-xl mb-3">Our Mission</h3>
-      <p class="text-gray-600 text-sm leading-relaxed">
-        To deliver world-class luxury travel experiences that exceed expectations while supporting local communities and preserving the environment.
-      </p>
+      <p class="text-gray-600 text-sm leading-relaxed">To deliver world-class luxury travel experiences that exceed expectations while supporting local communities and preserving the environment.</p>
     </div>
-
     <div class="bg-white rounded-2xl p-6 shadow-lg text-center border-t-4 border-[#d4a017]">
       <div class="text-5xl mb-4">👁️</div>
       <h3 class="font-bold text-[#082f49] text-xl mb-3">Our Vision</h3>
-      <p class="text-gray-600 text-sm leading-relaxed">
-        To become Zanzibar's most trusted and innovative tour operator, connecting travelers with the soul of the island.
-      </p>
+      <p class="text-gray-600 text-sm leading-relaxed">To become Zanzibar's most trusted and innovative tour operator, connecting travelers with the soul of the island.</p>
     </div>
-
     <div class="bg-white rounded-2xl p-6 shadow-lg text-center border-t-4 border-[#25D366]">
       <div class="text-5xl mb-4">💎</div>
       <h3 class="font-bold text-[#082f49] text-xl mb-3">Our Values</h3>
-      <p class="text-gray-600 text-sm leading-relaxed">
-        Authenticity, excellence, sustainability, and a deep love for Zanzibar's culture and people.
-      </p>
+      <p class="text-gray-600 text-sm leading-relaxed">Authenticity, excellence, sustainability, and a deep love for Zanzibar's culture and people.</p>
     </div>
   </section>
 
-  <!-- TEAM SHOWCASE (Elfsight) -->
+  <!-- TEAM SHOWCASE (FLOWERS - Manual with Links) -->
   <section class="mb-16">
     <div class="text-center mb-8">
-      <h2 class="text-3xl font-extrabold text-[#082f49]">👥 Meet Our Team</h2>
-      <p class="text-gray-600 mt-2">The passionate people behind UNP TOURS.</p>
+      <h2 class="text-3xl font-extrabold text-[#082f49]">🌺 Our Partners (Flowers)</h2>
+      <p class="text-gray-600 mt-2">Click on any flower to view the partner profile.</p>
     </div>
-    <div class="bg-white rounded-2xl shadow-xl border-t-4 border-[#d4a017] p-4 md:p-8">
-      <div class="elfsight-app-88266a4d-1755-4797-be6e-fc746eb19e5c" data-elfsight-app-lazy></div>
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+      <a href="partner-public.html?flower=Frangipani" class="bg-white rounded-xl p-4 shadow-md text-center border-t-4 border-[#d4a017] hover:shadow-xl transition block"><div class="text-3xl mb-2">🌺</div><p class="font-bold text-[#082f49] text-sm">Frangipani</p></a>
+      <a href="partner-public.html?flower=Bougainvillea" class="bg-white rounded-xl p-4 shadow-md text-center border-t-4 border-[#d4a017] hover:shadow-xl transition block"><div class="text-3xl mb-2">🌺</div><p class="font-bold text-[#082f49] text-sm">Bougainvillea</p></a>
+      <a href="partner-public.html?flower=Hibiscus" class="bg-white rounded-xl p-4 shadow-md text-center border-t-4 border-[#d4a017] hover:shadow-xl transition block"><div class="text-3xl mb-2">🌺</div><p class="font-bold text-[#082f49] text-sm">Hibiscus</p></a>
+      <a href="partner-public.html?flower=Plumeria" class="bg-white rounded-xl p-4 shadow-md text-center border-t-4 border-[#d4a017] hover:shadow-xl transition block"><div class="text-3xl mb-2">🌺</div><p class="font-bold text-[#082f49] text-sm">Plumeria</p></a>
+      <a href="partner-public.html?flower=Jasmine" class="bg-white rounded-xl p-4 shadow-md text-center border-t-4 border-[#d4a017] hover:shadow-xl transition block"><div class="text-3xl mb-2">🌺</div><p class="font-bold text-[#082f49] text-sm">Jasmine</p></a>
+      <a href="partner-public.html?flower=Orchid" class="bg-white rounded-xl p-4 shadow-md text-center border-t-4 border-[#d4a017] hover:shadow-xl transition block"><div class="text-3xl mb-2">🌺</div><p class="font-bold text-[#082f49] text-sm">Orchid</p></a>
+      <a href="partner-public.html?flower=Lotus" class="bg-white rounded-xl p-4 shadow-md text-center border-t-4 border-[#d4a017] hover:shadow-xl transition block"><div class="text-3xl mb-2">🌺</div><p class="font-bold text-[#082f49] text-sm">Lotus</p></a>
+      <a href="partner-public.html?flower=Sunflower" class="bg-white rounded-xl p-4 shadow-md text-center border-t-4 border-[#d4a017] hover:shadow-xl transition block"><div class="text-3xl mb-2">🌺</div><p class="font-bold text-[#082f49] text-sm">Sunflower</p></a>
+      <a href="partner-public.html?flower=Rose" class="bg-white rounded-xl p-4 shadow-md text-center border-t-4 border-[#d4a017] hover:shadow-xl transition block"><div class="text-3xl mb-2">🌺</div><p class="font-bold text-[#082f49] text-sm">Rose</p></a>
+      <a href="partner-public.html?flower=Lily" class="bg-white rounded-xl p-4 shadow-md text-center border-t-4 border-[#d4a017] hover:shadow-xl transition block"><div class="text-3xl mb-2">🌺</div><p class="font-bold text-[#082f49] text-sm">Lily</p></a>
+    </div>
+  </section>
+
+  <!-- CURRENCY CONVERTER (Manual) -->
+  <section class="mb-16">
+    <div class="text-center mb-8">
+      <h2 class="text-3xl font-extrabold text-[#082f49]">💱 Currency Converter</h2>
+      <p class="text-gray-600 mt-2">Convert your money instantly.</p>
+    </div>
+    <div class="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-[#0c4a6e] max-w-lg mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+        <input type="number" id="amount" placeholder="100" class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl outline-none focus:border-[#d4a017]">
+        <select id="fromCurrency" class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl outline-none focus:border-[#d4a017]">
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="GBP">GBP</option>
+          <option value="TZS">TZS</option>
+        </select>
+        <select id="toCurrency" class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl outline-none focus:border-[#d4a017]">
+          <option value="TZS">TZS</option>
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+          <option value="GBP">GBP</option>
+        </select>
+      </div>
+      <button onclick="convertCurrency()" class="w-full bg-[#0c4a6e] text-white py-3 rounded-xl font-bold hover:bg-[#082f49] transition">Convert Now</button>
+      <div id="result" class="mt-4 text-center text-xl font-extrabold text-[#d4a017]"></div>
+    </div>
+  </section>
+
+  <!-- CALCULATOR (Manual) -->
+  <section class="mb-16">
+    <div class="text-center mb-8">
+      <h2 class="text-3xl font-extrabold text-[#082f49]">🧮 Calculator</h2>
+      <p class="text-gray-600 mt-2">Use this for quick math.</p>
+    </div>
+    <div class="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-[#d4a017] max-w-lg mx-auto">
+      <input type="text" id="calcDisplay" readonly class="w-full px-4 py-4 text-right text-3xl font-bold bg-gray-100 border-2 border-gray-200 rounded-xl mb-4" placeholder="0">
+      <div class="grid grid-cols-4 gap-3">
+        <button onclick="calc('7')" class="calc-btn">7</button>
+        <button onclick="calc('8')" class="calc-btn">8</button>
+        <button onclick="calc('9')" class="calc-btn">9</button>
+        <button onclick="calc('÷')" class="calc-op">÷</button>
+        <button onclick="calc('4')" class="calc-btn">4</button>
+        <button onclick="calc('5')" class="calc-btn">5</button>
+        <button onclick="calc('6')" class="calc-btn">6</button>
+        <button onclick="calc('×')" class="calc-op">×</button>
+        <button onclick="calc('1')" class="calc-btn">1</button>
+        <button onclick="calc('2')" class="calc-btn">2</button>
+        <button onclick="calc('3')" class="calc-btn">3</button>
+        <button onclick="calc('-')" class="calc-op">−</button>
+        <button onclick="calc('0')" class="calc-btn">0</button>
+        <button onclick="calc('.')" class="calc-btn">.</button>
+        <button onclick="calc('=')" class="calc-equal">=</button>
+        <button onclick="calc('+')" class="calc-op">+</button>
+        <button onclick="calc('C')" class="calc-clear col-span-4">Clear</button>
+      </div>
     </div>
   </section>
 
@@ -132,31 +206,19 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
       <div class="bg-white rounded-xl p-5 shadow-md flex items-start gap-4 border-l-4 border-[#0c4a6e]">
         <span class="text-3xl">✨</span>
-        <div>
-          <h3 class="font-bold text-[#082f49] mb-1">Authentic Experiences</h3>
-          <p class="text-sm text-gray-600">Truly local — from Nungwi to Stone Town.</p>
-        </div>
+        <div><h3 class="font-bold text-[#082f49] mb-1">Authentic Experiences</h3><p class="text-sm text-gray-600">Truly local — from Nungwi to Stone Town.</p></div>
       </div>
       <div class="bg-white rounded-xl p-5 shadow-md flex items-start gap-4 border-l-4 border-[#d4a017]">
         <span class="text-3xl">🛡️</span>
-        <div>
-          <h3 class="font-bold text-[#082f49] mb-1">Safe & Trusted</h3>
-          <p class="text-sm text-gray-600">Licensed guides and vetted partners.</p>
-        </div>
+        <div><h3 class="font-bold text-[#082f49] mb-1">Safe & Trusted</h3><p class="text-sm text-gray-600">Licensed guides and vetted partners.</p></div>
       </div>
       <div class="bg-white rounded-xl p-5 shadow-md flex items-start gap-4 border-l-4 border-[#25D366]">
         <span class="text-3xl">💰</span>
-        <div>
-          <h3 class="font-bold text-[#082f49] mb-1">Fair Prices</h3>
-          <p class="text-sm text-gray-600">Transparent pricing with no hidden fees.</p>
-        </div>
+        <div><h3 class="font-bold text-[#082f49] mb-1">Fair Prices</h3><p class="text-sm text-gray-600">Transparent pricing with no hidden fees.</p></div>
       </div>
       <div class="bg-white rounded-xl p-5 shadow-md flex items-start gap-4 border-l-4 border-purple-500">
         <span class="text-3xl">📱</span>
-        <div>
-          <h3 class="font-bold text-[#082f49] mb-1">24/7 Support</h3>
-          <p class="text-sm text-gray-600">Always available on WhatsApp.</p>
-        </div>
+        <div><h3 class="font-bold text-[#082f49] mb-1">24/7 Support</h3><p class="text-sm text-gray-600">Always available on WhatsApp.</p></div>
       </div>
     </div>
   </section>
@@ -165,9 +227,7 @@
   <section class="bg-gradient-to-r from-[#d4a017] to-[#b88a10] rounded-2xl p-8 text-center text-[#082f49]">
     <h2 class="text-2xl md:text-3xl font-extrabold mb-3">Ready to Experience Zanzibar?</h2>
     <p class="mb-5">Book your royal experience today and discover the magic of UNP Tours.</p>
-    <a href="trips.html" class="inline-block bg-[#082f49] text-white px-8 py-3 rounded-full font-bold hover:bg-[#0c4a6e] transition shadow-lg">
-      Explore Our Trips →
-    </a>
+    <a href="trips.html" class="inline-block bg-[#082f49] text-white px-8 py-3 rounded-full font-bold hover:bg-[#0c4a6e] transition shadow-lg">Explore Our Trips →</a>
   </section>
 
 </main>
@@ -182,9 +242,79 @@
 </footer>
 
 <!-- WhatsApp Float -->
-<a href="https://wa.me/255655728982" target="_blank" class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] rounded-full flex justify-center items-center text-3xl text-white shadow-lg hover:scale-110 transition z-50">
-  💬
-</a>
+<a href="https://wa.me/255655728982" target="_blank" class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] rounded-full flex justify-center items-center text-3xl text-white shadow-lg hover:scale-110 transition z-50">💬</a>
+
+<!-- ================= JAVASCRIPT (Manual) ================= -->
+<script>
+  // NUMBER COUNTER
+  const counters = document.querySelectorAll('.counter-number');
+  const speed = 200;
+  counters.forEach(counter => {
+    const updateCount = () => {
+      const target = +counter.getAttribute('data-target');
+      const count = +counter.innerText;
+      const inc = target / speed;
+      if (count < target) {
+        counter.innerText = Math.ceil(count + inc);
+        setTimeout(updateCount, 1);
+      } else {
+        counter.innerText = target;
+      }
+    };
+    updateCount();
+  });
+
+  // CURRENCY CONVERTER
+  async function convertCurrency() {
+    const amount = parseFloat(document.getElementById('amount').value);
+    const from = document.getElementById('fromCurrency').value;
+    const to = document.getElementById('toCurrency').value;
+    const resultEl = document.getElementById('result');
+
+    if (!amount || amount <= 0) {
+      resultEl.textContent = "Please enter a valid amount.";
+      resultEl.classList.add('text-red-500');
+      return;
+    }
+
+    resultEl.textContent = "Converting...";
+    resultEl.classList.remove('text-red-500');
+
+    try {
+      const response = await fetch(`https://api.exchangerate-api.com/v4/latest/${from}`);
+      const data = await response.json();
+      const rate = data.rates[to];
+      const converted = (amount * rate).toFixed(2);
+      resultEl.textContent = `${amount} ${from} = ${converted} ${to}`;
+    } catch (error) {
+      resultEl.textContent = "Error loading rates. Please try again.";
+      resultEl.classList.add('text-red-500');
+    }
+  }
+
+  // CALCULATOR
+  let calcString = '';
+  function calc(val) {
+    const display = document.getElementById('calcDisplay');
+    if (val === 'C') {
+      calcString = '';
+      display.value = '';
+    } else if (val === '=') {
+      try {
+        let expression = calcString.replace(/×/g, '*').replace(/÷/g, '/').replace(/−/g, '-');
+        const result = eval(expression);
+        display.value = result;
+        calcString = result.toString();
+      } catch {
+        display.value = 'Error';
+        calcString = '';
+      }
+    } else {
+      calcString += val;
+      display.value = calcString;
+    }
+  }
+</script>
 
 </body>
-  </html>
+        </html>
