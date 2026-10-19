@@ -13,9 +13,6 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
 <script src="https://cdn.tailwindcss.com"></script>
-
-<!-- ELFSIGHT PLATFORM -->
-<script src="https://elfsightcdn.com/platform.js" async></script>
 </head>
 <body class="bg-gray-50 font-sans">
 
@@ -79,47 +76,85 @@
     </div>
   </div>
 
-  <!-- BUSINESS HOURS -->
+  <!-- BUSINESS HOURS (WIDGET YETU) -->
   <section class="mb-16">
     <div class="text-center mb-8">
       <h2 class="text-3xl font-extrabold text-[#082f49]">⏰ Business Hours</h2>
       <p class="text-gray-600 mt-2">When we are available to serve you.</p>
     </div>
-    <div class="bg-white rounded-2xl shadow-xl border-t-4 border-[#0c4a6e] p-4 md:p-8">
-      <div class="elfsight-app-3cce44f1-bf9d-4104-9421-c4692fcfb2e7" data-elfsight-app-lazy></div>
+    <div class="bg-white rounded-2xl shadow-xl border-t-4 border-[#0c4a6e] p-6 md:p-8 max-w-2xl mx-auto">
+      <div class="space-y-3">
+        <div class="flex justify-between border-b pb-2">
+          <span class="font-semibold text-gray-700">Monday - Friday</span>
+          <span class="text-[#0c4a6e] font-bold">8:00 AM - 8:00 PM</span>
+        </div>
+        <div class="flex justify-between border-b pb-2">
+          <span class="font-semibold text-gray-700">Saturday</span>
+          <span class="text-[#0c4a6e] font-bold">9:00 AM - 6:00 PM</span>
+        </div>
+        <div class="flex justify-between border-b pb-2">
+          <span class="font-semibold text-gray-700">Sunday</span>
+          <span class="text-[#0c4a6e] font-bold">10:00 AM - 4:00 PM</span>
+        </div>
+        <div class="flex justify-between pt-2">
+          <span class="font-semibold text-[#d4a017]">WhatsApp Support</span>
+          <span class="text-[#25D366] font-bold">24/7 Available</span>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- CONTACT FORM -->
+  <!-- CONTACT FORM (WIDGET YETU) -->
   <section class="mb-16">
     <div class="text-center mb-8">
       <h2 class="text-3xl font-extrabold text-[#082f49]">📩 Send Us a Message</h2>
       <p class="text-gray-600 mt-2">Fill out the form below and we will get back to you shortly.</p>
     </div>
-    <div class="bg-white rounded-2xl shadow-xl border-t-4 border-[#d4a017] p-4 md:p-8">
-      <div class="elfsight-app-a47c0944-93bc-44d9-b4af-1576933b9916" data-elfsight-app-lazy></div>
+    <div class="bg-white rounded-2xl shadow-xl border-t-4 border-[#d4a017] p-6 md:p-8 max-w-3xl mx-auto">
+      <form onsubmit="sendContactMessage(event)" class="space-y-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-bold text-[#082f49] mb-2">Full Name</label>
+            <input type="text" id="cName" required class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl outline-none focus:border-[#d4a017]">
+          </div>
+          <div>
+            <label class="block text-sm font-bold text-[#082f49] mb-2">Email or Phone</label>
+            <input type="text" id="cContact" required class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl outline-none focus:border-[#d4a017]">
+          </div>
+        </div>
+        <div>
+          <label class="block text-sm font-bold text-[#082f49] mb-2">Message</label>
+          <textarea id="cMessage" rows="4" required class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl outline-none focus:border-[#d4a017]"></textarea>
+        </div>
+        <button type="submit" class="w-full bg-[#0c4a6e] text-white py-4 rounded-xl font-bold text-lg hover:bg-[#082f49] transition">Send via WhatsApp</button>
+      </form>
     </div>
   </section>
 
-  <!-- CLICK TO CALL -->
+  <!-- CLICK TO CALL (WIDGET YETU) -->
   <section class="mb-16">
     <div class="text-center mb-8">
       <h2 class="text-3xl font-extrabold text-[#082f49]">📞 Click to Call</h2>
       <p class="text-gray-600 mt-2">Tap below to call us directly from your phone.</p>
     </div>
-    <div class="bg-gradient-to-r from-[#0c4a6e] to-[#082f49] rounded-2xl shadow-xl border-4 border-[#d4a017] p-4 md:p-8 text-white">
-      <div class="elfsight-app-8382e2e1-b761-4708-8911-8db39eef3b2c" data-elfsight-app-lazy></div>
+    <div class="bg-gradient-to-r from-[#0c4a6e] to-[#082f49] rounded-2xl shadow-xl border-4 border-[#d4a017] p-6 md:p-8 text-center text-white max-w-2xl mx-auto">
+      <p class="mb-4 text-lg">Speak to our team right now</p>
+      <a href="tel:+255655728982" class="inline-block bg-[#25D366] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-[#1ebe57] transition shadow-lg">
+        📞 +255 655 728 982
+      </a>
     </div>
   </section>
 
-  <!-- QR CODE -->
+  <!-- QR CODE (WIDGET YETU) -->
   <section class="mb-16">
     <div class="text-center mb-8">
       <h2 class="text-3xl font-extrabold text-[#082f49]">📱 Scan Our QR Code</h2>
       <p class="text-gray-600 mt-2">Scan to open our website on your phone.</p>
     </div>
-    <div class="bg-white rounded-2xl shadow-xl border-t-4 border-[#25D366] p-4 md:p-8 max-w-md mx-auto">
-      <div class="elfsight-app-74a54b68-5217-4100-9353-faa793ec081a" data-elfsight-app-lazy></div>
+    <div class="bg-white rounded-2xl shadow-xl border-t-4 border-[#25D366] p-6 max-w-sm mx-auto text-center">
+      <!-- QR Code inayotumia API ya bure kutengeneza picha ya QR -->
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://unp.tours" alt="UNP Tours QR Code" class="mx-auto rounded-lg shadow-sm">
+      <p class="mt-4 text-sm text-gray-500 font-semibold">Scan to visit unp.tours</p>
     </div>
   </section>
 
@@ -150,5 +185,22 @@
   💬
 </a>
 
+<!-- JAVASCRIPT YA FORM -->
+<script>
+  function sendContactMessage(event) {
+    event.preventDefault();
+    const name = document.getElementById('cName').value;
+    const contact = document.getElementById('cContact').value;
+    const message = document.getElementById('cMessage').value;
+
+    const waMessage = `*MESSAGE FROM CONTACT PAGE - UNP TOURS*%0A%0A` +
+      `*Name:* ${encodeURIComponent(name)}%0A` +
+      `*Contact:* ${encodeURIComponent(contact)}%0A` +
+      `*Message:* ${encodeURIComponent(message)}`;
+
+    window.open('https://wa.me/255655728982?text=' + waMessage, '_blank');
+  }
+</script>
+
 </body>
-        </html>
+            </html>
