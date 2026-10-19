@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jozani Forest — UNP TOURS Zanzibar</title>
+<meta name="description" content="Explore Jozani Forest with UNP TOURS - Red Colobus monkeys, mangrove boardwalk, and turtle sanctuary.">
+<meta name="robots" content="index, follow">
+
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0c4a6e">
+<link rel="icon" type="image/png" href="assets/images/logo.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+  body { font-family: 'Inter', sans-serif; background: #f8f9fa; }
+  .feature-card { transition: all 0.3s ease; }
+  .feature-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+</style>
+</head>
+<body class="bg-gray-50 font-sans">
+
+<!-- NAVBAR -->
+<nav class="fixed top-0 w-full flex justify-between items-center px-5 md:px-12 py-3 z-50 bg-[#0c4a6e] shadow-lg">
+  <a href="index.html" class="flex items-center gap-3">
+    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="h-10 w-10">
+      <defs>
+        <linearGradient id="goldNav" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#d4a017" />
+          <stop offset="50%" style="stop-color:#f5d76e" />
+          <stop offset="100%" style="stop-color:#b88a10" />
+        </linearGradient>
+        <linearGradient id="greenNav" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#0b3d2e" />
+          <stop offset="100%" style="stop-color:#1a6b4a" />
+        </linearGradient>
+      </defs>
+      <circle cx="100" cy="100" r="95" fill="url(#greenNav)" stroke="url(#goldNav)" stroke-width="4"/>
+      <path d="M60 80 Q80 40 120 50 Q130 60 110 80 Q90 100 60 80 Z" fill="url(#goldNav)"/>
+      <path d="M60 100 Q80 85 100 100 T140 100" fill="none" stroke="url(#goldNav)" stroke-width="4" stroke-linecap="round"/>
+      <text x="100" y="140" font-family="Inter, sans-serif" font-size="30" font-weight="800" fill="url(#goldNav)" text-anchor="middle" letter-spacing="2">UNP</text>
+    </svg>
+    <span class="font-extrabold text-white hidden sm:block">UNP TOURS</span>
+  </a>
+  <a href="index.html" class="text-white font-semibold hover:text-[#d4a017] transition">← Back</a>
+</nav>
+
+<!-- HERO -->
+<section class="pt-32 pb-16 bg-gradient-to-br from-[#0c4a6e] to-[#082f49] text-white border-b-4 border-[#d4a017]">
+  <div class="max-w-4xl mx-auto text-center px-5">
+    <div class="text-6xl mb-4">🌳</div>
+    <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Jozani Forest</h1>
+    <p class="text-lg md:text-xl text-blue-200">Home of the rare Red Colobus Monkeys — a magical natural paradise in Zanzibar.</p>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<main class="max-w-6xl mx-auto px-5 py-16">
+
+  <!-- INTRO -->
+  <div class="bg-white rounded-2xl p-8 shadow-lg border-l-4 border-[#0c4a6e] mb-12">
+    <h2 class="text-3xl font-extrabold text-[#082f49] mb-4">A Walk Through Nature's Wonder</h2>
+    <p class="text-gray-600 leading-relaxed text-lg mb-4">
+      Jozani Forest is the only remaining natural forest in Zanzibar, and home to one of the world's rarest primates — the **Red Colobus Monkey**. Walking through this ancient forest, you will feel the magic of untouched nature.
+    </p>
+    <p class="text-gray-600 leading-relaxed">
+      From the mangrove boardwalk to the turtle sanctuary, every corner of Jozani offers something unique. **This is not just a forest — it is a sanctuary of life.**
+    </p>
+  </div>
+
+  <!-- ATTRACTIONS (Kadi kama mountain-tourism) -->
+  <h2 class="text-3xl font-extrabold text-[#082f49] mb-8 text-center">What You Will Experience</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+
+    <div class="feature-card bg-white p-6 rounded-2xl shadow-md border-t-4 border-[#d4a017]">
+      <div class="text-4xl mb-3">🐒</div>
+      <h3 class="font-bold text-[#082f49] text-lg mb-2">Red Colobus Monkeys</h3>
+      <p class="text-sm text-gray-600 mb-3">Meet the rare and playful Red Colobus Monkeys — found only in Zanzibar.</p>
+      <span class="text-[#0c4a6e] font-bold text-sm">Included in Tour</span>
+    </div>
+
+    <div class="feature-card bg-white p-6 rounded-2xl shadow-md border-t-4 border-[#d4a017]">
+      <div class="text-4xl mb-3">🌿</div>
+      <h3 class="font-bold text-[#082f49] text-lg mb-2">Mangrove Boardwalk</h3>
+      <p class="text-sm text-gray-600 mb-3">Walk above the mangroves on a beautiful wooden boardwalk.</p>
+      <span class="text-[#0c4a6e] font-bold text-sm">Included in Tour</span>
+    </div>
+
+    <div class="feature-card bg-white p-6 rounded-2xl shadow-md border-t-4 border-[#d4a017]">
+      <div class="text-4xl mb-3">🐢</div>
+      <h3 class="font-bold text-[#082f49] text-lg mb-2">Turtle Sanctuary</h3>
+      <p class="text-sm text-gray-600 mb-3">Visit the sea turtle conservation project nearby.</p>
+      <span class="text-[#0c4a6e] font-bold text-sm">Included in Tour</span>
+    </div>
+
+    <div class="feature-card bg-white p-6 rounded-2xl shadow-md border-t-4 border-[#d4a017]">
+      <div class="text-4xl mb-3">🌳</div>
+      <h3 class="font-bold text-[#082f49] text-lg mb-2">Ancient Forest Walk</h3>
+      <p class="text-sm text-gray-600 mb-3">Guided walk through the oldest forest in Zanzibar.</p>
+      <span class="text-[#0c4a6e] font-bold text-sm">Included in Tour</span>
+    </div>
+
+    <div class="feature-card bg-white p-6 rounded-2xl shadow-md border-t-4 border-[#d4a017]">
+      <div class="text-4xl mb-3">🦜</div>
+      <h3 class="font-bold text-[#082f49] text-lg mb-2">Bird Watching</h3>
+      <p class="text-sm text-gray-600 mb-3">Spot rare birds and butterflies in their natural habitat.</p>
+      <span class="text-[#0c4a6e] font-bold text-sm">Included in Tour</span>
+    </div>
+
+    <div class="feature-card bg-white p-6 rounded-2xl shadow-md border-t-4 border-[#d4a017]">
+      <div class="text-4xl mb-3">📸</div>
+      <h3 class="font-bold text-[#082f49] text-lg mb-2">Photo Opportunities</h3>
+      <p class="text-sm text-gray-600 mb-3">Capture unforgettable moments with the monkeys and nature.</p>
+      <span class="text-[#0c4a6e] font-bold text-sm">Included in Tour</span>
+    </div>
+
+  </div>
+
+  <!-- PRICING -->
+  <h2 class="text-3xl font-extrabold text-[#082f49] mb-8 text-center">Choose Your Package</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+    <div class="bg-white p-6 rounded-2xl shadow-md text-center border-t-4 border-gray-400">
+      <h3 class="text-xl font-bold text-[#082f49] mb-2">Budget</h3>
+      <p class="text-3xl font-extrabold text-[#0c4a6e] mb-4">$50</p>
+      <ul class="text-sm text-gray-600 space-y-2 mb-6">
+        <li>✓ Guided tour</li>
+        <li>✓ Forest walk</li>
+        <li>✓ Turtle sanctuary</li>
+      </ul>
+      <a href="booking.html?trip=Jozani%20Budget" class="block bg-[#0c4a6e] text-white py-3 rounded-xl font-bold hover:bg-[#082f49] transition">Book Budget</a>
+    </div>
+    <div class="bg-white p-6 rounded-2xl shadow-xl text-center border-4 border-[#d4a017] relative transform md:scale-105">
+      <span class="absolute top-0 right-0 bg-[#d4a017] text-[#082f49] text-xs font-bold px-3 py-1 rounded-bl-xl">POPULAR</span>
+      <h3 class="text-xl font-bold text-[#082f49] mb-2">Mid-Range</h3>
+      <p class="text-3xl font-extrabold text-[#0c4a6e] mb-4">$80</p>
+      <ul class="text-sm text-gray-600 space-y-2 mb-6">
+        <li>✓ Everything in Budget</li>
+        <li>✓ Private guide</li>
+        <li>✓ Lunch included</li>
+      </ul>
+      <a href="booking.html?trip=Jozani%20Mid" class="block bg-[#d4a017] text-[#082f49] py-3 rounded-xl font-bold hover:bg-[#b88a10] transition">Book Mid</a>
+    </div>
+    <div class="bg-white p-6 rounded-2xl shadow-md text-center border-t-4 border-[#25D366]">
+      <h3 class="text-xl font-bold text-[#082f49] mb-2">Luxury</h3>
+      <p class="text-3xl font-extrabold text-[#0c4a6e] mb-4">$150</p>
+      <ul class="text-sm text-gray-600 space-y-2 mb-6">
+        <li>✓ Everything in Mid</li>
+        <li>✓ Private transport</li>
+        <li>✓ Professional photos</li>
+      </ul>
+      <a href="booking.html?trip=Jozani%20Luxury" class="block bg-[#0c4a6e] text-white py-3 rounded-xl font-bold hover:bg-[#082f49] transition">Book Luxury</a>
+    </div>
+  </div>
+
+  <!-- BOOKING FORM -->
+  <div class="bg-white rounded-2xl p-8 shadow-lg border-l-4 border-[#d4a017]">
+    <h2 class="text-2xl font-extrabold text-[#082f49] mb-6">Book Your Jozani Adventure</h2>
+    <form onsubmit="submitBooking(event)" class="space-y-5">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-bold text-[#082f49] mb-2">Full Name:</label>
+          <input type="text" id="guestName" required class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl outline-none focus:border-[#d4a017]">
+        </div>
+        <div>
+          <label class="block text-sm font-bold text-[#082f49] mb-2">Contact (WhatsApp):</label>
+          <input type="text" id="guestContact" required class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl outline-none focus:border-[#d4a017]">
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-bold text-[#082f49] mb-2">Preferred Date:</label>
+          <input type="date" id="guestDate" required class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl outline-none focus:border-[#d4a017]">
+        </div>
+        <div>
+          <label class="block text-sm font-bold text-[#082f49] mb-2">Number of Guests:</label>
+          <input type="number" id="guestCount" min="1" value="2" required class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl outline-none focus:border-[#d4a017]">
+        </div>
+      </div>
+      <div>
+        <label class="block text-sm font-bold text-[#082f49] mb-2">Package:</label>
+        <select id="guestPackage" class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl outline-none focus:border-[#d4a017]">
+          <option>Budget ($50)</option>
+          <option>Mid-Range ($80)</option>
+          <option>Luxury ($150)</option>
+        </select>
+      </div>
+      <button type="submit" class="w-full bg-[#25D366] text-white py-4 rounded-xl font-bold text-lg hover:bg-[#1ebe57] transition">💬 Book via WhatsApp</button>
+    </form>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-black text-gray-300 py-10 px-5 border-t-4 border-[#d4a017]">
+  <div class="max-w-4xl mx-auto text-center">
+    <p class="font-bold text-[#d4a017] mb-2">UNP TOURS — Unique & Natural Paradise</p>
+    <p class="text-sm">Nungwi, Zanzibar, Tanzania | WhatsApp: +255 655 728 982</p>
+    <p class="text-xs mt-4 text-gray-500">© 2026 UNP Tours. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/255655728982" target="_blank" class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] rounded-full flex justify-center items-center text-3xl text-white shadow-lg hover:scale-110 transition z-50">💬</a>
+
+<!-- JAVASCRIPT -->
+<script>
+  function submitBooking(event) {
+    event.preventDefault();
+    const name = document.getElementById('guestName').value;
+    const contact = document.getElementById('guestContact').value;
+    const date = document.getElementById('guestDate').value;
+    const count = document.getElementById('guestCount').value;
+    const pkg = document.getElementById('guestPackage').value;
+
+    const message = `*JOZANI FOREST BOOKING - UNP TOURS*%0A%0A` +
+      `*Name:* ${encodeURIComponent(name)}%0A` +
+      `*Contact:* ${encodeURIComponent(contact)}%0A` +
+      `*Date:* ${encodeURIComponent(date)}%0A` +
+      `*Guests:* ${encodeURIComponent(count)}%0A` +
+      `*Package:* ${encodeURIComponent(pkg)}`;
+
+    window.open('https://wa.me/255655728982?text=' + message, '_blank');
+  }
+</script>
+
+</body>
+</html>
