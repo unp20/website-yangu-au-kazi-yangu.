@@ -70,7 +70,7 @@
     </p>
   </div>
 
-  <!-- ATTRACTIONS (Kadi kama mountain-tourism) -->
+  <!-- ATTRACTIONS -->
   <h2 class="text-3xl font-extrabold text-[#082f49] mb-8 text-center">What You Will Experience</h2>
   <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
 
