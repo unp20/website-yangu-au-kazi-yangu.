@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Testimonials — UNP TOURS Zanzibar</title>
-<meta name="description" content="Read what our guests say about UNP TOURS — Zanzibar's premier tour operator.">
+<title>Testimonials & Reviews — UNP TOURS Zanzibar</title>
+<meta name="description" content="Read what our guests say about UNP TOURS — Zanzibar's premier tour operator. Real reviews from real travelers.">
 <meta name="robots" content="index, follow">
 
 <link rel="manifest" href="manifest.json">
@@ -17,33 +17,39 @@
 <style>
   body { font-family: 'Inter', sans-serif; background: #f8f9fa; }
   .review-card { transition: all 0.3s ease; }
-  .review-card:hover { transform: translateY(-4px); box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
+  .review-card:hover { transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
 </style>
 </head>
-<body>
+<body class="bg-gray-50 font-sans">
 
-<!-- NAVBAR -->
+<!-- ================= NAVBAR ================= -->
 <nav class="fixed top-0 w-full flex justify-between items-center px-5 md:px-12 py-3 z-50 bg-[#0c4a6e] shadow-lg">
   <a href="index.html" class="flex items-center gap-3">
     <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="h-10 w-10">
-      <circle cx="100" cy="100" r="95" fill="#0b3d2e" stroke="#d4a017" stroke-width="4"/>
-      <text x="100" y="140" font-family="Inter" font-size="30" font-weight="800" fill="#d4a017" text-anchor="middle">UNP</text>
+      <defs>
+        <linearGradient id="goldNav" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#d4a017" /><stop offset="50%" style="stop-color:#f5d76e" /><stop offset="100%" style="stop-color:#b88a10" /></linearGradient>
+        <linearGradient id="greenNav" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#0b3d2e" /><stop offset="100%" style="stop-color:#1a6b4a" /></linearGradient>
+      </defs>
+      <circle cx="100" cy="100" r="95" fill="url(#greenNav)" stroke="url(#goldNav)" stroke-width="4"/>
+      <path d="M60 80 Q80 40 120 50 Q130 60 110 80 Q90 100 60 80 Z" fill="url(#goldNav)"/>
+      <path d="M60 100 Q80 85 100 100 T140 100" fill="none" stroke="url(#goldNav)" stroke-width="4" stroke-linecap="round"/>
+      <text x="100" y="140" font-family="Inter, sans-serif" font-size="30" font-weight="800" fill="url(#goldNav)" text-anchor="middle" letter-spacing="2">UNP</text>
     </svg>
     <span class="font-extrabold text-white hidden sm:block">UNP TOURS</span>
   </a>
-  <a href="index.html" class="text-white font-semibold hover:text-[#d4a017] transition">← Back to Home</a>
+  <a href="index.html" class="text-white font-semibold hover:text-[#d4a017] transition">← Back</a>
 </nav>
 
-<!-- HERO -->
-<section class="pt-32 pb-16 bg-gradient-to-br from-[#0c4a6e] to-[#082f49] text-white">
+<!-- ================= HERO ================= -->
+<section class="pt-32 pb-16 bg-gradient-to-br from-[#0c4a6e] to-[#082f49] text-white border-b-4 border-[#d4a017]">
   <div class="max-w-4xl mx-auto text-center px-5">
-    <div class="text-5xl mb-4">⭐</div>
+    <div class="text-6xl mb-4">⭐</div>
     <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Guest Reviews</h1>
     <p class="text-lg md:text-xl text-blue-200">Real stories from real guests who traveled with UNP Tours.</p>
   </div>
 </section>
 
-<!-- STATS -->
+<!-- ================= STATS ================= -->
 <section class="max-w-6xl mx-auto px-5 -mt-8 relative z-10">
   <div class="grid grid-cols-3 gap-4">
     <div class="bg-white rounded-2xl p-5 shadow-lg text-center border-t-4 border-[#d4a017]">
@@ -61,121 +67,111 @@
   </div>
 </section>
 
-<!-- REVIEWS -->
+<!-- ================= REVIEWS ================= -->
 <main class="max-w-6xl mx-auto px-5 py-16">
-
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
     <div class="review-card bg-white rounded-2xl p-6 shadow-md border-l-4 border-[#d4a017]">
-      <div class="flex text-[#d4a017] text-xl mb-3">⭐⭐⭐⭐⭐</div>
+      <div class="text-[#d4a017] text-xl mb-3">⭐⭐⭐⭐⭐</div>
       <p class="text-gray-600 italic mb-4">"The Safari Blue trip was magical — the sandbanks, the snorkeling, the sunset. UNP Tours made it unforgettable!"</p>
       <div class="flex items-center gap-3">
         <div class="w-10 h-10 bg-[#0c4a6e] text-[#d4a017] rounded-full flex items-center justify-center font-bold">S</div>
-        <div>
-          <p class="font-bold text-[#082f49] text-sm">Sarah M.</p>
-          <p class="text-xs text-gray-400">UK 🇬🇧</p>
-        </div>
+        <div><p class="font-bold text-[#082f49] text-sm">Sarah M.</p><p class="text-xs text-gray-400">UK 🇬🇧</p></div>
       </div>
     </div>
 
     <div class="review-card bg-white rounded-2xl p-6 shadow-md border-l-4 border-[#d4a017]">
-      <div class="flex text-[#d4a017] text-xl mb-3">⭐⭐⭐⭐⭐</div>
+      <div class="text-[#d4a017] text-xl mb-3">⭐⭐⭐⭐⭐</div>
       <p class="text-gray-600 italic mb-4">"We did the Tanzania safari with UNP. Lions, elephants, and the Ngorongoro Crater — a dream come true."</p>
       <div class="flex items-center gap-3">
         <div class="w-10 h-10 bg-[#0c4a6e] text-[#d4a017] rounded-full flex items-center justify-center font-bold">M</div>
-        <div>
-          <p class="font-bold text-[#082f49] text-sm">Marco R.</p>
-          <p class="text-xs text-gray-400">Italy 🇮🇹</p>
-        </div>
+        <div><p class="font-bold text-[#082f49] text-sm">Marco R.</p><p class="text-xs text-gray-400">Italy 🇮🇹</p></div>
       </div>
     </div>
 
     <div class="review-card bg-white rounded-2xl p-6 shadow-md border-l-4 border-[#d4a017]">
-      <div class="flex text-[#d4a017] text-xl mb-3">⭐⭐⭐⭐⭐</div>
+      <div class="text-[#d4a017] text-xl mb-3">⭐⭐⭐⭐⭐</div>
       <p class="text-gray-600 italic mb-4">"Fe and his team are the best guides in Nungwi. The culture tour opened our eyes to Zanzibar's soul."</p>
       <div class="flex items-center gap-3">
         <div class="w-10 h-10 bg-[#0c4a6e] text-[#d4a017] rounded-full flex items-center justify-center font-bold">A</div>
-        <div>
-          <p class="font-bold text-[#082f49] text-sm">Anna & David</p>
-          <p class="text-xs text-gray-400">Germany 🇩🇪</p>
-        </div>
+        <div><p class="font-bold text-[#082f49] text-sm">Anna & David</p><p class="text-xs text-gray-400">Germany 🇩🇪</p></div>
       </div>
     </div>
 
     <div class="review-card bg-white rounded-2xl p-6 shadow-md border-l-4 border-[#d4a017]">
-      <div class="flex text-[#d4a017] text-xl mb-3">⭐⭐⭐⭐⭐</div>
+      <div class="text-[#d4a017] text-xl mb-3">⭐⭐⭐⭐⭐</div>
       <p class="text-gray-600 italic mb-4">"From the romantic dinner to Mnemba snorkeling — every detail was perfect. Highly recommend!"</p>
       <div class="flex items-center gap-3">
         <div class="w-10 h-10 bg-[#0c4a6e] text-[#d4a017] rounded-full flex items-center justify-center font-bold">J</div>
-        <div>
-          <p class="font-bold text-[#082f49] text-sm">James K.</p>
-          <p class="text-xs text-gray-400">USA 🇺🇸</p>
-        </div>
+        <div><p class="font-bold text-[#082f49] text-sm">James K.</p><p class="text-xs text-gray-400">USA 🇺🇸</p></div>
       </div>
     </div>
 
     <div class="review-card bg-white rounded-2xl p-6 shadow-md border-l-4 border-[#d4a017]">
-      <div class="flex text-[#d4a017] text-xl mb-3">⭐⭐⭐⭐⭐</div>
-      <p class="text-gray-600 italic mb-4">"The VIP experience was worth every penny — private butler, luxury transfer, and a royal welcome. Exceptional!"</p>
+      <div class="text-[#d4a017] text-xl mb-3">⭐⭐⭐⭐⭐</div>
+      <p class="text-gray-600 italic mb-4">"The VIP experience was worth every penny — private butler, luxury transfer, and a royal welcome."</p>
       <div class="flex items-center gap-3">
         <div class="w-10 h-10 bg-[#0c4a6e] text-[#d4a017] rounded-full flex items-center justify-center font-bold">L</div>
-        <div>
-          <p class="font-bold text-[#082f49] text-sm">Lisa T.</p>
-          <p class="text-xs text-gray-400">Australia 🇦🇺</p>
-        </div>
+        <div><p class="font-bold text-[#082f49] text-sm">Lisa T.</p><p class="text-xs text-gray-400">Australia 🇦🇺</p></div>
       </div>
     </div>
 
     <div class="review-card bg-white rounded-2xl p-6 shadow-md border-l-4 border-[#d4a017]">
-      <div class="flex text-[#d4a017] text-xl mb-3">⭐⭐⭐⭐⭐</div>
+      <div class="text-[#d4a017] text-xl mb-3">⭐⭐⭐⭐⭐</div>
       <p class="text-gray-600 italic mb-4">"Jozani Forest was a highlight — the red colobus monkeys were incredible. Our guide was so knowledgeable."</p>
       <div class="flex items-center gap-3">
         <div class="w-10 h-10 bg-[#0c4a6e] text-[#d4a017] rounded-full flex items-center justify-center font-bold">P</div>
-        <div>
-          <p class="font-bold text-[#082f49] text-sm">Pierre L.</p>
-          <p class="text-xs text-gray-400">France 🇫🇷</p>
-        </div>
+        <div><p class="font-bold text-[#082f49] text-sm">Pierre L.</p><p class="text-xs text-gray-400">France 🇫🇷</p></div>
       </div>
     </div>
 
     <div class="review-card bg-white rounded-2xl p-6 shadow-md border-l-4 border-[#d4a017]">
-      <div class="flex text-[#d4a017] text-xl mb-3">⭐⭐⭐⭐⭐</div>
+      <div class="text-[#d4a017] text-xl mb-3">⭐⭐⭐⭐⭐</div>
       <p class="text-gray-600 italic mb-4">"The Stone Town tour was amazing — so much history and culture. We felt like we were traveling through time."</p>
       <div class="flex items-center gap-3">
         <div class="w-10 h-10 bg-[#0c4a6e] text-[#d4a017] rounded-full flex items-center justify-center font-bold">Y</div>
-        <div>
-          <p class="font-bold text-[#082f49] text-sm">Yuki S.</p>
-          <p class="text-xs text-gray-400">Japan 🇯🇵</p>
-        </div>
+        <div><p class="font-bold text-[#082f49] text-sm">Yuki S.</p><p class="text-xs text-gray-400">Japan 🇯🇵</p></div>
       </div>
     </div>
 
     <div class="review-card bg-white rounded-2xl p-6 shadow-md border-l-4 border-[#d4a017]">
-      <div class="flex text-[#d4a017] text-xl mb-3">⭐⭐⭐⭐⭐</div>
+      <div class="text-[#d4a017] text-xl mb-3">⭐⭐⭐⭐⭐</div>
       <p class="text-gray-600 italic mb-4">"Booked the full Zanzibar package — everything was seamless. Airport pickup, hotel, activities. 10/10!"</p>
       <div class="flex items-center gap-3">
         <div class="w-10 h-10 bg-[#0c4a6e] text-[#d4a017] rounded-full flex items-center justify-center font-bold">R</div>
-        <div>
-          <p class="font-bold text-[#082f49] text-sm">Raj P.</p>
-          <p class="text-xs text-gray-400">India 🇮🇳</p>
-        </div>
+        <div><p class="font-bold text-[#082f49] text-sm">Raj P.</p><p class="text-xs text-gray-400">India 🇮🇳</p></div>
       </div>
     </div>
 
   </div>
 
-  <!-- CTA -->
-  <div class="mt-16 bg-gradient-to-r from-[#0c4a6e] to-[#082f49] rounded-2xl p-8 text-center text-white border-2 border-[#d4a017]/30">
-    <h2 class="text-2xl font-extrabold text-[#d4a017] mb-3">Share Your Experience</h2>
-    <p class="text-blue-200 mb-5">Traveled with us? Tell us about your trip!</p>
-    <a href="https://wa.me/255655728982" target="_blank" class="inline-block bg-[#25D366] text-white px-8 py-3 rounded-full font-bold hover:bg-[#1ebe57] transition">
-      💬 Send us a Review
-    </a>
+  <!-- SHARE YOUR EXPERIENCE FORM -->
+  <div class="mt-16 bg-white rounded-2xl p-8 shadow-lg border-l-4 border-[#0c4a6e]">
+    <h2 class="text-2xl font-extrabold text-[#082f49] mb-2 text-center">Share Your Experience</h2>
+    <p class="text-gray-600 text-sm text-center mb-6">Traveled with us? Tell us about your trip!</p>
+    
+    <form onsubmit="submitReview(event)" class="space-y-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-bold text-[#082f49] mb-2">Full Name:</label>
+          <input type="text" id="reviewName" required class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl outline-none focus:border-[#d4a017]">
+        </div>
+        <div>
+          <label class="block text-sm font-bold text-[#082f49] mb-2">Country:</label>
+          <input type="text" id="reviewCountry" required class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl outline-none focus:border-[#d4a017]">
+        </div>
+      </div>
+      <div>
+        <label class="block text-sm font-bold text-[#082f49] mb-2">Your Review:</label>
+        <textarea id="reviewText" rows="3" required class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl outline-none focus:border-[#d4a017]"></textarea>
+      </div>
+      <button type="submit" class="w-full bg-[#25D366] text-white py-3 rounded-xl font-bold hover:bg-[#1ebe57] transition">💬 Send Review via WhatsApp</button>
+    </form>
   </div>
 
 </main>
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 <footer class="bg-black text-gray-300 py-10 px-5 border-t-4 border-[#d4a017]">
   <div class="max-w-4xl mx-auto text-center">
     <p class="font-bold text-[#d4a017] mb-2">UNP TOURS — Unique & Natural Paradise</p>
@@ -185,9 +181,24 @@
 </footer>
 
 <!-- WhatsApp Float -->
-<a href="https://wa.me/255655728982" target="_blank" class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] rounded-full flex justify-center items-center text-3xl text-white shadow-lg hover:scale-110 transition z-50">
-  💬
-</a>
+<a href="https://wa.me/255655728982" target="_blank" class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] rounded-full flex justify-center items-center text-3xl text-white shadow-lg hover:scale-110 transition z-50">💬</a>
+
+<!-- ================= JAVASCRIPT ================= -->
+<script>
+  function submitReview(event) {
+    event.preventDefault();
+    const name = document.getElementById('reviewName').value;
+    const country = document.getElementById('reviewCountry').value;
+    const text = document.getElementById('reviewText').value;
+
+    const message = `*NEW REVIEW - UNP TOURS*%0A%0A` +
+      `*Name:* ${encodeURIComponent(name)}%0A` +
+      `*Country:* ${encodeURIComponent(country)}%0A` +
+      `*Review:* ${encodeURIComponent(text)}`;
+
+    window.open('https://wa.me/255655728982?text=' + message, '_blank');
+  }
+</script>
 
 </body>
-</html>
+  </html>
