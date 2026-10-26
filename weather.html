@@ -1,176 +1,326 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Weather & Best Time to Visit — UNP TOURS Zanzibar</title>
-<meta name="description" content="Check the current weather, 5-day forecast, and best time to visit Tanzania's top destinations.">
-<meta name="robots" content="index, follow">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather & Best Time to Visit — UNP Tours Zanzibar</title>
+    
+    <meta name="description" content="Check the current weather, 5-day forecast, and best time to visit Tanzania's top destinations.">
+    <meta name="robots" content="index, follow">
+    
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0c4a6e">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌴</text></svg>">
 
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#0c4a6e">
-<link rel="icon" type="image/png" href="assets/images/logo.png">
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
-<script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* =========================================
+           1. GLOBAL VARIABLES & BASE SETUP
+        ========================================= */
+        :root {
+            --text-main: #0a0a0a;
+            --text-muted: #64748b;
+            --accent-blue: #0ea5e9;
+            --accent-blue-dark: #0284c7;
+            --deep-sea: #0f172a;
+            --gold: #d4a017;
+            --border: #e2e8f0;
+            --bg-main: #f8fafc;
+        }
 
-<style>
-  body { font-family: 'Inter', sans-serif; background: #f8f9fa; }
-  
-  .weather-city-btn {
-    background-color: #ffffff;
-    color: #082f49;
-    padding: 1rem 1.5rem;
-    border-radius: 0.75rem;
-    font-weight: 700;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    border: 2px solid #d4a017;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-  .weather-city-btn:hover {
-    background-color: #0c4a6e;
-    color: #ffffff;
-    transform: translateY(-2px);
-  }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg-main); color: var(--text-main); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+        a { text-decoration: none; color: inherit; }
+        button { font-family: inherit; cursor: pointer; border: none; background: none; }
 
-  .forecast-card {
-    transition: all 0.3s ease;
-  }
-  .forecast-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  }
-</style>
+        /* =========================================
+           2. NAVBAR MPYA (Fixed, Caffeine Style)
+        ========================================= */
+        .navbar-container {
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            background-color: rgba(248, 250, 252, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 15px 24px; max-width: 1200px; margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 24px; font-weight: 800; letter-spacing: -1px;
+            color: var(--text-main); display: flex; align-items: center; gap: 8px;
+        }
+
+        .nav-right { display: flex; align-items: center; gap: 16px; }
+
+        .btn-join {
+            background-color: var(--accent-blue); color: #ffffff;
+            padding: 10px 24px; border-radius: 99px;
+            font-weight: 500; font-size: 15px; transition: background 0.2s;
+        }
+        .btn-join:hover { background-color: var(--accent-blue-dark); }
+
+        .menu-btn { font-size: 24px; color: var(--text-main); }
+
+        /* =========================================
+           3. HERO SECTION
+        ========================================= */
+        .weather-hero {
+            padding: 140px 20px 60px 20px;
+            background: linear-gradient(135deg, var(--deep-sea) 0%, var(--accent-blue-dark) 100%);
+            color: #ffffff; text-align: center;
+            border-bottom: 4px solid var(--gold);
+        }
+
+        .weather-hero .icon-big { font-size: 64px; margin-bottom: 20px; animation: float 4s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+        .weather-hero h1 {
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-size: clamp(40px, 6vw, 64px);
+            font-weight: 400; margin-bottom: 16px; letter-spacing: -1px;
+        }
+
+        .weather-hero p {
+            font-size: clamp(16px, 2vw, 20px); color: #cbd5e1; max-width: 600px; margin: 0 auto;
+        }
+
+        /* =========================================
+           4. MAIN CONTENT & WIDGETS
+        ========================================= */
+        .main-content { max-width: 1000px; margin: -30px auto 60px auto; padding: 0 20px; position: relative; z-index: 10; }
+
+        /* City Buttons */
+        .city-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 40px; }
+        @media (min-width: 600px) { .city-grid { grid-template-columns: repeat(4, 1fr); } }
+        @media (min-width: 900px) { .city-grid { grid-template-columns: repeat(8, 1fr); } }
+
+        .weather-city-btn {
+            background: #ffffff; color: var(--text-main);
+            padding: 12px 10px; border-radius: 12px;
+            font-size: 14px; font-weight: 600;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            display: flex; flex-direction: column; align-items: center; gap: 6px;
+        }
+        .weather-city-btn:hover {
+            background-color: var(--accent-blue); color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(14, 165, 233, 0.2);
+            border-color: var(--accent-blue);
+        }
+
+        /* Current Weather Card */
+        .current-weather-card {
+            background: #ffffff; border-radius: 24px;
+            padding: 30px; box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            border: 1px solid var(--border);
+            margin-bottom: 40px;
+            display: none; /* Inafichwa kwa mwanzo */
+            animation: fadeInUp 0.5s ease forwards;
+        }
+        .current-weather-card.show { display: block; }
+
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        .weather-header-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+        .weather-city-title { font-size: 24px; font-weight: 800; color: var(--deep-sea); }
+        .weather-icon-main { font-size: 40px; }
+
+        .weather-stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+        @media (min-width: 768px) { .weather-stats-grid { grid-template-columns: repeat(4, 1fr); } }
+
+        .stat-box { background: #f8fafc; padding: 20px; border-radius: 16px; text-align: center; border: 1px solid var(--border); }
+        .stat-label { font-size: 13px; color: var(--text-muted); font-weight: 600; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .stat-value { font-size: 24px; font-weight: 800; color: var(--accent-blue); }
+        .stat-value.text-dark { color: var(--deep-sea); text-transform: capitalize; font-size: 20px;}
+
+        /* Forecast */
+        .forecast-section { display: none; margin-bottom: 60px; animation: fadeInUp 0.5s ease forwards; }
+        .forecast-section.show { display: block; }
+        .forecast-title { font-size: 24px; font-weight: 800; color: var(--deep-sea); margin-bottom: 20px; }
+
+        .forecast-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+        @media (min-width: 768px) { .forecast-grid { grid-template-columns: repeat(5, 1fr); } }
+
+        .forecast-card {
+            background: #ffffff; border-radius: 16px; padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--gold);
+            text-align: center; transition: transform 0.3s ease;
+        }
+        .forecast-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        
+        .forecast-date { font-size: 14px; font-weight: 700; color: var(--deep-sea); margin-bottom: 10px; }
+        .forecast-icon { font-size: 36px; margin-bottom: 10px; }
+        .forecast-temp { font-size: 22px; font-weight: 800; color: var(--gold); margin-bottom: 4px; }
+        .forecast-desc { font-size: 12px; color: var(--text-muted); text-transform: capitalize; }
+
+        /* Best Time to Visit */
+        .best-time-title { font-size: 28px; font-weight: 800; color: var(--deep-sea); margin-bottom: 24px; font-family: 'Instrument Serif', serif;}
+        .best-time-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+        @media (min-width: 768px) { .best-time-grid { grid-template-columns: repeat(2, 1fr); } }
+
+        .best-time-card {
+            background: #ffffff; border-radius: 20px; padding: 24px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+            border: 1px solid var(--border);
+            border-left-width: 6px;
+            transition: transform 0.3s ease;
+        }
+        .best-time-card:hover { transform: translateX(5px); }
+        
+        .bt-green { border-left-color: #22c55e; }
+        .bt-yellow { border-left-color: #f59e0b; }
+        .bt-red { border-left-color: #ef4444; }
+        .bt-blue { border-left-color: #3b82f6; }
+
+        .bt-title { font-size: 18px; font-weight: 700; color: var(--deep-sea); margin-bottom: 8px; }
+        .bt-desc { font-size: 14px; color: var(--text-muted); line-height: 1.5; }
+
+        /* Footer */
+        .footer { background: #000; color: #94a3b8; padding: 40px 20px; text-align: center; border-top: 4px solid var(--gold); }
+        .footer-title { font-size: 18px; font-weight: 700; color: var(--gold); margin-bottom: 8px; }
+        .footer-text { font-size: 14px; margin-bottom: 8px; }
+        .footer-copy { font-size: 12px; margin-top: 16px; color: #475569; }
+
+        /* WhatsApp Float */
+        .floating-wa {
+            position: fixed; bottom: 30px; right: 30px; z-index: 9998;
+            background: #25D366; color: white; width: 60px; height: 60px;
+            border-radius: 50%; display: flex; justify-content: center; align-items: center;
+            font-size: 32px; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            transition: transform 0.3s ease;
+        }
+        .floating-wa:hover { transform: scale(1.1); color: white; }
+    </style>
 </head>
-<body class="bg-gray-50 font-sans">
+<body>
 
-<!-- ================= NAVBAR ================= -->
-<nav class="fixed top-0 w-full flex justify-between items-center px-5 md:px-12 py-3 z-50 bg-[#0c4a6e] shadow-lg">
-  <a href="index.html" class="flex items-center gap-3">
-    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="h-10 w-10">
-      <defs>
-        <linearGradient id="goldNav" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" style="stop-color:#d4a017" />
-          <stop offset="50%" style="stop-color:#f5d76e" />
-          <stop offset="100%" style="stop-color:#b88a10" />
-        </linearGradient>
-        <linearGradient id="greenNav" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" style="stop-color:#0b3d2e" />
-          <stop offset="100%" style="stop-color:#1a6b4a" />
-        </linearGradient>
-      </defs>
-      <circle cx="100" cy="100" r="95" fill="url(#greenNav)" stroke="url(#goldNav)" stroke-width="4"/>
-      <path d="M60 80 Q80 40 120 50 Q130 60 110 80 Q90 100 60 80 Z" fill="url(#goldNav)"/>
-      <path d="M60 100 Q80 85 100 100 T140 100" fill="none" stroke="url(#goldNav)" stroke-width="4" stroke-linecap="round"/>
-      <text x="100" y="140" font-family="Inter, sans-serif" font-size="30" font-weight="800" fill="url(#goldNav)" text-anchor="middle" letter-spacing="2">UNP</text>
-    </svg>
-    <span class="font-extrabold text-white hidden sm:block">UNP TOURS</span>
-  </a>
-  <a href="index.html" class="text-white font-semibold hover:text-[#d4a017] transition">← Back</a>
-</nav>
+<!-- =========================================
+     NAVBAR
+========================================= -->
+<div class="navbar-container">
+    <nav class="navbar">
+        <a href="index.html" class="logo">unp.tours</a>
+        <div class="nav-right">
+            <a href="login.html" class="btn-join">Join</a>
+            <button class="menu-btn"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </nav>
+</div>
 
-<!-- ================= HERO ================= -->
-<section class="pt-32 pb-16 bg-gradient-to-br from-[#0c4a6e] to-[#082f49] text-white border-b-4 border-[#d4a017]">
-  <div class="max-w-4xl mx-auto text-center px-5">
-    <div class="text-6xl mb-4">☀️</div>
-    <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Weather & Best Time</h1>
-    <p class="text-lg md:text-xl text-blue-200">Check current weather, 5-day forecast, and the best time to visit Tanzania.</p>
-  </div>
+<!-- =========================================
+     HERO SECTION
+========================================= -->
+<section class="weather-hero">
+    <div class="icon-big">☀️</div>
+    <h1>Weather & Best Time</h1>
+    <p>Check current weather, 5-day forecast, and the perfect time to visit the beautiful island of Zanzibar.</p>
 </section>
 
-<!-- ================= CONTENT ================= -->
-<main class="max-w-6xl mx-auto px-5 py-16">
+<!-- =========================================
+     MAIN CONTENT
+========================================= -->
+<main class="main-content">
 
-  <!-- WEATHER CITIES -->
-  <h2 class="text-3xl font-extrabold text-[#082f49] mb-6">🌍 Current Weather in Tanzania</h2>
-  <p class="text-gray-600 mb-8">Click on a city to see current weather and 5-day forecast.</p>
-
-  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-12">
-    <button onclick="getWeather('Zanzibar')" class="weather-city-btn">🏝️ Zanzibar</button>
-    <button onclick="getWeather('Dar es Salaam')" class="weather-city-btn">🏙️ Dar es Salaam</button>
-    <button onclick="getWeather('Arusha')" class="weather-city-btn">⛰️ Arusha</button>
-    <button onclick="getWeather('Dodoma')" class="weather-city-btn">🏛️ Dodoma</button>
-    <button onclick="getWeather('Mwanza')" class="weather-city-btn">🌊 Mwanza</button>
-    <button onclick="getWeather('Mbeya')" class="weather-city-btn">🌄 Mbeya</button>
-    <button onclick="getWeather('Kigoma')" class="weather-city-btn">🐒 Kigoma</button>
-    <button onclick="getWeather('Mtwara')" class="weather-city-btn">🌴 Mtwara</button>
-  </div>
-
-  <!-- WEATHER RESULT (Current) -->
-  <div id="weatherResult" class="hidden bg-white p-8 rounded-2xl shadow-lg border-l-4 border-[#d4a017] mb-8">
-    <h3 id="cityName" class="text-2xl font-extrabold text-[#082f49] mb-6"></h3>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-      <div class="text-center bg-gray-50 p-4 rounded-xl">
-        <p class="text-sm text-gray-500 mb-1">🌡️ Temperature</p>
-        <p id="temp" class="text-3xl font-extrabold text-[#d4a017]"></p>
-      </div>
-      <div class="text-center bg-gray-50 p-4 rounded-xl">
-        <p class="text-sm text-gray-500 mb-1">☁️ Condition</p>
-        <p id="condition" class="text-xl font-bold text-[#0c4a6e] capitalize"></p>
-      </div>
-      <div class="text-center bg-gray-50 p-4 rounded-xl">
-        <p class="text-sm text-gray-500 mb-1">💧 Humidity</p>
-        <p id="humidity" class="text-xl font-bold text-[#0c4a6e]"></p>
-      </div>
-      <div class="text-center bg-gray-50 p-4 rounded-xl">
-        <p class="text-sm text-gray-500 mb-1">💨 Wind</p>
-        <p id="wind" class="text-xl font-bold text-[#0c4a6e]"></p>
-      </div>
-    </div>
-  </div>
-
-  <!-- 5-DAY FORECAST -->
-  <div id="forecastResult" class="hidden mb-16">
-    <h3 class="text-2xl font-extrabold text-[#082f49] mb-6">📅 5-Day Forecast</h3>
-    <div id="forecastGrid" class="grid grid-cols-2 md:grid-cols-5 gap-4"></div>
-  </div>
-
-  <!-- BEST TIME TO VISIT -->
-  <h2 class="text-3xl font-extrabold text-[#082f49] mb-6">🗓️ Best Time to Visit</h2>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-    
-    <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-green-500">
-      <h3 class="text-xl font-bold text-[#082f49] mb-2">🌞 June - October</h3>
-      <p class="text-gray-600 text-sm">Dry season. Perfect for safaris, beaches, and hiking. The best time to visit Tanzania.</p>
+    <!-- City Buttons -->
+    <div class="city-grid">
+        <button onclick="getWeather('Zanzibar')" class="weather-city-btn">🏝️ <span>Zanzibar</span></button>
+        <button onclick="getWeather('Dar es Salaam')" class="weather-city-btn">🏙️ <span>Dar es Salaam</span></button>
+        <button onclick="getWeather('Arusha')" class="weather-city-btn">⛰️ <span>Arusha</span></button>
+        <button onclick="getWeather('Dodoma')" class="weather-city-btn">🏛️ <span>Dodoma</span></button>
+        <button onclick="getWeather('Mwanza')" class="weather-city-btn">🌊 <span>Mwanza</span></button>
+        <button onclick="getWeather('Mbeya')" class="weather-city-btn">🌄 <span>Mbeya</span></button>
+        <button onclick="getWeather('Kigoma')" class="weather-city-btn">🐒 <span>Kigoma</span></button>
+        <button onclick="getWeather('Mtwara')" class="weather-city-btn">🌴 <span>Mtwara</span></button>
     </div>
 
-    <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-yellow-500">
-      <h3 class="text-xl font-bold text-[#082f49] mb-2">🌤️ December - February</h3>
-      <p class="text-gray-600 text-sm">Short dry season. Hot and sunny. Great for beaches and wildlife viewing.</p>
+    <!-- Current Weather Card -->
+    <div id="weatherResult" class="current-weather-card">
+        <div class="weather-header-row">
+            <h3 id="cityName" class="weather-city-title"></h3>
+            <div id="mainIcon" class="weather-icon-main"></div>
+        </div>
+        <div class="weather-stats-grid">
+            <div class="stat-box">
+                <p class="stat-label">Temperature</p>
+                <p id="temp" class="stat-value"></p>
+            </div>
+            <div class="stat-box">
+                <p class="stat-label">Condition</p>
+                <p id="condition" class="stat-value text-dark"></p>
+            </div>
+            <div class="stat-box">
+                <p class="stat-label">Humidity</p>
+                <p id="humidity" class="stat-value text-dark"></p>
+            </div>
+            <div class="stat-box">
+                <p class="stat-label">Wind Speed</p>
+                <p id="wind" class="stat-value text-dark"></p>
+            </div>
+        </div>
     </div>
 
-    <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-red-500">
-      <h3 class="text-xl font-bold text-[#082f49] mb-2">🌧️ April - May</h3>
-      <p class="text-gray-600 text-sm">Long rainy season. Avoid travel during this period. Many hotels close.</p>
+    <!-- 5-Day Forecast -->
+    <div id="forecastResult" class="forecast-section">
+        <h3 class="forecast-title">📅 5-Day Forecast</h3>
+        <div id="forecastGrid" class="forecast-grid"></div>
     </div>
 
-    <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-blue-500">
-      <h3 class="text-xl font-bold text-[#082f49] mb-2">🌦️ November</h3>
-      <p class="text-gray-600 text-sm">Short rains. Good for budget travel. Some rain but less crowds.</p>
+    <!-- Best Time to Visit -->
+    <h2 class="best-time-title">🗓️ Best Time to Visit</h2>
+    <div class="best-time-grid">
+        <div class="best-time-card bt-green">
+            <h3 class="bt-title">🌞 June - October</h3>
+            <p class="bt-desc">Dry season. Perfect for safaris, beaches, and hiking. The best time to visit Tanzania.</p>
+        </div>
+        <div class="best-time-card bt-yellow">
+            <h3 class="bt-title">🌤️ December - February</h3>
+            <p class="bt-desc">Short dry season. Hot and sunny. Great for beaches and wildlife viewing.</p>
+        </div>
+        <div class="best-time-card bt-red">
+            <h3 class="bt-title">🌧️ April - May</h3>
+            <p class="bt-desc">Long rainy season. Avoid travel during this period. Many hotels close.</p>
+        </div>
+        <div class="best-time-card bt-blue">
+            <h3 class="bt-title">🌦️ November</h3>
+            <p class="bt-desc">Short rains. Good for budget travel. Some rain but less crowds.</p>
+        </div>
     </div>
-
-  </div>
 
 </main>
 
-<!-- ================= FOOTER ================= -->
-<footer class="bg-black text-gray-300 py-10 px-5 border-t-4 border-[#d4a017]">
-  <div class="max-w-4xl mx-auto text-center">
-    <p class="font-bold text-[#d4a017] mb-2">UNP TOURS — Unique & Natural Paradise</p>
-    <p class="text-sm">Nungwi, Zanzibar, Tanzania | WhatsApp: +255 655 728 982</p>
-    <p class="text-xs mt-4 text-gray-500">© 2026 UNP Tours. All rights reserved.</p>
-  </div>
+<!-- =========================================
+     FOOTER
+========================================= -->
+<footer class="footer">
+    <p class="footer-title">UNP TOURS — Unique & Natural Paradise</p>
+    <p class="footer-text">Nungwi, Zanzibar, Tanzania | WhatsApp: +255 655 728 982</p>
+    <p class="footer-copy">© 2026 UNP Tours. All rights reserved.</p>
 </footer>
 
 <!-- WhatsApp Float -->
-<a href="https://wa.me/255655728982" target="_blank" class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] rounded-full flex justify-center items-center text-3xl text-white shadow-lg hover:scale-110 transition z-50">
-  💬
+<a href="https://wa.me/255655728982" target="_blank" class="floating-wa" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
 </a>
 
-<!-- ================= JAVASCRIPT ================= -->
+<!-- =========================================
+     JAVASCRIPT (API Logic)
+========================================= -->
 <script>
-  // API Key ya OpenWeatherMap (BURE)
+  // API Key ya OpenWeatherMap
   const API_KEY = 'bd5e378503939ddaee76f12ad7a97608';
 
   async function getWeather(city) {
@@ -181,16 +331,19 @@
     const conditionEl = document.getElementById('condition');
     const humidityEl = document.getElementById('humidity');
     const windEl = document.getElementById('wind');
+    const mainIconEl = document.getElementById('mainIcon');
     const forecastGrid = document.getElementById('forecastGrid');
 
-    resultEl.classList.remove('hidden');
-    forecastEl.classList.remove('hidden');
+    resultEl.classList.add('show');
+    forecastEl.classList.add('show');
+    
     cityEl.textContent = `📍 ${city}`;
     tempEl.textContent = 'Loading...';
     conditionEl.textContent = '';
     humidityEl.textContent = '';
     windEl.textContent = '';
-    forecastGrid.innerHTML = '<p class="text-gray-500 col-span-full text-center py-4">Loading forecast...</p>';
+    mainIconEl.textContent = '⏳';
+    forecastGrid.innerHTML = '<p style="color: #64748b; text-align: center; grid-column: 1 / -1;">Loading forecast...</p>';
 
     try {
       // 1. CURRENT WEATHER
@@ -199,7 +352,8 @@
 
       if (weatherData.cod !== 200) {
         tempEl.textContent = 'City not found';
-        forecastEl.classList.add('hidden');
+        mainIconEl.textContent = '❌';
+        forecastEl.classList.remove('show');
         return;
       }
 
@@ -207,17 +361,18 @@
       conditionEl.textContent = weatherData.weather[0].description;
       humidityEl.textContent = `${weatherData.main.humidity}%`;
       windEl.textContent = `${Math.round(weatherData.wind.speed * 3.6)} km/h`;
+      mainIconEl.textContent = getWeatherIcon(weatherData.weather[0].main);
 
       // 2. 5-DAY FORECAST
       const forecastRes = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city},TZ&appid=${API_KEY}&units=metric`);
       const forecastData = await forecastRes.json();
 
       if (forecastData.cod !== '200') {
-        forecastGrid.innerHTML = '<p class="text-red-500 col-span-full text-center py-4">Error loading forecast.</p>';
+        forecastGrid.innerHTML = '<p style="color: #ef4444; text-align: center; grid-column: 1 / -1;">Error loading forecast.</p>';
         return;
       }
 
-      // Chuja data: chukua siku moja kwa kila siku (12:00 PM)
+      // Chuja data
       const dailyForecast = [];
       const seenDates = new Set();
 
@@ -237,42 +392,35 @@
         }
       });
 
-      // Chukua siku 5 za kwanza tu
       const fiveDays = dailyForecast.slice(0, 5);
 
       forecastGrid.innerHTML = fiveDays.map(day => `
-        <div class="forecast-card bg-white rounded-xl p-4 shadow-md text-center border-t-4 border-[#d4a017]">
-          <p class="text-sm font-bold text-[#082f49] mb-2">${day.date.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })}</p>
-          <div class="text-4xl mb-2">${day.icon}</div>
-          <p class="text-2xl font-extrabold text-[#d4a017] mb-1">${day.temp}°C</p>
-          <p class="text-xs text-gray-500 capitalize">${day.condition}</p>
+        <div class="forecast-card">
+          <p class="forecast-date">${day.date.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })}</p>
+          <div class="forecast-icon">${day.icon}</div>
+          <p class="forecast-temp">${day.temp}°C</p>
+          <p class="forecast-desc">${day.condition}</p>
         </div>
       `).join('');
 
     } catch (error) {
       console.error(error);
-      tempEl.textContent = 'Error loading weather';
-      forecastEl.classList.add('hidden');
+      tempEl.textContent = 'Error';
+      mainIconEl.textContent = '⚠️';
+      forecastEl.classList.remove('show');
     }
   }
 
-  // Function ya kupata Icon kulingana na Hali ya Hewa
+  // Function ya kupata Icon
   function getWeatherIcon(condition) {
     const icons = {
-      'Clear': '☀️',
-      'Clouds': '☁️',
-      'Rain': '🌧️',
-      'Drizzle': '🌦️',
-      'Thunderstorm': '⛈️',
-      'Snow': '❄️',
-      'Mist': '🌫️',
-      'Fog': '🌫️',
-      'Haze': '🌫️'
+      'Clear': '☀️', 'Clouds': '☁️', 'Rain': '🌧️', 'Drizzle': '🌦️',
+      'Thunderstorm': '⛈️', 'Snow': '❄️', 'Mist': '🌫️', 'Fog': '🌫️', 'Haze': '🌫️'
     };
     return icons[condition] || '🌤️';
   }
 
-  // Pakia hali ya hewa ya Zanzibar kiotomatiki ukurasa unapofunguliwa
+  // Pakia hali ya hewa ya Zanzibar kiotomatiki
   window.addEventListener('load', () => {
     getWeather('Zanzibar');
   });
