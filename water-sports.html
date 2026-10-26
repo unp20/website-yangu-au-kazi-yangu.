@@ -1,194 +1,384 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Water Sports & Ocean Adventures — UNP TOURS Zanzibar</title>
-<meta name="description" content="Experience the best water sports in Zanzibar - snorkeling, jet ski, sailing, and diving with UNP TOURS.">
-<meta name="robots" content="index, follow">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Sports & Ocean Adventures — UNP Tours Zanzibar</title>
+    
+    <meta name="description" content="Experience the best water sports in Zanzibar - snorkeling, jet ski, sailing, and diving with UNP TOURS.">
+    <meta name="robots" content="index, follow">
+    
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0c4a6e">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌊</text></svg>">
 
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#0c4a6e">
-<link rel="icon" type="image/png" href="assets/images/logo.png">
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
-<script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* =========================================
+           1. GLOBAL VARIABLES & BASE SETUP
+        ========================================= */
+        :root {
+            --text-main: #0a0a0a;
+            --text-muted: #64748b;
+            --accent-blue: #0ea5e9;
+            --accent-blue-dark: #0284c7;
+            --deep-sea: #0f172a;
+            --gold: #d4a017;
+            --border: #e2e8f0;
+            --bg-main: #f8fafc;
+            --success: #22c55e;
+        }
 
-<style>
-  body { font-family: 'Inter', sans-serif; background: #f8f9fa; }
-  .feature-card { transition: all 0.3s ease; }
-  .feature-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-</style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg-main); color: var(--text-main); -webkit-font-smoothing: antialiased; overflow-x: hidden; line-height: 1.5; }
+        a { text-decoration: none; color: inherit; }
+        button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+        /* =========================================
+           2. NAVBAR MPYA (Fixed, Caffeine Style)
+        ========================================= */
+        .navbar-container {
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            background-color: rgba(248, 250, 252, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 15px 24px; max-width: 1200px; margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 24px; font-weight: 800; letter-spacing: -1px;
+            color: var(--text-main); display: flex; align-items: center; gap: 8px;
+        }
+
+        .nav-right { display: flex; align-items: center; gap: 16px; }
+
+        .btn-join {
+            background-color: var(--accent-blue); color: #ffffff;
+            padding: 10px 24px; border-radius: 99px;
+            font-weight: 500; font-size: 15px; transition: background 0.2s;
+        }
+        .btn-join:hover { background-color: var(--accent-blue-dark); }
+
+        .menu-btn { font-size: 24px; color: var(--text-main); }
+
+        /* =========================================
+           3. HERO SECTION
+        ========================================= */
+        .water-hero {
+            padding: 140px 20px 60px 20px;
+            background: linear-gradient(135deg, var(--deep-sea) 0%, var(--accent-blue-dark) 100%);
+            color: #ffffff; text-align: center;
+            border-bottom: 4px solid var(--gold);
+        }
+
+        .water-hero .icon-big { font-size: 64px; margin-bottom: 20px; animation: float 4s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+
+        .water-hero h1 {
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-size: clamp(40px, 6vw, 64px);
+            font-weight: 400; margin-bottom: 16px; letter-spacing: -1px;
+        }
+
+        .water-hero p {
+            font-size: clamp(16px, 2vw, 20px); color: #cbd5e1; max-width: 700px; margin: 0 auto;
+        }
+
+        /* =========================================
+           4. MAIN CONTENT
+        ========================================= */
+        .main-content { max-width: 1000px; margin: -30px auto 60px auto; padding: 0 20px; position: relative; z-index: 10; }
+
+        /* Intro Card */
+        .intro-card {
+            background: #ffffff; border-radius: 24px; padding: 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            border: 1px solid var(--border);
+            border-left: 6px solid var(--accent-blue);
+            margin-bottom: 60px;
+        }
+        .intro-card h2 { font-size: 28px; font-weight: 800; color: var(--deep-sea); margin-bottom: 16px; }
+        .intro-card p { font-size: 16px; color: var(--text-muted); line-height: 1.7; margin-bottom: 16px; }
+        .intro-card p:last-child { margin-bottom: 0; }
+
+        /* Section Titles */
+        .section-title { text-align: center; font-family: 'Instrument Serif', Georgia, serif; font-size: clamp(32px, 5vw, 48px); font-weight: 400; color: var(--deep-sea); margin-bottom: 40px; }
+
+        /* Features Grid */
+        .features-grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin-bottom: 80px; }
+        @media (min-width: 768px) { .features-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { .features-grid { grid-template-columns: repeat(3, 1fr); } }
+
+        .feature-card {
+            background: #ffffff; border-radius: 20px; padding: 30px 20px;
+            text-align: center; border: 1px solid var(--border);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .feature-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.08); }
+        
+        .feature-icon { font-size: 40px; margin-bottom: 16px; }
+        .feature-card h3 { font-size: 20px; font-weight: 700; color: var(--deep-sea); margin-bottom: 8px; }
+        .feature-card p { font-size: 14px; color: var(--text-muted); line-height: 1.5; }
+
+        /* How to Connect (Steps) */
+        .steps-container {
+            background: linear-gradient(135deg, var(--deep-sea) 0%, #1e293b 100%);
+            border-radius: 24px; padding: 50px 30px;
+            margin-bottom: 60px; color: #ffffff;
+        }
+        .steps-title { font-family: 'Instrument Serif', Georgia, serif; font-size: 32px; color: var(--gold); margin-bottom: 30px; text-align: center; }
+        
+        .step-item { display: flex; align-items: flex-start; gap: 20px; margin-bottom: 24px; }
+        .step-item:last-child { margin-bottom: 0; }
+        
+        .step-number {
+            width: 40px; height: 40px; border-radius: 50%;
+            background: var(--gold); color: var(--deep-sea);
+            display: flex; justify-content: center; align-items: center;
+            font-weight: 800; font-size: 18px; flex-shrink: 0;
+        }
+        
+        .step-content h3 { font-size: 18px; font-weight: 600; margin-bottom: 4px; }
+        .step-content p { font-size: 14px; color: #cbd5e1; }
+
+        /* Booking Form */
+        .form-wrapper {
+            background: #ffffff; border-radius: 24px; padding: 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            border: 1px solid var(--border);
+            border-top: 6px solid var(--gold);
+        }
+        .form-title { font-size: 24px; font-weight: 800; color: var(--deep-sea); margin-bottom: 24px; }
+        
+        .form-grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin-bottom: 20px; }
+        @media (min-width: 768px) { .form-grid { grid-template-columns: 1fr 1fr; } }
+
+        .input-group { display: flex; flex-direction: column; gap: 8px; }
+        .input-group label { font-size: 14px; font-weight: 600; color: var(--deep-sea); }
+        .input-group input, .input-group select {
+            width: 100%; padding: 14px 16px;
+            border: 1px solid var(--border); border-radius: 12px;
+            font-size: 15px; font-family: inherit; color: var(--text-main);
+            background: #f8fafc; outline: none; transition: all 0.2s;
+        }
+        .input-group input:focus, .input-group select:focus {
+            border-color: var(--gold);
+            background: #ffffff;
+            box-shadow: 0 0 0 4px rgba(212, 160, 23, 0.1);
+        }
+
+        .btn-submit {
+            width: 100%; background: var(--success); color: #ffffff;
+            padding: 16px; border-radius: 12px;
+            font-size: 16px; font-weight: 700;
+            display: flex; justify-content: center; align-items: center; gap: 10px;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .btn-submit:hover { background: #16a34a; transform: translateY(-2px); }
+
+        /* Footer */
+        .footer { background: #000; color: #94a3b8; padding: 40px 20px; text-align: center; border-top: 4px solid var(--gold); }
+        .footer-title { font-size: 18px; font-weight: 700; color: var(--gold); margin-bottom: 8px; }
+        .footer-text { font-size: 14px; margin-bottom: 8px; }
+        .footer-copy { font-size: 12px; margin-top: 16px; color: #475569; }
+
+        /* WhatsApp Float */
+        .floating-wa {
+            position: fixed; bottom: 30px; right: 30px; z-index: 9998;
+            background: #25D366; color: white; width: 60px; height: 60px;
+            border-radius: 50%; display: flex; justify-content: center; align-items: center;
+            font-size: 32px; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            transition: transform 0.3s ease;
+        }
+        .floating-wa:hover { transform: scale(1.1); color: white; }
+    </style>
 </head>
-<body class="bg-gray-50 font-sans">
+<body>
 
-<!-- ================= NAVBAR ================= -->
-<nav class="fixed top-0 w-full flex justify-between items-center px-5 md:px-12 py-3 z-50 bg-[#0c4a6e] shadow-lg">
-  <a href="index.html" class="flex items-center gap-3">
-    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="h-10 w-10">
-      <defs>
-        <linearGradient id="goldNav" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#d4a017" /><stop offset="50%" style="stop-color:#f5d76e" /><stop offset="100%" style="stop-color:#b88a10" /></linearGradient>
-        <linearGradient id="greenNav" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#0b3d2e" /><stop offset="100%" style="stop-color:#1a6b4a" /></linearGradient>
-      </defs>
-      <circle cx="100" cy="100" r="95" fill="url(#greenNav)" stroke="url(#goldNav)" stroke-width="4"/>
-      <path d="M60 80 Q80 40 120 50 Q130 60 110 80 Q90 100 60 80 Z" fill="url(#goldNav)"/>
-      <path d="M60 100 Q80 85 100 100 T140 100" fill="none" stroke="url(#goldNav)" stroke-width="4" stroke-linecap="round"/>
-      <text x="100" y="140" font-family="Inter, sans-serif" font-size="30" font-weight="800" fill="url(#goldNav)" text-anchor="middle" letter-spacing="2">UNP</text>
-    </svg>
-    <span class="font-extrabold text-white hidden sm:block">UNP TOURS</span>
-  </a>
-  <a href="services.html" class="text-white font-semibold hover:text-[#d4a017] transition">← All Services</a>
-</nav>
+<!-- =========================================
+     NAVBAR
+========================================= -->
+<div class="navbar-container">
+    <nav class="navbar">
+        <a href="index.html" class="logo">unp.tours</a>
+        <div class="nav-right">
+            <a href="login.html" class="btn-join">Join</a>
+            <button class="menu-btn"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </nav>
+</div>
 
-<!-- ================= HERO ================= -->
-<section class="pt-32 pb-16 bg-gradient-to-br from-[#0c4a6e] to-[#082f49] text-white border-b-4 border-[#d4a017]">
-  <div class="max-w-4xl mx-auto text-center px-5">
-    <div class="text-6xl mb-4">🌊</div>
-    <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Water Sports & Ocean Adventures</h1>
-    <p class="text-lg md:text-xl text-blue-200">Feel the rush of the Indian Ocean — snorkeling, jet ski, sailing, and diving in Zanzibar.</p>
-  </div>
+<!-- =========================================
+     HERO SECTION
+========================================= -->
+<section class="water-hero">
+    <div class="icon-big">🌊</div>
+    <h1>Water Sports & Ocean Adventures</h1>
+    <p>Feel the rush of the Indian Ocean — snorkeling, jet ski, sailing, and diving in Zanzibar.</p>
 </section>
 
-<!-- ================= CONTENT ================= -->
-<main class="max-w-6xl mx-auto px-5 py-16">
+<!-- =========================================
+     MAIN CONTENT
+========================================= -->
+<main class="main-content">
 
-  <!-- INTRO -->
-  <div class="bg-white rounded-2xl p-8 shadow-lg border-l-4 border-[#0c4a6e] mb-12">
-    <h2 class="text-3xl font-extrabold text-[#082f49] mb-4">An Ocean of Adventure</h2>
-    <p class="text-gray-600 leading-relaxed text-lg mb-4">
-      Zanzibar is not just a destination — it is a **playground for the brave**. The Indian Ocean surrounding our island is home to some of the most spectacular coral reefs, marine life, and water conditions in the world.
-    </p>
-    <p class="text-gray-600 leading-relaxed">
-      Whether you seek the thrill of jet skiing at sunset, the peace of snorkeling in crystal-clear waters, or the magic of sailing on a traditional dhow — **the ocean is calling you**. And we are here to answer.
-    </p>
-  </div>
-
-  <!-- WHAT'S INCLUDED -->
-  <div class="mb-12">
-    <h2 class="text-3xl font-extrabold text-[#082f49] mb-6 text-center">What We Offer</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="feature-card bg-white p-6 rounded-2xl shadow-md text-center border-t-4 border-[#d4a017]">
-        <div class="text-4xl mb-3">🤿</div>
-        <h3 class="font-bold text-[#082f49] mb-2">Snorkeling</h3>
-        <p class="text-sm text-gray-600">Explore vibrant coral reefs and swim with tropical fish.</p>
-      </div>
-      <div class="feature-card bg-white p-6 rounded-2xl shadow-md text-center border-t-4 border-[#d4a017]">
-        <div class="text-4xl mb-3">🚤</div>
-        <h3 class="font-bold text-[#082f49] mb-2">Jet Ski</h3>
-        <p class="text-sm text-gray-600">Feel the adrenaline rush on the open ocean.</p>
-      </div>
-      <div class="feature-card bg-white p-6 rounded-2xl shadow-md text-center border-t-4 border-[#d4a017]">
-        <div class="text-4xl mb-3">⛵</div>
-        <h3 class="font-bold text-[#082f49] mb-2">Dhow Sailing</h3>
-        <p class="text-sm text-gray-600">Sail on a traditional wooden dhow at sunset.</p>
-      </div>
-      <div class="feature-card bg-white p-6 rounded-2xl shadow-md text-center border-t-4 border-[#d4a017]">
-        <div class="text-4xl mb-3">🐬</div>
-        <h3 class="font-bold text-[#082f49] mb-2">Dolphin Tours</h3>
-        <p class="text-sm text-gray-600">Swim with wild dolphins in Mnemba Atoll.</p>
-      </div>
-      <div class="feature-card bg-white p-6 rounded-2xl shadow-md text-center border-t-4 border-[#d4a017]">
-        <div class="text-4xl mb-3">🤿</div>
-        <h3 class="font-bold text-[#082f49] mb-2">Scuba Diving</h3>
-        <p class="text-sm text-gray-600">Discover the underwater world with certified instructors.</p>
-      </div>
-      <div class="feature-card bg-white p-6 rounded-2xl shadow-md text-center border-t-4 border-[#d4a017]">
-        <div class="text-4xl mb-3">🏄</div>
-        <h3 class="font-bold text-[#082f49] mb-2">Kitesurfing</h3>
-        <p class="text-sm text-gray-600">Learn kitesurfing at Paje — one of the best spots in the world.</p>
-      </div>
+    <!-- Intro -->
+    <div class="intro-card">
+        <h2>An Ocean of Adventure</h2>
+        <p>Zanzibar is not just a destination — it is a <strong>playground for the brave</strong>. The Indian Ocean surrounding our island is home to some of the most spectacular coral reefs, marine life, and water conditions in the world.</p>
+        <p>Whether you seek the thrill of jet skiing at sunset, the peace of snorkeling in crystal-clear waters, or the magic of sailing on a traditional dhow — <strong>the ocean is calling you</strong>. And we are here to answer.</p>
     </div>
-  </div>
 
-  <!-- HOW TO GET CONNECTION -->
-  <div class="bg-gradient-to-r from-[#0c4a6e] to-[#082f49] rounded-2xl p-8 text-white mb-12">
-    <h2 class="text-3xl font-extrabold text-[#d4a017] mb-6">How to Connect With Us</h2>
-    <div class="space-y-4">
-      <div class="flex items-start gap-4">
-        <div class="bg-[#d4a017] text-[#082f49] rounded-full w-10 h-10 flex items-center justify-center font-bold flex-shrink-0">1</div>
-        <div>
-          <h3 class="font-bold mb-1">Choose Your Adventure</h3>
-          <p class="text-blue-200 text-sm">Select from snorkeling, jet ski, sailing, diving, or kitesurfing.</p>
+    <!-- Features Grid -->
+    <h2 class="section-title">What We Offer</h2>
+    <div class="features-grid">
+        <div class="feature-card">
+            <div class="feature-icon">🤿</div>
+            <h3>Snorkeling</h3>
+            <p>Explore vibrant coral reefs and swim with tropical fish.</p>
         </div>
-      </div>
-      <div class="flex items-start gap-4">
-        <div class="bg-[#d4a017] text-[#082f49] rounded-full w-10 h-10 flex items-center justify-center font-bold flex-shrink-0">2</div>
-        <div>
-          <h3 class="font-bold mb-1">Contact Us via WhatsApp</h3>
-          <p class="text-blue-200 text-sm">Message us for availability, pricing, and booking details.</p>
+        <div class="feature-card">
+            <div class="feature-icon">🚤</div>
+            <h3>Jet Ski</h3>
+            <p>Feel the adrenaline rush on the open ocean.</p>
         </div>
-      </div>
-      <div class="flex items-start gap-4">
-        <div class="bg-[#d4a017] text-[#082f49] rounded-full w-10 h-10 flex items-center justify-center font-bold flex-shrink-0">3</div>
-        <div>
-          <h3 class="font-bold mb-1">Meet at the Beach</h3>
-          <p class="text-blue-200 text-sm">Our team will meet you at your hotel or the beach location.</p>
+        <div class="feature-card">
+            <div class="feature-icon">⛵</div>
+            <h3>Dhow Sailing</h3>
+            <p>Sail on a traditional wooden dhow at sunset.</p>
         </div>
-      </div>
-      <div class="flex items-start gap-4">
-        <div class="bg-[#d4a017] text-[#082f49] rounded-full w-10 h-10 flex items-center justify-center font-bold flex-shrink-0">4</div>
-        <div>
-          <h3 class="font-bold mb-1">Enjoy the Ride</h3>
-          <p class="text-blue-200 text-sm">Jump in and experience the ocean like never before.</p>
+        <div class="feature-card">
+            <div class="feature-icon">🐬</div>
+            <h3>Dolphin Tours</h3>
+            <p>Swim with wild dolphins in Mnemba Atoll.</p>
         </div>
-      </div>
+        <div class="feature-card">
+            <div class="feature-icon">🤿</div>
+            <h3>Scuba Diving</h3>
+            <p>Discover the underwater world with certified instructors.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🏄</div>
+            <h3>Kitesurfing</h3>
+            <p>Learn kitesurfing at Paje — one of the best spots in the world.</p>
+        </div>
     </div>
-  </div>
 
-  <!-- BOOKING FORM -->
-  <div class="bg-white rounded-2xl p-8 shadow-lg border-l-4 border-[#d4a017]">
-    <h2 class="text-2xl font-extrabold text-[#082f49] mb-6">Book Your Water Adventure</h2>
-    <form onsubmit="submitBooking(event)" class="space-y-5">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div>
-          <label class="block text-sm font-bold text-[#082f49] mb-2">Full Name:</label>
-          <input type="text" id="guestName" required class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl outline-none focus:border-[#d4a017]">
+    <!-- How to Connect -->
+    <div class="steps-container">
+        <h2 class="steps-title">How to Connect With Us</h2>
+        
+        <div class="step-item">
+            <div class="step-number">1</div>
+            <div class="step-content">
+                <h3>Choose Your Adventure</h3>
+                <p>Select from snorkeling, jet ski, sailing, diving, or kitesurfing.</p>
+            </div>
         </div>
-        <div>
-          <label class="block text-sm font-bold text-[#082f49] mb-2">Contact (WhatsApp):</label>
-          <input type="text" id="guestContact" required class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl outline-none focus:border-[#d4a017]">
+
+        <div class="step-item">
+            <div class="step-number">2</div>
+            <div class="step-content">
+                <h3>Contact Us via WhatsApp</h3>
+                <p>Message us for availability, pricing, and booking details.</p>
+            </div>
         </div>
-      </div>
-      <div>
-        <label class="block text-sm font-bold text-[#082f49] mb-2">Select Activity:</label>
-        <select id="guestService" class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl outline-none focus:border-[#d4a017]">
-          <option>Snorkeling</option>
-          <option>Jet Ski</option>
-          <option>Dhow Sailing</option>
-          <option>Dolphin Tour</option>
-          <option>Scuba Diving</option>
-          <option>Kitesurfing</option>
-        </select>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div>
-          <label class="block text-sm font-bold text-[#082f49] mb-2">Preferred Date:</label>
-          <input type="date" id="guestDate" required class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl outline-none focus:border-[#d4a017]">
+
+        <div class="step-item">
+            <div class="step-number">3</div>
+            <div class="step-content">
+                <h3>Meet at the Beach</h3>
+                <p>Our team will meet you at your hotel or the beach location.</p>
+            </div>
         </div>
-        <div>
-          <label class="block text-sm font-bold text-[#082f49] mb-2">Number of Guests:</label>
-          <input type="number" id="guestCount" min="1" value="2" required class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl outline-none focus:border-[#d4a017]">
+
+        <div class="step-item">
+            <div class="step-number">4</div>
+            <div class="step-content">
+                <h3>Enjoy the Ride</h3>
+                <p>Jump in and experience the ocean like never before.</p>
+            </div>
         </div>
-      </div>
-      <button type="submit" class="w-full bg-[#25D366] text-white py-4 rounded-xl font-bold text-lg hover:bg-[#1ebe57] transition">💬 Book via WhatsApp</button>
-    </form>
-  </div>
+    </div>
+
+    <!-- Booking Form -->
+    <div class="form-wrapper">
+        <h2 class="form-title">Book Your Water Adventure</h2>
+        <form onsubmit="submitBooking(event)">
+            
+            <div class="form-grid">
+                <div class="input-group">
+                    <label for="guestName">Full Name</label>
+                    <input type="text" id="guestName" required placeholder="e.g. John Doe">
+                </div>
+                <div class="input-group">
+                    <label for="guestContact">Contact (WhatsApp)</label>
+                    <input type="text" id="guestContact" required placeholder="+255 700 000 000">
+                </div>
+            </div>
+
+            <div class="input-group" style="margin-bottom: 20px;">
+                <label for="guestService">Select Activity</label>
+                <select id="guestService">
+                    <option>Snorkeling</option>
+                    <option>Jet Ski</option>
+                    <option>Dhow Sailing</option>
+                    <option>Dolphin Tour</option>
+                    <option>Scuba Diving</option>
+                    <option>Kitesurfing</option>
+                </select>
+            </div>
+
+            <div class="form-grid" style="margin-bottom: 24px;">
+                <div class="input-group">
+                    <label for="guestDate">Preferred Date</label>
+                    <input type="date" id="guestDate" required>
+                </div>
+                <div class="input-group">
+                    <label for="guestCount">Number of Guests</label>
+                    <input type="number" id="guestCount" min="1" value="2" required>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-submit">
+                <i class="fa-brands fa-whatsapp" style="font-size: 20px;"></i> Book via WhatsApp
+            </button>
+
+        </form>
+    </div>
 
 </main>
 
-<!-- ================= FOOTER ================= -->
-<footer class="bg-black text-gray-300 py-10 px-5 border-t-4 border-[#d4a017]">
-  <div class="max-w-4xl mx-auto text-center">
-    <p class="font-bold text-[#d4a017] mb-2">UNP TOURS — Unique & Natural Paradise</p>
-    <p class="text-sm">Nungwi, Zanzibar, Tanzania | WhatsApp: +255 655 728 982</p>
-    <p class="text-xs mt-4 text-gray-500">© 2026 UNP Tours. All rights reserved.</p>
-  </div>
+<!-- =========================================
+     FOOTER
+========================================= -->
+<footer class="footer">
+    <p class="footer-title">UNP TOURS — Unique & Natural Paradise</p>
+    <p class="footer-text">Nungwi, Zanzibar, Tanzania | WhatsApp: +255 655 728 982</p>
+    <p class="footer-copy">© 2026 UNP Tours. All rights reserved.</p>
 </footer>
 
 <!-- WhatsApp Float -->
-<a href="https://wa.me/255655728982" target="_blank" class="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] rounded-full flex justify-center items-center text-3xl text-white shadow-lg hover:scale-110 transition z-50">💬</a>
+<a href="https://wa.me/255655728982" target="_blank" class="floating-wa" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
 
-<!-- ================= JAVASCRIPT ================= -->
+<!-- =========================================
+     JAVASCRIPT (Booking Logic)
+========================================= -->
 <script>
   function submitBooking(event) {
     event.preventDefault();
